@@ -8,6 +8,8 @@
 
 #import "SmokelessAppDelegate.h"
 
+#import "Appirater.h"
+
 
 @implementation SmokelessAppDelegate
 
@@ -116,6 +118,9 @@
                          self.splashView = nil;
                      }];
     
+    // notify appirater
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
 
@@ -124,6 +129,11 @@
     // display badge counter on tab bar
     NSInteger badgeCounter = notification.applicationIconBadgeNumber;
     self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;    
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [Appirater appEnteredForeground:YES];
 }
 
 #pragma mark -

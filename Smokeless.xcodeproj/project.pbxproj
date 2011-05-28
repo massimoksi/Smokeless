@@ -100,6 +100,9 @@
 		5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5649C9BA137462690036A8E2 /* Entitlements.plist */; };
 		564A915B12626432008CB029 /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A915A12626432008CB029 /* SavingsViewController.m */; };
 		5655C4F61326C00A004BCF10 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5655C4F51326C00A004BCF10 /* NoteView.m */; };
+		56565A501390E6600087E5C4 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565A4F1390E6600087E5C4 /* Appirater.m */; };
+		56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A511390E8160087E5C4 /* CFNetwork.framework */; };
+		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
 		566034DA13226B4400F6006B /* SizeCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566034D913226B4400F6006B /* SizeCellController.m */; };
 		566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566E67E4136E021300DE4C2B /* CreditsViewController.m */; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
@@ -240,6 +243,10 @@
 		564A915A12626432008CB029 /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		5655C4F41326C00A004BCF10 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5655C4F51326C00A004BCF10 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		56565A4E1390E6600087E5C4 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Appirater/Appirater.h; sourceTree = "<group>"; };
+		56565A4F1390E6600087E5C4 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Appirater/Appirater.m; sourceTree = "<group>"; };
+		56565A511390E8160087E5C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		56565A531390E8240087E5C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		566034D813226B4400F6006B /* SizeCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeCellController.h; sourceTree = "<group>"; };
 		566034D913226B4400F6006B /* SizeCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeCellController.m; sourceTree = "<group>"; };
 		566DB01A133E1607002E2799 /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
@@ -295,6 +302,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */,
+				56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */,
 				5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -368,6 +377,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56565A531390E8240087E5C4 /* SystemConfiguration.framework */,
+				56565A511390E8160087E5C4 /* CFNetwork.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
@@ -484,6 +495,8 @@
 		562C852F136777E600E078D1 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				56565A4E1390E6600087E5C4 /* Appirater.h */,
+				56565A4F1390E6600087E5C4 /* Appirater.m */,
 				562C85301367784D00E078D1 /* MBProgressHUD.h */,
 				562C85311367784D00E078D1 /* MBProgressHUD.m */,
 			);
@@ -790,6 +803,7 @@
 				562C852E136771D900E078D1 /* TwitterViewController.m in Sources */,
 				562C85321367784D00E078D1 /* MBProgressHUD.m in Sources */,
 				566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */,
+				56565A501390E6600087E5C4 /* Appirater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
