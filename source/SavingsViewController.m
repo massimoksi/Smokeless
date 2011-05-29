@@ -191,11 +191,11 @@
                 [self.tinklePlayer play];
             }
         }
-        else {
-            if (self.tinklePlayer.playing == YES) {
-                [self.tinklePlayer pause];
-            }
-        }
+//        else {
+//            if (self.tinklePlayer.playing == YES) {
+//                [self.tinklePlayer pause];
+//            }
+//        }
     }
 }
 
