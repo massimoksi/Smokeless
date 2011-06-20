@@ -1,0 +1,6 @@
+Version 1.0.1 (122)
+-------------------
+
+* better shaking gesture
+* spanish localization
+* ask to rate the app
