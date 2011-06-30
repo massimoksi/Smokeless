@@ -56,7 +56,7 @@
         rightsLabel.shadowOffset = (CGSize){ 0.0, 1.0 };
         rightsLabel.numberOfLines = 3;
         
-        rightsLabel.text = MPString(@"2007 Wade Meredith - All right reserved - \"What happens to Your Body If You Stop Smoking Right Now?\" on Healthbolt.net");
+        rightsLabel.text = MPString(@"2007 Wade Meredith - All rights reserved - \"What happens to Your Body If You Stop Smoking Right Now?\" on Healthbolt.net");
         
         self.healthTableView.tableFooterView = rightsLabel;
         [rightsLabel release];
@@ -238,7 +238,7 @@
             if (step.state != AchievementStateCompleted) {
                 UILocalNotification *notification = [[UILocalNotification alloc] init];
             
-                notification.alertBody = MPString(@"Congratularions! You reached a new achievement.");
+                notification.alertBody = MPString(@"Congratulations! You reached a new achievement.");
                 notification.alertAction = MPString(@"Show me");
                 notification.soundName = UILocalNotificationDefaultSoundName;
                 notification.fireDate = [step completionDateFromDate:lastCigaretteDate];

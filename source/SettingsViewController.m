@@ -160,6 +160,7 @@
                 case 0:
                     cell.position = MPTableViewCellPositionTop;
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
                     // update switch
