@@ -88,10 +88,10 @@
     self.tabBarController.delegate = self;
 	
     // display badge counter on tab bar
-    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (notification != nil) {
-        self.healthController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [[UIApplication sharedApplication] applicationIconBadgeNumber]];
-    }
+//    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+//    if (notification != nil) {
+//        self.healthController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [[UIApplication sharedApplication] applicationIconBadgeNumber]];
+//    }
     
     // add the tab bar controller's view to the window and display
     [self.window addSubview:self.tabBarController.view];
@@ -127,8 +127,8 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     // display badge counter on tab bar
-    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
-    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;    
+//    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
+//    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -142,12 +142,12 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
     // reset badge from tab bar item
-    if (viewController == self.healthController) {
-        viewController.tabBarItem.badgeValue = nil;
-        
-        // reset application badge counter
-        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    }
+//    if (viewController == self.healthController) {
+//        viewController.tabBarItem.badgeValue = nil;
+//        
+//        // reset application badge counter
+//        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//    }
 }
 
 @end

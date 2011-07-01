@@ -232,8 +232,6 @@
     if ([[[PreferencesManager sharedManager].prefs objectForKey:NOTIFICATIONS_ENABLED_KEY] boolValue] == YES) {
         NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
 
-        NSInteger badgeCounter = 0;
-    
         for (Achievement *step in self.achievements) {
             if (step.state != AchievementStateCompleted) {
                 UILocalNotification *notification = [[UILocalNotification alloc] init];
@@ -243,7 +241,6 @@
                 notification.soundName = UILocalNotificationDefaultSoundName;
                 notification.fireDate = [step completionDateFromDate:lastCigaretteDate];
                 notification.timeZone = [NSTimeZone defaultTimeZone];
-                notification.applicationIconBadgeNumber = ++badgeCounter;
             
                 [[UIApplication sharedApplication] scheduleLocalNotification:notification];            
                 [notification release];
