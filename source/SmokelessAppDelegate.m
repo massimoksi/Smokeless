@@ -85,7 +85,7 @@
                                              self.settingsNavController,
                                              nil];
     // set delagate for tab bar
-    self.tabBarController.delegate = self;
+//    self.tabBarController.delegate = self;
 	
     // display badge counter on tab bar
 //    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
@@ -129,6 +129,8 @@
     // display badge counter on tab bar
 //    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
 //    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;
+    
+    self.tabBarController.selectedIndex = 2;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -139,15 +141,15 @@
 #pragma mark -
 #pragma mark UITabBarControllerDelegate methods
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-    // reset badge from tab bar item
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+//{
+//    // reset badge from tab bar item
 //    if (viewController == self.healthController) {
 //        viewController.tabBarItem.badgeValue = nil;
 //        
 //        // reset application badge counter
 //        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 //    }
-}
+//}
 
 @end

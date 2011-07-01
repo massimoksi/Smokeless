@@ -14,7 +14,7 @@
 #import "SettingsViewController.h"
 
 
-@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate/*, UITabBarControllerDelegate*/> {
     UIWindow *_window;
     UITabBarController *_tabBarController;
     
