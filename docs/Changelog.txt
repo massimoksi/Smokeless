@@ -1,3 +1,9 @@
+Version 1.0.2 (125)
+-------------------
+
+* removed the badge from the notifications (bug fix)
+* german localization
+
 Version 1.0.1 (122)
 -------------------
 
