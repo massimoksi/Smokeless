@@ -124,14 +124,14 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
+//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+//{
     // display badge counter on tab bar
 //    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
 //    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;
-    
-    self.tabBarController.selectedIndex = 2;
-}
+//    
+//    self.tabBarController.selectedIndex = 2;
+//}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
