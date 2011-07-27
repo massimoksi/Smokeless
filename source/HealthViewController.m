@@ -304,7 +304,7 @@
         cell = [[[HealthTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                            reuseIdentifier:CellIdentifier] autorelease];
         
-        cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:15.0];
