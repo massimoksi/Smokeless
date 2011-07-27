@@ -324,7 +324,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				568ECD881339626D008F0B18 /* MPToolkit */,
 				56A3959712B4C0C300B28AD1 /* Models */,
 				56A3959512B4C0BB00B28AD1 /* Views */,
 				56A3959812B4C0CA00B28AD1 /* Controllers */,
@@ -576,6 +575,7 @@
 		56A3959512B4C0BB00B28AD1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				568ECD881339626D008F0B18 /* MPToolkit */,
 				56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */,
 				56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */,
 				5634E1711300A46D0053FF2A /* CalendarView.h */,
