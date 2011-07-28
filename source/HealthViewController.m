@@ -74,12 +74,26 @@
         // check achievements state
         [self checkAchievementsState];
         
-        // register local notifications
-//        [self registerLocalNotifications];
-        
+        // update local notifications
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLocalNotifications"] == NO) {
 #ifdef DEBUG
-        NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
+            NSLog(@"%@ - Update local notifications", [self class]);
 #endif
+            
+            // cancel all local notifications
+            [[UIApplication sharedApplication] cancelAllLocalNotifications];
+            
+            // register local notifications
+            [self registerLocalNotifications];
+
+            [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                    forKey:@"HasUpdatedLocalNotifications"];
+        }
+        else {
+#ifdef DEBUG
+            NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
+#endif
+        }
     }
     
     return self;
@@ -250,7 +264,7 @@
                 
                 notification.fireDate = [gregorianCalendar dateFromComponents:completionDateComponents];
                 notification.timeZone = [NSTimeZone defaultTimeZone];
-                
+                // release calendar
                 [gregorianCalendar release];
             
                 // schedule the local notifications
@@ -261,7 +275,7 @@
     }
     
 #ifdef DEBUG
-    NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
+    NSLog(@"%@ - New local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
 #endif
 }
 

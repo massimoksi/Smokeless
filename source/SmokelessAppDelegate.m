@@ -135,6 +135,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    // notify appirater
     [Appirater appEnteredForeground:YES];
 }
 
