@@ -254,17 +254,13 @@
                 notification.soundName = UILocalNotificationDefaultSoundName;
 
                 // set fire date to 8:00AM of the next day
-                NSDate *completionDate = [step completionDateFromDate:lastCigaretteDate];
-                NSDate *dayAfterCompletionDate = [completionDate dateByAddingTimeInterval:86400]; // 60s * 60m * 24h = 86400s
-                
                 NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                NSDate *completionDate = [step completionDateFromDate:lastCigaretteDate];
                 NSDateComponents *completionDateComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
-                                                                                  fromDate:dayAfterCompletionDate];
+                                                                                  fromDate:completionDate];
                 [completionDateComponents setHour:8];
-                
                 notification.fireDate = [gregorianCalendar dateFromComponents:completionDateComponents];
                 notification.timeZone = [NSTimeZone defaultTimeZone];
-                // release calendar
                 [gregorianCalendar release];
             
                 // schedule the local notifications
