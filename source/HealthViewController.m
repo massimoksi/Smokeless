@@ -75,25 +75,25 @@
         [self checkAchievementsState];
         
         // update local notifications
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLocalNotifications"] == NO) {
-#ifdef DEBUG
-            NSLog(@"%@ - Update local notifications", [self class]);
-#endif
-            
-            // cancel all local notifications
-            [[UIApplication sharedApplication] cancelAllLocalNotifications];
-            
-            // register local notifications
-            [self registerLocalNotifications];
-
-            [[NSUserDefaults standardUserDefaults] setBool:YES
-                                                    forKey:@"HasUpdatedLocalNotifications"];
-        }
-        else {
+//        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLocalNotifications"] == NO) {
+//#ifdef DEBUG
+//            NSLog(@"%@ - Update local notifications", [self class]);
+//#endif
+//            
+//            // cancel all local notifications
+//            [[UIApplication sharedApplication] cancelAllLocalNotifications];
+//            
+//            // register local notifications
+//            [self registerLocalNotifications];
+//
+//            [[NSUserDefaults standardUserDefaults] setBool:YES
+//                                                    forKey:@"HasUpdatedLocalNotifications"];
+//        }
+//        else {
 #ifdef DEBUG
             NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
 #endif
-        }
+//        }
     }
     
     return self;

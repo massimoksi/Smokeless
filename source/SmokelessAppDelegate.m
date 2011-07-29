@@ -49,6 +49,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+        // cancel old local notifications
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+
 	// create tab bar controller
 	self.tabBarController = [[[UITabBarController alloc] init] autorelease];
 	
@@ -84,18 +89,18 @@
                                              self.healthController,
                                              self.settingsNavController,
                                              nil];
-    // set delagate for tab bar
-//    self.tabBarController.delegate = self;
-	
-    // display badge counter on tab bar
-//    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-//    if (notification != nil) {
-//        self.healthController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [[UIApplication sharedApplication] applicationIconBadgeNumber]];
-//    }
-    
+
     // add the tab bar controller's view to the window and display
     [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
+        
+    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
+        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
+        [self updateLastCigaretteDate];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                forKey:@"HasUpdatedLastCigaretteDate"];
+    }
     
     // create splash view
     self.splashView = [[[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)] autorelease];
@@ -137,6 +142,36 @@
 {
     // notify appirater
     [Appirater appEnteredForeground:YES];
+}
+
+#pragma mark Actions
+
+- (void)updateLastCigaretteDate
+{
+#ifdef DEBUG
+    NSLog(@"%@ - Update last cigarette date", [self class]);
+#endif
+
+    // get date from the picker
+    NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+    
+    // set the hour for the date of the last cigarette
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
+                                                                     fromDate:lastCigaretteDate];
+    [lastCigaretteComponents setHour:4];
+    
+#ifdef DEBUG
+    NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
+#endif
+    
+	// set preference
+	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
+												 forKey:LAST_CIGARETTE_KEY];
+    [gregorianCalendar release];
+    
+	// save preferences to file
+	[[PreferencesManager sharedManager] savePrefs];
 }
 
 #pragma mark -
