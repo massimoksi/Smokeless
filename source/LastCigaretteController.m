@@ -163,9 +163,24 @@
 
 - (void)saveTapped:(id)sender
 {
+    // get date from the picker
+    NSDate *lastCigaretteDate = self.datePicker.date;
+    
+    // set the hour for the date of the last cigarette
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
+                                                                     fromDate:lastCigaretteDate];
+    [lastCigaretteComponents setHour:4];
+    
+#ifdef DEBUG
+    NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
+#endif
+
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:self.datePicker.date
+	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
 												 forKey:LAST_CIGARETTE_KEY];
+    [gregorianCalendar release];
+         
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
     

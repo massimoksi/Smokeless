@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -266,11 +266,6 @@
 		568ECD901339D1E5008F0B18 /* MPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDefines.h; sourceTree = "<group>"; };
 		568ECD91133ABC5C008F0B18 /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
 		568ECD92133ABC5C008F0B18 /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
-		5693417613B2A7FE00785DE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/Localizable.strings; sourceTree = "<absolute>"; };
-		5693417713B2A7FE00785DE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "/Users/massimo/Projects/Smokeless/resources/de.lproj/TitleChalkboard@2x.png"; sourceTree = "<absolute>"; };
-		5693417813B2A7FE00785DE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/TitleCalendar.png; sourceTree = "<absolute>"; };
-		5693417913B2A7FE00785DE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "/Users/massimo/Projects/Smokeless/resources/de.lproj/TitleCalendar@2x.png"; sourceTree = "<absolute>"; };
-		5693417A13B2A7FE00785DE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/TitleChalkboard.png; sourceTree = "<absolute>"; };
 		569744601322A2B600A22D38 /* PriceCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCellController.h; sourceTree = "<group>"; };
 		569744611322A2B600A22D38 /* PriceCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCellController.m; sourceTree = "<group>"; };
 		56A198F6134308A900562E6C /* HealthTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableView.h; sourceTree = "<group>"; };
@@ -329,7 +324,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				568ECD881339626D008F0B18 /* MPToolkit */,
 				56A3959712B4C0C300B28AD1 /* Models */,
 				56A3959512B4C0BB00B28AD1 /* Views */,
 				56A3959812B4C0CA00B28AD1 /* Controllers */,
@@ -581,6 +575,7 @@
 		56A3959512B4C0BB00B28AD1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				568ECD881339626D008F0B18 /* MPToolkit */,
 				56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */,
 				56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */,
 				5634E1711300A46D0053FF2A /* CalendarView.h */,
@@ -664,8 +659,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -827,7 +825,6 @@
 				56237A721370A5FB00DC411C /* en */,
 				56237A741370A60700DC411C /* it */,
 				56FD98D913914B100087E7BC /* es */,
-				5693417613B2A7FE00785DE1 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -838,7 +835,6 @@
 				56237B1F1370B28A00DC411C /* en */,
 				56237B211370B2A100DC411C /* it */,
 				56C7768D13915FB600A4D936 /* es */,
-				5693417A13B2A7FE00785DE1 /* de */,
 			);
 			name = TitleChalkboard.png;
 			sourceTree = "<group>";
@@ -849,7 +845,6 @@
 				56237B231370B2AD00DC411C /* en */,
 				56237B251370B2B400DC411C /* it */,
 				56C7768E13915FBD00A4D936 /* es */,
-				5693417713B2A7FE00785DE1 /* de */,
 			);
 			name = "TitleChalkboard@2x.png";
 			sourceTree = "<group>";
@@ -860,7 +855,6 @@
 				56237B271370B2BE00DC411C /* en */,
 				56237B291370B2C400DC411C /* it */,
 				56C7768B13915FA500A4D936 /* es */,
-				5693417813B2A7FE00785DE1 /* de */,
 			);
 			name = TitleCalendar.png;
 			sourceTree = "<group>";
@@ -871,7 +865,6 @@
 				56237B2B1370B2C900DC411C /* en */,
 				56237B2D1370B2CE00DC411C /* it */,
 				56C7768C13915FAF00A4D936 /* es */,
-				5693417913B2A7FE00785DE1 /* de */,
 			);
 			name = "TitleCalendar@2x.png";
 			sourceTree = "<group>";
@@ -883,6 +876,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -891,6 +888,7 @@
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Smokeless;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -898,58 +896,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
 				PRODUCT_NAME = Smokeless;
+				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		56A213231371F9D900110C1B /* Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = resources/Entitlements.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Massimo Peri";
-				CURRENT_PROJECT_VERSION = "";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"-DDEBUG",
-				);
-				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6FFE093-BAFB-4E7D-9BE5-BB1CF5CDA101";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "";
-			};
-			name = Test;
-		};
-		56A213241371F9D900110C1B /* Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
-				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
-				PRODUCT_NAME = Smokeless;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Test;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Massimo Peri (64CRKY75E7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -958,8 +923,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
-				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E505B5AD-4041-4B0A-9ABE-504265FCBFAA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VERSIONING_SYSTEM = "";
 			};
@@ -978,7 +942,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13CEAA34-33FC-49D2-B6EF-0ECF225DE1DB";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -994,7 +957,6 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
-				56A213241371F9D900110C1B /* Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1004,7 +966,6 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
-				56A213231371F9D900110C1B /* Test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

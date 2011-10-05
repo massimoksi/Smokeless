@@ -67,8 +67,8 @@
     if (_position != cellPosition) {
         _position = cellPosition;
         
-        self.backgroundView.position = cellPosition;
-        self.selectedBackgroundView.position = cellPosition;
+        self.backgroundView.position = (MPCellPosition)cellPosition;
+        self.selectedBackgroundView.position = (MPCellPosition)cellPosition;
     }
 }
 

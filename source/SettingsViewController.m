@@ -169,7 +169,7 @@
                     
                 case 1:
                     cell.position = MPTableViewCellPositionBottom;
-                    cell.selectionStyle = UITableViewCellEditingStyleNone;
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
                     // update switch
