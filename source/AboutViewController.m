@@ -11,7 +11,7 @@
 
 #define LOGO_PADDING	27.0
 #define TABLE_PADDING	8.0
-#define MAIL_ADDRESS	@"massimoperi@gmail.com"
+#define MAIL_ADDRESS	@"massimo.peri@me.com"
 
 
 @implementation AboutViewController
@@ -93,6 +93,7 @@
 		mailComposer.mailComposeDelegate = self;
 		mailComposer.navigationBar.barStyle = UIBarStyleDefault;
 		[mailComposer setToRecipients:[NSArray arrayWithObject:MAIL_ADDRESS]];
+        [mailComposer setSubject:MPString(@"Smokeless support")];
 		
 		// show mail composer
 		[self presentModalViewController:mailComposer

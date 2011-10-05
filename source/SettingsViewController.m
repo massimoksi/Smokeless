@@ -160,6 +160,7 @@
                 case 0:
                     cell.position = MPTableViewCellPositionTop;
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                    cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
                     // update switch
@@ -168,7 +169,7 @@
                     
                 case 1:
                     cell.position = MPTableViewCellPositionBottom;
-                    cell.selectionStyle = UITableViewCellEditingStyleNone;
+                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
                     // update switch

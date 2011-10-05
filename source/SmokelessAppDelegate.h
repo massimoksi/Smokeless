@@ -14,7 +14,7 @@
 #import "SettingsViewController.h"
 
 
-@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate/*, UITabBarControllerDelegate*/> {
     UIWindow *_window;
     UITabBarController *_tabBarController;
     
@@ -33,5 +33,7 @@
 @property (nonatomic, retain) HealthViewController *healthController;
 @property (nonatomic, retain) UINavigationController *settingsNavController;
 @property (nonatomic, retain) UIImageView *splashView;
+
+- (void)updateLastCigaretteDate;
 
 @end
