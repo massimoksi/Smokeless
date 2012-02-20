@@ -63,7 +63,7 @@
     [progressHUD show:YES];
 
     // load twitter page
-    [(UIWebView *)self.view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/#!/massimoperi"]]];
+    [(UIWebView *)self.view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/#!/SmokelessCode"]]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

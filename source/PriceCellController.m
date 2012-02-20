@@ -311,7 +311,7 @@
 	button_p.enabled = YES;
 }
 
-- (IBAction)pointTapped:(id)sender
+- (void)pointTapped:(id)sender
 {
     if (reset) {
         // reset detail string
