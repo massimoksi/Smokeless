@@ -887,6 +887,7 @@
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
@@ -906,6 +907,7 @@
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
