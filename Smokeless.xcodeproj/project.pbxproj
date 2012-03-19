@@ -367,6 +367,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				56FFF6521517E3F4005951C3 /* Icons */,
 				56237A751370A71100DC411C /* Nibs */,
 				56237A781370A73700DC411C /* Images */,
 				56237B171370A79F00DC411C /* Misc */,
@@ -458,12 +459,6 @@
 				56237AAA1370A78400DC411C /* Chalkboard@2x.png */,
 				56237AAB1370A78400DC411C /* Default.png */,
 				56237AAC1370A78400DC411C /* Default@2x.png */,
-				56237AAD1370A78400DC411C /* Icon-72.png */,
-				56237AAE1370A78400DC411C /* Icon-Small-50.png */,
-				56237AAF1370A78400DC411C /* Icon-Small.png */,
-				56237AB01370A78400DC411C /* Icon-Small@2x.png */,
-				56237AB11370A78400DC411C /* Icon.png */,
-				56237AB21370A78400DC411C /* Icon@2x.png */,
 				56237AB31370A78400DC411C /* iTunesArtwork.png */,
 				56237AB41370A78400DC411C /* Note.png */,
 				56237AB51370A78400DC411C /* Note@2x.png */,
@@ -634,6 +629,19 @@
 			name = Health;
 			sourceTree = "<group>";
 		};
+		56FFF6521517E3F4005951C3 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				56237AAD1370A78400DC411C /* Icon-72.png */,
+				56237AAE1370A78400DC411C /* Icon-Small-50.png */,
+				56237AAF1370A78400DC411C /* Icon-Small.png */,
+				56237AB01370A78400DC411C /* Icon-Small@2x.png */,
+				56237AB11370A78400DC411C /* Icon.png */,
+				56237AB21370A78400DC411C /* Icon@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -641,6 +649,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Smokeless" */;
 			buildPhases = (
+				56FFF6531517E8C6005951C3 /* ShellScript */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -776,6 +785,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56FFF6531517E8C6005951C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ICONS_DEB_DIR=${SRCROOT}/icons/debug\nICONS_REL_DIR=${SRCROOT}/icons/release\nRESOURCES_DIR=${SRCROOT}/resources\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper icons\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork.png";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
