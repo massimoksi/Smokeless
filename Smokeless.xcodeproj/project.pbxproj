@@ -129,6 +129,10 @@
 		56E736BE134CDD3400228CE8 /* HealthTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E736BD134CDD3400228CE8 /* HealthTableViewCell.m */; };
 		56E7E0201331A392004343A7 /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7E01F1331A392004343A7 /* ShadowCellController.m */; };
 		56EC4FD012FDBF0B00D98022 /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */; };
+		56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C521517F242007D838C /* ButtonTweetNormal.png */; };
+		56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */; };
+		56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C541517F242007D838C /* ButtonTweetPressed.png */; };
+		56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -299,6 +303,10 @@
 		56E7E01F1331A392004343A7 /* ShadowCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCellController.m; sourceTree = "<group>"; };
 		56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChalkboardView.h; sourceTree = "<group>"; };
 		56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChalkboardView.m; sourceTree = "<group>"; };
+		56F52C521517F242007D838C /* ButtonTweetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetNormal.png; sourceTree = "<group>"; };
+		56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
+		56F52C541517F242007D838C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
+		56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetPressed@2x.png"; sourceTree = "<group>"; };
 		56FD98D913914B100087E7BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -405,6 +413,10 @@
 		56237A781370A73700DC411C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				56F52C521517F242007D838C /* ButtonTweetNormal.png */,
+				56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */,
+				56F52C541517F242007D838C /* ButtonTweetPressed.png */,
+				56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */,
 				56A213251372008000110C1B /* Background.png */,
 				56A213261372008000110C1B /* Background@2x.png */,
 				56A213271372008000110C1B /* Savings.png */,
@@ -781,6 +793,10 @@
 				56A2132B1372008000110C1B /* Savings.png in Resources */,
 				56A2132C1372008000110C1B /* Savings@2x.png in Resources */,
 				5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */,
+				56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */,
+				56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */,
+				56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */,
+				56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
