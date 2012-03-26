@@ -814,7 +814,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ICONS_DEB_DIR=${SRCROOT}/icons/debug\nICONS_REL_DIR=${SRCROOT}/icons/release\nRESOURCES_DIR=${SRCROOT}/resources\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper icons\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork.png";
+			shellScript = "ICONS_DEB_DIR=${SRCROOT}/icons/debug\nICONS_REL_DIR=${SRCROOT}/icons/release\nRESOURCES_DIR=${SRCROOT}/resources\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper resources\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork.png\ncp ${ICONS_SRC_DIR}/Default@2x.png ${RESOURCES_DIR}/Default@2x.png\ncp ${ICONS_SRC_DIR}/Default.png ${RESOURCES_DIR}/Default.png";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -967,7 +967,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -986,7 +986,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13CEAA34-33FC-49D2-B6EF-0ECF225DE1DB";
