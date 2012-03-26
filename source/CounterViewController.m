@@ -40,6 +40,11 @@
 	self.calendar = [[[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]] autorelease];
 
 	// set actions
+    if ([TWTweetComposeViewController canSendTweet] == YES) {
+        [self.chalkboard.tweetButton addTarget:self
+                                        action:@selector(tweetTapped:)
+                              forControlEvents:UIControlEventTouchUpInside];
+    }
 	[self.chalkboard.nextButton addTarget:self
 								   action:@selector(nextTapped:)
 						 forControlEvents:UIControlEventTouchUpInside];
@@ -181,6 +186,26 @@
 		// update calendar
 		self.calendar.date = [[PreferencesManager sharedManager] lastCigaretteDate];
 	}
+}
+
+- (void)tweetTapped:(id)sender
+{
+    if ([TWTweetComposeViewController canSendTweet] == YES) {
+        // create the tweet sheet controller
+        TWTweetComposeViewController *tweetController = [[[TWTweetComposeViewController alloc] init] autorelease];
+        // assign the text for the tweet
+        NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+        NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
+        [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval]];
+        [tweetController addURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"]];
+        
+        // present the tweet sheet
+        [self presentModalViewController:tweetController
+                                animated:YES];
+    }
+    else {
+        // TODO: display an alert view
+    }
 }
 
 - (void)nextTapped:(id)sender

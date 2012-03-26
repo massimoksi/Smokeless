@@ -29,6 +29,9 @@
 
 @implementation ChalkboardView
 
+@synthesize tweetButton = _tweetButton;
+@synthesize nextButton = _nextButton;
+
 - (id)init
 {
     self = [super initWithImage:[UIImage imageNamed:@"Chalkboard"]];
@@ -69,6 +72,17 @@
 		[self addLabel:weeksLabel];
 		[self addLabel:daysLabel];
 
+        // create tweet button
+        self.tweetButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+        self.tweetButton.frame = CGRectMake(BOARD_ORIGIN_X - BUTTON_OFFSET_X,
+                                            BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
+                                            BUTTON_WIDTH,
+                                            BUTTON_HEIGHT);
+        [self.tweetButton setImage:[UIImage imageNamed:@"ButtonTweetNormal"]
+                          forState:UIControlStateNormal];
+        [self.tweetButton setImage:[UIImage imageNamed:@"ButtonTweetPressed"]
+                          forState:UIControlStateHighlighted];
+        
 		// create next button
 		self.nextButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
 		self.nextButton.frame = CGRectMake(BOARD_ORIGIN_X + BOARD_WIDTH - BUTTON_WIDTH + BUTTON_OFFSET_X,
@@ -81,6 +95,9 @@
                          forState:UIControlStateHighlighted];
 
 		// add buttons
+        if ([TWTweetComposeViewController canSendTweet] == YES) {
+            [self addSubview:self.tweetButton];
+        }
 		[self addSubview:self.nextButton]; 
 		
 		// initialize ivars
@@ -162,8 +179,6 @@
 	
 	daysLabel.text = (_days != 1) ? [NSString stringWithFormat:MPString(@"%d days"), _days] : [NSString stringWithFormat:MPString(@"%d day"), _days];
 }
-
-@synthesize nextButton;
 
 #pragma mark Actions
 

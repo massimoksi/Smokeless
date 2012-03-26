@@ -97,7 +97,6 @@
 		562D344A1258B3A700C2CE12 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D34491258B3A700C2CE12 /* CounterViewController.m */; };
 		5634E1731300A46D0053FF2A /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634E1721300A46D0053FF2A /* CalendarView.m */; };
 		563ADF5812776754007B416F /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563ADF5712776754007B416F /* PreferencesManager.m */; };
-		5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5649C9BA137462690036A8E2 /* Entitlements.plist */; };
 		564A915B12626432008CB029 /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A915A12626432008CB029 /* SavingsViewController.m */; };
 		5655C4F61326C00A004BCF10 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5655C4F51326C00A004BCF10 /* NoteView.m */; };
 		56565A501390E6600087E5C4 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565A4F1390E6600087E5C4 /* Appirater.m */; };
@@ -129,6 +128,11 @@
 		56E736BE134CDD3400228CE8 /* HealthTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E736BD134CDD3400228CE8 /* HealthTableViewCell.m */; };
 		56E7E0201331A392004343A7 /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7E01F1331A392004343A7 /* ShadowCellController.m */; };
 		56EC4FD012FDBF0B00D98022 /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */; };
+		56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C521517F242007D838C /* ButtonTweetNormal.png */; };
+		56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */; };
+		56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C541517F242007D838C /* ButtonTweetPressed.png */; };
+		56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */; };
+		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -238,7 +242,6 @@
 		5634E1721300A46D0053FF2A /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		563ADF5612776754007B416F /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
 		563ADF5712776754007B416F /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
-		5649C9BA137462690036A8E2 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		564A915912626432008CB029 /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		564A915A12626432008CB029 /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		5655C4F41326C00A004BCF10 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
@@ -299,6 +302,11 @@
 		56E7E01F1331A392004343A7 /* ShadowCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCellController.m; sourceTree = "<group>"; };
 		56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChalkboardView.h; sourceTree = "<group>"; };
 		56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChalkboardView.m; sourceTree = "<group>"; };
+		56F52C521517F242007D838C /* ButtonTweetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetNormal.png; sourceTree = "<group>"; };
+		56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
+		56F52C541517F242007D838C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
+		56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetPressed@2x.png"; sourceTree = "<group>"; };
+		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		56FD98D913914B100087E7BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */,
 				56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */,
 				56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */,
 				5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */,
@@ -373,7 +382,6 @@
 				56237B171370A79F00DC411C /* Misc */,
 				56237A711370A5FB00DC411C /* Localizable.strings */,
 				56237B1C1370A80500DC411C /* Smokeless-Info.plist */,
-				5649C9BA137462690036A8E2 /* Entitlements.plist */,
 			);
 			name = Resources;
 			path = resources;
@@ -390,6 +398,7 @@
 				56E4E6DB130F295300BA743C /* QuartzCore.framework */,
 				560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */,
 				5683F272132ED18100C733AC /* AVFoundation.framework */,
+				56F52C5A15185FAC007D838C /* Twitter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -405,6 +414,10 @@
 		56237A781370A73700DC411C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				56F52C521517F242007D838C /* ButtonTweetNormal.png */,
+				56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */,
+				56F52C541517F242007D838C /* ButtonTweetPressed.png */,
+				56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */,
 				56A213251372008000110C1B /* Background.png */,
 				56A213261372008000110C1B /* Background@2x.png */,
 				56A213271372008000110C1B /* Savings.png */,
@@ -780,7 +793,10 @@
 				56A2132A1372008000110C1B /* Background@2x.png in Resources */,
 				56A2132B1372008000110C1B /* Savings.png in Resources */,
 				56A2132C1372008000110C1B /* Savings@2x.png in Resources */,
-				5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */,
+				56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */,
+				56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */,
+				56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */,
+				56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,7 +814,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ICONS_DEB_DIR=${SRCROOT}/icons/debug\nICONS_REL_DIR=${SRCROOT}/icons/release\nRESOURCES_DIR=${SRCROOT}/resources\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper icons\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork.png";
+			shellScript = "ICONS_DEB_DIR=${SRCROOT}/icons/debug\nICONS_REL_DIR=${SRCROOT}/icons/release\nRESOURCES_DIR=${SRCROOT}/resources\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper resources\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork.png\ncp ${ICONS_SRC_DIR}/Default@2x.png ${RESOURCES_DIR}/Default@2x.png\ncp ${ICONS_SRC_DIR}/Default.png ${RESOURCES_DIR}/Default.png";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -951,7 +967,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -970,7 +986,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13CEAA34-33FC-49D2-B6EF-0ECF225DE1DB";
