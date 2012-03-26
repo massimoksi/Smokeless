@@ -97,7 +97,6 @@
 		562D344A1258B3A700C2CE12 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D34491258B3A700C2CE12 /* CounterViewController.m */; };
 		5634E1731300A46D0053FF2A /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634E1721300A46D0053FF2A /* CalendarView.m */; };
 		563ADF5812776754007B416F /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563ADF5712776754007B416F /* PreferencesManager.m */; };
-		5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5649C9BA137462690036A8E2 /* Entitlements.plist */; };
 		564A915B12626432008CB029 /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A915A12626432008CB029 /* SavingsViewController.m */; };
 		5655C4F61326C00A004BCF10 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5655C4F51326C00A004BCF10 /* NoteView.m */; };
 		56565A501390E6600087E5C4 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565A4F1390E6600087E5C4 /* Appirater.m */; };
@@ -133,6 +132,7 @@
 		56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */; };
 		56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C541517F242007D838C /* ButtonTweetPressed.png */; };
 		56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */; };
+		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,7 +242,6 @@
 		5634E1721300A46D0053FF2A /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		563ADF5612776754007B416F /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
 		563ADF5712776754007B416F /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
-		5649C9BA137462690036A8E2 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		564A915912626432008CB029 /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		564A915A12626432008CB029 /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		5655C4F41326C00A004BCF10 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
@@ -307,6 +306,7 @@
 		56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
 		56F52C541517F242007D838C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
 		56F52C551517F242007D838C /* ButtonTweetPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetPressed@2x.png"; sourceTree = "<group>"; };
+		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		56FD98D913914B100087E7BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,6 +315,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */,
 				56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */,
 				56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */,
 				5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */,
@@ -381,7 +382,6 @@
 				56237B171370A79F00DC411C /* Misc */,
 				56237A711370A5FB00DC411C /* Localizable.strings */,
 				56237B1C1370A80500DC411C /* Smokeless-Info.plist */,
-				5649C9BA137462690036A8E2 /* Entitlements.plist */,
 			);
 			name = Resources;
 			path = resources;
@@ -398,6 +398,7 @@
 				56E4E6DB130F295300BA743C /* QuartzCore.framework */,
 				560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */,
 				5683F272132ED18100C733AC /* AVFoundation.framework */,
+				56F52C5A15185FAC007D838C /* Twitter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -792,7 +793,6 @@
 				56A2132A1372008000110C1B /* Background@2x.png in Resources */,
 				56A2132B1372008000110C1B /* Savings.png in Resources */,
 				56A2132C1372008000110C1B /* Savings@2x.png in Resources */,
-				5649C9BB137462690036A8E2 /* Entitlements.plist in Resources */,
 				56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */,
 				56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */,
 				56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */,

@@ -95,7 +95,9 @@
                          forState:UIControlStateHighlighted];
 
 		// add buttons
-        [self addSubview:self.tweetButton];
+        if ([TWTweetComposeViewController canSendTweet] == YES) {
+            [self addSubview:self.tweetButton];
+        }
 		[self addSubview:self.nextButton]; 
 		
 		// initialize ivars
