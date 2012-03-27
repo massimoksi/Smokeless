@@ -37,12 +37,12 @@
 
 #pragma mark Accessors
 
-@synthesize state;
-@synthesize years;
-@synthesize months;
-@synthesize weeks;
-@synthesize days;
-@synthesize text;
+@synthesize state = _state;
+@synthesize years = _years;
+@synthesize months = _months;
+@synthesize weeks = _weeks;
+@synthesize days = _days;
+@synthesize text = _text;
 
 - (NSString *)timeInterval
 {
