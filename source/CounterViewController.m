@@ -196,7 +196,7 @@
         // assign the text for the tweet
         NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
         NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
-        [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval]];
+        [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to #Smokeless."), nonSmokingInterval]];
         [tweetController addURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"]];
         
         // present the tweet sheet
