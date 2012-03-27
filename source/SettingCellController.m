@@ -55,7 +55,7 @@
                                          BUTTON_HEIGHT);
     self.cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	self.cancelButton.titleLabel.textAlignment = UITextAlignmentCenter;
-    self.cancelButton.titleLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+    self.cancelButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
     [self.cancelButton setBackgroundImage:[UIImage imageNamed:@"ButtonCancelNormal"]
                                  forState:UIControlStateNormal];
 	[self.cancelButton setTitleColor:[UIColor whiteColor]
@@ -74,7 +74,7 @@
                                        BUTTON_HEIGHT);
     self.saveButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	self.saveButton.titleLabel.textAlignment = UITextAlignmentCenter;
-    self.saveButton.titleLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+    self.saveButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
     [self.saveButton setBackgroundImage:[UIImage imageNamed:@"ButtonSaveNormal"]
                                forState:UIControlStateNormal];
 	[self.saveButton setTitleColor:[UIColor whiteColor]

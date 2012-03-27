@@ -80,7 +80,7 @@
 		[self addSubview:dayLabel];
 		
 		// create edit button
-		self.editButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+		self.editButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		self.editButton.frame = CGRectMake(BOARD_ORIGIN_X - BUTTON_OFFSET_X,
                                            BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
                                            BUTTON_WIDTH,
@@ -91,7 +91,7 @@
                          forState:UIControlStateHighlighted];
 		
 		// create prev button
-		self.prevButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+		self.prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		self.prevButton.frame = CGRectMake(BOARD_ORIGIN_X + BOARD_WIDTH - BUTTON_WIDTH + BUTTON_OFFSET_X,
                                            BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
                                            BUTTON_WIDTH,

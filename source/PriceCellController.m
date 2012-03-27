@@ -149,7 +149,7 @@
 	button.tag = tag;
 	button.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	button.titleLabel.textAlignment = UITextAlignmentCenter;
-    button.titleLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+    button.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 	[button setTitleColor:[UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000]
 				 forState:UIControlStateNormal];
 	[button setTitleColor:[UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000]

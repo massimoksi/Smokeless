@@ -54,7 +54,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    CGRect cellRect;
+    CGRect cellRect = CGRectZero;
     CGFloat maxX, midX, minX, maxY, midY, minY;
     
     // get graphic context
@@ -196,8 +196,8 @@
             CGContextClip(context);
             CGContextDrawLinearGradient(context,
                                         gradient,
-                                        (CGPoint){ midX, minY },
-                                        (CGPoint){ midX, maxY },
+                                        CGPointMake(midX, minY),
+                                        CGPointMake(midX, maxY),
                                         0);
             CGContextRestoreGState(context);
             

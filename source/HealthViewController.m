@@ -53,7 +53,7 @@
         rightsLabel.textAlignment = UITextAlignmentCenter;
         rightsLabel.textColor = [UIColor darkGrayColor];
         rightsLabel.shadowColor = [UIColor whiteColor];
-        rightsLabel.shadowOffset = (CGSize){ 0.0, 1.0 };
+        rightsLabel.shadowOffset = CGSizeMake(0.0, 1.0);
         rightsLabel.numberOfLines = 3;
         
         rightsLabel.text = MPString(@"2007 Wade Meredith - All rights reserved - \"What happens to Your Body If You Stop Smoking Right Now?\" on Healthbolt.net");
@@ -369,7 +369,7 @@
             
             cell.textLabel.textColor = [UIColor colorWithWhite:0.275 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.550 alpha:1.000];
-            cell.textLabel.shadowOffset = (CGSize){ 0.0, 1.0 };
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
             
@@ -387,7 +387,7 @@
             
             cell.textLabel.textColor = [UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.200 alpha:1.000];
-            cell.textLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
     
             cell.detailTextLabel.textColor = [UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000];
 
@@ -400,7 +400,7 @@
             
             cell.textLabel.textColor = [UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.200 alpha:1.000];
-            cell.textLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
             
             cell.detailTextLabel.textColor = [UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000];
 
@@ -452,7 +452,7 @@
             
             cell.textLabel.textColor = [UIColor colorWithWhite:0.275 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.550 alpha:1.000];
-            cell.textLabel.shadowOffset = (CGSize){ 0.0, 1.0 };
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
             
