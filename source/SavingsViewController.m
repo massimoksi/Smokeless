@@ -31,7 +31,7 @@
 	savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
 	
     // create display
-    display = [[DisplayView alloc] initWithOrigin:(CGPoint){ 68.0, 331.0 }];
+    display = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)];
 	
 	// create the edit button
 	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -33,8 +33,8 @@ void MPDrawLinearGradientInRect(CGContextRef context, CGRect rect, UIColor *star
 														locations);
 	
 	// get gradient location
-	CGPoint startPoint = (CGPoint){ CGRectGetMidX(rect), CGRectGetMinY(rect) };
-	CGPoint endPoint = (CGPoint){ CGRectGetMidX(rect), CGRectGetMaxY(rect) };
+	CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
+	CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
 	
 	// draw gradient
 	CGContextSaveGState(context);

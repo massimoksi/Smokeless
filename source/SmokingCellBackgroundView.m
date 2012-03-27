@@ -77,15 +77,15 @@
 	
 	// draw separator
 	MPDrawLineWithStrokeWidth(cellContext,
-                              (CGPoint){ cellRect.origin.x, cellRect.origin.y },
-                              (CGPoint){ cellRect.size.width, cellRect.origin.y },
+                              CGPointMake(cellRect.origin.x, cellRect.origin.y),
+                              CGPointMake(cellRect.size.width, cellRect.origin.y),
                               [UIColor colorWithWhite:1.000 alpha:0.100],
                               1.0);
 	
 	// draw edge
 	MPDrawLineWithStrokeWidth(cellContext,
-                              (CGPoint){ cellRect.origin.x, cellRect.size.height},
-                              (CGPoint){ cellRect.size.width, cellRect.size.height},
+                              CGPointMake(cellRect.origin.x, cellRect.size.height),
+                              CGPointMake(cellRect.size.width, cellRect.size.height),
                               [UIColor colorWithWhite:0.100 alpha:0.900],
                               1.0);
 }
