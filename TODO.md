@@ -1,4 +1,3 @@
 * add german localization
 * switch to ARC
-* add Twitter integration
-* fix shadows in the table view when scrolling
+* improve the appearence of the health table view
