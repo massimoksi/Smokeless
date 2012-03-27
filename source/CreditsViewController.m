@@ -49,7 +49,7 @@
     dndTitle.textAlignment = UITextAlignmentCenter;
     dndTitle.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     dndTitle.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    dndTitle.shadowOffset = (CGSize){ 0.0, 1.0 };
+    dndTitle.shadowOffset = CGSizeMake(0.0, 1.0);
     dndTitle.font = [UIFont boldSystemFontOfSize:15.0];
     dndTitle.text = MPString(@"Design & Development");
 
@@ -61,7 +61,7 @@
     dndCredit.textAlignment = UITextAlignmentCenter;
     dndCredit.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     dndCredit.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    dndCredit.shadowOffset = (CGSize){ 0.0, 1.0 };
+    dndCredit.shadowOffset = CGSizeMake(0.0, 1.0);
     dndCredit.font = [UIFont systemFontOfSize:15.0];
     dndCredit.text = MPString(@"Massimo Peri");
     
@@ -73,7 +73,7 @@
     locTitle.textAlignment = UITextAlignmentCenter;
     locTitle.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     locTitle.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    locTitle.shadowOffset = (CGSize){ 0.0, 1.0 };
+    locTitle.shadowOffset = CGSizeMake(0.0, 1.0);
     locTitle.font = [UIFont boldSystemFontOfSize:15.0];
     locTitle.text = MPString(@"Localization");
 
@@ -85,7 +85,7 @@
     locCredit.textAlignment = UITextAlignmentCenter;
     locCredit.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     locCredit.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    locCredit.shadowOffset = (CGSize){ 0.0, 1.0 };
+    locCredit.shadowOffset = CGSizeMake(0.0, 1.0);
     locCredit.font = [UIFont systemFontOfSize:15.0];
     locCredit.text = MPString(@"Maria Giulia Morini");
     
@@ -97,7 +97,7 @@
     thanksTitle.textAlignment = UITextAlignmentCenter;
     thanksTitle.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     thanksTitle.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    thanksTitle.shadowOffset = (CGSize){ 0.0, 1.0 };
+    thanksTitle.shadowOffset = CGSizeMake(0.0, 1.0);
     thanksTitle.font = [UIFont boldSystemFontOfSize:15.0];
     thanksTitle.text = MPString(@"Special Thanks");
 
@@ -109,7 +109,7 @@
     thanksCredit1.textAlignment = UITextAlignmentCenter;
     thanksCredit1.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     thanksCredit1.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    thanksCredit1.shadowOffset = (CGSize){ 0.0, 1.0 };
+    thanksCredit1.shadowOffset = CGSizeMake(0.0, 1.0);
     thanksCredit1.font = [UIFont systemFontOfSize:15.0];
     thanksCredit1.text = MPString(@"Yummigum for iconSweets 2");
 
@@ -121,7 +121,7 @@
     thanksCredit2.textAlignment = UITextAlignmentCenter;
     thanksCredit2.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     thanksCredit2.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    thanksCredit2.shadowOffset = (CGSize){ 0.0, 1.0 };
+    thanksCredit2.shadowOffset = CGSizeMake(0.0, 1.0);
     thanksCredit2.font = [UIFont systemFontOfSize:15.0];
     thanksCredit2.text = MPString(@"Matej Bukovinski for MBProgressHUD");
 
@@ -133,7 +133,7 @@
     thanksCredit3.textAlignment = UITextAlignmentCenter;
     thanksCredit3.textColor = [UIColor colorWithWhite:0.000 alpha:0.750];
     thanksCredit3.shadowColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-    thanksCredit3.shadowOffset = (CGSize){ 0.0, 1.0 };
+    thanksCredit3.shadowOffset = CGSizeMake(0.0, 1.0);
     thanksCredit3.font = [UIFont systemFontOfSize:15.0];
     thanksCredit3.text = MPString(@"Matt Gallagher for ShadowedTableView");
 

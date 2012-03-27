@@ -29,7 +29,7 @@
 		self.textLabel.textAlignment = UITextAlignmentLeft;
 		self.textLabel.textColor = [UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000];
 		self.textLabel.shadowColor = [UIColor colorWithWhite:0.000 alpha:0.500];
-		self.textLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+		self.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create detail text label
 		self.detailTextLabel = [[[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2,
@@ -41,7 +41,7 @@
 		self.detailTextLabel.textAlignment = UITextAlignmentRight;
 		self.detailTextLabel.textColor = [UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000];
 		self.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.000 alpha:0.500];
-		self.detailTextLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+		self.detailTextLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// add labels
 		[self addSubview:self.textLabel];
