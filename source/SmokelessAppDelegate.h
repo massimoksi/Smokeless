@@ -30,7 +30,7 @@
 @property (nonatomic, retain) UITabBarController *tabBarController;
 @property (nonatomic, retain) CounterViewController *counterController;
 @property (nonatomic, retain) SavingsViewController *savingsController;
-@property (nonatomic, retain) AchievementsViewController *achievementsController;
+@property (nonatomic, retain) UINavigationController *achievementsNavController;
 @property (nonatomic, retain) UINavigationController *settingsNavController;
 @property (nonatomic, retain) UIImageView *splashView;
 

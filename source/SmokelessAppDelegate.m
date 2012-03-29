@@ -25,7 +25,7 @@
     
     self.counterController = nil;
     self.savingsController = nil;
-    self.achievementsController = nil;
+    self.achievementsNavController = nil;
     self.settingsNavController = nil;
     
     self.tabBarController = nil;
@@ -40,7 +40,7 @@
 @synthesize tabBarController;
 @synthesize counterController;
 @synthesize savingsController;
-@synthesize achievementsController = _achievementsController;
+@synthesize achievementsNavController = _achievementsNavController;
 @synthesize settingsNavController;
 @synthesize splashView;
 
@@ -67,10 +67,15 @@
 	self.savingsController.tabBarItem.title = MPString(@"Savings");
 	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
 	
-    // create achievements controller
-    self.achievementsController = [[[AchievementsViewController alloc] init] autorelease];
-    self.achievementsController.tabBarItem.title = MPString(@"Health");
-    self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
+    // create the achievements view controller
+    AchievementsViewController *achievementsController = [[AchievementsViewController alloc] initWithStyle:UITableViewStylePlain];
+    achievementsController.title = MPString(@"Achievements and benefits");
+    
+    // create achievements navigation controller
+    self.achievementsNavController = [[[UINavigationController alloc] initWithRootViewController:achievementsController] autorelease];
+    self.achievementsNavController.tabBarItem.title = MPString(@"Health");
+    self.achievementsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
+    [achievementsController release];
     
 	// create settings controller
 	SettingsViewController *settingsController = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -86,7 +91,7 @@
 	self.tabBarController.viewControllers = [NSArray arrayWithObjects:
                                              self.counterController,
                                              self.savingsController,
-                                             self.achievementsController,
+                                             self.achievementsNavController,
                                              self.settingsNavController,
                                              nil];
 
