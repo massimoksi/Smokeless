@@ -25,7 +25,7 @@
     
     self.counterController = nil;
     self.savingsController = nil;
-    self.healthController = nil;
+    self.achievementsController = nil;
     self.settingsNavController = nil;
     
     self.tabBarController = nil;
@@ -40,7 +40,7 @@
 @synthesize tabBarController;
 @synthesize counterController;
 @synthesize savingsController;
-@synthesize healthController;
+@synthesize achievementsController = _achievementsController;
 @synthesize settingsNavController;
 @synthesize splashView;
 
@@ -68,9 +68,9 @@
 	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
 	
     // create achievements controller
-    self.healthController = [[[HealthViewController alloc] init] autorelease];
-    self.healthController.tabBarItem.title = MPString(@"Health");
-    self.healthController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
+    self.achievementsController = [[[AchievementsViewController alloc] init] autorelease];
+    self.achievementsController.tabBarItem.title = MPString(@"Health");
+    self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
     
 	// create settings controller
 	SettingsViewController *settingsController = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -86,7 +86,7 @@
 	self.tabBarController.viewControllers = [NSArray arrayWithObjects:
                                              self.counterController,
                                              self.savingsController,
-                                             self.healthController,
+                                             self.achievementsController,
                                              self.settingsNavController,
                                              nil];
 
