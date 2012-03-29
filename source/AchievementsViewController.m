@@ -33,6 +33,10 @@
 {
     [super viewDidLoad];
 
+	// set background
+	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	self.view.backgroundColor = [UIColor clearColor];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
