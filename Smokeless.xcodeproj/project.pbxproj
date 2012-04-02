@@ -104,8 +104,6 @@
 		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
 		566034DA13226B4400F6006B /* SizeCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566034D913226B4400F6006B /* SizeCellController.m */; };
 		566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566E67E4136E021300DE4C2B /* CreditsViewController.m */; };
-		566EB2BC1524C93E00AC1514 /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566EB2BA1524C93E00AC1514 /* AchievementsViewController.m */; };
-		566EB2BD1524C93E00AC1514 /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566EB2BB1524C93E00AC1514 /* AchievementsViewController.xib */; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		56864ECA132B9F900043997D /* LastCigaretteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56864EC9132B9F8F0043997D /* LastCigaretteController.m */; };
 		56892FB5126A3A0D00A0C5AF /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56892FB4126A3A0D00A0C5AF /* AboutViewController.m */; };
@@ -121,6 +119,8 @@
 		56A2132C1372008000110C1B /* Savings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213281372008000110C1B /* Savings@2x.png */; };
 		56A96312133E579A00E372F0 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A96311133E579A00E372F0 /* HealthViewController.m */; };
 		56A96319133E5A1F00E372F0 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A96318133E5A1F00E372F0 /* Achievement.m */; };
+		56AC243D152A53FF00BC3E9B /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */; };
+		56AC243E152A53FF00BC3E9B /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */; };
 		56C704A71319077900B04CD7 /* SavingsSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C704A61319077900B04CD7 /* SavingsSettingsController.m */; };
 		56C7050F13193F8C00B04CD7 /* SmokingCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C7050E13193F8C00B04CD7 /* SmokingCellBackgroundView.m */; };
 		56CC010913357BF0002D9049 /* MPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CC010813357BEF002D9049 /* MPCell.m */; };
@@ -257,9 +257,6 @@
 		566DB01A133E1607002E2799 /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
 		566E67E3136E021300DE4C2B /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		566E67E4136E021300DE4C2B /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
-		566EB2B91524C93E00AC1514 /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
-		566EB2BA1524C93E00AC1514 /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
-		566EB2BB1524C93E00AC1514 /* AchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
 		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		56864EC8132B9F8E0043997D /* LastCigaretteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastCigaretteController.h; sourceTree = "<group>"; };
 		56864EC9132B9F8F0043997D /* LastCigaretteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteController.m; sourceTree = "<group>"; };
@@ -286,6 +283,9 @@
 		56A96311133E579A00E372F0 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HealthViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		56A96317133E5A1F00E372F0 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Achievement.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		56A96318133E5A1F00E372F0 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Achievement.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		56AC243A152A53FF00BC3E9B /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
+		56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
+		56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
 		56C704A51319077900B04CD7 /* SavingsSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsSettingsController.h; sourceTree = "<group>"; };
 		56C704A61319077900B04CD7 /* SavingsSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsSettingsController.m; sourceTree = "<group>"; };
 		56C7050D13193F8C00B04CD7 /* SmokingCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokingCellBackgroundView.h; sourceTree = "<group>"; };
@@ -643,9 +643,9 @@
 			children = (
 				56A96310133E579A00E372F0 /* HealthViewController.h */,
 				56A96311133E579A00E372F0 /* HealthViewController.m */,
-				566EB2B91524C93E00AC1514 /* AchievementsViewController.h */,
-				566EB2BA1524C93E00AC1514 /* AchievementsViewController.m */,
-				566EB2BB1524C93E00AC1514 /* AchievementsViewController.xib */,
+				56AC243A152A53FF00BC3E9B /* AchievementsViewController.h */,
+				56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */,
+				56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */,
 			);
 			name = Health;
 			sourceTree = "<group>";
@@ -806,7 +806,7 @@
 				56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */,
 				56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */,
 				56F52C591517F242007D838C /* ButtonTweetPressed@2x.png in Resources */,
-				566EB2BD1524C93E00AC1514 /* AchievementsViewController.xib in Resources */,
+				56AC243E152A53FF00BC3E9B /* AchievementsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,7 +864,7 @@
 				562C85321367784D00E078D1 /* MBProgressHUD.m in Sources */,
 				566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */,
 				56565A501390E6600087E5C4 /* Appirater.m in Sources */,
-				566EB2BC1524C93E00AC1514 /* AchievementsViewController.m in Sources */,
+				56AC243D152A53FF00BC3E9B /* AchievementsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
