@@ -8,12 +8,16 @@
 
 #import "AchievementsViewController.h"
 
+#import "PreferencesManager.h"
+
 #import "Achievement.h"
 
 
 @interface AchievementsViewController ()
 
 @property (nonatomic, retain) NSArray *achievements;
+
+- (void)checkAchievementsState;
 
 @end
 
@@ -91,11 +95,8 @@
 	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
 	self.view.backgroundColor = [UIColor clearColor];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // get rid of the separator libe between cells
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewDidUnload
@@ -103,6 +104,14 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // retrieve state for all achievements
+    [self checkAchievementsState];
 }
 
 #pragma mark - Table view data source
@@ -122,27 +131,96 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:CellIdentifier];
+        
+        // inhibit selection
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        // customize text label
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:15.0];
+        
+        // customize detail text label
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:13.0];
+        cell.detailTextLabel.numberOfLines = 3;
     }
     
-    // Configure the cell...
+//    // retrieve achievement
+//    Achievement *step = [self.achievements objectAtIndex:indexPath.row];
+//    
+//    // setup cell
+//    cell.textLabel.text = [NSString stringWithFormat:MPString(@"After %@"), [step timeInterval]];
+//    cell.detailTextLabel.text = MPString(step.text);
     
     return cell;
 }
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    return 80.0;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Achievement *currStep = [self.achievements objectAtIndex:indexPath.row];
+    
+    switch (currStep.state) {
+        case AchievementStateCompleted:
+            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+            break;
+            
+        case AchievementStatePending:
+            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_pending"]] autorelease];
+            break;
+
+        case AchievementStateNone:
+        case AchievementStateWaiting:
+            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_waiting"]] autorelease];
+            break;
+    }
+}
+
+#pragma mark - Private methods
+
+- (void)checkAchievementsState
+{
+    // get last cigarette date
+    NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+    
+    // set achievement state
+    if (lastCigaretteDate == nil) {
+        for (Achievement *step in self.achievements) {
+            step.state = AchievementStateNone;
+        }
+    }
+    else {
+        AchievementState nextState = AchievementStatePending;
+        for (Achievement *step in self.achievements) {
+            if ([step isCompletedFromDate:lastCigaretteDate]) {
+                step.state = AchievementStateCompleted;
+            }
+            else {
+                step.state = nextState;
+                
+                switch (nextState) {
+                    default:
+                    case AchievementStateNone:
+                    case AchievementStateCompleted:
+                        break;
+                        
+                    case AchievementStatePending:
+                        nextState = AchievementStateWaiting;
+                        break;
+                        
+                    case AchievementStateWaiting:
+                        nextState = AchievementStateNone;
+                        break;
+                }
+            }        
+        }
+    }
 }
 
 @end
