@@ -179,6 +179,8 @@
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.150 alpha:1.000];
             cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.imageView.image = [UIImage imageNamed:@"AchievementCompleted"];
             break;
         
         case AchievementStatePending:
@@ -191,6 +193,42 @@
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.150 alpha:1.000];
             cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+
+            // set completion image
+            NSUInteger completionStep = [currStep completionPercentageFromDate:[[PreferencesManager sharedManager] lastCigaretteDate]] / 0.125;
+            switch (completionStep) {
+                case 0:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending0"];
+                    break;
+                    
+                case 1:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending1"];
+                    break;
+                    
+                case 2:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending2"];
+                    break;
+                    
+                case 3:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending3"];
+                    break;
+                    
+                case 4:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending4"];
+                    break;
+                    
+                case 5:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending5"];
+                    break;
+                    
+                case 6:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending6"];
+                    break;
+                    
+                case 7:
+                    cell.imageView.image = [UIImage imageNamed:@"AchievementPending7"];
+                    break;
+            }
             break;
         
         case AchievementStateNext:
@@ -203,6 +241,8 @@
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
             cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+
+            cell.imageView.image = [UIImage imageNamed:@"AchievementWaiting"];
             break;
 
         case AchievementStateNone:
@@ -216,6 +256,8 @@
             cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
             cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.imageView.image = [UIImage imageNamed:@"AchievementWaiting"];
             break;
     }
 }
