@@ -147,12 +147,12 @@
         cell.detailTextLabel.numberOfLines = 3;
     }
     
-//    // retrieve achievement
-//    Achievement *step = [self.achievements objectAtIndex:indexPath.row];
-//    
-//    // setup cell
-//    cell.textLabel.text = [NSString stringWithFormat:MPString(@"After %@"), [step timeInterval]];
-//    cell.detailTextLabel.text = MPString(step.text);
+    // retrieve achievement
+    Achievement *step = [self.achievements objectAtIndex:indexPath.row];
+    
+    // setup cell
+    cell.textLabel.text = [NSString stringWithFormat:MPString(@"After %@"), [step timeInterval]];
+    cell.detailTextLabel.text = MPString(step.text);
     
     return cell;
 }
@@ -171,19 +171,51 @@
     switch (currStep.state) {
         case AchievementStateCompleted:
             cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+            
+            cell.textLabel.textColor = [UIColor colorWithWhite:0.160 alpha:1.000];
+            cell.textLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.150 alpha:1.000];
+            cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
+            cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             break;
         
         case AchievementStatePending:
             cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+
+            cell.textLabel.textColor = [UIColor colorWithWhite:0.160 alpha:1.000];
+            cell.textLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.150 alpha:1.000];
+            cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
+            cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             break;
         
         case AchievementStateNext:
-            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_pending"]] autorelease];
+            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_next"]] autorelease];
+
+            cell.textLabel.textColor = [UIColor colorWithWhite:0.300 alpha:1.000];
+            cell.textLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
+            cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+            cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             break;
 
         case AchievementStateNone:
         case AchievementStateWaiting:
             cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_waiting"]] autorelease];
+            
+            cell.textLabel.textColor = [UIColor colorWithWhite:0.300 alpha:1.000];
+            cell.textLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+            cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+            
+            cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.350 alpha:1.000];
+            cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
+            cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
             break;
     }
 }
