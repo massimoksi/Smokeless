@@ -13,6 +13,7 @@ typedef enum {
     AchievementStateNone = 0,
     AchievementStateCompleted,
     AchievementStatePending,
+    AchievementStateNext,
     AchievementStateWaiting
 } AchievementState;
 

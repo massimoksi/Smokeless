@@ -123,8 +123,8 @@
 		56AC243E152A53FF00BC3E9B /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */; };
 		56AC2441152E454A00BC3E9B /* HealthTableViewCell_completed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC243F152E454A00BC3E9B /* HealthTableViewCell_completed.png */; };
 		56AC2442152E454A00BC3E9B /* HealthTableViewCell_completed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2440152E454A00BC3E9B /* HealthTableViewCell_completed@2x.png */; };
-		56AC2445153037EA00BC3E9B /* HealthTableViewCell_pending.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2443153037EA00BC3E9B /* HealthTableViewCell_pending.png */; };
-		56AC2446153037EA00BC3E9B /* HealthTableViewCell_pending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2444153037EA00BC3E9B /* HealthTableViewCell_pending@2x.png */; };
+		56AC2445153037EA00BC3E9B /* HealthTableViewCell_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2443153037EA00BC3E9B /* HealthTableViewCell_next.png */; };
+		56AC2446153037EA00BC3E9B /* HealthTableViewCell_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2444153037EA00BC3E9B /* HealthTableViewCell_next@2x.png */; };
 		56AC2449153040C200BC3E9B /* HealthTableViewCell_waiting.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2447153040C200BC3E9B /* HealthTableViewCell_waiting.png */; };
 		56AC244A153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56AC2448153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png */; };
 		56C704A71319077900B04CD7 /* SavingsSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C704A61319077900B04CD7 /* SavingsSettingsController.m */; };
@@ -294,8 +294,8 @@
 		56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
 		56AC243F152E454A00BC3E9B /* HealthTableViewCell_completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthTableViewCell_completed.png; sourceTree = "<group>"; };
 		56AC2440152E454A00BC3E9B /* HealthTableViewCell_completed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_completed@2x.png"; sourceTree = "<group>"; };
-		56AC2443153037EA00BC3E9B /* HealthTableViewCell_pending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthTableViewCell_pending.png; sourceTree = "<group>"; };
-		56AC2444153037EA00BC3E9B /* HealthTableViewCell_pending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_pending@2x.png"; sourceTree = "<group>"; };
+		56AC2443153037EA00BC3E9B /* HealthTableViewCell_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthTableViewCell_next.png; sourceTree = "<group>"; };
+		56AC2444153037EA00BC3E9B /* HealthTableViewCell_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_next@2x.png"; sourceTree = "<group>"; };
 		56AC2447153040C200BC3E9B /* HealthTableViewCell_waiting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthTableViewCell_waiting.png; sourceTree = "<group>"; };
 		56AC2448153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_waiting@2x.png"; sourceTree = "<group>"; };
 		56C704A51319077900B04CD7 /* SavingsSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsSettingsController.h; sourceTree = "<group>"; };
@@ -433,8 +433,8 @@
 			children = (
 				56AC2447153040C200BC3E9B /* HealthTableViewCell_waiting.png */,
 				56AC2448153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png */,
-				56AC2443153037EA00BC3E9B /* HealthTableViewCell_pending.png */,
-				56AC2444153037EA00BC3E9B /* HealthTableViewCell_pending@2x.png */,
+				56AC2443153037EA00BC3E9B /* HealthTableViewCell_next.png */,
+				56AC2444153037EA00BC3E9B /* HealthTableViewCell_next@2x.png */,
 				56AC243F152E454A00BC3E9B /* HealthTableViewCell_completed.png */,
 				56AC2440152E454A00BC3E9B /* HealthTableViewCell_completed@2x.png */,
 				56F52C521517F242007D838C /* ButtonTweetNormal.png */,
@@ -827,8 +827,8 @@
 				56AC243E152A53FF00BC3E9B /* AchievementsViewController.xib in Resources */,
 				56AC2441152E454A00BC3E9B /* HealthTableViewCell_completed.png in Resources */,
 				56AC2442152E454A00BC3E9B /* HealthTableViewCell_completed@2x.png in Resources */,
-				56AC2445153037EA00BC3E9B /* HealthTableViewCell_pending.png in Resources */,
-				56AC2446153037EA00BC3E9B /* HealthTableViewCell_pending@2x.png in Resources */,
+				56AC2445153037EA00BC3E9B /* HealthTableViewCell_next.png in Resources */,
+				56AC2446153037EA00BC3E9B /* HealthTableViewCell_next@2x.png in Resources */,
 				56AC2449153040C200BC3E9B /* HealthTableViewCell_waiting.png in Resources */,
 				56AC244A153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png in Resources */,
 			);

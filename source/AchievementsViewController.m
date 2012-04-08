@@ -87,6 +87,8 @@
     return self;
 }
 
+#pragma mark View lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -170,8 +172,12 @@
         case AchievementStateCompleted:
             cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
             break;
-            
+        
         case AchievementStatePending:
+            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+            break;
+        
+        case AchievementStateNext:
             cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_pending"]] autorelease];
             break;
 
@@ -211,8 +217,11 @@
                         break;
                         
                     case AchievementStatePending:
-                        nextState = AchievementStateWaiting;
+                        nextState = AchievementStateNext;
                         break;
+                        
+                    case AchievementStateNext:
+                        nextState = AchievementStateWaiting;
                         
                     case AchievementStateWaiting:
                         nextState = AchievementStateNone;
