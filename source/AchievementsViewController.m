@@ -138,6 +138,9 @@
     
     // retrieve state for all achievements
     [self checkAchievementsState];
+    
+    // update the table view
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -292,7 +295,7 @@
 {
     // get last cigarette date
     NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
-    
+
     // set achievement state
     if (lastCigaretteDate == nil) {
         for (Achievement *step in self.achievements) {
