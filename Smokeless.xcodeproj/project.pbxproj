@@ -117,7 +117,6 @@
 		56A2132A1372008000110C1B /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213261372008000110C1B /* Background@2x.png */; };
 		56A2132B1372008000110C1B /* Savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213271372008000110C1B /* Savings.png */; };
 		56A2132C1372008000110C1B /* Savings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213281372008000110C1B /* Savings@2x.png */; };
-		56A96312133E579A00E372F0 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A96311133E579A00E372F0 /* HealthViewController.m */; };
 		56A96319133E5A1F00E372F0 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A96318133E5A1F00E372F0 /* Achievement.m */; };
 		56AC243D152A53FF00BC3E9B /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */; };
 		56AC243E152A53FF00BC3E9B /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */; };
@@ -285,8 +284,6 @@
 		56A213261372008000110C1B /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
 		56A213271372008000110C1B /* Savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Savings.png; sourceTree = "<group>"; };
 		56A213281372008000110C1B /* Savings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Savings@2x.png"; sourceTree = "<group>"; };
-		56A96310133E579A00E372F0 /* HealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthViewController.h; sourceTree = "<group>"; };
-		56A96311133E579A00E372F0 /* HealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HealthViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		56A96317133E5A1F00E372F0 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Achievement.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		56A96318133E5A1F00E372F0 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Achievement.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		56AC243A152A53FF00BC3E9B /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
@@ -659,8 +656,6 @@
 		56A9630F133E577A00E372F0 /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				56A96310133E579A00E372F0 /* HealthViewController.h */,
-				56A96311133E579A00E372F0 /* HealthViewController.m */,
 				56AC243A152A53FF00BC3E9B /* AchievementsViewController.h */,
 				56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */,
 				56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */,
@@ -880,7 +875,6 @@
 				56CC010913357BF0002D9049 /* MPCell.m in Sources */,
 				568ECD8B133962E3008F0B18 /* MPDisclosureIndicator.m in Sources */,
 				568ECD93133ABC5C008F0B18 /* MPTableViewCell.m in Sources */,
-				56A96312133E579A00E372F0 /* HealthViewController.m in Sources */,
 				56A96319133E5A1F00E372F0 /* Achievement.m in Sources */,
 				56A198F8134308A900562E6C /* HealthTableView.m in Sources */,
 				56E736BE134CDD3400228CE8 /* HealthTableViewCell.m in Sources */,

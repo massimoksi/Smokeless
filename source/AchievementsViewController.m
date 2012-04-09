@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSArray *achievements;
 
 - (void)checkAchievementsState;
+- (void)registerLocalNotifications;
 
 @end
 
@@ -82,6 +83,20 @@
         [step6 release];
         [step7 release];
         [step8 release];
+        
+        // register observers
+        [[PreferencesManager sharedManager] addObserver:self
+                                             forKeyPath:@"prefs.LastCigarette"
+                                                options:0
+                                                context:NULL];
+        [[PreferencesManager sharedManager] addObserver:self
+                                             forKeyPath:@"prefs.NotificationsEnabled"
+                                                options:0
+                                                context:NULL];
+        
+#ifdef DEBUG
+        NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
+#endif
     }
     
     return self;
@@ -89,6 +104,12 @@
 
 - (void)dealloc
 {
+    // remove observers
+    [[PreferencesManager sharedManager] removeObserver:self
+                                            forKeyPath:@"prefs.LastCigarette"];
+    [[PreferencesManager sharedManager] removeObserver:self
+                                            forKeyPath:@"prefs.NotificationsEnabled"];
+    
     // release achievements array
     self.achievements = nil;
     
@@ -289,6 +310,44 @@
     }
 }
 
+#pragma mark - Key-Value observing
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    // last cigarette date was changed
+    if ([keyPath isEqualToString:@"prefs.LastCigarette"]) {
+#ifdef DEBUG
+        NSLog(@"%@ - Last cigarette date was changed", [self class]);
+#endif
+        
+        // cancel all local notifications
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        // check achievements state
+        [self checkAchievementsState];
+        
+        // register local notifications
+        [self registerLocalNotifications];
+        
+        return;
+    }
+    
+    // notification enabled was changed
+    if ([keyPath isEqualToString:@"prefs.NotificationsEnabled"]) {
+#ifdef DEBUG
+        NSLog(@"%@ - Notifications enabled was changed", [self class]);
+#endif
+        
+        // cancel old local notifications
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        // register local notifications
+        [self registerLocalNotifications];
+        
+        return;
+    }
+}
+
 #pragma mark - Private methods
 
 - (void)checkAchievementsState
@@ -331,6 +390,40 @@
             }        
         }
     }
+}
+
+- (void)registerLocalNotifications
+{
+    if ([[[PreferencesManager sharedManager].prefs objectForKey:NOTIFICATIONS_ENABLED_KEY] boolValue] == YES) {
+        NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+        
+        for (Achievement *step in self.achievements) {
+            if (step.state != AchievementStateCompleted) {
+                UILocalNotification *notification = [[UILocalNotification alloc] init];
+                notification.alertBody = MPString(@"Congratulations! You reached a new achievement.");
+                notification.alertAction = MPString(@"Show me");
+                notification.soundName = UILocalNotificationDefaultSoundName;
+                
+                // set fire date to 8:00AM of the next day
+                NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                NSDate *completionDate = [step completionDateFromDate:lastCigaretteDate];
+                NSDateComponents *completionDateComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
+                                                                                  fromDate:completionDate];
+                [completionDateComponents setHour:8];
+                notification.fireDate = [gregorianCalendar dateFromComponents:completionDateComponents];
+                notification.timeZone = [NSTimeZone defaultTimeZone];
+                [gregorianCalendar release];
+                
+                // schedule the local notifications
+                [[UIApplication sharedApplication] scheduleLocalNotification:notification];            
+                [notification release];
+            }
+        }
+    }
+    
+#ifdef DEBUG
+    NSLog(@"%@ - New local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
+#endif
 }
 
 @end
