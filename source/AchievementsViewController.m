@@ -87,6 +87,14 @@
     return self;
 }
 
+- (void)dealloc
+{
+    // release achievements array
+    self.achievements = nil;
+    
+    [super dealloc];
+}
+
 #pragma mark View lifecycle
 
 - (void)viewDidLoad
