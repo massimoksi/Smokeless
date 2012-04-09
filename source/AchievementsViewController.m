@@ -99,6 +99,22 @@
     
     // get rid of the separator libe between cells
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // create the footer for the table view
+    UILabel *rightsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 40.0)];
+    rightsLabel.backgroundColor = [UIColor clearColor];
+    rightsLabel.font = [UIFont systemFontOfSize:11.0];
+    rightsLabel.textAlignment = UITextAlignmentCenter;
+    rightsLabel.textColor = [UIColor colorWithWhite:0.280 alpha:1.000];
+    rightsLabel.shadowColor = [UIColor colorWithWhite:0.850 alpha:1.000];
+    rightsLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+    rightsLabel.numberOfLines = 3;
+    
+    rightsLabel.text = MPString(@"2007 Wade Meredith - All rights reserved - \"What happens to Your Body If You Stop Smoking Right Now?\" on Healthbolt.net");
+    
+    self.tableView.tableFooterView = rightsLabel;
+    [rightsLabel release];
+
 }
 
 - (void)viewDidUnload
