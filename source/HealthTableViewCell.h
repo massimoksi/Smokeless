@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HealthTableViewCell : UITableViewCell {
-    
-}
+@interface HealthTableViewCell : UITableViewCell
 
 @end
