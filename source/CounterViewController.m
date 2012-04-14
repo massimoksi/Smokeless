@@ -278,16 +278,63 @@
 
 - (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
 {
-    // TODO: implement
+    // dismiss any gesture if the date of last cigarette is not set
+	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+        return;
+    }
+    
+    // flip to the calendar
+    if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
+        [UIView transitionWithView:container
+                          duration:0.75
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            [self displayView:self.calendar];
+                        }
+                        completion:NULL];
+    }
+    // flip to the chalkboard
+    else {
+        [UIView transitionWithView:container
+                          duration:0.75
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            [self displayView:self.chalkboard];
+                        }
+                        completion:NULL];
+    }
 }
 
 - (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
 {
-    // TODO: implement
+    // dismiss any gesture if the date of last cigarette is not set
+	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+        return;
+    }
+    
+    // flip to the calendar
+    if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
+        [UIView transitionWithView:container
+                          duration:0.75
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            [self displayView:self.calendar];
+                        }
+                        completion:NULL];
+    }
+    // flip to the chalkboard
+    else {
+        [UIView transitionWithView:container
+                          duration:0.75
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            [self displayView:self.chalkboard];
+                        }
+                        completion:NULL];
+    }
 }
 
-#pragma mark -
-#pragma mark Underlay view delegate
+#pragma mark - Underlay view delegate
 
 - (void)underlayViewDidFinish
 {
