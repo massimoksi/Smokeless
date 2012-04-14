@@ -49,8 +49,11 @@
 		yearLabel.backgroundColor = [UIColor clearColor];
 		yearLabel.font = [UIFont systemFontOfSize:32.0];
 		yearLabel.textAlignment = UITextAlignmentCenter;
-		yearLabel.textColor = [UIColor colorWithWhite:0.950 alpha:1.000];
-		yearLabel.shadowColor = [UIColor colorWithWhite:0.250 alpha:1.000];
+		yearLabel.textColor = [UIColor colorWithWhite:0.950
+                                                alpha:1.000];
+		yearLabel.shadowColor = [UIColor colorWithWhite:0.250
+                                                  alpha:1.000];
+        yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create month label
 		monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
