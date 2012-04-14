@@ -130,7 +130,7 @@
 		[self.calendar addSubview:self.note];
 		
 		// show note
-		[UIView animateWithDuration:0.75
+		[UIView animateWithDuration:0.750
 						 animations:^{
 							 self.note.alpha = 1.0;
 						 }];
@@ -138,13 +138,6 @@
 }
 
 #pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
 
 - (void)viewDidUnload
 {
@@ -286,7 +279,7 @@
     // flip to the calendar
     if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
         [UIView transitionWithView:container
-                          duration:0.75
+                          duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromRight
                         animations:^{
                             [self displayView:self.calendar];
@@ -296,7 +289,7 @@
     // flip to the chalkboard
     else {
         [UIView transitionWithView:container
-                          duration:0.75
+                          duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromRight
                         animations:^{
                             [self displayView:self.chalkboard];
@@ -315,7 +308,7 @@
     // flip to the calendar
     if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
         [UIView transitionWithView:container
-                          duration:0.75
+                          duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{
                             [self displayView:self.calendar];
@@ -325,7 +318,7 @@
     // flip to the chalkboard
     else {
         [UIView transitionWithView:container
-                          duration:0.75
+                          duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{
                             [self displayView:self.chalkboard];
@@ -352,7 +345,7 @@
     viewFrame.origin.y = 0.0;
     
     // shift container downwards
-    [UIView animateWithDuration:0.75
+    [UIView animateWithDuration:0.750
                      animations:^{
                          container.frame = viewFrame;
                      }
