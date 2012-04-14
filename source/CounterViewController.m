@@ -13,6 +13,10 @@
 
 @implementation CounterViewController
 
+@synthesize chalkboard = _chalkboard;
+@synthesize calendar = _calendar;
+@synthesize note = _note;
+
 #pragma mark View lifecycle
 
 - (void)loadView
@@ -22,6 +26,15 @@
 	
 	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+    
+    // create the swipe gesture recognizer
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                          action:@selector(viewSwiped:)];
+    swipeRecognizer.direction = (UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight);
+    
+    // add the swipe gesture recognizer to the view
+    [self.view addGestureRecognizer:swipeRecognizer];
+    [swipeRecognizer release];
 }
 
 - (void)viewDidLoad
@@ -146,12 +159,6 @@
     [super dealloc];
 }
 
-#pragma mark Accessors
-
-@synthesize chalkboard;
-@synthesize calendar;
-@synthesize note;
-
 #pragma mark Actions
 
 - (void)displayView:(id)aView
@@ -258,6 +265,11 @@
                      animations:^{
                          container.frame = viewFrame;
                      }];
+}
+
+- (void)viewSwiped:(UISwipeGestureRecognizer *)recognizer
+{
+    // TODO: implement
 }
 
 #pragma mark -
