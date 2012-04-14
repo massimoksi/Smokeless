@@ -27,14 +27,23 @@
 	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
     
-    // create the swipe gesture recognizer
-    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(viewSwiped:)];
-    swipeRecognizer.direction = (UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight);
+    // create the left swipe gesture recognizer
+    UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                              action:@selector(viewSwipedLeft:)];
+    leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     
-    // add the swipe gesture recognizer to the view
-    [self.view addGestureRecognizer:swipeRecognizer];
-    [swipeRecognizer release];
+    // create the right swipe gesture recognizer
+    UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(viewSwipedRight:)];
+    rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    // add the swipe gesture recognizers to the view
+    [self.view addGestureRecognizer:leftSwipeRecognizer];
+    [self.view addGestureRecognizer:rightSwipeRecognizer];
+    
+    // release the recognizers
+    [leftSwipeRecognizer release];
+    [rightSwipeRecognizer release];
 }
 
 - (void)viewDidLoad
@@ -267,7 +276,12 @@
                      }];
 }
 
-- (void)viewSwiped:(UISwipeGestureRecognizer *)recognizer
+- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
+{
+    // TODO: implement
+}
+
+- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
 {
     // TODO: implement
 }

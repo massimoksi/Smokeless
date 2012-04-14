@@ -33,6 +33,7 @@
 - (void)prevTapped:(id)sender;
 - (void)editTapped:(id)sender;
 
-- (void)viewSwiped:(UISwipeGestureRecognizer *)recognizer;
+- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer;
+- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer;
 
 @end
