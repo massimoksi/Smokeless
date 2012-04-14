@@ -49,8 +49,11 @@
 		yearLabel.backgroundColor = [UIColor clearColor];
 		yearLabel.font = [UIFont systemFontOfSize:32.0];
 		yearLabel.textAlignment = UITextAlignmentCenter;
-		yearLabel.textColor = [UIColor colorWithWhite:0.950 alpha:1.000];
-		yearLabel.shadowColor = [UIColor colorWithWhite:0.250 alpha:1.000];
+		yearLabel.textColor = [UIColor colorWithWhite:0.950
+                                                alpha:1.000];
+		yearLabel.shadowColor = [UIColor colorWithWhite:0.250
+                                                  alpha:1.000];
+        yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create month label
 		monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
@@ -60,8 +63,11 @@
 		monthLabel.backgroundColor = [UIColor clearColor];
 		monthLabel.font = [UIFont boldSystemFontOfSize:36.0];
 		monthLabel.textAlignment = UITextAlignmentCenter;
-		monthLabel.textColor = [UIColor colorWithWhite:0.15
-												 alpha:1.00];
+		monthLabel.textColor = [UIColor colorWithWhite:0.150
+												 alpha:1.000];
+        dayLabel.shadowColor = [UIColor colorWithWhite:1.000
+                                                 alpha:1.000];
+        dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 		
 		// create day label
 		dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
@@ -71,8 +77,11 @@
 		dayLabel.backgroundColor = [UIColor clearColor];
 		dayLabel.font = [UIFont systemFontOfSize:160.0];
 		dayLabel.textAlignment = UITextAlignmentCenter;
-		dayLabel.textColor = [UIColor colorWithWhite:0.15
-											   alpha:1.00];
+		dayLabel.textColor = [UIColor colorWithWhite:0.150
+											   alpha:1.000];
+        dayLabel.shadowColor = [UIColor colorWithWhite:1.000
+                                                 alpha:1.000];
+        dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 		
 		// add labels
 		[self addSubview:yearLabel];

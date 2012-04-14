@@ -14,12 +14,7 @@
 #import "LastCigaretteController.h"
 
 
-@interface CounterViewController : UIViewController <UnderlayViewDelegate> {
-	ChalkboardView *_chalkboard;
-	CalendarView *_calendar;
-	
-	NoteView *_note;
-    
+@interface CounterViewController : UIViewController <UnderlayViewDelegate> {    
     LastCigaretteController *lastCigaretteController;
 	
 @private
@@ -37,5 +32,8 @@
 - (void)nextTapped:(id)sender;
 - (void)prevTapped:(id)sender;
 - (void)editTapped:(id)sender;
+
+- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer;
+- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer;
 
 @end

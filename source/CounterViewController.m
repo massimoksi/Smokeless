@@ -13,6 +13,10 @@
 
 @implementation CounterViewController
 
+@synthesize chalkboard = _chalkboard;
+@synthesize calendar = _calendar;
+@synthesize note = _note;
+
 #pragma mark View lifecycle
 
 - (void)loadView
@@ -22,6 +26,24 @@
 	
 	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+    
+    // create the left swipe gesture recognizer
+    UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                              action:@selector(viewSwipedLeft:)];
+    leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    // create the right swipe gesture recognizer
+    UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(viewSwipedRight:)];
+    rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    // add the swipe gesture recognizers to the view
+    [self.view addGestureRecognizer:leftSwipeRecognizer];
+    [self.view addGestureRecognizer:rightSwipeRecognizer];
+    
+    // release the recognizers
+    [leftSwipeRecognizer release];
+    [rightSwipeRecognizer release];
 }
 
 - (void)viewDidLoad
@@ -108,7 +130,7 @@
 		[self.calendar addSubview:self.note];
 		
 		// show note
-		[UIView animateWithDuration:0.75
+		[UIView animateWithDuration:0.750
 						 animations:^{
 							 self.note.alpha = 1.0;
 						 }];
@@ -116,13 +138,6 @@
 }
 
 #pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
 
 - (void)viewDidUnload
 {
@@ -145,12 +160,6 @@
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize chalkboard;
-@synthesize calendar;
-@synthesize note;
 
 #pragma mark Actions
 
@@ -260,8 +269,65 @@
                      }];
 }
 
-#pragma mark -
-#pragma mark Underlay view delegate
+- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
+{
+    // dismiss any gesture if the date of last cigarette is not set
+	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+        return;
+    }
+    
+    // flip to the calendar
+    if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
+        [UIView transitionWithView:container
+                          duration:0.750
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            [self displayView:self.calendar];
+                        }
+                        completion:NULL];
+    }
+    // flip to the chalkboard
+    else {
+        [UIView transitionWithView:container
+                          duration:0.750
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            [self displayView:self.chalkboard];
+                        }
+                        completion:NULL];
+    }
+}
+
+- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
+{
+    // dismiss any gesture if the date of last cigarette is not set
+	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+        return;
+    }
+    
+    // flip to the calendar
+    if ([[container.subviews lastObject] isEqual:self.chalkboard]) {
+        [UIView transitionWithView:container
+                          duration:0.750
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            [self displayView:self.calendar];
+                        }
+                        completion:NULL];
+    }
+    // flip to the chalkboard
+    else {
+        [UIView transitionWithView:container
+                          duration:0.750
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            [self displayView:self.chalkboard];
+                        }
+                        completion:NULL];
+    }
+}
+
+#pragma mark - Underlay view delegate
 
 - (void)underlayViewDidFinish
 {
@@ -279,7 +345,7 @@
     viewFrame.origin.y = 0.0;
     
     // shift container downwards
-    [UIView animateWithDuration:0.75
+    [UIView animateWithDuration:0.750
                      animations:^{
                          container.frame = viewFrame;
                      }
