@@ -27,8 +27,8 @@
 	UIButton *button_p;
 	
 @private
-	BOOL reset;
-	NSUInteger decimals;
+	BOOL _reset;
+	NSUInteger _decimals;
 }
 
 - (UIButton *)calcButtonWithPosition:(CGPoint)position andTag:(NSInteger)tag;

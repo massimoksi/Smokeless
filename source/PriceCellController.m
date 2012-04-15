@@ -26,9 +26,13 @@
     // create shadow
     CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
     shadowLayer.frame = CGRectMake(0.0, 0.0, 320.0, 10.0);
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000 alpha:0.650].CGColor;
+    CGColorRef darkColor = [UIColor colorWithWhite:0.000
+                                             alpha:0.650].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:(id)darkColor, (id)lightColor, nil];
+    shadowLayer.colors = [NSArray arrayWithObjects:
+                          (id)darkColor,
+                          (id)lightColor,
+                          nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -217,8 +221,8 @@
 - (void)updateSettingView
 {
 	// reset setting view
-	decimals = 0;
-	reset = YES;
+	_decimals = 0;
+	_reset = YES;
 	
 	button_p.enabled = YES;
 	
@@ -261,7 +265,7 @@
 {
 	CGFloat actualPrice = 0.0;
 	
-	if (!reset) {
+	if (!_reset) {
 		// get value from cell
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -273,20 +277,19 @@
 	NSLog(@"%@ - Actual price: %f", [self class], actualPrice);
 #endif
 	
-	
-	switch (decimals) {
+	switch (_decimals) {
 		case 0:
-			decimals = 0;
+			_decimals = 0;
 			actualPrice = actualPrice * 10 + [sender tag];
 			break;
 			
 		case 1:
-			decimals = 2;
+			_decimals = 2;
 			actualPrice += (CGFloat)[sender tag] / 10;
 			break;
 			
 		case 2:
-			decimals = 3;
+			_decimals = 3;
 			actualPrice += (CGFloat)[sender tag] / 100;
 			break;
 			
@@ -297,7 +300,7 @@
 	}
 	
 	// disable price reset
-	reset = NO;
+	_reset = NO;
 	
 	// update detail string
 	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:actualPrice]
@@ -306,7 +309,7 @@
 
 - (void)cancTapped:(id)sender
 {
-	decimals = 0;
+	_decimals = 0;
 	
 	// cancel the detail string
 	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
@@ -318,16 +321,16 @@
 
 - (void)pointTapped:(id)sender
 {
-    if (reset) {
+    if (_reset) {
         // reset detail string
         self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
                                                                           numberStyle:NSNumberFormatterCurrencyStyle];
         
         // disable price reset
-        reset = NO;
+        _reset = NO;
     }
     
-	decimals = 1;
+	_decimals = 1;
 	
 	// disable the point button
 	button_p.enabled = NO;
