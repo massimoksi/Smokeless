@@ -23,19 +23,7 @@ typedef enum {
 } MPCellStyle;
 
 
-@interface MPCell : UIView {
-    MPCellPosition _position;
-    
-    MPCellStyle _style;
-    
-    CGFloat _borderWidth;
-    CGFloat _cornerRadius;
-    
-    UIColor *_borderColor;
-    UIColor *_fillColor;
-    UIColor *_startColor;
-    UIColor *_endColor;
-}
+@interface MPCell : UIView
 
 @property (nonatomic, assign) MPCellPosition position;
 @property (nonatomic, assign) MPCellStyle style;
