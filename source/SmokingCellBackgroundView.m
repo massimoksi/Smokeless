@@ -15,11 +15,16 @@
 
 @implementation SmokingCellBackgroundView
 
+@synthesize textLabel = _textLabel;
+@synthesize detailTextLabel = _detailTextLabel;
+
 - (id)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		// create text label
+		self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SmokingCell"]];
+		
+        // create text label
 		self.textLabel = [[[UILabel alloc] initWithFrame:CGRectMake(LABEL_PADDING_X,
 																	LABEL_PADDING_Y,
 																	self.frame.size.width/2 - LABEL_PADDING_X,
@@ -27,8 +32,9 @@
 		self.textLabel.backgroundColor = [UIColor clearColor];
 		self.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		self.textLabel.textAlignment = UITextAlignmentLeft;
-		self.textLabel.textColor = [UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000];
-		self.textLabel.shadowColor = [UIColor colorWithWhite:0.000 alpha:0.500];
+        self.textLabel.textColor = [UIColor colorWithWhite:0.600
+                                                     alpha:1.000];
+		self.textLabel.shadowColor = [UIColor blackColor];
 		self.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create detail text label
@@ -39,8 +45,9 @@
 		self.detailTextLabel.backgroundColor = [UIColor clearColor];
 		self.detailTextLabel.font = [UIFont systemFontOfSize:15.0];
 		self.detailTextLabel.textAlignment = UITextAlignmentRight;
-		self.detailTextLabel.textColor = [UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000];
-		self.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.000 alpha:0.500];
+        self.detailTextLabel.textColor = [UIColor colorWithWhite:0.400
+                                                           alpha:1.000];
+		self.detailTextLabel.shadowColor = [UIColor blackColor];
 		self.detailTextLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// add labels
@@ -58,41 +65,5 @@
 	
 	[super dealloc];
 }
-
-#pragma mark Drawing
-
-- (void)drawRect:(CGRect)rect
-{
-	// retrieve context
-	CGContextRef cellContext = UIGraphicsGetCurrentContext();
-	
-	// retrieve coordinates
-	CGRect cellRect = self.bounds;
-	
-	// draw gradient in cell rect
-	MPDrawLinearGradientInRect(cellContext,
-                               cellRect,
-                               [UIColor colorWithRed:0.251 green:0.251 blue:0.290 alpha:1.000],
-                               [UIColor colorWithRed:0.188 green:0.188 blue:0.216 alpha:1.000]);
-	
-	// draw separator
-	MPDrawLineWithStrokeWidth(cellContext,
-                              CGPointMake(cellRect.origin.x, cellRect.origin.y),
-                              CGPointMake(cellRect.size.width, cellRect.origin.y),
-                              [UIColor colorWithWhite:1.000 alpha:0.100],
-                              1.0);
-	
-	// draw edge
-	MPDrawLineWithStrokeWidth(cellContext,
-                              CGPointMake(cellRect.origin.x, cellRect.size.height),
-                              CGPointMake(cellRect.size.width, cellRect.size.height),
-                              [UIColor colorWithWhite:0.100 alpha:0.900],
-                              1.0);
-}
-
-#pragma mark Accessors
-
-@synthesize textLabel;
-@synthesize detailTextLabel;
 
 @end
