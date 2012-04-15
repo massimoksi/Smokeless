@@ -14,6 +14,13 @@
 #define MAIL_ADDRESS	@"massimo.peri@me.com"
 
 
+@interface AboutViewController ()
+
+@property (nonatomic, retain) UINavigationController *twitterNavController;
+
+@end
+
+
 @implementation AboutViewController
 
 @synthesize twitterNavController = _twitterNavController;
