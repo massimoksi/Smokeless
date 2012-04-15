@@ -1,3 +1,4 @@
 * add german localization
-* switch to ARC
 * add licenses to the credits
+* switch to ARC
+* switch remote to BitBucket
