@@ -150,13 +150,18 @@
 	button.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	button.titleLabel.textAlignment = UITextAlignmentCenter;
     button.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
-	[button setTitleColor:[UIColor colorWithRed:0.627 green:0.631 blue:0.698 alpha:1.000]
+	[button setTitleColor:[UIColor colorWithWhite:0.600
+                                            alpha:1.000]
 				 forState:UIControlStateNormal];
-	[button setTitleColor:[UIColor colorWithRed:0.416 green:0.416 blue:0.463 alpha:1.000]
-				 forState:UIControlStateDisabled];
 	[button setTitleShadowColor:[UIColor blackColor]
 					   forState:UIControlStateNormal];
-	
+	[button setTitleColor:[UIColor colorWithWhite:0.600
+                                            alpha:0.200]
+				 forState:UIControlStateDisabled];
+	[button setTitleShadowColor:[UIColor colorWithWhite:0.000
+                                                  alpha:0.200]
+					   forState:UIControlStateDisabled];
+    	
 	if ((tag >= 0) && (tag <= 9)) {
 		// set title
 		[button setTitle:[NSString stringWithFormat:@"%d", tag]
