@@ -51,7 +51,7 @@
 		[self.layer insertSublayer:originShadow
                            atIndex:0];
 	}
-	else if (![[self.layer.sublayers objectAtIndex:0] isEqual:originShadow]) {
+	else if ([[self.layer.sublayers objectAtIndex:0] isEqual:originShadow] == NO) {
 		[self.layer insertSublayer:originShadow
                            atIndex:0];
 	}
