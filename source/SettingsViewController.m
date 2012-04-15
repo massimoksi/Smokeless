@@ -12,7 +12,18 @@
 #import "AboutViewController.h"
 
 
+@interface SettingsViewController ()
+
+@property (nonatomic, retain) UISwitch *shakeSwitch;
+@property (nonatomic, retain) UISwitch *notificationSwitch;
+
+@end
+
+
 @implementation SettingsViewController
+
+@synthesize shakeSwitch = _shakeSwitch;
+@synthesize notificationSwitch = _notificationSwitch;
 
 - (void)viewDidLoad
 {
@@ -43,13 +54,6 @@
 	[super viewWillAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
@@ -65,11 +69,6 @@
     
 	[super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize shakeSwitch;
-@synthesize notificationSwitch;
 
 #pragma mark Actions
 

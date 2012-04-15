@@ -18,13 +18,7 @@ enum {
 };
 
 
-@interface SettingsViewController : UITableViewController <UIActionSheetDelegate> {
-    UISwitch *_shakeSwitch;
-    UISwitch *_notificationSwitch;
-}
-
-@property (nonatomic, retain) UISwitch *shakeSwitch;
-@property (nonatomic, retain) UISwitch *notificationSwitch;
+@interface SettingsViewController : UITableViewController <UIActionSheetDelegate>
 
 - (void)shakeEnabled:(id)sender;
 - (void)notificationEnabled:(id)sender;
