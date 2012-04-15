@@ -94,8 +94,7 @@
     [[PreferencesManager sharedManager] savePrefs];
 }
 
-#pragma mark -
-#pragma mark Table view data source
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -203,8 +202,7 @@
     return NO;
 }
 
-#pragma mark -
-#pragma mark Table view delegate
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -233,8 +231,7 @@
 							 animated:YES];
 }
 
-#pragma mark -
-#pragma mark Action sheet delegate
+#pragma mark - Action sheet delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
