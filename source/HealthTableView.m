@@ -9,7 +9,7 @@
 #import "HealthTableView.h"
 
 
-#define SHADOW_HEIGHT           4.0
+#define SHADOW_HEIGHT           5.0
 #define SHADOW_INVERSE_HEIGHT   3.0
 #define SHADOW_RATIO            (SHADOW_INVERSE_HEIGHT / SHADOW_HEIGHT)
 
@@ -141,11 +141,11 @@
                                  0.0,
                                  self.frame.size.width,
                                  inverse ? SHADOW_INVERSE_HEIGHT : SHADOW_HEIGHT);
-	CGColorRef darkColor = [UIColor colorWithRed:0.0
-                                           green:0.0
-                                            blue:0.0
-                                           alpha:0.5].CGColor;
-	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.0].CGColor;
+	CGColorRef darkColor = [UIColor colorWithRed:0.000
+                                           green:0.000
+                                            blue:0.000
+                                           alpha:0.420].CGColor;
+	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.000].CGColor;
 	newShadow.colors = [NSArray arrayWithObjects:
                         (id)(inverse ? lightColor : darkColor),
                         (id)(inverse ? darkColor : lightColor),
