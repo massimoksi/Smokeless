@@ -11,11 +11,14 @@
 #import "PreferencesManager.h"
 
 #import "Achievement.h"
+#import "HealthTableView.h"
 
 
 @interface AchievementsViewController ()
 
 @property (nonatomic, retain) NSArray *achievements;
+
+@property (nonatomic, retain) IBOutlet HealthTableView* tableView;
 
 - (void)checkAchievementsState;
 - (void)registerLocalNotifications;
@@ -25,10 +28,12 @@
 @implementation AchievementsViewController
 
 @synthesize achievements = _achievements;
+@synthesize tableView = _tableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
     if (self) {
         Achievement *step1 = [[Achievement alloc] init];
         step1.days = 2;
@@ -123,8 +128,7 @@
     [super viewDidLoad];
 
 	// set background
-	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
-	self.view.backgroundColor = [UIColor clearColor];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
     
     // get rid of the separator libe between cells
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -188,9 +192,11 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         // customize text label
+        cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:15.0];
         
         // customize detail text label
+        cell.detailTextLabel.backgroundColor = [UIColor clearColor];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:13.0];
         cell.detailTextLabel.numberOfLines = 3;
     }

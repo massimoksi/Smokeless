@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AchievementsViewController : UITableViewController
+@interface AchievementsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
