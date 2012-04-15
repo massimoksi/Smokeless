@@ -17,13 +17,6 @@
 
 @implementation CreditsViewController
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
-#pragma mark View lifecycle
-
 - (void)loadView
 {
 	// create view
