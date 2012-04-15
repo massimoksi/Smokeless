@@ -16,6 +16,8 @@
 
 @implementation SavingsSettingsController
 
+@synthesize cellControllers = _cellControllers;
+
 - (void)loadView
 {
 	// create view
@@ -41,6 +43,8 @@
 							priceCellController,
                             shadowCellController,
 							nil];
+    
+    // release the cell controllers
 	[habitsCellController release];
 	[sizeCellController release];
 	[priceCellController release];
@@ -71,12 +75,7 @@
 	[super dealloc];
 }
 
-#pragma mark Accessors
-
-@synthesize cellControllers;
-
-#pragma mark -
-#pragma mark Setting cell delegate
+#pragma mark - Setting cell delegate
 
 - (void)shiftDownwardsCellsAfterIndex:(NSInteger)index
 {

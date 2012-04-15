@@ -11,9 +11,7 @@
 #import "SettingCellController.h"
 
 
-@interface SavingsSettingsController : UIViewController <SettingCellDelegate> {
-	NSArray *_cellControllers;
-}
+@interface SavingsSettingsController : UIViewController <SettingCellDelegate>
 
 @property (nonatomic, retain) NSArray *cellControllers;
 

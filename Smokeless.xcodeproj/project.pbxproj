@@ -112,6 +112,8 @@
 		568ECD8B133962E3008F0B18 /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 568ECD8A133962E3008F0B18 /* MPDisclosureIndicator.m */; };
 		568ECD93133ABC5C008F0B18 /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 568ECD92133ABC5C008F0B18 /* MPTableViewCell.m */; };
 		569744621322A2B600A22D38 /* PriceCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569744611322A2B600A22D38 /* PriceCellController.m */; };
+		569C0312153B41AA00B6ED31 /* SmokingCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 569C0310153B41AA00B6ED31 /* SmokingCell.png */; };
+		569C0313153B41AA00B6ED31 /* SmokingCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569C0311153B41AA00B6ED31 /* SmokingCell@2x.png */; };
 		56A198F8134308A900562E6C /* HealthTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A198F7134308A900562E6C /* HealthTableView.m */; };
 		56A213291372008000110C1B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213251372008000110C1B /* Background.png */; };
 		56A2132A1372008000110C1B /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A213261372008000110C1B /* Background@2x.png */; };
@@ -132,7 +134,6 @@
 		56DAE07C1332451000798F85 /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DAE07B1332451000798F85 /* DisplayView.m */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
 		56E56F03131C2EE800CD5F0A /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E56F02131C2EE700CD5F0A /* MPGraphics.m */; };
-		56E736BE134CDD3400228CE8 /* HealthTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E736BD134CDD3400228CE8 /* HealthTableViewCell.m */; };
 		56E7E0201331A392004343A7 /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7E01F1331A392004343A7 /* ShadowCellController.m */; };
 		56EC4FD012FDBF0B00D98022 /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */; };
 		56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C521517F242007D838C /* ButtonTweetNormal.png */; };
@@ -278,6 +279,8 @@
 		568ECD92133ABC5C008F0B18 /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 		569744601322A2B600A22D38 /* PriceCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCellController.h; sourceTree = "<group>"; };
 		569744611322A2B600A22D38 /* PriceCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCellController.m; sourceTree = "<group>"; };
+		569C0310153B41AA00B6ED31 /* SmokingCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmokingCell.png; sourceTree = "<group>"; };
+		569C0311153B41AA00B6ED31 /* SmokingCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SmokingCell@2x.png"; sourceTree = "<group>"; };
 		56A198F6134308A900562E6C /* HealthTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableView.h; sourceTree = "<group>"; };
 		56A198F7134308A900562E6C /* HealthTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableView.m; sourceTree = "<group>"; };
 		56A213251372008000110C1B /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -310,8 +313,6 @@
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56E56F01131C2EE700CD5F0A /* MPGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGraphics.h; sourceTree = "<group>"; };
 		56E56F02131C2EE700CD5F0A /* MPGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGraphics.m; sourceTree = "<group>"; };
-		56E736BC134CDD3400228CE8 /* HealthTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewCell.h; sourceTree = "<group>"; };
-		56E736BD134CDD3400228CE8 /* HealthTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewCell.m; sourceTree = "<group>"; };
 		56E7E01E1331A391004343A7 /* ShadowCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowCellController.h; sourceTree = "<group>"; };
 		56E7E01F1331A392004343A7 /* ShadowCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCellController.m; sourceTree = "<group>"; };
 		56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChalkboardView.h; sourceTree = "<group>"; };
@@ -428,6 +429,8 @@
 		56237A781370A73700DC411C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				569C0310153B41AA00B6ED31 /* SmokingCell.png */,
+				569C0311153B41AA00B6ED31 /* SmokingCell@2x.png */,
 				56AC2447153040C200BC3E9B /* HealthTableViewCell_waiting.png */,
 				56AC2448153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png */,
 				56AC2443153037EA00BC3E9B /* HealthTableViewCell_next.png */,
@@ -616,8 +619,6 @@
 				56C7050E13193F8C00B04CD7 /* SmokingCellBackgroundView.m */,
 				56A198F6134308A900562E6C /* HealthTableView.h */,
 				56A198F7134308A900562E6C /* HealthTableView.m */,
-				56E736BC134CDD3400228CE8 /* HealthTableViewCell.h */,
-				56E736BD134CDD3400228CE8 /* HealthTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -826,6 +827,8 @@
 				56AC2446153037EA00BC3E9B /* HealthTableViewCell_next@2x.png in Resources */,
 				56AC2449153040C200BC3E9B /* HealthTableViewCell_waiting.png in Resources */,
 				56AC244A153040C200BC3E9B /* HealthTableViewCell_waiting@2x.png in Resources */,
+				569C0312153B41AA00B6ED31 /* SmokingCell.png in Resources */,
+				569C0313153B41AA00B6ED31 /* SmokingCell@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,7 +880,6 @@
 				568ECD93133ABC5C008F0B18 /* MPTableViewCell.m in Sources */,
 				56A96319133E5A1F00E372F0 /* Achievement.m in Sources */,
 				56A198F8134308A900562E6C /* HealthTableView.m in Sources */,
-				56E736BE134CDD3400228CE8 /* HealthTableViewCell.m in Sources */,
 				562C852E136771D900E078D1 /* TwitterViewController.m in Sources */,
 				562C85321367784D00E078D1 /* MBProgressHUD.m in Sources */,
 				566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */,

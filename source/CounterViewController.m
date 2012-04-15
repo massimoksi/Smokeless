@@ -212,9 +212,6 @@
         [self presentModalViewController:tweetController
                                 animated:YES];
     }
-    else {
-        // TODO: display an alert view
-    }
 }
 
 - (void)nextTapped:(id)sender

@@ -11,6 +11,10 @@
 
 @implementation DisplayView
 
+@synthesize moneyUnit = _moneyUnit;
+@synthesize moneyLabel = _moneyLabel;
+@synthesize packetsLabel = _packetsLabel;
+
 - (id)initWithOrigin:(CGPoint)origin
 {
     self = [super initWithFrame:CGRectMake(origin.x,
@@ -34,11 +38,11 @@
         self.moneyUnit.shadowColor = [UIColor lightGrayColor];
         
         // create packets unit
-        packetsUnit = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Packet"]];
-        packetsUnit.frame = CGRectMake(self.bounds.origin.x,
-                                       self.bounds.origin.y,
-                                       50.0,
-                                       self.bounds.size.height);
+        _packetsUnit = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Packet"]];
+        _packetsUnit.frame = CGRectMake(self.bounds.origin.x,
+                                        self.bounds.origin.y,
+                                        50.0,
+                                        self.bounds.size.height);
         
         // create money label
         self.moneyLabel = [[[UILabel alloc] initWithFrame:CGRectMake(50.0,
@@ -68,7 +72,7 @@
         
         // create view hierarchy
         [self addSubview:self.moneyUnit];
-        [self addSubview:packetsUnit];
+        [self addSubview:_packetsUnit];
         [self addSubview:self.moneyLabel];
         [self addSubview:self.packetsLabel];
 
@@ -86,31 +90,27 @@
     self.moneyLabel = nil;
     self.packetsLabel = nil;
     
-    [packetsUnit release];
+    [_packetsUnit release];
     
     [super dealloc];
 }
 
 #pragma Accessors
 
-@synthesize moneyUnit;
-@synthesize moneyLabel;
-@synthesize packetsLabel;
-
 - (void)setState:(DisplayState)newState withAnimation:(BOOL)animation
 {
     NSTimeInterval duration = (animation == YES) ? 0.5 : 0.0;
     
     // set new state
-    state = newState;
+    _state = newState;
     
-    switch (state) {
+    switch (_state) {
         default:
         case DisplayStateUndef:
             // hide everything
             self.moneyUnit.alpha = 0.0;
             self.moneyLabel.alpha = 0.0;
-            packetsUnit.alpha = 0.0;
+            _packetsUnit.alpha = 0.0;
             self.packetsLabel.alpha = 0.0;
             break;
             
@@ -118,7 +118,7 @@
             [UIView animateWithDuration:duration
                              animations:^{
                                  // hide packets
-                                 packetsUnit.alpha = 0.0;
+                                 _packetsUnit.alpha = 0.0;
                                  self.packetsLabel.alpha = 0.0;
                              }
                              completion:^(BOOL finished){
@@ -142,7 +142,7 @@
                                  [UIView animateWithDuration:duration
                                                   animations:^{
                                                       // show packets
-                                                      packetsUnit.alpha = 1.0;
+                                                      _packetsUnit.alpha = 1.0;
                                                       self.packetsLabel.alpha = 1.0;
                                                   }];
                              }];
@@ -154,7 +154,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    switch (state) {
+    switch (_state) {
         default:
         case DisplayStateUndef:
             [self setState:DisplayStateUndef

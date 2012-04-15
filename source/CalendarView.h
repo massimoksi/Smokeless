@@ -12,9 +12,6 @@
 @interface CalendarView : UIImageView {
 	NSDate *_date;
 	
-	UIButton *_editButton;
-	UIButton *_prevButton;
-	
 @private
 	UILabel *yearLabel;
 	UILabel *monthLabel;
