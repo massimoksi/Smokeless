@@ -18,8 +18,6 @@ typedef enum {
 
 @interface DisplayView : UIView {
     DisplayState _state;
-    
-    UIImageView *_packetsUnit;
 }
 
 @property (nonatomic, retain) UILabel *moneyUnit;
