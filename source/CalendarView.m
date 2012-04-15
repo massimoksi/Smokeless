@@ -24,6 +24,8 @@
 
 @implementation CalendarView
 
+@synthesize editButton = _editButton;
+@synthesize prevButton = _prevButton;
 
 - (id)initWithDate:(NSDate *)aDate
 {
@@ -206,8 +208,5 @@
     // release gregorian calendar
     [gregorianCalendar release];
 }
-
-@synthesize editButton;
-@synthesize prevButton;
 
 @end

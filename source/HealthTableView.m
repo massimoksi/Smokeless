@@ -8,9 +8,11 @@
 
 #import "HealthTableView.h"
 
+
 #define SHADOW_HEIGHT           4.0
 #define SHADOW_INVERSE_HEIGHT   3.0
 #define SHADOW_RATIO            (SHADOW_INVERSE_HEIGHT / SHADOW_HEIGHT)
+
 
 @implementation HealthTableView
 

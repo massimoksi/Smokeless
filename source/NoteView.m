@@ -15,6 +15,8 @@
 
 @implementation NoteView
 
+@synthesize message = _message;
+
 - (id)init
 {
     self = [super initWithImage:[UIImage imageNamed:@"Note"]];
@@ -53,9 +55,5 @@
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize message;
 
 @end
