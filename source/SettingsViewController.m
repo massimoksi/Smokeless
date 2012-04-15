@@ -224,7 +224,7 @@
 		}
 						
 		case SettingsSectionAbout:
-			[self.navigationController pushViewController:[[[AboutViewController alloc] init] autorelease]
+			[self.navigationController pushViewController:[[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease]
 												 animated:YES];
 			break;			
 	}

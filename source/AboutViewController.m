@@ -16,50 +16,27 @@
 
 @implementation AboutViewController
 
-- (void)loadView
-{
-	// create view
-	self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
-	// set background color
-	self.view.backgroundColor = [UIColor clearColor];
-	// set the title
-	self.title = MPString(@"About");
-}
+@synthesize twitterNavController = _twitterNavController;
 
 - (void)viewDidLoad
 {
-	// create logo
+	// set the title
+	self.title = MPString(@"About");
+
+	// set background color
+	self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    // create logo
 	UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TitleAbout"]];
 	logoView.frame = CGRectMake(0.0,
 								LOGO_PADDING,
 								logoView.frame.size.width,
 								logoView.frame.size.height);
+    self.tableView.tableHeaderView = logoView;
 
-	// create table view
-	self.infosTable = [[[UITableView alloc] initWithFrame:CGRectMake(0.0,
-                                                                     logoView.frame.origin.y + logoView.frame.size.height + TABLE_PADDING,
-                                                                     320.0,
-                                                                     320.0)
-                                                    style:UITableViewStyleGrouped] autorelease];
-	self.infosTable.scrollEnabled = NO;
-	self.infosTable.backgroundColor = [UIColor clearColor];
-	self.infosTable.separatorColor = [UIColor darkGrayColor];
-	self.infosTable.delegate = self;
-	self.infosTable.dataSource = self;
-	
-	// add subviews
-	[self.view addSubview:logoView];
-	[self.view addSubview:self.infosTable];
-	
 	// release subviews
 	[logoView release];
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload
@@ -67,21 +44,14 @@
     [super viewDidUnload];
 
     self.twitterNavController = nil;
-    self.infosTable = nil;
 }
 
 - (void)dealloc
 {
     self.twitterNavController = nil;
-    self.infosTable = nil;
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize infosTable;
-@synthesize twitterNavController;
 
 #pragma mark Actions
 
@@ -141,8 +111,7 @@
     self.twitterNavController = nil;
 }
 
-#pragma mark -
-#pragma mark Table view data source
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -250,8 +219,7 @@
     return NO;
 }
 
-#pragma mark -
-#pragma mark Table view delegate
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -281,8 +249,7 @@
 							 animated:YES];
 }
 
-#pragma mark -
-#pragma mark Mail compose delegate
+#pragma mark - Mail compose delegate
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
