@@ -185,8 +185,8 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:CellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier] autorelease];
         
         // inhibit selection
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -388,6 +388,7 @@
                         
                     case AchievementStateNext:
                         nextState = AchievementStateWaiting;
+                        break;
                         
                     case AchievementStateWaiting:
                         nextState = AchievementStateNone;

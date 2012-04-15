@@ -59,8 +59,8 @@
 	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
 	
     // create the achievements view controller
-    self.achievementsController = [[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
-                                                                               bundle:nil];
+    self.achievementsController = [[[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
+                                                                               bundle:nil] autorelease];
     self.achievementsController.tabBarItem.title = MPString(@"Health");
     self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
     
