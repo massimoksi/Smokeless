@@ -17,7 +17,22 @@
 #define BUTTON_PADDING_Y    12.0
 
 
+@interface LastCigaretteController ()
+
+@property (nonatomic, retain) UIDatePicker *datePicker;
+
+@property (nonatomic, retain) UIButton *saveButton;
+@property (nonatomic, retain) UIButton *cancelButton;
+
+@end
+
+
 @implementation LastCigaretteController
+
+@synthesize datePicker = _datePicker;
+@synthesize saveButton = _saveButton;
+@synthesize cancelButton = _cancelButton;
+@synthesize delegate = _delegate;
 
 - (void)loadView
 {
@@ -125,13 +140,6 @@
 
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -151,13 +159,6 @@
     
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize datePicker;
-@synthesize saveButton;
-@synthesize cancelButton;
-@synthesize delegate;
 
 #pragma mark Actions
 
