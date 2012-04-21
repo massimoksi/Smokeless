@@ -8,22 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ChalkboardView.h"
-#import "CalendarView.h"
-#import "NoteView.h"
 #import "LastCigaretteController.h"
 
 
-@interface CounterViewController : UIViewController <UnderlayViewDelegate> {    
-    LastCigaretteController *lastCigaretteController;
-	
-@private
-	UIView *container;
-}
-
-@property (nonatomic, retain) ChalkboardView *chalkboard;
-@property (nonatomic, retain) CalendarView *calendar;
-@property (nonatomic, retain) NoteView *note;
+@interface CounterViewController : UIViewController <UnderlayViewDelegate>
 
 - (void)displayView:(id)aView;
 - (void)updateViews;
