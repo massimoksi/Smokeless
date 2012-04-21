@@ -17,7 +17,43 @@
 #define	CALC_BUTTON_PADDING_Y	10.0
 
 
+@interface PriceCellController ()
+
+@property (nonatomic, assign) BOOL reset;
+@property (nonatomic, assign) NSUInteger decimals;
+
+@property (nonatomic, retain) UIButton *button0;
+@property (nonatomic, retain) UIButton *button1;
+@property (nonatomic, retain) UIButton *button2;
+@property (nonatomic, retain) UIButton *button3;
+@property (nonatomic, retain) UIButton *button4;
+@property (nonatomic, retain) UIButton *button5;
+@property (nonatomic, retain) UIButton *button6;
+@property (nonatomic, retain) UIButton *button7;
+@property (nonatomic, retain) UIButton *button8;
+@property (nonatomic, retain) UIButton *button9;
+@property (nonatomic, retain) UIButton *buttonC;
+@property (nonatomic, retain) UIButton *buttonP;
+
+@end
+
+
 @implementation PriceCellController
+
+@synthesize reset = _reset;
+@synthesize decimals = _decimals;
+@synthesize button0 = _button0;
+@synthesize button1 = _button1;
+@synthesize button2 = _button2;
+@synthesize button3 = _button3;
+@synthesize button4 = _button4;
+@synthesize button5 = _button5;
+@synthesize button6 = _button6;
+@synthesize button7 = _button7;
+@synthesize button8 = _button8;
+@synthesize button9 = _button9;
+@synthesize buttonC = _buttonC;
+@synthesize buttonP = _buttonP;
 
 - (void)viewDidLoad
 {
@@ -44,56 +80,56 @@
 	[self updateCell];
 	
 	// create calc buttons
-	button_7 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_PADDING_Y)
-									  andTag:7] retain];
-	button_8 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_PADDING_Y)
-									  andTag:8] retain];
-	button_9 = [[self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_PADDING_Y)
-									  andTag:9] retain];
-	button_4 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
-									  andTag:4] retain];
-	button_5 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
-									  andTag:5] retain];
-	button_6 = [[self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
-														 CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
-									  andTag:6] retain];
-	button_1 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
-														 2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
-									  andTag:1] retain];
-	button_2 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
-														 2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
-									  andTag:2] retain];
-	button_3 = [[self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
-														 2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
-									  andTag:3] retain];
-	button_p = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
-														 3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
-									  andTag:10] retain];
-	button_0 = [[self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
-														 3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
-									  andTag:0] retain];
-	button_c = [[self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
-														 3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
-									  andTag:11] retain];
+	self.button7 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_PADDING_Y)
+                                         andTag:7];
+	self.button8 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_PADDING_Y)
+                                         andTag:8];
+	self.button9 = [self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_PADDING_Y)
+                                         andTag:9];
+	self.button4 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
+                                         andTag:4];
+	self.button5 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
+                                         andTag:5];
+	self.button6 = [self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
+                                                            CALC_BUTTON_HEIGHT + 2*CALC_BUTTON_PADDING_Y)
+                                         andTag:6];
+	self.button1 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
+                                                            2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
+                                         andTag:1];
+	self.button2 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
+                                                            2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
+                                         andTag:2];
+	self.button3 = [self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
+                                                            2*CALC_BUTTON_HEIGHT + 3*CALC_BUTTON_PADDING_Y)
+                                         andTag:3];
+	self.buttonP = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_PADDING_X,
+                                                            3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
+                                         andTag:10];
+	self.button0 = [self calcButtonWithPosition:CGPointMake(CALC_BUTTON_WIDTH + 2*CALC_BUTTON_PADDING_X,
+                                                            3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
+                                         andTag:0];
+	self.buttonC = [self calcButtonWithPosition:CGPointMake(2*CALC_BUTTON_WIDTH + 3*CALC_BUTTON_PADDING_X,
+                                                            3*CALC_BUTTON_HEIGHT + 4*CALC_BUTTON_PADDING_Y)
+                                         andTag:11];
 	
 	// add buttons
-	[self.settingView addSubview:button_7];
-	[self.settingView addSubview:button_8];
-	[self.settingView addSubview:button_9];
-	[self.settingView addSubview:button_4];
-	[self.settingView addSubview:button_5];
-	[self.settingView addSubview:button_6];
-	[self.settingView addSubview:button_1];
-	[self.settingView addSubview:button_2];
-	[self.settingView addSubview:button_3];
-	[self.settingView addSubview:button_p];
-	[self.settingView addSubview:button_0];
-	[self.settingView addSubview:button_c];
+	[self.settingView addSubview:self.button7];
+	[self.settingView addSubview:self.button8];
+	[self.settingView addSubview:self.button9];
+	[self.settingView addSubview:self.button4];
+	[self.settingView addSubview:self.button5];
+	[self.settingView addSubview:self.button6];
+	[self.settingView addSubview:self.button1];
+	[self.settingView addSubview:self.button2];
+	[self.settingView addSubview:self.button3];
+	[self.settingView addSubview:self.buttonP];
+	[self.settingView addSubview:self.button0];
+	[self.settingView addSubview:self.buttonC];
 	
 	// add actions to buttons
 	[self.saveButton addTarget:self
@@ -104,33 +140,37 @@
                 forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    self.button0 = nil;
+    self.button1 = nil;
+    self.button2 = nil;
+    self.button3 = nil;
+    self.button4 = nil;
+    self.button5 = nil;
+    self.button6 = nil;
+    self.button7 = nil;
+    self.button8 = nil;
+    self.button9 = nil;
+    self.buttonC = nil;
+    self.buttonP = nil;
 }
 
 - (void)dealloc
 {
-	[button_7 release];
-	[button_8 release];
-	[button_9 release];
-	[button_4 release];
-	[button_5 release];
-	[button_6 release];
-	[button_1 release];
-	[button_2 release];
-	[button_3 release];
-	[button_p release];
-	[button_0 release];
-	[button_c release];
+    self.button0 = nil;
+    self.button1 = nil;
+    self.button2 = nil;
+    self.button3 = nil;
+    self.button4 = nil;
+    self.button5 = nil;
+    self.button6 = nil;
+    self.button7 = nil;
+    self.button8 = nil;
+    self.button9 = nil;
+    self.buttonC = nil;
+    self.buttonP = nil;
 
     [super dealloc];
 }
@@ -221,10 +261,10 @@
 - (void)updateSettingView
 {
 	// reset setting view
-	_decimals = 0;
-	_reset = YES;
+	self.decimals = 0;
+	self.reset = YES;
 	
-	button_p.enabled = YES;
+	self.buttonP.enabled = YES;
 	
 	if (self.cell.detailTextLabel.text == nil) {
 		// set detail string
@@ -265,7 +305,7 @@
 {
 	CGFloat actualPrice = 0.0;
 	
-	if (!_reset) {
+	if (self.reset == NO) {
 		// get value from cell
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -277,19 +317,19 @@
 	NSLog(@"%@ - Actual price: %f", [self class], actualPrice);
 #endif
 	
-	switch (_decimals) {
+	switch (self.decimals) {
 		case 0:
-			_decimals = 0;
+			self.decimals = 0;
 			actualPrice = actualPrice * 10 + [sender tag];
 			break;
 			
 		case 1:
-			_decimals = 2;
+			self.decimals = 2;
 			actualPrice += (CGFloat)[sender tag] / 10;
 			break;
 			
 		case 2:
-			_decimals = 3;
+			self.decimals = 3;
 			actualPrice += (CGFloat)[sender tag] / 100;
 			break;
 			
@@ -300,7 +340,7 @@
 	}
 	
 	// disable price reset
-	_reset = NO;
+	self.reset = NO;
 	
 	// update detail string
 	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:actualPrice]
@@ -309,31 +349,31 @@
 
 - (void)cancTapped:(id)sender
 {
-	_decimals = 0;
+	self.decimals = 0;
 	
 	// cancel the detail string
 	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
 																	  numberStyle:NSNumberFormatterCurrencyStyle];
 	
 	// enable the point button
-	button_p.enabled = YES;
+	self.buttonP.enabled = YES;
 }
 
 - (void)pointTapped:(id)sender
 {
-    if (_reset) {
+    if (self.reset) {
         // reset detail string
         self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
                                                                           numberStyle:NSNumberFormatterCurrencyStyle];
         
         // disable price reset
-        _reset = NO;
+        self.reset = NO;
     }
     
-	_decimals = 1;
+	self.decimals = 1;
 	
 	// disable the point button
-	button_p.enabled = NO;
+	self.buttonP.enabled = NO;
 }
 
 @end

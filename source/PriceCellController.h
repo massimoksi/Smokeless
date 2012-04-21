@@ -12,24 +12,7 @@
 #import "SettingCellController.h"
 
 
-@interface PriceCellController : SettingCellController {
-	UIButton *button_0;
-	UIButton *button_1;
-	UIButton *button_2;
-	UIButton *button_3;
-	UIButton *button_4;
-	UIButton *button_5;
-	UIButton *button_6;
-	UIButton *button_7;
-	UIButton *button_8;
-	UIButton *button_9;
-	UIButton *button_c;
-	UIButton *button_p;
-	
-@private
-	BOOL _reset;
-	NSUInteger _decimals;
-}
+@interface PriceCellController : SettingCellController
 
 - (UIButton *)calcButtonWithPosition:(CGPoint)position andTag:(NSInteger)tag;
 
