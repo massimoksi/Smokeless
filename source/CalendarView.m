@@ -22,10 +22,22 @@
 #define BUTTON_OFFSET_Y	8.0
 
 
+@interface CalendarView ()
+
+@property (nonatomic, retain) UILabel *yearLabel;
+@property (nonatomic, retain) UILabel *monthLabel;
+@property (nonatomic, retain) UILabel *dayLabel;
+
+@end
+
+
 @implementation CalendarView
 
 @synthesize editButton = _editButton;
 @synthesize prevButton = _prevButton;
+@synthesize yearLabel = _yearLabel;
+@synthesize monthLabel = _monthLabel;
+@synthesize dayLabel = _dayLabel;
 
 - (id)initWithDate:(NSDate *)aDate
 {
@@ -44,51 +56,51 @@
 		[title release];
 		
 		// create year label
-		yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-															  BOARD_ORIGIN_Y,
-															  BOARD_WIDTH,
-															  44.0)];
-		yearLabel.backgroundColor = [UIColor clearColor];
-		yearLabel.font = [UIFont systemFontOfSize:32.0];
-		yearLabel.textAlignment = UITextAlignmentCenter;
-		yearLabel.textColor = [UIColor colorWithWhite:0.950
-                                                alpha:1.000];
-		yearLabel.shadowColor = [UIColor colorWithWhite:0.250
-                                                  alpha:1.000];
-        yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+		self.yearLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                    BOARD_ORIGIN_Y,
+                                                                    BOARD_WIDTH,
+                                                                    44.0)] autorelease];
+		self.yearLabel.backgroundColor = [UIColor clearColor];
+		self.yearLabel.font = [UIFont systemFontOfSize:32.0];
+		self.yearLabel.textAlignment = UITextAlignmentCenter;
+		self.yearLabel.textColor = [UIColor colorWithWhite:0.950
+                                                     alpha:1.000];
+		self.yearLabel.shadowColor = [UIColor colorWithWhite:0.250
+                                                       alpha:1.000];
+        self.yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create month label
-		monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-															   132.0,
-															   BOARD_WIDTH,
-															   44.0)];
-		monthLabel.backgroundColor = [UIColor clearColor];
-		monthLabel.font = [UIFont boldSystemFontOfSize:36.0];
-		monthLabel.textAlignment = UITextAlignmentCenter;
-		monthLabel.textColor = [UIColor colorWithWhite:0.150
-												 alpha:1.000];
-        dayLabel.shadowColor = [UIColor colorWithWhite:1.000
-                                                 alpha:1.000];
-        dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+		self.monthLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                     132.0,
+                                                                     BOARD_WIDTH,
+                                                                     44.0)] autorelease];
+		self.monthLabel.backgroundColor = [UIColor clearColor];
+		self.monthLabel.font = [UIFont boldSystemFontOfSize:36.0];
+		self.monthLabel.textAlignment = UITextAlignmentCenter;
+		self.monthLabel.textColor = [UIColor colorWithWhite:0.150
+                                                      alpha:1.000];
+        self.monthLabel.shadowColor = [UIColor colorWithWhite:1.000
+                                                        alpha:1.000];
+        self.monthLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 		
 		// create day label
-		dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-															 158.0,
-															 BOARD_WIDTH,
-															 194.0)];
-		dayLabel.backgroundColor = [UIColor clearColor];
-		dayLabel.font = [UIFont systemFontOfSize:160.0];
-		dayLabel.textAlignment = UITextAlignmentCenter;
-		dayLabel.textColor = [UIColor colorWithWhite:0.150
-											   alpha:1.000];
-        dayLabel.shadowColor = [UIColor colorWithWhite:1.000
-                                                 alpha:1.000];
-        dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+		self.dayLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                   158.0,
+                                                                   BOARD_WIDTH,
+                                                                   194.0)] autorelease];
+		self.dayLabel.backgroundColor = [UIColor clearColor];
+		self.dayLabel.font = [UIFont systemFontOfSize:160.0];
+		self.dayLabel.textAlignment = UITextAlignmentCenter;
+		self.dayLabel.textColor = [UIColor colorWithWhite:0.150
+                                                    alpha:1.000];
+        self.dayLabel.shadowColor = [UIColor colorWithWhite:1.000
+                                                      alpha:1.000];
+        self.dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 		
 		// add labels
-		[self addSubview:yearLabel];
-		[self addSubview:monthLabel];
-		[self addSubview:dayLabel];
+		[self addSubview:self.yearLabel];
+		[self addSubview:self.monthLabel];
+		[self addSubview:self.dayLabel];
 		
 		// create edit button
 		self.editButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -124,13 +136,12 @@
 }
 
 - (void)dealloc
-{
-	[yearLabel release];
-	[monthLabel release];
-	[dayLabel release];
-	
+{	
 	self.editButton = nil;
 	self.prevButton = nil;
+	self.yearLabel = nil;
+	self.monthLabel = nil;
+	self.dayLabel = nil;
 	
 	self.date = nil;
 	
@@ -167,15 +178,15 @@
 		NSInteger day = [components day];
 			
 		// set year to label
-		yearLabel.text = [NSString stringWithFormat:@"%d", year];
+		self.yearLabel.text = [NSString stringWithFormat:@"%d", year];
 			
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
+		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
 		[df release];
 			
 		// set day to label
-		dayLabel.text = [NSString stringWithFormat:@"%d", day];
+		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 		
 		// enable prev button
 		self.prevButton.enabled = YES;
@@ -191,15 +202,15 @@
 		NSInteger day = [components day];
 		
 		// set year to label
-		yearLabel.text = [NSString stringWithFormat:@"%d", year];
+		self.yearLabel.text = [NSString stringWithFormat:@"%d", year];
 		
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
+		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
 		[df release];
 		
 		// set day to label
-		dayLabel.text = [NSString stringWithFormat:@"%d", day];
+		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
 		
 		// disable prev button
 		self.prevButton.enabled = NO;

@@ -11,11 +11,6 @@
 
 @interface CalendarView : UIImageView {
 	NSDate *_date;
-	
-@private
-	UILabel *yearLabel;
-	UILabel *monthLabel;
-	UILabel *dayLabel;
 }
 
 @property (nonatomic, retain) NSDate *date;
