@@ -11,11 +11,34 @@
 #import "PreferencesManager.h"
 #import "savingsSettingsController.h"
 
+#import "DisplayView.h"
+
 
 #define ACCELERATION_THRESHOLD  2.0
 
 
+@interface SavingsViewController ()
+
+@property (nonatomic, retain) UIImageView *savingsView;
+@property (nonatomic, retain) DisplayView *displayView;
+
+@property (nonatomic, retain) AVAudioPlayer *tinklePlayer;
+
+@property (nonatomic, assign) BOOL shakeEnabled;
+@property (nonatomic, assign) CGFloat totalSavings;
+@property (nonatomic, assign) NSUInteger totalPackets;
+
+@end
+
+
 @implementation SavingsViewController
+
+@synthesize savingsView = _savingsView;
+@synthesize displayView = _displayView;
+@synthesize tinklePlayer = _tinklePlayer;
+@synthesize shakeEnabled = _shakeEnabled;
+@synthesize totalSavings = _totalSavings;
+@synthesize totalPackets = _totalPackets;
 
 #pragma mark View lifecycle
 
@@ -28,10 +51,10 @@
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];	
 
 	// create the savings view
-	savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
+	self.savingsView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]] autorelease];
 	
     // create display
-    display = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)];
+    self.displayView = [[[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)] autorelease];
 	
 	// create the edit button
 	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -47,8 +70,8 @@
 		  forControlEvents:UIControlEventTouchUpInside];
 	
 	// create view hierarchy
-	[self.view addSubview:savingsView];
-    [self.view addSubview:display];
+	[self.view addSubview:self.savingsView];
+    [self.view addSubview:self.displayView];
 	[self.view addSubview:toolsButton];
     
     // setup accelerometer
@@ -70,9 +93,9 @@
     PreferencesManager *prefsManager = [PreferencesManager sharedManager];
     
     // set ivars
-    shakeEnabled = [[prefsManager.prefs objectForKey:SHAKE_ENABLED_KEY] boolValue];
-    totalSavings = [prefsManager totalSavings];
-    totalPackets = [prefsManager totalPackets];
+    self.shakeEnabled = [[prefsManager.prefs objectForKey:SHAKE_ENABLED_KEY] boolValue];
+    self.totalSavings = [prefsManager totalSavings];
+    self.totalPackets = [prefsManager totalPackets];
     
     // create number formatter
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -80,7 +103,7 @@
     
     // set unit
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    display.moneyUnit.text = [formatter currencySymbol];
+    self.displayView.moneyUnit.text = [formatter currencySymbol];
 
     // set formatter for the amount label
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -94,14 +117,14 @@
 
     // set amount display labels
 	if (habits && price && size) {
-        display.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:totalSavings]];
-        display.packetsLabel.text = [NSString stringWithFormat:@"%d", totalPackets];
+        self.displayView.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:self.totalSavings]];
+        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
 	}
     else {
-        display.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:0.0]];
-        display.packetsLabel.text = [NSString stringWithFormat:@"0"];
+        self.displayView.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:0.0]];
+        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
     }
-    [display setState:DisplayStateMoney
+    [self.displayView setState:DisplayStateMoney
         withAnimation:NO];
 
     // release number formatter
@@ -117,34 +140,23 @@
 
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
 	
-	[savingsView release];
-    [display release];
+    self.savingsView = nil;
+    self.displayView = nil;
 }
 
 - (void)dealloc
 {
-	[savingsView release];
-    [display release];
+    self.savingsView = nil;
+    self.displayView = nil;
     
     self.tinklePlayer = nil;
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize tinklePlayer;
 
 #pragma mark Actions
 
@@ -179,13 +191,12 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma Accelerometer delegate
+#pragma - Accelerometer delegate
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    if ((shakeEnabled == YES) &&
-        (totalSavings > 0.0)) {
+    if ((self.shakeEnabled == YES) &&
+        (self.totalSavings > 0.0)) {
         if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
             if (self.tinklePlayer.playing == NO) {
                 [self.tinklePlayer play];
