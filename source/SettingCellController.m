@@ -11,7 +11,13 @@
 
 @implementation SettingCellController
 
-#pragma mark Initialization
+@synthesize index = _index;
+@synthesize selected = _selected;
+@synthesize cell = _cell;
+@synthesize settingView = _settingView;
+@synthesize saveButton = _saveButton;
+@synthesize cancelButton = _cancelButton;
+@synthesize delegate = _delegate;
 
 - (id)init
 {
@@ -96,13 +102,6 @@
 
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -124,16 +123,6 @@
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize index;
-@synthesize selected;
-@synthesize cell;
-@synthesize settingView;
-@synthesize saveButton;
-@synthesize cancelButton;
-@synthesize delegate;
 
 #pragma mark Actions
 
