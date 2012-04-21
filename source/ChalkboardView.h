@@ -14,12 +14,6 @@
 	NSUInteger _months;
 	NSUInteger _weeks;
 	NSUInteger _days;
-
-@private
-	UILabel *yearsLabel;
-	UILabel *monthsLabel;
-	UILabel *weeksLabel;
-	UILabel *daysLabel;
 }
 
 @property (nonatomic, assign) NSUInteger years;

@@ -27,10 +27,24 @@
 #define BUTTON_OFFSET_Y	8.0
 
 
+@interface ChalkboardView ()
+
+@property (nonatomic, retain) UILabel *yearsLabel;
+@property (nonatomic, retain) UILabel *monthsLabel;
+@property (nonatomic, retain) UILabel *weeksLabel;
+@property (nonatomic, retain) UILabel *daysLabel;
+
+@end
+
+
 @implementation ChalkboardView
 
 @synthesize tweetButton = _tweetButton;
 @synthesize nextButton = _nextButton;
+@synthesize yearsLabel = _yearsLabel;
+@synthesize monthsLabel = _monthsLabel;
+@synthesize weeksLabel = _weeksLabel;
+@synthesize daysLabel = _daysLabel;
 
 - (id)init
 {
@@ -49,28 +63,28 @@
 		[title release];
 		
 		// create labels
-		yearsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-															   BOARD_ORIGIN_Y + LABEL_PADDING_Y,
-															   LABEL_WIDTH,
-															   LABEL_HEIGHT)];
-		monthsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-																BOARD_ORIGIN_Y + LABEL_HEIGHT + 2*LABEL_PADDING_Y,
-																LABEL_WIDTH,
-																LABEL_HEIGHT)];
-		weeksLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-															   BOARD_ORIGIN_Y + 2*LABEL_HEIGHT + 3*LABEL_PADDING_Y,
-															   LABEL_WIDTH,
-															   LABEL_HEIGHT)];
-		daysLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-															  BOARD_ORIGIN_Y + 3*LABEL_HEIGHT + 4*LABEL_PADDING_Y,
-															  LABEL_WIDTH,
-															  LABEL_HEIGHT)];
+		self.yearsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                     BOARD_ORIGIN_Y + LABEL_PADDING_Y,
+                                                                     LABEL_WIDTH,
+                                                                     LABEL_HEIGHT)] autorelease];
+		self.monthsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                      BOARD_ORIGIN_Y + LABEL_HEIGHT + 2*LABEL_PADDING_Y,
+                                                                      LABEL_WIDTH,
+                                                                      LABEL_HEIGHT)] autorelease];
+		self.weeksLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                     BOARD_ORIGIN_Y + 2*LABEL_HEIGHT + 3*LABEL_PADDING_Y,
+                                                                     LABEL_WIDTH,
+                                                                     LABEL_HEIGHT)] autorelease];
+		self.daysLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                    BOARD_ORIGIN_Y + 3*LABEL_HEIGHT + 4*LABEL_PADDING_Y,
+                                                                    LABEL_WIDTH,
+                                                                    LABEL_HEIGHT)] autorelease];
 		
 		// add labels
-		[self addLabel:yearsLabel];
-		[self addLabel:monthsLabel];
-		[self addLabel:weeksLabel];
-		[self addLabel:daysLabel];
+		[self addLabel:self.yearsLabel];
+		[self addLabel:self.monthsLabel];
+		[self addLabel:self.weeksLabel];
+		[self addLabel:self.daysLabel];
 
         // create tweet button
         self.tweetButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -111,13 +125,13 @@
 }
 
 - (void)dealloc
-{
-	[yearsLabel release];
-	[monthsLabel release];
-	[weeksLabel release];
-	[daysLabel release];
-	
+{	
 	self.nextButton = nil;
+    self.tweetButton = nil;
+	self.yearsLabel = nil;
+	self.monthsLabel = nil;
+	self.weeksLabel = nil;
+	self.daysLabel = nil;
 	
     [super dealloc];
 }
@@ -135,7 +149,7 @@
 		_years = value;
 	}
 	
-	yearsLabel.text = (_years != 1) ? [NSString stringWithFormat:MPString(@"%d years"), _years] : [NSString stringWithFormat:MPString(@"%d year"), _years];
+	self.yearsLabel.text = (_years != 1) ? [NSString stringWithFormat:MPString(@"%d years"), _years] : [NSString stringWithFormat:MPString(@"%d year"), _years];
 }
 
 - (NSUInteger)months
@@ -149,7 +163,7 @@
 		_months = value;
 	}
 	
-	monthsLabel.text = (_months != 1) ? [NSString stringWithFormat:MPString(@"%d months"), _months] : [NSString stringWithFormat:MPString(@"%d month"), _months];
+	self.monthsLabel.text = (_months != 1) ? [NSString stringWithFormat:MPString(@"%d months"), _months] : [NSString stringWithFormat:MPString(@"%d month"), _months];
 }
 
 - (NSUInteger)weeks
@@ -163,7 +177,7 @@
 		_weeks = value;
 	}
 	
-	weeksLabel.text = (_weeks != 1) ? [NSString stringWithFormat:MPString(@"%d weeks"), _weeks] : [NSString stringWithFormat:MPString(@"%d week"), _weeks];
+	self.weeksLabel.text = (_weeks != 1) ? [NSString stringWithFormat:MPString(@"%d weeks"), _weeks] : [NSString stringWithFormat:MPString(@"%d week"), _weeks];
 }
 
 - (NSUInteger)days
@@ -177,7 +191,7 @@
 		_days = value;
 	}
 	
-	daysLabel.text = (_days != 1) ? [NSString stringWithFormat:MPString(@"%d days"), _days] : [NSString stringWithFormat:MPString(@"%d day"), _days];
+	self.daysLabel.text = (_days != 1) ? [NSString stringWithFormat:MPString(@"%d days"), _days] : [NSString stringWithFormat:MPString(@"%d day"), _days];
 }
 
 #pragma mark Actions
