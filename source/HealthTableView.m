@@ -14,7 +14,20 @@
 #define SHADOW_RATIO            (SHADOW_INVERSE_HEIGHT / SHADOW_HEIGHT)
 
 
+@interface HealthTableView ()
+
+@property (nonatomic, retain) CAGradientLayer *originShadow;
+@property (nonatomic, retain) CAGradientLayer *topShadow;
+@property (nonatomic, retain) CAGradientLayer *bottomShadow;
+
+@end
+
+
 @implementation HealthTableView
+
+@synthesize originShadow = _originShadow;
+@synthesize topShadow = _topShadow;
+@synthesize bottomShadow = _bottomShadow;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,8 +46,9 @@
 
 - (void)dealloc
 {
-	[topShadow release];
-	[bottomShadow release];
+    self.originShadow = nil;
+    self.topShadow = nil;
+    self.bottomShadow = nil;
     
 	[super dealloc];
 }
@@ -46,13 +60,13 @@
 	[super layoutSubviews];
 	
 	// construct the origin shadow if needed
-	if (!originShadow) {
-		originShadow = [self shadowAsInverse:NO];
-		[self.layer insertSublayer:originShadow
+	if (self.originShadow == nil) {
+		self.originShadow = [self shadowAsInverse:NO];
+		[self.layer insertSublayer:self.originShadow
                            atIndex:0];
 	}
-	else if ([[self.layer.sublayers objectAtIndex:0] isEqual:originShadow] == NO) {
-		[self.layer insertSublayer:originShadow
+	else if ([[self.layer.sublayers objectAtIndex:0] isEqual:self.originShadow] == NO) {
+		[self.layer insertSublayer:self.originShadow
                            atIndex:0];
 	}
 	
@@ -61,22 +75,20 @@
                      forKey:kCATransactionDisableActions];
 
 	// stretch and place the origin shadow
-	CGRect originShadowFrame = originShadow.frame;
+	CGRect originShadowFrame = self.originShadow.frame;
 	originShadowFrame.size.width = self.frame.size.width;
 	originShadowFrame.origin.y = self.contentOffset.y;
-	originShadow.frame = originShadowFrame;
+	self.originShadow.frame = originShadowFrame;
 	
 	[CATransaction commit];
 	
 	NSArray *indexPathsForVisibleRows = [self indexPathsForVisibleRows];
 	if ([indexPathsForVisibleRows count] == 0) {
-		[topShadow removeFromSuperlayer];
-		[topShadow release];
-		topShadow = nil;
+		[self.topShadow removeFromSuperlayer];
+		self.topShadow = nil;
 
-		[bottomShadow removeFromSuperlayer];
-		[bottomShadow release];
-		bottomShadow = nil;
+		[self.bottomShadow removeFromSuperlayer];
+		self.bottomShadow = nil;
 
 		return;
 	}
@@ -84,50 +96,48 @@
 	NSIndexPath *firstRow = [indexPathsForVisibleRows objectAtIndex:0];
 	if ([firstRow section] == 0 && [firstRow row] == 0) {
 		UIView *cell = [self cellForRowAtIndexPath:firstRow];
-		if (!topShadow) {
-			topShadow = [[self shadowAsInverse:YES] retain];
-			[cell.layer insertSublayer:topShadow
+		if (self.topShadow == nil) {
+			self.topShadow = [self shadowAsInverse:YES];
+			[cell.layer insertSublayer:self.topShadow
                                atIndex:0];
 		}
-		else if ([cell.layer.sublayers indexOfObjectIdenticalTo:topShadow] != 0) {
-			[cell.layer insertSublayer:topShadow
+		else if ([cell.layer.sublayers indexOfObjectIdenticalTo:self.topShadow] != 0) {
+			[cell.layer insertSublayer:self.topShadow
                                atIndex:0];
 		}
 
-		CGRect shadowFrame = topShadow.frame;
+		CGRect shadowFrame = self.topShadow.frame;
 		shadowFrame.size.width = cell.frame.size.width;
 		shadowFrame.origin.y = -SHADOW_INVERSE_HEIGHT;
-		topShadow.frame = shadowFrame;
+		self.topShadow.frame = shadowFrame;
 	}
 	else {
-		[topShadow removeFromSuperlayer];
-		[topShadow release];
-		topShadow = nil;
+		[self.topShadow removeFromSuperlayer];
+		self.topShadow = nil;
 	}
 
 	NSIndexPath *lastRow = [indexPathsForVisibleRows lastObject];
 	if ([lastRow section] == [self numberOfSections] - 1 &&
 		[lastRow row] == [self numberOfRowsInSection:[lastRow section]] - 1) {
 		UIView *cell = [self cellForRowAtIndexPath:lastRow];
-		if (!bottomShadow) {
-			bottomShadow = [[self shadowAsInverse:NO] retain];
-			[cell.layer insertSublayer:bottomShadow
+		if (self.bottomShadow == nil) {
+			self.bottomShadow = [self shadowAsInverse:NO];
+			[cell.layer insertSublayer:self.bottomShadow
                                atIndex:0];
 		}
-		else if ([cell.layer.sublayers indexOfObjectIdenticalTo:bottomShadow] != 0) {
-			[cell.layer insertSublayer:bottomShadow
+		else if ([cell.layer.sublayers indexOfObjectIdenticalTo:self.bottomShadow] != 0) {
+			[cell.layer insertSublayer:self.bottomShadow
                                atIndex:0];
 		}
 
-		CGRect shadowFrame = bottomShadow.frame;
+		CGRect shadowFrame = self.bottomShadow.frame;
 		shadowFrame.size.width = cell.frame.size.width;
 		shadowFrame.origin.y = cell.frame.size.height;
-		bottomShadow.frame = shadowFrame;
+		self.bottomShadow.frame = shadowFrame;
 	}
 	else {
-		[bottomShadow removeFromSuperlayer];
-		[bottomShadow release];
-		bottomShadow = nil;
+		[self.bottomShadow removeFromSuperlayer];
+		self.bottomShadow = nil;
 	}
 }
 
