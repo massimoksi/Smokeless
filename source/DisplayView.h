@@ -16,9 +16,7 @@ typedef enum {
 } DisplayState;
 
 
-@interface DisplayView : UIView {
-    DisplayState _state;
-}
+@interface DisplayView : UIView
 
 @property (nonatomic, retain) UILabel *moneyUnit;
 @property (nonatomic, retain) UILabel *moneyLabel;

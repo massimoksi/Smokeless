@@ -11,6 +11,8 @@
 
 @interface DisplayView ()
 
+@property (nonatomic, assign) DisplayState state;
+
 @property (nonatomic, retain) UIImageView *packetsUnit;
 
 @end
@@ -18,6 +20,7 @@
 
 @implementation DisplayView
 
+@synthesize state = _state;
 @synthesize moneyUnit = _moneyUnit;
 @synthesize moneyLabel = _moneyLabel;
 @synthesize packetsUnit = _packetsUnit;
