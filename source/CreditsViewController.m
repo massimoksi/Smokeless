@@ -117,19 +117,6 @@
     thanksCredit2.font = [UIFont systemFontOfSize:15.0];
     thanksCredit2.text = MPString(@"Matej Bukovinski for MBProgressHUD");
 
-    UILabel *thanksCredit3 = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
-                                                                       7*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
-                                                                       320.0,
-                                                                       LABEL_HEIGHT)];
-    thanksCredit3.backgroundColor = [UIColor clearColor];
-    thanksCredit3.textAlignment = UITextAlignmentCenter;
-    thanksCredit3.textColor = [UIColor blackColor];
-    thanksCredit3.shadowColor = [UIColor colorWithWhite:0.850
-                                                  alpha:1.000];
-    thanksCredit3.shadowOffset = CGSizeMake(0.0, 1.0);
-    thanksCredit3.font = [UIFont systemFontOfSize:15.0];
-    thanksCredit3.text = MPString(@"Matt Gallagher for ShadowedTableView");
-
     // create view hierarchy
     [self.view addSubview:dndTitle];
     [self.view addSubview:dndCredit];
@@ -138,7 +125,6 @@
     [self.view addSubview:thanksTitle];
     [self.view addSubview:thanksCredit1];
     [self.view addSubview:thanksCredit2];
-    [self.view addSubview:thanksCredit3];
     
     // release labels
     [dndTitle release];
@@ -148,7 +134,6 @@
     [thanksTitle release];
     [thanksCredit1 release];
     [thanksCredit2 release];
-    [thanksCredit3 release];
 }
 
 @end
