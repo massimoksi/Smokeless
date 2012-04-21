@@ -9,12 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ChalkboardView : UIImageView {
-	NSUInteger _years;
-	NSUInteger _months;
-	NSUInteger _weeks;
-	NSUInteger _days;
-}
+@interface ChalkboardView : UIImageView
 
 @property (nonatomic, assign) NSUInteger years;
 @property (nonatomic, assign) NSUInteger months;

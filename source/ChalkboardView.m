@@ -39,6 +39,10 @@
 
 @implementation ChalkboardView
 
+@synthesize years = _years;
+@synthesize months = _months;
+@synthesize weeks = _weeks;
+@synthesize days = _days;
 @synthesize tweetButton = _tweetButton;
 @synthesize nextButton = _nextButton;
 @synthesize yearsLabel = _yearsLabel;
@@ -138,11 +142,6 @@
 
 #pragma mark Accessors
 
-- (NSUInteger)years
-{
-	return _years;
-}
-
 - (void)setYears:(NSUInteger)value
 {
 	if (_years != value) {
@@ -150,11 +149,6 @@
 	}
 	
 	self.yearsLabel.text = (_years != 1) ? [NSString stringWithFormat:MPString(@"%d years"), _years] : [NSString stringWithFormat:MPString(@"%d year"), _years];
-}
-
-- (NSUInteger)months
-{
-	return _months;
 }
 
 - (void)setMonths:(NSUInteger)value
@@ -166,11 +160,6 @@
 	self.monthsLabel.text = (_months != 1) ? [NSString stringWithFormat:MPString(@"%d months"), _months] : [NSString stringWithFormat:MPString(@"%d month"), _months];
 }
 
-- (NSUInteger)weeks
-{
-	return _weeks;
-}
-
 - (void)setWeeks:(NSUInteger)value
 {
 	if (_weeks != value) {
@@ -178,11 +167,6 @@
 	}
 	
 	self.weeksLabel.text = (_weeks != 1) ? [NSString stringWithFormat:MPString(@"%d weeks"), _weeks] : [NSString stringWithFormat:MPString(@"%d week"), _weeks];
-}
-
-- (NSUInteger)days
-{
-	return _days;
 }
 
 - (void)setDays:(NSUInteger)value
