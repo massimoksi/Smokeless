@@ -20,11 +20,7 @@
 #define NOTIFICATIONS_ENABLED_KEY   @"NotificationsEnabled"
 
 
-@interface PreferencesManager : NSObject {
-	NSMutableDictionary *_prefs;
-	
-	NSString *_path;
-}
+@interface PreferencesManager : NSObject
 
 @property (nonatomic, retain) NSMutableDictionary *prefs;
 @property (nonatomic, copy) NSString *path;
