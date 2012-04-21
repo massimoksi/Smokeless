@@ -953,6 +953,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				BUNDLE_IDENTIFIER = "com.gmail.massimoperi.Smokeless-dev";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -963,6 +964,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Smokeless;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
