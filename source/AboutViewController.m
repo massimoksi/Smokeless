@@ -158,20 +158,32 @@
 		// customize cells appearence
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+        cell.textLabel.textColor = [UIColor colorWithWhite:0.710
+                                                     alpha:1.000];
         cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+        cell.textLabel.shadowColor = [UIColor colorWithWhite:0.000
+                                                       alpha:1.000];
+        cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
         
         cell.detailTextLabel.font = [UIFont systemFontOfSize:15.0];
         cell.detailTextLabel.backgroundColor = [UIColor clearColor];
-        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.710
+                                                           alpha:1.000];
+        cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.000
+                                                             alpha:1.000];
+        cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+
         
         cell.backgroundView.style = MPCellStyleColorFill;
         cell.backgroundView.cornerRadius = 5.0;
-        cell.backgroundView.borderColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-        cell.backgroundView.fillColor = [UIColor colorWithWhite:0.000 alpha:0.750];
+        cell.backgroundView.borderColor = [UIColor colorWithWhite:0.710
+                                                            alpha:0.750];
+        cell.backgroundView.fillColor = [UIColor colorWithWhite:0.000
+                                                          alpha:0.750];
         
         cell.selectedBackgroundView.cornerRadius = 5.0;
-        cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710 alpha:0.750];
+        cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710
+                                                                    alpha:0.750];
 	}
 	
 	// set cells content
