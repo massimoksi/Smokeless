@@ -11,6 +11,8 @@
 
 @implementation MPTableViewCell
 
+@synthesize position = _position;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style
@@ -55,11 +57,6 @@
     
     [super setHighlighted:highlighted
                  animated:animated];
-}
-
-- (MPTableViewCellPosition)position
-{
-    return _position;
 }
 
 - (void)setPosition:(MPTableViewCellPosition)cellPosition
