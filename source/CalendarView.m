@@ -33,6 +33,7 @@
 
 @implementation CalendarView
 
+@synthesize date = _date;
 @synthesize editButton = _editButton;
 @synthesize prevButton = _prevButton;
 @synthesize yearLabel = _yearLabel;
@@ -149,11 +150,6 @@
 }
 
 #pragma mark Accessors
-
-- (NSDate *)date
-{
-	return _date;
-}
 
 - (void)setDate:(NSDate *)aDate
 {

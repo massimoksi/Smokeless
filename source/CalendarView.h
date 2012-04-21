@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CalendarView : UIImageView {
-	NSDate *_date;
-}
+@interface CalendarView : UIImageView
 
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) UIButton *editButton;
