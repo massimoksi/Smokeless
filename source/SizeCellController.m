@@ -11,7 +11,19 @@
 #import "PreferencesManager.h"
 
 
+#define MAX_PACKET_SIZE 50
+
+
+@interface SizeCellController ()
+
+@property (nonatomic, retain) UIPickerView *sizePicker;
+
+@end
+
+
 @implementation SizeCellController
+
+@synthesize sizePicker = _sizePicker;
 
 - (void)viewDidLoad
 {
@@ -23,17 +35,24 @@
 	[self updateCell];
 	
 	// create the size picker
-	sizePicker = [[UIPickerView alloc] init];
-	sizePicker.showsSelectionIndicator = YES;
-	sizePicker.dataSource = self;
-	sizePicker.delegate = self;
+	self.sizePicker = [[[UIPickerView alloc] init] autorelease];
+	self.sizePicker.showsSelectionIndicator = YES;
+	self.sizePicker.dataSource = self;
+	self.sizePicker.delegate = self;
 
     // create shadow
     CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
-    shadowLayer.frame = CGRectMake(0.0, sizePicker.frame.size.height, 320.0, 10.0);
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000 alpha:0.800].CGColor;
+    shadowLayer.frame = CGRectMake(0.0,
+                                   self.sizePicker.frame.size.height,
+                                   320.0,
+                                   10.0);
+    CGColorRef darkColor = [UIColor colorWithWhite:0.000
+                                             alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:(id)darkColor, (id)lightColor, nil];
+    shadowLayer.colors = [NSArray arrayWithObjects:
+                          (id)darkColor,
+                          (id)lightColor,
+                          nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -48,25 +67,18 @@
                 forControlEvents:UIControlEventTouchUpInside];
 	
 	// create setting view hierarchy
-	[self.settingView addSubview:sizePicker];
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
+	[self.settingView addSubview:self.sizePicker];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    self.sizePicker = nil;
 }
 
 - (void)dealloc
 {
-	[sizePicker release];
+    self.sizePicker = nil;
 	
     [super dealloc];
 }
@@ -96,15 +108,15 @@
 - (void)updateSettingView
 {
 	// set values from preferences to the picker view
-	[sizePicker selectRow:([[[PreferencesManager sharedManager].prefs objectForKey:PACKET_SIZE_KEY] intValue] - 1)
-			  inComponent:0
-				 animated:NO];
+	[self.sizePicker selectRow:([[[PreferencesManager sharedManager].prefs objectForKey:PACKET_SIZE_KEY] intValue] - 1)
+                   inComponent:0
+                      animated:NO];
 }
 
 - (void)saveTapped:(id)sender
 {
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithInt:([sizePicker selectedRowInComponent:0] + 1)]
+	[[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithInt:([self.sizePicker selectedRowInComponent:0] + 1)]
 												 forKey:PACKET_SIZE_KEY];
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
@@ -119,8 +131,7 @@
 	[self hideSettingView];
 }
 
-#pragma mark -
-#pragma mark Picker view data source
+#pragma mark - Picker view data source
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -129,11 +140,10 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	return 51;
+	return MAX_PACKET_SIZE;
 }
 
-#pragma mark -
-#pragma mark Picker view delegate
+#pragma mark - Picker view delegate
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
