@@ -289,6 +289,11 @@
 		56A213281372008000110C1B /* Savings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Savings@2x.png"; sourceTree = "<group>"; };
 		56A96317133E5A1F00E372F0 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Achievement.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		56A96318133E5A1F00E372F0 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Achievement.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		56AAE3291550787800692852 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "/Users/massimo/Projects/Smokeless/resources/de.lproj/TitleChalkboard@2x.png"; sourceTree = "<absolute>"; };
+		56AAE32A1550787900692852 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/Localizable.strings; sourceTree = "<absolute>"; };
+		56AAE32B1550787900692852 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/TitleCalendar.png; sourceTree = "<absolute>"; };
+		56AAE32C1550787900692852 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = "/Users/massimo/Projects/Smokeless/resources/de.lproj/TitleCalendar@2x.png"; sourceTree = "<absolute>"; };
+		56AAE32D1550787900692852 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = /Users/massimo/Projects/Smokeless/resources/de.lproj/TitleChalkboard.png; sourceTree = "<absolute>"; };
 		56AC243A152A53FF00BC3E9B /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
 		56AC243B152A53FF00BC3E9B /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
 		56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
@@ -897,6 +902,7 @@
 				56237A721370A5FB00DC411C /* en */,
 				56237A741370A60700DC411C /* it */,
 				56FD98D913914B100087E7BC /* es */,
+				56AAE32A1550787900692852 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -907,6 +913,7 @@
 				56237B1F1370B28A00DC411C /* en */,
 				56237B211370B2A100DC411C /* it */,
 				56C7768D13915FB600A4D936 /* es */,
+				56AAE32D1550787900692852 /* de */,
 			);
 			name = TitleChalkboard.png;
 			sourceTree = "<group>";
@@ -917,6 +924,7 @@
 				56237B231370B2AD00DC411C /* en */,
 				56237B251370B2B400DC411C /* it */,
 				56C7768E13915FBD00A4D936 /* es */,
+				56AAE3291550787800692852 /* de */,
 			);
 			name = "TitleChalkboard@2x.png";
 			sourceTree = "<group>";
@@ -927,6 +935,7 @@
 				56237B271370B2BE00DC411C /* en */,
 				56237B291370B2C400DC411C /* it */,
 				56C7768B13915FA500A4D936 /* es */,
+				56AAE32B1550787900692852 /* de */,
 			);
 			name = TitleCalendar.png;
 			sourceTree = "<group>";
@@ -937,6 +946,7 @@
 				56237B2B1370B2C900DC411C /* en */,
 				56237B2D1370B2CE00DC411C /* it */,
 				56C7768C13915FAF00A4D936 /* es */,
+				56AAE32C1550787900692852 /* de */,
 			);
 			name = "TitleCalendar@2x.png";
 			sourceTree = "<group>";
