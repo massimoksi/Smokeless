@@ -4,3 +4,4 @@
 * switch to iOS 5 only
 * switch to ARC
 * add licenses to the credits
+* add a build phase to compress images
