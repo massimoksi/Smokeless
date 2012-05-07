@@ -3,6 +3,7 @@
 * Added Twitter integration (iOS5+ only)
 * Added swipe gestures
 * Better user interface
+* Added German localization
 
 ---
 
