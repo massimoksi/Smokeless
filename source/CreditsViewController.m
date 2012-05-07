@@ -65,21 +65,34 @@
     locTitle.font = [UIFont boldSystemFontOfSize:15.0];
     locTitle.text = MPString(@"Localization");
 
-    UILabel *locCredit = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
-                                                                   3*LABEL_HEIGHT + LABEL_PADDING + SECTION_PADDING,
-                                                                   320.0,
-                                                                   LABEL_HEIGHT)];
-    locCredit.backgroundColor = [UIColor clearColor];
-    locCredit.textAlignment = UITextAlignmentCenter;
-    locCredit.textColor = [UIColor blackColor];
-    locCredit.shadowColor = [UIColor colorWithWhite:0.850
-                                              alpha:1.000];
-    locCredit.shadowOffset = CGSizeMake(0.0, 1.0);
-    locCredit.font = [UIFont systemFontOfSize:15.0];
-    locCredit.text = MPString(@"Maria Giulia Morini");
+    UILabel *locCredit1 = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
+                                                                    3*LABEL_HEIGHT + LABEL_PADDING + SECTION_PADDING,
+                                                                    320.0,
+                                                                    LABEL_HEIGHT)];
+    locCredit1.backgroundColor = [UIColor clearColor];
+    locCredit1.textAlignment = UITextAlignmentCenter;
+    locCredit1.textColor = [UIColor blackColor];
+    locCredit1.shadowColor = [UIColor colorWithWhite:0.850
+                                               alpha:1.000];
+    locCredit1.shadowOffset = CGSizeMake(0.0, 1.0);
+    locCredit1.font = [UIFont systemFontOfSize:15.0];
+    locCredit1.text = MPString(@"Maria Giulia Morini");
+
+    UILabel *locCredit2 = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
+                                                                    4*LABEL_HEIGHT + LABEL_PADDING + SECTION_PADDING,
+                                                                    320.0,
+                                                                    LABEL_HEIGHT)];
+    locCredit2.backgroundColor = [UIColor clearColor];
+    locCredit2.textAlignment = UITextAlignmentCenter;
+    locCredit2.textColor = [UIColor blackColor];
+    locCredit2.shadowColor = [UIColor colorWithWhite:0.850
+                                               alpha:1.000];
+    locCredit2.shadowOffset = CGSizeMake(0.0, 1.0);
+    locCredit2.font = [UIFont systemFontOfSize:15.0];
+    locCredit2.text = MPString(@"Jens Wagner");
     
     UILabel *thanksTitle = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
-                                                                     4*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
+                                                                     5*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
                                                                      320.0,
                                                                      LABEL_HEIGHT)];
     thanksTitle.backgroundColor = [UIColor clearColor];
@@ -92,7 +105,7 @@
     thanksTitle.text = MPString(@"Special Thanks");
 
     UILabel *thanksCredit1 = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
-                                                                       5*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
+                                                                       6*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
                                                                        320.0,
                                                                        LABEL_HEIGHT)];
     thanksCredit1.backgroundColor = [UIColor clearColor];
@@ -105,7 +118,7 @@
     thanksCredit1.text = MPString(@"Yummigum for iconSweets 2");
 
     UILabel *thanksCredit2 = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
-                                                                       6*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
+                                                                       7*LABEL_HEIGHT + LABEL_PADDING + 2*SECTION_PADDING,
                                                                        320.0,
                                                                        LABEL_HEIGHT)];
     thanksCredit2.backgroundColor = [UIColor clearColor];
@@ -121,7 +134,8 @@
     [self.view addSubview:dndTitle];
     [self.view addSubview:dndCredit];
     [self.view addSubview:locTitle];
-    [self.view addSubview:locCredit];
+    [self.view addSubview:locCredit1];
+    [self.view addSubview:locCredit2];
     [self.view addSubview:thanksTitle];
     [self.view addSubview:thanksCredit1];
     [self.view addSubview:thanksCredit2];
@@ -130,7 +144,8 @@
     [dndTitle release];
     [dndCredit release];
     [locTitle release];
-    [locCredit release];
+    [locCredit1 release];
+    [locCredit2 release];
     [thanksTitle release];
     [thanksCredit1 release];
     [thanksCredit2 release];
