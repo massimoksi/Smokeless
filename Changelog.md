@@ -1,8 +1,9 @@
 # Version 1.1.0 (???)
 
-* Added Twitter integration (iOS 5+ only)
+* Added Twitter integration (iOS5+ only)
 * Added swipe gestures
 * Better user interface
+* Added German localization
 
 ---
 

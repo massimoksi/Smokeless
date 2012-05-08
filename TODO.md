@@ -1,5 +1,12 @@
 * add German localization
-* switch remote to BitBucket
+* update all images in iTunes Connect
+* compress all images
+
+---
+
 * update 3rd-party libraries
-* add licenses to the credits
+* switch remote to BitBucket
+* switch to iOS5 only
 * switch to ARC
+* add licenses to the credits
+* add a build phase to compress images

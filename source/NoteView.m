@@ -25,9 +25,9 @@
 		self.message = [[[UILabel alloc] initWithFrame:CGRectMake(7.0, 16.0, 120.0, 44.0)] autorelease];
 		self.message.backgroundColor = [UIColor clearColor];
 		self.message.font = [UIFont fontWithName:@"Marker Felt"
-                                            size:15.0];
+                                            size:13.0];
+        self.message.textAlignment = UITextAlignmentCenter;
 		self.message.numberOfLines = 2;
-		self.message.adjustsFontSizeToFitWidth = YES;
 				
 		// add message
 		[self addSubview:self.message];
