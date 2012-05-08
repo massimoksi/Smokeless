@@ -966,6 +966,7 @@
 				);
 				BUNDLE_IDENTIFIER = "com.gmail.massimoperi.Smokeless-dev";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -990,6 +991,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				BUNDLE_IDENTIFIER = com.gmail.massimoperi.Smokeless;
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
