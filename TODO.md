@@ -1,7 +1,3 @@
-* compress all images
-
----
-
 * update 3rd-party libraries
 * switch remote to BitBucket
 * switch to iOS5 only
