@@ -26,6 +26,7 @@
 		self.message.backgroundColor = [UIColor clearColor];
 		self.message.font = [UIFont fontWithName:@"Marker Felt"
                                             size:13.0];
+        self.message.textAlignment = UITextAlignmentCenter;
 		self.message.numberOfLines = 2;
 				
 		// add message
