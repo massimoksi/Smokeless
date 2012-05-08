@@ -9,26 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ChalkboardView : UIImageView {
-	NSUInteger _years;
-	NSUInteger _months;
-	NSUInteger _weeks;
-	NSUInteger _days;
-
-	
-	UIButton *_nextButton;
-
-@private
-	UILabel *yearsLabel;
-	UILabel *monthsLabel;
-	UILabel *weeksLabel;
-	UILabel *daysLabel;
-}
+@interface ChalkboardView : UIImageView
 
 @property (nonatomic, assign) NSUInteger years;
 @property (nonatomic, assign) NSUInteger months;
 @property (nonatomic, assign) NSUInteger weeks;
 @property (nonatomic, assign) NSUInteger days;
+@property (nonatomic, retain) UIButton *tweetButton;
 @property (nonatomic, retain) UIButton *nextButton;
 
 - (void)addLabel:(UILabel *)label;

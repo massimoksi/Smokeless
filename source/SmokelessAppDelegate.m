@@ -13,11 +13,13 @@
 
 @implementation SmokelessAppDelegate
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    /*
-     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
-     */
-}
+@synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
+@synthesize counterController = _counterController;
+@synthesize savingsController = _savingsController;
+@synthesize achievementsController = _achievementsNavController;
+@synthesize settingsNavController = _settingsNavController;
+@synthesize splashView = _splashView;
 
 - (void)dealloc
 {
@@ -25,7 +27,7 @@
     
     self.counterController = nil;
     self.savingsController = nil;
-    self.healthController = nil;
+    self.achievementsController = nil;
     self.settingsNavController = nil;
     
     self.tabBarController = nil;
@@ -34,18 +36,7 @@
     [super dealloc];
 }
 
-#pragma mark Accessors
-
-@synthesize window;
-@synthesize tabBarController;
-@synthesize counterController;
-@synthesize savingsController;
-@synthesize healthController;
-@synthesize settingsNavController;
-@synthesize splashView;
-
-#pragma -
-#pragma mark Application delegate
+#pragma mark - Application delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -67,10 +58,11 @@
 	self.savingsController.tabBarItem.title = MPString(@"Savings");
 	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
 	
-    // create achievements controller
-    self.healthController = [[[HealthViewController alloc] init] autorelease];
-    self.healthController.tabBarItem.title = MPString(@"Health");
-    self.healthController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
+    // create the achievements view controller
+    self.achievementsController = [[[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
+                                                                               bundle:nil] autorelease];
+    self.achievementsController.tabBarItem.title = MPString(@"Health");
+    self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
     
 	// create settings controller
 	SettingsViewController *settingsController = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -86,7 +78,7 @@
 	self.tabBarController.viewControllers = [NSArray arrayWithObjects:
                                              self.counterController,
                                              self.savingsController,
-                                             self.healthController,
+                                             self.achievementsController,
                                              self.settingsNavController,
                                              nil];
 

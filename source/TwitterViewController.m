@@ -9,21 +9,22 @@
 #import "TwitterViewController.h"
 
 
+@interface TwitterViewController ()
+
+@property (nonatomic, retain) MBProgressHUD *progressHUD;
+
+@end
+
+
 @implementation TwitterViewController
+
+@synthesize progressHUD = _progressHUD;
 
 - (void)dealloc
 {
-    [progressHUD release];
+    self.progressHUD = nil;
     
     [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark View lifecycle
@@ -43,8 +44,7 @@
 {
     [super viewDidUnload];
 
-    [progressHUD release];
-    progressHUD = nil;
+    self.progressHUD = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,15 +52,15 @@
     [super viewWillAppear:animated];
     
     // create progress HUD
-    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
-    progressHUD.delegate = self;
-    progressHUD.removeFromSuperViewOnHide = YES;
+    self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    self.progressHUD.delegate = self;
+    self.progressHUD.removeFromSuperViewOnHide = YES;
     
     // add progress HUD
-    [self.view addSubview:progressHUD];
+    [self.view addSubview:self.progressHUD];
     
     // show progress HUD
-    [progressHUD show:YES];
+    [self.progressHUD show:YES];
 
     // load twitter page
     [(UIWebView *)self.view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/#!/massimoperi"]]];
@@ -68,24 +68,21 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [progressHUD hide:YES];
+    [self.progressHUD hide:YES];
 }
 
-#pragma mark -
-#pragma mark Web view delegate
+#pragma mark - Web view delegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [progressHUD hide:YES];
+    [self.progressHUD hide:YES];
 }
 
-#pragma mark -
-#pragma mark Progress HUD delegate
+#pragma mark - Progress HUD delegate
 
 - (void)hudWasHidden
 {
-    [progressHUD release];
-    progressHUD = nil;
+    self.progressHUD = nil;
 }
 
 @end

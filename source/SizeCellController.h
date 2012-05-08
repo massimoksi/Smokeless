@@ -12,9 +12,7 @@
 #import "SettingCellController.h"
 
 
-@interface SizeCellController : SettingCellController <UIPickerViewDataSource, UIPickerViewDelegate> {
-	UIPickerView *sizePicker;
-}
+@interface SizeCellController : SettingCellController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 - (void)saveTapped:(id)sender;
 - (void)cancelTapped:(id)sender;

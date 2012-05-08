@@ -29,14 +29,7 @@ enum {
 };
 
 
-@interface AboutViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate> {
-	UITableView *_infosTable;
-    
-    UINavigationController *_twitterNavController;
-}
-
-@property (nonatomic, retain) UITableView *infosTable;
-@property (nonatomic, retain) UINavigationController *twitterNavController;
+@interface AboutViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 - (void)sendEmail;
 - (void)followOnTwitter;

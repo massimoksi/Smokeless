@@ -11,9 +11,6 @@
 #import "MBProgressHUD.h"
 
 
-@interface TwitterViewController : UIViewController <UIWebViewDelegate, MBProgressHUDDelegate> {
-@private
-    MBProgressHUD *progressHUD;
-}
+@interface TwitterViewController : UIViewController <UIWebViewDelegate, MBProgressHUDDelegate>
 
 @end

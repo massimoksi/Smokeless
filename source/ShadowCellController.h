@@ -12,8 +12,6 @@
 #import "SettingCellController.h"
 
 
-@interface ShadowCellController : SettingCellController {
-    
-}
+@interface ShadowCellController : SettingCellController
 
 @end

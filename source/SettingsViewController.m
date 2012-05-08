@@ -12,7 +12,18 @@
 #import "AboutViewController.h"
 
 
+@interface SettingsViewController ()
+
+@property (nonatomic, retain) UISwitch *shakeSwitch;
+@property (nonatomic, retain) UISwitch *notificationSwitch;
+
+@end
+
+
 @implementation SettingsViewController
+
+@synthesize shakeSwitch = _shakeSwitch;
+@synthesize notificationSwitch = _notificationSwitch;
 
 - (void)viewDidLoad
 {
@@ -43,13 +54,6 @@
 	[super viewWillAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
@@ -65,11 +69,6 @@
     
 	[super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize shakeSwitch;
-@synthesize notificationSwitch;
 
 #pragma mark Actions
 
@@ -95,8 +94,7 @@
     [[PreferencesManager sharedManager] savePrefs];
 }
 
-#pragma mark -
-#pragma mark Table view data source
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -137,20 +135,31 @@
 		// customize cells appearence
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.textLabel.textColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+        cell.textLabel.textColor = [UIColor colorWithWhite:0.710
+                                                     alpha:1.000];
+        cell.textLabel.shadowColor = [UIColor colorWithWhite:0.000
+                                                       alpha:1.000];
+        cell.textLabel.shadowOffset = CGSizeMake(0.0, 1.0);
         cell.textLabel.highlightedTextColor = [UIColor whiteColor];
 
         cell.detailTextLabel.font = [UIFont systemFontOfSize:15.0];
         cell.detailTextLabel.backgroundColor = [UIColor clearColor];
-        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.710
+                                                           alpha:1.000];
+        cell.detailTextLabel.shadowColor = [UIColor colorWithWhite:0.000
+                                                             alpha:1.000];
+        cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
         
         cell.backgroundView.style = MPCellStyleColorFill;
         cell.backgroundView.cornerRadius = 5.0;
-        cell.backgroundView.borderColor = [UIColor colorWithWhite:0.710 alpha:0.750];
-        cell.backgroundView.fillColor = [UIColor colorWithWhite:0.000 alpha:0.750];
+        cell.backgroundView.borderColor = [UIColor colorWithWhite:0.710
+                                                            alpha:0.750];
+        cell.backgroundView.fillColor = [UIColor colorWithWhite:0.000
+                                                          alpha:0.750];
         
         cell.selectedBackgroundView.cornerRadius = 5.0;
-        cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710 alpha:0.750];
+        cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710
+                                                                    alpha:0.750];
 	}
 		
 	// set cells content
@@ -204,8 +213,7 @@
     return NO;
 }
 
-#pragma mark -
-#pragma mark Table view delegate
+#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -224,7 +232,7 @@
 		}
 						
 		case SettingsSectionAbout:
-			[self.navigationController pushViewController:[[[AboutViewController alloc] init] autorelease]
+			[self.navigationController pushViewController:[[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease]
 												 animated:YES];
 			break;			
 	}
@@ -234,8 +242,7 @@
 							 animated:YES];
 }
 
-#pragma mark -
-#pragma mark Action sheet delegate
+#pragma mark - Action sheet delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {

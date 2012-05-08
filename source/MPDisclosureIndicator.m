@@ -16,6 +16,11 @@
 
 @implementation MPDisclosureIndicator
 
+@synthesize orientation = _orientation;
+@synthesize highlighted = _highlighted;
+@synthesize normalColor = _normalColor;
+@synthesize highlightedColor = _highlightedColor;
+
 - (id)init
 {
     self = [super initWithFrame:CGRectMake(0.0, 0.0, FRAME_WIDTH, FRAME_HEIGHT)];
@@ -40,11 +45,6 @@
 }
 
 #pragma mark Accessors
-
-@synthesize orientation;
-@synthesize highlighted;
-@synthesize normalColor;
-@synthesize highlightedColor;
 
 - (void)setHighlighted:(BOOL)h
 {

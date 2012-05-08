@@ -9,23 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "DisplayView.h"
 
-
-@interface SavingsViewController : UIViewController <UIAccelerometerDelegate> {
-	UIImageView *savingsView;
-
-    DisplayView *display;
-    
-    AVAudioPlayer *_tinklePlayer;
-    
-@private
-    BOOL shakeEnabled;
-    CGFloat totalSavings;
-    NSUInteger totalPackets;
-}
-
-@property (nonatomic, retain) AVAudioPlayer *tinklePlayer;
+@interface SavingsViewController : UIViewController <UIAccelerometerDelegate>
 
 - (void)toolsTapped:(id)sender;
 - (void)doneTapped:(id)sender;

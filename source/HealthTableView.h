@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface HealthTableView : UITableView {
-	CAGradientLayer *originShadow;
-	CAGradientLayer *topShadow;
-	CAGradientLayer *bottomShadow;
-}
+@interface HealthTableView : UITableView
 
 - (CAGradientLayer *)shadowAsInverse:(BOOL)inverse;
 

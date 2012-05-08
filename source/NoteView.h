@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface NoteView : UIImageView {
-	UILabel *_message;
-}
+@interface NoteView : UIImageView
 
 @property (nonatomic, retain) UILabel *message;
 

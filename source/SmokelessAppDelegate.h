@@ -8,29 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PreferencesManager.h"
 #import "CounterViewController.h"
 #import "SavingsViewController.h"
-#import "HealthViewController.h"
+#import "AchievementsViewController.h"
 #import "SettingsViewController.h"
 
 
-@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate/*, UITabBarControllerDelegate*/> {
-    UIWindow *_window;
-    UITabBarController *_tabBarController;
-    
-    CounterViewController *_counterController;
-    SavingsViewController *_savingsController;
-    HealthViewController *_healthController;
-    UINavigationController *_settingsNavController;
-    
-    UIImageView *_splashView;
-}
+@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
 @property (nonatomic, retain) CounterViewController *counterController;
 @property (nonatomic, retain) SavingsViewController *savingsController;
-@property (nonatomic, retain) HealthViewController *healthController;
+@property (nonatomic, retain) AchievementsViewController *achievementsController;
 @property (nonatomic, retain) UINavigationController *settingsNavController;
 @property (nonatomic, retain) UIImageView *splashView;
 

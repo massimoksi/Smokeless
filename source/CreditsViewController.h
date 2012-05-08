@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CreditsViewController : UIViewController {
-    
-}
+@interface CreditsViewController : UIViewController
 
 @end

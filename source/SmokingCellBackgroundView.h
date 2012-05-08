@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SmokingCellBackgroundView : UIView {
-	UILabel *_textLabel;
-	UILabel *_detailTextLabel;
-}
+@interface SmokingCellBackgroundView : UIView
 
 @property (nonatomic, retain) UILabel *textLabel;
 @property (nonatomic, retain) UILabel *detailTextLabel;

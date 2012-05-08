@@ -20,9 +20,7 @@ typedef enum {
 } MPTableViewCellPosition;
 
 
-@interface MPTableViewCell : UITableViewCell {
-    MPTableViewCellPosition _position;
-}
+@interface MPTableViewCell : UITableViewCell
 
 @property (nonatomic, assign) MPTableViewCellPosition position;
 @property (nonatomic, retain) MPCell *backgroundView;

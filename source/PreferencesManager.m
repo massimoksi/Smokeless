@@ -17,6 +17,9 @@ static PreferencesManager *sharedManager = nil;
 
 @implementation PreferencesManager
 
+@synthesize prefs = _prefs;
+@synthesize path = _path;
+
 #pragma mark Singleton
 
 + (PreferencesManager *)sharedManager
@@ -92,9 +95,6 @@ static PreferencesManager *sharedManager = nil;
 }
 
 #pragma mark Accessors
-
-@synthesize prefs;
-@synthesize path;
 
 - (NSDate *)lastCigaretteDate
 {

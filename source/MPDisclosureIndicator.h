@@ -17,14 +17,7 @@ typedef enum {
 } MPDisclosureIndicatorOrientation;
 
 
-@interface MPDisclosureIndicator : UIView {
-    MPDisclosureIndicatorOrientation _orientation;
-    
-    BOOL _highlighted;
-    
-    UIColor *_normalColor;
-    UIColor *_highlightedColor;
-}
+@interface MPDisclosureIndicator : UIView
 
 @property (nonatomic, assign) MPDisclosureIndicatorOrientation orientation;
 @property (nonatomic, assign) BOOL highlighted;

@@ -11,7 +11,16 @@
 #import "PreferencesManager.h"
 
 
+@interface HabitsCellController ()
+
+@property (nonatomic, retain) UIPickerView *habitsPicker;
+
+@end
+
+
 @implementation HabitsCellController
+
+@synthesize habitsPicker = _habitsPicker;
 
 - (void)viewDidLoad
 {
@@ -23,17 +32,24 @@
 	[self updateCell];
 	
 	// create the habits picker
-	habitsPicker = [[UIPickerView alloc] init];
-	habitsPicker.showsSelectionIndicator = YES;
-	habitsPicker.dataSource = self;
-	habitsPicker.delegate = self;
+	self.habitsPicker = [[[UIPickerView alloc] init] autorelease];
+	self.habitsPicker.showsSelectionIndicator = YES;
+	self.habitsPicker.dataSource = self;
+	self.habitsPicker.delegate = self;
     
     // create shadow
     CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
-    shadowLayer.frame = CGRectMake(0.0, habitsPicker.frame.size.height, 320.0, 10.0);
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000 alpha:0.800].CGColor;
+    shadowLayer.frame = CGRectMake(0.0,
+                                   self.habitsPicker.frame.size.height,
+                                   320.0,
+                                   10.0);
+    CGColorRef darkColor = [UIColor colorWithWhite:0.000
+                                             alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:(id)darkColor, (id)lightColor, nil];
+    shadowLayer.colors = [NSArray arrayWithObjects:
+                          (id)darkColor,
+                          (id)lightColor,
+                          nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -48,26 +64,19 @@
                 forControlEvents:UIControlEventTouchUpInside];
 	
 	// create setting view hierarchy
-	[self.settingView addSubview:habitsPicker];
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
+	[self.settingView addSubview:self.habitsPicker];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    self.habitsPicker = nil;
 }
 
 - (void)dealloc
 {
-	[habitsPicker release];
-
+    self.habitsPicker = nil;
+    
     [super dealloc];
 }
 
@@ -132,23 +141,23 @@
 #endif
 	
 	// set values from preferences to the picker view
-	[habitsPicker selectRow:(quantity - 1)
-				inComponent:HabitsComponentQuantity
-				   animated:NO];
-	[habitsPicker selectRow:unit
-				inComponent:HabitsComponentUnit
-				   animated:NO];
-	[habitsPicker selectRow:period
-				inComponent:HabitsComponentPeriod
-				   animated:NO];
+	[self.habitsPicker selectRow:(quantity - 1)
+                     inComponent:HabitsComponentQuantity
+                        animated:NO];
+	[self.habitsPicker selectRow:unit
+                     inComponent:HabitsComponentUnit
+                        animated:NO];
+	[self.habitsPicker selectRow:period
+                     inComponent:HabitsComponentPeriod
+                        animated:NO];
 }
 
 - (void)saveTapped:(id)sender
 {
 	// retrieve selected values from picker view
-	NSInteger quantity = [habitsPicker selectedRowInComponent:HabitsComponentQuantity] + 1;
-	NSInteger unit = [habitsPicker selectedRowInComponent:HabitsComponentUnit];
-	NSInteger period = [habitsPicker selectedRowInComponent:HabitsComponentPeriod];
+	NSInteger quantity = [self.habitsPicker selectedRowInComponent:HabitsComponentQuantity] + 1;
+	NSInteger unit = [self.habitsPicker selectedRowInComponent:HabitsComponentUnit];
+	NSInteger period = [self.habitsPicker selectedRowInComponent:HabitsComponentPeriod];
 
 #ifdef DEBUG
 	NSLog(@"%@ - Quantity: %d", [self class], quantity);
@@ -183,8 +192,7 @@
 	[self hideSettingView];
 }
 
-#pragma mark -
-#pragma mark Picker view data source
+#pragma mark - Picker view data source
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -212,8 +220,7 @@
 	return rows;
 }
 
-#pragma mark -
-#pragma mark Picker view delegate
+#pragma mark - Picker view delegate
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {

@@ -37,19 +37,7 @@
 #pragma mark -
 
 
-@interface SettingCellController : UIViewController {
-	NSInteger _index;
-	
-	BOOL _selected;
-	
-	SmokingCellBackgroundView *_cell;
-	UIView *_settingView;
-    
-    UIButton *_saveButton;
-    UIButton *_cancelButton;
-	
-	id <SettingCellDelegate> _delegate;
-}
+@interface SettingCellController : UIViewController
 
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) BOOL selected;

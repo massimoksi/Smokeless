@@ -22,18 +22,8 @@
 #pragma mark -
 
 
-@interface LastCigaretteController : UIViewController {
-	UIDatePicker *_datePicker;
+@interface LastCigaretteController : UIViewController
 
-    UIButton *_saveButton;
-    UIButton *_cancelButton;
-    
-	id <UnderlayViewDelegate> _delegate;
-}
-
-@property (nonatomic, retain) UIDatePicker *datePicker;
-@property (nonatomic, retain) UIButton *saveButton;
-@property (nonatomic, retain) UIButton *cancelButton;
 @property (nonatomic, assign) id <UnderlayViewDelegate> delegate;
 
 - (void)saveTapped:(id)sender;

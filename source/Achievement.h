@@ -13,20 +13,12 @@ typedef enum {
     AchievementStateNone = 0,
     AchievementStateCompleted,
     AchievementStatePending,
+    AchievementStateNext,
     AchievementStateWaiting
 } AchievementState;
 
 
-@interface Achievement : NSObject {
-    AchievementState _state;
-    
-    NSUInteger _years;
-    NSUInteger _months;
-    NSUInteger _weeks;
-    NSUInteger _days;
-    
-    NSString *_text;
-}
+@interface Achievement : NSObject
 
 @property (nonatomic, assign) AchievementState state;
 @property (nonatomic, assign) NSUInteger years;

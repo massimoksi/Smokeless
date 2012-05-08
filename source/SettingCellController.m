@@ -11,7 +11,13 @@
 
 @implementation SettingCellController
 
-#pragma mark Initialization
+@synthesize index = _index;
+@synthesize selected = _selected;
+@synthesize cell = _cell;
+@synthesize settingView = _settingView;
+@synthesize saveButton = _saveButton;
+@synthesize cancelButton = _cancelButton;
+@synthesize delegate = _delegate;
 
 - (id)init
 {
@@ -55,7 +61,7 @@
                                          BUTTON_HEIGHT);
     self.cancelButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	self.cancelButton.titleLabel.textAlignment = UITextAlignmentCenter;
-    self.cancelButton.titleLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+    self.cancelButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
     [self.cancelButton setBackgroundImage:[UIImage imageNamed:@"ButtonCancelNormal"]
                                  forState:UIControlStateNormal];
 	[self.cancelButton setTitleColor:[UIColor whiteColor]
@@ -74,7 +80,7 @@
                                        BUTTON_HEIGHT);
     self.saveButton.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	self.saveButton.titleLabel.textAlignment = UITextAlignmentCenter;
-    self.saveButton.titleLabel.shadowOffset = (CGSize){ 0.0, -1.0 };
+    self.saveButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
     [self.saveButton setBackgroundImage:[UIImage imageNamed:@"ButtonSaveNormal"]
                                forState:UIControlStateNormal];
 	[self.saveButton setTitleColor:[UIColor whiteColor]
@@ -95,13 +101,6 @@
 }
 
 #pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
 
 - (void)viewDidUnload
 {
@@ -124,16 +123,6 @@
 	
     [super dealloc];
 }
-
-#pragma mark Accessors
-
-@synthesize index;
-@synthesize selected;
-@synthesize cell;
-@synthesize settingView;
-@synthesize saveButton;
-@synthesize cancelButton;
-@synthesize delegate;
 
 #pragma mark Actions
 
