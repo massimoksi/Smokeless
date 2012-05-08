@@ -1,4 +1,3 @@
-* update all images in iTunes Connect
 * compress all images
 
 ---
