@@ -93,13 +93,11 @@
 		56237B3A1370B6E200DC411C /* TitleCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 56237B281370B2BE00DC411C /* TitleCalendar.png */; };
 		56270EB713259D9E00EE84CC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56270EB613259D9E00EE84CC /* SettingsViewController.m */; };
 		562C852E136771D900E078D1 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562C852D136771D900E078D1 /* TwitterViewController.m */; };
-		562C85321367784D00E078D1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 562C85311367784D00E078D1 /* MBProgressHUD.m */; };
 		562D344A1258B3A700C2CE12 /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D34491258B3A700C2CE12 /* CounterViewController.m */; };
 		5634E1731300A46D0053FF2A /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5634E1721300A46D0053FF2A /* CalendarView.m */; };
 		563ADF5812776754007B416F /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 563ADF5712776754007B416F /* PreferencesManager.m */; };
 		564A915B12626432008CB029 /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564A915A12626432008CB029 /* SavingsViewController.m */; };
 		5655C4F61326C00A004BCF10 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5655C4F51326C00A004BCF10 /* NoteView.m */; };
-		56565A501390E6600087E5C4 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56565A4F1390E6600087E5C4 /* Appirater.m */; };
 		56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A511390E8160087E5C4 /* CFNetwork.framework */; };
 		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
 		566034DA13226B4400F6006B /* SizeCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566034D913226B4400F6006B /* SizeCellController.m */; };
@@ -137,6 +135,8 @@
 		56E56F03131C2EE800CD5F0A /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E56F02131C2EE700CD5F0A /* MPGraphics.m */; };
 		56E7E0201331A392004343A7 /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7E01F1331A392004343A7 /* ShadowCellController.m */; };
 		56EC4FD012FDBF0B00D98022 /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */; };
+		56F5091E155A356500863FF5 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091A155A356500863FF5 /* Appirater.m */; };
+		56F5091F155A356500863FF5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091D155A356500863FF5 /* MBProgressHUD.m */; };
 		56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C521517F242007D838C /* ButtonTweetNormal.png */; };
 		56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */; };
 		56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C541517F242007D838C /* ButtonTweetPressed.png */; };
@@ -242,8 +242,6 @@
 		56270EB613259D9E00EE84CC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		562C852C136771D900E078D1 /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		562C852D136771D900E078D1 /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
-		562C85301367784D00E078D1 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
-		562C85311367784D00E078D1 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		562D34481258B3A700C2CE12 /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
 		562D34491258B3A700C2CE12 /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
 		5634E1711300A46D0053FF2A /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
@@ -254,8 +252,6 @@
 		564A915A12626432008CB029 /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		5655C4F41326C00A004BCF10 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		5655C4F51326C00A004BCF10 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
-		56565A4E1390E6600087E5C4 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Appirater/Appirater.h; sourceTree = "<group>"; };
-		56565A4F1390E6600087E5C4 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Appirater/Appirater.m; sourceTree = "<group>"; };
 		56565A511390E8160087E5C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		56565A531390E8240087E5C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		566034D813226B4400F6006B /* SizeCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeCellController.h; sourceTree = "<group>"; };
@@ -323,6 +319,10 @@
 		56E7E01F1331A392004343A7 /* ShadowCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCellController.m; sourceTree = "<group>"; };
 		56EC4FCE12FDBF0B00D98022 /* ChalkboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChalkboardView.h; sourceTree = "<group>"; };
 		56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChalkboardView.m; sourceTree = "<group>"; };
+		56F50919155A356500863FF5 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		56F5091A155A356500863FF5 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		56F5091C155A356500863FF5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		56F5091D155A356500863FF5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		56F52C521517F242007D838C /* ButtonTweetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetNormal.png; sourceTree = "<group>"; };
 		56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
 		56F52C541517F242007D838C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
@@ -535,10 +535,8 @@
 		562C852F136777E600E078D1 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				56565A4E1390E6600087E5C4 /* Appirater.h */,
-				56565A4F1390E6600087E5C4 /* Appirater.m */,
-				562C85301367784D00E078D1 /* MBProgressHUD.h */,
-				562C85311367784D00E078D1 /* MBProgressHUD.m */,
+				56F50918155A356500863FF5 /* Appirater */,
+				56F5091B155A356500863FF5 /* MBProgressHUD */,
 			);
 			name = Libraries;
 			path = libs;
@@ -667,6 +665,24 @@
 				56AC243C152A53FF00BC3E9B /* AchievementsViewController.xib */,
 			);
 			name = Health;
+			sourceTree = "<group>";
+		};
+		56F50918155A356500863FF5 /* Appirater */ = {
+			isa = PBXGroup;
+			children = (
+				56F50919155A356500863FF5 /* Appirater.h */,
+				56F5091A155A356500863FF5 /* Appirater.m */,
+			);
+			path = Appirater;
+			sourceTree = "<group>";
+		};
+		56F5091B155A356500863FF5 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				56F5091C155A356500863FF5 /* MBProgressHUD.h */,
+				56F5091D155A356500863FF5 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		56FFF6521517E3F4005951C3 /* Icons */ = {
@@ -888,10 +904,10 @@
 				56A96319133E5A1F00E372F0 /* Achievement.m in Sources */,
 				56A198F8134308A900562E6C /* HealthTableView.m in Sources */,
 				562C852E136771D900E078D1 /* TwitterViewController.m in Sources */,
-				562C85321367784D00E078D1 /* MBProgressHUD.m in Sources */,
 				566E67E5136E021300DE4C2B /* CreditsViewController.m in Sources */,
-				56565A501390E6600087E5C4 /* Appirater.m in Sources */,
 				56AC243D152A53FF00BC3E9B /* AchievementsViewController.m in Sources */,
+				56F5091E155A356500863FF5 /* Appirater.m in Sources */,
+				56F5091F155A356500863FF5 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
