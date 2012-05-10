@@ -1,7 +1,7 @@
 /*
  This file is part of Appirater.
  
- Copyright (c) 2010, Arash Payan
+ Copyright (c) 2012, Arash Payan
  All rights reserved.
  
  Permission is hereby granted, free of charge, to any person
@@ -31,7 +31,7 @@
  *
  * Created by Arash Payan on 9/5/09.
  * http://arashpayan.com
- * Copyright 2010 Arash Payan. All rights reserved.
+ * Copyright 2012 Arash Payan. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
@@ -42,11 +42,12 @@ extern NSString *const kAppiraterSignificantEventCount;
 extern NSString *const kAppiraterCurrentVersion;
 extern NSString *const kAppiraterRatedCurrentVersion;
 extern NSString *const kAppiraterDeclinedToRate;
+extern NSString *const kAppiraterReminderRequestDate;
 
 /*
  Place your Apple generated software id here.
  */
-#define APPIRATER_APP_ID				438027793
+#define APPIRATER_APP_ID				301377083
 
 /*
  Your app's name.
@@ -57,33 +58,36 @@ extern NSString *const kAppiraterDeclinedToRate;
  This is the message your users will see once they've passed the day+launches
  threshold.
  */
-#define APPIRATER_MESSAGE				[NSString stringWithFormat:MPString(@"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!"), APPIRATER_APP_NAME]
+#define APPIRATER_LOCALIZED_MESSAGE     NSLocalizedString(@"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!", nil)
+#define APPIRATER_MESSAGE				[NSString stringWithFormat:APPIRATER_LOCALIZED_MESSAGE, APPIRATER_APP_NAME]
 
 /*
  This is the title of the message alert that users will see.
  */
-#define APPIRATER_MESSAGE_TITLE			[NSString stringWithFormat:MPString(@"Rate %@"), APPIRATER_APP_NAME]
+#define APPIRATER_LOCALIZED_MESSAGE_TITLE   NSLocalizedString(@"Rate %@", nil)
+#define APPIRATER_MESSAGE_TITLE             [NSString stringWithFormat:APPIRATER_LOCALIZED_MESSAGE_TITLE, APPIRATER_APP_NAME]
 
 /*
  The text of the button that rejects reviewing the app.
  */
-#define APPIRATER_CANCEL_BUTTON			MPString(@"No, Thanks")
+#define APPIRATER_CANCEL_BUTTON			NSLocalizedString(@"No, Thanks", nil)
 
 /*
  Text of button that will send user to app review page.
  */
-#define APPIRATER_RATE_BUTTON			[NSString stringWithFormat:MPString(@"Rate %@"), APPIRATER_APP_NAME]
+#define APPIRATER_LOCALIZED_RATE_BUTTON NSLocalizedString(@"Rate %@", nil)
+#define APPIRATER_RATE_BUTTON			[NSString stringWithFormat:APPIRATER_LOCALIZED_RATE_BUTTON, APPIRATER_APP_NAME]
 
 /*
  Text for button to remind the user to review later.
  */
-#define APPIRATER_RATE_LATER			MPString(@"Remind me later")
+#define APPIRATER_RATE_LATER			NSLocalizedString(@"Remind me later", nil)
 
 /*
  Users will need to have the same version of your app installed for this many
  days before they will be prompted to rate it.
  */
-#define APPIRATER_DAYS_UNTIL_PROMPT		10		// double
+#define APPIRATER_DAYS_UNTIL_PROMPT		30		// double
 
 /*
  An example of a 'use' would be if the user launched the app. Bringing the app
@@ -95,7 +99,7 @@ extern NSString *const kAppiraterDeclinedToRate;
  Users need to 'use' the same version of the app this many times before
  before they will be prompted to rate it.
  */
-#define APPIRATER_USES_UNTIL_PROMPT		5		// integer
+#define APPIRATER_USES_UNTIL_PROMPT		20		// integer
 
 /*
  A significant event can be anything you want to be in your app. In a
