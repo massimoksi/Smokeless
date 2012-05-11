@@ -13,6 +13,6 @@
 
 @interface SavingsSettingsController : UIViewController <SettingCellDelegate>
 
-@property (nonatomic, retain) NSArray *cellControllers;
+@property (nonatomic, strong) NSArray *cellControllers;
 
 @end

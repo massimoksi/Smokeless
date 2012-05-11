@@ -11,7 +11,7 @@
 
 @interface SmokingCellBackgroundView : UIView
 
-@property (nonatomic, retain) UILabel *textLabel;
-@property (nonatomic, retain) UILabel *detailTextLabel;
+@property (nonatomic, strong) UILabel *textLabel;
+@property (nonatomic, strong) UILabel *detailTextLabel;
 
 @end

@@ -33,24 +33,24 @@
 - (void)loadView
 {
 	// create view
-	self.view = [[[UIView alloc] initWithFrame:CGRectMake(0.0,
+	self.view = [[UIView alloc] initWithFrame:CGRectMake(0.0,
 														  0.0,
 														  320.0,
-														  CELL_HEIGHT)] autorelease];
+														  CELL_HEIGHT)];
 	self.view.backgroundColor = [UIColor clearColor];
 	self.view.clipsToBounds = YES;
 	
 	// create cell
-	self.cell = [[[SmokingCellBackgroundView alloc] initWithFrame:CGRectMake(0.0,
+	self.cell = [[SmokingCellBackgroundView alloc] initWithFrame:CGRectMake(0.0,
 																			 0.0,
 																			 320.0,
-																			 CELL_HEIGHT)] autorelease];
+																			 CELL_HEIGHT)];
 	
 	// create setting view
-	self.settingView = [[[UIView alloc] initWithFrame:CGRectMake(0.0,
+	self.settingView = [[UIView alloc] initWithFrame:CGRectMake(0.0,
 																 CELL_HEIGHT,
 																 320.0,
-																 SETTING_HEIGHT)] autorelease];
+																 SETTING_HEIGHT)];
 	self.settingView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
 	// create cancel button
@@ -113,16 +113,6 @@
     self.cancelButton = nil;
 }
 
-- (void)dealloc
-{
-	self.cell = nil;
-	self.settingView = nil;
-    
-    self.saveButton = nil;
-    self.cancelButton = nil;
-	
-    [super dealloc];
-}
 
 #pragma mark Actions
 

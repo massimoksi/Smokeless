@@ -29,10 +29,10 @@
 
 @interface ChalkboardView ()
 
-@property (nonatomic, retain) UILabel *yearsLabel;
-@property (nonatomic, retain) UILabel *monthsLabel;
-@property (nonatomic, retain) UILabel *weeksLabel;
-@property (nonatomic, retain) UILabel *daysLabel;
+@property (nonatomic, strong) UILabel *yearsLabel;
+@property (nonatomic, strong) UILabel *monthsLabel;
+@property (nonatomic, strong) UILabel *weeksLabel;
+@property (nonatomic, strong) UILabel *daysLabel;
 
 @end
 
@@ -64,25 +64,24 @@
 								 title.frame.size.width,
 								 title.frame.size.height);
 		[self addSubview:title];
-		[title release];
 		
 		// create labels
-		self.yearsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-                                                                     BOARD_ORIGIN_Y + LABEL_PADDING_Y,
-                                                                     LABEL_WIDTH,
-                                                                     LABEL_HEIGHT)] autorelease];
-		self.monthsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-                                                                      BOARD_ORIGIN_Y + LABEL_HEIGHT + 2*LABEL_PADDING_Y,
-                                                                      LABEL_WIDTH,
-                                                                      LABEL_HEIGHT)] autorelease];
-		self.weeksLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-                                                                     BOARD_ORIGIN_Y + 2*LABEL_HEIGHT + 3*LABEL_PADDING_Y,
-                                                                     LABEL_WIDTH,
-                                                                     LABEL_HEIGHT)] autorelease];
-		self.daysLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
-                                                                    BOARD_ORIGIN_Y + 3*LABEL_HEIGHT + 4*LABEL_PADDING_Y,
+		self.yearsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                    BOARD_ORIGIN_Y + LABEL_PADDING_Y,
                                                                     LABEL_WIDTH,
-                                                                    LABEL_HEIGHT)] autorelease];
+                                                                    LABEL_HEIGHT)];
+		self.monthsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                     BOARD_ORIGIN_Y + LABEL_HEIGHT + 2*LABEL_PADDING_Y,
+                                                                     LABEL_WIDTH,
+                                                                     LABEL_HEIGHT)];
+		self.weeksLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                    BOARD_ORIGIN_Y + 2*LABEL_HEIGHT + 3*LABEL_PADDING_Y,
+                                                                    LABEL_WIDTH,
+                                                                    LABEL_HEIGHT)];
+		self.daysLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
+                                                                   BOARD_ORIGIN_Y + 3*LABEL_HEIGHT + 4*LABEL_PADDING_Y,
+                                                                   LABEL_WIDTH,
+                                                                   LABEL_HEIGHT)];
 		
 		// add labels
 		[self addLabel:self.yearsLabel];
@@ -126,18 +125,6 @@
     }
 	
     return self;
-}
-
-- (void)dealloc
-{	
-	self.nextButton = nil;
-    self.tweetButton = nil;
-	self.yearsLabel = nil;
-	self.monthsLabel = nil;
-	self.weeksLabel = nil;
-	self.daysLabel = nil;
-	
-    [super dealloc];
 }
 
 #pragma mark Accessors

@@ -11,7 +11,7 @@
 
 @interface TwitterViewController ()
 
-@property (nonatomic, retain) MBProgressHUD *progressHUD;
+@property (nonatomic, strong) MBProgressHUD *progressHUD;
 
 @end
 
@@ -19,13 +19,6 @@
 @implementation TwitterViewController
 
 @synthesize progressHUD = _progressHUD;
-
-- (void)dealloc
-{
-    self.progressHUD = nil;
-    
-    [super dealloc];
-}
 
 #pragma mark View lifecycle
 
@@ -37,7 +30,6 @@
     webView.delegate = self;
     
     self.view = webView;
-    [webView release];
 }
 
 - (void)viewDidUnload

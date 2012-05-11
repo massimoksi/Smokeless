@@ -21,21 +21,6 @@
 @synthesize settingsNavController = _settingsNavController;
 @synthesize splashView = _splashView;
 
-- (void)dealloc
-{
-    self.splashView = nil;
-    
-    self.counterController = nil;
-    self.savingsController = nil;
-    self.achievementsController = nil;
-    self.settingsNavController = nil;
-    
-    self.tabBarController = nil;
-    self.window = nil;
-	
-    [super dealloc];
-}
-
 #pragma mark - Application delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -46,21 +31,21 @@
     }
 
 	// create tab bar controller
-	self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+	self.tabBarController = [[UITabBarController alloc] init];
 	
 	// create counter controller
-	self.counterController = [[[CounterViewController alloc] init] autorelease];
+	self.counterController = [[CounterViewController alloc] init];
 	self.counterController.tabBarItem.title = MPString(@"Counter");
 	self.counterController.tabBarItem.image = [UIImage imageNamed:@"TabIconCounter"];
 	
 	// create savings controller
-	self.savingsController = [[[SavingsViewController alloc] init] autorelease];
+	self.savingsController = [[SavingsViewController alloc] init];
 	self.savingsController.tabBarItem.title = MPString(@"Savings");
 	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
 	
     // create the achievements view controller
-    self.achievementsController = [[[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
-                                                                               bundle:nil] autorelease];
+    self.achievementsController = [[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
+                                                                               bundle:nil];
     self.achievementsController.tabBarItem.title = MPString(@"Health");
     self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
     
@@ -69,10 +54,9 @@
 	settingsController.title = MPString(@"Settings");
 	
 	// create settings navigation controller
-	self.settingsNavController = [[[UINavigationController alloc] initWithRootViewController:settingsController] autorelease];
+	self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
 	self.settingsNavController.tabBarItem.title = MPString(@"Settings");
 	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
-    [settingsController release];
 	
 	// add controllers to tab bar
 	self.tabBarController.viewControllers = [NSArray arrayWithObjects:
@@ -95,7 +79,7 @@
     }
     
     // create splash view
-    self.splashView = [[[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)] autorelease];
+    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
     self.splashView.image = [UIImage imageNamed:@"Default"];
     
     // position splash view on top of everything
@@ -160,15 +144,14 @@
 	// set preference
 	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
 												 forKey:LAST_CIGARETTE_KEY];
-    [gregorianCalendar release];
     
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
 }
 
-#pragma mark -
-#pragma mark UITabBarControllerDelegate methods
-
+//#pragma mark -
+//#pragma mark UITabBarControllerDelegate methods
+//
 //- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 //{
 //    // reset badge from tab bar item

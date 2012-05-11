@@ -19,10 +19,10 @@
 
 @interface LastCigaretteController ()
 
-@property (nonatomic, retain) UIDatePicker *datePicker;
+@property (nonatomic, strong) UIDatePicker *datePicker;
 
-@property (nonatomic, retain) UIButton *saveButton;
-@property (nonatomic, retain) UIButton *cancelButton;
+@property (nonatomic, strong) UIButton *saveButton;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 @end
 
@@ -37,11 +37,11 @@
 - (void)loadView
 {
     // create view
-	self.view = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 411.0)] autorelease];
+	self.view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 411.0)];
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
     // create the date picker
-    self.datePicker = [[[UIDatePicker alloc] init] autorelease];
+    self.datePicker = [[UIDatePicker alloc] init];
 	self.datePicker.datePickerMode = UIDatePickerModeDate;
 	// limit the date picker to today
 	self.datePicker.maximumDate = [NSDate date];
@@ -103,19 +103,23 @@
                                    self.view.frame.size.height - 10.0,
                                    320.0,
                                    10.0);
-    bottomShadowLayer.colors = [NSArray arrayWithObjects:(id)lightColor, (id)darkColor, nil];
+    bottomShadowLayer.colors = [NSArray arrayWithObjects:
+                                (__bridge id)lightColor,
+                                (__bridge id)darkColor,
+                                nil];
     CAGradientLayer *topShadowLayer = [[CAGradientLayer alloc] init];
     topShadowLayer.frame = CGRectMake(0.0,
                                       self.datePicker.frame.size.height,
                                       320.0,
                                       10.0);
-    topShadowLayer.colors = [NSArray arrayWithObjects:(id)darkColor, (id)lightColor, nil];
+    topShadowLayer.colors = [NSArray arrayWithObjects:
+                             (__bridge id)darkColor,
+                             (__bridge id)lightColor,
+                             nil];
     
     // add shadows to view
     [self.view.layer addSublayer:bottomShadowLayer];
     [self.view.layer addSublayer:topShadowLayer];
-    [bottomShadowLayer release];
-    [topShadowLayer release];
     
     // add buttons
     [self.view addSubview:self.saveButton];
@@ -150,16 +154,6 @@
     self.cancelButton = nil;
 }
 
-- (void)dealloc
-{
-    self.datePicker = nil;
-    
-    self.saveButton = nil;
-    self.cancelButton = nil;
-    
-    [super dealloc];
-}
-
 #pragma mark Actions
 
 - (void)saveTapped:(id)sender
@@ -180,7 +174,6 @@
 	// set preference
 	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
 												 forKey:LAST_CIGARETTE_KEY];
-    [gregorianCalendar release];
          
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];

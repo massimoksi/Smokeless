@@ -17,13 +17,13 @@
 
 @interface SmokelessAppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) UITabBarController *tabBarController;
-@property (nonatomic, retain) CounterViewController *counterController;
-@property (nonatomic, retain) SavingsViewController *savingsController;
-@property (nonatomic, retain) AchievementsViewController *achievementsController;
-@property (nonatomic, retain) UINavigationController *settingsNavController;
-@property (nonatomic, retain) UIImageView *splashView;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) UITabBarController *tabBarController;
+@property (nonatomic, strong) CounterViewController *counterController;
+@property (nonatomic, strong) SavingsViewController *savingsController;
+@property (nonatomic, strong) AchievementsViewController *achievementsController;
+@property (nonatomic, strong) UINavigationController *settingsNavController;
+@property (nonatomic, strong) UIImageView *splashView;
 
 - (void)updateLastCigaretteDate;
 

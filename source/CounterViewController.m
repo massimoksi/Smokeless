@@ -17,13 +17,13 @@
 
 @interface CounterViewController ()
 
-@property (nonatomic, retain) LastCigaretteController *lastCigaretteController;
+@property (nonatomic, strong) LastCigaretteController *lastCigaretteController;
 
-@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, strong) UIView *containerView;
 
-@property (nonatomic, retain) ChalkboardView *chalkboard;
-@property (nonatomic, retain) CalendarView *calendar;
-@property (nonatomic, retain) NoteView *note;
+@property (nonatomic, strong) ChalkboardView *chalkboard;
+@property (nonatomic, strong) CalendarView *calendar;
+@property (nonatomic, strong) NoteView *note;
 
 @end
 
@@ -41,7 +41,7 @@
 - (void)loadView
 {
 	// create view
-	self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	
 	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
@@ -59,10 +59,6 @@
     // add the swipe gesture recognizers to the view
     [self.view addGestureRecognizer:leftSwipeRecognizer];
     [self.view addGestureRecognizer:rightSwipeRecognizer];
-    
-    // release the recognizers
-    [leftSwipeRecognizer release];
-    [rightSwipeRecognizer release];
 }
 
 - (void)viewDidLoad
@@ -70,15 +66,15 @@
     [super viewDidLoad];
 	
 	// create the container view
-	self.containerView = [[[UIView alloc] initWithFrame:self.view.bounds] autorelease];
+	self.containerView = [[UIView alloc] initWithFrame:self.view.bounds];
 	self.containerView.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:self.containerView];
 		
 	// create counter view
-	self.chalkboard = [[[ChalkboardView alloc] init] autorelease];
+	self.chalkboard = [[ChalkboardView alloc] init];
 	
 	// create calendar view
-	self.calendar = [[[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]] autorelease];
+	self.calendar = [[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]];
 
 	// set actions
     if ([TWTweetComposeViewController canSendTweet] == YES) {
@@ -130,7 +126,7 @@
 	if (([[PreferencesManager sharedManager] lastCigaretteDate] == nil) &&
 		(self.note == nil)) {
 		// create note
-		self.note = [[[NoteView alloc] init] autorelease];
+		self.note = [[NoteView alloc] init];
 		
 		// position note
 		CGRect frame = self.note.frame;
@@ -166,17 +162,6 @@
 	self.chalkboard = nil;
 	self.calendar = nil;
 	self.note = nil;
-}
-
-- (void)dealloc
-{
-    self.containerView = nil;
-	
-	self.chalkboard = nil;
-	self.calendar = nil;
-	self.note = nil;
-	
-    [super dealloc];
 }
 
 #pragma mark Actions
@@ -219,7 +204,7 @@
 {
     if ([TWTweetComposeViewController canSendTweet] == YES) {
         // create the tweet sheet controller
-        TWTweetComposeViewController *tweetController = [[[TWTweetComposeViewController alloc] init] autorelease];
+        TWTweetComposeViewController *tweetController = [[TWTweetComposeViewController alloc] init];
         // assign the text for the tweet
         NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
         NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
@@ -266,7 +251,7 @@
     self.containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
     
     // create last cigarette controller
-    self.lastCigaretteController = [[[LastCigaretteController alloc] init] autorelease];
+    self.lastCigaretteController = [[LastCigaretteController alloc] init];
     self.lastCigaretteController.delegate = self;
 
     // add last cigarette view

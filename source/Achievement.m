@@ -35,13 +35,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.text = nil;
-    
-    [super dealloc];
-}
-
 #pragma mark Accessors
 
 - (NSString *)timeInterval
@@ -76,8 +69,6 @@
     
     // get last cigarette date from preferences
     if (startingDate == nil) {
-        [dateComps release];
-        
         return nil;
     }
 
@@ -88,7 +79,6 @@
     NSDate *completionDate = [gregorianCalendar dateByAddingComponents:dateComps
                                                                 toDate:startingDate
                                                                options:0];
-    [dateComps release];
 
     // adjust completion date hour
 //    NSDateComponents *completionDateComps = [gregorianCalendar components:(NSYearCalendarUnit |
@@ -102,9 +92,6 @@
 //    [completionDateComps setMinute:COMPLETION_DATE_MINUTE];
 //
 //    completionDate = [gregorianCalendar dateFromComponents:completionDateComps];
-    
-    // release gregorian calendar
-    [gregorianCalendar release];
 
 #ifdef DEBUG
     NSLog(@"%@ - Completation date: %@", [self class], completionDate);
@@ -150,9 +137,6 @@
                                                   fromDate:startingDate
                                                     toDate:today
                                                    options:0] day];
-    
-    // release gregorian calendar
-    [gregorianCalendar release];
     
 #ifdef DEBUG
     NSLog(@"%@ - Total days: %d", [self class], totalDays);

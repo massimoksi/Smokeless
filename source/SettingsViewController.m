@@ -14,8 +14,8 @@
 
 @interface SettingsViewController ()
 
-@property (nonatomic, retain) UISwitch *shakeSwitch;
-@property (nonatomic, retain) UISwitch *notificationSwitch;
+@property (nonatomic, strong) UISwitch *shakeSwitch;
+@property (nonatomic, strong) UISwitch *notificationSwitch;
 
 @end
 
@@ -34,13 +34,13 @@
 	self.view.backgroundColor = [UIColor clearColor];
     
     // create shake switch
-    self.shakeSwitch = [[[UISwitch alloc] init] autorelease];
+    self.shakeSwitch = [[UISwitch alloc] init];
     [self.shakeSwitch addTarget:self
                          action:@selector(shakeEnabled:)
                forControlEvents:UIControlEventValueChanged];
     
     // create notification switch
-    self.notificationSwitch = [[[UISwitch alloc] init] autorelease];
+    self.notificationSwitch = [[UISwitch alloc] init];
     [self.notificationSwitch addTarget:self
                                 action:@selector(notificationEnabled:)
                       forControlEvents:UIControlEventValueChanged];
@@ -60,14 +60,6 @@
     
     self.shakeSwitch = nil;
     self.notificationSwitch = nil;
-}
-
-- (void)dealloc
-{
-    self.shakeSwitch = nil;
-    self.notificationSwitch = nil;
-    
-	[super dealloc];
 }
 
 #pragma mark Actions
@@ -129,8 +121,8 @@
 	
 	MPTableViewCell *cell = (MPTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                       reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:CellIdentifier];
 		
 		// customize cells appearence
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
@@ -222,17 +214,17 @@
 		case SettingsSectionReset:
 		{
 			// show action sheet to ask confirmation before deleting preferences
-			UIActionSheet *resetSheet = [[[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
-																	 delegate:self
-															cancelButtonTitle:MPString(@"Cancel")
-													   destructiveButtonTitle:MPString(@"Delete")
-															otherButtonTitles:nil] autorelease];
+			UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
+                                                                    delegate:self
+                                                           cancelButtonTitle:MPString(@"Cancel")
+                                                      destructiveButtonTitle:MPString(@"Delete")
+                                                           otherButtonTitles:nil];
 			[resetSheet showFromTabBar:self.tabBarController.tabBar];
 			break;
 		}
 						
 		case SettingsSectionAbout:
-			[self.navigationController pushViewController:[[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease]
+			[self.navigationController pushViewController:[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped]
 												 animated:YES];
 			break;			
 	}

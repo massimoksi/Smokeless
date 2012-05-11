@@ -21,7 +21,7 @@
 - (void)loadView
 {
 	// create view
-	self.view = [[[UIView alloc] init] autorelease];
+	self.view = [[UIView alloc] init];
 	self.view.backgroundColor = [UIColor clearColor];
 
 	// create cell controllers
@@ -43,12 +43,6 @@
 							priceCellController,
                             shadowCellController,
 							nil];
-    
-    // release the cell controllers
-	[habitsCellController release];
-	[sizeCellController release];
-	[priceCellController release];
-    [shadowCellController release];
 }
 
 - (void)viewDidLoad
@@ -66,13 +60,6 @@
 		// add cells to view
 		[self.view addSubview:cellController.view];
 	}
-}
-
-- (void)dealloc
-{
-	self.cellControllers = nil;
-	
-	[super dealloc];
 }
 
 #pragma mark - Setting cell delegate

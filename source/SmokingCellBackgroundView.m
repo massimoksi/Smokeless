@@ -25,10 +25,10 @@
 		self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SmokingCell"]];
 		
         // create text label
-		self.textLabel = [[[UILabel alloc] initWithFrame:CGRectMake(LABEL_PADDING_X,
-																	LABEL_PADDING_Y,
-																	self.frame.size.width/2 - LABEL_PADDING_X,
-																	self.frame.size.height)] autorelease];
+		self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(LABEL_PADDING_X,
+                                                                   LABEL_PADDING_Y,
+                                                                   self.frame.size.width/2 - LABEL_PADDING_X,
+                                                                   self.frame.size.height)];
 		self.textLabel.backgroundColor = [UIColor clearColor];
 		self.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		self.textLabel.textAlignment = UITextAlignmentLeft;
@@ -38,10 +38,10 @@
 		self.textLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create detail text label
-		self.detailTextLabel = [[[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2,
-																		  LABEL_PADDING_Y,
-																		  self.frame.size.width/2 - LABEL_PADDING_X,
-																		  self.frame.size.height)] autorelease];
+		self.detailTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2,
+                                                                         LABEL_PADDING_Y,
+                                                                         self.frame.size.width/2 - LABEL_PADDING_X,
+                                                                         self.frame.size.height)];
 		self.detailTextLabel.backgroundColor = [UIColor clearColor];
 		self.detailTextLabel.font = [UIFont systemFontOfSize:15.0];
 		self.detailTextLabel.textAlignment = UITextAlignmentRight;
@@ -56,14 +56,6 @@
 	}
 	
 	return self;
-}
-
-- (void)dealloc
-{
-	self.textLabel = nil;
-	self.detailTextLabel = nil;
-	
-	[super dealloc];
 }
 
 @end

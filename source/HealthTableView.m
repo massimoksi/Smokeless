@@ -16,9 +16,9 @@
 
 @interface HealthTableView ()
 
-@property (nonatomic, retain) CAGradientLayer *originShadow;
-@property (nonatomic, retain) CAGradientLayer *topShadow;
-@property (nonatomic, retain) CAGradientLayer *bottomShadow;
+@property (nonatomic, strong) CAGradientLayer *originShadow;
+@property (nonatomic, strong) CAGradientLayer *topShadow;
+@property (nonatomic, strong) CAGradientLayer *bottomShadow;
 
 @end
 
@@ -42,15 +42,6 @@
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    self.originShadow = nil;
-    self.topShadow = nil;
-    self.bottomShadow = nil;
-    
-	[super dealloc];
 }
 
 #pragma mark Layout
@@ -145,7 +136,7 @@
 
 - (CAGradientLayer *)shadowAsInverse:(BOOL)inverse
 {
-	CAGradientLayer *newShadow = [[[CAGradientLayer alloc] init] autorelease];
+	CAGradientLayer *newShadow = [[CAGradientLayer alloc] init];
 
 	newShadow.frame = CGRectMake(0.0,
                                  0.0,
@@ -157,8 +148,8 @@
                                            alpha:0.420].CGColor;
 	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.000].CGColor;
 	newShadow.colors = [NSArray arrayWithObjects:
-                        (id)(inverse ? lightColor : darkColor),
-                        (id)(inverse ? darkColor : lightColor),
+                        (__bridge id)(inverse ? lightColor : darkColor),
+                        (__bridge id)(inverse ? darkColor : lightColor),
                         nil];
     
 	return newShadow;

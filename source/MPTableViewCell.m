@@ -18,19 +18,14 @@
     self = [super initWithStyle:style
                 reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundView = [[[MPCell alloc] initWithFrame:self.bounds] autorelease];
-        self.selectedBackgroundView = [[[MPCell alloc] initWithFrame:self.bounds] autorelease];
+        self.backgroundView = [[MPCell alloc] initWithFrame:self.bounds];
+        self.selectedBackgroundView = [[MPCell alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.style = MPCellStyleGradient;
         self.selectedBackgroundView.startColor = [UIColor colorWithRed:0.345 green:0.592 blue:0.929 alpha:1.000];
         self.selectedBackgroundView.endColor = [UIColor colorWithRed:0.220 green:0.470 blue:0.851 alpha:1.000];
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 #pragma mark Accessors
@@ -95,7 +90,7 @@
     
     // add disclosure indicator
     if (accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
-        self.accessoryView = [[[MPDisclosureIndicator alloc] init] autorelease];
+        self.accessoryView = [[MPDisclosureIndicator alloc] init];
     }
 }
 

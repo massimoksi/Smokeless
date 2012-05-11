@@ -22,7 +22,7 @@
     self = [super initWithImage:[UIImage imageNamed:@"Note"]];
     if (self) {
 		// create message
-		self.message = [[[UILabel alloc] initWithFrame:CGRectMake(7.0, 16.0, 120.0, 44.0)] autorelease];
+		self.message = [[UILabel alloc] initWithFrame:CGRectMake(7.0, 16.0, 120.0, 44.0)];
 		self.message.backgroundColor = [UIColor clearColor];
 		self.message.font = [UIFont fontWithName:@"Marker Felt"
                                             size:13.0];
@@ -43,17 +43,9 @@
 				
 		// add arrow 
 		[self addSubview:arrow];
-		[arrow release];
 	}
 	
     return self;
-}
-
-- (void)dealloc
-{
-	self.message = nil;
-	
-    [super dealloc];
 }
 
 @end

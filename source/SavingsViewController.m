@@ -19,10 +19,10 @@
 
 @interface SavingsViewController ()
 
-@property (nonatomic, retain) UIImageView *savingsView;
-@property (nonatomic, retain) DisplayView *displayView;
+@property (nonatomic, strong) UIImageView *savingsView;
+@property (nonatomic, strong) DisplayView *displayView;
 
-@property (nonatomic, retain) AVAudioPlayer *tinklePlayer;
+@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 
 @property (nonatomic, assign) BOOL shakeEnabled;
 @property (nonatomic, assign) CGFloat totalSavings;
@@ -45,16 +45,16 @@
 - (void)loadView
 {
 	// create view
-	self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	
 	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];	
 
 	// create the savings view
-	self.savingsView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]] autorelease];
+	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
 	
     // create display
-    self.displayView = [[[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)] autorelease];
+    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)];
 	
 	// create the edit button
 	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -126,15 +126,12 @@
     }
     [self.displayView setState:DisplayStateMoney
         withAnimation:NO];
-
-    // release number formatter
-    [formatter release];
     
     // create tinkle player
     if (!self.tinklePlayer) {
-        self.tinklePlayer = [[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
-                                                                                                                                 ofType:@"m4a"]]
-                                                                    error:NULL] autorelease];
+        self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
+                                                                                                                                ofType:@"m4a"]]
+                                                                    error:NULL];
     }
 }
 
@@ -148,16 +145,6 @@
     self.displayView = nil;
 }
 
-- (void)dealloc
-{
-    self.savingsView = nil;
-    self.displayView = nil;
-    
-    self.tinklePlayer = nil;
-	
-    [super dealloc];
-}
-
 #pragma mark Actions
 
 -(void)toolsTapped:(id)sender
@@ -169,7 +156,6 @@
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:savingsSettingsController];
 	navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
 	navigationController.navigationBar.topItem.title = MPString(@"Savings");
-	[savingsSettingsController release];
 	
 	// create bar button item
 	UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:MPString(@"Done")
@@ -177,12 +163,10 @@
 																target:self
 																action:@selector(doneTapped:)];
 	navigationController.navigationBar.topItem.leftBarButtonItem = doneItem;
-	[doneItem release];
 
 	// present savings settings view controller modally
 	[self presentModalViewController:navigationController
 							animated:YES];
-	[navigationController release];
 }
 
 - (void)doneTapped:(id)sender

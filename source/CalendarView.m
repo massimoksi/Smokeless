@@ -24,9 +24,9 @@
 
 @interface CalendarView ()
 
-@property (nonatomic, retain) UILabel *yearLabel;
-@property (nonatomic, retain) UILabel *monthLabel;
-@property (nonatomic, retain) UILabel *dayLabel;
+@property (nonatomic, strong) UILabel *yearLabel;
+@property (nonatomic, strong) UILabel *monthLabel;
+@property (nonatomic, strong) UILabel *dayLabel;
 
 @end
 
@@ -54,13 +54,12 @@
 								 title.frame.size.width,
 								 title.frame.size.height);
 		[self addSubview:title];
-		[title release];
 		
 		// create year label
-		self.yearLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-                                                                    BOARD_ORIGIN_Y,
-                                                                    BOARD_WIDTH,
-                                                                    44.0)] autorelease];
+		self.yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                   BOARD_ORIGIN_Y,
+                                                                   BOARD_WIDTH,
+                                                                   44.0)];
 		self.yearLabel.backgroundColor = [UIColor clearColor];
 		self.yearLabel.font = [UIFont systemFontOfSize:32.0];
 		self.yearLabel.textAlignment = UITextAlignmentCenter;
@@ -71,10 +70,10 @@
         self.yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		
 		// create month label
-		self.monthLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-                                                                     132.0,
-                                                                     BOARD_WIDTH,
-                                                                     44.0)] autorelease];
+		self.monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                    132.0,
+                                                                    BOARD_WIDTH,
+                                                                    44.0)];
 		self.monthLabel.backgroundColor = [UIColor clearColor];
 		self.monthLabel.font = [UIFont boldSystemFontOfSize:36.0];
 		self.monthLabel.textAlignment = UITextAlignmentCenter;
@@ -85,10 +84,10 @@
         self.monthLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 		
 		// create day label
-		self.dayLabel = [[[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
-                                                                   158.0,
-                                                                   BOARD_WIDTH,
-                                                                   194.0)] autorelease];
+		self.dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
+                                                                  158.0,
+                                                                  BOARD_WIDTH,
+                                                                  194.0)];
 		self.dayLabel.backgroundColor = [UIColor clearColor];
 		self.dayLabel.font = [UIFont systemFontOfSize:160.0];
 		self.dayLabel.textAlignment = UITextAlignmentCenter;
@@ -136,27 +135,12 @@
     return self;
 }
 
-- (void)dealloc
-{	
-	self.editButton = nil;
-	self.prevButton = nil;
-	self.yearLabel = nil;
-	self.monthLabel = nil;
-	self.dayLabel = nil;
-	
-	self.date = nil;
-	
-    [super dealloc];
-}
-
 #pragma mark Accessors
 
 - (void)setDate:(NSDate *)aDate
 {
 	if (_date != aDate) {
 		// set new value
-		[aDate retain];
-		[_date release];
 		_date = aDate;
 	}
     
@@ -179,7 +163,6 @@
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
 		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
-		[df release];
 			
 		// set day to label
 		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
@@ -203,7 +186,6 @@
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
 		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
-		[df release];
 		
 		// set day to label
 		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
@@ -211,9 +193,6 @@
 		// disable prev button
 		self.prevButton.enabled = NO;
 	}
-    
-    // release gregorian calendar
-    [gregorianCalendar release];
 }
 
 @end

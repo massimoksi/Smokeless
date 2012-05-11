@@ -23,7 +23,10 @@
 
 - (id)init
 {
-    self = [super initWithFrame:CGRectMake(0.0, 0.0, FRAME_WIDTH, FRAME_HEIGHT)];
+    self = [super initWithFrame:CGRectMake(0.0,
+                                           0.0,
+                                           FRAME_WIDTH,
+                                           FRAME_HEIGHT)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         
@@ -34,14 +37,6 @@
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    self.normalColor = nil;
-    self.highlightedColor = nil;
-    
-    [super dealloc];
 }
 
 #pragma mark Accessors

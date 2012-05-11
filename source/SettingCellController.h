@@ -41,11 +41,11 @@
 
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) BOOL selected;
-@property (nonatomic, retain) SmokingCellBackgroundView *cell;
-@property (nonatomic, retain) UIView *settingView;
-@property (nonatomic, retain) UIButton *saveButton;
-@property (nonatomic, retain) UIButton *cancelButton;
-@property (nonatomic, assign) id <SettingCellDelegate> delegate;
+@property (nonatomic, strong) SmokingCellBackgroundView *cell;
+@property (nonatomic, strong) UIView *settingView;
+@property (nonatomic, strong) UIButton *saveButton;
+@property (nonatomic, strong) UIButton *cancelButton;
+@property (nonatomic, weak) id <SettingCellDelegate> delegate;
 
 - (void)updateCell;
 - (void)updateSettingView;

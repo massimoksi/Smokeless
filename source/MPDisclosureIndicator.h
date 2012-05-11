@@ -21,7 +21,7 @@ typedef enum {
 
 @property (nonatomic, assign) MPDisclosureIndicatorOrientation orientation;
 @property (nonatomic, assign) BOOL highlighted;
-@property (nonatomic, retain) UIColor *normalColor;
-@property (nonatomic, retain) UIColor *highlightedColor;
+@property (nonatomic, strong) UIColor *normalColor;
+@property (nonatomic, strong) UIColor *highlightedColor;
 
 @end

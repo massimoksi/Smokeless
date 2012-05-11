@@ -18,9 +18,9 @@ typedef enum {
 
 @interface DisplayView : UIView
 
-@property (nonatomic, retain) UILabel *moneyUnit;
-@property (nonatomic, retain) UILabel *moneyLabel;
-@property (nonatomic, retain) UILabel *packetsLabel;
+@property (nonatomic, strong) UILabel *moneyUnit;
+@property (nonatomic, strong) UILabel *moneyLabel;
+@property (nonatomic, strong) UILabel *packetsLabel;
 
 - (id)initWithOrigin:(CGPoint)origin;
 

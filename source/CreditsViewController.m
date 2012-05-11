@@ -20,7 +20,7 @@
 - (void)loadView
 {
 	// create view
-	self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame] autorelease];
+	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	// set background color
 	self.view.backgroundColor = [UIColor clearColor];
 	// set the title
@@ -139,16 +139,6 @@
     [self.view addSubview:thanksTitle];
     [self.view addSubview:thanksCredit1];
     [self.view addSubview:thanksCredit2];
-    
-    // release labels
-    [dndTitle release];
-    [dndCredit release];
-    [locTitle release];
-    [locCredit1 release];
-    [locCredit2 release];
-    [thanksTitle release];
-    [thanksCredit1 release];
-    [thanksCredit2 release];
 }
 
 @end

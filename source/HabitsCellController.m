@@ -13,7 +13,7 @@
 
 @interface HabitsCellController ()
 
-@property (nonatomic, retain) UIPickerView *habitsPicker;
+@property (nonatomic, strong) UIPickerView *habitsPicker;
 
 @end
 
@@ -32,7 +32,7 @@
 	[self updateCell];
 	
 	// create the habits picker
-	self.habitsPicker = [[[UIPickerView alloc] init] autorelease];
+	self.habitsPicker = [[UIPickerView alloc] init];
 	self.habitsPicker.showsSelectionIndicator = YES;
 	self.habitsPicker.dataSource = self;
 	self.habitsPicker.delegate = self;
@@ -47,13 +47,12 @@
                                              alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
     shadowLayer.colors = [NSArray arrayWithObjects:
-                          (id)darkColor,
-                          (id)lightColor,
+                          (__bridge id)darkColor,
+                          (__bridge id)lightColor,
                           nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
-    [shadowLayer release];
     
 	// add actions to buttons
 	[self.saveButton addTarget:self
@@ -71,13 +70,6 @@
     [super viewDidUnload];
 
     self.habitsPicker = nil;
-}
-
-- (void)dealloc
-{
-    self.habitsPicker = nil;
-    
-    [super dealloc];
 }
 
 #pragma mark Actions
@@ -178,7 +170,6 @@
 	// set preference
 	[[PreferencesManager sharedManager].prefs setObject:habits
 												 forKey:HABITS_KEY];
-	[habits release];
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
 	

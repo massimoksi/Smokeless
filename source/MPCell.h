@@ -29,9 +29,9 @@ typedef enum {
 @property (nonatomic, assign) MPCellStyle style;
 @property (nonatomic, assign) CGFloat borderWidth;
 @property (nonatomic, assign) CGFloat cornerRadius;
-@property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic, retain) UIColor *fillColor;
-@property (nonatomic, retain) UIColor *startColor;
-@property (nonatomic, retain) UIColor *endColor;
+@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *fillColor;
+@property (nonatomic, strong) UIColor *startColor;
+@property (nonatomic, strong) UIColor *endColor;
 
 @end

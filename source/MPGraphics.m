@@ -23,13 +23,13 @@ void MPDrawLinearGradientInRect(CGContextRef context, CGRect rect, UIColor *star
     
 	// create colors
 	NSArray *colors = [NSArray arrayWithObjects:
-					   (id)startCGColor,
-					   (id)endCGColor,
+					   (__bridge id)startCGColor,
+					   (__bridge id)endCGColor,
 					   nil];
 	
 	// create gradient
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace,
-														(CFArrayRef)colors,
+														(__bridge CFArrayRef)colors,
 														locations);
 	
 	// get gradient location
