@@ -100,11 +100,8 @@
 - (void)setState:(DisplayState)newState withAnimation:(BOOL)animation
 {
     NSTimeInterval duration = (animation == YES) ? 0.5 : 0.0;
-    
-    // set new state
-    _state = newState;
-    
-    switch (_state) {
+        
+    switch (newState) {
         default:
         case DisplayStateUndef:
             // hide everything
@@ -115,6 +112,7 @@
             break;
             
         case DisplayStateMoney:
+        {
             [UIView animateWithDuration:duration
                              animations:^{
                                  // hide packets
@@ -130,8 +128,10 @@
                                                   }];
                              }];
             break;
+        }
             
         case DisplayStatePackets:
+        {
             [UIView animateWithDuration:duration
                              animations:^{
                                  // hide money
@@ -147,14 +147,18 @@
                                                   }];
                              }];
             break;
+        }
     }
+    
+    // set new state
+    self.state = newState;
 }
 
 #pragma mark Gestures
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    switch (_state) {
+    switch (self.state) {
         default:
         case DisplayStateUndef:
             [self setState:DisplayStateUndef

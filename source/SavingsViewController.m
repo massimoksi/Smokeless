@@ -125,7 +125,7 @@
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
     }
     [self.displayView setState:DisplayStateMoney
-        withAnimation:NO];
+                 withAnimation:NO];
     
     // create tinkle player
     if (!self.tinklePlayer) {
