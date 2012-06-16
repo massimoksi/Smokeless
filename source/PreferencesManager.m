@@ -70,11 +70,11 @@ static PreferencesManager *sharedManager = nil;
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
 		// load preferences from file
-		self.prefs = [[[NSMutableDictionary alloc] initWithContentsOfFile:self.path] autorelease];
+		self.prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:self.path];
 	}
 	else {
 		// load default values
-		self.prefs = [[[NSMutableDictionary alloc] init] autorelease];
+		self.prefs = [[NSMutableDictionary alloc] init];
 	}
 }
 
@@ -120,9 +120,6 @@ static PreferencesManager *sharedManager = nil;
                                       fromDate:lastDay
                                         toDate:today
                                        options:0];
-        
-        // release gregorian calendar
-        [gregorianCalendar release];
 	}
 	
 	return period;
@@ -144,9 +141,6 @@ static PreferencesManager *sharedManager = nil;
                                                 fromDate:lastDay
                                                   toDate:today
                                                  options:0] day];
-        
-        // release gregorian calendar
-        [gregorianCalenadar release];		
 	}
 	
 #ifdef DEBUG	

@@ -15,8 +15,8 @@
 @property (nonatomic, assign) NSUInteger months;
 @property (nonatomic, assign) NSUInteger weeks;
 @property (nonatomic, assign) NSUInteger days;
-@property (nonatomic, retain) UIButton *tweetButton;
-@property (nonatomic, retain) UIButton *nextButton;
+@property (nonatomic, strong) UIButton *tweetButton;
+@property (nonatomic, strong) UIButton *nextButton;
 
 - (void)addLabel:(UILabel *)label;
 

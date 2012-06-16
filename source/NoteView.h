@@ -11,6 +11,6 @@
 
 @interface NoteView : UIImageView
 
-@property (nonatomic, retain) UILabel *message;
+@property (nonatomic, strong) UILabel *message;
 
 @end

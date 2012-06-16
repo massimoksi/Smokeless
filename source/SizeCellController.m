@@ -16,7 +16,7 @@
 
 @interface SizeCellController ()
 
-@property (nonatomic, retain) UIPickerView *sizePicker;
+@property (nonatomic, strong) UIPickerView *sizePicker;
 
 @end
 
@@ -24,6 +24,8 @@
 @implementation SizeCellController
 
 @synthesize sizePicker = _sizePicker;
+
+#pragma mark View lifecycle
 
 - (void)viewDidLoad
 {
@@ -35,7 +37,7 @@
 	[self updateCell];
 	
 	// create the size picker
-	self.sizePicker = [[[UIPickerView alloc] init] autorelease];
+	self.sizePicker = [[UIPickerView alloc] init];
 	self.sizePicker.showsSelectionIndicator = YES;
 	self.sizePicker.dataSource = self;
 	self.sizePicker.delegate = self;
@@ -50,13 +52,12 @@
                                              alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
     shadowLayer.colors = [NSArray arrayWithObjects:
-                          (id)darkColor,
-                          (id)lightColor,
+                          (__bridge id)darkColor,
+                          (__bridge id)lightColor,
                           nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
-    [shadowLayer release];	
     
 	// add actions to buttons
 	[self.saveButton addTarget:self
@@ -74,13 +75,6 @@
     [super viewDidUnload];
 
     self.sizePicker = nil;
-}
-
-- (void)dealloc
-{
-    self.sizePicker = nil;
-	
-    [super dealloc];
 }
 
 #pragma mark Actions

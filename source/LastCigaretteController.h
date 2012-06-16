@@ -24,7 +24,7 @@
 
 @interface LastCigaretteController : UIViewController
 
-@property (nonatomic, assign) id <UnderlayViewDelegate> delegate;
+@property (nonatomic, weak) id <UnderlayViewDelegate> delegate;
 
 - (void)saveTapped:(id)sender;
 - (void)cancelTapped:(id)sender;

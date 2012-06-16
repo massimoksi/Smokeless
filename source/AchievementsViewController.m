@@ -16,9 +16,9 @@
 
 @interface AchievementsViewController ()
 
-@property (nonatomic, retain) NSArray *achievements;
+@property (nonatomic, strong) NSArray *achievements;
 
-@property (nonatomic, retain) IBOutlet HealthTableView* tableView;
+@property (nonatomic, weak) IBOutlet HealthTableView* tableView;
 
 - (void)checkAchievementsState;
 - (void)registerLocalNotifications;
@@ -79,16 +79,6 @@
                              step8,
                              nil];
         
-        // relase objects
-        [step1 release];
-        [step2 release];
-        [step3 release];
-        [step4 release];
-        [step5 release];
-        [step6 release];
-        [step7 release];
-        [step8 release];
-        
         // register observers
         [[PreferencesManager sharedManager] addObserver:self
                                              forKeyPath:@"prefs.LastCigarette"
@@ -114,11 +104,6 @@
                                             forKeyPath:@"prefs.LastCigarette"];
     [[PreferencesManager sharedManager] removeObserver:self
                                             forKeyPath:@"prefs.NotificationsEnabled"];
-    
-    // release achievements array
-    self.achievements = nil;
-    
-    [super dealloc];
 }
 
 #pragma mark View lifecycle
@@ -146,10 +131,10 @@
     rightsLabel.text = MPString(@"2007 Wade Meredith - All rights reserved - \"What happens to Your Body If You Stop Smoking Right Now?\" on Healthbolt.net");
     
     self.tableView.tableFooterView = rightsLabel;
-    [rightsLabel release];
 
 }
 
+// TODO: check what needs to be unloaded
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -185,8 +170,8 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier];
         
         // inhibit selection
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -224,7 +209,7 @@
     
     switch (currStep.state) {
         case AchievementStateCompleted:
-            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]];
             
             cell.textLabel.textColor = [UIColor colorWithWhite:0.160 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
@@ -238,7 +223,7 @@
             break;
         
         case AchievementStatePending:
-            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]] autorelease];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_completed"]];
 
             cell.textLabel.textColor = [UIColor colorWithWhite:0.160 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:0.600 alpha:1.000];
@@ -286,7 +271,7 @@
             break;
         
         case AchievementStateNext:
-            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_next"]] autorelease];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_next"]];
 
             cell.textLabel.textColor = [UIColor colorWithWhite:0.300 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
@@ -301,7 +286,7 @@
 
         case AchievementStateNone:
         case AchievementStateWaiting:
-            cell.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_waiting"]] autorelease];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthTableViewCell_waiting"]];
             
             cell.textLabel.textColor = [UIColor colorWithWhite:0.300 alpha:1.000];
             cell.textLabel.shadowColor = [UIColor colorWithWhite:1.000 alpha:1.000];
@@ -419,11 +404,9 @@
                 [completionDateComponents setHour:8];
                 notification.fireDate = [gregorianCalendar dateFromComponents:completionDateComponents];
                 notification.timeZone = [NSTimeZone defaultTimeZone];
-                [gregorianCalendar release];
                 
                 // schedule the local notifications
                 [[UIApplication sharedApplication] scheduleLocalNotification:notification];            
-                [notification release];
             }
         }
     }

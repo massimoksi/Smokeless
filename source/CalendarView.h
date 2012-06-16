@@ -11,9 +11,9 @@
 
 @interface CalendarView : UIImageView
 
-@property (nonatomic, retain) NSDate *date;
-@property (nonatomic, retain) UIButton *editButton;
-@property (nonatomic, retain) UIButton *prevButton;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) UIButton *editButton;
+@property (nonatomic, strong) UIButton *prevButton;
 
 - (id)initWithDate:(NSDate *)aDate;
 

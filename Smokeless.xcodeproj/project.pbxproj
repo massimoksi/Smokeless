@@ -135,8 +135,8 @@
 		56E56F03131C2EE800CD5F0A /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E56F02131C2EE700CD5F0A /* MPGraphics.m */; };
 		56E7E0201331A392004343A7 /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7E01F1331A392004343A7 /* ShadowCellController.m */; };
 		56EC4FD012FDBF0B00D98022 /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EC4FCF12FDBF0B00D98022 /* ChalkboardView.m */; };
-		56F5091E155A356500863FF5 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091A155A356500863FF5 /* Appirater.m */; };
-		56F5091F155A356500863FF5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091D155A356500863FF5 /* MBProgressHUD.m */; };
+		56F5091E155A356500863FF5 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091A155A356500863FF5 /* Appirater.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		56F5091F155A356500863FF5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F5091D155A356500863FF5 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		56F52C561517F242007D838C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C521517F242007D838C /* ButtonTweetNormal.png */; };
 		56F52C571517F242007D838C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C531517F242007D838C /* ButtonTweetNormal@2x.png */; };
 		56F52C581517F242007D838C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F52C541517F242007D838C /* ButtonTweetPressed.png */; };
@@ -981,6 +981,7 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				BUNDLE_IDENTIFIER = "com.gmail.massimoperi.Smokeless-dev";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
@@ -990,7 +991,7 @@
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Smokeless;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1007,13 +1008,14 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				BUNDLE_IDENTIFIER = com.gmail.massimoperi.Smokeless;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = source/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "resources/Smokeless-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
@@ -1030,7 +1032,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1049,7 +1051,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

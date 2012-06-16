@@ -16,7 +16,7 @@
 
 @interface AboutViewController ()
 
-@property (nonatomic, retain) UINavigationController *twitterNavController;
+@property (nonatomic, strong) UINavigationController *twitterNavController;
 
 @end
 
@@ -41,9 +41,6 @@
 								logoView.frame.size.width,
 								logoView.frame.size.height);
     self.tableView.tableHeaderView = logoView;
-
-	// release subviews
-	[logoView release];
 }
 
 - (void)viewDidUnload
@@ -51,13 +48,6 @@
     [super viewDidUnload];
 
     self.twitterNavController = nil;
-}
-
-- (void)dealloc
-{
-    self.twitterNavController = nil;
-	
-    [super dealloc];
 }
 
 #pragma mark Actions
@@ -75,7 +65,6 @@
 		// show mail composer
 		[self presentModalViewController:mailComposer
 								animated:YES];
-		[mailComposer release];
 	}
 	else {
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"mailto:" stringByAppendingString:MAIL_ADDRESS]]];
@@ -88,22 +77,19 @@
     TwitterViewController *twitterController = [[TwitterViewController alloc] init];
     
     // create twitter navigation controller
-    self.twitterNavController = [[[UINavigationController alloc] initWithRootViewController:twitterController] autorelease];
-    [twitterController release];
+    self.twitterNavController = [[UINavigationController alloc] initWithRootViewController:twitterController];
     
     // create cancel bar button
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                      target:self
                                                                                      action:@selector(closeTwitterModalView)];
     self.twitterNavController.navigationBar.topItem.leftBarButtonItem = cancelBarButton;
-    [cancelBarButton release];
     
     // create done bar button
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                    target:self
                                                                                    action:@selector(closeTwitterModalView)];
     self.twitterNavController.navigationBar.topItem.rightBarButtonItem = doneBarButton;
-    [doneBarButton release];    
     
     // present twitter navigation controller
     [self presentModalViewController:self.twitterNavController
@@ -152,8 +138,8 @@
 	
 	MPTableViewCell *cell = (MPTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-									   reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:CellIdentifier];
 		
 		// customize cells appearence
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
@@ -245,7 +231,7 @@
 	// perform cell action
 	switch (indexPath.section) {
         case AboutSectionCredits:
-			[self.navigationController pushViewController:[[[CreditsViewController alloc] init] autorelease]
+			[self.navigationController pushViewController:[[CreditsViewController alloc] init]
 												 animated:YES];
             break;
             
@@ -287,7 +273,6 @@
 												  cancelButtonTitle:@"OK"
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			break;
 		}
 	}

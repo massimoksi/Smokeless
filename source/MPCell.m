@@ -38,16 +38,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.borderColor = nil;
-    self.fillColor = nil;
-    self.startColor = nil;
-    self.endColor = nil;
-    
-    [super dealloc];
-}
-
 #pragma mark Drawing
 
 - (void)drawRect:(CGRect)rect
@@ -179,13 +169,13 @@
             CGColorRef startCGColor = MPColorCreateWithColor(self.startColor);
             CGColorRef endCGColor = MPColorCreateWithColor(self.endColor);
             NSArray *colors = [NSArray arrayWithObjects:
-                               (id)startCGColor,
-                               (id)endCGColor,
+                               (__bridge id)startCGColor,
+                               (__bridge id)endCGColor,
                                nil];
             
             // create gradient
             CGGradientRef gradient = CGGradientCreateWithColors(colorSpace,
-                                                                (CFArrayRef)colors,
+                                                                (__bridge CFArrayRef)colors,
                                                                 locations);
             
             // draw gradient

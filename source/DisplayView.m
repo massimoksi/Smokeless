@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) DisplayState state;
 
-@property (nonatomic, retain) UIImageView *packetsUnit;
+@property (nonatomic, strong) UIImageView *packetsUnit;
 
 @end
 
@@ -36,10 +36,10 @@
         self.backgroundColor = [UIColor clearColor];
         
         // create money unit
-        self.moneyUnit = [[[UILabel alloc] initWithFrame:CGRectMake(self.bounds.origin.x,
-                                                                    self.bounds.origin.y,
-                                                                    50.0,
-                                                                    self.bounds.size.height)] autorelease];
+        self.moneyUnit = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.origin.x,
+                                                                   self.bounds.origin.y,
+                                                                   50.0,
+                                                                   self.bounds.size.height)];
         self.moneyUnit.backgroundColor = [UIColor clearColor];
         self.moneyUnit.font = [UIFont fontWithName:@"DBLCDTempBlack"
                                               size:22.0];
@@ -49,17 +49,17 @@
         self.moneyUnit.shadowColor = [UIColor lightGrayColor];
         
         // create packets unit
-        self.packetsUnit = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Packet"]] autorelease];
+        self.packetsUnit = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Packet"]];
         self.packetsUnit.frame = CGRectMake(self.bounds.origin.x,
                                             self.bounds.origin.y,
                                             50.0,
                                             self.bounds.size.height);
         
         // create money label
-        self.moneyLabel = [[[UILabel alloc] initWithFrame:CGRectMake(50.0,
-                                                                     self.bounds.origin.y,
-                                                                     134.0,
-                                                                     self.bounds.size.height)] autorelease];
+        self.moneyLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0,
+                                                                    self.bounds.origin.y,
+                                                                    134.0,
+                                                                    self.bounds.size.height)];
         self.moneyLabel.backgroundColor = [UIColor clearColor];
         self.moneyLabel.font = [UIFont fontWithName:@"DBLCDTempBlack"
                                                size:22.0];
@@ -69,10 +69,10 @@
         self.moneyLabel.shadowColor = [UIColor lightGrayColor];
 
         // create packets label
-        self.packetsLabel = [[[UILabel alloc] initWithFrame:CGRectMake(50.0,
-                                                                       self.bounds.origin.y,
-                                                                       134.0,
-                                                                       self.bounds.size.height)] autorelease];
+        self.packetsLabel = [[UILabel alloc] initWithFrame:CGRectMake(50.0,
+                                                                      self.bounds.origin.y,
+                                                                      134.0,
+                                                                      self.bounds.size.height)];
         self.packetsLabel.backgroundColor = [UIColor clearColor];
         self.packetsLabel.font = [UIFont fontWithName:@"DBLCDTempBlack"
                                                  size:22.0];
@@ -95,26 +95,13 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.moneyUnit = nil;
-    self.moneyLabel = nil;
-    self.packetsUnit = nil;
-    self.packetsLabel = nil;
-    
-    [super dealloc];
-}
-
 #pragma mark Accessors
 
 - (void)setState:(DisplayState)newState withAnimation:(BOOL)animation
 {
     NSTimeInterval duration = (animation == YES) ? 0.5 : 0.0;
-    
-    // set new state
-    _state = newState;
-    
-    switch (_state) {
+        
+    switch (newState) {
         default:
         case DisplayStateUndef:
             // hide everything
@@ -125,6 +112,7 @@
             break;
             
         case DisplayStateMoney:
+        {
             [UIView animateWithDuration:duration
                              animations:^{
                                  // hide packets
@@ -140,8 +128,10 @@
                                                   }];
                              }];
             break;
+        }
             
         case DisplayStatePackets:
+        {
             [UIView animateWithDuration:duration
                              animations:^{
                                  // hide money
@@ -157,14 +147,18 @@
                                                   }];
                              }];
             break;
+        }
     }
+    
+    // set new state
+    self.state = newState;
 }
 
 #pragma mark Gestures
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    switch (_state) {
+    switch (self.state) {
         default:
         case DisplayStateUndef:
             [self setState:DisplayStateUndef

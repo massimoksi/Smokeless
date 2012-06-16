@@ -22,18 +22,18 @@
 @property (nonatomic, assign) BOOL reset;
 @property (nonatomic, assign) NSUInteger decimals;
 
-@property (nonatomic, retain) UIButton *button0;
-@property (nonatomic, retain) UIButton *button1;
-@property (nonatomic, retain) UIButton *button2;
-@property (nonatomic, retain) UIButton *button3;
-@property (nonatomic, retain) UIButton *button4;
-@property (nonatomic, retain) UIButton *button5;
-@property (nonatomic, retain) UIButton *button6;
-@property (nonatomic, retain) UIButton *button7;
-@property (nonatomic, retain) UIButton *button8;
-@property (nonatomic, retain) UIButton *button9;
-@property (nonatomic, retain) UIButton *buttonC;
-@property (nonatomic, retain) UIButton *buttonP;
+@property (nonatomic, strong) UIButton *button0;
+@property (nonatomic, strong) UIButton *button1;
+@property (nonatomic, strong) UIButton *button2;
+@property (nonatomic, strong) UIButton *button3;
+@property (nonatomic, strong) UIButton *button4;
+@property (nonatomic, strong) UIButton *button5;
+@property (nonatomic, strong) UIButton *button6;
+@property (nonatomic, strong) UIButton *button7;
+@property (nonatomic, strong) UIButton *button8;
+@property (nonatomic, strong) UIButton *button9;
+@property (nonatomic, strong) UIButton *buttonC;
+@property (nonatomic, strong) UIButton *buttonP;
 
 @end
 
@@ -66,13 +66,12 @@
                                              alpha:0.650].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
     shadowLayer.colors = [NSArray arrayWithObjects:
-                          (id)darkColor,
-                          (id)lightColor,
+                          (__bridge id)darkColor,
+                          (__bridge id)lightColor,
                           nil];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
-    [shadowLayer release];
 	
 	// set text label
 	self.cell.textLabel.text = MPString(@"Packet price");
@@ -157,24 +156,6 @@
     self.buttonP = nil;
 }
 
-- (void)dealloc
-{
-    self.button0 = nil;
-    self.button1 = nil;
-    self.button2 = nil;
-    self.button3 = nil;
-    self.button4 = nil;
-    self.button5 = nil;
-    self.button6 = nil;
-    self.button7 = nil;
-    self.button8 = nil;
-    self.button9 = nil;
-    self.buttonC = nil;
-    self.buttonP = nil;
-
-    [super dealloc];
-}
-
 #pragma mark Actions
 
 - (UIButton *)calcButtonWithPosition:(CGPoint)position andTag:(NSInteger)tag
@@ -221,7 +202,6 @@
 		[formatter setLocale:[NSLocale currentLocale]];
 		[button setTitle:[formatter currencyDecimalSeparator]
 				forState:UIControlStateNormal];
-		[formatter release];
 		
 		// add action
 		[button addTarget:self
@@ -279,7 +259,6 @@
 	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 	CGFloat actualPrice = [[formatter numberFromString:self.cell.detailTextLabel.text] floatValue];
-	[formatter release];
 	
 	// set preference
 	[[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithFloat:actualPrice]
@@ -310,7 +289,6 @@
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 		actualPrice = [[formatter numberFromString:self.cell.detailTextLabel.text] floatValue];
-		[formatter release];
 	}
 	
 #ifdef DEBUG

@@ -22,7 +22,7 @@
 
 @interface PreferencesManager : NSObject
 
-@property (nonatomic, retain) NSMutableDictionary *prefs;
+@property (nonatomic, strong) NSMutableDictionary *prefs;
 @property (nonatomic, copy) NSString *path;
 
 + (PreferencesManager *)sharedManager;
