@@ -20,12 +20,6 @@
 
 @implementation DisplayView
 
-@synthesize state = _state;
-@synthesize moneyUnit = _moneyUnit;
-@synthesize moneyLabel = _moneyLabel;
-@synthesize packetsUnit = _packetsUnit;
-@synthesize packetsLabel = _packetsLabel;
-
 - (id)initWithOrigin:(CGPoint)origin
 {
     self = [super initWithFrame:CGRectMake(origin.x,

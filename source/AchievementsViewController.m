@@ -27,9 +27,6 @@
 
 @implementation AchievementsViewController
 
-@synthesize achievements = _achievements;
-@synthesize tableView = _tableView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil

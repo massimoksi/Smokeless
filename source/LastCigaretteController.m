@@ -29,11 +29,6 @@
 
 @implementation LastCigaretteController
 
-@synthesize datePicker = _datePicker;
-@synthesize saveButton = _saveButton;
-@synthesize cancelButton = _cancelButton;
-@synthesize delegate = _delegate;
-
 - (void)loadView
 {
     // create view

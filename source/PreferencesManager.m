@@ -17,9 +17,6 @@ static PreferencesManager *sharedManager = nil;
 
 @implementation PreferencesManager
 
-@synthesize prefs = _prefs;
-@synthesize path = _path;
-
 #pragma mark Singleton
 
 + (PreferencesManager *)sharedManager

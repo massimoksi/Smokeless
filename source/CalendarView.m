@@ -33,13 +33,6 @@
 
 @implementation CalendarView
 
-@synthesize date = _date;
-@synthesize editButton = _editButton;
-@synthesize prevButton = _prevButton;
-@synthesize yearLabel = _yearLabel;
-@synthesize monthLabel = _monthLabel;
-@synthesize dayLabel = _dayLabel;
-
 - (id)initWithDate:(NSDate *)aDate
 {
     self = [super initWithImage:[UIImage imageNamed:@"Calendar"]];

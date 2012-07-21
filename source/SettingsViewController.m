@@ -22,9 +22,6 @@
 
 @implementation SettingsViewController
 
-@synthesize shakeSwitch = _shakeSwitch;
-@synthesize notificationSwitch = _notificationSwitch;
-
 - (void)viewDidLoad
 {
 	[super viewDidLoad];

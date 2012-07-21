@@ -33,13 +33,6 @@
 
 @implementation SavingsViewController
 
-@synthesize savingsView = _savingsView;
-@synthesize displayView = _displayView;
-@synthesize tinklePlayer = _tinklePlayer;
-@synthesize shakeEnabled = _shakeEnabled;
-@synthesize totalSavings = _totalSavings;
-@synthesize totalPackets = _totalPackets;
-
 #pragma mark View lifecycle
 
 - (void)loadView

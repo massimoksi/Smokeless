@@ -16,8 +16,6 @@
 
 @implementation SavingsSettingsController
 
-@synthesize cellControllers = _cellControllers;
-
 - (void)loadView
 {
 	// create view

@@ -20,8 +20,6 @@
 
 @implementation HabitsCellController
 
-@synthesize habitsPicker = _habitsPicker;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -23,8 +23,6 @@
 
 @implementation SizeCellController
 
-@synthesize sizePicker = _sizePicker;
-
 #pragma mark View lifecycle
 
 - (void)viewDidLoad

@@ -11,15 +11,6 @@
 
 @implementation MPCell
 
-@synthesize style = _style;
-@synthesize position = _position;
-@synthesize borderWidth = _borderWidth;
-@synthesize cornerRadius = _cornerRadius;
-@synthesize borderColor = _borderColor;
-@synthesize fillColor = _fillColor;
-@synthesize startColor = _startColor;
-@synthesize endColor = _endColor;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

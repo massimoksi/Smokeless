@@ -11,14 +11,6 @@
 
 @implementation SettingCellController
 
-@synthesize index = _index;
-@synthesize selected = _selected;
-@synthesize cell = _cell;
-@synthesize settingView = _settingView;
-@synthesize saveButton = _saveButton;
-@synthesize cancelButton = _cancelButton;
-@synthesize delegate = _delegate;
-
 - (id)init
 {
 	self = [super init];

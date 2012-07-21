@@ -30,12 +30,6 @@
 
 @implementation CounterViewController
 
-@synthesize lastCigaretteController = _lastCigaretteController;
-@synthesize containerView = _containerView;
-@synthesize chalkboard = _chalkboard;
-@synthesize calendar = _calendar;
-@synthesize note = _note;
-
 #pragma mark View lifecycle
 
 - (void)loadView

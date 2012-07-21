@@ -23,8 +23,6 @@
 
 @implementation AboutViewController
 
-@synthesize twitterNavController = _twitterNavController;
-
 - (void)viewDidLoad
 {
 	// set the title

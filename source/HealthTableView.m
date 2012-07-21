@@ -25,10 +25,6 @@
 
 @implementation HealthTableView
 
-@synthesize originShadow = _originShadow;
-@synthesize topShadow = _topShadow;
-@synthesize bottomShadow = _bottomShadow;
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

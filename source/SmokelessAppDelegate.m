@@ -13,14 +13,6 @@
 
 @implementation SmokelessAppDelegate
 
-@synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
-@synthesize counterController = _counterController;
-@synthesize savingsController = _savingsController;
-@synthesize achievementsController = _achievementsNavController;
-@synthesize settingsNavController = _settingsNavController;
-@synthesize splashView = _splashView;
-
 #pragma mark - Application delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

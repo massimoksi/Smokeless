@@ -15,13 +15,6 @@
 
 @implementation Achievement
 
-@synthesize state = _state;
-@synthesize years = _years;
-@synthesize months = _months;
-@synthesize weeks = _weeks;
-@synthesize days = _days;
-@synthesize text = _text;
-
 - (id)init
 {
     self = [super init];

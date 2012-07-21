@@ -18,8 +18,6 @@
 
 @implementation TwitterViewController
 
-@synthesize progressHUD = _progressHUD;
-
 #pragma mark View lifecycle
 
 - (void)loadView

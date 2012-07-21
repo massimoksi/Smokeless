@@ -15,9 +15,6 @@
 
 @implementation SmokingCellBackgroundView
 
-@synthesize textLabel = _textLabel;
-@synthesize detailTextLabel = _detailTextLabel;
-
 - (id)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];

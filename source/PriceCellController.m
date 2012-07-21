@@ -40,21 +40,6 @@
 
 @implementation PriceCellController
 
-@synthesize reset = _reset;
-@synthesize decimals = _decimals;
-@synthesize button0 = _button0;
-@synthesize button1 = _button1;
-@synthesize button2 = _button2;
-@synthesize button3 = _button3;
-@synthesize button4 = _button4;
-@synthesize button5 = _button5;
-@synthesize button6 = _button6;
-@synthesize button7 = _button7;
-@synthesize button8 = _button8;
-@synthesize button9 = _button9;
-@synthesize buttonC = _buttonC;
-@synthesize buttonP = _buttonP;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

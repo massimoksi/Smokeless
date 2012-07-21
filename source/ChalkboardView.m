@@ -39,17 +39,6 @@
 
 @implementation ChalkboardView
 
-@synthesize years = _years;
-@synthesize months = _months;
-@synthesize weeks = _weeks;
-@synthesize days = _days;
-@synthesize tweetButton = _tweetButton;
-@synthesize nextButton = _nextButton;
-@synthesize yearsLabel = _yearsLabel;
-@synthesize monthsLabel = _monthsLabel;
-@synthesize weeksLabel = _weeksLabel;
-@synthesize daysLabel = _daysLabel;
-
 - (id)init
 {
     self = [super initWithImage:[UIImage imageNamed:@"Chalkboard"]];
