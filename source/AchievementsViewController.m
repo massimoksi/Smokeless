@@ -65,7 +65,7 @@
         step8.text = @"Your risk of heart attack will have returned to that of a non-smoker.";
         
         // create achievements
-        self.achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
+        _achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
         
         // register observers
         [[PreferencesManager sharedManager] addObserver:self

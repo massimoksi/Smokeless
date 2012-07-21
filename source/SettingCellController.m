@@ -15,8 +15,8 @@
 {
 	self = [super init];
 	if (self) {
-		self.index = IDX_UNDEFINED;
-		self.selected = NO;
+		_index = IDX_UNDEFINED;
+		_selected = NO;
 	}
 	
 	return self;

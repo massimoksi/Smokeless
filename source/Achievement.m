@@ -19,10 +19,10 @@
 {
     self = [super init];
     if (self) {
-        self.years = 0;
-        self.months = 0;
-        self.weeks = 0;
-        self.days = 0;
+        _years = 0;
+        _months = 0;
+        _weeks = 0;
+        _days = 0;
     }
     
     return self;
