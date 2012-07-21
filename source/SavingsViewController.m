@@ -93,7 +93,7 @@
     PreferencesManager *prefsManager = [PreferencesManager sharedManager];
     
     // set ivars
-    self.shakeEnabled = [[prefsManager.prefs objectForKey:SHAKE_ENABLED_KEY] boolValue];
+    self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
     self.totalSavings = [prefsManager totalSavings];
     self.totalPackets = [prefsManager totalPackets];
     
@@ -111,17 +111,17 @@
     [formatter setMaximumFractionDigits:2];
     
     // get preferences
-	NSDictionary *habits = [prefsManager.prefs objectForKey:HABITS_KEY];
-	NSNumber *price	= [prefsManager.prefs objectForKey:PACKET_PRICE_KEY];
-	NSNumber *size = [prefsManager.prefs objectForKey:PACKET_SIZE_KEY];
+	NSDictionary *habits = (prefsManager.prefs)[HABITS_KEY];
+	NSNumber *price	= (prefsManager.prefs)[PACKET_PRICE_KEY];
+	NSNumber *size = (prefsManager.prefs)[PACKET_SIZE_KEY];
 
     // set amount display labels
 	if (habits && price && size) {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:self.totalSavings]];
+        self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
 	}
     else {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:[NSNumber numberWithFloat:0.0]];
+        self.displayView.moneyLabel.text = [formatter stringFromNumber:@0.0f];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
     }
     [self.displayView setState:DisplayStateMoney

@@ -37,19 +37,17 @@
     shadowCellController.delegate = self;
 	
 	// add cell controllers to array
-	self.cellControllers = [NSArray arrayWithObjects:
-							habitsCellController,
+	self.cellControllers = @[habitsCellController,
 							sizeCellController,
 							priceCellController,
-                            shadowCellController,
-							nil];
+                            shadowCellController];
 }
 
 - (void)viewDidLoad
 {
     // position cells
 	for (NSUInteger i = 0; i < self.cellControllers.count; i++) {
-		SettingCellController *cellController = [self.cellControllers objectAtIndex:i];
+		SettingCellController *cellController = (self.cellControllers)[i];
 		
 		// set index
 		cellController.index = i;
@@ -68,7 +66,7 @@
 {
 	for (NSUInteger i = index+1; i < self.cellControllers.count; i++) {
 		// retrieve cell controller
-		SettingCellController *cellController = [self.cellControllers objectAtIndex:i];
+		SettingCellController *cellController = (self.cellControllers)[i];
 		
 		// shift cell downwards
 		[cellController shiftViewBy:SETTING_HEIGHT];
@@ -82,7 +80,7 @@
 {    
 	for (NSUInteger i = 0; i < self.cellControllers.count; i++) {
 		// retrieve cell controller
-		SettingCellController *cellController = [self.cellControllers objectAtIndex:i];
+		SettingCellController *cellController = (self.cellControllers)[i];
 		
 		// shift cell upwards
 		[cellController shiftViewBy:-CELL_HEIGHT * index];
@@ -93,7 +91,7 @@
 {
 	for (NSUInteger i = index+1; i < self.cellControllers.count; i++) {
 		// retrieve cell controller
-		SettingCellController *cellController = [self.cellControllers objectAtIndex:i];
+		SettingCellController *cellController = (self.cellControllers)[i];
 		
 		// shift cell upwards
 		[cellController shiftViewBy:-SETTING_HEIGHT];
@@ -104,7 +102,7 @@
 {
 	for (NSUInteger i = 0; i < self.cellControllers.count; i++) {
 		// retrieve cell controller
-		SettingCellController *cellController = [self.cellControllers objectAtIndex:i];
+		SettingCellController *cellController = (self.cellControllers)[i];
 		
 		// shift cell downwards
 		[cellController shiftViewBy:CELL_HEIGHT * index];

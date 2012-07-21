@@ -59,7 +59,7 @@
 		MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
 		mailComposer.mailComposeDelegate = self;
 		mailComposer.navigationBar.barStyle = UIBarStyleDefault;
-		[mailComposer setToRecipients:[NSArray arrayWithObject:MAIL_ADDRESS]];
+		[mailComposer setToRecipients:@[MAIL_ADDRESS]];
         [mailComposer setSubject:MPString(@"Smokeless support")];
 		
 		// show mail composer
@@ -181,8 +181,8 @@
 #ifdef DEBUG
 			cell.detailTextLabel.text = [NSString stringWithFormat:
 										 @"%@ (%d)",
-										 [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
-										 [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] intValue]];
+										 [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"],
+										 [[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"] intValue]];
 #else
 			cell.detailTextLabel.text = [NSString stringWithFormat:
 										 @"%@",

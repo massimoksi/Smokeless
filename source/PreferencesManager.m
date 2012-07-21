@@ -98,7 +98,7 @@ static PreferencesManager *sharedManager = nil;
 
 - (NSDate *)lastCigaretteDate
 {
-	return [self.prefs objectForKey:LAST_CIGARETTE_KEY];
+	return (self.prefs)[LAST_CIGARETTE_KEY];
 }
 
 - (NSDateComponents *)nonSmokingInterval
@@ -155,15 +155,15 @@ static PreferencesManager *sharedManager = nil;
     NSUInteger totalPackets = 0;
     
     // retrieve smoking habits
-	NSDictionary *habits = [self.prefs objectForKey:HABITS_KEY];
+	NSDictionary *habits = (self.prefs)[HABITS_KEY];
 
 	if (habits && [self lastCigaretteDate]) {
-        NSInteger quantity = [[habits objectForKey:HABITS_QUANTITY_KEY] intValue];
-		NSInteger unit = [[habits objectForKey:HABITS_UNIT_KEY] intValue];
-		NSInteger period = [[habits objectForKey:HABITS_PERIOD_KEY] intValue];
+        NSInteger quantity = [habits[HABITS_QUANTITY_KEY] intValue];
+		NSInteger unit = [habits[HABITS_UNIT_KEY] intValue];
+		NSInteger period = [habits[HABITS_PERIOD_KEY] intValue];
 
         // retrieve packet size
-		NSInteger size = [[self.prefs objectForKey:PACKET_SIZE_KEY] intValue];
+		NSInteger size = [(self.prefs)[PACKET_SIZE_KEY] intValue];
         
         // calculate constants
 		NSInteger kUnit = (unit == 0) ? 1 : size;
@@ -193,7 +193,7 @@ static PreferencesManager *sharedManager = nil;
 - (CGFloat)totalSavings
 {
     // retrieve packet price
-    CGFloat price = [[self.prefs objectForKey:PACKET_PRICE_KEY] floatValue];
+    CGFloat price = [(self.prefs)[PACKET_PRICE_KEY] floatValue];
     
     // calculate saved amount
 	CGFloat totalSavings = [self totalPackets] * price;

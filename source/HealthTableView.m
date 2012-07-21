@@ -56,7 +56,7 @@
 		[self.layer insertSublayer:self.originShadow
                            atIndex:0];
 	}
-	else if ([[self.layer.sublayers objectAtIndex:0] isEqual:self.originShadow] == NO) {
+	else if ([(self.layer.sublayers)[0] isEqual:self.originShadow] == NO) {
 		[self.layer insertSublayer:self.originShadow
                            atIndex:0];
 	}
@@ -84,7 +84,7 @@
 		return;
 	}
 	
-	NSIndexPath *firstRow = [indexPathsForVisibleRows objectAtIndex:0];
+	NSIndexPath *firstRow = indexPathsForVisibleRows[0];
 	if ([firstRow section] == 0 && [firstRow row] == 0) {
 		UIView *cell = [self cellForRowAtIndexPath:firstRow];
 		if (self.topShadow == nil) {
@@ -147,10 +147,8 @@
                                             blue:0.000
                                            alpha:0.420].CGColor;
 	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.000].CGColor;
-	newShadow.colors = [NSArray arrayWithObjects:
-                        (__bridge id)(inverse ? lightColor : darkColor),
-                        (__bridge id)(inverse ? darkColor : lightColor),
-                        nil];
+	newShadow.colors = @[(__bridge id)(inverse ? lightColor : darkColor),
+                        (__bridge id)(inverse ? darkColor : lightColor)];
     
 	return newShadow;
 }

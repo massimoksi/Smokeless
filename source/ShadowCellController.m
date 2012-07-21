@@ -28,10 +28,8 @@
     CGColorRef darkColor = [UIColor colorWithWhite:0.200
                                              alpha:0.300].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:
-                          (__bridge id)darkColor,
-                          (__bridge id)lightColor,
-                          nil];
+    shadowLayer.colors = @[(__bridge id)darkColor,
+                          (__bridge id)lightColor];
     
     // add shadow
     [self.view.layer addSublayer:shadowLayer];

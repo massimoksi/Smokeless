@@ -162,7 +162,7 @@
 			
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
+		self.monthLabel.text = [[df monthSymbols][(month - 1)] capitalizedString];
 			
 		// set day to label
 		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];
@@ -185,7 +185,7 @@
 		
 		// set month to label
 		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		self.monthLabel.text = [[[df monthSymbols] objectAtIndex:(month - 1)] capitalizedString];
+		self.monthLabel.text = [[df monthSymbols][(month - 1)] capitalizedString];
 		
 		// set day to label
 		self.dayLabel.text = [NSString stringWithFormat:@"%d", day];

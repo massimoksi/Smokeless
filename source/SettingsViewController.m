@@ -67,8 +67,7 @@
 - (void)shakeEnabled:(id)sender
 {
     // set preference
-    [[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithBool:[self.shakeSwitch isOn]]
-                                                 forKey:SHAKE_ENABLED_KEY];
+    ([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] = @([self.shakeSwitch isOn]);
     
     // save preferences
     [[PreferencesManager sharedManager] savePrefs];
@@ -79,8 +78,7 @@
     BOOL notificationsEnabled = [self.notificationSwitch isOn];
     
     // set preference
-    [[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithBool:notificationsEnabled]
-                                                 forKey:NOTIFICATIONS_ENABLED_KEY];
+    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @(notificationsEnabled);
     
     // save preferences
     [[PreferencesManager sharedManager] savePrefs];
@@ -165,7 +163,7 @@
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
                     // update switch
-                    self.shakeSwitch.on = [[[PreferencesManager sharedManager].prefs objectForKey:SHAKE_ENABLED_KEY] boolValue];            
+                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];            
                     break;
                     
                 case 1:
@@ -174,7 +172,7 @@
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
                     // update switch
-                    self.notificationSwitch.on = [[[PreferencesManager sharedManager].prefs objectForKey:NOTIFICATIONS_ENABLED_KEY] boolValue];
+                    self.notificationSwitch.on = [([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue];
                     break;
             }
             break;

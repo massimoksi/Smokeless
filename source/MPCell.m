@@ -168,10 +168,8 @@
             // create colors
             CGColorRef startCGColor = MPColorCreateWithColor(self.startColor);
             CGColorRef endCGColor = MPColorCreateWithColor(self.endColor);
-            NSArray *colors = [NSArray arrayWithObjects:
-                               (__bridge id)startCGColor,
-                               (__bridge id)endCGColor,
-                               nil];
+            NSArray *colors = @[(__bridge id)startCGColor,
+                               (__bridge id)endCGColor];
             
             // create gradient
             CGGradientRef gradient = CGGradientCreateWithColors(colorSpace,

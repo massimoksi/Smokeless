@@ -103,19 +103,15 @@
                                    self.view.frame.size.height - 10.0,
                                    320.0,
                                    10.0);
-    bottomShadowLayer.colors = [NSArray arrayWithObjects:
-                                (__bridge id)lightColor,
-                                (__bridge id)darkColor,
-                                nil];
+    bottomShadowLayer.colors = @[(__bridge id)lightColor,
+                                (__bridge id)darkColor];
     CAGradientLayer *topShadowLayer = [[CAGradientLayer alloc] init];
     topShadowLayer.frame = CGRectMake(0.0,
                                       self.datePicker.frame.size.height,
                                       320.0,
                                       10.0);
-    topShadowLayer.colors = [NSArray arrayWithObjects:
-                             (__bridge id)darkColor,
-                             (__bridge id)lightColor,
-                             nil];
+    topShadowLayer.colors = @[(__bridge id)darkColor,
+                             (__bridge id)lightColor];
     
     // add shadows to view
     [self.view.layer addSublayer:bottomShadowLayer];
@@ -172,8 +168,7 @@
 #endif
 
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-												 forKey:LAST_CIGARETTE_KEY];
+	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
          
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];

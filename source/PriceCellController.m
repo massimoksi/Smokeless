@@ -65,10 +65,8 @@
     CGColorRef darkColor = [UIColor colorWithWhite:0.000
                                              alpha:0.650].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:
-                          (__bridge id)darkColor,
-                          (__bridge id)lightColor,
-                          nil];
+    shadowLayer.colors = @[(__bridge id)darkColor,
+                          (__bridge id)lightColor];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -225,11 +223,11 @@
 - (void)updateCell
 {
 	// get preferences
-	CGFloat price = [[[PreferencesManager sharedManager].prefs objectForKey:PACKET_PRICE_KEY] floatValue];
+	CGFloat price = [([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue];
 	
 	if (price != 0.0) {
 		// set detail text
-		self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:price]
+		self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:@(price)
 																		  numberStyle:NSNumberFormatterCurrencyStyle];	
 	}
 	else {
@@ -248,7 +246,7 @@
 	
 	if (self.cell.detailTextLabel.text == nil) {
 		// set detail string
-		self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
+		self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:@0.0f
 																		  numberStyle:NSNumberFormatterCurrencyStyle];	
 	}
 }
@@ -261,8 +259,7 @@
 	CGFloat actualPrice = [[formatter numberFromString:self.cell.detailTextLabel.text] floatValue];
 	
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithFloat:actualPrice]
-												 forKey:PACKET_PRICE_KEY];
+	([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] = @(actualPrice);
 
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
@@ -321,7 +318,7 @@
 	self.reset = NO;
 	
 	// update detail string
-	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:actualPrice]
+	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:@(actualPrice)
 																	  numberStyle:NSNumberFormatterCurrencyStyle];	
 }
 
@@ -330,7 +327,7 @@
 	self.decimals = 0;
 	
 	// cancel the detail string
-	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
+	self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:@0.0f
 																	  numberStyle:NSNumberFormatterCurrencyStyle];
 	
 	// enable the point button
@@ -341,7 +338,7 @@
 {
     if (self.reset) {
         // reset detail string
-        self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithFloat:0.0]
+        self.cell.detailTextLabel.text = [NSNumberFormatter localizedStringFromNumber:@0.0f
                                                                           numberStyle:NSNumberFormatterCurrencyStyle];
         
         // disable price reset

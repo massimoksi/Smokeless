@@ -59,12 +59,10 @@
 	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
 	
 	// add controllers to tab bar
-	self.tabBarController.viewControllers = [NSArray arrayWithObjects:
-                                             self.counterController,
+	self.tabBarController.viewControllers = @[self.counterController,
                                              self.savingsController,
                                              self.achievementsController,
-                                             self.settingsNavController,
-                                             nil];
+                                             self.settingsNavController];
 
     // add the tab bar controller's view to the window and display
     [self.window addSubview:self.tabBarController.view];
@@ -142,8 +140,7 @@
 #endif
     
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-												 forKey:LAST_CIGARETTE_KEY];
+	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
     
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];

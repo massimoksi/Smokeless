@@ -68,16 +68,7 @@
         step8.text = @"Your risk of heart attack will have returned to that of a non-smoker.";
         
         // create achievements
-        self.achievements = [NSArray arrayWithObjects:
-                             step1,
-                             step2,
-                             step3,
-                             step4,
-                             step5,
-                             step6,
-                             step7,
-                             step8,
-                             nil];
+        self.achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
         
         // register observers
         [[PreferencesManager sharedManager] addObserver:self
@@ -187,7 +178,7 @@
     }
     
     // retrieve achievement
-    Achievement *step = [self.achievements objectAtIndex:indexPath.row];
+    Achievement *step = (self.achievements)[indexPath.row];
     
     // setup cell
     cell.textLabel.text = [NSString stringWithFormat:MPString(@"After %@"), [step timeInterval]];
@@ -205,7 +196,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Achievement *currStep = [self.achievements objectAtIndex:indexPath.row];
+    Achievement *currStep = (self.achievements)[indexPath.row];
     
     switch (currStep.state) {
         case AchievementStateCompleted:
@@ -386,7 +377,7 @@
 
 - (void)registerLocalNotifications
 {
-    if ([[[PreferencesManager sharedManager].prefs objectForKey:NOTIFICATIONS_ENABLED_KEY] boolValue] == YES) {
+    if ([([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue] == YES) {
         NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
         
         for (Achievement *step in self.achievements) {

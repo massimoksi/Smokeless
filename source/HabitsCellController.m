@@ -46,10 +46,7 @@
     CGColorRef darkColor = [UIColor colorWithWhite:0.000
                                              alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:
-                          (__bridge id)darkColor,
-                          (__bridge id)lightColor,
-                          nil];
+    shadowLayer.colors = @[(__bridge id)darkColor, (__bridge id)lightColor];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -77,11 +74,11 @@
 - (void)updateCell
 {
 	// get preferences
-	NSDictionary *habits = [[PreferencesManager sharedManager].prefs objectForKey:HABITS_KEY];
+	NSDictionary *habits = ([PreferencesManager sharedManager].prefs)[HABITS_KEY];
 	if (habits != nil) {
-		NSInteger quantity = [[habits objectForKey:HABITS_QUANTITY_KEY] intValue];
-		NSInteger unit = [[habits objectForKey:HABITS_UNIT_KEY] intValue];
-		NSInteger period = [[habits objectForKey:HABITS_PERIOD_KEY] intValue];
+		NSInteger quantity = [habits[HABITS_QUANTITY_KEY] intValue];
+		NSInteger unit = [habits[HABITS_UNIT_KEY] intValue];
+		NSInteger period = [habits[HABITS_PERIOD_KEY] intValue];
 		// create unit string
 		NSString *unitString = nil;
 		switch (unit) {
@@ -121,10 +118,10 @@
 - (void)updateSettingView
 {
 	// retrieve preferences
-	NSDictionary *habits = [[PreferencesManager sharedManager].prefs objectForKey:HABITS_KEY];
-	NSInteger quantity = [[habits objectForKey:HABITS_QUANTITY_KEY] intValue];
-	NSInteger unit = [[habits objectForKey:HABITS_UNIT_KEY] intValue];
-	NSInteger period = [[habits objectForKey:HABITS_PERIOD_KEY] intValue];
+	NSDictionary *habits = ([PreferencesManager sharedManager].prefs)[HABITS_KEY];
+	NSInteger quantity = [habits[HABITS_QUANTITY_KEY] intValue];
+	NSInteger unit = [habits[HABITS_UNIT_KEY] intValue];
+	NSInteger period = [habits[HABITS_PERIOD_KEY] intValue];
 	
 #ifdef DEBUG
 	NSLog(@"%@ - Quantity: %d", [self class], quantity);
@@ -158,18 +155,12 @@
 #endif	
 	
 	// collect smoking habits
-	NSDictionary *habits = [[NSDictionary alloc] initWithObjectsAndKeys:
-							[NSNumber numberWithInt:quantity],
-							HABITS_QUANTITY_KEY,
-							[NSNumber numberWithInt:unit],
-							HABITS_UNIT_KEY,
-							[NSNumber numberWithInt:period],
-							HABITS_PERIOD_KEY,
-							nil];
+	NSDictionary *habits = @{HABITS_QUANTITY_KEY: @(quantity),
+                            HABITS_UNIT_KEY: @(unit),
+							HABITS_PERIOD_KEY: @(period)};
 	
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:habits
-												 forKey:HABITS_KEY];
+	([PreferencesManager sharedManager].prefs)[HABITS_KEY] = habits;
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
 	

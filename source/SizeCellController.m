@@ -51,10 +51,8 @@
     CGColorRef darkColor = [UIColor colorWithWhite:0.000
                                              alpha:0.800].CGColor;
     CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = [NSArray arrayWithObjects:
-                          (__bridge id)darkColor,
-                          (__bridge id)lightColor,
-                          nil];
+    shadowLayer.colors = @[(__bridge id)darkColor,
+                          (__bridge id)lightColor];
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
@@ -82,7 +80,7 @@
 - (void)updateCell
 {
 	// get preferences
-	NSInteger size = [[[PreferencesManager sharedManager].prefs objectForKey:PACKET_SIZE_KEY] intValue];
+	NSInteger size = [([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue];
 	
 	if (size != 0) {
 		// set detail text
@@ -102,7 +100,7 @@
 - (void)updateSettingView
 {
 	// set values from preferences to the picker view
-	[self.sizePicker selectRow:([[[PreferencesManager sharedManager].prefs objectForKey:PACKET_SIZE_KEY] intValue] - 1)
+	[self.sizePicker selectRow:([([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue] - 1)
                    inComponent:0
                       animated:NO];
 }
@@ -110,8 +108,7 @@
 - (void)saveTapped:(id)sender
 {
 	// set preference
-	[[PreferencesManager sharedManager].prefs setObject:[NSNumber numberWithInt:([self.sizePicker selectedRowInComponent:0] + 1)]
-												 forKey:PACKET_SIZE_KEY];
+	([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] = @([self.sizePicker selectedRowInComponent:0] + 1);
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
 	
