@@ -364,19 +364,10 @@
 			children = (
 				566B372815BBFE1E0026821C /* Smokeless */,
 				562C852F136777E600E078D1 /* Libraries */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = Smokeless;
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -408,101 +399,7 @@
 		566B372815BBFE1E0026821C /* Smokeless */ = {
 			isa = PBXGroup;
 			children = (
-				566B37FD15BC16C20026821C /* AchievementCompleted.png */,
-				566B37FE15BC16C30026821C /* AchievementCompleted@2x.png */,
-				566B37FF15BC16C30026821C /* AchievementPending0.png */,
-				566B380015BC16C30026821C /* AchievementPending0@2x.png */,
-				566B380115BC16C30026821C /* AchievementPending1.png */,
-				566B380215BC16C30026821C /* AchievementPending1@2x.png */,
-				566B380315BC16C30026821C /* AchievementPending2.png */,
-				566B380415BC16C30026821C /* AchievementPending2@2x.png */,
-				566B380515BC16C30026821C /* AchievementPending3.png */,
-				566B380615BC16C30026821C /* AchievementPending3@2x.png */,
-				566B380715BC16C40026821C /* AchievementPending4.png */,
-				566B380815BC16C40026821C /* AchievementPending4@2x.png */,
-				566B380915BC16C40026821C /* AchievementPending5.png */,
-				566B380A15BC16C40026821C /* AchievementPending5@2x.png */,
-				566B380B15BC16C40026821C /* AchievementPending6.png */,
-				566B380C15BC16C40026821C /* AchievementPending6@2x.png */,
-				566B380D15BC16C40026821C /* AchievementPending7.png */,
-				566B380E15BC16C40026821C /* AchievementPending7@2x.png */,
-				566B380F15BC16C40026821C /* AchievementWaiting.png */,
-				566B381015BC16C40026821C /* AchievementWaiting@2x.png */,
-				566B381115BC16C40026821C /* ArrowLeft.png */,
-				566B381215BC16C40026821C /* ArrowLeft@2x.png */,
-				566B381315BC16C40026821C /* Background.png */,
-				566B381415BC16C40026821C /* Background@2x.png */,
-				566B381515BC16C50026821C /* ButtonCalcNormal.png */,
-				566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */,
-				566B381715BC16C50026821C /* ButtonCancelNormal.png */,
-				566B381815BC16C50026821C /* ButtonCancelNormal@2x.png */,
-				566B381915BC16C50026821C /* ButtonEditNormal.png */,
-				566B381A15BC16C50026821C /* ButtonEditNormal@2x.png */,
-				566B381B15BC16C50026821C /* ButtonEditPressed.png */,
-				566B381C15BC16C50026821C /* ButtonEditPressed@2x.png */,
-				566B381D15BC16C50026821C /* ButtonNextNormal.png */,
-				566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */,
-				566B381F15BC16C50026821C /* ButtonNextPressed.png */,
-				566B382015BC16C60026821C /* ButtonNextPressed@2x.png */,
-				566B382115BC16C60026821C /* ButtonPrevNormal.png */,
-				566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */,
-				566B382315BC16C60026821C /* ButtonPrevPressed.png */,
-				566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */,
-				566B382515BC16C60026821C /* ButtonSaveNormal.png */,
-				566B382615BC16C60026821C /* ButtonSaveNormal@2x.png */,
-				566B382715BC16C60026821C /* ButtonToolsNormal.png */,
-				566B382815BC16C60026821C /* ButtonToolsNormal@2x.png */,
-				566B382915BC16C60026821C /* ButtonToolsPressed.png */,
-				566B382A15BC16C60026821C /* ButtonToolsPressed@2x.png */,
-				566B382B15BC16C60026821C /* ButtonTweetNormal.png */,
-				566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */,
-				566B382D15BC16C60026821C /* ButtonTweetPressed.png */,
-				566B382E15BC16C60026821C /* ButtonTweetPressed@2x.png */,
-				566B382F15BC16C60026821C /* Calendar.png */,
-				566B383015BC16C60026821C /* Calendar@2x.png */,
-				566B383115BC16C70026821C /* Chalkboard.png */,
-				566B383215BC16C70026821C /* Chalkboard@2x.png */,
-				566B383315BC16C70026821C /* Chalkduster.ttf */,
-				566B383415BC16C70026821C /* Default.png */,
-				566B383515BC16C70026821C /* Default@2x.png */,
-				566B383615BC16C70026821C /* HealthTableViewCell_completed.png */,
-				566B383715BC16C70026821C /* HealthTableViewCell_completed@2x.png */,
-				566B383815BC16C70026821C /* HealthTableViewCell_next.png */,
-				566B383915BC16C70026821C /* HealthTableViewCell_next@2x.png */,
-				566B383A15BC16C70026821C /* HealthTableViewCell_waiting.png */,
-				566B383B15BC16C70026821C /* HealthTableViewCell_waiting@2x.png */,
-				566B383C15BC16C70026821C /* Icon-72.png */,
-				566B383D15BC16C70026821C /* Icon-Small-50.png */,
-				566B383E15BC16C70026821C /* Icon-Small.png */,
-				566B383F15BC16C70026821C /* Icon-Small@2x.png */,
-				566B384015BC16C70026821C /* Icon.png */,
-				566B384115BC16C70026821C /* Icon@2x.png */,
-				566B384215BC16C70026821C /* iTunesArtwork */,
 				566B384315BC16C70026821C /* MainWindow.xib */,
-				566B384415BC16C70026821C /* Note.png */,
-				566B384515BC16C70026821C /* Note@2x.png */,
-				566B384615BC16C70026821C /* Packet.png */,
-				566B384715BC16C70026821C /* Packet@2x.png */,
-				566B384815BC16C70026821C /* Savings.png */,
-				566B384915BC16C70026821C /* Savings@2x.png */,
-				566B384A15BC16C80026821C /* SmokingCell.png */,
-				566B384B15BC16C80026821C /* SmokingCell@2x.png */,
-				566B384C15BC16C80026821C /* TabIconCounter.png */,
-				566B384D15BC16C80026821C /* TabIconCounter@2x.png */,
-				566B384E15BC16C80026821C /* TabIconHealth.png */,
-				566B384F15BC16C80026821C /* TabIconHealth@2x.png */,
-				566B385015BC16C80026821C /* TabIconSavings.png */,
-				566B385115BC16C80026821C /* TabIconSavings@2x.png */,
-				566B385215BC16C80026821C /* TabIconSettings.png */,
-				566B385315BC16C80026821C /* TabIconSettings@2x.png */,
-				566B385415BC16C80026821C /* Tinkle.m4a */,
-				566B385515BC16C80026821C /* TitleAbout.png */,
-				566B385615BC16C80026821C /* TitleAbout@2x.png */,
-				566B37C915BC02430026821C /* Localizable.strings */,
-				566B37CB15BC02430026821C /* TitleCalendar.png */,
-				566B37CD15BC02430026821C /* TitleCalendar@2x.png */,
-				566B37CF15BC02430026821C /* TitleChalkboard.png */,
-				566B37D115BC02430026821C /* TitleChalkboard@2x.png */,
 				566B378415BC00050026821C /* Models */,
 				566B378515BC00130026821C /* Views */,
 				566B378215BBFFAD0026821C /* Controllers */,
@@ -519,6 +416,9 @@
 				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
 				566B374A15BBFE1F0026821C /* MPToolkit.h */,
 				566B378115BBFE670026821C /* Supporting Files */,
+				566B38B115BC17CA0026821C /* Images */,
+				566B38B315BC18760026821C /* Misc */,
+				566B38B215BC180B0026821C /* Icons */,
 			);
 			path = Smokeless;
 			sourceTree = "<group>";
@@ -526,8 +426,9 @@
 		566B378115BBFE670026821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
+				566B37C915BC02430026821C /* Localizable.strings */,
 				566B374015BBFE1F0026821C /* main.m */,
+				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
 				566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -613,6 +514,120 @@
 				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		566B38B115BC17CA0026821C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				566B37FD15BC16C20026821C /* AchievementCompleted.png */,
+				566B37FE15BC16C30026821C /* AchievementCompleted@2x.png */,
+				566B37FF15BC16C30026821C /* AchievementPending0.png */,
+				566B380015BC16C30026821C /* AchievementPending0@2x.png */,
+				566B380115BC16C30026821C /* AchievementPending1.png */,
+				566B380215BC16C30026821C /* AchievementPending1@2x.png */,
+				566B380315BC16C30026821C /* AchievementPending2.png */,
+				566B380415BC16C30026821C /* AchievementPending2@2x.png */,
+				566B380515BC16C30026821C /* AchievementPending3.png */,
+				566B380615BC16C30026821C /* AchievementPending3@2x.png */,
+				566B380715BC16C40026821C /* AchievementPending4.png */,
+				566B380815BC16C40026821C /* AchievementPending4@2x.png */,
+				566B380915BC16C40026821C /* AchievementPending5.png */,
+				566B380A15BC16C40026821C /* AchievementPending5@2x.png */,
+				566B380B15BC16C40026821C /* AchievementPending6.png */,
+				566B380C15BC16C40026821C /* AchievementPending6@2x.png */,
+				566B380D15BC16C40026821C /* AchievementPending7.png */,
+				566B380E15BC16C40026821C /* AchievementPending7@2x.png */,
+				566B380F15BC16C40026821C /* AchievementWaiting.png */,
+				566B381015BC16C40026821C /* AchievementWaiting@2x.png */,
+				566B381115BC16C40026821C /* ArrowLeft.png */,
+				566B381215BC16C40026821C /* ArrowLeft@2x.png */,
+				566B381315BC16C40026821C /* Background.png */,
+				566B381415BC16C40026821C /* Background@2x.png */,
+				566B381515BC16C50026821C /* ButtonCalcNormal.png */,
+				566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */,
+				566B381715BC16C50026821C /* ButtonCancelNormal.png */,
+				566B381815BC16C50026821C /* ButtonCancelNormal@2x.png */,
+				566B381915BC16C50026821C /* ButtonEditNormal.png */,
+				566B381A15BC16C50026821C /* ButtonEditNormal@2x.png */,
+				566B381B15BC16C50026821C /* ButtonEditPressed.png */,
+				566B381C15BC16C50026821C /* ButtonEditPressed@2x.png */,
+				566B381D15BC16C50026821C /* ButtonNextNormal.png */,
+				566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */,
+				566B381F15BC16C50026821C /* ButtonNextPressed.png */,
+				566B382015BC16C60026821C /* ButtonNextPressed@2x.png */,
+				566B382115BC16C60026821C /* ButtonPrevNormal.png */,
+				566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */,
+				566B382315BC16C60026821C /* ButtonPrevPressed.png */,
+				566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */,
+				566B382515BC16C60026821C /* ButtonSaveNormal.png */,
+				566B382615BC16C60026821C /* ButtonSaveNormal@2x.png */,
+				566B382715BC16C60026821C /* ButtonToolsNormal.png */,
+				566B382815BC16C60026821C /* ButtonToolsNormal@2x.png */,
+				566B382915BC16C60026821C /* ButtonToolsPressed.png */,
+				566B382A15BC16C60026821C /* ButtonToolsPressed@2x.png */,
+				566B382B15BC16C60026821C /* ButtonTweetNormal.png */,
+				566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */,
+				566B382D15BC16C60026821C /* ButtonTweetPressed.png */,
+				566B382E15BC16C60026821C /* ButtonTweetPressed@2x.png */,
+				566B382F15BC16C60026821C /* Calendar.png */,
+				566B383015BC16C60026821C /* Calendar@2x.png */,
+				566B383115BC16C70026821C /* Chalkboard.png */,
+				566B383215BC16C70026821C /* Chalkboard@2x.png */,
+				566B383415BC16C70026821C /* Default.png */,
+				566B383515BC16C70026821C /* Default@2x.png */,
+				566B383615BC16C70026821C /* HealthTableViewCell_completed.png */,
+				566B383715BC16C70026821C /* HealthTableViewCell_completed@2x.png */,
+				566B383815BC16C70026821C /* HealthTableViewCell_next.png */,
+				566B383915BC16C70026821C /* HealthTableViewCell_next@2x.png */,
+				566B383A15BC16C70026821C /* HealthTableViewCell_waiting.png */,
+				566B383B15BC16C70026821C /* HealthTableViewCell_waiting@2x.png */,
+				566B384415BC16C70026821C /* Note.png */,
+				566B384515BC16C70026821C /* Note@2x.png */,
+				566B384615BC16C70026821C /* Packet.png */,
+				566B384715BC16C70026821C /* Packet@2x.png */,
+				566B384815BC16C70026821C /* Savings.png */,
+				566B384915BC16C70026821C /* Savings@2x.png */,
+				566B384A15BC16C80026821C /* SmokingCell.png */,
+				566B384B15BC16C80026821C /* SmokingCell@2x.png */,
+				566B384C15BC16C80026821C /* TabIconCounter.png */,
+				566B384D15BC16C80026821C /* TabIconCounter@2x.png */,
+				566B384E15BC16C80026821C /* TabIconHealth.png */,
+				566B384F15BC16C80026821C /* TabIconHealth@2x.png */,
+				566B385015BC16C80026821C /* TabIconSavings.png */,
+				566B385115BC16C80026821C /* TabIconSavings@2x.png */,
+				566B385215BC16C80026821C /* TabIconSettings.png */,
+				566B385315BC16C80026821C /* TabIconSettings@2x.png */,
+				566B385515BC16C80026821C /* TitleAbout.png */,
+				566B385615BC16C80026821C /* TitleAbout@2x.png */,
+				566B37CB15BC02430026821C /* TitleCalendar.png */,
+				566B37CD15BC02430026821C /* TitleCalendar@2x.png */,
+				566B37CF15BC02430026821C /* TitleChalkboard.png */,
+				566B37D115BC02430026821C /* TitleChalkboard@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		566B38B215BC180B0026821C /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				566B383C15BC16C70026821C /* Icon-72.png */,
+				566B383D15BC16C70026821C /* Icon-Small-50.png */,
+				566B383E15BC16C70026821C /* Icon-Small.png */,
+				566B383F15BC16C70026821C /* Icon-Small@2x.png */,
+				566B384015BC16C70026821C /* Icon.png */,
+				566B384115BC16C70026821C /* Icon@2x.png */,
+				566B384215BC16C70026821C /* iTunesArtwork */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		566B38B315BC18760026821C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				566B383315BC16C70026821C /* Chalkduster.ttf */,
+				566B385415BC16C80026821C /* Tinkle.m4a */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		56F50918155A356500863FF5 /* Appirater */ = {
