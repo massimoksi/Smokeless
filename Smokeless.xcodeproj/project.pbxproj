@@ -522,30 +522,12 @@
 		566B372815BBFE1E0026821C /* Smokeless */ = {
 			isa = PBXGroup;
 			children = (
+				566B378415BC00050026821C /* Models */,
+				566B378515BC00130026821C /* Views */,
+				566B378215BBFFAD0026821C /* Controllers */,
+				566B378615BC00300026821C /* Delegates */,
+				566B378315BBFFF10026821C /* Singletons */,
 				566B378115BBFE670026821C /* Supporting Files */,
-				566B372915BBFE1F0026821C /* AboutViewController.h */,
-				566B372A15BBFE1F0026821C /* AboutViewController.m */,
-				566B372B15BBFE1F0026821C /* Achievement.h */,
-				566B372C15BBFE1F0026821C /* Achievement.m */,
-				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
-				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
-				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
-				566B373015BBFE1F0026821C /* CalendarView.h */,
-				566B373115BBFE1F0026821C /* CalendarView.m */,
-				566B373215BBFE1F0026821C /* ChalkboardView.h */,
-				566B373315BBFE1F0026821C /* ChalkboardView.m */,
-				566B373415BBFE1F0026821C /* CounterViewController.h */,
-				566B373515BBFE1F0026821C /* CounterViewController.m */,
-				566B373615BBFE1F0026821C /* CreditsViewController.h */,
-				566B373715BBFE1F0026821C /* CreditsViewController.m */,
-				566B373815BBFE1F0026821C /* DisplayView.h */,
-				566B373915BBFE1F0026821C /* DisplayView.m */,
-				566B373A15BBFE1F0026821C /* HabitsCellController.h */,
-				566B373B15BBFE1F0026821C /* HabitsCellController.m */,
-				566B373C15BBFE1F0026821C /* HealthTableView.h */,
-				566B373D15BBFE1F0026821C /* HealthTableView.m */,
-				566B373E15BBFE1F0026821C /* LastCigaretteController.h */,
-				566B373F15BBFE1F0026821C /* LastCigaretteController.m */,
 				566B374115BBFE1F0026821C /* MPCell.h */,
 				566B374215BBFE1F0026821C /* MPCell.m */,
 				566B374315BBFE1F0026821C /* MPDefines.h */,
@@ -556,10 +538,35 @@
 				566B374815BBFE1F0026821C /* MPTableViewCell.h */,
 				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
 				566B374A15BBFE1F0026821C /* MPToolkit.h */,
-				566B374B15BBFE1F0026821C /* NoteView.h */,
-				566B374C15BBFE1F0026821C /* NoteView.m */,
-				566B374D15BBFE1F0026821C /* PreferencesManager.h */,
-				566B374E15BBFE1F0026821C /* PreferencesManager.m */,
+			);
+			path = Smokeless;
+			sourceTree = "<group>";
+		};
+		566B378115BBFE670026821C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				566B374015BBFE1F0026821C /* main.m */,
+				566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		566B378215BBFFAD0026821C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				566B372915BBFE1F0026821C /* AboutViewController.h */,
+				566B372A15BBFE1F0026821C /* AboutViewController.m */,
+				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
+				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
+				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
+				566B373415BBFE1F0026821C /* CounterViewController.h */,
+				566B373515BBFE1F0026821C /* CounterViewController.m */,
+				566B373615BBFE1F0026821C /* CreditsViewController.h */,
+				566B373715BBFE1F0026821C /* CreditsViewController.m */,
+				566B373A15BBFE1F0026821C /* HabitsCellController.h */,
+				566B373B15BBFE1F0026821C /* HabitsCellController.m */,
+				566B373E15BBFE1F0026821C /* LastCigaretteController.h */,
+				566B373F15BBFE1F0026821C /* LastCigaretteController.m */,
 				566B374F15BBFE1F0026821C /* PriceCellController.h */,
 				566B375015BBFE1F0026821C /* PriceCellController.m */,
 				566B375115BBFE1F0026821C /* SavingsSettingsController.h */,
@@ -574,23 +581,56 @@
 				566B375A15BBFE1F0026821C /* ShadowCellController.m */,
 				566B375B15BBFE1F0026821C /* SizeCellController.h */,
 				566B375C15BBFE1F0026821C /* SizeCellController.m */,
-				566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */,
-				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
-				566B376015BBFE1F0026821C /* SmokingCellBackgroundView.h */,
-				566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
-			path = Smokeless;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		566B378115BBFE670026821C /* Supporting Files */ = {
+		566B378315BBFFF10026821C /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
-				566B374015BBFE1F0026821C /* main.m */,
-				566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */,
+				566B374D15BBFE1F0026821C /* PreferencesManager.h */,
+				566B374E15BBFE1F0026821C /* PreferencesManager.m */,
 			);
-			name = "Supporting Files";
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		566B378415BC00050026821C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				566B372B15BBFE1F0026821C /* Achievement.h */,
+				566B372C15BBFE1F0026821C /* Achievement.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		566B378515BC00130026821C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				566B376015BBFE1F0026821C /* SmokingCellBackgroundView.h */,
+				566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */,
+				566B373015BBFE1F0026821C /* CalendarView.h */,
+				566B373115BBFE1F0026821C /* CalendarView.m */,
+				566B373215BBFE1F0026821C /* ChalkboardView.h */,
+				566B373315BBFE1F0026821C /* ChalkboardView.m */,
+				566B373815BBFE1F0026821C /* DisplayView.h */,
+				566B373915BBFE1F0026821C /* DisplayView.m */,
+				566B373C15BBFE1F0026821C /* HealthTableView.h */,
+				566B373D15BBFE1F0026821C /* HealthTableView.m */,
+				566B374B15BBFE1F0026821C /* NoteView.h */,
+				566B374C15BBFE1F0026821C /* NoteView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		566B378615BC00300026821C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */,
+				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		56F50918155A356500863FF5 /* Appirater */ = {
