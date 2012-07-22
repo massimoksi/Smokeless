@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-typedef enum {
-    AchievementStateNone = 0,
+typedef enum AchievementState : NSUInteger {
+    AchievementStateNone,
     AchievementStateCompleted,
     AchievementStatePending,
     AchievementStateNext,

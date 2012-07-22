@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-typedef enum {
-    DisplayStateUndef = 0,
+typedef enum DisplayState : NSUInteger {
+    DisplayStateUndef,
     DisplayStateMoney,
     DisplayStatePackets
 } DisplayState;

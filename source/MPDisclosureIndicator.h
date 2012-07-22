@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-typedef enum {
-    MPDisclosureIndicatorOrientationRight = 0,
+typedef enum MPDisclosureIndicatorOrientation : NSUInteger {
+    MPDisclosureIndicatorOrientationRight,
     MPDisclosureIndicatorOrientationLeft,
     MPDisclosureIndicatorOrientationUp,
     MPDisclosureIndicatorOrientationDown
