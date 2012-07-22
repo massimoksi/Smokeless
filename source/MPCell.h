@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
-typedef enum MPCellPosition : NSUInteger {
+typedef enum : NSUInteger {
     MPCellPositionSingle,
     MPCellPositionTop,
     MPCellPositionMiddle,
     MPCellPositionBottom
 } MPCellPosition;
 
-typedef enum MPCellStyle : NSUInteger {
-    MPCellStyleEmpty = 0,
+typedef enum : NSUInteger {
+    MPCellStyleEmpty,
     MPCellStyleColorFill,
     MPCellStyleGradient
 } MPCellStyle;

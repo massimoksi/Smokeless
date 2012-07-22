@@ -12,7 +12,7 @@
 #import "MPDisclosureIndicator.h"
 
 
-typedef enum MPTableViewCellPosition : NSUInteger {
+typedef enum : NSUInteger {
     MPTableViewCellPositionSingle,
     MPTableViewCellPositionTop,
     MPTableViewCellPositionMiddle,
