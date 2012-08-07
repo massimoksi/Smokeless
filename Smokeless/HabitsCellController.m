@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) UIPickerView *habitsPicker;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
 @end
 
 

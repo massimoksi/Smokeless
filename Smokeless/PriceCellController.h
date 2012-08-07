@@ -16,11 +16,4 @@
 
 - (UIButton *)calcButtonWithPosition:(CGPoint)position andTag:(NSInteger)tag;
 
-- (void)saveTapped:(id)sender;
-- (void)cancelTapped:(id)sender;
-
-- (void)digitTapped:(id)sender;
-- (void)cancTapped:(id)sender;
-- (void)pointTapped:(id)sender;
-
 @end

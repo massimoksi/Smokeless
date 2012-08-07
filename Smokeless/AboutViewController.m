@@ -18,6 +18,10 @@
 
 @property (nonatomic, strong) UINavigationController *twitterNavController;
 
+- (void)sendEmail;
+- (void)followOnTwitter;
+- (void)closeTwitterModalView;
+
 @end
 
 

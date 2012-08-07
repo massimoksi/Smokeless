@@ -17,6 +17,9 @@
 @property (nonatomic, strong) UISwitch *shakeSwitch;
 @property (nonatomic, strong) UISwitch *notificationSwitch;
 
+- (void)shakeEnabled:(id)sender;
+- (void)notificationEnabled:(id)sender;
+
 @end
 
 

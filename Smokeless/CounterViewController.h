@@ -13,15 +13,4 @@
 
 @interface CounterViewController : UIViewController <UnderlayViewDelegate>
 
-- (void)displayView:(id)aView;
-- (void)updateViews;
-
-- (void)tweetTapped:(id)sender;
-- (void)nextTapped:(id)sender;
-- (void)prevTapped:(id)sender;
-- (void)editTapped:(id)sender;
-
-- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer;
-- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer;
-
 @end

@@ -35,6 +35,13 @@
 @property (nonatomic, strong) UIButton *buttonC;
 @property (nonatomic, strong) UIButton *buttonP;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
+- (void)digitTapped:(id)sender;
+- (void)cancTapped:(id)sender;
+- (void)pointTapped:(id)sender;
+
 @end
 
 

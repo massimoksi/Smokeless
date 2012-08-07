@@ -28,6 +28,9 @@
 @property (nonatomic, assign) CGFloat totalSavings;
 @property (nonatomic, assign) NSUInteger totalPackets;
 
+- (void)toolsTapped:(id)sender;
+- (void)doneTapped:(id)sender;
+
 @end
 
 

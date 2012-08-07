@@ -18,6 +18,9 @@
 
 @property (nonatomic, strong) UIPickerView *sizePicker;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
 @end
 
 

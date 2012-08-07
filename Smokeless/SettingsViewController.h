@@ -20,7 +20,4 @@ enum {
 
 @interface SettingsViewController : UITableViewController <UIActionSheetDelegate>
 
-- (void)shakeEnabled:(id)sender;
-- (void)notificationEnabled:(id)sender;
-
 @end

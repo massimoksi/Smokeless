@@ -24,6 +24,9 @@
 @property (nonatomic, strong) UIButton *saveButton;
 @property (nonatomic, strong) UIButton *cancelButton;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
 @end
 
 

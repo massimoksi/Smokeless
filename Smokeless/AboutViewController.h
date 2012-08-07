@@ -31,8 +31,4 @@ enum {
 
 @interface AboutViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
-- (void)sendEmail;
-- (void)followOnTwitter;
-- (void)closeTwitterModalView;
-
 @end
