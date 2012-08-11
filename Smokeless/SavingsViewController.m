@@ -36,8 +36,6 @@
 
 @implementation SavingsViewController
 
-#pragma mark View lifecycle
-
 - (void)loadView
 {
 	// create view

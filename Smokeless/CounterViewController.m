@@ -41,8 +41,6 @@
 
 @implementation CounterViewController
 
-#pragma mark View lifecycle
-
 - (void)loadView
 {
 	// create view

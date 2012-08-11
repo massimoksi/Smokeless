@@ -18,8 +18,6 @@
 
 @implementation TwitterViewController
 
-#pragma mark View lifecycle
-
 - (void)loadView
 {
     self.title = @"Twitter";
