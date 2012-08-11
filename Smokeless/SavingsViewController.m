@@ -28,12 +28,13 @@
 @property (nonatomic, assign) CGFloat totalSavings;
 @property (nonatomic, assign) NSUInteger totalPackets;
 
+- (void)toolsTapped:(id)sender;
+- (void)doneTapped:(id)sender;
+
 @end
 
 
 @implementation SavingsViewController
-
-#pragma mark View lifecycle
 
 - (void)loadView
 {
@@ -128,11 +129,9 @@
     }
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 	
     self.savingsView = nil;
     self.displayView = nil;

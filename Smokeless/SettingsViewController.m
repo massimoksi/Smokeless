@@ -17,6 +17,9 @@
 @property (nonatomic, strong) UISwitch *shakeSwitch;
 @property (nonatomic, strong) UISwitch *notificationSwitch;
 
+- (void)shakeEnabled:(id)sender;
+- (void)notificationEnabled:(id)sender;
+
 @end
 
 
@@ -29,7 +32,9 @@
 	// set background
 	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
 	self.view.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.backgroundView = nil;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     // create shake switch
     self.shakeSwitch = [[UISwitch alloc] init];
     [self.shakeSwitch addTarget:self
@@ -51,9 +56,9 @@
 	[super viewWillAppear:animated];
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-	[super viewDidUnload];
+	[super didReceiveMemoryWarning];
     
     self.shakeSwitch = nil;
     self.notificationSwitch = nil;

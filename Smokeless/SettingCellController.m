@@ -26,23 +26,23 @@
 {
 	// create view
 	self.view = [[UIView alloc] initWithFrame:CGRectMake(0.0,
-														  0.0,
-														  320.0,
-														  CELL_HEIGHT)];
+                                                         0.0,
+                                                         320.0,
+                                                         CELL_HEIGHT)];
 	self.view.backgroundColor = [UIColor clearColor];
 	self.view.clipsToBounds = YES;
 	
 	// create cell
 	self.cell = [[SmokingCellBackgroundView alloc] initWithFrame:CGRectMake(0.0,
-																			 0.0,
-																			 320.0,
-																			 CELL_HEIGHT)];
+                                                                            0.0,
+                                                                            320.0,
+                                                                            CELL_HEIGHT)];
 	
 	// create setting view
 	self.settingView = [[UIView alloc] initWithFrame:CGRectMake(0.0,
-																 CELL_HEIGHT,
-																 320.0,
-																 SETTING_HEIGHT)];
+                                                                CELL_HEIGHT,
+                                                                320.0,
+                                                                SETTING_HEIGHT)];
 	self.settingView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
 	// create cancel button
@@ -92,11 +92,9 @@
 	[self.view addSubview:self.settingView];
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
 	self.cell = nil;
 	self.settingView = nil;

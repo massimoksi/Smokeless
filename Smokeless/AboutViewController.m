@@ -18,6 +18,10 @@
 
 @property (nonatomic, strong) UINavigationController *twitterNavController;
 
+- (void)sendEmail;
+- (void)followOnTwitter;
+- (void)closeTwitterModalView;
+
 @end
 
 
@@ -29,7 +33,8 @@
 	self.title = MPString(@"About");
 
 	// set background color
-	self.tableView.backgroundColor = [UIColor clearColor];
+	self.view.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     // create logo
@@ -41,9 +46,9 @@
     self.tableView.tableHeaderView = logoView;
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
     self.twitterNavController = nil;
 }

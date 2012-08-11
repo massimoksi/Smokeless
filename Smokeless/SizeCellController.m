@@ -18,12 +18,13 @@
 
 @property (nonatomic, strong) UIPickerView *sizePicker;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
 @end
 
 
 @implementation SizeCellController
-
-#pragma mark View lifecycle
 
 - (void)viewDidLoad
 {
@@ -67,8 +68,9 @@
 	[self.settingView addSubview:self.sizePicker];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
     self.sizePicker = nil;
 }

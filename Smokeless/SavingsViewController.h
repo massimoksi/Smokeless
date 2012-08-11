@@ -12,7 +12,4 @@
 
 @interface SavingsViewController : UIViewController <UIAccelerometerDelegate>
 
-- (void)toolsTapped:(id)sender;
-- (void)doneTapped:(id)sender;
-
 @end

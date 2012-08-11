@@ -23,7 +23,4 @@ enum {
 
 @interface HabitsCellController : SettingCellController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-- (void)saveTapped:(id)sender;
-- (void)cancelTapped:(id)sender;
-
 @end

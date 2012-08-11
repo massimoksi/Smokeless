@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) UIPickerView *habitsPicker;
 
+- (void)saveTapped:(id)sender;
+- (void)cancelTapped:(id)sender;
+
 @end
 
 
@@ -61,8 +64,9 @@
 	[self.settingView addSubview:self.habitsPicker];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
     self.habitsPicker = nil;
 }

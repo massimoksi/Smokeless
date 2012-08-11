@@ -25,12 +25,21 @@
 @property (nonatomic, strong) CalendarView *calendar;
 @property (nonatomic, strong) NoteView *note;
 
+- (void)displayView:(id)aView;
+- (void)updateViews;
+
+- (void)tweetTapped:(id)sender;
+- (void)nextTapped:(id)sender;
+- (void)prevTapped:(id)sender;
+- (void)editTapped:(id)sender;
+
+- (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer;
+- (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer;
+
 @end
 
 
 @implementation CounterViewController
-
-#pragma mark View lifecycle
 
 - (void)loadView
 {
@@ -145,11 +154,9 @@
 	}
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
     self.containerView = nil;
     

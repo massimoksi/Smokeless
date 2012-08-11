@@ -18,8 +18,6 @@
 
 @implementation TwitterViewController
 
-#pragma mark View lifecycle
-
 - (void)loadView
 {
     self.title = @"Twitter";
@@ -30,9 +28,9 @@
     self.view = webView;
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
     self.progressHUD = nil;
 }

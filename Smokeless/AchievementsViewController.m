@@ -94,8 +94,6 @@
                                             forKeyPath:@"prefs.NotificationsEnabled"];
 }
 
-#pragma mark View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -122,12 +120,12 @@
 
 }
 
-// TODO: check what needs to be unloaded
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super didReceiveMemoryWarning];
+    
+    self.achievements = nil;
+    self.tableView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
