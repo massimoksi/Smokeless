@@ -140,6 +140,9 @@
 		566B38BB15BC19210026821C /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B38B715BC19210026821C /* Appirater.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		566B38BC15BC19210026821C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B38BA15BC19210026821C /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
+		56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */; };
+		56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */; };
+		56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
 		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
 /* End PBXBuildFile section */
@@ -327,6 +330,9 @@
 		566B38B915BC19210026821C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		566B38BA15BC19210026821C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -601,12 +607,15 @@
 			isa = PBXGroup;
 			children = (
 				566B383C15BC16C70026821C /* Icon-72.png */,
+				56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */,
 				566B383D15BC16C70026821C /* Icon-Small-50.png */,
+				56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */,
 				566B383E15BC16C70026821C /* Icon-Small.png */,
 				566B383F15BC16C70026821C /* Icon-Small@2x.png */,
 				566B384015BC16C70026821C /* Icon.png */,
 				566B384115BC16C70026821C /* Icon@2x.png */,
 				566B384215BC16C70026821C /* iTunesArtwork */,
+				56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -775,12 +784,15 @@
 				566B389415BC16C80026821C /* HealthTableViewCell_waiting.png in Resources */,
 				566B389515BC16C80026821C /* HealthTableViewCell_waiting@2x.png in Resources */,
 				566B389615BC16C80026821C /* Icon-72.png in Resources */,
+				56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */,
 				566B389715BC16C80026821C /* Icon-Small-50.png in Resources */,
+				56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */,
 				566B389815BC16C80026821C /* Icon-Small.png in Resources */,
 				566B389915BC16C80026821C /* Icon-Small@2x.png in Resources */,
 				566B389A15BC16C80026821C /* Icon.png in Resources */,
 				566B389B15BC16C80026821C /* Icon@2x.png in Resources */,
 				566B389C15BC16C80026821C /* iTunesArtwork in Resources */,
+				56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */,
 				566B389D15BC16C80026821C /* MainWindow.xib in Resources */,
 				566B389E15BC16C80026821C /* Note.png in Resources */,
 				566B389F15BC16C80026821C /* Note@2x.png in Resources */,
@@ -818,7 +830,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ICONS_DEB_DIR=${SRCROOT}/Icons/Debug\nICONS_REL_DIR=${SRCROOT}/Icons/Release\nRESOURCES_DIR=${SRCROOT}/Smokeless\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper resources\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork\ncp ${ICONS_SRC_DIR}/Default@2x.png ${RESOURCES_DIR}/Default@2x.png\ncp ${ICONS_SRC_DIR}/Default.png ${RESOURCES_DIR}/Default.png";
+			shellScript = "ICONS_DEB_DIR=${SRCROOT}/Icons/Debug\nICONS_REL_DIR=${SRCROOT}/Icons/Release\nRESOURCES_DIR=${SRCROOT}/Smokeless\n\n# select the source dir for icons according to the selected build configuration\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# copy the proper resources\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-72@2x.png ${RESOURCES_DIR}/Icon-72@2x.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50@2x.png ${RESOURCES_DIR}/Icon-Small-50@2x.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork\ncp ${ICONS_SRC_DIR}/iTunesArtwork@2x.png ${RESOURCES_DIR}/iTunesArtwork@2x\ncp ${ICONS_SRC_DIR}/Default.png ${RESOURCES_DIR}/Default.png\ncp ${ICONS_SRC_DIR}/Default@2x.png ${RESOURCES_DIR}/Default@2x.png";
 		};
 /* End PBXShellScriptBuildPhase section */
 
