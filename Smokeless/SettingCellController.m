@@ -92,11 +92,9 @@
 	[self.view addSubview:self.settingView];
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
 	self.cell = nil;
 	self.settingView = nil;

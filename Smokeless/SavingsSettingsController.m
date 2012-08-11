@@ -58,6 +58,13 @@
 	}
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    self.cellControllers = nil;
+}
+
 #pragma mark - Setting cell delegate
 
 - (void)shiftDownwardsCellsAfterIndex:(NSInteger)index

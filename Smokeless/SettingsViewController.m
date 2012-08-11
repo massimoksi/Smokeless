@@ -55,9 +55,9 @@
 	[super viewWillAppear:animated];
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-	[super viewDidUnload];
+	[super didReceiveMemoryWarning];
     
     self.shakeSwitch = nil;
     self.notificationSwitch = nil;

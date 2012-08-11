@@ -129,8 +129,9 @@
                 forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
     self.button0 = nil;
     self.button1 = nil;

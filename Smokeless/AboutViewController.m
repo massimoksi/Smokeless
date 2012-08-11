@@ -46,9 +46,9 @@
     self.tableView.tableHeaderView = logoView;
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
     self.twitterNavController = nil;
 }

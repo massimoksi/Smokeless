@@ -26,8 +26,6 @@
 
 @implementation SizeCellController
 
-#pragma mark View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -70,8 +68,9 @@
 	[self.settingView addSubview:self.sizePicker];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
     self.sizePicker = nil;
 }

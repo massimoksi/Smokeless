@@ -156,11 +156,9 @@
 	}
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 
     self.containerView = nil;
     

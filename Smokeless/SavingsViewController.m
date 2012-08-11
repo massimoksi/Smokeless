@@ -131,11 +131,9 @@
     }
 }
 
-#pragma mark Memory management
-
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
+    [super didReceiveMemoryWarning];
 	
     self.savingsView = nil;
     self.displayView = nil;

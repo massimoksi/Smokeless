@@ -64,8 +64,9 @@
 	[self.settingView addSubview:self.habitsPicker];
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
     self.habitsPicker = nil;
 }
