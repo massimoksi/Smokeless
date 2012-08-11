@@ -30,9 +30,10 @@
 	[super viewDidLoad];
 	
 	// set background
-	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
-	self.view.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+    self.tableView.backgroundView = nil;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     // create shake switch
     self.shakeSwitch = [[UISwitch alloc] init];
     [self.shakeSwitch addTarget:self

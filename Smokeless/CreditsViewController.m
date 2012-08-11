@@ -22,7 +22,7 @@
 	// create view
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	// set background color
-	self.view.backgroundColor = [UIColor clearColor];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
 	// set the title
 	self.title = MPString(@"Credits");
     
