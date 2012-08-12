@@ -17,8 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // create splash view
+    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+    self.splashView.image = [UIImage imageNamed:@"Default"];
+    
+    // position splash view on top of everything
+    [self.window addSubview:self.splashView];
+    [self.window bringSubviewToFront:self.splashView];
+
+    // cancel old local notifications
     if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
-        // cancel old local notifications
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
 
@@ -67,15 +75,7 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES
                                                 forKey:@"HasUpdatedLastCigaretteDate"];
     }
-    
-    // create splash view
-    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
-    self.splashView.image = [UIImage imageNamed:@"Default"];
-    
-    // position splash view on top of everything
-    [self.window addSubview:self.splashView];
-    [self.window bringSubviewToFront:self.splashView];
-    
+        
     // animate splash view away
     [UIView animateWithDuration:1.0
                      animations:^{
