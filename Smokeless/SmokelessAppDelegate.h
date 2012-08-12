@@ -18,11 +18,5 @@
 @interface SmokelessAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
-@property (nonatomic, strong) UITabBarController *tabBarController;
-@property (nonatomic, strong) CounterViewController *counterController;
-@property (nonatomic, strong) SavingsViewController *savingsController;
-@property (nonatomic, strong) AchievementsViewController *achievementsController;
-@property (nonatomic, strong) UINavigationController *settingsNavController;
-@property (nonatomic, strong) UIImageView *splashView;
 
 @end

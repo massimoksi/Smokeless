@@ -13,6 +13,14 @@
 
 @interface SmokelessAppDelegate ()
 
+@property (nonatomic, strong) UITabBarController *tabBarController;
+@property (nonatomic, strong) CounterViewController *counterController;
+@property (nonatomic, strong) SavingsViewController *savingsController;
+@property (nonatomic, strong) AchievementsViewController *achievementsController;
+@property (nonatomic, strong) UINavigationController *settingsNavController;
+
+@property (nonatomic, strong) UIImageView *splashView;
+
 - (void)updateLastCigaretteDate;
 
 @end
@@ -107,11 +115,11 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // notify appirater
+    // Notify Appirater.
     [Appirater appEnteredForeground:YES];
 }
 
-#pragma mark - Provate methods
+#pragma mark - Private methods
 
 - (void)updateLastCigaretteDate
 {
@@ -119,10 +127,10 @@
     NSLog(@"%@ - Update last cigarette date", [self class]);
 #endif
 
-    // get date from the picker
+    // Get the saved date.
     NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
     
-    // set the hour for the date of the last cigarette
+    // Set the hour for the date at 4:00AM.
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
                                                                      fromDate:lastCigaretteDate];
@@ -132,10 +140,10 @@
     NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
 #endif
     
-	// set preference
+	// Set preference.
 	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
     
-	// save preferences to file
+	// Save preferences to file.
 	[[PreferencesManager sharedManager] savePrefs];
 }
 
