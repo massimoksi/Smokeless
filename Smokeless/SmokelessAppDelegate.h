@@ -25,6 +25,4 @@
 @property (nonatomic, strong) UINavigationController *settingsNavController;
 @property (nonatomic, strong) UIImageView *splashView;
 
-- (void)updateLastCigaretteDate;
-
 @end

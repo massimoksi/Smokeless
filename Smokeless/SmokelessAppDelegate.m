@@ -11,23 +11,33 @@
 #import "Appirater.h"
 
 
+@interface SmokelessAppDelegate ()
+
+- (void)updateLastCigaretteDate;
+
+@end
+
+
 @implementation SmokelessAppDelegate
 
 #pragma mark - Application delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // create splash view
-    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
-    self.splashView.image = [UIImage imageNamed:@"Default"];
-    
-    // position splash view on top of everything
-    [self.window addSubview:self.splashView];
-    [self.window bringSubviewToFront:self.splashView];
-
-    // cancel old local notifications
+    // Cancel old registered local notifications if last cigarette date has been deleted.
     if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+    
+    // Set a default hour (4:00AM) for last cigarette date.
+    // On former versions, last cigarette hour depended on the time it was set.
+    // Check at first run and fix an already existing cigarette date.
+    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
+        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
+        [self updateLastCigaretteDate];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                forKey:@"HasUpdatedLastCigaretteDate"];
     }
 
 	// create tab bar controller
@@ -67,16 +77,16 @@
     // add the tab bar controller's view to the window and display
     [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
-        
-    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
-        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
-        [self updateLastCigaretteDate];
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES
-                                                forKey:@"HasUpdatedLastCigaretteDate"];
-    }
-        
-    // animate splash view away
+
+    // Create a splash view.
+    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+    self.splashView.image = [UIImage imageNamed:@"Default"];
+    
+    // Position splash view on top of everything.
+    [self.window addSubview:self.splashView];
+    [self.window bringSubviewToFront:self.splashView];
+    
+    // Animate the splash view away.
     [UIView animateWithDuration:1.0
                      animations:^{
                          // zoom out
@@ -89,20 +99,11 @@
                          self.splashView = nil;
                      }];
     
-    // notify appirater
+    // Notify Appirater.
     [Appirater appLaunched:YES];
     
     return YES;
 }
-
-//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-//{
-    // display badge counter on tab bar
-//    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
-//    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;
-//    
-//    self.tabBarController.selectedIndex = 2;
-//}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
@@ -110,7 +111,7 @@
     [Appirater appEnteredForeground:YES];
 }
 
-#pragma mark Actions
+#pragma mark - Provate methods
 
 - (void)updateLastCigaretteDate
 {
@@ -137,19 +138,5 @@
 	// save preferences to file
 	[[PreferencesManager sharedManager] savePrefs];
 }
-
-//#pragma mark -
-//#pragma mark UITabBarControllerDelegate methods
-//
-//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-//{
-//    // reset badge from tab bar item
-//    if (viewController == self.healthController) {
-//        viewController.tabBarItem.badgeValue = nil;
-//        
-//        // reset application badge counter
-//        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-//    }
-//}
 
 @end
