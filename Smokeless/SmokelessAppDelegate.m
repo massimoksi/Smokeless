@@ -47,9 +47,6 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES
                                                 forKey:@"HasUpdatedLastCigaretteDate"];
     }
-
-	// create tab bar controller
-	self.tabBarController = [[UITabBarController alloc] init];
 	
 	// create counter controller
 	self.counterController = [[CounterViewController alloc] init];
@@ -76,14 +73,17 @@
 	self.settingsNavController.tabBarItem.title = MPString(@"Settings");
 	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
 	
-	// add controllers to tab bar
-	self.tabBarController.viewControllers = @[self.counterController,
-                                             self.savingsController,
-                                             self.achievementsController,
-                                             self.settingsNavController];
+	// Create the tab bar controller.
+	self.tabBarController = [[UITabBarController alloc] init];
+	self.tabBarController.viewControllers = @[
+        self.counterController,
+        self.savingsController,
+        self.achievementsController,
+        self.settingsNavController
+    ];
 
-    // add the tab bar controller's view to the window and display
-    [self.window addSubview:self.tabBarController.view];
+    // Add the tab bar controller's view to the window and display.
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
     // Create a splash view.
