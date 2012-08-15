@@ -94,22 +94,20 @@
                 forControlEvents:UIControlEventTouchUpInside];
 
     // create shadows
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000 alpha:0.650].CGColor;
-    CGColorRef lightColor = [UIColor clearColor].CGColor;
+    CGColorRef darkColor = CGColorRetain([UIColor colorWithWhite:0.000 alpha:0.650].CGColor);
+    CGColorRef lightColor = CGColorRetain([UIColor clearColor].CGColor);
     CAGradientLayer *bottomShadowLayer = [[CAGradientLayer alloc] init];
     bottomShadowLayer.frame = CGRectMake(0.0,
                                    self.view.frame.size.height - 10.0,
                                    320.0,
                                    10.0);
-    bottomShadowLayer.colors = @[(__bridge id)lightColor,
-                                (__bridge id)darkColor];
+    bottomShadowLayer.colors = @[(__bridge id)lightColor, (__bridge id)darkColor];
     CAGradientLayer *topShadowLayer = [[CAGradientLayer alloc] init];
     topShadowLayer.frame = CGRectMake(0.0,
                                       self.datePicker.frame.size.height,
                                       320.0,
                                       10.0);
-    topShadowLayer.colors = @[(__bridge id)darkColor,
-                             (__bridge id)lightColor];
+    topShadowLayer.colors = @[(__bridge id)darkColor, (__bridge id)lightColor];
     
     // add shadows to view
     [self.view.layer addSublayer:bottomShadowLayer];
@@ -118,6 +116,10 @@
     // add buttons
     [self.view addSubview:self.saveButton];
     [self.view addSubview:self.cancelButton];
+    
+    // Clean up.
+    CGColorRelease(darkColor);
+    CGColorRelease(lightColor);
 }
 
 - (void)viewDidLoad

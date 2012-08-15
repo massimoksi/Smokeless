@@ -138,13 +138,19 @@
                                  0.0,
                                  self.frame.size.width,
                                  inverse ? SHADOW_INVERSE_HEIGHT : SHADOW_HEIGHT);
-	CGColorRef darkColor = [UIColor colorWithRed:0.000
-                                           green:0.000
-                                            blue:0.000
-                                           alpha:0.420].CGColor;
-	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.000].CGColor;
-	newShadow.colors = @[(__bridge id)(inverse ? lightColor : darkColor),
-                        (__bridge id)(inverse ? darkColor : lightColor)];
+	CGColorRef darkColor = CGColorRetain([UIColor colorWithRed:0.000
+                                                         green:0.000
+                                                          blue:0.000
+                                                         alpha:0.420].CGColor);
+	CGColorRef lightColor = CGColorRetain([self.backgroundColor colorWithAlphaComponent:0.000].CGColor);
+	newShadow.colors = @[
+        (__bridge id)(inverse ? lightColor : darkColor),
+        (__bridge id)(inverse ? darkColor : lightColor)
+    ];
+    
+    // Clean up.
+    CGColorRelease(darkColor);
+    CGColorRelease(lightColor);
     
 	return newShadow;
 }
