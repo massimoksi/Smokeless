@@ -25,14 +25,18 @@
     // create shadow
     CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
     shadowLayer.frame = self.view.bounds;
-    CGColorRef darkColor = [UIColor colorWithWhite:0.200
-                                             alpha:0.300].CGColor;
-    CGColorRef lightColor = [UIColor clearColor].CGColor;
+    CGColorRef darkColor = CGColorRetain([UIColor colorWithWhite:0.200
+                                                           alpha:0.300].CGColor);
+    CGColorRef lightColor = CGColorRetain([UIColor clearColor].CGColor);
     shadowLayer.colors = @[(__bridge id)darkColor,
                           (__bridge id)lightColor];
     
     // add shadow
     [self.view.layer addSublayer:shadowLayer];
+    
+    // Clean up.
+    CGColorRelease(darkColor);
+    CGColorRelease(lightColor);
 }
 
 @end

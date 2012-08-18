@@ -22,8 +22,7 @@ void MPDrawLinearGradientInRect(CGContextRef context, CGRect rect, UIColor *star
     CGColorRef endCGColor = MPColorCreateWithColor(endColor);
     
 	// create colors
-	NSArray *colors = @[(__bridge id)startCGColor,
-					   (__bridge id)endCGColor];
+	NSArray *colors = @[(__bridge id)startCGColor, (__bridge id)endCGColor];
 	
 	// create gradient
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace,

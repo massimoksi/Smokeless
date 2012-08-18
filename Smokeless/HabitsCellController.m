@@ -44,9 +44,9 @@
                                    self.habitsPicker.frame.size.height,
                                    320.0,
                                    10.0);
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000
-                                             alpha:0.800].CGColor;
-    CGColorRef lightColor = [UIColor clearColor].CGColor;
+    CGColorRef darkColor = CGColorRetain([UIColor colorWithWhite:0.000
+                                                           alpha:0.800].CGColor);
+    CGColorRef lightColor = CGColorRetain([UIColor clearColor].CGColor);
     shadowLayer.colors = @[(__bridge id)darkColor, (__bridge id)lightColor];
     
     // add shadow to setting view
@@ -62,6 +62,10 @@
 	
 	// create setting view hierarchy
 	[self.settingView addSubview:self.habitsPicker];
+    
+    // Clean up.
+    CGColorRelease(darkColor);
+    CGColorRelease(lightColor);
 }
 
 - (void)didReceiveMemoryWarning

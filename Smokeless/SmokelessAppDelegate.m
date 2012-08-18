@@ -11,19 +11,42 @@
 #import "Appirater.h"
 
 
+@interface SmokelessAppDelegate ()
+
+@property (nonatomic, strong) UITabBarController *tabBarController;
+@property (nonatomic, strong) CounterViewController *counterController;
+@property (nonatomic, strong) SavingsViewController *savingsController;
+@property (nonatomic, strong) AchievementsViewController *achievementsController;
+@property (nonatomic, strong) UINavigationController *settingsNavController;
+
+@property (nonatomic, strong) UIImageView *splashView;
+
+- (void)updateLastCigaretteDate;
+
+@end
+
+
 @implementation SmokelessAppDelegate
 
 #pragma mark - Application delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Cancel old registered local notifications if last cigarette date has been deleted.
     if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
-        // cancel old local notifications
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
-
-	// create tab bar controller
-	self.tabBarController = [[UITabBarController alloc] init];
+    
+    // Set a default hour (4:00AM) for last cigarette date.
+    // On former versions, last cigarette hour depended on the time it was set.
+    // Check at first run and fix an already existing cigarette date.
+    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
+        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
+        [self updateLastCigaretteDate];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES
+                                                forKey:@"HasUpdatedLastCigaretteDate"];
+    }
 	
 	// create counter controller
 	self.counterController = [[CounterViewController alloc] init];
@@ -50,33 +73,28 @@
 	self.settingsNavController.tabBarItem.title = MPString(@"Settings");
 	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
 	
-	// add controllers to tab bar
-	self.tabBarController.viewControllers = @[self.counterController,
-                                             self.savingsController,
-                                             self.achievementsController,
-                                             self.settingsNavController];
+	// Create the tab bar controller.
+	self.tabBarController = [[UITabBarController alloc] init];
+	self.tabBarController.viewControllers = @[
+        self.counterController,
+        self.savingsController,
+        self.achievementsController,
+        self.settingsNavController
+    ];
 
-    // add the tab bar controller's view to the window and display
-    [self.window addSubview:self.tabBarController.view];
+    // Add the tab bar controller's view to the window and display.
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
-        
-    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
-        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
-        [self updateLastCigaretteDate];
-        
-        [[NSUserDefaults standardUserDefaults] setBool:YES
-                                                forKey:@"HasUpdatedLastCigaretteDate"];
-    }
-    
-    // create splash view
+
+    // Create a splash view.
     self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
     self.splashView.image = [UIImage imageNamed:@"Default"];
     
-    // position splash view on top of everything
+    // Position splash view on top of everything.
     [self.window addSubview:self.splashView];
     [self.window bringSubviewToFront:self.splashView];
     
-    // animate splash view away
+    // Animate the splash view away.
     [UIView animateWithDuration:1.0
                      animations:^{
                          // zoom out
@@ -89,28 +107,19 @@
                          self.splashView = nil;
                      }];
     
-    // notify appirater
+    // Notify Appirater.
     [Appirater appLaunched:YES];
     
     return YES;
 }
 
-//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-//{
-    // display badge counter on tab bar
-//    NSInteger badgeCounter = notification.applicationIconBadgeNumber;
-//    self.healthController.tabBarItem.badgeValue = (badgeCounter != 0) ? [NSString stringWithFormat:@"%d", badgeCounter] : nil;
-//    
-//    self.tabBarController.selectedIndex = 2;
-//}
-
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // notify appirater
+    // Notify Appirater.
     [Appirater appEnteredForeground:YES];
 }
 
-#pragma mark Actions
+#pragma mark - Private methods
 
 - (void)updateLastCigaretteDate
 {
@@ -118,10 +127,10 @@
     NSLog(@"%@ - Update last cigarette date", [self class]);
 #endif
 
-    // get date from the picker
+    // Get the saved date.
     NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
     
-    // set the hour for the date of the last cigarette
+    // Set the hour for the date at 4:00AM.
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
                                                                      fromDate:lastCigaretteDate];
@@ -131,25 +140,11 @@
     NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
 #endif
     
-	// set preference
+	// Set preference.
 	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
     
-	// save preferences to file
+	// Save preferences to file.
 	[[PreferencesManager sharedManager] savePrefs];
 }
-
-//#pragma mark -
-//#pragma mark UITabBarControllerDelegate methods
-//
-//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-//{
-//    // reset badge from tab bar item
-//    if (viewController == self.healthController) {
-//        viewController.tabBarItem.badgeValue = nil;
-//        
-//        // reset application badge counter
-//        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-//    }
-//}
 
 @end

@@ -47,11 +47,14 @@
                                    self.sizePicker.frame.size.height,
                                    320.0,
                                    10.0);
-    CGColorRef darkColor = [UIColor colorWithWhite:0.000
-                                             alpha:0.800].CGColor;
-    CGColorRef lightColor = [UIColor clearColor].CGColor;
-    shadowLayer.colors = @[(__bridge id)darkColor,
-                          (__bridge id)lightColor];
+    CGColorRef darkColor = CGColorRetain([UIColor colorWithWhite:0.000
+                                                           alpha:0.800].CGColor);
+    CGColorRef lightColor = CGColorRetain([UIColor clearColor].CGColor);
+    shadowLayer.colors = @[(__bridge id)darkColor, (__bridge id)lightColor];
+    
+    // Clean up.
+    CGColorRelease(darkColor);
+    CGColorRelease(lightColor);
     
     // add shadow to setting view
     [self.settingView.layer addSublayer:shadowLayer];
