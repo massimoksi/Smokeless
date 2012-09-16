@@ -38,10 +38,7 @@
 
 - (void)loadView
 {
-	// create view
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	
-	// set background
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];	
 
 	// create the savings view
@@ -68,7 +65,7 @@
     [self.view addSubview:self.displayView];
 	[self.view addSubview:toolsButton];
     
-    // setup accelerometer
+    // Setup the accelerometer.
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
 }
@@ -80,7 +77,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    // become first responder, necessary to react to shake gestures
+    // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
     
     // get prefs
@@ -121,7 +118,7 @@
     [self.displayView setState:DisplayStateMoney
                  withAnimation:NO];
     
-    // create tinkle player
+    // Create the tinkle player.
     if (!self.tinklePlayer) {
         self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
                                                                                                                                 ofType:@"m4a"]]
@@ -171,18 +168,12 @@
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    if ((self.shakeEnabled == YES) &&
-        (self.totalSavings > 0.0)) {
+    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
         if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
             if (self.tinklePlayer.playing == NO) {
                 [self.tinklePlayer play];
             }
         }
-//        else {
-//            if (self.tinklePlayer.playing == YES) {
-//                [self.tinklePlayer pause];
-//            }
-//        }
     }
 }
 
