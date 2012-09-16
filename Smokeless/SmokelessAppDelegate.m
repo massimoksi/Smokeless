@@ -32,6 +32,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Create the window.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Cancel old registered local notifications if last cigarette date has been deleted.
     if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];

@@ -35,8 +35,6 @@
 	<string>160</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Chalkduster.ttf</string>
