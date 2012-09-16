@@ -38,8 +38,9 @@
 
 - (void)loadView
 {
+    // Create the view.
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];	
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
 
 	// create the savings view
 	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];

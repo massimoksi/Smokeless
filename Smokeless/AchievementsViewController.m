@@ -98,8 +98,8 @@
 {
     [super viewDidLoad];
 
-	// set background
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	// Set background.
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
     // get rid of the separator libe between cells
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

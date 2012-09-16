@@ -18,7 +18,7 @@
 
 - (void)loadView
 {
-	// create view
+    // Create the view.
 	self.view = [[UIView alloc] init];
 	self.view.backgroundColor = [UIColor clearColor];
 

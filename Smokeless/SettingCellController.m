@@ -24,7 +24,7 @@
 
 - (void)loadView
 {
-	// create view
+    // Create the view.
 	self.view = [[UIView alloc] initWithFrame:CGRectMake(0.0,
                                                          0.0,
                                                          320.0,

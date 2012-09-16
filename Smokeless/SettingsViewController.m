@@ -29,19 +29,19 @@
 {
 	[super viewDidLoad];
 	
-	// set background
-	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	// Set background.
+	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
 	self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    // create shake switch
+    // Create the shake switch.
     self.shakeSwitch = [[UISwitch alloc] init];
     [self.shakeSwitch addTarget:self
                          action:@selector(shakeEnabled:)
                forControlEvents:UIControlEventValueChanged];
     
-    // create notification switch
+    // Create the notification switch.
     self.notificationSwitch = [[UISwitch alloc] init];
     [self.notificationSwitch addTarget:self
                                 action:@selector(notificationEnabled:)
@@ -50,7 +50,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {	
-	// update table
+	// Update table view.
 	[self.tableView reloadData];
     
 	[super viewWillAppear:animated];
@@ -68,10 +68,10 @@
 
 - (void)shakeEnabled:(id)sender
 {
-    // set preference
+    // Set preference.
     ([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] = @([self.shakeSwitch isOn]);
     
-    // save preferences
+    // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
 }
 
@@ -79,10 +79,10 @@
 {
     BOOL notificationsEnabled = [self.notificationSwitch isOn];
     
-    // set preference
+    // Set preference.
     ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @(notificationsEnabled);
     
-    // save preferences
+    // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
 }
 
@@ -97,7 +97,7 @@
 {
 	NSInteger numberOfRows = 0;
 	
-	// set title for the sections
+	// Set titles for the sections.
 	switch (section) {
         case SettingsSectionGeneral:
             numberOfRows = 2;

@@ -29,15 +29,15 @@
 
 - (void)viewDidLoad
 {
-	// set the title
+	// Set title.
 	self.title = MPString(@"About");
 
-	// set background color
+	// Set background.
 	self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    // create logo
+    // Create logo.
 	UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TitleAbout"]];
 	logoView.frame = CGRectMake(0.0,
 								LOGO_PADDING,
@@ -58,14 +58,14 @@
 - (void)sendEmail
 {
 	if ([MFMailComposeViewController canSendMail]) {
-		// create mail composer
+		// Create the mail composer.
 		MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
 		mailComposer.mailComposeDelegate = self;
 		mailComposer.navigationBar.barStyle = UIBarStyleDefault;
 		[mailComposer setToRecipients:@[MAIL_ADDRESS]];
         [mailComposer setSubject:MPString(@"Smokeless support")];
 		
-		// show mail composer
+		// Modally present the  mail composer.
 		[self presentModalViewController:mailComposer
 								animated:YES];
 	}
@@ -76,32 +76,32 @@
 
 - (void)followOnTwitter
 {
-    // create twitter web view controller
+    // Create the Twitter web view controller.
     TwitterViewController *twitterController = [[TwitterViewController alloc] init];
     
-    // create twitter navigation controller
+    // Create the Twitter navigation controller.
     self.twitterNavController = [[UINavigationController alloc] initWithRootViewController:twitterController];
     
-    // create cancel bar button
+    // Create the "Cancel" bar button.
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                      target:self
                                                                                      action:@selector(closeTwitterModalView)];
     self.twitterNavController.navigationBar.topItem.leftBarButtonItem = cancelBarButton;
     
-    // create done bar button
+    // Create the "Done" bar button.
     UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                    target:self
                                                                                    action:@selector(closeTwitterModalView)];
     self.twitterNavController.navigationBar.topItem.rightBarButtonItem = doneBarButton;
     
-    // present twitter navigation controller
+    // Modally present the Twitter navigation controller.
     [self presentModalViewController:self.twitterNavController
                             animated:YES];
 }
 
 - (void)closeTwitterModalView
 {
-    // dismiss twitter navigation controller
+    // Dismiss the Twitter navigation controller.
     [self dismissModalViewControllerAnimated:YES];
     
     self.twitterNavController = nil;
@@ -280,7 +280,7 @@
 		}
 	}
 	
-	// dismiss mail composer
+	// Dismiss the mail composer.
 	[self dismissModalViewControllerAnimated:YES];
 }
 	

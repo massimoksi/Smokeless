@@ -43,23 +43,21 @@
 
 - (void)loadView
 {
-	// create view
+    // Create the view.
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	
-	// set background
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
-    // create the left swipe gesture recognizer
+    // Create the left swipe gesture recognizer.
     UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                               action:@selector(viewSwipedLeft:)];
     leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     
-    // create the right swipe gesture recognizer
+    // Create the right swipe gesture recognizer.
     UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                                action:@selector(viewSwipedRight:)];
     rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     
-    // add the swipe gesture recognizers to the view
+    // Add the swipe gesture recognizers to the view.
     [self.view addGestureRecognizer:leftSwipeRecognizer];
     [self.view addGestureRecognizer:rightSwipeRecognizer];
 }
