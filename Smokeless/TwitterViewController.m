@@ -39,18 +39,18 @@
 {
     [super viewWillAppear:animated];
     
-    // create progress HUD
+    // Create the progress HUD.
     self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
     self.progressHUD.delegate = self;
     self.progressHUD.removeFromSuperViewOnHide = YES;
     
-    // add progress HUD
+    // Add the progress HUD.
     [self.view addSubview:self.progressHUD];
     
-    // show progress HUD
+    // Show the progress HUD.
     [self.progressHUD show:YES];
 
-    // load twitter page
+    // Load the Twitter page.
     [(UIWebView *)self.view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/#!/massimoperi"]]];
 }
 
@@ -63,6 +63,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    // Hide the progress HUD.
     [self.progressHUD hide:YES];
 }
 
