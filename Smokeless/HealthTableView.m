@@ -30,7 +30,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // customize table view
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
         self.rowHeight = 80.0;
         self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         self.separatorColor = [UIColor colorWithWhite:1.000

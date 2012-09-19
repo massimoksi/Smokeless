@@ -140,22 +140,19 @@
 
 -(void)toolsTapped:(id)sender
 {
-	// create habits view controller
-	SavingsSettingsController *savingsSettingsController = [[SavingsSettingsController alloc] init];
-	
-	// create navigation controller
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:savingsSettingsController];
-	navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	// Create the navigation controller.
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[SavingsSettingsController alloc] init]];
+	navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
 	navigationController.navigationBar.topItem.title = MPString(@"Savings");
 	
-	// create bar button item
+	// Create the "done" bar button.
 	UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:MPString(@"Done")
 																 style:UIBarButtonItemStylePlain
 																target:self
 																action:@selector(doneTapped:)];
 	navigationController.navigationBar.topItem.leftBarButtonItem = doneItem;
 
-	// present savings settings view controller modally
+	// Modally present the savings settings view controller.
 	[self presentModalViewController:navigationController
 							animated:YES];
 }

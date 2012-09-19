@@ -35,10 +35,7 @@
     shadowCellController.delegate = self;
 	
 	// add cell controllers to array
-	self.cellControllers = @[habitsCellController,
-							sizeCellController,
-							priceCellController,
-                            shadowCellController];
+	self.cellControllers = @[habitsCellController, sizeCellController, priceCellController, shadowCellController];
 }
 
 - (void)viewDidLoad
