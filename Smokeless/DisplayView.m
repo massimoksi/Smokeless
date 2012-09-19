@@ -22,10 +22,7 @@
 
 - (id)initWithOrigin:(CGPoint)origin
 {
-    self = [super initWithFrame:CGRectMake(origin.x,
-                                           origin.y,
-                                           184.0,
-                                           33.0)];
+    self = [super initWithFrame:CGRectMake(origin.x, origin.y, 184.0, 33.0)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         

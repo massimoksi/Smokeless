@@ -42,28 +42,30 @@
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
 
-	// create the savings view
+	// Create the savings view and center it inside the superview.
 	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
+    self.savingsView.center = CGPointMake(self.view.center.x,
+                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
+	[self.view addSubview:self.savingsView];
 	
-    // create display
-    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)];
+    // Create the display view.
+    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
+                                                                       self.savingsView.center.y + 113.0)];
+    [self.view addSubview:self.displayView];
 	
-	// create the edit button
+	// Create the "tools" button.
 	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	toolsButton.frame = CGRectMake(254.0, 316.0, 60.0, 60.0);
+	toolsButton.frame = CGRectMake(254.0,
+                                   self.savingsView.center.y + 97.0,
+                                   60.0,
+                                   60.0);
 	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsNormal"]
 				 forState:UIControlStateNormal];
 	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsPressed"]
 				 forState:UIControlStateHighlighted];
-	
-	// add actions
 	[toolsButton addTarget:self
 					action:@selector(toolsTapped:)
 		  forControlEvents:UIControlEventTouchUpInside];
-	
-	// create view hierarchy
-	[self.view addSubview:self.savingsView];
-    [self.view addSubview:self.displayView];
 	[self.view addSubview:toolsButton];
     
     // Setup the accelerometer.
@@ -80,11 +82,10 @@
 {
     // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
-    
-    // get prefs
+
     PreferencesManager *prefsManager = [PreferencesManager sharedManager];
     
-    // set ivars
+    // Set ivars.
     self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
     self.totalSavings = [prefsManager totalSavings];
     self.totalPackets = [prefsManager totalPackets];
@@ -93,11 +94,11 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
     
-    // set unit
+    // Set unit.
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     self.displayView.moneyUnit.text = [formatter currencySymbol];
 
-    // set formatter for the amount label
+    // Set formatter for the amount label
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMinimumFractionDigits:2];
     [formatter setMaximumFractionDigits:2];
