@@ -60,17 +60,17 @@ static PreferencesManager *sharedManager = nil;
 
 - (void)loadPrefs
 {
-	// create the preferences file path if it doesn't exist yet
+	// Create the preferences file path if it doesn't exist yet.
 	if (self.path == nil) {
 		self.path = [NSHomeDirectory() stringByAppendingPathComponent:PREFS_PATH];
 	}
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
-		// load preferences from file
+		// Load preferences from file.
 		self.prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:self.path];
 	}
 	else {
-		// load default values
+		// Load default values.
 		self.prefs = [[NSMutableDictionary alloc] init];
 	}
 }
@@ -83,10 +83,10 @@ static PreferencesManager *sharedManager = nil;
 
 - (void)deletePrefs
 {
-	// get rid of prefs
+	// Get rid of preferences.
 	self.prefs = [NSMutableDictionary dictionary];
 	
-	// delete prefs file
+	// Delete preferences file.
 	[[NSFileManager defaultManager] removeItemAtPath:self.path
 											   error:NULL];
 }
@@ -151,7 +151,7 @@ static PreferencesManager *sharedManager = nil;
 {
     NSUInteger totalPackets = 0;
     
-    // retrieve smoking habits
+    // Retrieve smoking habits.
 	NSDictionary *habits = (self.prefs)[HABITS_KEY];
 
 	if (habits && [self lastCigaretteDate]) {
@@ -159,24 +159,24 @@ static PreferencesManager *sharedManager = nil;
 		NSInteger unit = [habits[HABITS_UNIT_KEY] intValue];
 		NSInteger period = [habits[HABITS_PERIOD_KEY] intValue];
 
-        // retrieve packet size
+        // Retrieve packet size.
 		NSInteger size = [(self.prefs)[PACKET_SIZE_KEY] intValue];
         
-        // calculate constants
+        // Calculate constants.
 		NSInteger kUnit = (unit == 0) ? 1 : size;
 		NSInteger kPeriod = (period == 0) ? 1 : 7;
 
-        // calculate cigarettes/day
+        // Calculate the number of cigarettes/day.
 		CGFloat cigarettesPerDay = quantity * kUnit / kPeriod;
 
-		// calculate saved cigarettes
+		// Calculate the number of saved cigarettes.
 		CGFloat totalCigarettes = [self nonSmokingDays] * cigarettesPerDay;
 
 #ifdef DEBUG
 		NSLog(@"%@ - Total cigarettes: %f", [self class], totalCigarettes);
 #endif		
 
-		// calculate saved packets
+		// Calculate the number of saved packets.
 		totalPackets = totalCigarettes / size + 1;
         
 #ifdef DEBUG
@@ -200,6 +200,97 @@ static PreferencesManager *sharedManager = nil;
 #endif
 		
 	return totalSavings;
+}
+
+- (NSString *)lastCigaretteFormattedDate;
+{
+    return [NSDateFormatter localizedStringFromDate:[self lastCigaretteDate]
+                                          dateStyle:NSDateFormatterLongStyle
+                                          timeStyle:NSDateFormatterNoStyle];
+}
+
+- (NSString *)smokingHabits
+{
+    NSString *habitsString;
+    
+	// get preferences
+	NSDictionary *habitsDict = (self.prefs)[HABITS_KEY];
+	if (habitsDict != nil) {
+		NSInteger quantity = [habitsDict[HABITS_QUANTITY_KEY] intValue];
+		NSInteger unit = [habitsDict[HABITS_UNIT_KEY] intValue];
+		NSInteger period = [habitsDict[HABITS_PERIOD_KEY] intValue];
+		// create unit string
+		NSString *unitString = nil;
+		switch (unit) {
+			case 0:
+				unitString = (quantity == 1) ?
+				MPString(@"cigarette") :
+				MPString(@"cigarettes");
+				break;
+				
+			case 1:
+				unitString = (quantity == 1) ?
+				MPString(@"packet") :
+				MPString(@"packets");
+				break;
+		}
+		// create period string
+		NSString *periodString = nil;
+		switch (period) {
+			case 0:
+				periodString = MPString(@"a day");
+				break;
+				
+			case 1:
+				periodString = MPString(@"a week");
+				break;
+		}
+		
+		habitsString = [NSString stringWithFormat:@"%d %@ %@", quantity, unitString, periodString];
+	}
+	else {
+		habitsString = nil;
+	}
+    
+    return habitsString;
+}
+
+- (NSString *)packetSize
+{
+    NSString *packetSizeString;
+    
+	NSInteger size = [([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue];
+	
+	if (size != 0) {
+		if (size > 1) {
+			packetSizeString = [[NSString stringWithFormat:@"%d ", size] stringByAppendingString:MPString(@"cigarettes")];
+		}
+		else {
+			packetSizeString = [[NSString stringWithFormat:@"%d ", size] stringByAppendingString:MPString(@"cigarette")];
+		}
+	}
+	else {
+		packetSizeString = nil;
+	}
+    
+    return packetSizeString;
+}
+
+- (NSString *)packetPrice
+{
+    NSString *packetPriceString;
+    
+	CGFloat price = [([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue];
+	
+	if (price != 0.0) {
+		packetPriceString = [NSNumberFormatter localizedStringFromNumber:@(price)
+                                                             numberStyle:NSNumberFormatterCurrencyStyle];
+	}
+	else {
+		packetPriceString = nil;
+	}
+    
+    return packetPriceString;
 }
 
 @end

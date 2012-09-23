@@ -12,6 +12,17 @@
 #import "AboutViewController.h"
 
 
+enum : NSUInteger {
+    SettingsSectionLastCigarette = 0,
+    SettingsSectionHabits,
+    SettingsSectionGeneral,
+	SettingsSectionReset,   // TODO: remove.
+	SettingsSectionAbout,
+	
+	SettingsNoOfSections
+};
+
+
 @interface SettingsViewController ()
 
 @property (nonatomic, strong) UISwitch *shakeSwitch;
@@ -99,6 +110,14 @@
 	
 	// Set titles for the sections.
 	switch (section) {
+        case SettingsSectionLastCigarette:
+            numberOfRows = 1;
+            break;
+            
+        case SettingsSectionHabits:
+            numberOfRows = 3;
+            break;
+            
         case SettingsSectionGeneral:
             numberOfRows = 2;
             break;
@@ -124,7 +143,7 @@
 		cell = [[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:CellIdentifier];
 		
-		// customize cells appearence
+		// Customize cells appearence.
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor colorWithWhite:0.710
@@ -153,9 +172,57 @@
         cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710
                                                                     alpha:0.750];
 	}
-		
-	// set cells content
+
+	// Set cells content.
 	switch (indexPath.section) {
+        case SettingsSectionLastCigarette:
+            cell.position = MPTableViewCellPositionSingle;
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
+            ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
+            ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+            ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
+            cell.textLabel.text = MPString(@"Last cigarette");  // TODO: localize string.
+            cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
+            break;
+            
+        case SettingsSectionHabits:
+            switch (indexPath.row) {
+                case 0:
+                    cell.position = MPTableViewCellPositionTop;
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
+                    ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
+                    cell.textLabel.text = MPString(@"Habits");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] smokingHabits]; // TODO: shorten string.
+                    break;
+                    
+                case 1:
+                    cell.position = MPTableViewCellPositionMiddle;
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
+                    ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
+                    cell.textLabel.text = MPString(@"Packet size");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetSize];
+                    break;
+                    
+                case 2:
+                    cell.position = MPTableViewCellPositionBottom;
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
+                    ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+                    ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
+                    cell.textLabel.text = MPString(@"Packet price");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetPrice];
+                    break;
+            }
+            break;
+            
         case SettingsSectionGeneral:
             switch (indexPath.row) {
                 case 0:

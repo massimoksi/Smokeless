@@ -9,15 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-enum {
-    SettingsSectionGeneral = 0,
-	SettingsSectionReset,
-	SettingsSectionAbout,
-	
-	SettingsNoOfSections
-};
-
-
 @interface SettingsViewController : UITableViewController <UIActionSheetDelegate>
 
 @end

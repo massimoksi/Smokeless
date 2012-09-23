@@ -36,5 +36,9 @@
 - (NSInteger)nonSmokingDays;
 - (NSUInteger)totalPackets;
 - (CGFloat)totalSavings;
+- (NSString *)lastCigaretteFormattedDate;
+- (NSString *)smokingHabits;
+- (NSString *)packetSize;
+- (NSString *)packetPrice;
 
 @end
