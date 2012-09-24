@@ -140,6 +140,8 @@
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */; };
 		5687F541160FA6AA00541449 /* LastCigaretteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */; };
+		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
+		56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF92B11610EC050021DAE2 /* HabitsViewController.xib */; };
 		56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */; };
 		56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */; };
 		56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */; };
@@ -334,6 +336,9 @@
 		5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteViewController.m; sourceTree = "<group>"; };
 		5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastCigaretteViewController.xib; sourceTree = "<group>"; };
 		56AF92AE1610E7320021DAE2 /* MPSettingViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSettingViewDelegate.h; sourceTree = "<group>"; };
+		56AF92AF1610EC050021DAE2 /* HabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabitsViewController.h; sourceTree = "<group>"; };
+		56AF92B01610EC050021DAE2 /* HabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabitsViewController.m; sourceTree = "<group>"; };
+		56AF92B11610EC050021DAE2 /* HabitsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HabitsViewController.xib; sourceTree = "<group>"; };
 		56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
@@ -462,15 +467,18 @@
 				566B375615BBFE1F0026821C /* SettingCellController.m */,
 				566B375715BBFE1F0026821C /* SettingsViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsViewController.m */,
+				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
+				5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */,
+				5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */,
+				56AF92AF1610EC050021DAE2 /* HabitsViewController.h */,
+				56AF92B01610EC050021DAE2 /* HabitsViewController.m */,
+				56AF92B11610EC050021DAE2 /* HabitsViewController.xib */,
 				566B375915BBFE1F0026821C /* ShadowCellController.h */,
 				566B375A15BBFE1F0026821C /* ShadowCellController.m */,
 				566B375B15BBFE1F0026821C /* SizeCellController.h */,
 				566B375C15BBFE1F0026821C /* SizeCellController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
-				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
-				5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */,
-				5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -824,6 +832,7 @@
 				56B42BD01606772500BCF224 /* BackgroundPattern@2x.png in Resources */,
 				56B42BD21606776400BCF224 /* BackgroundPattern.png in Resources */,
 				5687F541160FA6AA00541449 /* LastCigaretteViewController.xib in Resources */,
+				56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +890,7 @@
 				566B38BB15BC19210026821C /* Appirater.m in Sources */,
 				566B38BC15BC19210026821C /* MBProgressHUD.m in Sources */,
 				5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */,
+				56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 
 #import "PreferencesManager.h"
 #import "LastCigaretteViewController.h"
+#import "HabitsViewController.h"
 #import "AboutViewController.h"
 
 
@@ -178,11 +179,6 @@ enum : NSUInteger {
 	switch (indexPath.section) {
         case SettingsSectionLastCigarette:
             cell.position = MPTableViewCellPositionSingle;
-//			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//            ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
-//            ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
-//            ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
-//            ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
             cell.textLabel.text = MPString(@"Last cigarette");  // TODO: localize string.
             cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
             break;
@@ -191,11 +187,6 @@ enum : NSUInteger {
             switch (indexPath.row) {
                 case 0:
                     cell.position = MPTableViewCellPositionTop;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
-                    ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
-                    ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
-                    ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
                     cell.textLabel.text = MPString(@"Habits");
                     cell.detailTextLabel.text = [[PreferencesManager sharedManager] smokingHabits]; // TODO: shorten string.
                     break;
@@ -287,6 +278,19 @@ enum : NSUInteger {
                                     animated:YES];
             break;
         }
+            
+        case SettingsSectionHabits:
+            switch (indexPath.row) {
+                case 0:
+                {
+                    HabitsViewController *habitsController = [[HabitsViewController alloc] init];
+                    habitsController.delegate = self;
+                    [self presentModalViewController:habitsController
+                                            animated:YES];
+                    break;
+                }
+            }
+            break;
             
 		case SettingsSectionReset:
 		{
