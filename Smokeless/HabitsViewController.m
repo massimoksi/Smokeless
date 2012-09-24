@@ -11,7 +11,7 @@
 #import "PreferencesManager.h"
 
 
-enum {
+enum : NSUInteger {
 	HabitsComponentQuantity = 0,
 	HabitsComponentUnit,
 	HabitsComponentPeriod,

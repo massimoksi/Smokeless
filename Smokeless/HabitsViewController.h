@@ -13,6 +13,6 @@
 
 @interface HabitsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic) id <MPSettingViewDelegate> delegate;
+@property (weak, nonatomic) id <MPSettingViewDelegate> delegate;    // TODO: check if it needs to be set to nil.
 
 @end
