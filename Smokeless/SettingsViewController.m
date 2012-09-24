@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 
 #import "PreferencesManager.h"
+#import "LastCigaretteViewController.h"
 #import "AboutViewController.h"
 
 
@@ -177,11 +178,11 @@ enum : NSUInteger {
 	switch (indexPath.section) {
         case SettingsSectionLastCigarette:
             cell.position = MPTableViewCellPositionSingle;
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
-            ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
-            ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
-            ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
+//			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//            ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
+//            ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
+//            ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
+//            ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
             cell.textLabel.text = MPString(@"Last cigarette");  // TODO: localize string.
             cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
             break;
@@ -278,6 +279,15 @@ enum : NSUInteger {
 {
 	// perform cell action
 	switch (indexPath.section) {
+        case SettingsSectionLastCigarette:
+        {
+            LastCigaretteViewController *lastCigaretteController = [[LastCigaretteViewController alloc] init];
+            lastCigaretteController.delegate = self;
+            [self presentModalViewController:lastCigaretteController
+                                    animated:YES];
+            break;
+        }
+            
 		case SettingsSectionReset:
 		{
 			// show action sheet to ask confirmation before deleting preferences
@@ -318,6 +328,17 @@ enum : NSUInteger {
 			[self.tableView reloadData];
 			break;
 	}
+}
+
+#pragma mark - Setting view delegate
+
+- (void)viewControllerDidClose
+{
+    // Close modal view.
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 [self.tableView reloadData];
+                             }];
 }
 
 @end
