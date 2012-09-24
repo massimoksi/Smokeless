@@ -22,7 +22,7 @@ enum : NSUInteger {
 
 @interface HabitsViewController ()
 
-@property (nonatomic, weak) IBOutlet UIPickerView *habitsPicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *habitsPicker;
 
 - (IBAction)cancelTapped:(id)sender;
 - (IBAction)doneTapped:(id)sender;
@@ -99,7 +99,6 @@ enum : NSUInteger {
 	
 	// Set preference.
 	([PreferencesManager sharedManager].prefs)[HABITS_KEY] = habits;
-    
 	// Save preferences to file.
 	[[PreferencesManager sharedManager] savePrefs];
     

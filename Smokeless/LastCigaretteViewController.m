@@ -73,7 +73,6 @@
     
 	// Set preference.
 	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
-    
 	// Save preferences to file.
 	[[PreferencesManager sharedManager] savePrefs];
     
