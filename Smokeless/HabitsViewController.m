@@ -24,9 +24,6 @@ enum : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UIPickerView *habitsPicker;
 
-- (IBAction)cancelTapped:(id)sender;
-- (IBAction)doneTapped:(id)sender;
-
 @end
 
 

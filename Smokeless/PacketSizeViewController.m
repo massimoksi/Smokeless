@@ -18,9 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 
-- (IBAction)cancelTapped:(id)sender;
-- (IBAction)doneTapped:(id)sender;
-
 @end
 
 
