@@ -31,9 +31,6 @@ enum : NSUInteger {
 @property (nonatomic, strong) UISwitch *shakeSwitch;
 @property (nonatomic, strong) UISwitch *notificationSwitch;
 
-- (void)shakeEnabled:(id)sender;
-- (void)notificationEnabled:(id)sender;
-
 @end
 
 
@@ -219,8 +216,7 @@ enum : NSUInteger {
                     cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
-                    // update switch
-                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];            
+                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];
                     break;
                     
                 case 1:
@@ -228,7 +224,6 @@ enum : NSUInteger {
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
-                    // update switch
                     self.notificationSwitch.on = [([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue];
                     break;
             }
@@ -328,12 +323,12 @@ enum : NSUInteger {
 		case 0:
 			[[PreferencesManager sharedManager] deletePrefs];
             
-			// reload data on table view
+			// Reload data on the table view.
 			[self.tableView reloadData];
 			break;
 			
 		case 1:
-			// do nothing
+			// Do nothing.
 			[self.tableView reloadData];
 			break;
 	}

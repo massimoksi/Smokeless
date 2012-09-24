@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol MPSettingViewDelegate <NSObject>
+@protocol MPSettingViewDelegate <NSObject>  // TODO: rename into MPSettingViewControllerDelegate
 
 - (void)viewControllerDidClose;
 
