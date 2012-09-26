@@ -144,6 +144,8 @@
 		56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF92B11610EC050021DAE2 /* HabitsViewController.xib */; };
 		56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B5161100340021DAE2 /* PacketSizeViewController.m */; };
 		56AF92B8161100350021DAE2 /* PacketSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF92B6161100350021DAE2 /* PacketSizeViewController.xib */; };
+		56AF92BC161107740021DAE2 /* PacketPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92BA161107740021DAE2 /* PacketPriceViewController.m */; };
+		56AF92BD161107740021DAE2 /* PacketPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF92BB161107740021DAE2 /* PacketPriceViewController.xib */; };
 		56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */; };
 		56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */; };
 		56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */; };
@@ -344,6 +346,9 @@
 		56AF92B4161100340021DAE2 /* PacketSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketSizeViewController.h; sourceTree = "<group>"; };
 		56AF92B5161100340021DAE2 /* PacketSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSizeViewController.m; sourceTree = "<group>"; };
 		56AF92B6161100350021DAE2 /* PacketSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PacketSizeViewController.xib; sourceTree = "<group>"; };
+		56AF92B9161107730021DAE2 /* PacketPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketPriceViewController.h; sourceTree = "<group>"; };
+		56AF92BA161107740021DAE2 /* PacketPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketPriceViewController.m; sourceTree = "<group>"; };
+		56AF92BB161107740021DAE2 /* PacketPriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PacketPriceViewController.xib; sourceTree = "<group>"; };
 		56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
@@ -481,6 +486,9 @@
 				56AF92B4161100340021DAE2 /* PacketSizeViewController.h */,
 				56AF92B5161100340021DAE2 /* PacketSizeViewController.m */,
 				56AF92B6161100350021DAE2 /* PacketSizeViewController.xib */,
+				56AF92B9161107730021DAE2 /* PacketPriceViewController.h */,
+				56AF92BA161107740021DAE2 /* PacketPriceViewController.m */,
+				56AF92BB161107740021DAE2 /* PacketPriceViewController.xib */,
 				566B375915BBFE1F0026821C /* ShadowCellController.h */,
 				566B375A15BBFE1F0026821C /* ShadowCellController.m */,
 				566B375B15BBFE1F0026821C /* SizeCellController.h */,
@@ -842,6 +850,7 @@
 				5687F541160FA6AA00541449 /* LastCigaretteViewController.xib in Resources */,
 				56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */,
 				56AF92B8161100350021DAE2 /* PacketSizeViewController.xib in Resources */,
+				56AF92BD161107740021DAE2 /* PacketPriceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +910,7 @@
 				5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */,
 				56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */,
 				56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */,
+				56AF92BC161107740021DAE2 /* PacketPriceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
