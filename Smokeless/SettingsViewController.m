@@ -12,6 +12,7 @@
 #import "LastCigaretteViewController.h"
 #import "HabitsViewController.h"
 #import "PacketSizeViewController.h"
+#import "PacketPriceViewController.h"
 #import "AboutViewController.h"
 
 
@@ -197,11 +198,6 @@ enum : NSUInteger {
                     
                 case 2:
                     cell.position = MPTableViewCellPositionBottom;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    ((MPDisclosureIndicator *)cell.accessoryView).orientation = MPDisclosureIndicatorOrientationRight;
-                    ((MPDisclosureIndicator *)cell.accessoryView).highlighted = NO;
-                    ((MPDisclosureIndicator *)cell.accessoryView).normalColor = [UIColor colorWithWhite:0.710 alpha:1.000];
-                    ((MPDisclosureIndicator *)cell.accessoryView).highlightedColor = [UIColor whiteColor];
                     cell.textLabel.text = MPString(@"Packet price");
                     cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetPrice];
                     break;
@@ -286,6 +282,15 @@ enum : NSUInteger {
                     PacketSizeViewController *packetSizeController = [[PacketSizeViewController alloc] init];
                     packetSizeController.delegate = self;
                     [self presentModalViewController:packetSizeController
+                                            animated:YES];
+                    break;
+                }
+                    
+                case 2:
+                {
+                    PacketPriceViewController *packetPriceController = [[PacketPriceViewController alloc] init];
+                    packetPriceController.delegate = self;
+                    [self presentModalViewController:packetPriceController
                                             animated:YES];
                     break;
                 }
