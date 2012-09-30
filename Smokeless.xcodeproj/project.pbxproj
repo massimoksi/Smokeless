@@ -23,9 +23,7 @@
 		566B376A15BBFE1F0026821C /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CounterViewController.m */; };
 		566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373715BBFE1F0026821C /* CreditsViewController.m */; };
 		566B376C15BBFE1F0026821C /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373915BBFE1F0026821C /* DisplayView.m */; };
-		566B376D15BBFE1F0026821C /* HabitsCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373B15BBFE1F0026821C /* HabitsCellController.m */; };
 		566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373D15BBFE1F0026821C /* HealthTableView.m */; };
-		566B376F15BBFE1F0026821C /* LastCigaretteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373F15BBFE1F0026821C /* LastCigaretteController.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
 		566B377115BBFE1F0026821C /* MPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374215BBFE1F0026821C /* MPCell.m */; };
 		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
@@ -33,13 +31,8 @@
 		566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374915BBFE1F0026821C /* MPTableViewCell.m */; };
 		566B377515BBFE1F0026821C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374C15BBFE1F0026821C /* NoteView.m */; };
 		566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374E15BBFE1F0026821C /* PreferencesManager.m */; };
-		566B377715BBFE1F0026821C /* PriceCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375015BBFE1F0026821C /* PriceCellController.m */; };
-		566B377815BBFE1F0026821C /* SavingsSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375215BBFE1F0026821C /* SavingsSettingsController.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
-		566B377A15BBFE1F0026821C /* SettingCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375615BBFE1F0026821C /* SettingCellController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
-		566B377C15BBFE1F0026821C /* ShadowCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375A15BBFE1F0026821C /* ShadowCellController.m */; };
-		566B377D15BBFE1F0026821C /* SizeCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375C15BBFE1F0026821C /* SizeCellController.m */; };
 		566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */; };
 		566B377F15BBFE1F0026821C /* SmokingCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */; };
 		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
@@ -181,12 +174,8 @@
 		566B373715BBFE1F0026821C /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		566B373815BBFE1F0026821C /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
 		566B373915BBFE1F0026821C /* DisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayView.m; sourceTree = "<group>"; };
-		566B373A15BBFE1F0026821C /* HabitsCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabitsCellController.h; sourceTree = "<group>"; };
-		566B373B15BBFE1F0026821C /* HabitsCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabitsCellController.m; sourceTree = "<group>"; };
 		566B373C15BBFE1F0026821C /* HealthTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableView.h; sourceTree = "<group>"; };
 		566B373D15BBFE1F0026821C /* HealthTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableView.m; sourceTree = "<group>"; };
-		566B373E15BBFE1F0026821C /* LastCigaretteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastCigaretteController.h; sourceTree = "<group>"; };
-		566B373F15BBFE1F0026821C /* LastCigaretteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteController.m; sourceTree = "<group>"; };
 		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		566B374115BBFE1F0026821C /* MPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCell.h; sourceTree = "<group>"; };
 		566B374215BBFE1F0026821C /* MPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCell.m; sourceTree = "<group>"; };
@@ -202,20 +191,10 @@
 		566B374C15BBFE1F0026821C /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		566B374D15BBFE1F0026821C /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
 		566B374E15BBFE1F0026821C /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
-		566B374F15BBFE1F0026821C /* PriceCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCellController.h; sourceTree = "<group>"; };
-		566B375015BBFE1F0026821C /* PriceCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCellController.m; sourceTree = "<group>"; };
-		566B375115BBFE1F0026821C /* SavingsSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsSettingsController.h; sourceTree = "<group>"; };
-		566B375215BBFE1F0026821C /* SavingsSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsSettingsController.m; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
-		566B375515BBFE1F0026821C /* SettingCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellController.h; sourceTree = "<group>"; };
-		566B375615BBFE1F0026821C /* SettingCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCellController.m; sourceTree = "<group>"; };
 		566B375715BBFE1F0026821C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		566B375815BBFE1F0026821C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		566B375915BBFE1F0026821C /* ShadowCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowCellController.h; sourceTree = "<group>"; };
-		566B375A15BBFE1F0026821C /* ShadowCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowCellController.m; sourceTree = "<group>"; };
-		566B375B15BBFE1F0026821C /* SizeCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeCellController.h; sourceTree = "<group>"; };
-		566B375C15BBFE1F0026821C /* SizeCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeCellController.m; sourceTree = "<group>"; };
 		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokelessAppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmokelessAppDelegate.m; sourceTree = "<group>"; };
@@ -463,18 +442,8 @@
 				566B373515BBFE1F0026821C /* CounterViewController.m */,
 				566B373615BBFE1F0026821C /* CreditsViewController.h */,
 				566B373715BBFE1F0026821C /* CreditsViewController.m */,
-				566B373A15BBFE1F0026821C /* HabitsCellController.h */,
-				566B373B15BBFE1F0026821C /* HabitsCellController.m */,
-				566B373E15BBFE1F0026821C /* LastCigaretteController.h */,
-				566B373F15BBFE1F0026821C /* LastCigaretteController.m */,
-				566B374F15BBFE1F0026821C /* PriceCellController.h */,
-				566B375015BBFE1F0026821C /* PriceCellController.m */,
-				566B375115BBFE1F0026821C /* SavingsSettingsController.h */,
-				566B375215BBFE1F0026821C /* SavingsSettingsController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
-				566B375515BBFE1F0026821C /* SettingCellController.h */,
-				566B375615BBFE1F0026821C /* SettingCellController.m */,
 				566B375715BBFE1F0026821C /* SettingsViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsViewController.m */,
 				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
@@ -489,10 +458,6 @@
 				56AF92B9161107730021DAE2 /* PacketPriceViewController.h */,
 				56AF92BA161107740021DAE2 /* PacketPriceViewController.m */,
 				56AF92BB161107740021DAE2 /* PacketPriceViewController.xib */,
-				566B375915BBFE1F0026821C /* ShadowCellController.h */,
-				566B375A15BBFE1F0026821C /* ShadowCellController.m */,
-				566B375B15BBFE1F0026821C /* SizeCellController.h */,
-				566B375C15BBFE1F0026821C /* SizeCellController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
@@ -885,9 +850,7 @@
 				566B376A15BBFE1F0026821C /* CounterViewController.m in Sources */,
 				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
 				566B376C15BBFE1F0026821C /* DisplayView.m in Sources */,
-				566B376D15BBFE1F0026821C /* HabitsCellController.m in Sources */,
 				566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */,
-				566B376F15BBFE1F0026821C /* LastCigaretteController.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				566B377115BBFE1F0026821C /* MPCell.m in Sources */,
 				566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */,
@@ -895,13 +858,8 @@
 				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
 				566B377515BBFE1F0026821C /* NoteView.m in Sources */,
 				566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */,
-				566B377715BBFE1F0026821C /* PriceCellController.m in Sources */,
-				566B377815BBFE1F0026821C /* SavingsSettingsController.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
-				566B377A15BBFE1F0026821C /* SettingCellController.m in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,
-				566B377C15BBFE1F0026821C /* ShadowCellController.m in Sources */,
-				566B377D15BBFE1F0026821C /* SizeCellController.m in Sources */,
 				566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */,
 				566B377F15BBFE1F0026821C /* SmokingCellBackgroundView.m in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,

@@ -9,7 +9,6 @@
 #import "SavingsViewController.h"
 
 #import "PreferencesManager.h"
-#import "savingsSettingsController.h"
 
 #import "DisplayView.h"
 
@@ -27,9 +26,6 @@
 @property (nonatomic, assign) BOOL shakeEnabled;
 @property (nonatomic, assign) CGFloat totalSavings;
 @property (nonatomic, assign) NSUInteger totalPackets;
-
-- (void)toolsTapped:(id)sender;
-- (void)doneTapped:(id)sender;
 
 @end
 
@@ -53,21 +49,6 @@
                                                                        self.savingsView.center.y + 113.0)];
     [self.view addSubview:self.displayView];
 	
-	// Create the "tools" button.
-	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	toolsButton.frame = CGRectMake(254.0,
-                                   self.savingsView.center.y + 97.0,
-                                   60.0,
-                                   60.0);
-	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsNormal"]
-				 forState:UIControlStateNormal];
-	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsPressed"]
-				 forState:UIControlStateHighlighted];
-	[toolsButton addTarget:self
-					action:@selector(toolsTapped:)
-		  forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:toolsButton];
-    
     // Setup the accelerometer.
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
@@ -85,12 +66,12 @@
 
     PreferencesManager *prefsManager = [PreferencesManager sharedManager];
     
-    // Set ivars.
+    // Set properties.
     self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
     self.totalSavings = [prefsManager totalSavings];
     self.totalPackets = [prefsManager totalPackets];
     
-    // create number formatter
+    // Create the number formatter.
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
     
@@ -103,12 +84,12 @@
     [formatter setMinimumFractionDigits:2];
     [formatter setMaximumFractionDigits:2];
     
-    // get preferences
+    // Retrieve preferences.
 	NSDictionary *habits = (prefsManager.prefs)[HABITS_KEY];
 	NSNumber *price	= (prefsManager.prefs)[PACKET_PRICE_KEY];
 	NSNumber *size = (prefsManager.prefs)[PACKET_SIZE_KEY];
 
-    // set amount display labels
+    // Set display labels.
 	if (habits && price && size) {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
@@ -134,33 +115,6 @@
 	
     self.savingsView = nil;
     self.displayView = nil;
-}
-
-#pragma mark Actions
-
--(void)toolsTapped:(id)sender
-{
-	// Create the navigation controller.
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[SavingsSettingsController alloc] init]];
-	navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
-	navigationController.navigationBar.topItem.title = MPString(@"Savings");
-	
-	// Create the "done" bar button.
-	UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:MPString(@"Done")
-																 style:UIBarButtonItemStylePlain
-																target:self
-																action:@selector(doneTapped:)];
-	navigationController.navigationBar.topItem.leftBarButtonItem = doneItem;
-
-	// Modally present the savings settings view controller.
-	[self presentModalViewController:navigationController
-							animated:YES];
-}
-
-- (void)doneTapped:(id)sender
-{
-	// dismiss savings settings view controller
-	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma - Accelerometer delegate

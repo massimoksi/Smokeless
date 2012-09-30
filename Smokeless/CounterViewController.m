@@ -17,8 +17,6 @@
 
 @interface CounterViewController ()
 
-@property (nonatomic, strong) LastCigaretteController *lastCigaretteController;
-
 @property (nonatomic, strong) UIView *containerView;
 
 @property (nonatomic, strong) ChalkboardView *chalkboard;
@@ -31,7 +29,6 @@
 - (void)tweetTapped:(id)sender;
 - (void)nextTapped:(id)sender;
 - (void)prevTapped:(id)sender;
-- (void)editTapped:(id)sender;
 
 - (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer;
 - (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer;
@@ -89,35 +86,18 @@
 	[self.calendar.prevButton addTarget:self
 								 action:@selector(prevTapped:)
 					   forControlEvents:UIControlEventTouchUpInside];
-	[self.calendar.editButton addTarget:self
-								 action:@selector(editTapped:)
-					   forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[self updateViews];
     
-    // remove last cigarette underlay
-    if (self.lastCigaretteController) {
-        [self.lastCigaretteController.view removeFromSuperview];
-        self.lastCigaretteController = nil;
-        
-        // restore container position
-        CGRect viewFrame = self.containerView.frame;
-        viewFrame.origin.y = 0.0;
-        self.containerView.frame = viewFrame;
-        
-        // restore container background
-        self.containerView.backgroundColor = [UIColor clearColor];
-    }
-
 	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
-		// display calendar
+		// Show the calendar.
 		[self displayView:self.calendar];		
 	}
 	else {		
-		// display chalkboard
+		// Show the chalkboard.
 		[self displayView:self.chalkboard];
 	}
 }
@@ -167,7 +147,7 @@
 
 - (void)displayView:(id)aView
 {
-	// switch visible view
+	// Switch visible view.
 	if ([aView isEqual:[self.containerView.subviews lastObject]] == NO) {
 		[[self.containerView.subviews lastObject] removeFromSuperview];
 		[self.containerView addSubview:aView];
@@ -177,24 +157,24 @@
 - (void)updateViews
 {
 	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
-		// reset chalkboard
+		// Reset the chalkboard.
 		self.chalkboard.years = 0;
 		self.chalkboard.months = 0;
 		self.chalkboard.weeks = 0;
 		self.chalkboard.days = 0;
 		
-		// reset calendar
+		// Reset the calendar.
 		self.calendar.date = nil;
 	}
 	else {
-		// update chalkboard
+		// Update the chalkboard.
 		NSDateComponents *counterComponents = [[PreferencesManager sharedManager] nonSmokingInterval];
 		self.chalkboard.years = [counterComponents year];
 		self.chalkboard.months = [counterComponents month];
 		self.chalkboard.weeks = [counterComponents week];
 		self.chalkboard.days = [counterComponents day];
 		
-		// update calendar
+		// Update the calendar.
 		self.calendar.date = [[PreferencesManager sharedManager] lastCigaretteDate];
 	}
 }
@@ -220,7 +200,7 @@
 {
 	[self updateViews];
 	
-	// display calendar
+	// Show the calendar.
 	[UIView transitionWithView:self.containerView
 					  duration:0.75
 					   options:UIViewAnimationOptionTransitionFlipFromRight
@@ -234,7 +214,7 @@
 {
 	[self updateViews];
 	
-	// display chalkboard
+	// Show the chalkboard.
 	[UIView transitionWithView:self.containerView
 					  duration:0.75
 					   options:UIViewAnimationOptionTransitionFlipFromLeft
@@ -244,39 +224,15 @@
 					completion:NULL];
 }
 
-- (void)editTapped:(id)sender
-{
-    // temporarely set a background to the container
-    self.containerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
-    
-    // create last cigarette controller
-    self.lastCigaretteController = [[LastCigaretteController alloc] init];
-    self.lastCigaretteController.delegate = self;
-
-    // add last cigarette view
-    [self.view insertSubview:self.lastCigaretteController.view
-                     atIndex:0];
-    
-    // calculate new frame
-    CGRect viewFrame = self.containerView.frame;
-    viewFrame.origin.y -= viewFrame.size.height;
-    
-    // shift container upwards
-    [UIView animateWithDuration:0.75
-                     animations:^{
-                         self.containerView.frame = viewFrame;
-                     }];
-}
-
 - (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
 {
-    // dismiss any gesture if the date of last cigarette is not set
+    // Reject any gesture if the date of last cigarette is not set.
 	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
         return;
     }
     
-    // flip to the calendar
     if ([[self.containerView.subviews lastObject] isEqual:self.chalkboard]) {
+        // Flip to the calendar.
         [UIView transitionWithView:self.containerView
                           duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromRight
@@ -285,8 +241,8 @@
                         }
                         completion:NULL];
     }
-    // flip to the chalkboard
     else {
+        // Flip to the chalkboard.
         [UIView transitionWithView:self.containerView
                           duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromRight
@@ -299,13 +255,13 @@
 
 - (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
 {
-    // dismiss any gesture if the date of last cigarette is not set
+    // Reject any gesture if the date of last cigarette is not set.
 	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
         return;
     }
     
-    // flip to the calendar
     if ([[self.containerView.subviews lastObject] isEqual:self.chalkboard]) {
+        // Flip to the calendar.
         [UIView transitionWithView:self.containerView
                           duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromLeft
@@ -314,8 +270,8 @@
                         }
                         completion:NULL];
     }
-    // flip to the chalkboard
     else {
+        // Flip to the chalkboard.
         [UIView transitionWithView:self.containerView
                           duration:0.750
                            options:UIViewAnimationOptionTransitionFlipFromLeft
@@ -324,38 +280,6 @@
                         }
                         completion:NULL];
     }
-}
-
-#pragma mark - Underlay view delegate
-
-- (void)underlayViewDidFinish
-{
-    [self updateViews];
-    
-    // get rid of the note
-    if (([[PreferencesManager sharedManager] lastCigaretteDate] != nil) &&
-        (self.note != nil)) {
-        [self.note removeFromSuperview];
-        self.note = nil;
-    }
-
-    // calculate new frame
-    CGRect viewFrame = self.containerView.frame;
-    viewFrame.origin.y = 0.0;
-    
-    // shift container downwards
-    [UIView animateWithDuration:0.750
-                     animations:^{
-                         self.containerView.frame = viewFrame;
-                     }
-                     completion:^(BOOL finished){                         
-                         // get rid of last cigarette controller
-                         [self.lastCigaretteController.view removeFromSuperview];
-                         self.lastCigaretteController = nil;
-                         
-                         // restore container background
-                         self.containerView.backgroundColor = [UIColor clearColor];
-                     }];
 }
 
 @end
