@@ -65,12 +65,6 @@
 		566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381215BC16C40026821C /* ArrowLeft@2x.png */; };
 		566B386F15BC16C80026821C /* ButtonCalcNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381515BC16C50026821C /* ButtonCalcNormal.png */; };
 		566B387015BC16C80026821C /* ButtonCalcNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */; };
-		566B387115BC16C80026821C /* ButtonCancelNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381715BC16C50026821C /* ButtonCancelNormal.png */; };
-		566B387215BC16C80026821C /* ButtonCancelNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381815BC16C50026821C /* ButtonCancelNormal@2x.png */; };
-		566B387315BC16C80026821C /* ButtonEditNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381915BC16C50026821C /* ButtonEditNormal.png */; };
-		566B387415BC16C80026821C /* ButtonEditNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381A15BC16C50026821C /* ButtonEditNormal@2x.png */; };
-		566B387515BC16C80026821C /* ButtonEditPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381B15BC16C50026821C /* ButtonEditPressed.png */; };
-		566B387615BC16C80026821C /* ButtonEditPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381C15BC16C50026821C /* ButtonEditPressed@2x.png */; };
 		566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381D15BC16C50026821C /* ButtonNextNormal.png */; };
 		566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */; };
 		566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381F15BC16C50026821C /* ButtonNextPressed.png */; };
@@ -79,12 +73,6 @@
 		566B387C15BC16C80026821C /* ButtonPrevNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */; };
 		566B387D15BC16C80026821C /* ButtonPrevPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382315BC16C60026821C /* ButtonPrevPressed.png */; };
 		566B387E15BC16C80026821C /* ButtonPrevPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */; };
-		566B387F15BC16C80026821C /* ButtonSaveNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382515BC16C60026821C /* ButtonSaveNormal.png */; };
-		566B388015BC16C80026821C /* ButtonSaveNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382615BC16C60026821C /* ButtonSaveNormal@2x.png */; };
-		566B388115BC16C80026821C /* ButtonToolsNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382715BC16C60026821C /* ButtonToolsNormal.png */; };
-		566B388215BC16C80026821C /* ButtonToolsNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382815BC16C60026821C /* ButtonToolsNormal@2x.png */; };
-		566B388315BC16C80026821C /* ButtonToolsPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382915BC16C60026821C /* ButtonToolsPressed.png */; };
-		566B388415BC16C80026821C /* ButtonToolsPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382A15BC16C60026821C /* ButtonToolsPressed@2x.png */; };
 		566B388515BC16C80026821C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382B15BC16C60026821C /* ButtonTweetNormal.png */; };
 		566B388615BC16C80026821C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */; };
 		566B388715BC16C80026821C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382D15BC16C60026821C /* ButtonTweetPressed.png */; };
@@ -247,12 +235,6 @@
 		566B381215BC16C40026821C /* ArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowLeft@2x.png"; sourceTree = "<group>"; };
 		566B381515BC16C50026821C /* ButtonCalcNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonCalcNormal.png; sourceTree = "<group>"; };
 		566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalcNormal@2x.png"; sourceTree = "<group>"; };
-		566B381715BC16C50026821C /* ButtonCancelNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonCancelNormal.png; sourceTree = "<group>"; };
-		566B381815BC16C50026821C /* ButtonCancelNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCancelNormal@2x.png"; sourceTree = "<group>"; };
-		566B381915BC16C50026821C /* ButtonEditNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonEditNormal.png; sourceTree = "<group>"; };
-		566B381A15BC16C50026821C /* ButtonEditNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonEditNormal@2x.png"; sourceTree = "<group>"; };
-		566B381B15BC16C50026821C /* ButtonEditPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonEditPressed.png; sourceTree = "<group>"; };
-		566B381C15BC16C50026821C /* ButtonEditPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonEditPressed@2x.png"; sourceTree = "<group>"; };
 		566B381D15BC16C50026821C /* ButtonNextNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextNormal.png; sourceTree = "<group>"; };
 		566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonNextNormal@2x.png"; sourceTree = "<group>"; };
 		566B381F15BC16C50026821C /* ButtonNextPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextPressed.png; sourceTree = "<group>"; };
@@ -261,12 +243,6 @@
 		566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonPrevNormal@2x.png"; sourceTree = "<group>"; };
 		566B382315BC16C60026821C /* ButtonPrevPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPrevPressed.png; sourceTree = "<group>"; };
 		566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonPrevPressed@2x.png"; sourceTree = "<group>"; };
-		566B382515BC16C60026821C /* ButtonSaveNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonSaveNormal.png; sourceTree = "<group>"; };
-		566B382615BC16C60026821C /* ButtonSaveNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonSaveNormal@2x.png"; sourceTree = "<group>"; };
-		566B382715BC16C60026821C /* ButtonToolsNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonToolsNormal.png; sourceTree = "<group>"; };
-		566B382815BC16C60026821C /* ButtonToolsNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonToolsNormal@2x.png"; sourceTree = "<group>"; };
-		566B382915BC16C60026821C /* ButtonToolsPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonToolsPressed.png; sourceTree = "<group>"; };
-		566B382A15BC16C60026821C /* ButtonToolsPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonToolsPressed@2x.png"; sourceTree = "<group>"; };
 		566B382B15BC16C60026821C /* ButtonTweetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetNormal.png; sourceTree = "<group>"; };
 		566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
 		566B382D15BC16C60026821C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
@@ -539,12 +515,6 @@
 				56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */,
 				566B381515BC16C50026821C /* ButtonCalcNormal.png */,
 				566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */,
-				566B381715BC16C50026821C /* ButtonCancelNormal.png */,
-				566B381815BC16C50026821C /* ButtonCancelNormal@2x.png */,
-				566B381915BC16C50026821C /* ButtonEditNormal.png */,
-				566B381A15BC16C50026821C /* ButtonEditNormal@2x.png */,
-				566B381B15BC16C50026821C /* ButtonEditPressed.png */,
-				566B381C15BC16C50026821C /* ButtonEditPressed@2x.png */,
 				566B381D15BC16C50026821C /* ButtonNextNormal.png */,
 				566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */,
 				566B381F15BC16C50026821C /* ButtonNextPressed.png */,
@@ -553,12 +523,6 @@
 				566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */,
 				566B382315BC16C60026821C /* ButtonPrevPressed.png */,
 				566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */,
-				566B382515BC16C60026821C /* ButtonSaveNormal.png */,
-				566B382615BC16C60026821C /* ButtonSaveNormal@2x.png */,
-				566B382715BC16C60026821C /* ButtonToolsNormal.png */,
-				566B382815BC16C60026821C /* ButtonToolsNormal@2x.png */,
-				566B382915BC16C60026821C /* ButtonToolsPressed.png */,
-				566B382A15BC16C60026821C /* ButtonToolsPressed@2x.png */,
 				566B382B15BC16C60026821C /* ButtonTweetNormal.png */,
 				566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */,
 				566B382D15BC16C60026821C /* ButtonTweetPressed.png */,
@@ -743,12 +707,6 @@
 				566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */,
 				566B386F15BC16C80026821C /* ButtonCalcNormal.png in Resources */,
 				566B387015BC16C80026821C /* ButtonCalcNormal@2x.png in Resources */,
-				566B387115BC16C80026821C /* ButtonCancelNormal.png in Resources */,
-				566B387215BC16C80026821C /* ButtonCancelNormal@2x.png in Resources */,
-				566B387315BC16C80026821C /* ButtonEditNormal.png in Resources */,
-				566B387415BC16C80026821C /* ButtonEditNormal@2x.png in Resources */,
-				566B387515BC16C80026821C /* ButtonEditPressed.png in Resources */,
-				566B387615BC16C80026821C /* ButtonEditPressed@2x.png in Resources */,
 				566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */,
 				566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */,
 				566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */,
@@ -757,12 +715,6 @@
 				566B387C15BC16C80026821C /* ButtonPrevNormal@2x.png in Resources */,
 				566B387D15BC16C80026821C /* ButtonPrevPressed.png in Resources */,
 				566B387E15BC16C80026821C /* ButtonPrevPressed@2x.png in Resources */,
-				566B387F15BC16C80026821C /* ButtonSaveNormal.png in Resources */,
-				566B388015BC16C80026821C /* ButtonSaveNormal@2x.png in Resources */,
-				566B388115BC16C80026821C /* ButtonToolsNormal.png in Resources */,
-				566B388215BC16C80026821C /* ButtonToolsNormal@2x.png in Resources */,
-				566B388315BC16C80026821C /* ButtonToolsPressed.png in Resources */,
-				566B388415BC16C80026821C /* ButtonToolsPressed@2x.png in Resources */,
 				566B388515BC16C80026821C /* ButtonTweetNormal.png in Resources */,
 				566B388615BC16C80026821C /* ButtonTweetNormal@2x.png in Resources */,
 				566B388715BC16C80026821C /* ButtonTweetPressed.png in Resources */,
