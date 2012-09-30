@@ -38,6 +38,13 @@
     [self.pointButton setTitle:[formatter currencyDecimalSeparator]
                       forState:UIControlStateNormal];
     
+    // Initialize properties.
+	self.decimals = 0;
+	self.reset = YES;
+
+	// Enable the point button.
+	self.pointButton.enabled = YES;
+    
     // Set the price label.
     self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue])
                                                             numberStyle:NSNumberFormatterCurrencyStyle];
