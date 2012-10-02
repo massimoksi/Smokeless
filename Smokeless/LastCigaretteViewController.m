@@ -36,6 +36,9 @@
 		[self.datePicker setDate:[NSDate date]
 						animated:NO];
 	}
+    
+    // Limit the date picker.
+    self.datePicker.maximumDate = [NSDate date];
 }
 
 - (void)didReceiveMemoryWarning
