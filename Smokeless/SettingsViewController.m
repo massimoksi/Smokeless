@@ -20,7 +20,6 @@ enum : NSUInteger {
     SettingsSectionLastCigarette = 0,
     SettingsSectionHabits,
     SettingsSectionGeneral,
-	SettingsSectionReset,   // TODO: remove.
 	SettingsSectionAbout,
 	
 	SettingsNoOfSections
@@ -58,11 +57,30 @@ enum : NSUInteger {
     [self.notificationSwitch addTarget:self
                                 action:@selector(notificationEnabled:)
                       forControlEvents:UIControlEventValueChanged];
+    
+    // Create the reset button.
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 55.0)];
+    UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    resetButton.frame = CGRectMake(0.0, 0.0, 320.0, 45.0);
+    [resetButton setBackgroundImage:[UIImage imageNamed:@"ButtonResetNormal"]
+                           forState:UIControlStateNormal];
+    resetButton.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    resetButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+    [resetButton setTitleShadowColor:[UIColor colorWithWhite:0.000
+                                                       alpha:1.000]
+                            forState:UIControlStateNormal];
+    [resetButton setTitle:MPString(@"Reset settings")
+                 forState:UIControlStateNormal];
+    [resetButton addTarget:self
+                    action:@selector(resetTapped:)
+          forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:resetButton];
+    self.tableView.tableFooterView = footerView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {	
-	// Update table view.
+	// Update the table view.
 	[self.tableView reloadData];
     
 	[super viewWillAppear:animated];
@@ -82,20 +100,27 @@ enum : NSUInteger {
 {
     // Set preference.
     ([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] = @([self.shakeSwitch isOn]);
-    
     // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
 }
 
 - (void)notificationEnabled:(id)sender
 {
-    BOOL notificationsEnabled = [self.notificationSwitch isOn];
-    
     // Set preference.
-    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @(notificationsEnabled);
-    
+    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @([self.notificationSwitch isOn]);
     // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
+}
+
+- (void)resetTapped:(id)sender
+{
+    // Show action sheet to ask confirmation before deleting preferences.
+    UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
+                                                            delegate:self
+                                                   cancelButtonTitle:MPString(@"Cancel")
+                                              destructiveButtonTitle:MPString(@"Delete")
+                                                   otherButtonTitles:nil];
+    [resetSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 #pragma mark - Table view data source
@@ -123,10 +148,6 @@ enum : NSUInteger {
             numberOfRows = 2;
             break;
             
-		case SettingsSectionReset:
-			numberOfRows = 1;
-			break;
-			
 		case SettingsSectionAbout:
 			numberOfRows = 1;
 			break;
@@ -225,12 +246,6 @@ enum : NSUInteger {
             }
             break;
             
-		case SettingsSectionReset:
-            cell.position = MPTableViewCellPositionSingle;
-            cell.accessoryType = UITableViewCellAccessoryNone;
-			cell.textLabel.text = MPString(@"Reset settings");
-			break;
-			
 		case SettingsSectionAbout:
             cell.position = MPTableViewCellPositionSingle;
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -247,7 +262,7 @@ enum : NSUInteger {
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// editing rows is not enabled
+	// Editing rows is not enabled.
     return NO;
 }
 
@@ -255,7 +270,7 @@ enum : NSUInteger {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// perform cell action
+	// Perform cell action.
 	switch (indexPath.section) {
         case SettingsSectionLastCigarette:
         {
@@ -297,25 +312,13 @@ enum : NSUInteger {
             }
             break;
             
-		case SettingsSectionReset:
-		{
-			// show action sheet to ask confirmation before deleting preferences
-			UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
-                                                                    delegate:self
-                                                           cancelButtonTitle:MPString(@"Cancel")
-                                                      destructiveButtonTitle:MPString(@"Delete")
-                                                           otherButtonTitles:nil];
-			[resetSheet showFromTabBar:self.tabBarController.tabBar];
-			break;
-		}
-						
 		case SettingsSectionAbout:
 			[self.navigationController pushViewController:[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped]
 												 animated:YES];
 			break;			
 	}
 	
-	// deselect row
+	// Deselect row.
 	[tableView deselectRowAtIndexPath:indexPath
 							 animated:YES];
 }

@@ -132,6 +132,8 @@
 		56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */; };
 		56B42BD01606772500BCF224 /* BackgroundPattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */; };
 		56B42BD21606776400BCF224 /* BackgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BD11606776400BCF224 /* BackgroundPattern.png */; };
+		56D9D8DF1618F80400B88F8E /* ButtonResetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D9D8DD1618F80300B88F8E /* ButtonResetNormal.png */; };
+		56D9D8E01618F80400B88F8E /* ButtonResetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D9D8DE1618F80400B88F8E /* ButtonResetNormal@2x.png */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
 		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
 /* End PBXBuildFile section */
@@ -309,6 +311,8 @@
 		56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundPattern@2x.png"; sourceTree = "<group>"; };
 		56B42BD11606776400BCF224 /* BackgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundPattern.png; sourceTree = "<group>"; };
+		56D9D8DD1618F80300B88F8E /* ButtonResetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonResetNormal.png; sourceTree = "<group>"; };
+		56D9D8DE1618F80400B88F8E /* ButtonResetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonResetNormal@2x.png"; sourceTree = "<group>"; };
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -489,6 +493,8 @@
 		566B38B115BC17CA0026821C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				56D9D8DD1618F80300B88F8E /* ButtonResetNormal.png */,
+				56D9D8DE1618F80400B88F8E /* ButtonResetNormal@2x.png */,
 				566B37FD15BC16C20026821C /* AchievementCompleted.png */,
 				566B37FE15BC16C30026821C /* AchievementCompleted@2x.png */,
 				566B37FF15BC16C30026821C /* AchievementPending0.png */,
@@ -768,6 +774,8 @@
 				56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */,
 				56AF92B8161100350021DAE2 /* PacketSizeViewController.xib in Resources */,
 				56AF92BD161107740021DAE2 /* PacketPriceViewController.xib in Resources */,
+				56D9D8DF1618F80400B88F8E /* ButtonResetNormal.png in Resources */,
+				56D9D8E01618F80400B88F8E /* ButtonResetNormal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
