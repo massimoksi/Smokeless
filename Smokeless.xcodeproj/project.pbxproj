@@ -63,8 +63,6 @@
 		566B386A15BC16C80026821C /* AchievementWaiting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381015BC16C40026821C /* AchievementWaiting@2x.png */; };
 		566B386B15BC16C80026821C /* ArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381115BC16C40026821C /* ArrowLeft.png */; };
 		566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381215BC16C40026821C /* ArrowLeft@2x.png */; };
-		566B386F15BC16C80026821C /* ButtonCalcNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381515BC16C50026821C /* ButtonCalcNormal.png */; };
-		566B387015BC16C80026821C /* ButtonCalcNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */; };
 		566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381D15BC16C50026821C /* ButtonNextNormal.png */; };
 		566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */; };
 		566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381F15BC16C50026821C /* ButtonNextPressed.png */; };
@@ -121,6 +119,8 @@
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */; };
 		5687F541160FA6AA00541449 /* LastCigaretteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */; };
+		56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */; };
+		56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */; };
 		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
 		56AF92B31610EC050021DAE2 /* HabitsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AF92B11610EC050021DAE2 /* HabitsViewController.xib */; };
 		56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B5161100340021DAE2 /* PacketSizeViewController.m */; };
@@ -235,8 +235,6 @@
 		566B381015BC16C40026821C /* AchievementWaiting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AchievementWaiting@2x.png"; sourceTree = "<group>"; };
 		566B381115BC16C40026821C /* ArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowLeft.png; sourceTree = "<group>"; };
 		566B381215BC16C40026821C /* ArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowLeft@2x.png"; sourceTree = "<group>"; };
-		566B381515BC16C50026821C /* ButtonCalcNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonCalcNormal.png; sourceTree = "<group>"; };
-		566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalcNormal@2x.png"; sourceTree = "<group>"; };
 		566B381D15BC16C50026821C /* ButtonNextNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextNormal.png; sourceTree = "<group>"; };
 		566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonNextNormal@2x.png"; sourceTree = "<group>"; };
 		566B381F15BC16C50026821C /* ButtonNextPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextPressed.png; sourceTree = "<group>"; };
@@ -296,6 +294,8 @@
 		5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastCigaretteViewController.h; sourceTree = "<group>"; };
 		5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteViewController.m; sourceTree = "<group>"; };
 		5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastCigaretteViewController.xib; sourceTree = "<group>"; };
+		56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal.png"; sourceTree = "<group>"; };
+		56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal@2x.png"; sourceTree = "<group>"; };
 		56AF92AE1610E7320021DAE2 /* MPSettingViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSettingViewDelegate.h; sourceTree = "<group>"; };
 		56AF92AF1610EC050021DAE2 /* HabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabitsViewController.h; sourceTree = "<group>"; };
 		56AF92B01610EC050021DAE2 /* HabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabitsViewController.m; sourceTree = "<group>"; };
@@ -415,15 +415,15 @@
 			children = (
 				566B372915BBFE1F0026821C /* AboutViewController.h */,
 				566B372A15BBFE1F0026821C /* AboutViewController.m */,
-				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
-				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
-				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
 				566B373415BBFE1F0026821C /* CounterViewController.h */,
 				566B373515BBFE1F0026821C /* CounterViewController.m */,
 				566B373615BBFE1F0026821C /* CreditsViewController.h */,
 				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
+				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
+				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
+				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
 				566B375715BBFE1F0026821C /* SettingsViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsViewController.m */,
 				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
@@ -493,6 +493,8 @@
 		566B38B115BC17CA0026821C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */,
+				56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */,
 				56D9D8DD1618F80300B88F8E /* ButtonResetNormal.png */,
 				56D9D8DE1618F80400B88F8E /* ButtonResetNormal@2x.png */,
 				566B37FD15BC16C20026821C /* AchievementCompleted.png */,
@@ -519,8 +521,6 @@
 				566B381215BC16C40026821C /* ArrowLeft@2x.png */,
 				56B42BD11606776400BCF224 /* BackgroundPattern.png */,
 				56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */,
-				566B381515BC16C50026821C /* ButtonCalcNormal.png */,
-				566B381615BC16C50026821C /* ButtonCalcNormal@2x.png */,
 				566B381D15BC16C50026821C /* ButtonNextNormal.png */,
 				566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */,
 				566B381F15BC16C50026821C /* ButtonNextPressed.png */,
@@ -711,8 +711,6 @@
 				566B386A15BC16C80026821C /* AchievementWaiting@2x.png in Resources */,
 				566B386B15BC16C80026821C /* ArrowLeft.png in Resources */,
 				566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */,
-				566B386F15BC16C80026821C /* ButtonCalcNormal.png in Resources */,
-				566B387015BC16C80026821C /* ButtonCalcNormal@2x.png in Resources */,
 				566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */,
 				566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */,
 				566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */,
@@ -776,6 +774,8 @@
 				56AF92BD161107740021DAE2 /* PacketPriceViewController.xib in Resources */,
 				56D9D8DF1618F80400B88F8E /* ButtonResetNormal.png in Resources */,
 				56D9D8E01618F80400B88F8E /* ButtonResetNormal@2x.png in Resources */,
+				56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */,
+				56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

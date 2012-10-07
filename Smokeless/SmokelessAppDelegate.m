@@ -8,6 +8,8 @@
 
 #import "SmokelessAppDelegate.h"
 
+#import "PacketPriceViewController.h"
+
 #import "Appirater.h"
 
 

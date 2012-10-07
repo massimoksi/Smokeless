@@ -21,6 +21,12 @@
 @property (nonatomic, weak) IBOutlet UIButton *pointButton;
 @property (nonatomic, weak) IBOutlet UIButton *cancButton;
 
+- (IBAction)cancelTapped:(id)sender;
+- (IBAction)doneTapped:(id)sender;
+- (IBAction)digitTapped:(id)sender;
+- (IBAction)cancTapped:(id)sender;
+- (IBAction)pointTapped:(id)sender;
+
 @end
 
 
@@ -46,6 +52,10 @@
 	self.pointButton.enabled = YES;
     
     // Set the price label.
+    self.priceLabel.font = [UIFont systemFontOfSize:24.0];
+    self.priceLabel.textColor = [UIColor colorWithWhite:0.280 alpha:1.000];
+    self.priceLabel.shadowColor = [UIColor colorWithWhite:0.850 alpha:1.000];
+    self.priceLabel.shadowOffset = CGSizeMake(0.0, 1.0);
     self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue])
                                                             numberStyle:NSNumberFormatterCurrencyStyle];
 }
