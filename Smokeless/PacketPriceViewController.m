@@ -52,9 +52,11 @@
 	self.pointButton.enabled = YES;
     
     // Set the price label.
-    self.priceLabel.font = [UIFont systemFontOfSize:24.0];
-    self.priceLabel.textColor = [UIColor colorWithWhite:0.280 alpha:1.000];
-    self.priceLabel.shadowColor = [UIColor colorWithWhite:0.850 alpha:1.000];
+    self.priceLabel.font = [UIFont systemFontOfSize:25.0];
+    self.priceLabel.textColor = [UIColor colorWithWhite:0.280
+                                                  alpha:1.000];
+    self.priceLabel.shadowColor = [UIColor colorWithWhite:0.850
+                                                    alpha:1.000];
     self.priceLabel.shadowOffset = CGSizeMake(0.0, 1.0);
     self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue])
                                                             numberStyle:NSNumberFormatterCurrencyStyle];

@@ -119,6 +119,8 @@
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */; };
 		5687F541160FA6AA00541449 /* LastCigaretteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */; };
+		569EA0C21624B0FC002EF4F8 /* PriceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C01624B0FC002EF4F8 /* PriceTag.png */; };
+		569EA0C31624B0FC002EF4F8 /* PriceTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */; };
 		56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */; };
 		56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */; };
 		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
@@ -294,6 +296,8 @@
 		5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastCigaretteViewController.h; sourceTree = "<group>"; };
 		5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteViewController.m; sourceTree = "<group>"; };
 		5687F53F160FA6AA00541449 /* LastCigaretteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastCigaretteViewController.xib; sourceTree = "<group>"; };
+		569EA0C01624B0FC002EF4F8 /* PriceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriceTag.png; sourceTree = "<group>"; };
+		569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PriceTag@2x.png"; sourceTree = "<group>"; };
 		56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal.png"; sourceTree = "<group>"; };
 		56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal@2x.png"; sourceTree = "<group>"; };
 		56AF92AE1610E7320021DAE2 /* MPSettingViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSettingViewDelegate.h; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 		566B38B115BC17CA0026821C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				569EA0C01624B0FC002EF4F8 /* PriceTag.png */,
+				569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */,
 				56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */,
 				56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */,
 				56D9D8DD1618F80300B88F8E /* ButtonResetNormal.png */,
@@ -776,6 +782,8 @@
 				56D9D8E01618F80400B88F8E /* ButtonResetNormal@2x.png in Resources */,
 				56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */,
 				56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */,
+				569EA0C21624B0FC002EF4F8 /* PriceTag.png in Resources */,
+				569EA0C31624B0FC002EF4F8 /* PriceTag@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
