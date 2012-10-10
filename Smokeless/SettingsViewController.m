@@ -199,7 +199,7 @@ enum : NSUInteger {
 	switch (indexPath.section) {
         case SettingsSectionLastCigarette:
             cell.position = MPTableViewCellPositionSingle;
-            cell.textLabel.text = MPString(@"Last cigarette");  // TODO: localize string.
+            cell.textLabel.text = MPString(@"Last cigarette");
             cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
             break;
             
