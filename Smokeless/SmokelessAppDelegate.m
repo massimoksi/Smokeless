@@ -92,8 +92,13 @@
     [self.window makeKeyAndVisible];
 
     // Create a splash view.
-    self.splashView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
-    self.splashView.image = [UIImage imageNamed:@"Default"];
+    self.splashView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+        self.splashView.image = [UIImage imageNamed:@"Default-568h"];
+    }
+    else {
+        self.splashView.image = [UIImage imageNamed:@"Default"];
+    }
     
     // Position splash view on top of everything.
     [self.window addSubview:self.splashView];
@@ -102,9 +107,9 @@
     // Animate the splash view away.
     [UIView animateWithDuration:1.0
                      animations:^{
-                         // zoom out
+                         // Zoom out.
                          self.splashView.frame = CGRectMake(-60.0, -85.0, 440.0, 635.0);
-                         // fade out
+                         // Fade out.
                          self.splashView.alpha = 0.0;
                      }
                      completion:^(BOOL finished){
