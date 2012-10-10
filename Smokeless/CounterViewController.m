@@ -17,11 +17,11 @@
 
 @interface CounterViewController ()
 
-@property (nonatomic, strong) UIView *containerView;
+@property (strong, nonatomic) UIView *containerView;
 
-@property (nonatomic, strong) ChalkboardView *chalkboard;
-@property (nonatomic, strong) CalendarView *calendar;
-@property (nonatomic, strong) NoteView *note;
+@property (strong, nonatomic) ChalkboardView *chalkboard;
+@property (strong, nonatomic) CalendarView *calendar;
+@property (strong, nonatomic) NoteView *note;
 
 - (void)displayView:(id)aView;
 - (void)updateViews;
@@ -62,19 +62,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	// create the container view
+	   
+	// Create the container view.
 	self.containerView = [[UIView alloc] initWithFrame:self.view.bounds];
-	self.containerView.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:self.containerView];
-		
-	// create counter view
+    
+	// Create the chalkboard view.
 	self.chalkboard = [[ChalkboardView alloc] init];
-	
-	// create calendar view
-	self.calendar = [[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]];
-
-	// set actions
+    self.chalkboard.center = CGPointMake(self.view.center.x,
+                                         self.view.center.y - self.tabBarController.tabBar.frame.size.height);
     if ([TWTweetComposeViewController canSendTweet] == YES) {
         [self.chalkboard.tweetButton addTarget:self
                                         action:@selector(tweetTapped:)
@@ -83,6 +79,11 @@
 	[self.chalkboard.nextButton addTarget:self
 								   action:@selector(nextTapped:)
 						 forControlEvents:UIControlEventTouchUpInside];
+	
+	// Create the calendar view.
+	self.calendar = [[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]];
+    self.calendar.center = CGPointMake(self.view.center.x,
+                                       self.view.center.y - self.tabBarController.tabBar.frame.size.height);
 	[self.calendar.prevButton addTarget:self
 								 action:@selector(prevTapped:)
 					   forControlEvents:UIControlEventTouchUpInside];
