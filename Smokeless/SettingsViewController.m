@@ -62,12 +62,12 @@ enum : NSUInteger {
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 55.0)];
     UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
     resetButton.frame = CGRectMake(0.0, 0.0, 320.0, 45.0);
-    [resetButton setBackgroundImage:[UIImage imageNamed:@"ButtonResetNormal"]
+    [resetButton setBackgroundImage:[UIImage imageNamed:@"ButtonReset-normal"]
                            forState:UIControlStateNormal];
     resetButton.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
     resetButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
-    [resetButton setTitleShadowColor:[UIColor colorWithWhite:0.000
-                                                       alpha:1.000]
+    [resetButton setTitleShadowColor:[UIColor colorWithWhite:0.200
+                                                       alpha:0.750]
                             forState:UIControlStateNormal];
     [resetButton setTitle:MPString(@"Reset settings")
                  forState:UIControlStateNormal];
