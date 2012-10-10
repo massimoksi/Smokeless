@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MPSettingViewDelegate.h"
+#import "MPSettingViewControllerDelegate.h"
 
 
 @interface HabitsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic) id <MPSettingViewDelegate> delegate;    // TODO: check if it needs to be set to nil.
+@property (weak, nonatomic) id <MPSettingViewControllerDelegate> delegate;    // TODO: check if it needs to be set to nil.
 
 @end

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MPSettingViewDelegate.h"
+#import "MPSettingViewControllerDelegate.h"
 
 
 @interface LastCigaretteViewController : UIViewController
 
-@property (weak, nonatomic) id <MPSettingViewDelegate> delegate;
+@property (weak, nonatomic) id <MPSettingViewControllerDelegate> delegate;
 
 @end

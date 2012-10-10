@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MPSettingViewDelegate.h"
+#import "MPSettingViewControllerDelegate.h"
 
 
-@interface SettingsViewController : UITableViewController <UIActionSheetDelegate, MPSettingViewDelegate>
+@interface SettingsViewController : UITableViewController <UIActionSheetDelegate, MPSettingViewControllerDelegate>
 
 @end

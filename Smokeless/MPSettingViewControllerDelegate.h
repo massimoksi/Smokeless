@@ -1,5 +1,5 @@
 //
-//  MPSettingViewDelegate.h
+//  MPSettingViewControllerDelegate.h
 //  Smokeless
 //
 //  Created by Massimo Peri on 24/09/12.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol MPSettingViewDelegate <NSObject>  // TODO: rename into MPSettingViewControllerDelegate
+@protocol MPSettingViewControllerDelegate <NSObject> 
 
 - (void)viewControllerDidClose;
 
