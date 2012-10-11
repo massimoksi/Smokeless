@@ -18,6 +18,8 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *priceLabel;
 
+@property (nonatomic, weak) IBOutlet UIView *keypadView;
+
 @property (nonatomic, weak) IBOutlet UIButton *pointButton;
 @property (nonatomic, weak) IBOutlet UIButton *cancButton;
 
@@ -62,10 +64,20 @@
                                                             numberStyle:NSNumberFormatterCurrencyStyle];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Align keypad to the bottom of the view.
+    CGRect keypadFrame = self.keypadView.frame;
+    keypadFrame.origin.y = self.view.frame.size.height - keypadFrame.size.height + 19.0f;
+    self.keypadView.frame = keypadFrame;    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 
+    self.keypadView = nil;
+    
     self.priceLabel = nil;
     
     self.pointButton = nil;

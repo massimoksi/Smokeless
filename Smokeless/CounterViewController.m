@@ -84,17 +84,8 @@
     
 	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
 		// Show the calendar.
-		[self displayView:self.calendar];		
-	}
-	else {		
-		// Show the chalkboard.
-		[self displayView:self.chalkboard];
-	}
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-	if ([[PreferencesManager sharedManager] lastCigaretteDate]  == nil) {
+		[self displayView:self.calendar];
+        
         // Create the note view.
         if (self.noteView == nil) {
             self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
@@ -106,14 +97,17 @@
         
         // Show the note view.
 		[self.view addSubview:self.noteView];
-    }
-    else {
+	}
+	else {		
+		// Show the chalkboard.
+		[self displayView:self.chalkboard];
+        
         // Remove the note view if present.
         if (self.noteView != nil) {
             [self.noteView removeFromSuperview];
             self.noteView = nil;
         }
-    }
+	}
 }
 
 - (void)didReceiveMemoryWarning

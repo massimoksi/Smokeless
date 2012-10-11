@@ -60,7 +60,7 @@
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
