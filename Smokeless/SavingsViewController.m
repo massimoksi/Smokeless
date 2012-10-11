@@ -9,7 +9,6 @@
 #import "SavingsViewController.h"
 
 #import "PreferencesManager.h"
-#import "savingsSettingsController.h"
 
 #import "DisplayView.h"
 
@@ -21,15 +20,13 @@
 
 @property (nonatomic, strong) UIImageView *savingsView;
 @property (nonatomic, strong) DisplayView *displayView;
+@property (nonatomic, strong) UIImageView *noteView;
 
 @property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 
 @property (nonatomic, assign) BOOL shakeEnabled;
 @property (nonatomic, assign) CGFloat totalSavings;
 @property (nonatomic, assign) NSUInteger totalPackets;
-
-- (void)toolsTapped:(id)sender;
-- (void)doneTapped:(id)sender;
 
 @end
 
@@ -38,37 +35,22 @@
 
 - (void)loadView
 {
-	// create view
+    // Create the view.
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	
-	// set background
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];	
+	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
 
-	// create the savings view
+	// Create the savings view and center it inside the superview.
 	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
-	
-    // create display
-    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0, 331.0)];
-	
-	// create the edit button
-	UIButton *toolsButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	toolsButton.frame = CGRectMake(254.0, 316.0, 60.0, 60.0);
-	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsNormal"]
-				 forState:UIControlStateNormal];
-	[toolsButton setImage:[UIImage imageNamed:@"ButtonToolsPressed"]
-				 forState:UIControlStateHighlighted];
-	
-	// add actions
-	[toolsButton addTarget:self
-					action:@selector(toolsTapped:)
-		  forControlEvents:UIControlEventTouchUpInside];
-	
-	// create view hierarchy
+    self.savingsView.center = CGPointMake(self.view.center.x,
+                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
 	[self.view addSubview:self.savingsView];
+	
+    // Create the display view.
+    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
+                                                                       self.savingsView.center.y + 113.0)];
     [self.view addSubview:self.displayView];
-	[self.view addSubview:toolsButton];
-    
-    // setup accelerometer
+	
+    // Setup the accelerometer.
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
 }
@@ -78,50 +60,66 @@
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    // become first responder, necessary to react to shake gestures
+    // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
-    
-    // get prefs
+
     PreferencesManager *prefsManager = [PreferencesManager sharedManager];
     
-    // set ivars
+    // Set properties.
     self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
     self.totalSavings = [prefsManager totalSavings];
     self.totalPackets = [prefsManager totalPackets];
     
-    // create number formatter
+    // Create the number formatter.
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
     
-    // set unit
+    // Set unit.
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     self.displayView.moneyUnit.text = [formatter currencySymbol];
 
-    // set formatter for the amount label
+    // Set formatter for the amount label
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMinimumFractionDigits:2];
     [formatter setMaximumFractionDigits:2];
     
-    // get preferences
+    // Retrieve preferences.
 	NSDictionary *habits = (prefsManager.prefs)[HABITS_KEY];
 	NSNumber *price	= (prefsManager.prefs)[PACKET_PRICE_KEY];
 	NSNumber *size = (prefsManager.prefs)[PACKET_SIZE_KEY];
 
-    // set amount display labels
+    // Set display labels.
 	if (habits && price && size) {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
+        
+        // Remove the note view if present.
+        if (self.noteView != nil) {
+            [self.noteView removeFromSuperview];
+            self.noteView = nil;
+        }
 	}
     else {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@0.0f];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
+        
+        // Create the note view.
+        if (self.noteView == nil) {
+            self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
+            CGRect frame = self.noteView.frame;
+            frame.origin.x = self.view.frame.size.width - self.noteView.frame.size.width - 5.0f;
+            frame.origin.y = self.view.frame.size.height - self.noteView.frame.size.height - 5.0f;
+            self.noteView.frame = frame;
+            [self.view addSubview:self.noteView];
+        }
+
     }
     [self.displayView setState:DisplayStateMoney
                  withAnimation:NO];
     
-    // create tinkle player
+    // Create the tinkle player.
     if (!self.tinklePlayer) {
         self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
                                                                                                                                 ofType:@"m4a"]]
@@ -135,54 +133,19 @@
 	
     self.savingsView = nil;
     self.displayView = nil;
-}
-
-#pragma mark Actions
-
--(void)toolsTapped:(id)sender
-{
-	// create habits view controller
-	SavingsSettingsController *savingsSettingsController = [[SavingsSettingsController alloc] init];
-	
-	// create navigation controller
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:savingsSettingsController];
-	navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
-	navigationController.navigationBar.topItem.title = MPString(@"Savings");
-	
-	// create bar button item
-	UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:MPString(@"Done")
-																 style:UIBarButtonItemStylePlain
-																target:self
-																action:@selector(doneTapped:)];
-	navigationController.navigationBar.topItem.leftBarButtonItem = doneItem;
-
-	// present savings settings view controller modally
-	[self presentModalViewController:navigationController
-							animated:YES];
-}
-
-- (void)doneTapped:(id)sender
-{
-	// dismiss savings settings view controller
-	[self dismissModalViewControllerAnimated:YES];
+    self.noteView = nil;
 }
 
 #pragma - Accelerometer delegate
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    if ((self.shakeEnabled == YES) &&
-        (self.totalSavings > 0.0)) {
+    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
         if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
             if (self.tinklePlayer.playing == NO) {
                 [self.tinklePlayer play];
             }
         }
-//        else {
-//            if (self.tinklePlayer.playing == YES) {
-//                [self.tinklePlayer pause];
-//            }
-//        }
     }
 }
 

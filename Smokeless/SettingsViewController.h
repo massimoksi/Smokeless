@@ -8,16 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-
-enum {
-    SettingsSectionGeneral = 0,
-	SettingsSectionReset,
-	SettingsSectionAbout,
-	
-	SettingsNoOfSections
-};
+#import "MPSettingViewControllerDelegate.h"
 
 
-@interface SettingsViewController : UITableViewController <UIActionSheetDelegate>
+@interface SettingsViewController : UITableViewController <UIActionSheetDelegate, MPSettingViewControllerDelegate>
 
 @end

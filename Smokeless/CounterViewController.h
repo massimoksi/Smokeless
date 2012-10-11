@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LastCigaretteController.h"
 
-
-@interface CounterViewController : UIViewController <UnderlayViewDelegate>
+@interface CounterViewController : UIViewController
 
 @end

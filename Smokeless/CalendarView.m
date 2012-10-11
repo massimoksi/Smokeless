@@ -61,6 +61,7 @@
 		self.yearLabel.shadowColor = [UIColor colorWithWhite:0.250
                                                        alpha:1.000];
         self.yearLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+		[self addSubview:self.yearLabel];
 		
 		// create month label
 		self.monthLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
@@ -75,6 +76,7 @@
         self.monthLabel.shadowColor = [UIColor colorWithWhite:1.000
                                                         alpha:1.000];
         self.monthLabel.shadowOffset = CGSizeMake(0.0, 1.0);
+		[self addSubview:self.monthLabel];
 		
 		// create day label
 		self.dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X,
@@ -89,22 +91,7 @@
         self.dayLabel.shadowColor = [UIColor colorWithWhite:1.000
                                                       alpha:1.000];
         self.dayLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-		
-		// add labels
-		[self addSubview:self.yearLabel];
-		[self addSubview:self.monthLabel];
 		[self addSubview:self.dayLabel];
-		
-		// create edit button
-		self.editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		self.editButton.frame = CGRectMake(BOARD_ORIGIN_X - BUTTON_OFFSET_X,
-                                           BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
-                                           BUTTON_WIDTH,
-                                           BUTTON_HEIGHT);
-		[self.editButton setImage:[UIImage imageNamed:@"ButtonEditNormal"]
-                         forState:UIControlStateNormal];
-		[self.editButton setImage:[UIImage imageNamed:@"ButtonEditPressed"]
-                         forState:UIControlStateHighlighted];
 		
 		// create prev button
 		self.prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -116,9 +103,6 @@
                          forState:UIControlStateNormal];
 		[self.prevButton setImage:[UIImage imageNamed:@"ButtonPrevPressed"]
                          forState:UIControlStateHighlighted];
-		
-		// add buttons
-		[self addSubview:self.editButton];
 		[self addSubview:self.prevButton];
 		
 		// init ivars
@@ -142,9 +126,7 @@
 			
 	if (_date != nil) {
 		// retrieve date components
-		NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit |
-                                                                      NSMonthCalendarUnit |
-                                                                      NSDayCalendarUnit)
+		NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit)
                                                             fromDate:_date];
 		NSInteger year = [components year];
 		NSInteger month = [components month];
@@ -165,9 +147,7 @@
 	}
 	else {
 		// retrieve date components
-		NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit |
-                                                                      NSMonthCalendarUnit |
-                                                                      NSDayCalendarUnit)
+		NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit)
                                                             fromDate:[NSDate date]];
 		NSInteger year = [components year];
 		NSInteger month = [components month];

@@ -9,16 +9,27 @@
 #import "SettingsViewController.h"
 
 #import "PreferencesManager.h"
+#import "LastCigaretteViewController.h"
+#import "HabitsViewController.h"
+#import "PacketSizeViewController.h"
+#import "PacketPriceViewController.h"
 #import "AboutViewController.h"
+
+
+enum : NSUInteger {
+    SettingsSectionLastCigarette = 0,
+    SettingsSectionHabits,
+    SettingsSectionGeneral,
+	SettingsSectionAbout,
+	
+	SettingsNoOfSections
+};
 
 
 @interface SettingsViewController ()
 
 @property (nonatomic, strong) UISwitch *shakeSwitch;
 @property (nonatomic, strong) UISwitch *notificationSwitch;
-
-- (void)shakeEnabled:(id)sender;
-- (void)notificationEnabled:(id)sender;
 
 @end
 
@@ -29,28 +40,47 @@
 {
 	[super viewDidLoad];
 	
-	// set background
-	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background"]];
+	// Set background.
+	self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
 	self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    // create shake switch
+    // Create the shake switch.
     self.shakeSwitch = [[UISwitch alloc] init];
     [self.shakeSwitch addTarget:self
                          action:@selector(shakeEnabled:)
                forControlEvents:UIControlEventValueChanged];
     
-    // create notification switch
+    // Create the notification switch.
     self.notificationSwitch = [[UISwitch alloc] init];
     [self.notificationSwitch addTarget:self
                                 action:@selector(notificationEnabled:)
                       forControlEvents:UIControlEventValueChanged];
+    
+    // Create the reset button.
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 55.0)];
+    UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    resetButton.frame = CGRectMake(0.0, 0.0, 320.0, 45.0);
+    [resetButton setBackgroundImage:[UIImage imageNamed:@"ButtonReset-normal"]
+                           forState:UIControlStateNormal];
+    resetButton.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    resetButton.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+    [resetButton setTitleShadowColor:[UIColor colorWithWhite:0.200
+                                                       alpha:0.750]
+                            forState:UIControlStateNormal];
+    [resetButton setTitle:MPString(@"Reset settings")
+                 forState:UIControlStateNormal];
+    [resetButton addTarget:self
+                    action:@selector(resetTapped:)
+          forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:resetButton];
+    self.tableView.tableFooterView = footerView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {	
-	// update table
+	// Update the table view.
 	[self.tableView reloadData];
     
 	[super viewWillAppear:animated];
@@ -68,22 +98,29 @@
 
 - (void)shakeEnabled:(id)sender
 {
-    // set preference
+    // Set preference.
     ([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] = @([self.shakeSwitch isOn]);
-    
-    // save preferences
+    // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
 }
 
 - (void)notificationEnabled:(id)sender
 {
-    BOOL notificationsEnabled = [self.notificationSwitch isOn];
-    
-    // set preference
-    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @(notificationsEnabled);
-    
-    // save preferences
+    // Set preference.
+    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @([self.notificationSwitch isOn]);
+    // Save preferences.
     [[PreferencesManager sharedManager] savePrefs];
+}
+
+- (void)resetTapped:(id)sender
+{
+    // Show action sheet to ask confirmation before deleting preferences.
+    UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
+                                                            delegate:self
+                                                   cancelButtonTitle:MPString(@"Cancel")
+                                              destructiveButtonTitle:MPString(@"Delete")
+                                                   otherButtonTitles:nil];
+    [resetSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 #pragma mark - Table view data source
@@ -97,16 +134,20 @@
 {
 	NSInteger numberOfRows = 0;
 	
-	// set title for the sections
+	// Set titles for the sections.
 	switch (section) {
+        case SettingsSectionLastCigarette:
+            numberOfRows = 1;
+            break;
+            
+        case SettingsSectionHabits:
+            numberOfRows = 3;
+            break;
+            
         case SettingsSectionGeneral:
             numberOfRows = 2;
             break;
             
-		case SettingsSectionReset:
-			numberOfRows = 1;
-			break;
-			
 		case SettingsSectionAbout:
 			numberOfRows = 1;
 			break;
@@ -124,7 +165,7 @@
 		cell = [[MPTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:CellIdentifier];
 		
-		// customize cells appearence
+		// Customize cells appearence.
         cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
 		cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.textLabel.textColor = [UIColor colorWithWhite:0.710
@@ -153,9 +194,37 @@
         cell.selectedBackgroundView.borderColor = [UIColor colorWithWhite:0.710
                                                                     alpha:0.750];
 	}
-		
-	// set cells content
+
+	// Set cells content.
 	switch (indexPath.section) {
+        case SettingsSectionLastCigarette:
+            cell.position = MPTableViewCellPositionSingle;
+            cell.textLabel.text = MPString(@"Last cigarette");
+            cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
+            break;
+            
+        case SettingsSectionHabits:
+            switch (indexPath.row) {
+                case 0:
+                    cell.position = MPTableViewCellPositionTop;
+                    cell.textLabel.text = MPString(@"Habits");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] smokingHabits]; // TODO: shorten string.
+                    break;
+                    
+                case 1:
+                    cell.position = MPTableViewCellPositionMiddle;
+                    cell.textLabel.text = MPString(@"Packet size");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetSize];
+                    break;
+                    
+                case 2:
+                    cell.position = MPTableViewCellPositionBottom;
+                    cell.textLabel.text = MPString(@"Packet price");
+                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetPrice];
+                    break;
+            }
+            break;
+            
         case SettingsSectionGeneral:
             switch (indexPath.row) {
                 case 0:
@@ -164,8 +233,7 @@
                     cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
-                    // update switch
-                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];            
+                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];
                     break;
                     
                 case 1:
@@ -173,18 +241,11 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
-                    // update switch
                     self.notificationSwitch.on = [([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue];
                     break;
             }
             break;
             
-		case SettingsSectionReset:
-            cell.position = MPTableViewCellPositionSingle;
-            cell.accessoryType = UITableViewCellAccessoryNone;
-			cell.textLabel.text = MPString(@"Reset settings");
-			break;
-			
 		case SettingsSectionAbout:
             cell.position = MPTableViewCellPositionSingle;
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -201,7 +262,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// editing rows is not enabled
+	// Editing rows is not enabled.
     return NO;
 }
 
@@ -209,27 +270,55 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// perform cell action
+	// Perform cell action.
 	switch (indexPath.section) {
-		case SettingsSectionReset:
-		{
-			// show action sheet to ask confirmation before deleting preferences
-			UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
-                                                                    delegate:self
-                                                           cancelButtonTitle:MPString(@"Cancel")
-                                                      destructiveButtonTitle:MPString(@"Delete")
-                                                           otherButtonTitles:nil];
-			[resetSheet showFromTabBar:self.tabBarController.tabBar];
-			break;
-		}
-						
+        case SettingsSectionLastCigarette:
+        {
+            LastCigaretteViewController *lastCigaretteController = [[LastCigaretteViewController alloc] init];
+            lastCigaretteController.delegate = self;
+            [self presentModalViewController:lastCigaretteController
+                                    animated:YES];
+            break;
+        }
+            
+        case SettingsSectionHabits:
+            switch (indexPath.row) {
+                case 0:
+                {
+                    HabitsViewController *habitsController = [[HabitsViewController alloc] init];
+                    habitsController.delegate = self;
+                    [self presentModalViewController:habitsController
+                                            animated:YES];
+                    break;
+                }
+                    
+                case 1:
+                {
+                    PacketSizeViewController *packetSizeController = [[PacketSizeViewController alloc] init];
+                    packetSizeController.delegate = self;
+                    [self presentModalViewController:packetSizeController
+                                            animated:YES];
+                    break;
+                }
+                    
+                case 2:
+                {
+                    PacketPriceViewController *packetPriceController = [[PacketPriceViewController alloc] init];
+                    packetPriceController.delegate = self;
+                    [self presentModalViewController:packetPriceController
+                                            animated:YES];
+                    break;
+                }
+            }
+            break;
+            
 		case SettingsSectionAbout:
 			[self.navigationController pushViewController:[[AboutViewController alloc] initWithStyle:UITableViewStyleGrouped]
 												 animated:YES];
 			break;			
 	}
 	
-	// deselect row
+	// Deselect row.
 	[tableView deselectRowAtIndexPath:indexPath
 							 animated:YES];
 }
@@ -242,15 +331,26 @@
 		case 0:
 			[[PreferencesManager sharedManager] deletePrefs];
             
-			// reload data on table view
+			// Reload data on the table view.
 			[self.tableView reloadData];
 			break;
 			
 		case 1:
-			// do nothing
+			// Do nothing.
 			[self.tableView reloadData];
 			break;
 	}
+}
+
+#pragma mark - Setting view delegate
+
+- (void)viewControllerDidClose
+{
+    // Close modal view.
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 [self.tableView reloadData];
+                             }];
 }
 
 @end

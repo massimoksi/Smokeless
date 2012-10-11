@@ -1,0 +1,14 @@
+//
+//  Release.xcconfig
+//  Smokeless
+//
+//  Created by Massimo Peri on 18/08/12.
+//  Copyright (c) 2012 Massimo Peri. All rights reserved.
+//
+
+
+BUNDLE_IDENTIFIER = com.gmail.massimoperi.Smokeless
+
+GCC_THUMB_SUPPORT = NO
+
+COMPRESS_PNG_FILES = NO
