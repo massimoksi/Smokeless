@@ -29,7 +29,6 @@
 		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
 		566B377315BBFE1F0026821C /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374715BBFE1F0026821C /* MPGraphics.m */; };
 		566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374915BBFE1F0026821C /* MPTableViewCell.m */; };
-		566B377515BBFE1F0026821C /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374C15BBFE1F0026821C /* NoteView.m */; };
 		566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374E15BBFE1F0026821C /* PreferencesManager.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
@@ -61,8 +60,6 @@
 		566B386815BC16C80026821C /* AchievementPending7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B380E15BC16C40026821C /* AchievementPending7@2x.png */; };
 		566B386915BC16C80026821C /* AchievementWaiting.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B380F15BC16C40026821C /* AchievementWaiting.png */; };
 		566B386A15BC16C80026821C /* AchievementWaiting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381015BC16C40026821C /* AchievementWaiting@2x.png */; };
-		566B386B15BC16C80026821C /* ArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381115BC16C40026821C /* ArrowLeft.png */; };
-		566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381215BC16C40026821C /* ArrowLeft@2x.png */; };
 		566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381D15BC16C50026821C /* ButtonNextNormal.png */; };
 		566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */; };
 		566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B381F15BC16C50026821C /* ButtonNextPressed.png */; };
@@ -181,8 +178,6 @@
 		566B374815BBFE1F0026821C /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
 		566B374915BBFE1F0026821C /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 		566B374A15BBFE1F0026821C /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
-		566B374B15BBFE1F0026821C /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
-		566B374C15BBFE1F0026821C /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		566B374D15BBFE1F0026821C /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
 		566B374E15BBFE1F0026821C /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
@@ -237,8 +232,6 @@
 		566B380E15BC16C40026821C /* AchievementPending7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AchievementPending7@2x.png"; sourceTree = "<group>"; };
 		566B380F15BC16C40026821C /* AchievementWaiting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AchievementWaiting.png; sourceTree = "<group>"; };
 		566B381015BC16C40026821C /* AchievementWaiting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AchievementWaiting@2x.png"; sourceTree = "<group>"; };
-		566B381115BC16C40026821C /* ArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowLeft.png; sourceTree = "<group>"; };
-		566B381215BC16C40026821C /* ArrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ArrowLeft@2x.png"; sourceTree = "<group>"; };
 		566B381D15BC16C50026821C /* ButtonNextNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextNormal.png; sourceTree = "<group>"; };
 		566B381E15BC16C50026821C /* ButtonNextNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonNextNormal@2x.png"; sourceTree = "<group>"; };
 		566B381F15BC16C50026821C /* ButtonNextPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonNextPressed.png; sourceTree = "<group>"; };
@@ -495,8 +488,6 @@
 				566B373915BBFE1F0026821C /* DisplayView.m */,
 				566B373C15BBFE1F0026821C /* HealthTableView.h */,
 				566B373D15BBFE1F0026821C /* HealthTableView.m */,
-				566B374B15BBFE1F0026821C /* NoteView.h */,
-				566B374C15BBFE1F0026821C /* NoteView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -541,8 +532,6 @@
 				566B380E15BC16C40026821C /* AchievementPending7@2x.png */,
 				566B380F15BC16C40026821C /* AchievementWaiting.png */,
 				566B381015BC16C40026821C /* AchievementWaiting@2x.png */,
-				566B381115BC16C40026821C /* ArrowLeft.png */,
-				566B381215BC16C40026821C /* ArrowLeft@2x.png */,
 				56B42BD11606776400BCF224 /* BackgroundPattern.png */,
 				56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */,
 				566B381D15BC16C50026821C /* ButtonNextNormal.png */,
@@ -733,8 +722,6 @@
 				566B386815BC16C80026821C /* AchievementPending7@2x.png in Resources */,
 				566B386915BC16C80026821C /* AchievementWaiting.png in Resources */,
 				566B386A15BC16C80026821C /* AchievementWaiting@2x.png in Resources */,
-				566B386B15BC16C80026821C /* ArrowLeft.png in Resources */,
-				566B386C15BC16C80026821C /* ArrowLeft@2x.png in Resources */,
 				566B387715BC16C80026821C /* ButtonNextNormal.png in Resources */,
 				566B387815BC16C80026821C /* ButtonNextNormal@2x.png in Resources */,
 				566B387915BC16C80026821C /* ButtonNextPressed.png in Resources */,
@@ -844,7 +831,6 @@
 				566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */,
 				566B377315BBFE1F0026821C /* MPGraphics.m in Sources */,
 				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
-				566B377515BBFE1F0026821C /* NoteView.m in Sources */,
 				566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,

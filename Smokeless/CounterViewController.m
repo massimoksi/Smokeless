@@ -12,16 +12,15 @@
 
 #import "ChalkboardView.h"
 #import "CalendarView.h"
-#import "NoteView.h"
 
 
 @interface CounterViewController ()
 
 @property (strong, nonatomic) UIView *containerView;
+@property (strong, nonatomic) UIImageView *noteView;
 
 @property (strong, nonatomic) ChalkboardView *chalkboard;
 @property (strong, nonatomic) CalendarView *calendar;
-@property (strong, nonatomic) NoteView *note;
 
 @end
 
@@ -95,32 +94,26 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	if (([[PreferencesManager sharedManager] lastCigaretteDate] == nil) &&
-		(self.note == nil)) {
-		// create note
-		self.note = [[NoteView alloc] init];
-		
-		// position note
-		CGRect frame = self.note.frame;
-		frame.origin.x = 36.0;
-		frame.origin.y = 245.0;
-		self.note.frame = frame;
-		
-		// set text on note
-		self.note.message.text = MPString(@"When did you smoke your last cigarette?");
-		
-		// hide note
-		self.note.alpha = 0.0;
-		
-		// add the note to the calendar
-		[self.calendar addSubview:self.note];
-		
-		// show note
-		[UIView animateWithDuration:0.750
-						 animations:^{
-							 self.note.alpha = 1.0;
-						 }];
-	}
+	if ([[PreferencesManager sharedManager] lastCigaretteDate]  == nil) {
+        // Create the note view.
+        if (self.noteView == nil) {
+            self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
+            CGRect frame = self.noteView.frame;
+            frame.origin.x = self.view.frame.size.width - self.noteView.frame.size.width - 5.0f;
+            frame.origin.y = self.view.frame.size.height - self.noteView.frame.size.height - 5.0f;
+            self.noteView.frame = frame;
+        }
+        
+        // Show the note view.
+		[self.view addSubview:self.noteView];
+    }
+    else {
+        // Remove the note view if present.
+        if (self.noteView != nil) {
+            [self.noteView removeFromSuperview];
+            self.noteView = nil;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,10 +121,10 @@
     [super didReceiveMemoryWarning];
 
     self.containerView = nil;
+	self.noteView = nil;
     
 	self.chalkboard = nil;
 	self.calendar = nil;
-	self.note = nil;
 }
 
 #pragma mark Actions

@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) UIImageView *savingsView;
 @property (nonatomic, strong) DisplayView *displayView;
+@property (nonatomic, strong) UIImageView *noteView;
 
 @property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 
@@ -93,10 +94,27 @@
 	if (habits && price && size) {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
+        
+        // Remove the note view if present.
+        if (self.noteView != nil) {
+            [self.noteView removeFromSuperview];
+            self.noteView = nil;
+        }
 	}
     else {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@0.0f];
         self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
+        
+        // Create the note view.
+        if (self.noteView == nil) {
+            self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
+            CGRect frame = self.noteView.frame;
+            frame.origin.x = self.view.frame.size.width - self.noteView.frame.size.width - 5.0f;
+            frame.origin.y = self.view.frame.size.height - self.noteView.frame.size.height - 5.0f;
+            self.noteView.frame = frame;
+            [self.view addSubview:self.noteView];
+        }
+
     }
     [self.displayView setState:DisplayStateMoney
                  withAnimation:NO];
@@ -115,6 +133,7 @@
 	
     self.savingsView = nil;
     self.displayView = nil;
+    self.noteView = nil;
 }
 
 #pragma - Accelerometer delegate
