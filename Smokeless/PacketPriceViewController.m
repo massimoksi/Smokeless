@@ -67,6 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // Align keypad to the bottom of the view.
+    // NOTE: Necessary to support iOS5 withoud auto-layout.
     CGRect keypadFrame = self.keypadView.frame;
     keypadFrame.origin.y = self.view.frame.size.height - keypadFrame.size.height + 19.0f;
     self.keypadView.frame = keypadFrame;    
