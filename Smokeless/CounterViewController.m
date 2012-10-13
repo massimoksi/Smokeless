@@ -182,7 +182,7 @@
                                                                    delegate:self
                                                           cancelButtonTitle:MPString(@"Cancel")
                                                      destructiveButtonTitle:nil
-                                                          otherButtonTitles:@"Twitter", @"E-mail", @"Message", nil];    // TODO: localize message.
+                                                          otherButtonTitles:@"Twitter", @"E-mail", MPString(@"Message"), nil];    // TODO: localize message.
         [activitySheet showFromTabBar:self.tabBarController.tabBar];
     }
 }
@@ -307,7 +307,6 @@
                 // Create the mail composer.
                 MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
                 mailComposer.mailComposeDelegate = self;
-                mailComposer.navigationBar.barStyle = UIBarStyleDefault; // TODO: check if it's really necessary.
                 [mailComposer setMessageBody:[NSString stringWithFormat:@"%@ %@", postText, postURL]
                                       isHTML:NO];
                 
@@ -327,7 +326,6 @@
                 // Create the message composer.
                 MFMessageComposeViewController *messageComposer = [[MFMessageComposeViewController alloc] init];
                 messageComposer.messageComposeDelegate = self;
-                messageComposer.navigationBar.barStyle = UIBarStyleDefault; // TODO: check if it's really necessary.
                 [messageComposer setBody:[NSString stringWithFormat:@"%@ %@", postText, postURL]];
                 
                 // Modally present the message composer.
