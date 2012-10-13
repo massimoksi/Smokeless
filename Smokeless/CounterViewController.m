@@ -60,11 +60,11 @@
 	self.chalkboard = [[ChalkboardView alloc] init];
     self.chalkboard.center = CGPointMake(self.view.center.x,
                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
-    if ([TWTweetComposeViewController canSendTweet] == YES) {
-        [self.chalkboard.tweetButton addTarget:self
-                                        action:@selector(shareTapped:)
-                              forControlEvents:UIControlEventTouchUpInside];
-    }
+    
+    // Set actions for the buttons.
+    [self.chalkboard.shareButton addTarget:self
+                                    action:@selector(shareTapped:)
+                          forControlEvents:UIControlEventTouchUpInside];
 	[self.chalkboard.nextButton addTarget:self
 								   action:@selector(nextTapped:)
 						 forControlEvents:UIControlEventTouchUpInside];
