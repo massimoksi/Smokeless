@@ -84,9 +84,9 @@
                                             BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
                                             BUTTON_WIDTH,
                                             BUTTON_HEIGHT);
-        [self.shareButton setImage:[UIImage imageNamed:@"ButtonTweetNormal"]
+        [self.shareButton setImage:[UIImage imageNamed:@"ButtonShare-normal"]
                           forState:UIControlStateNormal];
-        [self.shareButton setImage:[UIImage imageNamed:@"ButtonTweetPressed"]
+        [self.shareButton setImage:[UIImage imageNamed:@"ButtonShare-highlighted"]
                           forState:UIControlStateHighlighted];
         [self addSubview:self.shareButton];
         
