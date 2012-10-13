@@ -177,20 +177,13 @@
                          completion:nil];
     }
     else {
-        NSLog(@"---> Not yet implemented");
-//        if ([TWTweetComposeViewController canSendTweet] == YES) {
-//            // create the tweet sheet controller
-//            TWTweetComposeViewController *tweetController = [[TWTweetComposeViewController alloc] init];
-//            // assign the text for the tweet
-//            NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
-//            NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
-//            [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to #Smokeless."), nonSmokingInterval]];
-//            [tweetController addURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"]];
-//            
-//            // present the tweet sheet
-//            [self presentModalViewController:tweetController
-//                                    animated:YES];
-//        }
+        // Create the activity sheet.
+        UIActionSheet *activitySheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                   delegate:self
+                                                          cancelButtonTitle:MPString(@"Cancel")
+                                                     destructiveButtonTitle:nil
+                                                          otherButtonTitles:@"Twitter", @"E-mail", @"Message", nil];    // TODO: localize message.
+        [activitySheet showFromTabBar:self.tabBarController.tabBar];
     }
 }
 
@@ -278,6 +271,128 @@
                         }
                         completion:NULL];
     }
+}
+
+#pragma mark - Action sheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Collect data to be posted.
+    NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+    NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
+    NSString *postText = [NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval];
+    NSURL *postURL = [NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"];
+    
+    switch (buttonIndex) {
+        case 0:
+            if ([TWTweetComposeViewController canSendTweet]) {
+                // Create the tweet composer.
+                TWTweetComposeViewController *tweetComposer = [[TWTweetComposeViewController alloc] init];
+                [tweetComposer setInitialText:postText];
+                [tweetComposer addURL:postURL];
+                
+                // Present the tweet composer.
+                [self presentViewController:tweetComposer
+                                   animated:YES
+                                 completion:nil];
+            }
+            else {
+                // TODO: implement.
+                NSLog(@"I cannot send tweets.");
+            }
+            break;
+            
+        case 1:
+            if ([MFMailComposeViewController canSendMail]) {
+                // Create the mail composer.
+                MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+                mailComposer.mailComposeDelegate = self;
+                mailComposer.navigationBar.barStyle = UIBarStyleDefault; // TODO: check if it's really necessary.
+                [mailComposer setMessageBody:[NSString stringWithFormat:@"%@ %@", postText, postURL]
+                                      isHTML:NO];
+                
+                // Modally present the  mail composer.
+                [self presentModalViewController:mailComposer
+                                        animated:YES];
+            }
+            else {
+                // TODO: implement.
+                NSLog(@"I cannot send e-mails.");
+//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"mailto:" stringByAppendingString:MAIL_ADDRESS]]];
+            }
+            break;
+            
+        case 2:
+            if ([MFMessageComposeViewController canSendText]) {
+                // Create the message composer.
+                MFMessageComposeViewController *messageComposer = [[MFMessageComposeViewController alloc] init];
+                messageComposer.messageComposeDelegate = self;
+                messageComposer.navigationBar.barStyle = UIBarStyleDefault; // TODO: check if it's really necessary.
+                [messageComposer setBody:[NSString stringWithFormat:@"%@ %@", postText, postURL]];
+                
+                // Modally present the message composer.
+                [self presentModalViewController:messageComposer
+                                        animated:YES];
+            }
+            else {
+                // TODO: implement.
+                NSLog(@"I cannot send messages.");
+            }
+            break;
+    }
+}
+
+#pragma mark - Mail compose view controller delegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+	switch (result) {
+		case MFMailComposeResultCancelled:
+		case MFMailComposeResultSaved:
+		case MFMailComposeResultSent:
+		case MFMailComposeResultFailed:
+			break;
+			
+		default:
+		{
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:MPString(@"E-mail")
+															message:MPString(@"Sending Failed - Unknown Error")
+														   delegate:self
+												  cancelButtonTitle:@"OK"
+												  otherButtonTitles:nil];
+			[alert show];
+			break;
+		}
+	}
+	
+	// Dismiss the mail composer.
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - Message compose view controller delegate
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+        case MessageComposeResultSent:
+        case MessageComposeResultFailed:
+            break;
+            
+        default:
+		{
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:MPString(@"Message")
+															message:MPString(@"Sending Failed - Unknown Error")
+														   delegate:self
+												  cancelButtonTitle:@"OK"
+												  otherButtonTitles:nil];
+			[alert show];
+			break;
+		}
+    }
+    
+	// Dismiss the message composer.
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end
