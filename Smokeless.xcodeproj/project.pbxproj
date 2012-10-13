@@ -385,14 +385,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		566B372815BBFE1E0026821C /* Smokeless */ = {
+		5609717216295C9E00F31FF6 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				566B378415BC00050026821C /* Models */,
-				566B378515BC00130026821C /* Views */,
-				566B378215BBFFAD0026821C /* Controllers */,
-				566B378615BC00300026821C /* Delegates */,
-				566B378315BBFFF10026821C /* Singletons */,
 				566B374115BBFE1F0026821C /* MPCell.h */,
 				566B374215BBFE1F0026821C /* MPCell.m */,
 				566B374315BBFE1F0026821C /* MPDefines.h */,
@@ -404,6 +399,19 @@
 				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
 				566B374A15BBFE1F0026821C /* MPToolkit.h */,
 				56AF92AE1610E7320021DAE2 /* MPSettingViewControllerDelegate.h */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		566B372815BBFE1E0026821C /* Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				566B378415BC00050026821C /* Models */,
+				566B378515BC00130026821C /* Views */,
+				566B378215BBFFAD0026821C /* Controllers */,
+				566B378615BC00300026821C /* Delegates */,
+				566B378315BBFFF10026821C /* Singletons */,
+				5609717216295C9E00F31FF6 /* Custom */,
 				566B378115BBFE670026821C /* Supporting Files */,
 				566B38B115BC17CA0026821C /* Images */,
 				566B38B315BC18760026821C /* Misc */,

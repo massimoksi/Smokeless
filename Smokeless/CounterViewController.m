@@ -62,7 +62,7 @@
                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
     if ([TWTweetComposeViewController canSendTweet] == YES) {
         [self.chalkboard.tweetButton addTarget:self
-                                        action:@selector(tweetTapped:)
+                                        action:@selector(shareTapped:)
                               forControlEvents:UIControlEventTouchUpInside];
     }
 	[self.chalkboard.nextButton addTarget:self
@@ -157,20 +157,40 @@
 	}
 }
 
-- (void)tweetTapped:(id)sender
+- (void)shareTapped:(id)sender
 {
-    if ([TWTweetComposeViewController canSendTweet] == YES) {
-        // create the tweet sheet controller
-        TWTweetComposeViewController *tweetController = [[TWTweetComposeViewController alloc] init];
-        // assign the text for the tweet
-        NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
-        NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
-        [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to #Smokeless."), nonSmokingInterval]];
-        [tweetController addURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"]];
+    // Collect data to be posted.
+    NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+    NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
+    NSString *postText = [NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval];
+    NSURL *postURL = [NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"];
+    
+    if (NSStringFromClass([UIActivityViewController class]) != nil) {
+        // Create the activity controller.
+        UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[postText, postURL]
+                                                                                         applicationActivities:nil];
+        activityController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypePostToWeibo];
         
-        // present the tweet sheet
-        [self presentModalViewController:tweetController
-                                animated:YES];
+        // Present the activity controller.
+        [self presentViewController:activityController
+                           animated:YES
+                         completion:nil];
+    }
+    else {
+        NSLog(@"---> Not yet implemented");
+//        if ([TWTweetComposeViewController canSendTweet] == YES) {
+//            // create the tweet sheet controller
+//            TWTweetComposeViewController *tweetController = [[TWTweetComposeViewController alloc] init];
+//            // assign the text for the tweet
+//            NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+//            NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
+//            [tweetController setInitialText:[NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to #Smokeless."), nonSmokingInterval]];
+//            [tweetController addURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"]];
+//            
+//            // present the tweet sheet
+//            [self presentModalViewController:tweetController
+//                                    animated:YES];
+//        }
     }
 }
 
