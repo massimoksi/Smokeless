@@ -182,7 +182,7 @@
                                                                    delegate:self
                                                           cancelButtonTitle:MPString(@"Cancel")
                                                      destructiveButtonTitle:nil
-                                                          otherButtonTitles:@"Twitter", @"E-mail", MPString(@"Message"), nil];    // TODO: localize message.
+                                                          otherButtonTitles:@"Twitter", @"E-mail", MPString(@"Message"), nil];
         [activitySheet showFromTabBar:self.tabBarController.tabBar];
     }
 }
@@ -317,7 +317,6 @@
             else {
                 // TODO: implement.
                 NSLog(@"I cannot send e-mails.");
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"mailto:" stringByAppendingString:MAIL_ADDRESS]]];
             }
             break;
             
