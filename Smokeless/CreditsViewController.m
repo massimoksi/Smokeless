@@ -23,7 +23,7 @@
 	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 	self.view.backgroundColor = [UIColor clearColor];
 
-	// set the title
+	// Set the title.
 	self.title = MPString(@"Credits");
     
     UILabel *dndTitle = [[UILabel alloc] initWithFrame:CGRectMake(0.0,
@@ -143,7 +143,7 @@
     thanksCredit3.font = [UIFont systemFontOfSize:15.0];
     thanksCredit3.text = MPString(@"Arash Payan for Appirater");
     
-    // create view hierarchy
+    // Create the view hierarchy.
     [self.view addSubview:dndTitle];
     [self.view addSubview:dndCredit];
     [self.view addSubview:locTitle];
