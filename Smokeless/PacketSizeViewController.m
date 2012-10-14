@@ -29,10 +29,18 @@
 
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
-	// Set values from preferences to the picker view.
-	[self.sizePicker selectRow:([([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue] - 1)
-                   inComponent:0
-                      animated:NO];
+	// Set value from preferences to the picker view.
+    if (([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY]) {
+        [self.sizePicker selectRow:([([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue] - 1)
+                       inComponent:0
+                          animated:NO];
+    }
+    else {
+        // Set 20 cigarettes as default.
+        [self.sizePicker selectRow:19
+                       inComponent:0
+                          animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
