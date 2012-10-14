@@ -13,6 +13,13 @@
 #import "Appirater.h"
 
 
+#define APPIRATER_APP_ID                    @"301377083"
+#define APPIRATER_DAYS_UNTIL_PROMPT         15
+#define APPIRATER_USES_UNTIL_PROMPT         15
+#define APPIRATER_TIME_BEFORE_REMINDING		7
+
+
+
 @interface SmokelessAppDelegate ()
 
 @property (nonatomic, strong) UITabBarController *tabBarController;
@@ -118,6 +125,10 @@
                      }];
     
     // Notify Appirater.
+    [Appirater setAppId:APPIRATER_APP_ID];
+    [Appirater setDaysUntilPrompt:APPIRATER_DAYS_UNTIL_PROMPT];
+    [Appirater setUsesUntilPrompt:APPIRATER_USES_UNTIL_PROMPT];
+    [Appirater setTimeBeforeReminding:APPIRATER_TIME_BEFORE_REMINDING];
     [Appirater appLaunched:YES];
     
     return YES;
