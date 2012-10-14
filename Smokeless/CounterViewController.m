@@ -297,8 +297,12 @@
                                  completion:nil];
             }
             else {
-                // TODO: implement.
-                NSLog(@"I cannot send tweets.");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter"
+                                                                message:MPString(@"Sending Failed - Unknown Error")
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
             break;
             
@@ -315,8 +319,12 @@
                                         animated:YES];
             }
             else {
-                // TODO: implement.
-                NSLog(@"I cannot send e-mails.");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"E-mail"
+                                                                message:MPString(@"Sending Failed - Unknown Error")
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
             break;
             
@@ -332,8 +340,12 @@
                                         animated:YES];
             }
             else {
-                // TODO: implement.
-                NSLog(@"I cannot send messages.");
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:MPString(@"Message")
+                                                                message:MPString(@"Sending Failed - Unknown Error")
+                                                               delegate:self
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             }
             break;
     }
