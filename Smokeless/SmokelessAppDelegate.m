@@ -19,7 +19,6 @@
 #define APPIRATER_TIME_BEFORE_REMINDING		7
 
 
-
 @interface SmokelessAppDelegate ()
 
 @property (nonatomic, strong) UITabBarController *tabBarController;
