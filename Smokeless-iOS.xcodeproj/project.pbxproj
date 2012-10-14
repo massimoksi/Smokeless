@@ -10,6 +10,10 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		5609717716297B9300F31FF6 /* ButtonShare-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717316297B9300F31FF6 /* ButtonShare-normal.png */; };
+		5609717816297B9300F31FF6 /* ButtonShare-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717416297B9300F31FF6 /* ButtonShare-normal@2x.png */; };
+		5609717D16297DCB00F31FF6 /* ButtonShare-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */; };
+		5609717E16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */; };
 		560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */; };
 		5648488416066CD700E891E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648488316066CD700E891E6 /* Default-568h@2x.png */; };
 		56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A511390E8160087E5C4 /* CFNetwork.framework */; };
@@ -33,7 +37,6 @@
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
 		566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */; };
-		566B377F15BBFE1F0026821C /* SmokingCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */; };
 		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
 		566B37F815BC137B0026821C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566B37C915BC02430026821C /* Localizable.strings */; };
 		566B37F915BC137B0026821C /* TitleCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B37CB15BC02430026821C /* TitleCalendar.png */; };
@@ -68,10 +71,6 @@
 		566B387C15BC16C80026821C /* ButtonPrevNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */; };
 		566B387D15BC16C80026821C /* ButtonPrevPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382315BC16C60026821C /* ButtonPrevPressed.png */; };
 		566B387E15BC16C80026821C /* ButtonPrevPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */; };
-		566B388515BC16C80026821C /* ButtonTweetNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382B15BC16C60026821C /* ButtonTweetNormal.png */; };
-		566B388615BC16C80026821C /* ButtonTweetNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */; };
-		566B388715BC16C80026821C /* ButtonTweetPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382D15BC16C60026821C /* ButtonTweetPressed.png */; };
-		566B388815BC16C80026821C /* ButtonTweetPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382E15BC16C60026821C /* ButtonTweetPressed@2x.png */; };
 		566B388915BC16C80026821C /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B382F15BC16C60026821C /* Calendar.png */; };
 		566B388A15BC16C80026821C /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383015BC16C60026821C /* Calendar@2x.png */; };
 		566B388B15BC16C80026821C /* Chalkboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383115BC16C70026821C /* Chalkboard.png */; };
@@ -98,8 +97,6 @@
 		566B38A115BC16C80026821C /* Packet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384715BC16C70026821C /* Packet@2x.png */; };
 		566B38A215BC16C80026821C /* Savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384815BC16C70026821C /* Savings.png */; };
 		566B38A315BC16C80026821C /* Savings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384915BC16C70026821C /* Savings@2x.png */; };
-		566B38A415BC16C80026821C /* SmokingCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384A15BC16C80026821C /* SmokingCell.png */; };
-		566B38A515BC16C80026821C /* SmokingCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384B15BC16C80026821C /* SmokingCell@2x.png */; };
 		566B38A615BC16C80026821C /* TabIconCounter.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384C15BC16C80026821C /* TabIconCounter.png */; };
 		566B38A715BC16C80026821C /* TabIconCounter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384D15BC16C80026821C /* TabIconCounter@2x.png */; };
 		566B38A815BC16C80026821C /* TabIconHealth.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384E15BC16C80026821C /* TabIconHealth.png */; };
@@ -144,6 +141,10 @@
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5609717316297B9300F31FF6 /* ButtonShare-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal.png"; sourceTree = "<group>"; };
+		5609717416297B9300F31FF6 /* ButtonShare-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal@2x.png"; sourceTree = "<group>"; };
+		5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted.png"; sourceTree = "<group>"; };
+		5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted@2x.png"; sourceTree = "<group>"; };
 		560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5648488316066CD700E891E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		56565A511390E8160087E5C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -187,8 +188,6 @@
 		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokelessAppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmokelessAppDelegate.m; sourceTree = "<group>"; };
-		566B376015BBFE1F0026821C /* SmokingCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokingCellBackgroundView.h; sourceTree = "<group>"; };
-		566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmokingCellBackgroundView.m; sourceTree = "<group>"; };
 		566B376215BBFE1F0026821C /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		566B376315BBFE1F0026821C /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
@@ -240,10 +239,6 @@
 		566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonPrevNormal@2x.png"; sourceTree = "<group>"; };
 		566B382315BC16C60026821C /* ButtonPrevPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonPrevPressed.png; sourceTree = "<group>"; };
 		566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonPrevPressed@2x.png"; sourceTree = "<group>"; };
-		566B382B15BC16C60026821C /* ButtonTweetNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetNormal.png; sourceTree = "<group>"; };
-		566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetNormal@2x.png"; sourceTree = "<group>"; };
-		566B382D15BC16C60026821C /* ButtonTweetPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTweetPressed.png; sourceTree = "<group>"; };
-		566B382E15BC16C60026821C /* ButtonTweetPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonTweetPressed@2x.png"; sourceTree = "<group>"; };
 		566B382F15BC16C60026821C /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 		566B383015BC16C60026821C /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		566B383115BC16C70026821C /* Chalkboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chalkboard.png; sourceTree = "<group>"; };
@@ -270,8 +265,6 @@
 		566B384715BC16C70026821C /* Packet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Packet@2x.png"; sourceTree = "<group>"; };
 		566B384815BC16C70026821C /* Savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Savings.png; sourceTree = "<group>"; };
 		566B384915BC16C70026821C /* Savings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Savings@2x.png"; sourceTree = "<group>"; };
-		566B384A15BC16C80026821C /* SmokingCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmokingCell.png; sourceTree = "<group>"; };
-		566B384B15BC16C80026821C /* SmokingCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SmokingCell@2x.png"; sourceTree = "<group>"; };
 		566B384C15BC16C80026821C /* TabIconCounter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconCounter.png; sourceTree = "<group>"; };
 		566B384D15BC16C80026821C /* TabIconCounter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabIconCounter@2x.png"; sourceTree = "<group>"; };
 		566B384E15BC16C80026821C /* TabIconHealth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconHealth.png; sourceTree = "<group>"; };
@@ -385,14 +378,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		566B372815BBFE1E0026821C /* Smokeless */ = {
+		5609717216295C9E00F31FF6 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				566B378415BC00050026821C /* Models */,
-				566B378515BC00130026821C /* Views */,
-				566B378215BBFFAD0026821C /* Controllers */,
-				566B378615BC00300026821C /* Delegates */,
-				566B378315BBFFF10026821C /* Singletons */,
 				566B374115BBFE1F0026821C /* MPCell.h */,
 				566B374215BBFE1F0026821C /* MPCell.m */,
 				566B374315BBFE1F0026821C /* MPDefines.h */,
@@ -404,6 +392,19 @@
 				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
 				566B374A15BBFE1F0026821C /* MPToolkit.h */,
 				56AF92AE1610E7320021DAE2 /* MPSettingViewControllerDelegate.h */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		566B372815BBFE1E0026821C /* Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				566B378415BC00050026821C /* Models */,
+				566B378515BC00130026821C /* Views */,
+				566B378215BBFFAD0026821C /* Controllers */,
+				566B378615BC00300026821C /* Delegates */,
+				566B378315BBFFF10026821C /* Singletons */,
+				5609717216295C9E00F31FF6 /* Custom */,
 				566B378115BBFE670026821C /* Supporting Files */,
 				566B38B115BC17CA0026821C /* Images */,
 				566B38B315BC18760026821C /* Misc */,
@@ -426,12 +427,8 @@
 		566B378215BBFFAD0026821C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				566B372915BBFE1F0026821C /* AboutViewController.h */,
-				566B372A15BBFE1F0026821C /* AboutViewController.m */,
 				566B373415BBFE1F0026821C /* CounterViewController.h */,
 				566B373515BBFE1F0026821C /* CounterViewController.m */,
-				566B373615BBFE1F0026821C /* CreditsViewController.h */,
-				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
 				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
@@ -451,6 +448,10 @@
 				56AF92B9161107730021DAE2 /* PacketPriceViewController.h */,
 				56AF92BA161107740021DAE2 /* PacketPriceViewController.m */,
 				569EA0DA16262FFE002EF4F8 /* PacketPriceViewController.xib */,
+				566B372915BBFE1F0026821C /* AboutViewController.h */,
+				566B372A15BBFE1F0026821C /* AboutViewController.m */,
+				566B373615BBFE1F0026821C /* CreditsViewController.h */,
+				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
@@ -478,8 +479,6 @@
 		566B378515BC00130026821C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				566B376015BBFE1F0026821C /* SmokingCellBackgroundView.h */,
-				566B376115BBFE1F0026821C /* SmokingCellBackgroundView.m */,
 				566B373015BBFE1F0026821C /* CalendarView.h */,
 				566B373115BBFE1F0026821C /* CalendarView.m */,
 				566B373215BBFE1F0026821C /* ChalkboardView.h */,
@@ -504,6 +503,10 @@
 		566B38B115BC17CA0026821C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */,
+				5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */,
+				5609717316297B9300F31FF6 /* ButtonShare-normal.png */,
+				5609717416297B9300F31FF6 /* ButtonShare-normal@2x.png */,
 				569EA0C4162627FC002EF4F8 /* ButtonReset-normal.png */,
 				569EA0C5162627FC002EF4F8 /* ButtonReset-normal@2x.png */,
 				569EA0C01624B0FC002EF4F8 /* PriceTag.png */,
@@ -542,10 +545,6 @@
 				566B382215BC16C60026821C /* ButtonPrevNormal@2x.png */,
 				566B382315BC16C60026821C /* ButtonPrevPressed.png */,
 				566B382415BC16C60026821C /* ButtonPrevPressed@2x.png */,
-				566B382B15BC16C60026821C /* ButtonTweetNormal.png */,
-				566B382C15BC16C60026821C /* ButtonTweetNormal@2x.png */,
-				566B382D15BC16C60026821C /* ButtonTweetPressed.png */,
-				566B382E15BC16C60026821C /* ButtonTweetPressed@2x.png */,
 				566B382F15BC16C60026821C /* Calendar.png */,
 				566B383015BC16C60026821C /* Calendar@2x.png */,
 				566B383115BC16C70026821C /* Chalkboard.png */,
@@ -565,8 +564,6 @@
 				566B384715BC16C70026821C /* Packet@2x.png */,
 				566B384815BC16C70026821C /* Savings.png */,
 				566B384915BC16C70026821C /* Savings@2x.png */,
-				566B384A15BC16C80026821C /* SmokingCell.png */,
-				566B384B15BC16C80026821C /* SmokingCell@2x.png */,
 				566B384C15BC16C80026821C /* TabIconCounter.png */,
 				566B384D15BC16C80026821C /* TabIconCounter@2x.png */,
 				566B384E15BC16C80026821C /* TabIconHealth.png */,
@@ -668,7 +665,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Massimo Peri";
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -730,10 +727,6 @@
 				566B387C15BC16C80026821C /* ButtonPrevNormal@2x.png in Resources */,
 				566B387D15BC16C80026821C /* ButtonPrevPressed.png in Resources */,
 				566B387E15BC16C80026821C /* ButtonPrevPressed@2x.png in Resources */,
-				566B388515BC16C80026821C /* ButtonTweetNormal.png in Resources */,
-				566B388615BC16C80026821C /* ButtonTweetNormal@2x.png in Resources */,
-				566B388715BC16C80026821C /* ButtonTweetPressed.png in Resources */,
-				566B388815BC16C80026821C /* ButtonTweetPressed@2x.png in Resources */,
 				566B388915BC16C80026821C /* Calendar.png in Resources */,
 				566B388A15BC16C80026821C /* Calendar@2x.png in Resources */,
 				566B388B15BC16C80026821C /* Chalkboard.png in Resources */,
@@ -763,8 +756,6 @@
 				566B38A115BC16C80026821C /* Packet@2x.png in Resources */,
 				566B38A215BC16C80026821C /* Savings.png in Resources */,
 				566B38A315BC16C80026821C /* Savings@2x.png in Resources */,
-				566B38A415BC16C80026821C /* SmokingCell.png in Resources */,
-				566B38A515BC16C80026821C /* SmokingCell@2x.png in Resources */,
 				566B38A615BC16C80026821C /* TabIconCounter.png in Resources */,
 				566B38A715BC16C80026821C /* TabIconCounter@2x.png in Resources */,
 				566B38A815BC16C80026821C /* TabIconHealth.png in Resources */,
@@ -791,6 +782,10 @@
 				569EA0C7162627FC002EF4F8 /* ButtonReset-normal@2x.png in Resources */,
 				569EA0CA16262ACE002EF4F8 /* ButtonCalculator-disabled.png in Resources */,
 				569EA0CB16262ACE002EF4F8 /* ButtonCalculator-disabled@2x.png in Resources */,
+				5609717716297B9300F31FF6 /* ButtonShare-normal.png in Resources */,
+				5609717816297B9300F31FF6 /* ButtonShare-normal@2x.png in Resources */,
+				5609717D16297DCB00F31FF6 /* ButtonShare-highlighted.png in Resources */,
+				5609717E16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,7 +830,6 @@
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,
 				566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */,
-				566B377F15BBFE1F0026821C /* SmokingCellBackgroundView.m in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
 				566B38BB15BC19210026821C /* Appirater.m in Sources */,
 				566B38BC15BC19210026821C /* MBProgressHUD.m in Sources */,
@@ -1054,7 +1048,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

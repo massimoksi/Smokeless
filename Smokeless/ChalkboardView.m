@@ -43,10 +43,10 @@
 {
     self = [super initWithImage:[UIImage imageNamed:@"Chalkboard"]];
     if (self) {
-		// enable use interaction
+		// Accept use interaction.
 		self.userInteractionEnabled = YES;
 		
-		// create title
+		// Create title.
 		UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TitleChalkboard"]];
 		title.frame = CGRectMake(BOARD_ORIGIN_X,
 								 FRAME_PADDING,
@@ -54,7 +54,7 @@
 								 title.frame.size.height);
 		[self addSubview:title];
 		
-		// create labels
+		// Create labels.
 		self.yearsLabel = [[UILabel alloc] initWithFrame:CGRectMake(BOARD_ORIGIN_X + LABEL_PADDING_X,
                                                                     BOARD_ORIGIN_Y + LABEL_PADDING_Y,
                                                                     LABEL_WIDTH,
@@ -72,24 +72,25 @@
                                                                    LABEL_WIDTH,
                                                                    LABEL_HEIGHT)];
 		
-		// add labels
+		// Add labels.
 		[self addLabel:self.yearsLabel];
 		[self addLabel:self.monthsLabel];
 		[self addLabel:self.weeksLabel];
 		[self addLabel:self.daysLabel];
 
-        // create tweet button
-        self.tweetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.tweetButton.frame = CGRectMake(BOARD_ORIGIN_X - BUTTON_OFFSET_X,
+        // Create the share button.
+        self.shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.shareButton.frame = CGRectMake(BOARD_ORIGIN_X - BUTTON_OFFSET_X,
                                             BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
                                             BUTTON_WIDTH,
                                             BUTTON_HEIGHT);
-        [self.tweetButton setImage:[UIImage imageNamed:@"ButtonTweetNormal"]
+        [self.shareButton setImage:[UIImage imageNamed:@"ButtonShare-normal"]
                           forState:UIControlStateNormal];
-        [self.tweetButton setImage:[UIImage imageNamed:@"ButtonTweetPressed"]
+        [self.shareButton setImage:[UIImage imageNamed:@"ButtonShare-highlighted"]
                           forState:UIControlStateHighlighted];
+        [self addSubview:self.shareButton];
         
-		// create next button
+		// Create the next button.
 		self.nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		self.nextButton.frame = CGRectMake(BOARD_ORIGIN_X + BOARD_WIDTH - BUTTON_WIDTH + BUTTON_OFFSET_X,
                                            BOARD_ORIGIN_Y + BOARD_HEIGHT - BUTTON_OFFSET_Y,
@@ -99,14 +100,9 @@
                          forState:UIControlStateNormal];
 		[self.nextButton setImage:[UIImage imageNamed:@"ButtonNextPressed"]
                          forState:UIControlStateHighlighted];
-
-		// add buttons
-        if ([TWTweetComposeViewController canSendTweet] == YES) {
-            [self addSubview:self.tweetButton];
-        }
-		[self addSubview:self.nextButton]; 
+		[self addSubview:self.nextButton];
 		
-		// initialize ivars
+		// Initialize properties.
 		self.years = 0;
 		self.months = 0;
 		self.weeks = 0;
@@ -158,13 +154,12 @@
 
 - (void)addLabel:(UILabel *)label
 {
-	// customize label
+    // TODO: try to use the appearance proxy.
 	label.backgroundColor = [UIColor clearColor];
 	label.font = [UIFont fontWithName:@"Chalkduster"
 								 size:30.0];
 	label.textColor = [UIColor whiteColor];
-	
-	// add label
+
 	[self addSubview:label];
 }
 
