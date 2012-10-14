@@ -14,6 +14,22 @@
 #define MAIL_ADDRESS	@"massimo.peri@me.com"
 
 
+enum : NSUInteger {
+	AboutSectionVersion = 0,
+	AboutSectionCredits,
+	AboutSectionContacts,
+	
+	AboutNoOfSections
+};
+
+    enum : NSUInteger {
+	ContactsRowEmail = 0,
+	ContactsRowTwitter,
+	
+	ContactsNoOfRows
+};
+
+
 @interface AboutViewController ()
 
 @property (nonatomic, strong) UINavigationController *twitterNavController;

@@ -427,12 +427,8 @@
 		566B378215BBFFAD0026821C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				566B372915BBFE1F0026821C /* AboutViewController.h */,
-				566B372A15BBFE1F0026821C /* AboutViewController.m */,
 				566B373415BBFE1F0026821C /* CounterViewController.h */,
 				566B373515BBFE1F0026821C /* CounterViewController.m */,
-				566B373615BBFE1F0026821C /* CreditsViewController.h */,
-				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
 				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
@@ -452,6 +448,10 @@
 				56AF92B9161107730021DAE2 /* PacketPriceViewController.h */,
 				56AF92BA161107740021DAE2 /* PacketPriceViewController.m */,
 				569EA0DA16262FFE002EF4F8 /* PacketPriceViewController.xib */,
+				566B372915BBFE1F0026821C /* AboutViewController.h */,
+				566B372A15BBFE1F0026821C /* AboutViewController.m */,
+				566B373615BBFE1F0026821C /* CreditsViewController.h */,
+				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
