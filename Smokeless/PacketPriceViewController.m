@@ -21,7 +21,6 @@
 @property (nonatomic, weak) IBOutlet UIView *keypadView;
 
 @property (nonatomic, weak) IBOutlet UIButton *pointButton;
-@property (nonatomic, weak) IBOutlet UIButton *cancButton;
 
 - (IBAction)cancelTapped:(id)sender;
 - (IBAction)doneTapped:(id)sender;
@@ -45,13 +44,12 @@
     [formatter setLocale:[NSLocale currentLocale]];
     [self.pointButton setTitle:[formatter currencyDecimalSeparator]
                       forState:UIControlStateNormal];
+	// Enable the point button.
+	self.pointButton.enabled = YES;
     
     // Initialize properties.
 	self.decimals = 0;
 	self.reset = YES;
-
-	// Enable the point button.
-	self.pointButton.enabled = YES;
     
     // Set the price label.
     self.priceLabel.font = [UIFont systemFontOfSize:25.0];
@@ -82,7 +80,6 @@
     self.priceLabel = nil;
     
     self.pointButton = nil;
-    self.cancButton = nil;
 }
 
 #pragma mark Actions

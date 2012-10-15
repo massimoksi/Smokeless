@@ -58,8 +58,8 @@
     
 	// Create the chalkboard view.
 	self.chalkboard = [[ChalkboardView alloc] init];
-    self.chalkboard.center = CGPointMake(self.view.center.x,
-                                         self.view.center.y - self.tabBarController.tabBar.frame.size.height);
+    self.chalkboard.center = CGPointMake(self.containerView.center.x,
+                                         self.containerView.center.y - self.tabBarController.tabBar.frame.size.height/2);
     
     // Set actions for the buttons.
     [self.chalkboard.shareButton addTarget:self
@@ -71,11 +71,15 @@
 	
 	// Create the calendar view.
 	self.calendar = [[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]];
-    self.calendar.center = CGPointMake(self.view.center.x,
-                                       self.view.center.y - self.tabBarController.tabBar.frame.size.height);
+    self.calendar.center = CGPointMake(self.containerView.center.x,
+                                       self.containerView.center.y - self.tabBarController.tabBar.frame.size.height/2);
 	[self.calendar.prevButton addTarget:self
 								 action:@selector(prevTapped:)
 					   forControlEvents:UIControlEventTouchUpInside];
+    
+    NSLog(@"---> %@", NSStringFromCGRect(self.containerView.frame));
+    NSLog(@"---> %@", NSStringFromCGRect(self.chalkboard.frame));
+    NSLog(@"---> %f", self.tabBarController.tabBar.frame.size.height);
 }
 
 - (void)viewWillAppear:(BOOL)animated
