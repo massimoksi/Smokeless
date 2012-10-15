@@ -76,10 +76,6 @@
 	[self.calendar.prevButton addTarget:self
 								 action:@selector(prevTapped:)
 					   forControlEvents:UIControlEventTouchUpInside];
-    
-    NSLog(@"---> %@", NSStringFromCGRect(self.containerView.frame));
-    NSLog(@"---> %@", NSStringFromCGRect(self.chalkboard.frame));
-    NSLog(@"---> %f", self.tabBarController.tabBar.frame.size.height);
 }
 
 - (void)viewWillAppear:(BOOL)animated
