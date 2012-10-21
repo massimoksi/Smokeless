@@ -146,6 +146,9 @@
 		5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted.png"; sourceTree = "<group>"; };
 		5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted@2x.png"; sourceTree = "<group>"; };
 		560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		563380131634859900E444B6 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
+		563380141634859C00E444B6 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
+		56338015163485A100E444B6 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
 		5648488316066CD700E891E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		56565A511390E8160087E5C4 /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		56565A531390E8240087E5C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -294,9 +297,6 @@
 		569EA0D616262F8C002EF4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/PacketSizeViewController.xib; sourceTree = "<group>"; };
 		569EA0D716262F8E002EF4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/PacketSizeViewController.xib; sourceTree = "<group>"; };
 		569EA0D916262FFE002EF4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
-		569EA0DB16263006002EF4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
-		569EA0DC16263008002EF4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
-		569EA0DD16263009002EF4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
 		569EA0DF16263050002EF4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
 		569EA0E116263060002EF4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
 		569EA0E216263062002EF4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
@@ -909,9 +909,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				569EA0D916262FFE002EF4F8 /* en */,
-				569EA0DB16263006002EF4F8 /* de */,
-				569EA0DC16263008002EF4F8 /* es */,
-				569EA0DD16263009002EF4F8 /* it */,
+				563380131634859900E444B6 /* de */,
+				563380141634859C00E444B6 /* es */,
+				56338015163485A100E444B6 /* it */,
 			);
 			name = PacketPriceViewController.xib;
 			sourceTree = "<group>";
