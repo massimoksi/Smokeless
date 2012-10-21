@@ -16,3 +16,8 @@ xcuserdata
 *.swp
 *~.nib
 *~.xib
+
+# Ignore non-project files
+TODO.md
+Changelog.md
+Pods/*

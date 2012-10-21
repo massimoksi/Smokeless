@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'Smokeless' target in the 'Smokeless' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+    #import <Twitter/Twitter.h>
+
+    #import "MPToolkit.h"
+#endif
