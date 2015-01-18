@@ -11,7 +11,7 @@
 
 @interface TwitterViewController ()
 
-@property (nonatomic, strong) MBProgressHUD *progressHUD;
+//@property (nonatomic, strong) MBProgressHUD *progressHUD;
 
 @end
 
@@ -32,23 +32,23 @@
 {
     [super didReceiveMemoryWarning];
 
-    self.progressHUD = nil;
+//    self.progressHUD = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    // Create the progress HUD.
-    self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
-    self.progressHUD.delegate = self;
-    self.progressHUD.removeFromSuperViewOnHide = YES;
-    
-    // Add the progress HUD.
-    [self.view addSubview:self.progressHUD];
-    
-    // Show the progress HUD.
-    [self.progressHUD show:YES];
+//    // Create the progress HUD.
+//    self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+//    self.progressHUD.delegate = self;
+//    self.progressHUD.removeFromSuperViewOnHide = YES;
+//    
+//    // Add the progress HUD.
+//    [self.view addSubview:self.progressHUD];
+//    
+//    // Show the progress HUD.
+//    [self.progressHUD show:YES];
 
     // Load the Twitter page.
     [(UIWebView *)self.view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/#!/massimoperi"]]];
@@ -56,7 +56,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self.progressHUD hide:YES];
+//    [self.progressHUD hide:YES];
 }
 
 #pragma mark - Web view delegate
@@ -64,14 +64,14 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     // Hide the progress HUD.
-    [self.progressHUD hide:YES];
+//    [self.progressHUD hide:YES];
 }
 
 #pragma mark - Progress HUD delegate
 
-- (void)hudWasHidden
-{
-    self.progressHUD = nil;
-}
+//- (void)hudWasHidden
+//{
+//    self.progressHUD = nil;
+//}
 
 @end

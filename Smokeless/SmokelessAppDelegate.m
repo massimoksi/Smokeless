@@ -10,7 +10,7 @@
 
 #import "PacketPriceViewController.h"
 
-#import "Appirater.h"
+//#import "Appirater.h"
 
 
 #define APPIRATER_APP_ID                    @"301377083"
@@ -124,11 +124,11 @@
                      }];
     
     // Notify Appirater.
-    [Appirater setAppId:APPIRATER_APP_ID];
-    [Appirater setDaysUntilPrompt:APPIRATER_DAYS_UNTIL_PROMPT];
-    [Appirater setUsesUntilPrompt:APPIRATER_USES_UNTIL_PROMPT];
-    [Appirater setTimeBeforeReminding:APPIRATER_TIME_BEFORE_REMINDING];
-    [Appirater appLaunched:YES];
+//    [Appirater setAppId:APPIRATER_APP_ID];
+//    [Appirater setDaysUntilPrompt:APPIRATER_DAYS_UNTIL_PROMPT];
+//    [Appirater setUsesUntilPrompt:APPIRATER_USES_UNTIL_PROMPT];
+//    [Appirater setTimeBeforeReminding:APPIRATER_TIME_BEFORE_REMINDING];
+//    [Appirater appLaunched:YES];
     
     return YES;
 }
@@ -136,7 +136,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Notify Appirater.
-    [Appirater appEnteredForeground:YES];
+//    [Appirater appEnteredForeground:YES];
 }
 
 #pragma mark - Private methods

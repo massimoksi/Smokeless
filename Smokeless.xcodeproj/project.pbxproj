@@ -15,6 +15,7 @@
 		5609717D16297DCB00F31FF6 /* ButtonShare-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */; };
 		5609717E16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */; };
 		560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */; };
+		5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5619B4111A6C6D81005C12CF /* Images.xcassets */; };
 		5648488416066CD700E891E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5648488316066CD700E891E6 /* Default-568h@2x.png */; };
 		56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A511390E8160087E5C4 /* CFNetwork.framework */; };
 		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
@@ -84,13 +85,6 @@
 		566B389315BC16C80026821C /* HealthTableViewCell_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383915BC16C70026821C /* HealthTableViewCell_next@2x.png */; };
 		566B389415BC16C80026821C /* HealthTableViewCell_waiting.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383A15BC16C70026821C /* HealthTableViewCell_waiting.png */; };
 		566B389515BC16C80026821C /* HealthTableViewCell_waiting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383B15BC16C70026821C /* HealthTableViewCell_waiting@2x.png */; };
-		566B389615BC16C80026821C /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383C15BC16C70026821C /* Icon-72.png */; };
-		566B389715BC16C80026821C /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383D15BC16C70026821C /* Icon-Small-50.png */; };
-		566B389815BC16C80026821C /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383E15BC16C70026821C /* Icon-Small.png */; };
-		566B389915BC16C80026821C /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B383F15BC16C70026821C /* Icon-Small@2x.png */; };
-		566B389A15BC16C80026821C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384015BC16C70026821C /* Icon.png */; };
-		566B389B15BC16C80026821C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384115BC16C70026821C /* Icon@2x.png */; };
-		566B389C15BC16C80026821C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 566B384215BC16C70026821C /* iTunesArtwork */; };
 		566B389E15BC16C80026821C /* Note.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384415BC16C70026821C /* Note.png */; };
 		566B389F15BC16C80026821C /* Note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384515BC16C70026821C /* Note@2x.png */; };
 		566B38A015BC16C80026821C /* Packet.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384615BC16C70026821C /* Packet.png */; };
@@ -125,27 +119,23 @@
 		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
 		56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B5161100340021DAE2 /* PacketSizeViewController.m */; };
 		56AF92BC161107740021DAE2 /* PacketPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92BA161107740021DAE2 /* PacketPriceViewController.m */; };
-		56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */; };
-		56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */; };
-		56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */; };
 		56B42BD01606772500BCF224 /* BackgroundPattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */; };
 		56B42BD21606776400BCF224 /* BackgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BD11606776400BCF224 /* BackgroundPattern.png */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
 		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
-		A397E968C86A4F52B0E01C47 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7DB54473004545B1D09F13 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2750ED891FD646F5B1453745 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5609717316297B9300F31FF6 /* ButtonShare-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal.png"; sourceTree = "<group>"; };
 		5609717416297B9300F31FF6 /* ButtonShare-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal@2x.png"; sourceTree = "<group>"; };
 		5609717B16297DCB00F31FF6 /* ButtonShare-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted.png"; sourceTree = "<group>"; };
 		5609717C16297DCB00F31FF6 /* ButtonShare-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-highlighted@2x.png"; sourceTree = "<group>"; };
 		560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		563380131634859900E444B6 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
 		563380141634859C00E444B6 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
 		56338015163485A100E444B6 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/PacketPriceViewController.xib; sourceTree = "<group>"; };
@@ -255,13 +245,6 @@
 		566B383915BC16C70026821C /* HealthTableViewCell_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_next@2x.png"; sourceTree = "<group>"; };
 		566B383A15BC16C70026821C /* HealthTableViewCell_waiting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HealthTableViewCell_waiting.png; sourceTree = "<group>"; };
 		566B383B15BC16C70026821C /* HealthTableViewCell_waiting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HealthTableViewCell_waiting@2x.png"; sourceTree = "<group>"; };
-		566B383C15BC16C70026821C /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		566B383D15BC16C70026821C /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		566B383E15BC16C70026821C /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		566B383F15BC16C70026821C /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		566B384015BC16C70026821C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		566B384115BC16C70026821C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		566B384215BC16C70026821C /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		566B384415BC16C70026821C /* Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Note.png; sourceTree = "<group>"; };
 		566B384515BC16C70026821C /* Note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Note@2x.png"; sourceTree = "<group>"; };
 		566B384615BC16C70026821C /* Packet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Packet.png; sourceTree = "<group>"; };
@@ -310,14 +293,10 @@
 		56AF92B5161100340021DAE2 /* PacketSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSizeViewController.m; sourceTree = "<group>"; };
 		56AF92B9161107730021DAE2 /* PacketPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketPriceViewController.h; sourceTree = "<group>"; };
 		56AF92BA161107740021DAE2 /* PacketPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketPriceViewController.m; sourceTree = "<group>"; };
-		56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
-		56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundPattern@2x.png"; sourceTree = "<group>"; };
 		56B42BD11606776400BCF224 /* BackgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundPattern.png; sourceTree = "<group>"; };
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		AF7DB54473004545B1D09F13 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +313,6 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */,
 				56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */,
-				A397E968C86A4F52B0E01C47 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +333,6 @@
 				566B372815BBFE1E0026821C /* Smokeless */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				2750ED891FD646F5B1453745 /* Pods.xcconfig */,
 			);
 			name = Smokeless;
 			sourceTree = "<group>";
@@ -372,7 +349,6 @@
 				560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */,
 				5683F272132ED18100C733AC /* AVFoundation.framework */,
 				56F52C5A15185FAC007D838C /* Twitter.framework */,
-				AF7DB54473004545B1D09F13 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -398,16 +374,16 @@
 		566B372815BBFE1E0026821C /* Smokeless */ = {
 			isa = PBXGroup;
 			children = (
+				5619B4111A6C6D81005C12CF /* Images.xcassets */,
+				566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */,
+				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
 				566B378415BC00050026821C /* Models */,
 				566B378515BC00130026821C /* Views */,
 				566B378215BBFFAD0026821C /* Controllers */,
-				566B378615BC00300026821C /* Delegates */,
 				566B378315BBFFF10026821C /* Singletons */,
 				5609717216295C9E00F31FF6 /* Custom */,
 				566B378115BBFE670026821C /* Supporting Files */,
 				566B38B115BC17CA0026821C /* Images */,
-				566B38B315BC18760026821C /* Misc */,
-				566B38B215BC180B0026821C /* Icons */,
 			);
 			path = Smokeless;
 			sourceTree = "<group>";
@@ -415,6 +391,8 @@
 		566B378115BBFE670026821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				566B383315BC16C70026821C /* Chalkduster.ttf */,
+				566B385415BC16C80026821C /* Tinkle.m4a */,
 				566B37C915BC02430026821C /* Localizable.strings */,
 				566B374015BBFE1F0026821C /* main.m */,
 				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
@@ -488,15 +466,6 @@
 				566B373D15BBFE1F0026821C /* HealthTableView.m */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		566B378615BC00300026821C /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */,
-				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
-			);
-			name = Delegates;
 			sourceTree = "<group>";
 		};
 		566B38B115BC17CA0026821C /* Images */ = {
@@ -581,32 +550,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		566B38B215BC180B0026821C /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				566B383C15BC16C70026821C /* Icon-72.png */,
-				56B0C25F15D6E38B00A7538D /* Icon-72@2x.png */,
-				566B383D15BC16C70026821C /* Icon-Small-50.png */,
-				56B0C26015D6E38B00A7538D /* Icon-Small-50@2x.png */,
-				566B383E15BC16C70026821C /* Icon-Small.png */,
-				566B383F15BC16C70026821C /* Icon-Small@2x.png */,
-				566B384015BC16C70026821C /* Icon.png */,
-				566B384115BC16C70026821C /* Icon@2x.png */,
-				566B384215BC16C70026821C /* iTunesArtwork */,
-				56B0C26315D6E3A000A7538D /* iTunesArtwork@2x */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
-		566B38B315BC18760026821C /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				566B383315BC16C70026821C /* Chalkduster.ttf */,
-				566B385415BC16C80026821C /* Tinkle.m4a */,
-			);
-			name = Misc;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -614,11 +557,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Smokeless" */;
 			buildPhases = (
-				56FFF6531517E8C6005951C3 /* ShellScript */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				8E317D6863CB47FC93266DCD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -635,7 +576,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Massimo Peri";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */;
@@ -675,6 +616,7 @@
 				566B385715BC16C80026821C /* AchievementCompleted.png in Resources */,
 				566B385815BC16C80026821C /* AchievementCompleted@2x.png in Resources */,
 				566B385915BC16C80026821C /* AchievementPending0.png in Resources */,
+				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
 				566B385A15BC16C80026821C /* AchievementPending0@2x.png in Resources */,
 				566B385B15BC16C80026821C /* AchievementPending1.png in Resources */,
 				566B385C15BC16C80026821C /* AchievementPending1@2x.png in Resources */,
@@ -713,16 +655,6 @@
 				566B389315BC16C80026821C /* HealthTableViewCell_next@2x.png in Resources */,
 				566B389415BC16C80026821C /* HealthTableViewCell_waiting.png in Resources */,
 				566B389515BC16C80026821C /* HealthTableViewCell_waiting@2x.png in Resources */,
-				566B389615BC16C80026821C /* Icon-72.png in Resources */,
-				56B0C26115D6E38B00A7538D /* Icon-72@2x.png in Resources */,
-				566B389715BC16C80026821C /* Icon-Small-50.png in Resources */,
-				56B0C26215D6E38B00A7538D /* Icon-Small-50@2x.png in Resources */,
-				566B389815BC16C80026821C /* Icon-Small.png in Resources */,
-				566B389915BC16C80026821C /* Icon-Small@2x.png in Resources */,
-				566B389A15BC16C80026821C /* Icon.png in Resources */,
-				566B389B15BC16C80026821C /* Icon@2x.png in Resources */,
-				566B389C15BC16C80026821C /* iTunesArtwork in Resources */,
-				56B0C26415D6E3A000A7538D /* iTunesArtwork@2x in Resources */,
 				566B389E15BC16C80026821C /* Note.png in Resources */,
 				566B389F15BC16C80026821C /* Note@2x.png in Resources */,
 				566B38A015BC16C80026821C /* Packet.png in Resources */,
@@ -763,36 +695,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		56FFF6531517E8C6005951C3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "ICONS_DEB_DIR=${SRCROOT}/Icons/Debug\nICONS_REL_DIR=${SRCROOT}/Icons/Release\nRESOURCES_DIR=${SRCROOT}/Smokeless\n\n# Select the source dir for icons according to the selected build configuration.\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\nICONS_SRC_DIR=${ICONS_DEB_DIR}\nelse\nICONS_SRC_DIR=${ICONS_REL_DIR}\nfi\n\n# Copy the proper resources.\ncp ${ICONS_SRC_DIR}/Icon-72.png ${RESOURCES_DIR}/Icon-72.png\ncp ${ICONS_SRC_DIR}/Icon-72@2x.png ${RESOURCES_DIR}/Icon-72@2x.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50.png ${RESOURCES_DIR}/Icon-Small-50.png\ncp ${ICONS_SRC_DIR}/Icon-Small-50@2x.png ${RESOURCES_DIR}/Icon-Small-50@2x.png\ncp ${ICONS_SRC_DIR}/Icon-Small.png ${RESOURCES_DIR}/Icon-Small.png\ncp ${ICONS_SRC_DIR}/Icon-Small@2x.png ${RESOURCES_DIR}/Icon-Small@2x.png\ncp ${ICONS_SRC_DIR}/Icon.png ${RESOURCES_DIR}/Icon.png\ncp ${ICONS_SRC_DIR}/Icon@2x.png ${RESOURCES_DIR}/Icon@2x.png\ncp ${ICONS_SRC_DIR}/iTunesArtwork.png ${RESOURCES_DIR}/iTunesArtwork\ncp ${ICONS_SRC_DIR}/iTunesArtwork@2x.png ${RESOURCES_DIR}/iTunesArtwork@2x\ncp ${ICONS_SRC_DIR}/Default.png ${RESOURCES_DIR}/Default.png\ncp ${ICONS_SRC_DIR}/Default@2x.png ${RESOURCES_DIR}/Default@2x.png\ncp ${ICONS_SRC_DIR}/Default-568h@2x.png ${RESOURCES_DIR}/Default-568h@2x.png";
-		};
-		8E317D6863CB47FC93266DCD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -932,13 +834,8 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2750ED891FD646F5B1453745 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
-				BUNDLE_IDENTIFIER = "com.gmail.massimoperi.Smokeless-dev";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_debug;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -949,23 +846,21 @@
 				GCC_PREFIX_HEADER = Smokeless/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Smokeless;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
+				SUFFIX_BUNDLE_ID = .debug;
+				SUFFIX_BUNDLE_NAME = " α";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2750ED891FD646F5B1453745 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
-				BUNDLE_IDENTIFIER = com.gmail.massimoperi.Smokeless;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
@@ -973,9 +868,12 @@
 				GCC_PREFIX_HEADER = Smokeless/Smokeless_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
+				SUFFIX_BUNDLE_ID = "";
+				SUFFIX_BUNDLE_NAME = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -983,7 +881,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
@@ -991,8 +888,8 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1003,7 +900,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "";
@@ -1011,7 +907,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
