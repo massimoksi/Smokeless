@@ -37,7 +37,7 @@
 		566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374E15BBFE1F0026821C /* PreferencesManager.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
-		566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */; };
+		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
 		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
 		566B37F815BC137B0026821C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566B37C915BC02430026821C /* Localizable.strings */; };
 		566B37F915BC137B0026821C /* TitleCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B37CB15BC02430026821C /* TitleCalendar.png */; };
@@ -179,8 +179,8 @@
 		566B375715BBFE1F0026821C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		566B375815BBFE1F0026821C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
-		566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmokelessAppDelegate.h; sourceTree = "<group>"; };
-		566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmokelessAppDelegate.m; sourceTree = "<group>"; };
+		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		566B376215BBFE1F0026821C /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		566B376315BBFE1F0026821C /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				5619B4111A6C6D81005C12CF /* Images.xcassets */,
-				566B375E15BBFE1F0026821C /* SmokelessAppDelegate.h */,
-				566B375F15BBFE1F0026821C /* SmokelessAppDelegate.m */,
+				566B375E15BBFE1F0026821C /* AppDelegate.h */,
+				566B375F15BBFE1F0026821C /* AppDelegate.m */,
 				566B378415BC00050026821C /* Models */,
 				566B378515BC00130026821C /* Views */,
 				566B378215BBFFAD0026821C /* Controllers */,
@@ -718,7 +718,7 @@
 				566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,
-				566B377E15BBFE1F0026821C /* SmokelessAppDelegate.m in Sources */,
+				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
 				5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */,
 				56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */,

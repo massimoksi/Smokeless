@@ -1,5 +1,5 @@
 //
-//  SmokelessAppDelegate.h
+//  AppDelegate.h
 //  Smokeless
 //
 //  Created by Massimo Peri on 03/10/10.
@@ -15,7 +15,7 @@
 #import "SettingsViewController.h"
 
 
-@interface SmokelessAppDelegate : NSObject <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 

@@ -1,12 +1,12 @@
 //
-//  SmokelessAppDelegate.m
+//  AppDelegate.m
 //  Smokeless
 //
 //  Created by Massimo Peri on 03/10/10.
 //  Copyright 2010 Massimo Peri. All rights reserved.
 //
 
-#import "SmokelessAppDelegate.h"
+#import "AppDelegate.h"
 
 #import "PacketPriceViewController.h"
 
@@ -19,7 +19,7 @@
 #define APPIRATER_TIME_BEFORE_REMINDING		7
 
 
-@interface SmokelessAppDelegate ()
+@interface AppDelegate ()
 
 @property (nonatomic, strong) UITabBarController *tabBarController;
 @property (nonatomic, strong) CounterViewController *counterController;
@@ -34,7 +34,7 @@
 @end
 
 
-@implementation SmokelessAppDelegate
+@implementation AppDelegate
 
 #pragma mark - Application delegate
 
