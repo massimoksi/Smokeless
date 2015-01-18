@@ -638,7 +638,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Massimo Peri";
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless-iOS" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -1033,7 +1033,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless-iOS" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
