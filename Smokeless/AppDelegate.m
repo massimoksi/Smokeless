@@ -28,12 +28,15 @@
 
 @implementation AppDelegate
 
-#pragma mark - Application delegate
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Create the window.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Check if user settings have already been imported.
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"UserSettingsImported"]) {
+        [self importUserSettings];
+    }
     
     // Cancel old registered local notifications if last cigarette date has been deleted.
     if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
@@ -118,13 +121,82 @@
     return YES;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Notify Appirater.
-//    [Appirater appEnteredForeground:YES];
+- (void)applicationWillResignActive:(UIApplication *)application {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Saves changes in the application's managed object context before the application terminates.
 }
 
 #pragma mark - Private methods
+
+- (void)importUserSettings
+{
+#if DEBUG
+    NSLog(@"Preferences: Start importing old preferences.");
+#endif
+    
+    NSString *oldPrefsFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/prefs.plist"];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Check if a preferences file exists.
+    if ([[NSFileManager defaultManager] fileExistsAtPath:oldPrefsFilePath]) {
+        NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
+        
+        [userDefaults setObject:oldPrefs[@"LastCigarette"]
+                         forKey:@"LastCigaretteDate"];
+        [userDefaults setObject:oldPrefs[@"Habits"]
+                         forKey:@"Habits"];
+        [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
+                          forKey:@"PacketSize"];
+        [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
+                        forKey:@"PacketPrice"];
+        [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
+                       forKey:@"ShakeEnabled"];
+        [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
+                       forKey:@"NotificationsEnabled"];
+        
+#if DEBUG
+        NSLog(@"Preferences: Finish importing old preferences.");
+#endif
+        
+        // Delete preferences file.
+        NSError *error;
+        if ([[NSFileManager defaultManager] removeItemAtPath:oldPrefsFilePath
+                                                       error:&error]) {
+            [userDefaults setBool:YES
+                           forKey:@"UserSettingsImported"];
+
+#if DEBUG
+            NSLog(@"Preferences: Deleted old preferences.");
+#endif
+        }
+    }
+    else {
+        [userDefaults setBool:YES
+                       forKey:@"UserSettingsImported"];
+        
+#if DEBUG
+        NSLog(@"Preferences: No old preferences found.");
+#endif
+    }
+}
 
 - (void)updateLastCigaretteDate
 {
