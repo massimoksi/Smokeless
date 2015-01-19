@@ -8,8 +8,6 @@
 
 #import "HabitsViewController.h"
 
-#import "PreferencesManager.h"
-
 
 enum : NSUInteger {
 	HabitsComponentQuantity = 0,
@@ -36,16 +34,10 @@ enum : NSUInteger {
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
 	// Retrieve preferences.
-	NSDictionary *habits = ([PreferencesManager sharedManager].prefs)[HABITS_KEY];
-	NSInteger quantity = [habits[HABITS_QUANTITY_KEY] intValue];
-	NSInteger unit = [habits[HABITS_UNIT_KEY] intValue];
-	NSInteger period = [habits[HABITS_PERIOD_KEY] intValue];
-	
-#ifdef DEBUG
-	NSLog(@"%@ - Quantity: %d", [self class], quantity);
-	NSLog(@"%@ - Unit: %d", [self class], unit);
-	NSLog(@"%@ - Period: %d", [self class], period);
-#endif
+	NSDictionary *habits = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Habits"];
+	NSInteger quantity = [habits[@"HabitsQuantity"] integerValue];
+	NSInteger unit = [habits[@"HabitsUnit"] integerValue];
+	NSInteger period = [habits[@"HabitsPeriod"] integerValue];
 	
 	// Set values from preferences to the picker view.
 	[self.habitsPicker selectRow:(quantity - 1)
@@ -81,23 +73,14 @@ enum : NSUInteger {
 	NSInteger unit = [self.habitsPicker selectedRowInComponent:HabitsComponentUnit];
 	NSInteger period = [self.habitsPicker selectedRowInComponent:HabitsComponentPeriod];
     
-#ifdef DEBUG
-	NSLog(@"%@ - Quantity: %d", [self class], quantity);
-	NSLog(@"%@ - Unit: %d", [self class], unit);
-	NSLog(@"%@ - Period: %d", [self class], period);
-#endif
-	
 	// Collect smoking habits.
 	NSDictionary *habits = @{
-        HABITS_QUANTITY_KEY: @(quantity),
-        HABITS_UNIT_KEY: @(unit),
-        HABITS_PERIOD_KEY: @(period)
+        @"HabitsQuantity": @(quantity),
+        @"HabitsUnit": @(unit),
+        @"HabitsPeriod": @(period)
     };
-	
-	// Set preference.
-	([PreferencesManager sharedManager].prefs)[HABITS_KEY] = habits;
-	// Save preferences to file.
-	[[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setObject:habits
+                                              forKey:@"Habits"];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];
@@ -160,7 +143,7 @@ enum : NSUInteger {
 	
 	switch (component) {
 		case HabitsComponentQuantity:
-			title = [NSString stringWithFormat:@"%d", row + 1];
+			title = [NSString stringWithFormat:@"%ld", row + 1];
 			break;
 			
 		case HabitsComponentUnit:

@@ -8,8 +8,6 @@
 
 #import "SavingsViewController.h"
 
-#import "PreferencesManager.h"
-
 #import "DisplayView.h"
 
 
@@ -24,9 +22,12 @@
 
 @property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 
-@property (nonatomic, assign) BOOL shakeEnabled;
-@property (nonatomic, assign) CGFloat totalSavings;
-@property (nonatomic, assign) NSUInteger totalPackets;
+@property (nonatomic) BOOL shakeEnabled;
+@property (nonatomic) CGFloat price;
+@property (nonatomic) NSInteger size;
+@property (nonatomic, copy) NSDictionary *habits;
+@property (nonatomic) CGFloat totalSavings;
+@property (nonatomic) NSUInteger totalPackets;
 
 @end
 
@@ -65,12 +66,10 @@
     // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
 
-    PreferencesManager *prefsManager = [PreferencesManager sharedManager];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Set properties.
-    self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
-    self.totalSavings = [prefsManager totalSavings];
-    self.totalPackets = [prefsManager totalPackets];
+    self.shakeEnabled = [userDefaults boolForKey:@"ShakeEnabled"];
     
     // Create the number formatter.
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -86,14 +85,14 @@
     [formatter setMaximumFractionDigits:2];
     
     // Retrieve preferences.
-	NSDictionary *habits = (prefsManager.prefs)[HABITS_KEY];
-	NSNumber *price	= (prefsManager.prefs)[PACKET_PRICE_KEY];
-	NSNumber *size = (prefsManager.prefs)[PACKET_SIZE_KEY];
+	self.habits = [userDefaults dictionaryForKey:@"Habits"];
+	self.price = [userDefaults floatForKey:@"PacketPrice"];
+    self.size = [userDefaults integerForKey:@"PacketSize"];
 
     // Set display labels.
-	if (habits && price && size) {
+	if (self.habits && (self.price > 0.0) && self.size) {
         self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
-        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
+        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%ld", self.totalPackets];
         
         // Remove the note view if present.
         if (self.noteView != nil) {
@@ -121,9 +120,10 @@
     
     // Create the tinkle player.
     if (!self.tinklePlayer) {
+        NSError *error;
         self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
                                                                                                                                 ofType:@"m4a"]]
-                                                                    error:NULL];
+                                                                    error:&error];
     }
 }
 
@@ -136,7 +136,60 @@
     self.noteView = nil;
 }
 
-#pragma - Accelerometer delegate
+#pragma mark - Private methods
+
+- (NSInteger)nonSmokingDays
+{
+    NSInteger nonSmokingDays = 0;
+    
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    if (lastDay) {
+        // create gregorian calendar
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        
+        nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                               fromDate:lastDay
+                                                 toDate:[NSDate date]
+                                                options:0] day];
+    }
+    
+    return nonSmokingDays;
+}
+
+- (NSUInteger)totalPackets
+{
+    NSUInteger totalPackets = 0;
+    
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    
+    if (self.habits && lastCigaretteDate) {
+        NSInteger quantity = [[self.habits objectForKey:@"HabitsQuantity"] integerValue];
+        NSInteger unit = [[self.habits objectForKey:@"HabitsUnit"] integerValue];
+        NSInteger period = [[self.habits objectForKey:@"HabitsPeriod"] integerValue];
+        
+        // Calculate constants.
+        NSInteger kUnit = (unit == 0) ? 1 : self.size;
+        NSInteger kPeriod = (period == 0) ? 1 : 7;
+        
+        // Calculate the number of cigarettes/day.
+        CGFloat cigarettesPerDay = quantity * kUnit / kPeriod;
+        
+        // Calculate the number of saved cigarettes.
+        CGFloat totalCigarettes = [self nonSmokingDays] * cigarettesPerDay;
+        
+        // Calculate the number of saved packets.
+        totalPackets = totalCigarettes / self.size + 1;
+    }
+    
+    return totalPackets;
+}
+
+- (CGFloat)totalSavings
+{
+    return [self totalPackets] * self.price;
+}
+
+#pragma mark - Accelerometer delegate
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {

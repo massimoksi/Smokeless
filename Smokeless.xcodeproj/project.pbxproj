@@ -34,7 +34,6 @@
 		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
 		566B377315BBFE1F0026821C /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374715BBFE1F0026821C /* MPGraphics.m */; };
 		566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374915BBFE1F0026821C /* MPTableViewCell.m */; };
-		566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374E15BBFE1F0026821C /* PreferencesManager.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
 		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
@@ -176,8 +175,6 @@
 		566B374815BBFE1F0026821C /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
 		566B374915BBFE1F0026821C /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 		566B374A15BBFE1F0026821C /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
-		566B374D15BBFE1F0026821C /* PreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesManager.h; sourceTree = "<group>"; };
-		566B374E15BBFE1F0026821C /* PreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesManager.m; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		566B375715BBFE1F0026821C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -380,7 +377,6 @@
 				566B378415BC00050026821C /* Models */,
 				566B378515BC00130026821C /* Views */,
 				566B378215BBFFAD0026821C /* Controllers */,
-				566B378315BBFFF10026821C /* Singletons */,
 				5609717216295C9E00F31FF6 /* Custom */,
 				566B378115BBFE670026821C /* Supporting Files */,
 				566B38B115BC17CA0026821C /* Images */,
@@ -433,15 +429,6 @@
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		566B378315BBFFF10026821C /* Singletons */ = {
-			isa = PBXGroup;
-			children = (
-				566B374D15BBFE1F0026821C /* PreferencesManager.h */,
-				566B374E15BBFE1F0026821C /* PreferencesManager.m */,
-			);
-			name = Singletons;
 			sourceTree = "<group>";
 		};
 		566B378415BC00050026821C /* Models */ = {
@@ -716,7 +703,6 @@
 				566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */,
 				566B377315BBFE1F0026821C /* MPGraphics.m in Sources */,
 				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
-				566B377615BBFE1F0026821C /* PreferencesManager.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,

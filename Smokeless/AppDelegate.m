@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 
 #import "PacketPriceViewController.h"
+#import "CounterViewController.h"
+#import "SavingsViewController.h"
+#import "AchievementsViewController.h"
+#import "SettingsViewController.h"
 
 
 @interface AppDelegate ()
@@ -33,25 +37,26 @@
     // Create the window.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     // Check if user settings have already been imported.
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"UserSettingsImported"]) {
+    if (![userDefaults boolForKey:@"UserSettingsImported"]) {
         [self importUserSettings];
     }
     
     // Cancel old registered local notifications if last cigarette date has been deleted.
-    if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+    if (![userDefaults objectForKey:@"LastCigarette"]) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
     
     // Set a default hour (4:00AM) for last cigarette date.
     // On former versions, last cigarette hour depended on the time it was set.
     // Check at first run and fix an already existing cigarette date.
-    if (([[NSUserDefaults standardUserDefaults] boolForKey:@"HasUpdatedLastCigaretteDate"] == NO) &&
-        ([[PreferencesManager sharedManager] lastCigaretteDate] != nil)) {
+    if (![userDefaults boolForKey:@"HasUpdatedLastCigaretteDate"] && ![userDefaults objectForKey:@"LastCigarette"]) {
         [self updateLastCigaretteDate];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES
-                                                forKey:@"HasUpdatedLastCigaretteDate"];
+        [userDefaults setBool:YES
+                       forKey:@"HasUpdatedLastCigaretteDate"];
     }
 	
 	// create counter controller
@@ -201,27 +206,25 @@
 - (void)updateLastCigaretteDate
 {
 #ifdef DEBUG
-    NSLog(@"%@ - Update last cigarette date", [self class]);
+    NSLog(@"Preferences: Start updating last cigarette date.");
 #endif
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     // Get the saved date.
-    NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:@"LastCigaretteDate"];
     
     // Set the hour for the date at 4:00AM.
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour)
                                                                      fromDate:lastCigaretteDate];
     [lastCigaretteComponents setHour:4];
     
 #ifdef DEBUG
-    NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
+    NSLog(@"Preferences: Last cigarette date %@.", [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
 #endif
     
-	// Set preference.
-	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
-    
-	// Save preferences to file.
-	[[PreferencesManager sharedManager] savePrefs];
+    [userDefaults setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
+                     forKey:@"LastCigaretteDate"];
 }
 
 @end

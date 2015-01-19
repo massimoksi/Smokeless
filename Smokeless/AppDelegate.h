@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PreferencesManager.h"
-#import "CounterViewController.h"
-#import "SavingsViewController.h"
-#import "AchievementsViewController.h"
-#import "SettingsViewController.h"
-
 
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 

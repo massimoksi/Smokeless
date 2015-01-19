@@ -8,8 +8,6 @@
 
 #import "CounterViewController.h"
 
-#import "PreferencesManager.h"
-
 #import "ChalkboardView.h"
 #import "CalendarView.h"
 
@@ -68,9 +66,9 @@
 	[self.chalkboard.nextButton addTarget:self
 								   action:@selector(nextTapped:)
 						 forControlEvents:UIControlEventTouchUpInside];
-	
+    
 	// Create the calendar view.
-	self.calendar = [[CalendarView alloc] initWithDate:[[PreferencesManager sharedManager] lastCigaretteDate]];
+	self.calendar = [[CalendarView alloc] initWithDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]];
     self.calendar.center = CGPointMake(self.containerView.center.x,
                                        self.containerView.center.y - self.tabBarController.tabBar.frame.size.height/2);
 	[self.calendar.prevButton addTarget:self
@@ -82,7 +80,7 @@
 {
 	[self updateViews];
     
-	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
 		// Show the calendar.
 		[self displayView:self.calendar];
         
@@ -121,7 +119,7 @@
 	self.calendar = nil;
 }
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (void)displayView:(id)aView
 {
@@ -134,7 +132,8 @@
 
 - (void)updateViews
 {
-	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+	if (!lastCigaretteDate) {
 		// Reset the chalkboard.
 		self.chalkboard.years = 0;
 		self.chalkboard.months = 0;
@@ -146,21 +145,21 @@
 	}
 	else {
 		// Update the chalkboard.
-		NSDateComponents *counterComponents = [[PreferencesManager sharedManager] nonSmokingInterval];
+		NSDateComponents *counterComponents = [self nonSmokingInterval];
 		self.chalkboard.years = [counterComponents year];
 		self.chalkboard.months = [counterComponents month];
-		self.chalkboard.weeks = [counterComponents week];
+		self.chalkboard.weeks = [counterComponents weekOfMonth];
 		self.chalkboard.days = [counterComponents day];
 		
 		// Update the calendar.
-		self.calendar.date = [[PreferencesManager sharedManager] lastCigaretteDate];
+		self.calendar.date = lastCigaretteDate;
 	}
 }
 
 - (void)shareTapped:(id)sender
 {
     // Collect data to be posted.
-    NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+    NSInteger nonSmokingDays = [self nonSmokingDays];
     NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
     NSString *postText = [NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval];
     NSURL *postURL = [NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"];
@@ -218,7 +217,7 @@
 - (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
 {
     // Reject any gesture if the date of last cigarette is not set.
-	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
         return;
     }
     
@@ -247,7 +246,7 @@
 - (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
 {
     // Reject any gesture if the date of last cigarette is not set.
-	if ([[PreferencesManager sharedManager] lastCigaretteDate] == nil) {
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
         return;
     }
     
@@ -273,12 +272,50 @@
     }
 }
 
+#pragma mark - Private methods
+
+- (NSDateComponents *)nonSmokingInterval
+{
+    NSDateComponents *period = nil;
+    
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    if (lastDay) {
+        // create gregorian calendar
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        
+        period = [gregorianCalendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay)
+                                      fromDate:lastDay
+                                        toDate:[NSDate date]
+                                       options:0];
+    }
+    
+    return period;
+}
+
+- (NSInteger)nonSmokingDays
+{
+    NSInteger nonSmokingDays = 0;
+    
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    if (lastDay) {
+        // create gregorian calendar
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        
+        nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                               fromDate:lastDay
+                                                 toDate:[NSDate date]
+                                                options:0] day];
+    }
+    
+    return nonSmokingDays;
+}
+
 #pragma mark - Action sheet delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     // Collect data to be posted.
-    NSInteger nonSmokingDays = [[PreferencesManager sharedManager] nonSmokingDays];
+    NSInteger nonSmokingDays = [self nonSmokingDays];
     NSString *nonSmokingInterval = (nonSmokingDays == 1) ? [NSString stringWithFormat:MPString(@"%d day"), nonSmokingDays] : [NSString stringWithFormat:MPString(@"%d days"), nonSmokingDays];
     NSString *postText = [NSString stringWithFormat:MPString(@"Not smoking for %@ thanks to Smokeless."), nonSmokingInterval];
     NSURL *postURL = [NSURL URLWithString:@"http://itunes.apple.com/us/app/smokeless-quit-smoking/id438027793?mt=8&uo=4"];
