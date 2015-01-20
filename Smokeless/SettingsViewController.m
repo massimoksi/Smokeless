@@ -8,7 +8,7 @@
 
 #import "SettingsViewController.h"
 
-#import "PreferencesManager.h"
+#import "Constants.h"
 #import "LastCigaretteViewController.h"
 #import "HabitsViewController.h"
 #import "PacketSizeViewController.h"
@@ -94,22 +94,18 @@ enum : NSUInteger {
     self.notificationSwitch = nil;
 }
 
-#pragma mark Actions
+#pragma mark - Actions
 
-- (void)shakeEnabled:(id)sender
+- (IBAction)shakeEnabled:(UISwitch *)sender
 {
-    // Set preference.
-    ([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] = @([self.shakeSwitch isOn]);
-    // Save preferences.
-    [[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on
+                                            forKey:ShakeEnabledKey];
 }
 
-- (void)notificationEnabled:(id)sender
+- (IBAction)notificationEnabled:(UISwitch *)sender
 {
-    // Set preference.
-    ([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] = @([self.notificationSwitch isOn]);
-    // Save preferences.
-    [[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on
+                                            forKey:NotificationsEnabledKey];
 }
 
 - (void)resetTapped:(id)sender
@@ -121,6 +117,99 @@ enum : NSUInteger {
                                               destructiveButtonTitle:MPString(@"Delete")
                                                    otherButtonTitles:nil];
     [resetSheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+#pragma mark - Private methods
+
+- (NSString *)lastCigaretteFormattedDate;
+{
+    return [NSDateFormatter localizedStringFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]
+                                          dateStyle:NSDateFormatterLongStyle
+                                          timeStyle:NSDateFormatterNoStyle];
+}
+
+- (NSString *)smokingHabits
+{
+    NSString *habitsString;
+    
+    NSDictionary *habitsDict = [[NSUserDefaults standardUserDefaults] dictionaryForKey:HabitsKey];
+    if (habitsDict != nil) {
+        NSInteger quantity = [habitsDict[HabitsQuantityKey] integerValue];
+        NSInteger unit = [habitsDict[HabitsUnitKey] integerValue];
+        NSInteger period = [habitsDict[HabitsPeriodKey] integerValue];
+
+        NSString *unitString = nil;
+        switch (unit) {
+            case 0:
+                unitString = (quantity == 1) ?
+                MPString(@"cigarette") :
+                MPString(@"cigarettes");
+                break;
+                
+            case 1:
+                unitString = (quantity == 1) ?
+                MPString(@"packet") :
+                MPString(@"packets");
+                break;
+        }
+
+        NSString *periodString = nil;
+        switch (period) {
+            case 0:
+                periodString = MPString(@"a day");
+                break;
+                
+            case 1:
+                periodString = MPString(@"a week");
+                break;
+        }
+        
+        habitsString = [NSString stringWithFormat:@"%ld %@ %@", quantity, unitString, periodString];
+    }
+    else {
+        habitsString = nil;
+    }
+    
+    // TODO: shorten string.
+    return habitsString;
+}
+
+- (NSString *)packetSize
+{
+    NSString *packetSizeString;
+    
+    NSInteger size = [[NSUserDefaults standardUserDefaults] integerForKey:PacketSizeKey];
+    
+    if (size != 0) {
+        if (size > 1) {
+            packetSizeString = [[NSString stringWithFormat:@"%ld ", size] stringByAppendingString:MPString(@"cigarettes")];
+        }
+        else {
+            packetSizeString = [[NSString stringWithFormat:@"%ld ", size] stringByAppendingString:MPString(@"cigarette")];
+        }
+    }
+    else {
+        packetSizeString = nil;
+    }
+    
+    return packetSizeString;
+}
+
+- (NSString *)packetPrice
+{
+    NSString *packetPriceString;
+    
+    CGFloat price = [[NSUserDefaults standardUserDefaults] floatForKey:PacketPriceKey];
+    
+    if (price != 0.0) {
+        packetPriceString = [NSNumberFormatter localizedStringFromNumber:@(price)
+                                                             numberStyle:NSNumberFormatterCurrencyStyle];
+    }
+    else {
+        packetPriceString = nil;
+    }
+    
+    return packetPriceString;
 }
 
 #pragma mark - Table view data source
@@ -196,11 +285,12 @@ enum : NSUInteger {
 	}
 
 	// Set cells content.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	switch (indexPath.section) {
         case SettingsSectionLastCigarette:
             cell.position = MPTableViewCellPositionSingle;
             cell.textLabel.text = MPString(@"Last cigarette");
-            cell.detailTextLabel.text = [[PreferencesManager sharedManager] lastCigaretteFormattedDate];
+            cell.detailTextLabel.text = [self lastCigaretteFormattedDate];
             break;
             
         case SettingsSectionHabits:
@@ -208,19 +298,19 @@ enum : NSUInteger {
                 case 0:
                     cell.position = MPTableViewCellPositionTop;
                     cell.textLabel.text = MPString(@"Habits");
-                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] smokingHabits]; // TODO: shorten string.
+                    cell.detailTextLabel.text = [self smokingHabits];
                     break;
                     
                 case 1:
                     cell.position = MPTableViewCellPositionMiddle;
                     cell.textLabel.text = MPString(@"Packet size");
-                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetSize];
+                    cell.detailTextLabel.text = [self packetSize];
                     break;
                     
                 case 2:
                     cell.position = MPTableViewCellPositionBottom;
                     cell.textLabel.text = MPString(@"Packet price");
-                    cell.detailTextLabel.text = [[PreferencesManager sharedManager] packetPrice];
+                    cell.detailTextLabel.text = [self packetPrice];
                     break;
             }
             break;
@@ -233,7 +323,7 @@ enum : NSUInteger {
                     cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
-                    self.shakeSwitch.on = [([PreferencesManager sharedManager].prefs)[SHAKE_ENABLED_KEY] boolValue];
+                    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
                     break;
                     
                 case 1:
@@ -241,7 +331,7 @@ enum : NSUInteger {
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
-                    self.notificationSwitch.on = [([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue];
+                    self.notificationSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
                     break;
             }
             break;
@@ -327,9 +417,13 @@ enum : NSUInteger {
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	switch (buttonIndex) {
 		case 0:
-			[[PreferencesManager sharedManager] deletePrefs];
+            [userDefaults removeObjectForKey:LastCigaretteKey];
+            [userDefaults removeObjectForKey:HabitsKey];
+            [userDefaults removeObjectForKey:PacketSizeKey];
+            [userDefaults removeObjectForKey:PacketPriceKey];
             
 			// Reload data on the table view.
 			[self.tableView reloadData];

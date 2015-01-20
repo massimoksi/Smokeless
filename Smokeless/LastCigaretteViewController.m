@@ -8,7 +8,7 @@
 
 #import "LastCigaretteViewController.h"
 
-#import "PreferencesManager.h"
+#import "Constants.h"
 
 
 @interface LastCigaretteViewController ()
@@ -27,7 +27,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
 	// Set up the date picker.
-	NSDate *prefsDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+	NSDate *prefsDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
 	if (prefsDate != nil) {
 		[self.datePicker setDate:prefsDate
 						animated:NO];
@@ -62,19 +62,13 @@
     NSDate *lastCigaretteDate = self.datePicker.date;
     
     // Set the hour for the date of the last cigarette.
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit)
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour)
                                                                      fromDate:lastCigaretteDate];
     [lastCigaretteComponents setHour:4];
     
-#ifdef DEBUG
-    NSLog(@"%@ - Set last cigarette date: %@", [self class], [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
-#endif
-    
-	// Set preference.
-	([PreferencesManager sharedManager].prefs)[LAST_CIGARETTE_KEY] = [gregorianCalendar dateFromComponents:lastCigaretteComponents];
-	// Save preferences to file.
-	[[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
+                                              forKey:LastCigaretteKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];

@@ -8,7 +8,7 @@
 
 #import "PacketPriceViewController.h"
 
-#import "PreferencesManager.h"
+#import "Constants.h"
 
 
 @interface PacketPriceViewController ()
@@ -58,7 +58,7 @@
     self.priceLabel.shadowColor = [UIColor colorWithWhite:0.850
                                                     alpha:1.000];
     self.priceLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-    self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] floatValue])
+    self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([[NSUserDefaults standardUserDefaults] floatForKey:PacketPriceKey])
                                                             numberStyle:NSNumberFormatterCurrencyStyle];
 }
 
@@ -97,10 +97,8 @@
 	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 	CGFloat actualPrice = [[formatter numberFromString:self.priceLabel.text] floatValue];
 	
-	// Set preference.
-	([PreferencesManager sharedManager].prefs)[PACKET_PRICE_KEY] = @(actualPrice);
-	// Save preferences to file.
-	[[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setFloat:actualPrice
+                                             forKey:PacketPriceKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];
@@ -110,7 +108,7 @@
 {
 	CGFloat actualPrice = 0.0;
 	
-	if (self.reset == NO) {
+	if (!self.reset) {
 		// Get actual price from the label.
 		NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
 		[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];

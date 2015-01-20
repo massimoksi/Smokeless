@@ -8,7 +8,7 @@
 
 #import "PacketSizeViewController.h"
 
-#import "PreferencesManager.h"
+#import "Constants.h"
 
 
 #define MAX_PACKET_SIZE 50
@@ -30,8 +30,9 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
 	// Set value from preferences to the picker view.
-    if (([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY]) {
-        [self.sizePicker selectRow:([([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] intValue] - 1)
+    NSInteger packetSize = [[NSUserDefaults standardUserDefaults] integerForKey:PacketSizeKey];
+    if (packetSize) {
+        [self.sizePicker selectRow:packetSize - 1
                        inComponent:0
                           animated:NO];
     }
@@ -60,10 +61,8 @@
 
 - (IBAction)doneTapped:(id)sender
 {
-	// Set preference.
-	([PreferencesManager sharedManager].prefs)[PACKET_SIZE_KEY] = @([self.sizePicker selectedRowInComponent:0] + 1);
-	// Save preferences to file.
-	[[PreferencesManager sharedManager] savePrefs];
+    [[NSUserDefaults standardUserDefaults] setInteger:[self.sizePicker selectedRowInComponent:0] + 1
+                                               forKey:PacketSizeKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];

@@ -8,8 +8,7 @@
 
 #import "AchievementsViewController.h"
 
-#import "PreferencesManager.h"
-
+#import "Constants.h"
 #import "Achievement.h"
 #import "HealthTableView.h"
 
@@ -19,9 +18,6 @@
 @property (nonatomic, strong) NSArray *achievements;
 
 @property (nonatomic, weak) IBOutlet HealthTableView* tableView;
-
-- (void)checkAchievementsState;
-- (void)registerLocalNotifications;
 
 @end
 
@@ -68,14 +64,14 @@
         _achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
         
         // register observers
-        [[PreferencesManager sharedManager] addObserver:self
-                                             forKeyPath:@"prefs.LastCigarette"
-                                                options:0
-                                                context:NULL];
-        [[PreferencesManager sharedManager] addObserver:self
-                                             forKeyPath:@"prefs.NotificationsEnabled"
-                                                options:0
-                                                context:NULL];
+//        [[PreferencesManager sharedManager] addObserver:self
+//                                             forKeyPath:@"prefs.LastCigarette"
+//                                                options:0
+//                                                context:NULL];
+//        [[PreferencesManager sharedManager] addObserver:self
+//                                             forKeyPath:@"prefs.NotificationsEnabled"
+//                                                options:0
+//                                                context:NULL];
         
 #ifdef DEBUG
         NSLog(@"%@ - Local notifications: %@", [self class], [[UIApplication sharedApplication] scheduledLocalNotifications]);
@@ -88,10 +84,10 @@
 - (void)dealloc
 {
     // remove observers
-    [[PreferencesManager sharedManager] removeObserver:self
-                                            forKeyPath:@"prefs.LastCigarette"];
-    [[PreferencesManager sharedManager] removeObserver:self
-                                            forKeyPath:@"prefs.NotificationsEnabled"];
+//    [[PreferencesManager sharedManager] removeObserver:self
+//                                            forKeyPath:@"prefs.LastCigarette"];
+//    [[PreferencesManager sharedManager] removeObserver:self
+//                                            forKeyPath:@"prefs.NotificationsEnabled"];
 }
 
 - (void)viewDidLoad
@@ -220,7 +216,7 @@
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 
             // set completion image
-            NSUInteger completionStep = [currStep completionPercentageFromDate:[[PreferencesManager sharedManager] lastCigaretteDate]] / 0.125;
+            NSUInteger completionStep = [currStep completionPercentageFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]] / 0.125;
             switch (completionStep) {
                 case 0:
                     cell.imageView.image = [UIImage imageNamed:@"AchievementPending0"];
@@ -330,7 +326,7 @@
 - (void)checkAchievementsState
 {
     // get last cigarette date
-    NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
 
     // set achievement state
     if (lastCigaretteDate == nil) {
@@ -372,8 +368,8 @@
 
 - (void)registerLocalNotifications
 {
-    if ([([PreferencesManager sharedManager].prefs)[NOTIFICATIONS_ENABLED_KEY] boolValue] == YES) {
-        NSDate *lastCigaretteDate = [[PreferencesManager sharedManager] lastCigaretteDate];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:NotificationsEnabledKey]) {
+        NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
         
         for (Achievement *step in self.achievements) {
             if (step.state != AchievementStateCompleted) {
