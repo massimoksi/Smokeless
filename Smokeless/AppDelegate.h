@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AppDelegate : NSObject <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 

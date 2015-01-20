@@ -90,14 +90,6 @@
 		566B38A115BC16C80026821C /* Packet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384715BC16C70026821C /* Packet@2x.png */; };
 		566B38A215BC16C80026821C /* Savings.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384815BC16C70026821C /* Savings.png */; };
 		566B38A315BC16C80026821C /* Savings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384915BC16C70026821C /* Savings@2x.png */; };
-		566B38A615BC16C80026821C /* TabIconCounter.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384C15BC16C80026821C /* TabIconCounter.png */; };
-		566B38A715BC16C80026821C /* TabIconCounter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384D15BC16C80026821C /* TabIconCounter@2x.png */; };
-		566B38A815BC16C80026821C /* TabIconHealth.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384E15BC16C80026821C /* TabIconHealth.png */; };
-		566B38A915BC16C80026821C /* TabIconHealth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B384F15BC16C80026821C /* TabIconHealth@2x.png */; };
-		566B38AA15BC16C80026821C /* TabIconSavings.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385015BC16C80026821C /* TabIconSavings.png */; };
-		566B38AB15BC16C80026821C /* TabIconSavings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385115BC16C80026821C /* TabIconSavings@2x.png */; };
-		566B38AC15BC16C80026821C /* TabIconSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385215BC16C80026821C /* TabIconSettings.png */; };
-		566B38AD15BC16C80026821C /* TabIconSettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385315BC16C80026821C /* TabIconSettings@2x.png */; };
 		566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 566B385415BC16C80026821C /* Tinkle.m4a */; };
 		566B38AF15BC16C80026821C /* TitleAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385515BC16C80026821C /* TitleAbout.png */; };
 		566B38B015BC16C80026821C /* TitleAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385615BC16C80026821C /* TitleAbout@2x.png */; };
@@ -122,6 +114,7 @@
 		56B42BD01606772500BCF224 /* BackgroundPattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */; };
 		56B42BD21606776400BCF224 /* BackgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BD11606776400BCF224 /* BackgroundPattern.png */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
+		56E586941A6F1C2300F4C94F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E586931A6F1C2300F4C94F /* Main.storyboard */; };
 		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
@@ -253,14 +246,6 @@
 		566B384715BC16C70026821C /* Packet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Packet@2x.png"; sourceTree = "<group>"; };
 		566B384815BC16C70026821C /* Savings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Savings.png; sourceTree = "<group>"; };
 		566B384915BC16C70026821C /* Savings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Savings@2x.png"; sourceTree = "<group>"; };
-		566B384C15BC16C80026821C /* TabIconCounter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconCounter.png; sourceTree = "<group>"; };
-		566B384D15BC16C80026821C /* TabIconCounter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabIconCounter@2x.png"; sourceTree = "<group>"; };
-		566B384E15BC16C80026821C /* TabIconHealth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconHealth.png; sourceTree = "<group>"; };
-		566B384F15BC16C80026821C /* TabIconHealth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabIconHealth@2x.png"; sourceTree = "<group>"; };
-		566B385015BC16C80026821C /* TabIconSavings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconSavings.png; sourceTree = "<group>"; };
-		566B385115BC16C80026821C /* TabIconSavings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabIconSavings@2x.png"; sourceTree = "<group>"; };
-		566B385215BC16C80026821C /* TabIconSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabIconSettings.png; sourceTree = "<group>"; };
-		566B385315BC16C80026821C /* TabIconSettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TabIconSettings@2x.png"; sourceTree = "<group>"; };
 		566B385415BC16C80026821C /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tinkle.m4a; sourceTree = "<group>"; };
 		566B385515BC16C80026821C /* TitleAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TitleAbout.png; sourceTree = "<group>"; };
 		566B385615BC16C80026821C /* TitleAbout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TitleAbout@2x.png"; sourceTree = "<group>"; };
@@ -296,6 +281,7 @@
 		56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundPattern@2x.png"; sourceTree = "<group>"; };
 		56B42BD11606776400BCF224 /* BackgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundPattern.png; sourceTree = "<group>"; };
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56E586931A6F1C2300F4C94F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -375,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				5619B4111A6C6D81005C12CF /* Images.xcassets */,
+				56E586931A6F1C2300F4C94F /* Main.storyboard */,
 				56A637941A6DC960001DC3A6 /* Constants.h */,
 				56A637951A6DC960001DC3A6 /* Constants.m */,
 				566B375E15BBFE1F0026821C /* AppDelegate.h */,
@@ -524,14 +511,6 @@
 				566B384715BC16C70026821C /* Packet@2x.png */,
 				566B384815BC16C70026821C /* Savings.png */,
 				566B384915BC16C70026821C /* Savings@2x.png */,
-				566B384C15BC16C80026821C /* TabIconCounter.png */,
-				566B384D15BC16C80026821C /* TabIconCounter@2x.png */,
-				566B384E15BC16C80026821C /* TabIconHealth.png */,
-				566B384F15BC16C80026821C /* TabIconHealth@2x.png */,
-				566B385015BC16C80026821C /* TabIconSavings.png */,
-				566B385115BC16C80026821C /* TabIconSavings@2x.png */,
-				566B385215BC16C80026821C /* TabIconSettings.png */,
-				566B385315BC16C80026821C /* TabIconSettings@2x.png */,
 				566B385515BC16C80026821C /* TitleAbout.png */,
 				566B385615BC16C80026821C /* TitleAbout@2x.png */,
 				566B37CB15BC02430026821C /* TitleCalendar.png */,
@@ -649,19 +628,12 @@
 				566B389415BC16C80026821C /* HealthTableViewCell_waiting.png in Resources */,
 				566B389515BC16C80026821C /* HealthTableViewCell_waiting@2x.png in Resources */,
 				566B389E15BC16C80026821C /* Note.png in Resources */,
+				56E586941A6F1C2300F4C94F /* Main.storyboard in Resources */,
 				566B389F15BC16C80026821C /* Note@2x.png in Resources */,
 				566B38A015BC16C80026821C /* Packet.png in Resources */,
 				566B38A115BC16C80026821C /* Packet@2x.png in Resources */,
 				566B38A215BC16C80026821C /* Savings.png in Resources */,
 				566B38A315BC16C80026821C /* Savings@2x.png in Resources */,
-				566B38A615BC16C80026821C /* TabIconCounter.png in Resources */,
-				566B38A715BC16C80026821C /* TabIconCounter@2x.png in Resources */,
-				566B38A815BC16C80026821C /* TabIconHealth.png in Resources */,
-				566B38A915BC16C80026821C /* TabIconHealth@2x.png in Resources */,
-				566B38AA15BC16C80026821C /* TabIconSavings.png in Resources */,
-				566B38AB15BC16C80026821C /* TabIconSavings@2x.png in Resources */,
-				566B38AC15BC16C80026821C /* TabIconSettings.png in Resources */,
-				566B38AD15BC16C80026821C /* TabIconSettings@2x.png in Resources */,
 				566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */,
 				566B38AF15BC16C80026821C /* TitleAbout.png in Resources */,
 				566B38B015BC16C80026821C /* TitleAbout@2x.png in Resources */,

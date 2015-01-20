@@ -9,22 +9,22 @@
 #import "AppDelegate.h"
 
 #import "Constants.h"
-#import "PacketPriceViewController.h"
-#import "CounterViewController.h"
-#import "SavingsViewController.h"
-#import "AchievementsViewController.h"
-#import "SettingsViewController.h"
+//#import "PacketPriceViewController.h"
+//#import "CounterViewController.h"
+//#import "SavingsViewController.h"
+//#import "AchievementsViewController.h"
+//#import "SettingsViewController.h"
 
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) UITabBarController *tabBarController;
-@property (nonatomic, strong) CounterViewController *counterController;
-@property (nonatomic, strong) SavingsViewController *savingsController;
-@property (nonatomic, strong) AchievementsViewController *achievementsController;
-@property (nonatomic, strong) UINavigationController *settingsNavController;
-
-@property (nonatomic, strong) UIImageView *splashView;
+//@property (nonatomic, strong) UITabBarController *tabBarController;
+//@property (nonatomic, strong) CounterViewController *counterController;
+//@property (nonatomic, strong) SavingsViewController *savingsController;
+//@property (nonatomic, strong) AchievementsViewController *achievementsController;
+//@property (nonatomic, strong) UINavigationController *settingsNavController;
+//
+//@property (nonatomic, strong) UIImageView *splashView;
 
 - (void)updateLastCigaretteDate;
 
@@ -35,8 +35,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Create the window.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Create the window.
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -60,69 +60,69 @@
                        forKey:HasUpdatedLastCigaretteDateKey];
     }
 	
-	// create counter controller
-	self.counterController = [[CounterViewController alloc] init];
-	self.counterController.tabBarItem.title = MPString(@"Counter");
-	self.counterController.tabBarItem.image = [UIImage imageNamed:@"TabIconCounter"];
-	
-	// create savings controller
-	self.savingsController = [[SavingsViewController alloc] init];
-	self.savingsController.tabBarItem.title = MPString(@"Savings");
-	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
-	
-    // create the achievements view controller
-    self.achievementsController = [[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
-                                                                               bundle:nil];
-    self.achievementsController.tabBarItem.title = MPString(@"Health");
-    self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
-    
-	// create settings controller
-	SettingsViewController *settingsController = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	settingsController.title = MPString(@"Settings");
-	
-	// create settings navigation controller
-	self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
-	self.settingsNavController.tabBarItem.title = MPString(@"Settings");
-	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
-	
-	// Create the tab bar controller.
-	self.tabBarController = [[UITabBarController alloc] init];
-	self.tabBarController.viewControllers = @[
-        self.counterController,
-        self.savingsController,
-        self.achievementsController,
-        self.settingsNavController
-    ];
-
-    // Add the tab bar controller's view to the window and display.
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
-
-    // Create a splash view.
-    self.splashView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
-        self.splashView.image = [UIImage imageNamed:@"Default-568h"];
-    }
-    else {
-        self.splashView.image = [UIImage imageNamed:@"Default"];
-    }
-    
-    // Position splash view on top of everything.
-    [self.window addSubview:self.splashView];
-    [self.window bringSubviewToFront:self.splashView];
-    
-    // Animate the splash view away.
-    [UIView animateWithDuration:1.0
-                     animations:^{
-                         // Zoom out.
-                         self.splashView.frame = CGRectMake(-60.0, -85.0, 440.0, 635.0);
-                         // Fade out.
-                         self.splashView.alpha = 0.0;
-                     }
-                     completion:^(BOOL finished){
-                         [self.splashView removeFromSuperview];
-                         self.splashView = nil;
-                     }];
+//	// create counter controller
+//	self.counterController = [[CounterViewController alloc] init];
+//	self.counterController.tabBarItem.title = MPString(@"Counter");
+//	self.counterController.tabBarItem.image = [UIImage imageNamed:@"TabIconCounter"];
+//	
+//	// create savings controller
+//	self.savingsController = [[SavingsViewController alloc] init];
+//	self.savingsController.tabBarItem.title = MPString(@"Savings");
+//	self.savingsController.tabBarItem.image = [UIImage imageNamed:@"TabIconSavings"];
+//	
+//    // create the achievements view controller
+//    self.achievementsController = [[AchievementsViewController alloc] initWithNibName:@"AchievementsViewController"
+//                                                                               bundle:nil];
+//    self.achievementsController.tabBarItem.title = MPString(@"Health");
+//    self.achievementsController.tabBarItem.image = [UIImage imageNamed:@"TabIconHealth"];
+//    
+//	// create settings controller
+//	SettingsViewController *settingsController = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//	settingsController.title = MPString(@"Settings");
+//	
+//	// create settings navigation controller
+//	self.settingsNavController = [[UINavigationController alloc] initWithRootViewController:settingsController];
+//	self.settingsNavController.tabBarItem.title = MPString(@"Settings");
+//	self.settingsNavController.tabBarItem.image = [UIImage imageNamed:@"TabIconSettings"];
+//	
+//	// Create the tab bar controller.
+//	self.tabBarController = [[UITabBarController alloc] init];
+//	self.tabBarController.viewControllers = @[
+//        self.counterController,
+//        self.savingsController,
+//        self.achievementsController,
+//        self.settingsNavController
+//    ];
+//
+//    // Add the tab bar controller's view to the window and display.
+//    self.window.rootViewController = self.tabBarController;
+//    [self.window makeKeyAndVisible];
+//
+//    // Create a splash view.
+//    self.splashView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+//        self.splashView.image = [UIImage imageNamed:@"Default-568h"];
+//    }
+//    else {
+//        self.splashView.image = [UIImage imageNamed:@"Default"];
+//    }
+//    
+//    // Position splash view on top of everything.
+//    [self.window addSubview:self.splashView];
+//    [self.window bringSubviewToFront:self.splashView];
+//    
+//    // Animate the splash view away.
+//    [UIView animateWithDuration:1.0
+//                     animations:^{
+//                         // Zoom out.
+//                         self.splashView.frame = CGRectMake(-60.0, -85.0, 440.0, 635.0);
+//                         // Fade out.
+//                         self.splashView.alpha = 0.0;
+//                     }
+//                     completion:^(BOOL finished){
+//                         [self.splashView removeFromSuperview];
+//                         self.splashView = nil;
+//                     }];
     
     return YES;
 }
