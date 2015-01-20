@@ -8,6 +8,7 @@
 
 #import "CounterViewController.h"
 
+#import "Constants.h"
 #import "ChalkboardView.h"
 #import "CalendarView.h"
 
@@ -68,7 +69,7 @@
 						 forControlEvents:UIControlEventTouchUpInside];
     
 	// Create the calendar view.
-	self.calendar = [[CalendarView alloc] initWithDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]];
+	self.calendar = [[CalendarView alloc] initWithDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]];
     self.calendar.center = CGPointMake(self.containerView.center.x,
                                        self.containerView.center.y - self.tabBarController.tabBar.frame.size.height/2);
 	[self.calendar.prevButton addTarget:self
@@ -80,7 +81,7 @@
 {
 	[self updateViews];
     
-	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]) {
 		// Show the calendar.
 		[self displayView:self.calendar];
         
@@ -132,7 +133,7 @@
 
 - (void)updateViews
 {
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
 	if (!lastCigaretteDate) {
 		// Reset the chalkboard.
 		self.chalkboard.years = 0;
@@ -217,7 +218,7 @@
 - (void)viewSwipedLeft:(UISwipeGestureRecognizer *)recognizer
 {
     // Reject any gesture if the date of last cigarette is not set.
-	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]) {
         return;
     }
     
@@ -246,7 +247,7 @@
 - (void)viewSwipedRight:(UISwipeGestureRecognizer *)recognizer
 {
     // Reject any gesture if the date of last cigarette is not set.
-	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]) {
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]) {
         return;
     }
     
@@ -278,7 +279,7 @@
 {
     NSDateComponents *period = nil;
     
-    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
     if (lastDay) {
         // create gregorian calendar
         NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -296,7 +297,7 @@
 {
     NSInteger nonSmokingDays = 0;
     
-    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
     if (lastDay) {
         // create gregorian calendar
         NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];

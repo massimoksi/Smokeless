@@ -113,6 +113,7 @@
 		569EA0D216262F80002EF4F8 /* PacketSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0D416262F80002EF4F8 /* PacketSizeViewController.xib */; };
 		569EA0D816262FFE002EF4F8 /* PacketPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0DA16262FFE002EF4F8 /* PacketPriceViewController.xib */; };
 		569EA0DE16263050002EF4F8 /* LastCigaretteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0E016263050002EF4F8 /* LastCigaretteViewController.xib */; };
+		56A637961A6DC960001DC3A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A637951A6DC960001DC3A6 /* Constants.m */; };
 		56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */; };
 		56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */; };
 		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
@@ -281,6 +282,8 @@
 		569EA0E116263060002EF4F8 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
 		569EA0E216263062002EF4F8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
 		569EA0E316263063002EF4F8 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/LastCigaretteViewController.xib; sourceTree = "<group>"; };
+		56A637941A6DC960001DC3A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		56A637951A6DC960001DC3A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal.png"; sourceTree = "<group>"; };
 		56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal@2x.png"; sourceTree = "<group>"; };
 		56AF92AE1610E7320021DAE2 /* MPSettingViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSettingViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				5619B4111A6C6D81005C12CF /* Images.xcassets */,
+				56A637941A6DC960001DC3A6 /* Constants.h */,
+				56A637951A6DC960001DC3A6 /* Constants.m */,
 				566B375E15BBFE1F0026821C /* AppDelegate.h */,
 				566B375F15BBFE1F0026821C /* AppDelegate.m */,
 				566B378415BC00050026821C /* Models */,
@@ -694,6 +699,7 @@
 				566B376615BBFE1F0026821C /* AchievementsViewController.m in Sources */,
 				566B376815BBFE1F0026821C /* CalendarView.m in Sources */,
 				566B376915BBFE1F0026821C /* ChalkboardView.m in Sources */,
+				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
 				566B376A15BBFE1F0026821C /* CounterViewController.m in Sources */,
 				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
 				566B376C15BBFE1F0026821C /* DisplayView.m in Sources */,

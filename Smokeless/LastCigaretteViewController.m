@@ -8,6 +8,8 @@
 
 #import "LastCigaretteViewController.h"
 
+#import "Constants.h"
+
 
 @interface LastCigaretteViewController ()
 
@@ -25,7 +27,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
 	// Set up the date picker.
-	NSDate *prefsDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+	NSDate *prefsDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
 	if (prefsDate != nil) {
 		[self.datePicker setDate:prefsDate
 						animated:NO];
@@ -66,7 +68,7 @@
     [lastCigaretteComponents setHour:4];
     
     [[NSUserDefaults standardUserDefaults] setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-                                              forKey:@"LastCigarette"];
+                                              forKey:LastCigaretteKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];

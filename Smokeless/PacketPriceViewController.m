@@ -8,6 +8,8 @@
 
 #import "PacketPriceViewController.h"
 
+#import "Constants.h"
+
 
 @interface PacketPriceViewController ()
 
@@ -56,7 +58,7 @@
     self.priceLabel.shadowColor = [UIColor colorWithWhite:0.850
                                                     alpha:1.000];
     self.priceLabel.shadowOffset = CGSizeMake(0.0, 1.0);
-    self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([[NSUserDefaults standardUserDefaults] floatForKey:@"PacketPrice"])
+    self.priceLabel.text = [NSNumberFormatter localizedStringFromNumber:@([[NSUserDefaults standardUserDefaults] floatForKey:PacketPriceKey])
                                                             numberStyle:NSNumberFormatterCurrencyStyle];
 }
 
@@ -96,7 +98,7 @@
 	CGFloat actualPrice = [[formatter numberFromString:self.priceLabel.text] floatValue];
 	
     [[NSUserDefaults standardUserDefaults] setFloat:actualPrice
-                                             forKey:@"PacketPrice"];
+                                             forKey:PacketPriceKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];

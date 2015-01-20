@@ -8,6 +8,7 @@
 
 #import "SavingsViewController.h"
 
+#import "Constants.h"
 #import "DisplayView.h"
 
 
@@ -69,7 +70,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Set properties.
-    self.shakeEnabled = [userDefaults boolForKey:@"ShakeEnabled"];
+    self.shakeEnabled = [userDefaults boolForKey:ShakeEnabledKey];
     
     // Create the number formatter.
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -85,9 +86,9 @@
     [formatter setMaximumFractionDigits:2];
     
     // Retrieve preferences.
-	self.habits = [userDefaults dictionaryForKey:@"Habits"];
-	self.price = [userDefaults floatForKey:@"PacketPrice"];
-    self.size = [userDefaults integerForKey:@"PacketSize"];
+	self.habits = [userDefaults dictionaryForKey:HabitsKey];
+	self.price = [userDefaults floatForKey:PacketPriceKey];
+    self.size = [userDefaults integerForKey:PacketSizeKey];
 
     // Set display labels.
 	if (self.habits && (self.price > 0.0) && self.size) {
@@ -142,7 +143,7 @@
 {
     NSInteger nonSmokingDays = 0;
     
-    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
     if (lastDay) {
         // create gregorian calendar
         NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -160,12 +161,12 @@
 {
     NSUInteger totalPackets = 0;
     
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
     
     if (self.habits && lastCigaretteDate) {
-        NSInteger quantity = [[self.habits objectForKey:@"HabitsQuantity"] integerValue];
-        NSInteger unit = [[self.habits objectForKey:@"HabitsUnit"] integerValue];
-        NSInteger period = [[self.habits objectForKey:@"HabitsPeriod"] integerValue];
+        NSInteger quantity = [self.habits[HabitsQuantityKey] integerValue];
+        NSInteger unit = [self.habits[HabitsUnitKey] integerValue];
+        NSInteger period = [self.habits[HabitsPeriodKey] integerValue];
         
         // Calculate constants.
         NSInteger kUnit = (unit == 0) ? 1 : self.size;

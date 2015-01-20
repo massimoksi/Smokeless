@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "Constants.h"
 #import "PacketPriceViewController.h"
 #import "CounterViewController.h"
 #import "SavingsViewController.h"
@@ -40,23 +41,23 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Check if user settings have already been imported.
-    if (![userDefaults boolForKey:@"UserSettingsImported"]) {
+    if (![userDefaults boolForKey:UserSettingsImportedKey]) {
         [self importUserSettings];
     }
     
     // Cancel old registered local notifications if last cigarette date has been deleted.
-    if (![userDefaults objectForKey:@"LastCigarette"]) {
+    if (![userDefaults objectForKey:LastCigaretteKey]) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
     
     // Set a default hour (4:00AM) for last cigarette date.
     // On former versions, last cigarette hour depended on the time it was set.
     // Check at first run and fix an already existing cigarette date.
-    if (![userDefaults boolForKey:@"HasUpdatedLastCigaretteDate"] && ![userDefaults objectForKey:@"LastCigarette"]) {
+    if (![userDefaults boolForKey:HasUpdatedLastCigaretteDateKey] && ![userDefaults objectForKey:LastCigaretteKey]) {
         [self updateLastCigaretteDate];
         
         [userDefaults setBool:YES
-                       forKey:@"HasUpdatedLastCigaretteDate"];
+                       forKey:HasUpdatedLastCigaretteDateKey];
     }
 	
 	// create counter controller
@@ -165,20 +166,20 @@
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
         [userDefaults setObject:oldPrefs[@"LastCigarette"]
-                         forKey:@"LastCigaretteDate"];
+                         forKey:LastCigaretteKey];
         [userDefaults setObject:oldPrefs[@"Habits"]
-                         forKey:@"Habits"];
+                         forKey:HabitsKey];
         [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
-                          forKey:@"PacketSize"];
+                          forKey:PacketSizeKey];
         [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
-                        forKey:@"PacketPrice"];
+                        forKey:PacketPriceKey];
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
-                       forKey:@"ShakeEnabled"];
+                       forKey:ShakeEnabledKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
-                       forKey:@"NotificationsEnabled"];
+                       forKey:NotificationsEnabledKey];
         
 #if DEBUG
-        NSLog(@"Preferences: Finish importing old preferences.");
+        NSLog(@"Preferences: Imported %@.", [userDefaults dictionaryRepresentation]);
 #endif
         
         // Delete preferences file.
@@ -186,7 +187,7 @@
         if ([[NSFileManager defaultManager] removeItemAtPath:oldPrefsFilePath
                                                        error:&error]) {
             [userDefaults setBool:YES
-                           forKey:@"UserSettingsImported"];
+                           forKey:UserSettingsImportedKey];
 
 #if DEBUG
             NSLog(@"Preferences: Deleted old preferences.");
@@ -195,7 +196,7 @@
     }
     else {
         [userDefaults setBool:YES
-                       forKey:@"UserSettingsImported"];
+                       forKey:UserSettingsImportedKey];
         
 #if DEBUG
         NSLog(@"Preferences: No old preferences found.");
@@ -211,7 +212,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     // Get the saved date.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:@"LastCigaretteDate"];
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
     
     // Set the hour for the date at 4:00AM.
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -224,7 +225,7 @@
 #endif
     
     [userDefaults setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-                     forKey:@"LastCigaretteDate"];
+                     forKey:LastCigaretteKey];
 }
 
 @end

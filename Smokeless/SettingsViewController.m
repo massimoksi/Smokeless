@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 
+#import "Constants.h"
 #import "LastCigaretteViewController.h"
 #import "HabitsViewController.h"
 #import "PacketSizeViewController.h"
@@ -98,13 +99,13 @@ enum : NSUInteger {
 - (IBAction)shakeEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:@"ShakeEnabled"];
+                                            forKey:ShakeEnabledKey];
 }
 
 - (IBAction)notificationEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:@"NotificationsEnabled"];
+                                            forKey:NotificationsEnabledKey];
 }
 
 - (void)resetTapped:(id)sender
@@ -122,7 +123,7 @@ enum : NSUInteger {
 
 - (NSString *)lastCigaretteFormattedDate;
 {
-    return [NSDateFormatter localizedStringFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:@"LastCigarette"]
+    return [NSDateFormatter localizedStringFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]
                                           dateStyle:NSDateFormatterLongStyle
                                           timeStyle:NSDateFormatterNoStyle];
 }
@@ -131,11 +132,11 @@ enum : NSUInteger {
 {
     NSString *habitsString;
     
-    NSDictionary *habitsDict = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Habits"];
+    NSDictionary *habitsDict = [[NSUserDefaults standardUserDefaults] dictionaryForKey:HabitsKey];
     if (habitsDict != nil) {
-        NSInteger quantity = [habitsDict[@"HabitsQuantity"] integerValue];
-        NSInteger unit = [habitsDict[@"HabitsUnit"] integerValue];
-        NSInteger period = [habitsDict[@"HabitsPeriod"] integerValue];
+        NSInteger quantity = [habitsDict[HabitsQuantityKey] integerValue];
+        NSInteger unit = [habitsDict[HabitsUnitKey] integerValue];
+        NSInteger period = [habitsDict[HabitsPeriodKey] integerValue];
 
         NSString *unitString = nil;
         switch (unit) {
@@ -177,7 +178,7 @@ enum : NSUInteger {
 {
     NSString *packetSizeString;
     
-    NSInteger size = [[NSUserDefaults standardUserDefaults] integerForKey:@"PacketSize"];
+    NSInteger size = [[NSUserDefaults standardUserDefaults] integerForKey:PacketSizeKey];
     
     if (size != 0) {
         if (size > 1) {
@@ -198,7 +199,7 @@ enum : NSUInteger {
 {
     NSString *packetPriceString;
     
-    CGFloat price = [[NSUserDefaults standardUserDefaults] floatForKey:@"PacketPrice"];
+    CGFloat price = [[NSUserDefaults standardUserDefaults] floatForKey:PacketPriceKey];
     
     if (price != 0.0) {
         packetPriceString = [NSNumberFormatter localizedStringFromNumber:@(price)
@@ -322,7 +323,7 @@ enum : NSUInteger {
                     cell.textLabel.adjustsFontSizeToFitWidth = YES;
                     cell.textLabel.text = MPString(@"Shake piggy bank");
                     cell.accessoryView = self.shakeSwitch;
-                    self.shakeSwitch.on = [userDefaults boolForKey:@"ShakeEnabled"];
+                    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
                     break;
                     
                 case 1:
@@ -330,7 +331,7 @@ enum : NSUInteger {
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     cell.textLabel.text = MPString(@"Notifications");
                     cell.accessoryView = self.notificationSwitch;
-                    self.notificationSwitch.on = [userDefaults boolForKey:@"NotificationsEnabled"];
+                    self.notificationSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
                     break;
             }
             break;
@@ -419,10 +420,10 @@ enum : NSUInteger {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	switch (buttonIndex) {
 		case 0:
-            [userDefaults removeObjectForKey:@"LastCigarette"];
-            [userDefaults removeObjectForKey:@"Habits"];
-            [userDefaults removeObjectForKey:@"PacketSize"];
-            [userDefaults removeObjectForKey:@"PacketPrice"];
+            [userDefaults removeObjectForKey:LastCigaretteKey];
+            [userDefaults removeObjectForKey:HabitsKey];
+            [userDefaults removeObjectForKey:PacketSizeKey];
+            [userDefaults removeObjectForKey:PacketPriceKey];
             
 			// Reload data on the table view.
 			[self.tableView reloadData];

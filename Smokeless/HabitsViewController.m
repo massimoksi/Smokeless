@@ -8,6 +8,8 @@
 
 #import "HabitsViewController.h"
 
+#import "Constants.h"
+
 
 enum : NSUInteger {
 	HabitsComponentQuantity = 0,
@@ -34,10 +36,10 @@ enum : NSUInteger {
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];
     
 	// Retrieve preferences.
-	NSDictionary *habits = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Habits"];
-	NSInteger quantity = [habits[@"HabitsQuantity"] integerValue];
-	NSInteger unit = [habits[@"HabitsUnit"] integerValue];
-	NSInteger period = [habits[@"HabitsPeriod"] integerValue];
+	NSDictionary *habits = [[NSUserDefaults standardUserDefaults] dictionaryForKey:HabitsKey];
+	NSInteger quantity = [habits[HabitsQuantityKey] integerValue];
+	NSInteger unit = [habits[HabitsUnitKey] integerValue];
+	NSInteger period = [habits[HabitsPeriodKey] integerValue];
 	
 	// Set values from preferences to the picker view.
 	[self.habitsPicker selectRow:(quantity - 1)
@@ -75,12 +77,12 @@ enum : NSUInteger {
     
 	// Collect smoking habits.
 	NSDictionary *habits = @{
-        @"HabitsQuantity": @(quantity),
-        @"HabitsUnit": @(unit),
-        @"HabitsPeriod": @(period)
+        HabitsQuantityKey: @(quantity),
+        HabitsUnitKey: @(unit),
+        HabitsPeriodKey: @(period)
     };
     [[NSUserDefaults standardUserDefaults] setObject:habits
-                                              forKey:@"Habits"];
+                                              forKey:HabitsKey];
     
     // Dismiss the view.
     [self.delegate viewControllerDidClose];
