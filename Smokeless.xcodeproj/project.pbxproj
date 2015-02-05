@@ -25,7 +25,7 @@
 		566B376715BBFE1F0026821C /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566B372F15BBFE1F0026821C /* AchievementsViewController.xib */; };
 		566B376815BBFE1F0026821C /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373115BBFE1F0026821C /* CalendarView.m */; };
 		566B376915BBFE1F0026821C /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373315BBFE1F0026821C /* ChalkboardView.m */; };
-		566B376A15BBFE1F0026821C /* CounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CounterViewController.m */; };
+		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
 		566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373715BBFE1F0026821C /* CreditsViewController.m */; };
 		566B376C15BBFE1F0026821C /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373915BBFE1F0026821C /* DisplayView.m */; };
 		566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373D15BBFE1F0026821C /* HealthTableView.m */; };
@@ -150,8 +150,8 @@
 		566B373115BBFE1F0026821C /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		566B373215BBFE1F0026821C /* ChalkboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChalkboardView.h; sourceTree = "<group>"; };
 		566B373315BBFE1F0026821C /* ChalkboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChalkboardView.m; sourceTree = "<group>"; };
-		566B373415BBFE1F0026821C /* CounterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterViewController.h; sourceTree = "<group>"; };
-		566B373515BBFE1F0026821C /* CounterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterViewController.m; sourceTree = "<group>"; };
+		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		566B373615BBFE1F0026821C /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		566B373715BBFE1F0026821C /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		566B373815BBFE1F0026821C /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
@@ -392,8 +392,8 @@
 		566B378215BBFFAD0026821C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				566B373415BBFE1F0026821C /* CounterViewController.h */,
-				566B373515BBFE1F0026821C /* CounterViewController.m */,
+				566B373415BBFE1F0026821C /* CalendarViewController.h */,
+				566B373515BBFE1F0026821C /* CalendarViewController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
 				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
@@ -672,7 +672,7 @@
 				566B376815BBFE1F0026821C /* CalendarView.m in Sources */,
 				566B376915BBFE1F0026821C /* ChalkboardView.m in Sources */,
 				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
-				566B376A15BBFE1F0026821C /* CounterViewController.m in Sources */,
+				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
 				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
 				566B376C15BBFE1F0026821C /* DisplayView.m in Sources */,
 				566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */,

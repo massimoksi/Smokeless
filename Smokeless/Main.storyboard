@@ -112,7 +112,7 @@
         <!--Calendar-->
         <scene sceneID="s4F-W7-TTK">
             <objects>
-                <viewController id="Mg7-DU-3AT" customClass="CounterViewController" sceneMemberID="viewController">
+                <viewController id="Mg7-DU-3AT" customClass="CalendarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oUJ-y6-HTJ"/>
                         <viewControllerLayoutGuide type="bottom" id="0ga-2k-Xqd"/>
@@ -120,9 +120,48 @@
                     <view key="view" contentMode="scaleToFill" id="sSc-Ir-kwC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bly-Xf-YgR">
+                                <rect key="frame" x="16" y="28" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC2-xh-9Rc">
+                                <rect key="frame" x="16" y="57" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOG-ut-Bc4">
+                                <rect key="frame" x="16" y="86" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-IC-hPf">
+                                <rect key="frame" x="16" y="115" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-fn-hWz">
+                                <rect key="frame" x="16" y="144" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="Calendar" id="vMT-ga-n65"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="Bly-Xf-YgR" id="yCt-lQ-Pwm"/>
+                        <outlet property="daysLabel" destination="sCS-fn-hWz" id="ocC-KA-RyN"/>
+                        <outlet property="monthsLabel" destination="iOG-ut-Bc4" id="Mos-Cs-12j"/>
+                        <outlet property="weeksLabel" destination="KBT-IC-hPf" id="Ezs-yE-mmF"/>
+                        <outlet property="yearsLabel" destination="OC2-xh-9Rc" id="s1t-oK-jIo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-gq-CIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
