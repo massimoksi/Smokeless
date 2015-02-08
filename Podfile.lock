@@ -1,0 +1,10 @@
+PODS:
+  - ABStaticTableViewController (1.1.0)
+
+DEPENDENCIES:
+  - ABStaticTableViewController
+
+SPEC CHECKSUMS:
+  ABStaticTableViewController: 392d7e36d464073ae3dbe3f63e2a81aecdaa8d7a
+
+COCOAPODS: 0.36.0.beta.2

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E158AD9B011C48984961B57 /* libPods-Smokeless.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
@@ -35,7 +36,7 @@
 		566B377315BBFE1F0026821C /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374715BBFE1F0026821C /* MPGraphics.m */; };
 		566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374915BBFE1F0026821C /* MPTableViewCell.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
-		566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsViewController.m */; };
+		566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsTableViewController.m */; };
 		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
 		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
 		566B37F815BC137B0026821C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566B37C915BC02430026821C /* Localizable.strings */; };
@@ -119,9 +120,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5609717316297B9300F31FF6 /* ButtonShare-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal.png"; sourceTree = "<group>"; };
 		5609717416297B9300F31FF6 /* ButtonShare-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonShare-normal@2x.png"; sourceTree = "<group>"; };
@@ -171,8 +174,8 @@
 		566B374A15BBFE1F0026821C /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
-		566B375715BBFE1F0026821C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		566B375815BBFE1F0026821C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		566B375715BBFE1F0026821C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		566B375815BBFE1F0026821C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -283,6 +286,7 @@
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56E586931A6F1C2300F4C94F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */,
 				56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */,
+				0E158AD9B011C48984961B57 /* libPods-Smokeless.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,12 +318,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2418B0EE3D8AE91A94820917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */,
+				2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* Smokeless */ = {
 			isa = PBXGroup;
 			children = (
 				566B372815BBFE1E0026821C /* Smokeless */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				2418B0EE3D8AE91A94820917 /* Pods */,
 			);
 			name = Smokeless;
 			sourceTree = "<group>";
@@ -335,6 +350,7 @@
 				560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */,
 				5683F272132ED18100C733AC /* AVFoundation.framework */,
 				56F52C5A15185FAC007D838C /* Twitter.framework */,
+				C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -399,8 +415,8 @@
 				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
 				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
 				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
-				566B375715BBFE1F0026821C /* SettingsViewController.h */,
-				566B375815BBFE1F0026821C /* SettingsViewController.m */,
+				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
+				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
 				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
 				5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */,
 				569EA0E016263050002EF4F8 /* LastCigaretteViewController.xib */,
@@ -528,9 +544,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Smokeless" */;
 			buildPhases = (
+				68C90D29ABC0A14B35319868 /* Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				14A13CF7728DF755FF9DE16A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -661,6 +679,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14A13CF7728DF755FF9DE16A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C90D29ABC0A14B35319868 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -682,7 +733,7 @@
 				566B377315BBFE1F0026821C /* MPGraphics.m in Sources */,
 				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
-				566B377B15BBFE1F0026821C /* SettingsViewController.m in Sources */,
+				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
 				5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */,
@@ -799,6 +850,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_debug;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -812,7 +864,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Smokeless;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
@@ -824,6 +876,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -855,7 +908,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VERSIONING_SYSTEM = "";
