@@ -13,17 +13,19 @@
 #import "Constants.h"
 
 
-@interface SettingsTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface SettingsTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
 
 @property (strong, nonatomic) NSDate *lastCigaretteDate;
 @property (copy, nonatomic) NSDictionary *smokingHabits;
+@property (nonatomic) NSInteger packetSize;
 
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *lastCigaretteDatePicker;
 @property (weak, nonatomic) IBOutlet UILabel *smokingHabitsLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *smokingHabitsPickerView;
+@property (weak, nonatomic) IBOutlet UITextField *packetSizeTextField;
 
 @end
 
@@ -47,6 +49,9 @@
     
     self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
+    
+    self.packetSize = [userDefaults integerForKey:PacketSizeKey];
+    self.packetSizeTextField.text = (self.packetSize != 0) ? [NSString stringWithFormat:@"%zd", self.packetSize] : @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -85,6 +90,13 @@
 - (IBAction)lastCigaretteDateChanged:(UIDatePicker *)sender
 {
     self.lastCigaretteDateLabel.text = [self.dateFormatter stringFromDate:sender.date];
+}
+
+- (IBAction)doneTapped:(id)sender
+{
+    if ([self.packetSizeTextField isFirstResponder]) {
+        [self.packetSizeTextField resignFirstResponder];
+    }
 }
 
 //- (IBAction)shakeEnabled:(UISwitch *)sender
@@ -188,8 +200,6 @@
 //    
 //    return packetPriceString;
 //}
-
-#pragma mark - Table view data source
 
 #pragma mark - Table view delegate
 
@@ -376,6 +386,36 @@
                              };
     
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:habits];
+}
+
+#pragma mark - Text field delegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self
+                                                                                action:@selector(doneTapped:)];
+    
+    self.navigationItem.rightBarButtonItem = doneButton;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.navigationItem.rightBarButtonItem = nil;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (textField == self.packetSizeTextField) {
+        NSInteger size = [textField.text integerValue];
+        if (size != 0) {
+            [userDefaults setInteger:size
+                              forKey:PacketSizeKey];
+        }
+        else {
+            [userDefaults removeObjectForKey:PacketSizeKey];
+            
+            self.packetSizeTextField.text = @"";
+        }
+    }
 }
 
 @end
