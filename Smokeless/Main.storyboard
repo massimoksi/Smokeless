@@ -264,6 +264,70 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="DfL-Kz-sEo">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="K67-eB-NnE">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K67-eB-NnE" id="EKL-fE-FfR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake piggy bank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q9-3e-ZTf">
+                                                    <rect key="frame" x="15" y="12" width="131" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="lId-PI-nGw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-N4-FjV">
+                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="shakeEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="yMB-Y0-HYl"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TSw-N4-FjV" secondAttribute="trailing" constant="7" id="3Cb-iF-af2"/>
+                                                <constraint firstItem="7Q9-3e-ZTf" firstAttribute="leading" secondItem="EKL-fE-FfR" secondAttribute="leadingMargin" constant="7" id="5bf-pp-IS5"/>
+                                                <constraint firstItem="TSw-N4-FjV" firstAttribute="top" secondItem="EKL-fE-FfR" secondAttribute="topMargin" constant="-2" id="6qv-Hc-f86"/>
+                                                <constraint firstItem="TSw-N4-FjV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Q9-3e-ZTf" secondAttribute="trailing" constant="8" id="Xrk-WF-WcS"/>
+                                                <constraint firstItem="7Q9-3e-ZTf" firstAttribute="top" secondItem="EKL-fE-FfR" secondAttribute="topMargin" constant="4" id="qJ0-3b-nXQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="QMP-Us-j1f">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QMP-Us-j1f" id="muu-SS-tX7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-us-Xob">
+                                                    <rect key="frame" x="15" y="12" width="91" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2eJ-6T-G8v"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-uR-Keg">
+                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationsEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="42V-B1-MPN"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oGS-uR-Keg" secondAttribute="trailing" constant="7" id="9DL-Hu-aL6"/>
+                                                <constraint firstItem="h5a-us-Xob" firstAttribute="top" secondItem="muu-SS-tX7" secondAttribute="topMargin" constant="4" id="M4X-s6-nwG"/>
+                                                <constraint firstItem="oGS-uR-Keg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h5a-us-Xob" secondAttribute="trailing" constant="8" id="mbx-la-JKT"/>
+                                                <constraint firstItem="h5a-us-Xob" firstAttribute="leading" secondItem="muu-SS-tX7" secondAttribute="leadingMargin" constant="7" id="oEU-g1-Ktg"/>
+                                                <constraint firstItem="oGS-uR-Keg" firstAttribute="top" secondItem="muu-SS-tX7" secondAttribute="topMargin" constant="-2" id="vBo-2f-Uyx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="1tn-kS-Ugy" id="y3P-qT-8MZ"/>
@@ -276,8 +340,10 @@
                     <connections>
                         <outlet property="lastCigaretteDateLabel" destination="bMd-Vz-J6c" id="DgV-Zg-bEl"/>
                         <outlet property="lastCigaretteDatePicker" destination="0Wb-aU-5kQ" id="a7o-Hf-8KV"/>
+                        <outlet property="notificationsSwitch" destination="oGS-uR-Keg" id="o1e-g2-yfQ"/>
                         <outlet property="packetPriceTextField" destination="geG-Ow-OUL" id="Ts4-pD-nhw"/>
                         <outlet property="packetSizeTextField" destination="cqs-hV-Hwt" id="qnf-2D-HMK"/>
+                        <outlet property="shakeSwitch" destination="TSw-N4-FjV" id="OSS-fy-yXF"/>
                         <outlet property="smokingHabitsLabel" destination="l2U-Iv-slr" id="uXA-cG-cdq"/>
                         <outlet property="smokingHabitsPickerView" destination="kv9-dr-Udh" id="kPj-qk-sIA"/>
                     </connections>

@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *smokingHabitsPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *packetSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *packetPriceTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *shakeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *notificationsSwitch;
 
 @end
 
@@ -37,6 +39,11 @@
 	[super viewDidLoad];
 	
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+#if DEBUG
+    NSLog(@"%@", [userDefaults dictionaryRepresentation]);
+#endif
+    
+    
     self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
     self.lastCigaretteDateLabel.text = (self.lastCigaretteDate) ? [self.dateFormatter stringFromDate:self.lastCigaretteDate] : @"";
     
@@ -52,6 +59,9 @@
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
     self.packetPriceTextField.text = (price != 0.0) ? [currencyFormatter stringFromNumber:@(price)] : @"";
+    
+    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
+    self.notificationsSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,18 +112,18 @@
     }
 }
 
-//- (IBAction)shakeEnabled:(UISwitch *)sender
-//{
-//    [[NSUserDefaults standardUserDefaults] setBool:sender.on
-//                                            forKey:ShakeEnabledKey];
-//}
-//
-//- (IBAction)notificationEnabled:(UISwitch *)sender
-//{
-//    [[NSUserDefaults standardUserDefaults] setBool:sender.on
-//                                            forKey:NotificationsEnabledKey];
-//}
-//
+- (IBAction)shakeEnabled:(UISwitch *)sender
+{
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on
+                                            forKey:ShakeEnabledKey];
+}
+
+- (IBAction)notificationsEnabled:(UISwitch *)sender
+{
+    [[NSUserDefaults standardUserDefaults] setBool:sender.on
+                                            forKey:NotificationsEnabledKey];
+}
+
 //- (void)resetTapped:(id)sender
 //{
 //    // Show action sheet to ask confirmation before deleting preferences.
@@ -165,44 +175,6 @@
         return @"";
     }
 }
-
-//- (NSString *)packetSize
-//{
-//    NSString *packetSizeString;
-//    
-//    NSInteger size = [[NSUserDefaults standardUserDefaults] integerForKey:PacketSizeKey];
-//    
-//    if (size != 0) {
-//        if (size > 1) {
-//            packetSizeString = [[NSString stringWithFormat:@"%ld ", size] stringByAppendingString:MPString(@"cigarettes")];
-//        }
-//        else {
-//            packetSizeString = [[NSString stringWithFormat:@"%ld ", size] stringByAppendingString:MPString(@"cigarette")];
-//        }
-//    }
-//    else {
-//        packetSizeString = nil;
-//    }
-//    
-//    return packetSizeString;
-//}
-//
-//- (NSString *)packetPrice
-//{
-//    NSString *packetPriceString;
-//    
-//    CGFloat price = [[NSUserDefaults standardUserDefaults] floatForKey:PacketPriceKey];
-//    
-//    if (price != 0.0) {
-//        packetPriceString = [NSNumberFormatter localizedStringFromNumber:@(price)
-//                                                             numberStyle:NSNumberFormatterCurrencyStyle];
-//    }
-//    else {
-//        packetPriceString = nil;
-//    }
-//    
-//    return packetPriceString;
-//}
 
 #pragma mark - Table view delegate
 
