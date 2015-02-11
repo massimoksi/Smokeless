@@ -139,6 +139,51 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="bi3-mY-31v">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="mSY-rF-8ph" detailTextLabel="l2U-Iv-slr" style="IBUITableViewCellStyleValue1" id="b2a-ar-Zze">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b2a-ar-Zze" id="V4q-0w-7dQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Habits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mSY-rF-8ph">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l2U-Iv-slr">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="163" id="g7Y-lT-0iP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7Y-lT-0iP" id="jQv-9D-vSe">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-dr-Udh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="1tn-kS-Ugy" id="8fm-kE-JJs"/>
+                                                        <outlet property="delegate" destination="1tn-kS-Ugy" id="rfN-zd-khb"/>
+                                                    </connections>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kv9-dr-Udh" firstAttribute="leading" secondItem="jQv-9D-vSe" secondAttribute="leadingMargin" constant="-8" id="84t-tS-Q3K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kv9-dr-Udh" secondAttribute="bottom" constant="-8" id="dze-HS-xZM"/>
+                                                <constraint firstItem="kv9-dr-Udh" firstAttribute="top" secondItem="jQv-9D-vSe" secondAttribute="topMargin" constant="-8" id="ldu-31-o04"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kv9-dr-Udh" secondAttribute="trailing" constant="-8" id="m34-Wp-R8q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="1tn-kS-Ugy" id="y3P-qT-8MZ"/>
@@ -149,6 +194,8 @@
                     <connections>
                         <outlet property="lastCigaretteDateLabel" destination="bMd-Vz-J6c" id="DgV-Zg-bEl"/>
                         <outlet property="lastCigaretteDatePicker" destination="0Wb-aU-5kQ" id="a7o-Hf-8KV"/>
+                        <outlet property="smokingHabitsLabel" destination="l2U-Iv-slr" id="uXA-cG-cdq"/>
+                        <outlet property="smokingHabitsPickerView" destination="kv9-dr-Udh" id="kPj-qk-sIA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiV-UC-m4T" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,10 +1,13 @@
 PODS:
   - ABStaticTableViewController (1.1.0)
+  - TTTLocalizedPluralString (0.0.9)
 
 DEPENDENCIES:
   - ABStaticTableViewController
+  - TTTLocalizedPluralString
 
 SPEC CHECKSUMS:
   ABStaticTableViewController: 392d7e36d464073ae3dbe3f63e2a81aecdaa8d7a
+  TTTLocalizedPluralString: eeb165910dc6a98510c8ea5138cccb303e9d3d4f
 
 COCOAPODS: 0.36.0.beta.2

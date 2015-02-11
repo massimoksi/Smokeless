@@ -4,6 +4,7 @@
 target 'Smokeless' do
 
   pod 'ABStaticTableViewController'
-
+  pod 'TTTLocalizedPluralString'
+  
 end
 

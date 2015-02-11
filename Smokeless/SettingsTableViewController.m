@@ -8,16 +8,22 @@
 
 #import "SettingsTableViewController.h"
 
+#import "TTTLocalizedPluralString.h"
+
 #import "Constants.h"
 
 
-@interface SettingsTableViewController ()
+@interface SettingsTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
+
 @property (strong, nonatomic) NSDate *lastCigaretteDate;
+@property (copy, nonatomic) NSDictionary *smokingHabits;
 
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *lastCigaretteDatePicker;
+@property (weak, nonatomic) IBOutlet UILabel *smokingHabitsLabel;
+@property (weak, nonatomic) IBOutlet UIPickerView *smokingHabitsPickerView;
 
 @end
 
@@ -28,7 +34,8 @@
 {
 	[super viewDidLoad];
 	
-    self.lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
     if (self.lastCigaretteDate) {
         self.lastCigaretteDateLabel.text = [self.dateFormatter stringFromDate:self.lastCigaretteDate];
     }
@@ -37,6 +44,9 @@
     }
     
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
+    
+    self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
+    self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,15 +55,15 @@
 
     NSIndexPath *lastCigaretteDatePickerIndexPath = [NSIndexPath indexPathForRow:1
                                                                        inSection:0];
+    NSIndexPath *smokingHabitsPickerViewIndexPath = [NSIndexPath indexPathForRow:1
+                                                                       inSection:1];
     
-    [self deleteRowsAtIndexPaths:@[lastCigaretteDatePickerIndexPath]];
+    [self deleteRowsAtIndexPaths:@[lastCigaretteDatePickerIndexPath, smokingHabitsPickerViewIndexPath]];
 }
 
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
-    
-    self.lastCigaretteDate = nil;
 }
 
 #pragma mark - Accessors
@@ -102,59 +112,45 @@
 
 #pragma mark - Private methods
 
-//- (NSString *)lastCigaretteFormattedDate;
-//{
-//    return [NSDateFormatter localizedStringFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]
-//                                          dateStyle:NSDateFormatterLongStyle
-//                                          timeStyle:NSDateFormatterNoStyle];
-//}
-//
-//- (NSString *)smokingHabits
-//{
-//    NSString *habitsString;
-//    
-//    NSDictionary *habitsDict = [[NSUserDefaults standardUserDefaults] dictionaryForKey:HabitsKey];
-//    if (habitsDict != nil) {
-//        NSInteger quantity = [habitsDict[HabitsQuantityKey] integerValue];
-//        NSInteger unit = [habitsDict[HabitsUnitKey] integerValue];
-//        NSInteger period = [habitsDict[HabitsPeriodKey] integerValue];
-//
-//        NSString *unitString = nil;
-//        switch (unit) {
-//            case 0:
-//                unitString = (quantity == 1) ?
-//                MPString(@"cigarette") :
-//                MPString(@"cigarettes");
-//                break;
-//                
-//            case 1:
-//                unitString = (quantity == 1) ?
-//                MPString(@"packet") :
-//                MPString(@"packets");
-//                break;
-//        }
-//
-//        NSString *periodString = nil;
-//        switch (period) {
-//            case 0:
-//                periodString = MPString(@"a day");
-//                break;
-//                
-//            case 1:
-//                periodString = MPString(@"a week");
-//                break;
-//        }
-//        
-//        habitsString = [NSString stringWithFormat:@"%ld %@ %@", quantity, unitString, periodString];
-//    }
-//    else {
-//        habitsString = nil;
-//    }
-//    
-//    // TODO: shorten string.
-//    return habitsString;
-//}
-//
+- (NSString *)formattedStringFromSmokingHabits:(NSDictionary *)smokingHabits
+{
+    if (smokingHabits) {
+        NSInteger quantity = [smokingHabits[HabitsQuantityKey] integerValue];
+        NSInteger unit = [smokingHabits[HabitsUnitKey] integerValue];
+        NSInteger period = [smokingHabits[HabitsPeriodKey] integerValue];
+        
+        NSString *unitFormat;
+        switch (unit) {
+            default:
+            case 0:
+                unitFormat = TTTLocalizedPluralString(quantity, @"cigarette", nil);
+                break;
+                
+
+            case 1:
+                unitFormat = TTTLocalizedPluralString(quantity, @"packet", nil);
+                break;
+        }
+
+        NSString *periodString;
+        switch (period) {
+            default:
+            case 0:
+                periodString = NSLocalizedString(@" a day", nil);
+                break;
+
+            case 1:
+                periodString = NSLocalizedString(@" a week", nil);
+                break;
+        }
+        
+        return [unitFormat stringByAppendingString:periodString];
+    }
+    else {
+        return @"";
+    }
+}
+
 //- (NSString *)packetSize
 //{
 //    NSString *packetSizeString;
@@ -233,6 +229,49 @@
                 }
             }
             break;
+
+        case 1:
+            if (row == 0) {
+                NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:++row
+                                                               inSection:section];
+                
+                if ([self isRowVisible:newIndexPath]) {
+                    NSDictionary *habits = @{
+                                             HabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
+                                             HabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
+                                             HabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
+                                             };
+                    if (![habits isEqualToDictionary:self.smokingHabits]) {
+                        [[NSUserDefaults standardUserDefaults] setObject:habits
+                                                                  forKey:HabitsKey];
+                    }
+                    
+                    [self deleteRowsAtIndexPaths:@[newIndexPath]
+                                withRowAnimation:UITableViewRowAnimationTop];
+                }
+                else {
+                    if (self.smokingHabits) {
+                        NSInteger quantity = [self.smokingHabits[HabitsQuantityKey] integerValue];
+                        NSInteger unit = [self.smokingHabits[HabitsUnitKey] integerValue];
+                        NSInteger period = [self.smokingHabits[HabitsPeriodKey] integerValue];
+                        
+                        // Set values from preferences to the picker view.
+                        [self.smokingHabitsPickerView selectRow:(quantity - 1)
+                                                    inComponent:0
+                                                       animated:NO];
+                        [self.smokingHabitsPickerView selectRow:unit
+                                                    inComponent:1
+                                                       animated:NO];
+                        [self.smokingHabitsPickerView selectRow:period
+                                                    inComponent:2
+                                                       animated:NO];
+                    }
+                    
+                    [self insertRowsAtIndexPaths:@[newIndexPath]
+                                withRowAnimation:UITableViewRowAnimationTop];
+                }
+            }
+            break;
             
         default:
             break;
@@ -240,6 +279,103 @@
 
     [tableView deselectRowAtIndexPath:indexPath
 							 animated:YES];
+}
+
+#pragma mark - Picker view data source
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 3;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSInteger rows;
+    
+    switch (component) {
+        case 0:
+            rows = 99;
+            break;
+            
+        case 1:
+        case 2:
+            rows = 2;
+            break;
+            
+        default:
+            rows = 0;
+            break;
+    }
+    
+    return rows;
+}
+
+#pragma mark - Picker view delegate
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    CGFloat width = 0.0;
+    CGFloat viewWidth = CGRectGetWidth(self.view.frame);
+    
+    switch (component) {
+        case 0:
+            width = viewWidth / 6;
+            break;
+            
+        case 1:
+            width = viewWidth / 2; // 3/6
+            break;
+            
+        case 2:
+            width = viewWidth / 3; // 2/6
+            break;
+    }
+    
+    return width;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    // TODO: add comments to localized strings.
+    // TODO: create constants to get rid of magic numbers.
+    NSString *title = nil;
+    
+    switch (component) {
+        case 0:
+            title = [NSString stringWithFormat:@"%ld", row + 1];
+            break;
+            
+        case 1:
+            if (row == 0) {
+                title = [NSLocalizedString(@"Cigarette(s)", nil) lowercaseString];
+            }
+            else {
+                title = [NSLocalizedString(@"Packet(s)", nil) lowercaseString];
+            }
+            break;
+            
+        case 2:
+            if (row == 0) {
+                title = [NSLocalizedString(@"Day", nil) lowercaseString];
+            }
+            else {
+                title = [NSLocalizedString(@"Week", nil) lowercaseString];
+            }
+            break;
+    }
+    
+    return title;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSDictionary *habits = @{
+                             HabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
+                             HabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
+                             HabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
+                             };
+    
+    self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:habits];
 }
 
 @end
