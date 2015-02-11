@@ -19,13 +19,13 @@
 
 @property (strong, nonatomic) NSDate *lastCigaretteDate;
 @property (copy, nonatomic) NSDictionary *smokingHabits;
-@property (nonatomic) NSInteger packetSize;
 
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *lastCigaretteDatePicker;
 @property (weak, nonatomic) IBOutlet UILabel *smokingHabitsLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *smokingHabitsPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *packetSizeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *packetPriceTextField;
 
 @end
 
@@ -38,20 +38,20 @@
 	
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
-    if (self.lastCigaretteDate) {
-        self.lastCigaretteDateLabel.text = [self.dateFormatter stringFromDate:self.lastCigaretteDate];
-    }
-    else {
-        self.lastCigaretteDateLabel.text = @"";
-    }
+    self.lastCigaretteDateLabel.text = (self.lastCigaretteDate) ? [self.dateFormatter stringFromDate:self.lastCigaretteDate] : @"";
     
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
     self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
     
-    self.packetSize = [userDefaults integerForKey:PacketSizeKey];
-    self.packetSizeTextField.text = (self.packetSize != 0) ? [NSString stringWithFormat:@"%zd", self.packetSize] : @"";
+    NSInteger size = [userDefaults integerForKey:PacketSizeKey];
+    self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
+    
+    CGFloat price = [userDefaults floatForKey:PacketPriceKey];
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    self.packetPriceTextField.text = (price != 0.0) ? [currencyFormatter stringFromNumber:@(price)] : @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,6 +96,9 @@
 {
     if ([self.packetSizeTextField isFirstResponder]) {
         [self.packetSizeTextField resignFirstResponder];
+    }
+    else if ([self.packetPriceTextField isFirstResponder]) {
+        [self.packetPriceTextField resignFirstResponder];
     }
 }
 
@@ -414,6 +417,18 @@
             [userDefaults removeObjectForKey:PacketSizeKey];
             
             self.packetSizeTextField.text = @"";
+        }
+    }
+    else if (textField == self.packetPriceTextField) {
+        CGFloat price = [textField.text floatValue];
+        if (price != 0.0) {
+            [userDefaults setFloat:price
+                            forKey:PacketPriceKey];
+        }
+        else {
+            [userDefaults removeObjectForKey:PacketPriceKey];
+            
+            self.packetPriceTextField.text = @"";
         }
     }
 }

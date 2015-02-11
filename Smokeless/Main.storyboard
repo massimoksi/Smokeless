@@ -224,6 +224,44 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="i6Z-Ev-zKP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6Z-Ev-zKP" id="heO-3O-S4g">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-0a-ozr">
+                                                    <rect key="frame" x="15" y="12" width="37" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ZEz-be-dY7"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="yFE-Rf-vsH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geG-Ow-OUL">
+                                                    <rect key="frame" x="60" y="12" width="525" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="cwo-Qj-hqU"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fGt-YG-cGQ"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="1tn-kS-Ugy" id="vNa-5r-3NS"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="geG-Ow-OUL" firstAttribute="leading" secondItem="OeV-0a-ozr" secondAttribute="trailing" constant="8" id="KeQ-3m-20w"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="geG-Ow-OUL" secondAttribute="trailing" constant="7" id="Mbw-bX-PsT"/>
+                                                <constraint firstItem="OeV-0a-ozr" firstAttribute="leading" secondItem="heO-3O-S4g" secondAttribute="leadingMargin" constant="7" id="itu-iQ-79H"/>
+                                                <constraint firstItem="OeV-0a-ozr" firstAttribute="top" secondItem="heO-3O-S4g" secondAttribute="topMargin" constant="4" id="l9a-2o-hQR"/>
+                                                <constraint firstItem="geG-Ow-OUL" firstAttribute="top" secondItem="heO-3O-S4g" secondAttribute="topMargin" constant="4" id="xjC-yW-vYO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -238,6 +276,7 @@
                     <connections>
                         <outlet property="lastCigaretteDateLabel" destination="bMd-Vz-J6c" id="DgV-Zg-bEl"/>
                         <outlet property="lastCigaretteDatePicker" destination="0Wb-aU-5kQ" id="a7o-Hf-8KV"/>
+                        <outlet property="packetPriceTextField" destination="geG-Ow-OUL" id="Ts4-pD-nhw"/>
                         <outlet property="packetSizeTextField" destination="cqs-hV-Hwt" id="qnf-2D-HMK"/>
                         <outlet property="smokingHabitsLabel" destination="l2U-Iv-slr" id="uXA-cG-cdq"/>
                         <outlet property="smokingHabitsPickerView" destination="kv9-dr-Udh" id="kPj-qk-sIA"/>
