@@ -37,31 +37,8 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-#if DEBUG
-    NSLog(@"%@", [userDefaults dictionaryRepresentation]);
-#endif
-    
-    
-    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
-    self.lastCigaretteDateLabel.text = (self.lastCigaretteDate) ? [self.dateFormatter stringFromDate:self.lastCigaretteDate] : @"";
-    
-    self.lastCigaretteDatePicker.maximumDate = [NSDate date];
-    
-    self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
-    self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
-    
-    NSInteger size = [userDefaults integerForKey:PacketSizeKey];
-    self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
-    
-    CGFloat price = [userDefaults floatForKey:PacketPriceKey];
-    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
-    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    self.packetPriceTextField.text = (price != 0.0) ? [currencyFormatter stringFromNumber:@(price)] : @"";
-    
-    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
-    self.notificationsSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
+
+    [self updateSettings];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -124,18 +101,35 @@
                                             forKey:NotificationsEnabledKey];
 }
 
-//- (void)resetTapped:(id)sender
-//{
-//    // Show action sheet to ask confirmation before deleting preferences.
-//    UIActionSheet *resetSheet = [[UIActionSheet alloc] initWithTitle:MPString(@"Do you really want to delete all your settings?")
-//                                                            delegate:self
-//                                                   cancelButtonTitle:MPString(@"Cancel")
-//                                              destructiveButtonTitle:MPString(@"Delete")
-//                                                   otherButtonTitles:nil];
-//    [resetSheet showFromTabBar:self.tabBarController.tabBar];
-//}
-
 #pragma mark - Private methods
+
+- (void)updateSettings
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+#if DEBUG
+    NSLog(@"%@", [userDefaults dictionaryRepresentation]);
+#endif
+    
+    
+    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
+    self.lastCigaretteDateLabel.text = (self.lastCigaretteDate) ? [self.dateFormatter stringFromDate:self.lastCigaretteDate] : @"";
+    
+    self.lastCigaretteDatePicker.maximumDate = [NSDate date];
+    
+    self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
+    self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
+    
+    NSInteger size = [userDefaults integerForKey:PacketSizeKey];
+    self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
+    
+    CGFloat price = [userDefaults floatForKey:PacketPriceKey];
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    self.packetPriceTextField.text = (price != 0.0) ? [currencyFormatter stringFromNumber:@(price)] : @"";
+    
+    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
+    self.notificationsSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
+}
 
 - (NSString *)formattedStringFromSmokingHabits:(NSDictionary *)smokingHabits
 {
@@ -174,6 +168,38 @@
     else {
         return @"";
     }
+}
+
+- (void)resetSettings
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:NSLocalizedString(@"Do you really want to delete all your settings?", nil)
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", nil)
+                                                          style:UIAlertActionStyleDestructive
+                                                        handler:^(UIAlertAction *action){
+                                                            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                                                            [userDefaults removeObjectForKey:LastCigaretteKey];
+                                                            [userDefaults removeObjectForKey:HabitsKey];
+                                                            [userDefaults removeObjectForKey:PacketSizeKey];
+                                                            [userDefaults removeObjectForKey:PacketPriceKey];
+                                                            [userDefaults removeObjectForKey:ShakeEnabledKey];
+                                                            [userDefaults removeObjectForKey:NotificationsEnabledKey];
+                                                            
+                                                            [self updateSettings];
+                                                        }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+
+    [alertController addAction:resetAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
 }
 
 #pragma mark - Table view delegate
@@ -256,6 +282,10 @@
                                 withRowAnimation:UITableViewRowAnimationTop];
                 }
             }
+            break;
+         
+        case 4:
+            [self resetSettings];
             break;
             
         default:

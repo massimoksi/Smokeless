@@ -328,6 +328,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="jY7-qt-RoD">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="bxv-dS-hzH">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxv-dS-hzH" id="XJp-9p-s9z">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-Pi-rJ3">
+                                                    <rect key="frame" x="23" y="11" width="554" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="XEc-Sd-Dur"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e3H-Pi-rJ3" firstAttribute="leading" secondItem="XJp-9p-s9z" secondAttribute="leadingMargin" constant="15" id="0NC-KV-Ojf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e3H-Pi-rJ3" secondAttribute="trailing" constant="15" id="Jqt-f6-q3n"/>
+                                                <constraint firstAttribute="centerY" secondItem="e3H-Pi-rJ3" secondAttribute="centerY" id="tIT-D8-PSe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="1tn-kS-Ugy" id="y3P-qT-8MZ"/>
