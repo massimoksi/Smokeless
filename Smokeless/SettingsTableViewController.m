@@ -16,8 +16,8 @@
 @interface SettingsTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
-@property (strong, nonatomic) NSDate *lastCigaretteDate;
 @property (copy, nonatomic) NSDictionary *smokingHabits;
 
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
@@ -72,6 +72,17 @@
     return _dateFormatter;
 }
 
+- (NSNumberFormatter *)currencyFormatter
+{
+    static NSNumberFormatter *_currencyFormatter = nil;
+    if (!_currencyFormatter) {
+        _currencyFormatter = [[NSNumberFormatter alloc] init];
+        _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    }
+    
+    return _currencyFormatter;
+}
+
 #pragma mark - Actions
 
 - (IBAction)lastCigaretteDateChanged:(UIDatePicker *)sender
@@ -110,9 +121,8 @@
     NSLog(@"%@", [userDefaults dictionaryRepresentation]);
 #endif
     
-    
-    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
-    self.lastCigaretteDateLabel.text = (self.lastCigaretteDate) ? [self.dateFormatter stringFromDate:self.lastCigaretteDate] : @"";
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
+    self.lastCigaretteDateLabel.text = (lastCigaretteDate) ? [self.dateFormatter stringFromDate:lastCigaretteDate] : @"";
     
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
@@ -123,9 +133,7 @@
     self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
     
     CGFloat price = [userDefaults floatForKey:PacketPriceKey];
-    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
-    currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    self.packetPriceTextField.text = (price != 0.0) ? [currencyFormatter stringFromNumber:@(price)] : @"";
+    self.packetPriceTextField.text = (price != 0.0) ? [self.currencyFormatter stringFromNumber:@(price)] : @"";
     
     self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
     self.notificationsSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
@@ -217,19 +225,17 @@
                 
                 if ([self isRowVisible:newIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
-                    if ([actualDate compare:self.lastCigaretteDate] != NSOrderedSame) {
-                        self.lastCigaretteDate = actualDate;
-                        
-                        [[NSUserDefaults standardUserDefaults] setObject:actualDate
-                                                                  forKey:LastCigaretteKey];
-                    }
+
+                    [[NSUserDefaults standardUserDefaults] setObject:actualDate
+                                                              forKey:LastCigaretteKey];
                     
                     [self deleteRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
                 }
                 else {
-                    if (self.lastCigaretteDate) {
-                        self.lastCigaretteDatePicker.date = self.lastCigaretteDate;
+                    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+                    if (lastCigaretteDate) {
+                        self.lastCigaretteDatePicker.date = lastCigaretteDate;
                     }
                     else {
                         self.lastCigaretteDatePicker.date = [NSDate date];
@@ -397,6 +403,14 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    if (textField == self.packetPriceTextField) {
+        NSNumber *price = [self.currencyFormatter numberFromString:textField.text];
+        
+        if (price) {
+            textField.text = [NSString stringWithFormat:@"%@", price];
+        }
+    }
+    
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                 target:self
                                                                                 action:@selector(doneTapped:)];
@@ -426,6 +440,8 @@
         if (price != 0.0) {
             [userDefaults setFloat:price
                             forKey:PacketPriceKey];
+            
+            textField.text = [self.currencyFormatter stringFromNumber:@(price)];
         }
         else {
             [userDefaults removeObjectForKey:PacketPriceKey];
