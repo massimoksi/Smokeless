@@ -91,6 +91,7 @@
 		566B38AF15BC16C80026821C /* TitleAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385515BC16C80026821C /* TitleAbout.png */; };
 		566B38B015BC16C80026821C /* TitleAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385615BC16C80026821C /* TitleAbout@2x.png */; };
 		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
+		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		569EA0C21624B0FC002EF4F8 /* PriceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C01624B0FC002EF4F8 /* PriceTag.png */; };
 		569EA0C31624B0FC002EF4F8 /* PriceTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */; };
@@ -216,6 +217,8 @@
 		566B385615BC16C80026821C /* TitleAbout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TitleAbout@2x.png"; sourceTree = "<group>"; };
 		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
 		567F8B051A90009F00F57F45 /* HealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewController.m; sourceTree = "<group>"; };
+		567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smokeless-Bridging-Header.h"; sourceTree = "<group>"; };
+		567F8B081A90033300F57F45 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		569EA0C01624B0FC002EF4F8 /* PriceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriceTag.png; sourceTree = "<group>"; };
 		569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PriceTag@2x.png"; sourceTree = "<group>"; };
@@ -345,6 +348,7 @@
 				566B374015BBFE1F0026821C /* main.m */,
 				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
 				566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */,
+				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -393,6 +397,7 @@
 				566B373915BBFE1F0026821C /* DisplayView.m */,
 				566B373C15BBFE1F0026821C /* HealthTableView.h */,
 				566B373D15BBFE1F0026821C /* HealthTableView.m */,
+				567F8B081A90033300F57F45 /* AchievementCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				566B377115BBFE1F0026821C /* MPCell.m in Sources */,
+				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
 				566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */,
 				566B377315BBFE1F0026821C /* MPGraphics.m in Sources */,
 				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
@@ -678,6 +684,7 @@
 			baseConfigurationReference = 05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_debug;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -689,12 +696,15 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Smokeless;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = .debug;
 				SUFFIX_BUNDLE_NAME = " α";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -704,6 +714,7 @@
 			baseConfigurationReference = 2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
@@ -712,10 +723,12 @@
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "";
 				SUFFIX_BUNDLE_NAME = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -727,6 +740,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_VERSION = "";
@@ -747,6 +761,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "";
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

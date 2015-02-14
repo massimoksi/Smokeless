@@ -8,6 +8,8 @@
 
 #import "HealthTableViewController.h"
 
+#import "Smokeless-Swift.h"
+
 #import "Achievement.h"
 
 
@@ -57,6 +59,9 @@
     step8.text = @"Your risk of heart attack will have returned to that of a non-smoker.";
     
     _achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 64.0;
 }
 
 #pragma mark - Table view data source
@@ -73,11 +78,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AchievementCell"
+    AchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AchievementCell"
                                                             forIndexPath:indexPath];
     
     Achievement *achievement = self.achievements[indexPath.row];
-    cell.textLabel.text = achievement.text;
+    cell.subtitleLabel.text = achievement.text;
     
     return cell;
 }
