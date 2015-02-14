@@ -8,5 +8,5 @@
 
     #import <Twitter/Twitter.h>
 
-    #import "MPToolkit.h"
+    #import "MPDefines.h"
 #endif

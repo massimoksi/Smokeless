@@ -91,7 +91,6 @@
 		566B38AF15BC16C80026821C /* TitleAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385515BC16C80026821C /* TitleAbout.png */; };
 		566B38B015BC16C80026821C /* TitleAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385615BC16C80026821C /* TitleAbout@2x.png */; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
-		5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */; };
 		569EA0C21624B0FC002EF4F8 /* PriceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C01624B0FC002EF4F8 /* PriceTag.png */; };
 		569EA0C31624B0FC002EF4F8 /* PriceTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */; };
 		569EA0C6162627FC002EF4F8 /* ButtonReset-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C4162627FC002EF4F8 /* ButtonReset-normal.png */; };
@@ -101,9 +100,6 @@
 		56A637961A6DC960001DC3A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A637951A6DC960001DC3A6 /* Constants.m */; };
 		56A78EA6161E393B004B3629 /* ButtonCalculator-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */; };
 		56A78EA7161E393B004B3629 /* ButtonCalculator-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */; };
-		56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B01610EC050021DAE2 /* HabitsViewController.m */; };
-		56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92B5161100340021DAE2 /* PacketSizeViewController.m */; };
-		56AF92BC161107740021DAE2 /* PacketPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56AF92BA161107740021DAE2 /* PacketPriceViewController.m */; };
 		56B42BD01606772500BCF224 /* BackgroundPattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */; };
 		56B42BD21606776400BCF224 /* BackgroundPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B42BD11606776400BCF224 /* BackgroundPattern.png */; };
 		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
@@ -157,7 +153,6 @@
 		566B374715BBFE1F0026821C /* MPGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGraphics.m; sourceTree = "<group>"; };
 		566B374815BBFE1F0026821C /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
 		566B374915BBFE1F0026821C /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
-		566B374A15BBFE1F0026821C /* MPToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPToolkit.h; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		566B375715BBFE1F0026821C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -219,8 +214,6 @@
 		566B385515BC16C80026821C /* TitleAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TitleAbout.png; sourceTree = "<group>"; };
 		566B385615BC16C80026821C /* TitleAbout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TitleAbout@2x.png"; sourceTree = "<group>"; };
 		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastCigaretteViewController.h; sourceTree = "<group>"; };
-		5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCigaretteViewController.m; sourceTree = "<group>"; };
 		569EA0C01624B0FC002EF4F8 /* PriceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriceTag.png; sourceTree = "<group>"; };
 		569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PriceTag@2x.png"; sourceTree = "<group>"; };
 		569EA0C4162627FC002EF4F8 /* ButtonReset-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonReset-normal.png"; sourceTree = "<group>"; };
@@ -231,13 +224,6 @@
 		56A637951A6DC960001DC3A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56A78EA4161E393B004B3629 /* ButtonCalculator-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal.png"; sourceTree = "<group>"; };
 		56A78EA5161E393B004B3629 /* ButtonCalculator-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonCalculator-normal@2x.png"; sourceTree = "<group>"; };
-		56AF92AE1610E7320021DAE2 /* MPSettingViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSettingViewControllerDelegate.h; sourceTree = "<group>"; };
-		56AF92AF1610EC050021DAE2 /* HabitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabitsViewController.h; sourceTree = "<group>"; };
-		56AF92B01610EC050021DAE2 /* HabitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabitsViewController.m; sourceTree = "<group>"; };
-		56AF92B4161100340021DAE2 /* PacketSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketSizeViewController.h; sourceTree = "<group>"; };
-		56AF92B5161100340021DAE2 /* PacketSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketSizeViewController.m; sourceTree = "<group>"; };
-		56AF92B9161107730021DAE2 /* PacketPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketPriceViewController.h; sourceTree = "<group>"; };
-		56AF92BA161107740021DAE2 /* PacketPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketPriceViewController.m; sourceTree = "<group>"; };
 		56B42BCF1606772500BCF224 /* BackgroundPattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundPattern@2x.png"; sourceTree = "<group>"; };
 		56B42BD11606776400BCF224 /* BackgroundPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundPattern.png; sourceTree = "<group>"; };
 		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -324,8 +310,6 @@
 				566B374715BBFE1F0026821C /* MPGraphics.m */,
 				566B374815BBFE1F0026821C /* MPTableViewCell.h */,
 				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
-				566B374A15BBFE1F0026821C /* MPToolkit.h */,
-				56AF92AE1610E7320021DAE2 /* MPSettingViewControllerDelegate.h */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -374,14 +358,6 @@
 				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
 				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
-				5687F53D160FA6AA00541449 /* LastCigaretteViewController.h */,
-				5687F53E160FA6AA00541449 /* LastCigaretteViewController.m */,
-				56AF92AF1610EC050021DAE2 /* HabitsViewController.h */,
-				56AF92B01610EC050021DAE2 /* HabitsViewController.m */,
-				56AF92B4161100340021DAE2 /* PacketSizeViewController.h */,
-				56AF92B5161100340021DAE2 /* PacketSizeViewController.m */,
-				56AF92B9161107730021DAE2 /* PacketPriceViewController.h */,
-				56AF92BA161107740021DAE2 /* PacketPriceViewController.m */,
 				566B372915BBFE1F0026821C /* AboutViewController.h */,
 				566B372A15BBFE1F0026821C /* AboutViewController.m */,
 				566B373615BBFE1F0026821C /* CreditsViewController.h */,
@@ -674,10 +650,6 @@
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
-				5687F540160FA6AA00541449 /* LastCigaretteViewController.m in Sources */,
-				56AF92B21610EC050021DAE2 /* HabitsViewController.m in Sources */,
-				56AF92B7161100350021DAE2 /* PacketSizeViewController.m in Sources */,
-				56AF92BC161107740021DAE2 /* PacketPriceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

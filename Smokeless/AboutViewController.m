@@ -8,6 +8,8 @@
 
 #import "AboutViewController.h"
 
+#import "MPTableViewCell.h"
+
 
 #define LOGO_PADDING	27.0
 #define TABLE_PADDING	8.0
