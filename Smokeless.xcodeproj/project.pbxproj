@@ -90,6 +90,7 @@
 		566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 566B385415BC16C80026821C /* Tinkle.m4a */; };
 		566B38AF15BC16C80026821C /* TitleAbout.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385515BC16C80026821C /* TitleAbout.png */; };
 		566B38B015BC16C80026821C /* TitleAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 566B385615BC16C80026821C /* TitleAbout@2x.png */; };
+		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
 		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
 		569EA0C21624B0FC002EF4F8 /* PriceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C01624B0FC002EF4F8 /* PriceTag.png */; };
 		569EA0C31624B0FC002EF4F8 /* PriceTag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */; };
@@ -213,6 +214,8 @@
 		566B385415BC16C80026821C /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tinkle.m4a; sourceTree = "<group>"; };
 		566B385515BC16C80026821C /* TitleAbout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TitleAbout.png; sourceTree = "<group>"; };
 		566B385615BC16C80026821C /* TitleAbout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TitleAbout@2x.png"; sourceTree = "<group>"; };
+		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
+		567F8B051A90009F00F57F45 /* HealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewController.m; sourceTree = "<group>"; };
 		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		569EA0C01624B0FC002EF4F8 /* PriceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PriceTag.png; sourceTree = "<group>"; };
 		569EA0C11624B0FC002EF4F8 /* PriceTag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PriceTag@2x.png"; sourceTree = "<group>"; };
@@ -353,9 +356,8 @@
 				566B373515BBFE1F0026821C /* CalendarViewController.m */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
-				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
-				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
-				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
+				567F8B041A90009F00F57F45 /* HealthTableViewController.h */,
+				567F8B051A90009F00F57F45 /* HealthTableViewController.m */,
 				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
 				566B372915BBFE1F0026821C /* AboutViewController.h */,
@@ -364,6 +366,9 @@
 				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
+				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
+				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
+				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				566B376915BBFE1F0026821C /* ChalkboardView.m in Sources */,
 				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
 				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
+				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
 				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
 				566B376C15BBFE1F0026821C /* DisplayView.m in Sources */,
 				566B376E15BBFE1F0026821C /* HealthTableView.m in Sources */,
