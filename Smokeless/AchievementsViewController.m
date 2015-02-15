@@ -10,14 +10,13 @@
 
 #import "Constants.h"
 #import "Achievement.h"
-#import "HealthTableView.h"
 
 
 @interface AchievementsViewController ()
 
 @property (nonatomic, strong) NSArray *achievements;
 
-@property (nonatomic, weak) IBOutlet HealthTableView* tableView;
+@property (nonatomic, weak) IBOutlet UITableView* tableView;
 
 @end
 

@@ -57,7 +57,7 @@
     NSDateComponents *dateComps = [[NSDateComponents alloc] init];
     [dateComps setYear:self.years];
     [dateComps setMonth:self.months];
-    [dateComps setWeek:self.weeks];
+    [dateComps setWeekOfMonth:self.weeks];
     [dateComps setDay:self.days];
     
     // get last cigarette date from preferences
@@ -66,7 +66,7 @@
     }
 
     // create gregorian calendar
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 
     // calculate completion date
     NSDate *completionDate = [gregorianCalendar dateByAddingComponents:dateComps
@@ -120,20 +120,20 @@
     }
 
     // create gregorian calendar
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSInteger totalDays = [[gregorianCalendar components:NSDayCalendarUnit
+    NSInteger totalDays = [[gregorianCalendar components:NSCalendarUnitDay
                                                 fromDate:startingDate
                                                   toDate:completionDate
                                                  options:0] day];
-    NSInteger elapsedDays = [[gregorianCalendar components:NSDayCalendarUnit
+    NSInteger elapsedDays = [[gregorianCalendar components:NSCalendarUnitDay
                                                   fromDate:startingDate
                                                     toDate:today
                                                    options:0] day];
     
 #ifdef DEBUG
-    NSLog(@"%@ - Total days: %d", [self class], totalDays);
-    NSLog(@"%@ - Elapsed days: %d", [self class], elapsedDays);
+    NSLog(@"%@ - Total days: %ld", [self class], (long)totalDays);
+    NSLog(@"%@ - Elapsed days: %ld", [self class], (long)elapsedDays);
 #endif
     
     if (elapsedDays >= totalDays) {

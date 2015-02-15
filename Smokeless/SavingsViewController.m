@@ -17,6 +17,16 @@
 
 @interface SavingsViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *savedPacketsLabel;
+
+@property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
+
+@property (nonatomic, strong) NSDate *lastCigaretteDate;
+@property (nonatomic, copy) NSDictionary *habits;
+@property (nonatomic) CGFloat price;
+@property (nonatomic) NSInteger size;
+
 @property (nonatomic, strong) UIImageView *savingsView;
 @property (nonatomic, strong) DisplayView *displayView;
 @property (nonatomic, strong) UIImageView *noteView;
@@ -24,9 +34,6 @@
 @property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 
 @property (nonatomic) BOOL shakeEnabled;
-@property (nonatomic) CGFloat price;
-@property (nonatomic) NSInteger size;
-@property (nonatomic, copy) NSDictionary *habits;
 @property (nonatomic) CGFloat totalSavings;
 @property (nonatomic) NSUInteger totalPackets;
 
@@ -35,106 +42,89 @@
 
 @implementation SavingsViewController
 
-- (void)loadView
-{
-    // Create the view.
-	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
-
-	// Create the savings view and center it inside the superview.
-	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
-    self.savingsView.center = CGPointMake(self.view.center.x,
-                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
-	[self.view addSubview:self.savingsView];
-	
-    // Create the display view.
-    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
-                                                                       self.savingsView.center.y + 113.0)];
-    [self.view addSubview:self.displayView];
-	
-    // Setup the accelerometer.
-    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
-    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
-}
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
+//- (void)loadView
+//{
+//    // Create the view.
+//	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+//	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
+//
+//	// Create the savings view and center it inside the superview.
+//	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
+//    self.savingsView.center = CGPointMake(self.view.center.x,
+//                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
+//	[self.view addSubview:self.savingsView];
+//	
+//    // Create the display view.
+//    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
+//                                                                       self.savingsView.center.y + 113.0)];
+//    [self.view addSubview:self.displayView];
+//	
+//    // Setup the accelerometer.
+//    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
+//    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // Become first responder: it's necessary to react to shake gestures.
-    [self becomeFirstResponder];
+    [super viewWillAppear:animated];
+    
+//    // Become first responder: it's necessary to react to shake gestures.
+//    [self becomeFirstResponder];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    // Set properties.
-    self.shakeEnabled = [userDefaults boolForKey:ShakeEnabledKey];
-    
-    // Create the number formatter.
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setLocale:[NSLocale currentLocale]];
-    
-    // Set unit.
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    self.displayView.moneyUnit.text = [formatter currencySymbol];
-
-    // Set formatter for the amount label
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMinimumFractionDigits:2];
-    [formatter setMaximumFractionDigits:2];
-    
-    // Retrieve preferences.
-	self.habits = [userDefaults dictionaryForKey:HabitsKey];
-	self.price = [userDefaults floatForKey:PacketPriceKey];
+    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
+    self.habits = [userDefaults dictionaryForKey:HabitsKey];
+    self.price = [userDefaults floatForKey:PacketPriceKey];
     self.size = [userDefaults integerForKey:PacketSizeKey];
-
-    // Set display labels.
+    
+//    // Set properties.
+//    self.shakeEnabled = [userDefaults boolForKey:ShakeEnabledKey];
+    
 	if (self.habits && (self.price > 0.0) && self.size) {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
-        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%ld", self.totalPackets];
-        
-        // Remove the note view if present.
-        if (self.noteView != nil) {
-            [self.noteView removeFromSuperview];
-            self.noteView = nil;
-        }
+        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
+        self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
 	}
     else {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:@0.0f];
-        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
-        
-        // Create the note view.
-        if (self.noteView == nil) {
-            self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
-            CGRect frame = self.noteView.frame;
-            frame.origin.x = self.view.frame.size.width - self.noteView.frame.size.width - 5.0f;
-            frame.origin.y = self.view.frame.size.height - self.noteView.frame.size.height - 5.0f;
-            self.noteView.frame = frame;
-            [self.view addSubview:self.noteView];
-        }
+        // TODO: implement.
+    }
 
-    }
-    [self.displayView setState:DisplayStateMoney
-                 withAnimation:NO];
-    
-    // Create the tinkle player.
-    if (!self.tinklePlayer) {
-        NSError *error;
-        self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
-                                                                                                                                ofType:@"m4a"]]
-                                                                    error:&error];
-    }
+//    // Create the tinkle player.
+//    if (!self.tinklePlayer) {
+//        NSError *error;
+//        self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
+//                                                                                                                                ofType:@"m4a"]]
+//                                                                    error:&error];
+//    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-	
-    self.savingsView = nil;
-    self.displayView = nil;
-    self.noteView = nil;
+//	
+//    self.savingsView = nil;
+//    self.displayView = nil;
+//    self.noteView = nil;
+}
+
+#pragma mark - Accessors
+
+//- (BOOL)canBecomeFirstResponder
+//{
+//    return YES;
+//}
+
+- (NSNumberFormatter *)currencyFormatter
+{
+    static NSNumberFormatter *_currencyFormatter = nil;
+    if (_currencyFormatter) {
+        return _currencyFormatter;
+    }
+    
+    _currencyFormatter = [[NSNumberFormatter alloc] init];
+    _currencyFormatter.locale = [NSLocale currentLocale];
+    _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    
+    return _currencyFormatter;
 }
 
 #pragma mark - Private methods
@@ -143,13 +133,12 @@
 {
     NSInteger nonSmokingDays = 0;
     
-    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
-    if (lastDay) {
+    if (self.lastCigaretteDate) {
         // create gregorian calendar
         NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         
         nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                               fromDate:lastDay
+                                               fromDate:self.lastCigaretteDate
                                                  toDate:[NSDate date]
                                                 options:0] day];
     }
@@ -161,9 +150,7 @@
 {
     NSUInteger totalPackets = 0;
     
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
-    
-    if (self.habits && lastCigaretteDate) {
+    if (self.habits && self.lastCigaretteDate) {
         NSInteger quantity = [self.habits[HabitsQuantityKey] integerValue];
         NSInteger unit = [self.habits[HabitsUnitKey] integerValue];
         NSInteger period = [self.habits[HabitsPeriodKey] integerValue];

@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  CalendarViewController.h
 //  Smokeless
 //
 //  Created by Massimo Peri on 03/10/10.
@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (nonatomic, strong) IBOutlet UIWindow *window;
+@interface CalendarViewController : UIViewController
 
 @end

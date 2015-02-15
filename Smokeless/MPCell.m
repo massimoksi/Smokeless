@@ -8,6 +8,8 @@
 
 #import "MPCell.h"
 
+#import "MPGraphics.h"
+
 
 @implementation MPCell
 

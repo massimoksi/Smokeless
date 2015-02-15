@@ -26,8 +26,8 @@
 	<array>
 		<string>Chalkduster.ttf</string>
 	</array>
-	<key>UILaunchImageFile</key>
-	<string>Default.png</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIStatusBarStyle</key>
