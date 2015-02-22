@@ -50,13 +50,8 @@
     self.price = [userDefaults floatForKey:PacketPriceKey];
     self.size = [userDefaults integerForKey:PacketSizeKey];
 
-    if (self.habits && (self.price > 0.0) && self.size) {
-        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
-        self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
-	}
-    else {
-        // TODO: implement.
-    }
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
+    self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
 
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {

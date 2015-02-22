@@ -25,40 +25,71 @@
                                     <constraint firstAttribute="width" secondItem="HVG-TO-4Ik" secondAttribute="height" multiplier="1:1" id="Pj3-3b-JiH"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Packets" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-RJ-rv1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Packets" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-RJ-rv1">
                                 <rect key="frame" x="60" y="632" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="2AU-8F-Ymq"/>
-                                    <constraint firstAttribute="height" constant="32" id="twP-Me-T93"/>
+                                    <constraint firstAttribute="width" constant="32" id="2AU-8F-Ymq">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="32" id="twP-Me-T93">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-0v-gGu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-0v-gGu">
                                 <rect key="frame" x="104" y="592" width="436" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="eS1-Io-o1T"/>
+                                    <constraint firstAttribute="height" constant="32" id="eS1-Io-o1T">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Coins" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-Ix-Jp6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-Ix-Jp6">
                                 <rect key="frame" x="60" y="592" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Mb0-A5-dvy"/>
-                                    <constraint firstAttribute="width" constant="32" id="sUv-sq-y3O"/>
+                                    <constraint firstAttribute="height" constant="32" id="Mb0-A5-dvy">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="32" id="sUv-sq-y3O">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-Mq-pGb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-Mq-pGb">
                                 <rect key="frame" x="104" y="632" width="436" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="sHN-3J-yBW"/>
+                                    <constraint firstAttribute="height" constant="32" id="sHN-3J-yBW">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                        <variation key="widthClass=regular" constant="64"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HVG-TO-4Ik" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" multiplier="0.8" id="50T-Rt-b10"/>
                             <constraint firstItem="Fb2-Mq-pGb" firstAttribute="leading" secondItem="YpZ-RJ-rv1" secondAttribute="trailing" constant="12" id="DTG-Wa-nMb"/>
@@ -72,40 +103,8 @@
                             <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="OHx-Ix-Jp6" secondAttribute="leading" id="Z9J-ZT-D62"/>
                             <constraint firstItem="x2l-0v-gGu" firstAttribute="top" secondItem="HVG-TO-4Ik" secondAttribute="bottom" constant="32" id="ZoI-FB-AcG"/>
                             <constraint firstItem="HVG-TO-4Ik" firstAttribute="trailing" secondItem="Fb2-Mq-pGb" secondAttribute="trailing" id="a8B-rp-MuO"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="trailing" secondItem="x2l-0v-gGu" secondAttribute="trailing" constant="128" id="bxU-zU-QgS"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="OHx-Ix-Jp6" secondAttribute="leading" constant="-128" id="hfq-27-fWT"/>
                             <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="YpZ-RJ-rv1" secondAttribute="leading" id="mdd-GU-gOg"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="YpZ-RJ-rv1" secondAttribute="leading" constant="-128" id="qH9-Tn-Hra"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="trailing" secondItem="Fb2-Mq-pGb" secondAttribute="trailing" constant="128" id="ypZ-bo-Mwq"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="QIh-iQ-Jnh"/>
-                                <exclude reference="Z9J-ZT-D62"/>
-                                <exclude reference="a8B-rp-MuO"/>
-                                <exclude reference="bxU-zU-QgS"/>
-                                <exclude reference="hfq-27-fWT"/>
-                                <exclude reference="mdd-GU-gOg"/>
-                                <exclude reference="qH9-Tn-Hra"/>
-                                <exclude reference="ypZ-bo-Mwq"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="QIh-iQ-Jnh"/>
-                                <include reference="Z9J-ZT-D62"/>
-                                <include reference="a8B-rp-MuO"/>
-                                <include reference="mdd-GU-gOg"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="bxU-zU-QgS"/>
-                                <include reference="hfq-27-fWT"/>
-                                <include reference="qH9-Tn-Hra"/>
-                                <include reference="ypZ-bo-Mwq"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="Savings" id="rUc-TT-oaP"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
