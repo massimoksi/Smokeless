@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oIs-hk-hi4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Savings-->
@@ -14,20 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dtm-0L-NM0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="88B-Q3-9br">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-0v-gGu">
-                                <rect key="frame" x="16" y="28" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="EJN-Ou-XHd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-Mq-pGb">
-                                <rect key="frame" x="16" y="57" width="568" height="21"/>
+                                <rect key="frame" x="16" y="722" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="huG-RD-eNf"/>
                                 </constraints>
@@ -35,18 +28,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-0v-gGu">
+                                <rect key="frame" x="16" y="693" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EJN-Ou-XHd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-TO-4Ik">
+                                <rect key="frame" x="60" y="80" width="480" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HVG-TO-4Ik" secondAttribute="height" multiplier="1:1" id="Pj3-3b-JiH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fb2-Mq-pGb" firstAttribute="top" secondItem="x2l-0v-gGu" secondAttribute="bottom" constant="8" id="F88-yu-G9q"/>
+                            <constraint firstItem="dtm-0L-NM0" firstAttribute="top" secondItem="Fb2-Mq-pGb" secondAttribute="bottom" constant="8" id="3Eo-ea-lQg"/>
+                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" multiplier="0.8" id="50T-Rt-b10"/>
+                            <constraint firstItem="Fb2-Mq-pGb" firstAttribute="top" secondItem="x2l-0v-gGu" secondAttribute="bottom" constant="8" id="Doj-bh-zbI"/>
+                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="top" secondItem="EXx-5S-rQL" secondAttribute="bottom" constant="8" id="FbS-FW-hpA"/>
+                            <constraint firstAttribute="centerX" secondItem="HVG-TO-4Ik" secondAttribute="centerX" id="HRJ-3B-jab"/>
                             <constraint firstItem="x2l-0v-gGu" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" constant="-32" id="I3X-ky-7uh"/>
+                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" constant="-32" id="I7f-yx-5mr"/>
+                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" constant="16" id="MRb-qh-E1w"/>
+                            <constraint firstAttribute="centerY" secondItem="HVG-TO-4Ik" secondAttribute="centerY" multiplier="1.25" id="RMT-4c-N2S"/>
                             <constraint firstItem="Fb2-Mq-pGb" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" constant="-32" id="Uev-Tf-8Gl"/>
                             <constraint firstAttribute="centerX" secondItem="Fb2-Mq-pGb" secondAttribute="centerX" id="YcS-sa-P55"/>
+                            <constraint firstAttribute="trailing" secondItem="HVG-TO-4Ik" secondAttribute="trailing" constant="16" id="jee-a3-mra"/>
+                            <constraint firstAttribute="centerX" secondItem="HVG-TO-4Ik" secondAttribute="centerX" constant="-7" id="ofd-3Z-Qx3"/>
                             <constraint firstAttribute="centerX" secondItem="x2l-0v-gGu" secondAttribute="centerX" id="qCN-0v-qqj"/>
-                            <constraint firstItem="x2l-0v-gGu" firstAttribute="top" secondItem="EXx-5S-rQL" secondAttribute="bottom" constant="8" id="wjo-hb-2Ra"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FbS-FW-hpA"/>
+                                <exclude reference="I7f-yx-5mr"/>
+                                <exclude reference="MRb-qh-E1w"/>
+                                <exclude reference="jee-a3-mra"/>
+                                <exclude reference="ofd-3Z-Qx3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="Savings" id="rUc-TT-oaP"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="savedMoneyLabel" destination="x2l-0v-gGu" id="4Uc-5e-vXW"/>
                         <outlet property="savedPacketsLabel" destination="Fb2-Mq-pGb" id="STW-WD-VSN"/>
@@ -54,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw5-eu-XCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="806"/>
+            <point key="canvasLocation" x="1174" y="475"/>
         </scene>
         <!--Health-->
         <scene sceneID="NQk-Wa-Rxa">
@@ -108,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IS-f6-6QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="1493"/>
+            <point key="canvasLocation" x="1174" y="1323"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Uql-OB-a0Q">
@@ -451,7 +478,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiV-UC-m4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="2203"/>
+            <point key="canvasLocation" x="1987" y="2119"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dP0-PG-rE5">
@@ -468,7 +495,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A5-Sk-HdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="2203"/>
+            <point key="canvasLocation" x="1174" y="2119"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="s4F-W7-TTK">
@@ -526,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-gq-CIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="144"/>
+            <point key="canvasLocation" x="1174" y="-552"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qrH-WH-RGW">
@@ -553,6 +580,7 @@
     <resources>
         <image name="Calendar" width="25" height="25"/>
         <image name="Health" width="25" height="25"/>
+        <image name="PiggyBox" width="736" height="736"/>
         <image name="Savings" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
     </resources>
