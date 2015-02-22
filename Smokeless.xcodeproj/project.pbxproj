@@ -25,7 +25,6 @@
 		566B376915BBFE1F0026821C /* ChalkboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373315BBFE1F0026821C /* ChalkboardView.m */; };
 		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
 		566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373715BBFE1F0026821C /* CreditsViewController.m */; };
-		566B376C15BBFE1F0026821C /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373915BBFE1F0026821C /* DisplayView.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
 		566B377115BBFE1F0026821C /* MPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374215BBFE1F0026821C /* MPCell.m */; };
 		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
@@ -89,8 +88,6 @@
 		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		566B373615BBFE1F0026821C /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		566B373715BBFE1F0026821C /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
-		566B373815BBFE1F0026821C /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
-		566B373915BBFE1F0026821C /* DisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayView.m; sourceTree = "<group>"; };
 		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		566B374115BBFE1F0026821C /* MPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCell.h; sourceTree = "<group>"; };
 		566B374215BBFE1F0026821C /* MPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCell.m; sourceTree = "<group>"; };
@@ -297,8 +294,6 @@
 				566B373115BBFE1F0026821C /* CalendarView.m */,
 				566B373215BBFE1F0026821C /* ChalkboardView.h */,
 				566B373315BBFE1F0026821C /* ChalkboardView.m */,
-				566B373815BBFE1F0026821C /* DisplayView.h */,
-				566B373915BBFE1F0026821C /* DisplayView.m */,
 				567F8B081A90033300F57F45 /* AchievementCell.swift */,
 			);
 			name = Views;
@@ -456,7 +451,6 @@
 				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
 				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
-				566B376C15BBFE1F0026821C /* DisplayView.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				566B377115BBFE1F0026821C /* MPCell.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,

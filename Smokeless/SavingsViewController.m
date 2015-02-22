@@ -9,7 +9,6 @@
 #import "SavingsViewController.h"
 
 #import "Constants.h"
-#import "DisplayView.h"
 
 
 #define ACCELERATION_THRESHOLD  2.0
@@ -26,14 +25,10 @@
 @property (nonatomic, copy) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
-
-@property (nonatomic, strong) UIImageView *savingsView;
-@property (nonatomic, strong) DisplayView *displayView;
-@property (nonatomic, strong) UIImageView *noteView;
-
-@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
-
-@property (nonatomic) BOOL shakeEnabled;
+//
+//@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
+//
+//@property (nonatomic) BOOL shakeEnabled;
 @property (nonatomic) CGFloat totalSavings;
 @property (nonatomic) NSUInteger totalPackets;
 
@@ -41,28 +36,6 @@
 
 
 @implementation SavingsViewController
-
-//- (void)loadView
-//{
-//    // Create the view.
-//	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-//	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
-//
-//	// Create the savings view and center it inside the superview.
-//	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
-//    self.savingsView.center = CGPointMake(self.view.center.x,
-//                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
-//	[self.view addSubview:self.savingsView];
-//	
-//    // Create the display view.
-//    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
-//                                                                       self.savingsView.center.y + 113.0)];
-//    [self.view addSubview:self.displayView];
-//	
-//    // Setup the accelerometer.
-//    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
-//    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
-//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -76,11 +49,8 @@
     self.habits = [userDefaults dictionaryForKey:HabitsKey];
     self.price = [userDefaults floatForKey:PacketPriceKey];
     self.size = [userDefaults integerForKey:PacketSizeKey];
-    
-//    // Set properties.
-//    self.shakeEnabled = [userDefaults boolForKey:ShakeEnabledKey];
-    
-	if (self.habits && (self.price > 0.0) && self.size) {
+
+    if (self.habits && (self.price > 0.0) && self.size) {
         self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
         self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
 	}
@@ -100,10 +70,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-//	
-//    self.savingsView = nil;
-//    self.displayView = nil;
-//    self.noteView = nil;
 }
 
 #pragma mark - Accessors
@@ -177,17 +143,17 @@
     return [self totalPackets] * self.price;
 }
 
-#pragma mark - Accelerometer delegate
-
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
-{
-    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
-        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
-            if (self.tinklePlayer.playing == NO) {
-                [self.tinklePlayer play];
-            }
-        }
-    }
-}
+//#pragma mark - Accelerometer delegate
+//
+//- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+//{
+//    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
+//        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
+//            if (self.tinklePlayer.playing == NO) {
+//                [self.tinklePlayer play];
+//            }
+//        }
+//    }
+//}
 
 @end
