@@ -194,6 +194,7 @@
                                                             [userDefaults removeObjectForKey:PacketPriceKey];
                                                             [userDefaults removeObjectForKey:ShakeEnabledKey];
                                                             [userDefaults removeObjectForKey:NotificationsEnabledKey];
+                                                            [userDefaults removeObjectForKey:LastSavingsKey];
                                                             
                                                             [self updateSettings];
                                                         }];

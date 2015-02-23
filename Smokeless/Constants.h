@@ -20,3 +20,4 @@ extern NSString * const ShakeEnabledKey;
 extern NSString * const NotificationsEnabledKey;
 extern NSString * const UserSettingsImportedKey;
 extern NSString * const HasUpdatedLastCigaretteDateKey;
+extern NSString * const LastSavingsKey;

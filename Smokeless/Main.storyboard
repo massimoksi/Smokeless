@@ -110,6 +110,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
+                        <outlet property="piggyBox" destination="HVG-TO-4Ik" id="U8H-8Z-TTS"/>
                         <outlet property="savedMoneyLabel" destination="x2l-0v-gGu" id="4Uc-5e-vXW"/>
                         <outlet property="savedPacketsLabel" destination="Fb2-Mq-pGb" id="STW-WD-VSN"/>
                     </connections>

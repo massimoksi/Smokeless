@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *savedPacketsLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
 
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
@@ -52,7 +53,7 @@
 
     self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
     self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
-
+    
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {
 //        NSError *error;
@@ -60,6 +61,38 @@
 //                                                                                                                                ofType:@"m4a"]]
 //                                                                    error:&error];
 //    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:LastSavingsKey]) {
+        [UIView animateKeyframesWithDuration:0.5
+                                       delay:0.0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:0.5
+                                                                    animations:^{
+                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:YES];
+                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.1, 1.1);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.5
+                                                              relativeDuration:0.5
+                                                                    animations:^{
+                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:NO];
+                                                                    }];
+                                  }
+                                  completion:nil];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] setFloat:self.totalSavings
+                                             forKey:LastSavingsKey];
 }
 
 - (void)didReceiveMemoryWarning

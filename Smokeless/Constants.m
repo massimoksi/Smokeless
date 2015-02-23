@@ -20,3 +20,4 @@ NSString * const ShakeEnabledKey                = @"ShakeEnabled";
 NSString * const NotificationsEnabledKey        = @"NotificationsEnabled";
 NSString * const UserSettingsImportedKey        = @"UserSettingsImported";
 NSString * const HasUpdatedLastCigaretteDateKey = @"HasUpdatedLastCigaretteDate";
+NSString * const LastSavingsKey                 = @"LastSavings";
