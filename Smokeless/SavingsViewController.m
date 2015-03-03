@@ -17,7 +17,6 @@
 @interface SavingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *savedPacketsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
 
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
@@ -52,7 +51,6 @@
     self.size = [userDefaults integerForKey:PacketSizeKey];
 
     self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
-    self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
     
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {

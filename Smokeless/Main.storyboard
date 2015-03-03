@@ -19,100 +19,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-TO-4Ik">
-                                <rect key="frame" x="60" y="80" width="480" height="480"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MAD-be-u9Z">
+                                <rect key="frame" x="0.0" y="94" width="600" height="613"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
+                                        <rect key="frame" x="20" y="517" width="560" height="76"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="64"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="64"/>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="92"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Bt-fZ3">
+                                        <rect key="frame" x="60" y="20" width="480" height="480"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="glP-Bt-fZ3" secondAttribute="height" multiplier="1:1" id="n3f-j2-0dc"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HVG-TO-4Ik" secondAttribute="height" multiplier="1:1" id="Pj3-3b-JiH"/>
+                                    <constraint firstAttribute="centerX" secondItem="glP-Bt-fZ3" secondAttribute="centerX" id="AXn-tT-YR0"/>
+                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="MAD-be-u9Z" secondAttribute="leading" constant="20" id="Jov-9V-8mg"/>
+                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="top" secondItem="MAD-be-u9Z" secondAttribute="top" constant="20" id="l6o-xo-1Qp"/>
+                                    <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" constant="20" id="ps1-sb-Yaw"/>
+                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="width" secondItem="MAD-be-u9Z" secondAttribute="width" multiplier="0.8" id="s5B-aD-all"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="20" id="vBG-a6-qU3"/>
+                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="glP-Bt-fZ3" secondAttribute="bottom" constant="17" id="zhI-1v-CN8"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Packets" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-RJ-rv1">
-                                <rect key="frame" x="60" y="632" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="2AU-8F-Ymq">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="32" id="twP-Me-T93">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2l-0v-gGu">
-                                <rect key="frame" x="104" y="592" width="436" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="eS1-Io-o1T">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-Ix-Jp6">
-                                <rect key="frame" x="60" y="592" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Mb0-A5-dvy">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="32" id="sUv-sq-y3O">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-Mq-pGb">
-                                <rect key="frame" x="104" y="632" width="436" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="sHN-3J-yBW">
-                                        <variation key="widthClass=compact" constant="32"/>
-                                        <variation key="widthClass=regular" constant="64"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
-                                </variation>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="width" secondItem="88B-Q3-9br" secondAttribute="width" multiplier="0.8" id="50T-Rt-b10"/>
-                            <constraint firstItem="Fb2-Mq-pGb" firstAttribute="leading" secondItem="YpZ-RJ-rv1" secondAttribute="trailing" constant="12" id="DTG-Wa-nMb"/>
-                            <constraint firstAttribute="centerX" secondItem="HVG-TO-4Ik" secondAttribute="centerX" id="HRJ-3B-jab"/>
-                            <constraint firstItem="x2l-0v-gGu" firstAttribute="leading" secondItem="OHx-Ix-Jp6" secondAttribute="trailing" constant="12" id="LcJ-jQ-RaA"/>
-                            <constraint firstItem="Fb2-Mq-pGb" firstAttribute="top" secondItem="x2l-0v-gGu" secondAttribute="bottom" constant="8" id="LvP-nc-rl3"/>
-                            <constraint firstItem="x2l-0v-gGu" firstAttribute="centerY" secondItem="OHx-Ix-Jp6" secondAttribute="centerY" id="M7s-Ji-mBH"/>
-                            <constraint firstItem="YpZ-RJ-rv1" firstAttribute="centerY" secondItem="Fb2-Mq-pGb" secondAttribute="centerY" id="Mx6-FT-jlu"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="trailing" secondItem="x2l-0v-gGu" secondAttribute="trailing" id="QIh-iQ-Jnh"/>
-                            <constraint firstAttribute="centerY" secondItem="HVG-TO-4Ik" secondAttribute="centerY" multiplier="1.25" id="RMT-4c-N2S"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="OHx-Ix-Jp6" secondAttribute="leading" id="Z9J-ZT-D62"/>
-                            <constraint firstItem="x2l-0v-gGu" firstAttribute="top" secondItem="HVG-TO-4Ik" secondAttribute="bottom" constant="32" id="ZoI-FB-AcG"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="trailing" secondItem="Fb2-Mq-pGb" secondAttribute="trailing" id="a8B-rp-MuO"/>
-                            <constraint firstItem="HVG-TO-4Ik" firstAttribute="leading" secondItem="YpZ-RJ-rv1" secondAttribute="leading" id="mdd-GU-gOg"/>
+                            <constraint firstItem="MAD-be-u9Z" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" id="TcS-xp-drv"/>
+                            <constraint firstAttribute="width" secondItem="MAD-be-u9Z" secondAttribute="width" id="UrO-Ct-hua"/>
+                            <constraint firstAttribute="centerY" secondItem="MAD-be-u9Z" secondAttribute="centerY" id="Val-Fi-wSD"/>
+                            <constraint firstAttribute="trailing" secondItem="MAD-be-u9Z" secondAttribute="trailing" id="ucR-Jd-yAf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="Savings" id="rUc-TT-oaP"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
-                        <outlet property="piggyBox" destination="HVG-TO-4Ik" id="U8H-8Z-TTS"/>
-                        <outlet property="savedMoneyLabel" destination="x2l-0v-gGu" id="4Uc-5e-vXW"/>
-                        <outlet property="savedPacketsLabel" destination="Fb2-Mq-pGb" id="STW-WD-VSN"/>
+                        <outlet property="piggyBox" destination="glP-Bt-fZ3" id="YWh-9s-Ouu"/>
+                        <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="TZx-JA-Amm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw5-eu-XCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -615,9 +570,7 @@
     </scenes>
     <resources>
         <image name="Calendar" width="25" height="25"/>
-        <image name="Coins" width="32" height="32"/>
         <image name="Health" width="25" height="25"/>
-        <image name="Packets" width="32" height="32"/>
         <image name="PiggyBox" width="736" height="736"/>
         <image name="Savings" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
