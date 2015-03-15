@@ -35,7 +35,7 @@
     // Set a default hour (4:00AM) for last cigarette date.
     // On former versions, last cigarette hour depended on the time it was set.
     // Check at first run and fix an already existing cigarette date.
-    if (![userDefaults boolForKey:HasUpdatedLastCigaretteDateKey] && ![userDefaults objectForKey:LastCigaretteKey]) {
+    if (![userDefaults boolForKey:HasUpdatedLastCigaretteDateKey] && [userDefaults objectForKey:LastCigaretteKey]) {
         [self updateLastCigaretteDate];
         
         [userDefaults setBool:YES
