@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Massimo Peri. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 extern NSString * const LastCigaretteKey;
@@ -21,3 +21,12 @@ extern NSString * const NotificationsEnabledKey;
 extern NSString * const UserSettingsImportedKey;
 extern NSString * const HasUpdatedLastCigaretteDateKey;
 extern NSString * const LastSavingsKey;
+
+
+@interface UIColor (Smokeless)
+
++ (UIColor *)sml_backgroundDarkColor;
++ (UIColor *)sml_backgroundLightColor;
++ (UIColor *)sml_highlightColor;
+
+@end
