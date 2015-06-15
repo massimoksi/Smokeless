@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 
 
-extern NSString * const LastCigaretteKey;
-extern NSString * const HabitsKey;
-extern NSString * const HabitsQuantityKey;
-extern NSString * const HabitsUnitKey;
-extern NSString * const HabitsPeriodKey;
-extern NSString * const PacketSizeKey;
-extern NSString * const PacketPriceKey;
-extern NSString * const ShakeEnabledKey;
-extern NSString * const NotificationsEnabledKey;
-extern NSString * const UserSettingsImportedKey;
-extern NSString * const HasUpdatedLastCigaretteDateKey;
-extern NSString * const LastSavingsKey;
+extern NSString * const kLastCigaretteKey;
+extern NSString * const kHabitsKey;
+extern NSString * const kHabitsQuantityKey;
+extern NSString * const kHabitsUnitKey;
+extern NSString * const kHabitsPeriodKey;
+extern NSString * const kPacketSizeKey;
+extern NSString * const kPacketPriceKey;
+extern NSString * const kShakeEnabledKey;
+extern NSString * const kNotificationsEnabledKey;
+extern NSString * const kUserSettingsImportedKey;
+extern NSString * const kHasUpdatedLastCigaretteDateKey;
+extern NSString * const kLastSavingsKey;
 
 
 @interface UIColor (Smokeless)

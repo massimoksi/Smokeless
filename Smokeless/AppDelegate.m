@@ -23,23 +23,23 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Check if user settings have already been imported.
-    if (![userDefaults boolForKey:UserSettingsImportedKey]) {
+    if (![userDefaults boolForKey:kUserSettingsImportedKey]) {
         [self importUserSettings];
     }
     
     // Cancel old registered local notifications if last cigarette date has been deleted.
-    if (![userDefaults objectForKey:LastCigaretteKey]) {
+    if (![userDefaults objectForKey:kLastCigaretteKey]) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
     
     // Set a default hour (4:00AM) for last cigarette date.
     // On former versions, last cigarette hour depended on the time it was set.
     // Check at first run and fix an already existing cigarette date.
-    if (![userDefaults boolForKey:HasUpdatedLastCigaretteDateKey] && [userDefaults objectForKey:LastCigaretteKey]) {
+    if (![userDefaults boolForKey:kHasUpdatedLastCigaretteDateKey] && [userDefaults objectForKey:kLastCigaretteKey]) {
         [self updateLastCigaretteDate];
         
         [userDefaults setBool:YES
-                       forKey:HasUpdatedLastCigaretteDateKey];
+                       forKey:kHasUpdatedLastCigaretteDateKey];
     }
 	
     return YES;
@@ -84,17 +84,17 @@
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
         [userDefaults setObject:oldPrefs[@"LastCigarette"]
-                         forKey:LastCigaretteKey];
+                         forKey:kLastCigaretteKey];
         [userDefaults setObject:oldPrefs[@"Habits"]
-                         forKey:HabitsKey];
+                         forKey:kHabitsKey];
         [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
-                          forKey:PacketSizeKey];
+                          forKey:kPacketSizeKey];
         [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
-                        forKey:PacketPriceKey];
+                        forKey:kPacketPriceKey];
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
-                       forKey:ShakeEnabledKey];
+                       forKey:kShakeEnabledKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
-                       forKey:NotificationsEnabledKey];
+                       forKey:kNotificationsEnabledKey];
         
 #if DEBUG
         NSLog(@"Preferences: Imported %@.", [userDefaults dictionaryRepresentation]);
@@ -105,7 +105,7 @@
         if ([[NSFileManager defaultManager] removeItemAtPath:oldPrefsFilePath
                                                        error:&error]) {
             [userDefaults setBool:YES
-                           forKey:UserSettingsImportedKey];
+                           forKey:kUserSettingsImportedKey];
 
 #if DEBUG
             NSLog(@"Preferences: Deleted old preferences.");
@@ -114,7 +114,7 @@
     }
     else {
         [userDefaults setBool:YES
-                       forKey:UserSettingsImportedKey];
+                       forKey:kUserSettingsImportedKey];
         
 #if DEBUG
         NSLog(@"Preferences: No old preferences found.");
@@ -130,7 +130,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
     // Get the saved date.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
     
     // Set the hour for the date at 4:00AM.
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -143,7 +143,7 @@
 #endif
     
     [userDefaults setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-                     forKey:LastCigaretteKey];
+                     forKey:kLastCigaretteKey];
 }
 
 @end

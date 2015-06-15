@@ -45,10 +45,10 @@
 //    [self becomeFirstResponder];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
-    self.habits = [userDefaults dictionaryForKey:HabitsKey];
-    self.price = [userDefaults floatForKey:PacketPriceKey];
-    self.size = [userDefaults integerForKey:PacketSizeKey];
+    self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+    self.habits = [userDefaults dictionaryForKey:kHabitsKey];
+    self.price = [userDefaults floatForKey:kPacketPriceKey];
+    self.size = [userDefaults integerForKey:kPacketSizeKey];
 
     self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
     
@@ -65,7 +65,7 @@
 {
     [super viewDidAppear:animated];
 
-    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:LastSavingsKey]) {
+    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:kLastSavingsKey]) {
         [UIView animateKeyframesWithDuration:0.5
                                        delay:0.0
                                      options:0
@@ -90,7 +90,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSUserDefaults standardUserDefaults] setFloat:self.totalSavings
-                                             forKey:LastSavingsKey];
+                                             forKey:kLastSavingsKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,9 +143,9 @@
     NSUInteger totalPackets = 0;
     
     if (self.habits && self.lastCigaretteDate) {
-        NSInteger quantity = [self.habits[HabitsQuantityKey] integerValue];
-        NSInteger unit = [self.habits[HabitsUnitKey] integerValue];
-        NSInteger period = [self.habits[HabitsPeriodKey] integerValue];
+        NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
+        NSInteger unit = [self.habits[kHabitsUnitKey] integerValue];
+        NSInteger period = [self.habits[kHabitsPeriodKey] integerValue];
         
         // Calculate constants.
         NSInteger kUnit = (unit == 0) ? 1 : self.size;
