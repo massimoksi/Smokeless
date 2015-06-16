@@ -11,7 +11,7 @@
 #import "Constants.h"
 
 
-#define ACCELERATION_THRESHOLD  2.0
+//#define ACCELERATION_THRESHOLD  2.0
 
 
 @interface SavingsViewController ()
