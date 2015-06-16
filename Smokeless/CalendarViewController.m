@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+    NSDate *lastDay = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
     if (lastDay) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateStyle = NSDateIntervalFormatterLongStyle;

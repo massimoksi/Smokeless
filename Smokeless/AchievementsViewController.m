@@ -215,7 +215,7 @@
             cell.detailTextLabel.shadowOffset = CGSizeMake(0.0, 1.0);
 
             // set completion image
-            NSUInteger completionStep = [currStep completionPercentageFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey]] / 0.125;
+            NSUInteger completionStep = [currStep completionPercentageFromDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]] / 0.125;
             switch (completionStep) {
                 case 0:
                     cell.imageView.image = [UIImage imageNamed:@"AchievementPending0"];
@@ -325,7 +325,7 @@
 - (void)checkAchievementsState
 {
     // get last cigarette date
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
 
     // set achievement state
     if (lastCigaretteDate == nil) {
@@ -367,8 +367,8 @@
 
 - (void)registerLocalNotifications
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:NotificationsEnabledKey]) {
-        NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNotificationsEnabledKey]) {
+        NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
         
         for (Achievement *step in self.achievements) {
             if (step.state != AchievementStateCompleted) {

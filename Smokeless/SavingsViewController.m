@@ -9,16 +9,15 @@
 #import "SavingsViewController.h"
 
 #import "Constants.h"
-#import "DisplayView.h"
 
 
-#define ACCELERATION_THRESHOLD  2.0
+//#define ACCELERATION_THRESHOLD  2.0
 
 
 @interface SavingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *savedPacketsLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
 
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
@@ -26,14 +25,10 @@
 @property (nonatomic, copy) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
-
-@property (nonatomic, strong) UIImageView *savingsView;
-@property (nonatomic, strong) DisplayView *displayView;
-@property (nonatomic, strong) UIImageView *noteView;
-
-@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
-
-@property (nonatomic) BOOL shakeEnabled;
+//
+//@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
+//
+//@property (nonatomic) BOOL shakeEnabled;
 @property (nonatomic) CGFloat totalSavings;
 @property (nonatomic) NSUInteger totalPackets;
 
@@ -41,28 +36,6 @@
 
 
 @implementation SavingsViewController
-
-//- (void)loadView
-//{
-//    // Create the view.
-//	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-//	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
-//
-//	// Create the savings view and center it inside the superview.
-//	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
-//    self.savingsView.center = CGPointMake(self.view.center.x,
-//                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
-//	[self.view addSubview:self.savingsView];
-//	
-//    // Create the display view.
-//    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
-//                                                                       self.savingsView.center.y + 113.0)];
-//    [self.view addSubview:self.displayView];
-//	
-//    // Setup the accelerometer.
-//    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
-//    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
-//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -72,22 +45,13 @@
 //    [self becomeFirstResponder];
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
-    self.habits = [userDefaults dictionaryForKey:HabitsKey];
-    self.price = [userDefaults floatForKey:PacketPriceKey];
-    self.size = [userDefaults integerForKey:PacketSizeKey];
-    
-//    // Set properties.
-//    self.shakeEnabled = [userDefaults boolForKey:ShakeEnabledKey];
-    
-	if (self.habits && (self.price > 0.0) && self.size) {
-        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
-        self.savedPacketsLabel.text = [NSString stringWithFormat:@"%@", @(self.totalPackets)];
-	}
-    else {
-        // TODO: implement.
-    }
+    self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+    self.habits = [userDefaults dictionaryForKey:kHabitsKey];
+    self.price = [userDefaults floatForKey:kPacketPriceKey];
+    self.size = [userDefaults integerForKey:kPacketSizeKey];
 
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
+    
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {
 //        NSError *error;
@@ -97,13 +61,41 @@
 //    }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:kLastSavingsKey]) {
+        [UIView animateKeyframesWithDuration:0.5
+                                       delay:0.0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:0.5
+                                                                    animations:^{
+                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:YES];
+                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.1, 1.1);
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.5
+                                                              relativeDuration:0.5
+                                                                    animations:^{
+                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:NO];
+                                                                    }];
+                                  }
+                                  completion:nil];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] setFloat:self.totalSavings
+                                             forKey:kLastSavingsKey];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-//	
-//    self.savingsView = nil;
-//    self.displayView = nil;
-//    self.noteView = nil;
 }
 
 #pragma mark - Accessors
@@ -151,9 +143,9 @@
     NSUInteger totalPackets = 0;
     
     if (self.habits && self.lastCigaretteDate) {
-        NSInteger quantity = [self.habits[HabitsQuantityKey] integerValue];
-        NSInteger unit = [self.habits[HabitsUnitKey] integerValue];
-        NSInteger period = [self.habits[HabitsPeriodKey] integerValue];
+        NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
+        NSInteger unit = [self.habits[kHabitsUnitKey] integerValue];
+        NSInteger period = [self.habits[kHabitsPeriodKey] integerValue];
         
         // Calculate constants.
         NSInteger kUnit = (unit == 0) ? 1 : self.size;
@@ -177,17 +169,17 @@
     return [self totalPackets] * self.price;
 }
 
-#pragma mark - Accelerometer delegate
-
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
-{
-    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
-        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
-            if (self.tinklePlayer.playing == NO) {
-                [self.tinklePlayer play];
-            }
-        }
-    }
-}
+//#pragma mark - Accelerometer delegate
+//
+//- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+//{
+//    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
+//        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
+//            if (self.tinklePlayer.playing == NO) {
+//                [self.tinklePlayer play];
+//            }
+//        }
+//    }
+//}
 
 @end

@@ -103,13 +103,13 @@
 - (IBAction)shakeEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:ShakeEnabledKey];
+                                            forKey:kShakeEnabledKey];
 }
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:NotificationsEnabledKey];
+                                            forKey:kNotificationsEnabledKey];
 }
 
 #pragma mark - Private methods
@@ -121,30 +121,30 @@
     NSLog(@"%@", [userDefaults dictionaryRepresentation]);
 #endif
     
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:LastCigaretteKey];
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
     self.lastCigaretteDateLabel.text = (lastCigaretteDate) ? [self.dateFormatter stringFromDate:lastCigaretteDate] : @"";
     
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
-    self.smokingHabits = [userDefaults dictionaryForKey:HabitsKey];
+    self.smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
     
-    NSInteger size = [userDefaults integerForKey:PacketSizeKey];
+    NSInteger size = [userDefaults integerForKey:kPacketSizeKey];
     self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
     
-    CGFloat price = [userDefaults floatForKey:PacketPriceKey];
+    CGFloat price = [userDefaults floatForKey:kPacketPriceKey];
     self.packetPriceTextField.text = (price != 0.0) ? [self.currencyFormatter stringFromNumber:@(price)] : @"";
     
-    self.shakeSwitch.on = [userDefaults boolForKey:ShakeEnabledKey];
-    self.notificationsSwitch.on = [userDefaults boolForKey:NotificationsEnabledKey];
+    self.shakeSwitch.on = [userDefaults boolForKey:kShakeEnabledKey];
+    self.notificationsSwitch.on = [userDefaults boolForKey:kNotificationsEnabledKey];
 }
 
 - (NSString *)formattedStringFromSmokingHabits:(NSDictionary *)smokingHabits
 {
     if (smokingHabits) {
-        NSInteger quantity = [smokingHabits[HabitsQuantityKey] integerValue];
-        NSInteger unit = [smokingHabits[HabitsUnitKey] integerValue];
-        NSInteger period = [smokingHabits[HabitsPeriodKey] integerValue];
+        NSInteger quantity = [smokingHabits[kHabitsQuantityKey] integerValue];
+        NSInteger unit = [smokingHabits[kHabitsUnitKey] integerValue];
+        NSInteger period = [smokingHabits[kHabitsPeriodKey] integerValue];
         
         NSString *unitFormat;
         switch (unit) {
@@ -188,12 +188,13 @@
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
                                                             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                                                            [userDefaults removeObjectForKey:LastCigaretteKey];
-                                                            [userDefaults removeObjectForKey:HabitsKey];
-                                                            [userDefaults removeObjectForKey:PacketSizeKey];
-                                                            [userDefaults removeObjectForKey:PacketPriceKey];
-                                                            [userDefaults removeObjectForKey:ShakeEnabledKey];
-                                                            [userDefaults removeObjectForKey:NotificationsEnabledKey];
+                                                            [userDefaults removeObjectForKey:kLastCigaretteKey];
+                                                            [userDefaults removeObjectForKey:kHabitsKey];
+                                                            [userDefaults removeObjectForKey:kPacketSizeKey];
+                                                            [userDefaults removeObjectForKey:kPacketPriceKey];
+                                                            [userDefaults removeObjectForKey:kShakeEnabledKey];
+                                                            [userDefaults removeObjectForKey:kNotificationsEnabledKey];
+                                                            [userDefaults removeObjectForKey:kLastSavingsKey];
                                                             
                                                             [self updateSettings];
                                                         }];
@@ -227,13 +228,13 @@
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
 
                     [[NSUserDefaults standardUserDefaults] setObject:actualDate
-                                                              forKey:LastCigaretteKey];
+                                                              forKey:kLastCigaretteKey];
                     
                     [self deleteRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
                 }
                 else {
-                    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:LastCigaretteKey];
+                    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
                     if (lastCigaretteDate) {
                         self.lastCigaretteDatePicker.date = lastCigaretteDate;
                     }
@@ -254,13 +255,13 @@
                 
                 if ([self isRowVisible:newIndexPath]) {
                     NSDictionary *habits = @{
-                                             HabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
-                                             HabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
-                                             HabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
+                                             kHabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
+                                             kHabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
+                                             kHabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
                                              };
                     if (![habits isEqualToDictionary:self.smokingHabits]) {
                         [[NSUserDefaults standardUserDefaults] setObject:habits
-                                                                  forKey:HabitsKey];
+                                                                  forKey:kHabitsKey];
                     }
                     
                     [self deleteRowsAtIndexPaths:@[newIndexPath]
@@ -268,9 +269,9 @@
                 }
                 else {
                     if (self.smokingHabits) {
-                        NSInteger quantity = [self.smokingHabits[HabitsQuantityKey] integerValue];
-                        NSInteger unit = [self.smokingHabits[HabitsUnitKey] integerValue];
-                        NSInteger period = [self.smokingHabits[HabitsPeriodKey] integerValue];
+                        NSInteger quantity = [self.smokingHabits[kHabitsQuantityKey] integerValue];
+                        NSInteger unit = [self.smokingHabits[kHabitsUnitKey] integerValue];
+                        NSInteger period = [self.smokingHabits[kHabitsPeriodKey] integerValue];
                         
                         // Set values from preferences to the picker view.
                         [self.smokingHabitsPickerView selectRow:(quantity - 1)
@@ -391,9 +392,9 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSDictionary *habits = @{
-                             HabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
-                             HabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
-                             HabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
+                             kHabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
+                             kHabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
+                             kHabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
                              };
     
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:habits];
@@ -427,10 +428,10 @@
         NSInteger size = [textField.text integerValue];
         if (size != 0) {
             [userDefaults setInteger:size
-                              forKey:PacketSizeKey];
+                              forKey:kPacketSizeKey];
         }
         else {
-            [userDefaults removeObjectForKey:PacketSizeKey];
+            [userDefaults removeObjectForKey:kPacketSizeKey];
             
             self.packetSizeTextField.text = @"";
         }
@@ -439,12 +440,12 @@
         CGFloat price = [textField.text floatValue];
         if (price != 0.0) {
             [userDefaults setFloat:price
-                            forKey:PacketPriceKey];
+                            forKey:kPacketPriceKey];
             
             textField.text = [self.currencyFormatter stringFromNumber:@(price)];
         }
         else {
-            [userDefaults removeObjectForKey:PacketPriceKey];
+            [userDefaults removeObjectForKey:kPacketPriceKey];
             
             self.packetPriceTextField.text = @"";
         }
