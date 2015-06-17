@@ -61,7 +61,11 @@
                             <constraint firstAttribute="trailing" secondItem="MAD-be-u9Z" secondAttribute="trailing" id="ucR-Jd-yAf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Savings" image="Savings" id="rUc-TT-oaP"/>
+                    <tabBarItem key="tabBarItem" title="Savings" image="SavingsNormal" id="rUc-TT-oaP">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SavingsActive"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
@@ -121,7 +125,11 @@
                             <outlet property="delegate" destination="OXU-Qi-v2Q" id="t67-P4-lZV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Health" image="Health" id="xLT-Tq-0FI"/>
+                    <tabBarItem key="tabBarItem" title="Health" image="HealthNormal" id="xLT-Tq-0FI">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="HealthActive"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IS-f6-6QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -474,7 +482,11 @@
         <scene sceneID="dP0-PG-rE5">
             <objects>
                 <navigationController id="xsn-ra-zwB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="rVX-EU-YdY"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsNormal" id="rVX-EU-YdY">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SettingsActive"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dQH-2Q-P0K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -532,7 +544,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar" id="vMT-ga-n65"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarNormal" id="vMT-ga-n65">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="CalendarActive"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="dateLabel" destination="Bly-Xf-YgR" id="yCt-lQ-Pwm"/>
                         <outlet property="daysLabel" destination="sCS-fn-hWz" id="ocC-KA-RyN"/>
@@ -554,6 +570,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.50588235294117645" green="0.72941176470588232" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Mg7-DU-3AT" kind="relationship" relationship="viewControllers" id="mjM-hL-d5L"/>
@@ -568,11 +589,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Calendar" width="25" height="25"/>
-        <image name="Health" width="25" height="25"/>
+        <image name="CalendarActive" width="24" height="24"/>
+        <image name="CalendarNormal" width="24" height="24"/>
+        <image name="HealthActive" width="24" height="24"/>
+        <image name="HealthNormal" width="24" height="24"/>
         <image name="PiggyBox" width="736" height="736"/>
-        <image name="Savings" width="25" height="25"/>
-        <image name="Settings" width="25" height="25"/>
+        <image name="SavingsActive" width="24" height="24"/>
+        <image name="SavingsNormal" width="24" height="24"/>
+        <image name="SettingsActive" width="24" height="24"/>
+        <image name="SettingsNormal" width="24" height="24"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
