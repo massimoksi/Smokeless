@@ -32,7 +32,6 @@
 		566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsTableViewController.m */; };
 		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
 		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
-		566B388D15BC16C80026821C /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 566B383315BC16C70026821C /* Chalkduster.ttf */; };
 		566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 566B385415BC16C80026821C /* Tinkle.m4a */; };
 		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
 		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
@@ -88,7 +87,6 @@
 		566B376215BBFE1F0026821C /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
 		566B376315BBFE1F0026821C /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
-		566B383315BC16C70026821C /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
 		566B385415BC16C80026821C /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tinkle.m4a; sourceTree = "<group>"; };
 		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
 		567F8B051A90009F00F57F45 /* HealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewController.m; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 		566B378115BBFE670026821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				566B383315BC16C70026821C /* Chalkduster.ttf */,
 				566B385415BC16C80026821C /* Tinkle.m4a */,
 				566B374015BBFE1F0026821C /* main.m */,
 				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
@@ -323,7 +320,6 @@
 			files = (
 				566B376715BBFE1F0026821C /* AchievementsViewController.xib in Resources */,
 				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
-				566B388D15BC16C80026821C /* Chalkduster.ttf in Resources */,
 				56E586941A6F1C2300F4C94F /* Main.storyboard in Resources */,
 				56187BF41B2DB7E90098E41D /* LaunchScreen.xib in Resources */,
 				566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */,
