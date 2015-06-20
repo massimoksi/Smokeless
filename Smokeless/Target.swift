@@ -11,18 +11,10 @@ import Foundation
 
 @objc class Target : NSObject {
 
-    var years: UInt
-    var months: UInt
-    var weeks: UInt
-    var days: UInt
-    var text: String
-    
-    override init() {
-        self.years = 0
-        self.months = 0
-        self.weeks = 0
-        self.days = 0
-        self.text = ""
-    }
+    var years:  UInt    = 0
+    var months: UInt    = 0
+    var weeks:  UInt    = 0
+    var days:   UInt    = 0
+    var text:   String  = ""
 
 }
