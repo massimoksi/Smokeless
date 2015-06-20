@@ -11,7 +11,7 @@
 #import "Smokeless-Swift.h"
 #import "TTTLocalizedPluralString.h"
 
-#import "Achievement.h"
+#import "Achievement.h" // TODO: remove this cell
 
 
 @interface HealthTableViewController ()
@@ -100,6 +100,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // TODO: rename this class.
     AchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AchievementCell"
                                                             forIndexPath:indexPath];
     

@@ -90,7 +90,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nl-4X-t25">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.50588235290000005" green="0.72941176470000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.53333333333333333" green="0.78823529411764703" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="OXU-Qi-v2Q" kind="relationship" relationship="rootViewController" id="eMM-Nd-A80"/>
@@ -121,9 +121,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bW-hK-SAa">
-                                            <rect key="frame" x="15" y="36" width="570" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="15" y="32" width="570" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -133,7 +133,7 @@
                                         <constraint firstItem="7qZ-Fh-evw" firstAttribute="leading" secondItem="Wfe-OL-BKQ" secondAttribute="leading" constant="15" id="OFe-3A-FqY"/>
                                         <constraint firstItem="5bW-hK-SAa" firstAttribute="leading" secondItem="Wfe-OL-BKQ" secondAttribute="leading" constant="15" id="d3G-DR-zxl"/>
                                         <constraint firstItem="7qZ-Fh-evw" firstAttribute="top" secondItem="Wfe-OL-BKQ" secondAttribute="top" constant="8" id="ojH-Xd-Ean"/>
-                                        <constraint firstItem="5bW-hK-SAa" firstAttribute="top" secondItem="7qZ-Fh-evw" secondAttribute="bottom" constant="8" id="pzc-jE-7u3"/>
+                                        <constraint firstItem="5bW-hK-SAa" firstAttribute="top" secondItem="7qZ-Fh-evw" secondAttribute="bottom" constant="4" id="pzc-jE-7u3"/>
                                         <constraint firstAttribute="trailing" secondItem="5bW-hK-SAa" secondAttribute="trailing" constant="15" id="xeC-x0-AkP"/>
                                     </constraints>
                                 </tableViewCellContentView>
