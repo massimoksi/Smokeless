@@ -78,11 +78,34 @@
             <point key="canvasLocation" x="1174" y="475"/>
         </scene>
         <!--Health-->
+        <scene sceneID="AeY-ON-FdX">
+            <objects>
+                <navigationController storyboardIdentifier="HealthNVC" id="9fp-ln-zkG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Health" image="HealthNormal" id="xLT-Tq-0FI">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="HealthActive"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nl-4X-t25">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50588235290000005" green="0.72941176470000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OXU-Qi-v2Q" kind="relationship" relationship="rootViewController" id="eMM-Nd-A80"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tj-Xw-dMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="1329"/>
+        </scene>
+        <!--Health-->
         <scene sceneID="NQk-Wa-Rxa">
             <objects>
-                <tableViewController id="OXU-Qi-v2Q" customClass="HealthTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HealthTVC" id="OXU-Qi-v2Q" customClass="HealthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9GG-Gm-VmG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -125,15 +148,11 @@
                             <outlet property="delegate" destination="OXU-Qi-v2Q" id="t67-P4-lZV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Health" image="HealthNormal" id="xLT-Tq-0FI">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="HealthActive"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Health" id="YSx-63-Wxh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5IS-f6-6QE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="1323"/>
+            <point key="canvasLocation" x="1987" y="1329"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Uql-OB-a0Q">
@@ -476,7 +495,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiV-UC-m4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="2119"/>
+            <point key="canvasLocation" x="1987" y="2301"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dP0-PG-rE5">
@@ -497,7 +516,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A5-Sk-HdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="2119"/>
+            <point key="canvasLocation" x="1174" y="2301"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="s4F-W7-TTK">
@@ -579,13 +598,13 @@
                     <connections>
                         <segue destination="Mg7-DU-3AT" kind="relationship" relationship="viewControllers" id="mjM-hL-d5L"/>
                         <segue destination="okP-Hl-L1J" kind="relationship" relationship="viewControllers" id="NID-hc-JrT"/>
-                        <segue destination="OXU-Qi-v2Q" kind="relationship" relationship="viewControllers" id="2IU-XY-zfd"/>
+                        <segue destination="9fp-ln-zkG" kind="relationship" relationship="viewControllers" id="cbW-jj-rYO"/>
                         <segue destination="xsn-ra-zwB" kind="relationship" relationship="viewControllers" id="rr8-r0-tgS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecN-Lq-87g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354" y="475"/>
+            <point key="canvasLocation" x="334" y="475"/>
         </scene>
     </scenes>
     <resources>
@@ -599,5 +618,4 @@
         <image name="SettingsActive" width="24" height="24"/>
         <image name="SettingsNormal" width="24" height="24"/>
     </resources>
-    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
