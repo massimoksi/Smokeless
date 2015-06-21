@@ -139,7 +139,7 @@
     // TODO: rename Target class.
     Target *target = self.targets[indexPath.row];
     cell.completionProgressView.value = [self completionPercentageForTarget:target];
-    cell.titleLabel.text = [self timeIntervalForTarget:target];
+    cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"After %@", nil), [self timeIntervalForTarget:target]] ;
     cell.subtitleLabel.text = target.text;
     
     return cell;
