@@ -11,6 +11,7 @@ import UIKit
 
 @objc class AchievementCell : UITableViewCell {
     
+    @IBOutlet var completionProgressView: ProgressView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     

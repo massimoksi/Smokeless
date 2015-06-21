@@ -19,6 +19,7 @@
 		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
 		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
+		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
 		566B376415BBFE1F0026821C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372A15BBFE1F0026821C /* AboutViewController.m */; };
 		566B376515BBFE1F0026821C /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372C15BBFE1F0026821C /* Achievement.m */; };
 		566B376615BBFE1F0026821C /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372E15BBFE1F0026821C /* AchievementsViewController.m */; };
@@ -59,6 +60,7 @@
 		56565A531390E8240087E5C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		566B372915BBFE1F0026821C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		566B372A15BBFE1F0026821C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		566B372B15BBFE1F0026821C /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievement.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				567F8B081A90033300F57F45 /* AchievementCell.swift */,
+				5667320D1B359964002A1060 /* ProgressView.swift */,
 				56187BF71B2F8C4A0098E41D /* BackgroundView.swift */,
 			);
 			name = Views;
@@ -388,6 +391,7 @@
 				567F8B0B1A900B4F00F57F45 /* Target.swift in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
+				5667320E1B359964002A1060 /* ProgressView.swift in Sources */,
 				56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */,
 				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
 			);
