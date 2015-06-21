@@ -1,5 +1,5 @@
 //
-//  Target.swift
+//  Achievement.swift
 //  Smokeless
 //
 //  Created by Massimo Peri on 15/02/15.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-@objc class Target : NSObject {
+@objc class Achievement : NSObject {
 
     var years:  Int    = 0
     var months: Int    = 0
