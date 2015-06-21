@@ -8,6 +8,8 @@
 
 #import "HealthTableViewController.h"
 
+#import "Constants.h"
+
 #import "Smokeless-Swift.h"
 #import "TTTLocalizedPluralString.h"
 
@@ -86,6 +88,37 @@
     }
 }
 
+- (CGFloat)completionPercentageForTarget:(Target *)target
+{
+    NSDate *today = [NSDate date];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
+    
+    NSDate *completionDate = [target completionDateFromDate:lastCigaretteDate];
+    if (!completionDate) {
+        return 0.0;
+    }
+    
+    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSInteger totalDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                fromDate:lastCigaretteDate
+                                                  toDate:completionDate
+                                                 options:0] day];
+    NSInteger elapsedDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                  fromDate:lastCigaretteDate
+                                                    toDate:today
+                                                   options:0] day];
+    
+    if (elapsedDays >= totalDays) {
+        return 1.0;
+    }
+    else {
+        CGFloat percentage = (CGFloat)elapsedDays / (CGFloat)totalDays;
+        
+        return percentage;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,11 +133,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: rename this class.
     AchievementCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AchievementCell"
                                                             forIndexPath:indexPath];
     
+    // TODO: rename Target class.
     Target *target = self.targets[indexPath.row];
+    cell.completionProgressView.value = [self completionPercentageForTarget:target];
     cell.titleLabel.text = [self timeIntervalForTarget:target];
     cell.subtitleLabel.text = target.text;
     

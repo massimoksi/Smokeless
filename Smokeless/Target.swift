@@ -11,10 +11,24 @@ import Foundation
 
 @objc class Target : NSObject {
 
-    var years:  UInt    = 0
-    var months: UInt    = 0
-    var weeks:  UInt    = 0
-    var days:   UInt    = 0
+    var years:  Int    = 0
+    var months: Int    = 0
+    var weeks:  Int    = 0
+    var days:   Int    = 0
     var text:   String  = ""
+    
+    func completionDateFromDate(date: NSDate) -> NSDate? {
+        let dateComps = NSDateComponents()
+        dateComps.year = years
+        dateComps.month = months
+        dateComps.weekOfMonth = weeks
+        dateComps.day = days
+        
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        let completionDate = gregorianCalendar?.dateByAddingComponents(dateComps, toDate: date, options: NSCalendarOptions(0))
+        
+        return completionDate
+    }
 
 }

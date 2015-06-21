@@ -80,14 +80,14 @@ class ProgressView: UIView {
             let radius: CGFloat = drawingRect.size.width / 2.0
             let angle: CGFloat = CGFloat((M_PI * 2.0 * value) - M_PI_2)
             
-            let points: [CGPoint] = [
-                CGPoint(x: center.x, y: CGRectGetMidY(drawingRect)),
+            let points = [
+                CGPoint(x: center.x, y: CGRectGetMinY(drawingRect)),
                 center,
                 CGPoint(x: center.x + radius * CGFloat(cos(angle)), y: center.y + radius * CGFloat(sin(angle)))
             ]
             
             CGContextAddLines(context, points, 3)
-            CGContextAddArc(context, center.x, center.y, radius, CGFloat(-M_PI_2), angle, 1)
+            CGContextAddArc(context, center.x, center.y, radius, CGFloat(-M_PI_2), angle, 0)
             CGContextDrawPath(context, kCGPathEOFill)
         }
     }
