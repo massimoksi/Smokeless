@@ -13,8 +13,6 @@
 #import "Smokeless-Swift.h"
 #import "TTTLocalizedPluralString.h"
 
-#import "Achievement.h" // TODO: remove this cell
-
 
 @interface HealthTableViewController ()
 

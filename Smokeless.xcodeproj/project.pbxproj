@@ -21,9 +21,6 @@
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
 		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
 		566B376415BBFE1F0026821C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372A15BBFE1F0026821C /* AboutViewController.m */; };
-		566B376515BBFE1F0026821C /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372C15BBFE1F0026821C /* Achievement.m */; };
-		566B376615BBFE1F0026821C /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372E15BBFE1F0026821C /* AchievementsViewController.m */; };
-		566B376715BBFE1F0026821C /* AchievementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566B372F15BBFE1F0026821C /* AchievementsViewController.xib */; };
 		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
 		566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373715BBFE1F0026821C /* CreditsViewController.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
@@ -63,11 +60,6 @@
 		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		566B372915BBFE1F0026821C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		566B372A15BBFE1F0026821C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		566B372B15BBFE1F0026821C /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievement.h; sourceTree = "<group>"; };
-		566B372C15BBFE1F0026821C /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Achievement.m; sourceTree = "<group>"; };
-		566B372D15BBFE1F0026821C /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
-		566B372E15BBFE1F0026821C /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
-		566B372F15BBFE1F0026821C /* AchievementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementsViewController.xib; sourceTree = "<group>"; };
 		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		566B373615BBFE1F0026821C /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
@@ -237,9 +229,6 @@
 				566B373715BBFE1F0026821C /* CreditsViewController.m */,
 				566B376215BBFE1F0026821C /* TwitterViewController.h */,
 				566B376315BBFE1F0026821C /* TwitterViewController.m */,
-				566B372D15BBFE1F0026821C /* AchievementsViewController.h */,
-				566B372E15BBFE1F0026821C /* AchievementsViewController.m */,
-				566B372F15BBFE1F0026821C /* AchievementsViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -247,8 +236,6 @@
 		566B378415BC00050026821C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				566B372B15BBFE1F0026821C /* Achievement.h */,
-				566B372C15BBFE1F0026821C /* Achievement.m */,
 				567F8B0A1A900B4F00F57F45 /* Target.swift */,
 			);
 			name = Models;
@@ -325,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566B376715BBFE1F0026821C /* AchievementsViewController.xib in Resources */,
 				566732051B358D3F002A1060 /* Localizable.strings in Resources */,
 				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
@@ -375,8 +361,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				566B376415BBFE1F0026821C /* AboutViewController.m in Sources */,
-				566B376515BBFE1F0026821C /* Achievement.m in Sources */,
-				566B376615BBFE1F0026821C /* AchievementsViewController.m in Sources */,
 				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
 				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
