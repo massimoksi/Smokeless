@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Smokeless
+
+  Created by Massimo Peri on 20/06/15.
+  Copyright (c) 2015 Massimo Peri. All rights reserved.
+*/
+
+
+"%d year (plural rule: one)" = "%d year";
+"%d year (plural rule: other)" = "%d years";
+
+"%d month (plural rule: one)" = "%d month";
+"%d month (plural rule: other)" = "%d months";
+
+"%d week (plural rule: one)" = "%d week";
+"%d week (plural rule: other)" = "%d weeks";
+
+"%d day (plural rule: one)" = "%d day";
+"%d day (plural rule: other)" = "%d days";

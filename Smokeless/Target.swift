@@ -1,5 +1,5 @@
 //
-//  Target.swift
+//  Achievement.swift
 //  Smokeless
 //
 //  Created by Massimo Peri on 15/02/15.
@@ -9,20 +9,26 @@
 import Foundation
 
 
-@objc class Target : NSObject {
+@objc class Achievement : NSObject {
 
-    var years: UInt
-    var months: UInt
-    var weeks: UInt
-    var days: UInt
-    var text: String
+    var years:  Int    = 0
+    var months: Int    = 0
+    var weeks:  Int    = 0
+    var days:   Int    = 0
+    var text:   String  = ""
     
-    override init() {
-        self.years = 0
-        self.months = 0
-        self.weeks = 0
-        self.days = 0
-        self.text = ""
+    func completionDateFromDate(date: NSDate) -> NSDate? {
+        let dateComps = NSDateComponents()
+        dateComps.year = years
+        dateComps.month = months
+        dateComps.weekOfMonth = weeks
+        dateComps.day = days
+        
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        let completionDate = gregorianCalendar?.dateByAddingComponents(dateComps, toDate: date, options: NSCalendarOptions(0))
+        
+        return completionDate
     }
 
 }
