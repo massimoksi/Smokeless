@@ -17,6 +17,7 @@
 @interface HealthTableViewController ()
 
 @property (strong, nonatomic) NSArray *achievements;
+@property (nonatomic) NSUInteger actualStepIndex;
 
 @end
 
@@ -63,6 +64,7 @@
     step8.text = NSLocalizedString(@"Your risk of heart attack will have returned to that of a non-smoker.", nil);
     
     self.achievements = @[step1, step2, step3, step4, step5, step6, step7, step8];
+    self.actualStepIndex = 0;
 }
 
 #pragma mark - Private methods
@@ -135,9 +137,15 @@
                                                             forIndexPath:indexPath];
     
     Achievement *achievement = self.achievements[indexPath.row];
-    cell.completionProgressView.value = [self completionPercentageForAchievement:achievement];
     cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"After %@", nil), [self timeIntervalForAchievement:achievement]] ;
     cell.subtitleLabel.text = achievement.text;
+
+    CGFloat percentage = [self completionPercentageForAchievement:achievement];
+    cell.completionProgressView.value = percentage;
+    if (percentage == 1.0) {
+        cell.completionProgressView.tintColor = [UIColor sml_completedColor];
+        self.actualStepIndex = indexPath.row + 1;
+    }
     
     return cell;
 }
