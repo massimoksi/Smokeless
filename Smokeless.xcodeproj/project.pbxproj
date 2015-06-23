@@ -20,9 +20,7 @@
 		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
 		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
-		566B376415BBFE1F0026821C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B372A15BBFE1F0026821C /* AboutViewController.m */; };
 		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
-		566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373715BBFE1F0026821C /* CreditsViewController.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
 		566B377115BBFE1F0026821C /* MPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374215BBFE1F0026821C /* MPCell.m */; };
 		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
@@ -31,7 +29,6 @@
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsTableViewController.m */; };
 		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
-		566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B376315BBFE1F0026821C /* TwitterViewController.m */; };
 		566B38AE15BC16C80026821C /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 566B385415BC16C80026821C /* Tinkle.m4a */; };
 		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
 		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
@@ -58,12 +55,8 @@
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		566B372915BBFE1F0026821C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		566B372A15BBFE1F0026821C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		566B373615BBFE1F0026821C /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
-		566B373715BBFE1F0026821C /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		566B374115BBFE1F0026821C /* MPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCell.h; sourceTree = "<group>"; };
 		566B374215BBFE1F0026821C /* MPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCell.m; sourceTree = "<group>"; };
@@ -81,8 +74,6 @@
 		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		566B376215BBFE1F0026821C /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
-		566B376315BBFE1F0026821C /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
 		566B385415BC16C80026821C /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tinkle.m4a; sourceTree = "<group>"; };
 		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
@@ -223,12 +214,6 @@
 				567F8B051A90009F00F57F45 /* HealthTableViewController.m */,
 				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
-				566B372915BBFE1F0026821C /* AboutViewController.h */,
-				566B372A15BBFE1F0026821C /* AboutViewController.m */,
-				566B373615BBFE1F0026821C /* CreditsViewController.h */,
-				566B373715BBFE1F0026821C /* CreditsViewController.m */,
-				566B376215BBFE1F0026821C /* TwitterViewController.h */,
-				566B376315BBFE1F0026821C /* TwitterViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -360,11 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566B376415BBFE1F0026821C /* AboutViewController.m in Sources */,
 				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
 				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
-				566B376B15BBFE1F0026821C /* CreditsViewController.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				566B377115BBFE1F0026821C /* MPCell.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
@@ -377,7 +360,6 @@
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
 				5667320E1B359964002A1060 /* ProgressView.swift in Sources */,
 				56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */,
-				566B378015BBFE1F0026821C /* TwitterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
