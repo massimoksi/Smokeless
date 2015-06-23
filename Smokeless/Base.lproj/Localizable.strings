@@ -18,3 +18,9 @@
 
 "%d day (plural rule: one)" = "%d day";
 "%d day (plural rule: other)" = "%d days";
+
+"%d cigarette (plural rule: one)" = "%d cigarette";
+"%d cigarette (plural rule: other)" = "%d cigarettes";
+
+"%d packet (plural rule: one)" = "%d packet";
+"%d packet (plural rule: other)" = "%d packets";

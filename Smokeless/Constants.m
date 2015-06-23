@@ -49,4 +49,20 @@ NSString * const kLastSavingsKey                 = @"LastSavings";
                            alpha:1.0];
 }
 
++ (UIColor *)sml_completedColor
+{
+    return [UIColor colorWithRed:126.0/255.0
+                           green:211.0/255.0
+                            blue:33.0/255.0
+                           alpha:1.0];
+}
+
++ (UIColor *)sml_detailTextColor
+{
+    return [UIColor colorWithRed:122.0/255.0
+                           green:122.0/255.0
+                            blue:127.0/255.0
+                           alpha:1.0];
+}
+
 @end

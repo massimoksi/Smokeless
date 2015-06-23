@@ -28,5 +28,7 @@ extern NSString * const kLastSavingsKey;
 + (UIColor *)sml_backgroundDarkColor;
 + (UIColor *)sml_backgroundLightColor;
 + (UIColor *)sml_highlightColor;
++ (UIColor *)sml_completedColor;
++ (UIColor *)sml_detailTextColor;
 
 @end
