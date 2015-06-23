@@ -167,7 +167,7 @@
         <!--Settings-->
         <scene sceneID="Uql-OB-a0Q">
             <objects>
-                <tableViewController id="1tn-kS-Ugy" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsTVC" id="1tn-kS-Ugy" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SER-LO-RrM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
                         <sections>
                             <tableViewSection id="DEs-j0-BIX">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rQf-My-jG3">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" id="rQf-My-jG3">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rQf-My-jG3" id="tgS-qB-9cw">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -237,7 +237,7 @@
                             </tableViewSection>
                             <tableViewSection id="bi3-mY-31v">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="b2a-ar-Zze">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" id="b2a-ar-Zze">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b2a-ar-Zze" id="V4q-0w-7dQ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -514,7 +514,7 @@
         <!--Settings-->
         <scene sceneID="dP0-PG-rE5">
             <objects>
-                <navigationController id="xsn-ra-zwB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNC" id="xsn-ra-zwB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="SettingsNormal" id="rVX-EU-YdY">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SettingsActive"/>

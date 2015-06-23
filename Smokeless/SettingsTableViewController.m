@@ -232,6 +232,8 @@
                     
                     [self deleteRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
+                    
+                    self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
                 }
                 else {
                     NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
@@ -244,6 +246,8 @@
                     
                     [self insertRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
+
+                    self.lastCigaretteDateLabel.textColor = [UIColor sml_highlightColor];
                 }
             }
             break;
@@ -266,6 +270,8 @@
                     
                     [self deleteRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
+                    
+                    self.smokingHabitsLabel.textColor = [UIColor sml_detailTextColor];
                 }
                 else {
                     if (self.smokingHabits) {
@@ -287,10 +293,21 @@
                     
                     [self insertRowsAtIndexPaths:@[newIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
+
+                    self.smokingHabitsLabel.textColor = [UIColor sml_highlightColor];
                 }
             }
             break;
-         
+            
+        case 2:
+            if (row == 0) {
+                [self.packetSizeTextField becomeFirstResponder];
+            }
+            else if (row == 1) {
+                [self.packetPriceTextField becomeFirstResponder];
+            }
+            break;
+            
         case 4:
             [self resetSettings];
             break;
@@ -359,7 +376,6 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     // TODO: add comments to localized strings.
-    // TODO: create constants to get rid of magic numbers.
     NSString *title = nil;
     
     switch (component) {
