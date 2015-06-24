@@ -218,19 +218,21 @@
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
     
+    NSIndexPath *lastCigaretteIndexPath = [NSIndexPath indexPathForItem:1
+                                                              inSection:0];
+    NSIndexPath *smokingHabitsIndexPath = [NSIndexPath indexPathForItem:1
+                                                              inSection:1];
+    
     switch (section) {
         case 0:
             if (row == 0) {
-                NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:++row
-                                                               inSection:section];
-                
-                if ([self isRowVisible:newIndexPath]) {
+                if ([self isRowVisible:lastCigaretteIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
 
                     [[NSUserDefaults standardUserDefaults] setObject:actualDate
                                                               forKey:kLastCigaretteKey];
                     
-                    [self deleteRowsAtIndexPaths:@[newIndexPath]
+                    [self deleteRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
                     
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
@@ -244,20 +246,22 @@
                         self.lastCigaretteDatePicker.date = [NSDate date];
                     }
                     
-                    [self insertRowsAtIndexPaths:@[newIndexPath]
+                    [self insertRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
 
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_highlightColor];
+                    
+                    if ([self isRowVisible:smokingHabitsIndexPath]) {
+                        [self deleteRowsAtIndexPaths:@[smokingHabitsIndexPath]
+                                    withRowAnimation:UITableViewRowAnimationTop];
+                    }
                 }
             }
             break;
 
         case 1:
             if (row == 0) {
-                NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:++row
-                                                               inSection:section];
-                
-                if ([self isRowVisible:newIndexPath]) {
+                if ([self isRowVisible:smokingHabitsIndexPath]) {
                     NSDictionary *habits = @{
                                              kHabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
                                              kHabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
@@ -268,7 +272,7 @@
                                                                   forKey:kHabitsKey];
                     }
                     
-                    [self deleteRowsAtIndexPaths:@[newIndexPath]
+                    [self deleteRowsAtIndexPaths:@[smokingHabitsIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
                     
                     self.smokingHabitsLabel.textColor = [UIColor sml_detailTextColor];
@@ -291,10 +295,15 @@
                                                        animated:NO];
                     }
                     
-                    [self insertRowsAtIndexPaths:@[newIndexPath]
+                    [self insertRowsAtIndexPaths:@[smokingHabitsIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
 
                     self.smokingHabitsLabel.textColor = [UIColor sml_highlightColor];
+                    
+                    if ([self isRowVisible:lastCigaretteIndexPath]) {
+                        [self deleteRowsAtIndexPaths:@[lastCigaretteIndexPath]
+                                    withRowAnimation:UITableViewRowAnimationTop];
+                    }
                 }
             }
             break;
