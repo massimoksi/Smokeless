@@ -11,11 +11,14 @@ import Foundation
 
 @objc class Achievement : NSObject {
 
-    var years:  Int    = 0
-    var months: Int    = 0
-    var weeks:  Int    = 0
-    var days:   Int    = 0
-    var text:   String  = ""
+    var years: Int = 0
+    var months: Int = 0
+    var weeks: Int = 0
+    var days: Int = 0
+    var hours: Int = 0
+    var minutes: Int = 0
+
+    var text: String = ""
     
     func completionDateFromDate(date: NSDate) -> NSDate? {
         let dateComps = NSDateComponents()
@@ -23,6 +26,8 @@ import Foundation
         dateComps.month = months
         dateComps.weekOfMonth = weeks
         dateComps.day = days
+        dateComps.hour = hours
+        dateComps.minute = minutes
         
         let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         

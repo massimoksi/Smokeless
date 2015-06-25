@@ -19,6 +19,12 @@
 "%d day (plural rule: one)" = "%d day";
 "%d day (plural rule: other)" = "%d days";
 
+"%d hour (plural rule: one)" = "%d hour";
+"%d hour (plural rule: other)" = "%d hours";
+
+"%d minute (plural rule: one)" = "%d minute";
+"%d minute (plural rule: other)" = "%d minutes";
+
 "%d cigarette (plural rule: one)" = "%d cigarette";
 "%d cigarette (plural rule: other)" = "%d cigarettes";
 
