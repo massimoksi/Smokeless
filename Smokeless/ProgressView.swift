@@ -39,6 +39,8 @@ class ProgressView: UIView {
         }
     }
 
+    @IBInspectable var completedColor: UIColor?
+    
     override func drawRect(rect: CGRect) {
         let w = CGRectGetWidth(frame)
         let h = CGRectGetHeight(frame)
@@ -82,7 +84,13 @@ class ProgressView: UIView {
             
             oval1Path.usesEvenOddFillRule = true;
             
-            tintColor.setFill()
+            if let color = completedColor {
+                color.setFill()
+            }
+            else {
+                tintColor.setFill()
+            }
+            
             oval1Path.fill()
             // ---
         }

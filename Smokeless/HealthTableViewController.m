@@ -142,10 +142,6 @@
 
     CGFloat percentage = [self completionPercentageForAchievement:achievement];
     cell.completionProgressView.value = percentage;
-    if (percentage == 1.0) {
-        cell.completionProgressView.tintColor = [UIColor sml_completedColor];
-        self.actualStepIndex = indexPath.row + 1;
-    }
     
     return cell;
 }
