@@ -120,33 +120,33 @@
 
 - (CGFloat)completionPercentageForAchievement:(Achievement *)achievement
 {
-    NSDate *today = [NSDate date];
+    CGFloat percentage = 0.0;
+    
     NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
     
-    NSDate *completionDate = [achievement completionDateFromDate:lastCigaretteDate];
-    if (!completionDate) {
-        return 0.0;
+    if (lastCigaretteDate) {
+        NSDate *completionDate = [achievement completionDateFromDate:lastCigaretteDate];
+    
+        NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    
+        NSInteger totalDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                    fromDate:lastCigaretteDate
+                                                      toDate:completionDate
+                                                     options:0] day];
+        NSInteger elapsedDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                      fromDate:lastCigaretteDate
+                                                        toDate:[NSDate date]
+                                                       options:0] day];
+    
+        if (elapsedDays >= totalDays) {
+            percentage = 1.0;
+        }
+        else {
+            percentage = (CGFloat)elapsedDays / (CGFloat)totalDays;
+        }
     }
     
-    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
-    
-    NSInteger totalDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                                fromDate:lastCigaretteDate
-                                                  toDate:completionDate
-                                                 options:0] day];
-    NSInteger elapsedDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                                  fromDate:lastCigaretteDate
-                                                    toDate:today
-                                                   options:0] day];
-    
-    if (elapsedDays >= totalDays) {
-        return 1.0;
-    }
-    else {
-        CGFloat percentage = (CGFloat)elapsedDays / (CGFloat)totalDays;
-        
-        return percentage;
-    }
+    return percentage;
 }
 
 #pragma mark - Table view data source
