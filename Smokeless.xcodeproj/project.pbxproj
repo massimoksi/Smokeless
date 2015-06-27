@@ -58,7 +58,6 @@
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		566B375715BBFE1F0026821C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		566B375815BBFE1F0026821C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smokeless_Prefix.pch; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
@@ -166,7 +165,6 @@
 				566B385415BC16C80026821C /* Tinkle.m4a */,
 				566B374015BBFE1F0026821C /* main.m */,
 				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
-				566B375D15BBFE1F0026821C /* Smokeless_Prefix.pch */,
 				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 				566732071B358D3F002A1060 /* Localizable.strings */,
 			);
@@ -363,8 +361,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Smokeless/Smokeless_Prefix.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -390,8 +388,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Smokeless/Smokeless_Prefix.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
