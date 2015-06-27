@@ -22,10 +22,6 @@
 		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
 		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
-		566B377115BBFE1F0026821C /* MPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374215BBFE1F0026821C /* MPCell.m */; };
-		566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */; };
-		566B377315BBFE1F0026821C /* MPGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374715BBFE1F0026821C /* MPGraphics.m */; };
-		566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374915BBFE1F0026821C /* MPTableViewCell.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
 		566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsTableViewController.m */; };
 		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
@@ -58,15 +54,6 @@
 		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		566B374115BBFE1F0026821C /* MPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCell.h; sourceTree = "<group>"; };
-		566B374215BBFE1F0026821C /* MPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCell.m; sourceTree = "<group>"; };
-		566B374315BBFE1F0026821C /* MPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDefines.h; sourceTree = "<group>"; };
-		566B374415BBFE1F0026821C /* MPDisclosureIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDisclosureIndicator.h; sourceTree = "<group>"; };
-		566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDisclosureIndicator.m; sourceTree = "<group>"; };
-		566B374615BBFE1F0026821C /* MPGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGraphics.h; sourceTree = "<group>"; };
-		566B374715BBFE1F0026821C /* MPGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGraphics.m; sourceTree = "<group>"; };
-		566B374815BBFE1F0026821C /* MPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTableViewCell.h; sourceTree = "<group>"; };
-		566B374915BBFE1F0026821C /* MPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTableViewCell.m; sourceTree = "<group>"; };
 		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
 		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
 		566B375715BBFE1F0026821C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -155,22 +142,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5609717216295C9E00F31FF6 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				566B374115BBFE1F0026821C /* MPCell.h */,
-				566B374215BBFE1F0026821C /* MPCell.m */,
-				566B374315BBFE1F0026821C /* MPDefines.h */,
-				566B374415BBFE1F0026821C /* MPDisclosureIndicator.h */,
-				566B374515BBFE1F0026821C /* MPDisclosureIndicator.m */,
-				566B374615BBFE1F0026821C /* MPGraphics.h */,
-				566B374715BBFE1F0026821C /* MPGraphics.m */,
-				566B374815BBFE1F0026821C /* MPTableViewCell.h */,
-				566B374915BBFE1F0026821C /* MPTableViewCell.m */,
-			);
-			name = Custom;
-			sourceTree = "<group>";
-		};
 		566B372815BBFE1E0026821C /* Smokeless */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +155,6 @@
 				566B378415BC00050026821C /* Models */,
 				566B378515BC00130026821C /* Views */,
 				566B378215BBFFAD0026821C /* Controllers */,
-				5609717216295C9E00F31FF6 /* Custom */,
 				566B378115BBFE670026821C /* Supporting Files */,
 			);
 			path = Smokeless;
@@ -349,11 +319,7 @@
 				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
-				566B377115BBFE1F0026821C /* MPCell.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
-				566B377215BBFE1F0026821C /* MPDisclosureIndicator.m in Sources */,
-				566B377315BBFE1F0026821C /* MPGraphics.m in Sources */,
-				566B377415BBFE1F0026821C /* MPTableViewCell.m in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,

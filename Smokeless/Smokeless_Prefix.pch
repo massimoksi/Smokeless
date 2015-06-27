@@ -7,6 +7,4 @@
     #import <UIKit/UIKit.h>
 
     #import <Twitter/Twitter.h>
-
-    #import "MPDefines.h"
 #endif

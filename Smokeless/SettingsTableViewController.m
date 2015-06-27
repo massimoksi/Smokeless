@@ -13,7 +13,7 @@
 #import "Constants.h"
 
 
-@interface SettingsTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
+@interface SettingsTableViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic, readonly) NSNumberFormatter *currencyFormatter;
@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *lastCigaretteDatePicker;
 @property (weak, nonatomic) IBOutlet UILabel *smokingHabitsLabel;
-@property (weak, nonatomic) IBOutlet UIPickerView *smokingHabitsPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *packetSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *packetPriceTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *shakeSwitch;
@@ -34,23 +33,32 @@
 
 @implementation SettingsTableViewController
 
-- (void)viewDidLoad
-{
-	[super viewDidLoad];
-
-    [self updateSettings];
-}
-
 - (void)viewWillAppear:(BOOL)animated
-{	
+{
 	[super viewWillAppear:animated];
 
-    NSIndexPath *lastCigaretteDatePickerIndexPath = [NSIndexPath indexPathForRow:1
-                                                                       inSection:0];
-    NSIndexPath *smokingHabitsPickerViewIndexPath = [NSIndexPath indexPathForRow:1
-                                                                       inSection:1];
+    [self updateSettings];
     
-    [self deleteRowsAtIndexPaths:@[lastCigaretteDatePickerIndexPath, smokingHabitsPickerViewIndexPath]];
+    [self deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1
+                                                      inSection:0]]];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1
+                                                 inSection:0];
+    
+    if ([self isRowVisible:indexPath]) {
+        if (animated) {
+            [self deleteRowsAtIndexPaths:@[indexPath]
+                        withRowAnimation:UITableViewRowAnimationTop];
+        }
+        else {
+            [self deleteRowsAtIndexPaths:@[indexPath]];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,13 +125,10 @@
 - (void)updateSettings
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-#if DEBUG
-    NSLog(@"%@", [userDefaults dictionaryRepresentation]);
-#endif
     
     NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
     self.lastCigaretteDateLabel.text = (lastCigaretteDate) ? [self.dateFormatter stringFromDate:lastCigaretteDate] : @"";
-    
+
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
     self.smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
@@ -218,13 +223,12 @@
     NSUInteger section = indexPath.section;
     NSUInteger row = indexPath.row;
     
-    NSIndexPath *lastCigaretteIndexPath = [NSIndexPath indexPathForItem:1
-                                                              inSection:0];
-    NSIndexPath *smokingHabitsIndexPath = [NSIndexPath indexPathForItem:1
-                                                              inSection:1];
-    
     switch (section) {
         case 0:
+        {
+            NSIndexPath *lastCigaretteIndexPath = [NSIndexPath indexPathForItem:1
+                                                                      inSection:0];
+            
             if (row == 0) {
                 if ([self isRowVisible:lastCigaretteIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
@@ -250,64 +254,11 @@
                                 withRowAnimation:UITableViewRowAnimationTop];
 
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_highlightColor];
-                    
-                    if ([self isRowVisible:smokingHabitsIndexPath]) {
-                        [self deleteRowsAtIndexPaths:@[smokingHabitsIndexPath]
-                                    withRowAnimation:UITableViewRowAnimationTop];
-                    }
                 }
             }
             break;
+        }
 
-        case 1:
-            if (row == 0) {
-                if ([self isRowVisible:smokingHabitsIndexPath]) {
-                    NSDictionary *habits = @{
-                                             kHabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
-                                             kHabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
-                                             kHabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
-                                             };
-                    if (![habits isEqualToDictionary:self.smokingHabits]) {
-                        [[NSUserDefaults standardUserDefaults] setObject:habits
-                                                                  forKey:kHabitsKey];
-                    }
-                    
-                    [self deleteRowsAtIndexPaths:@[smokingHabitsIndexPath]
-                                withRowAnimation:UITableViewRowAnimationTop];
-                    
-                    self.smokingHabitsLabel.textColor = [UIColor sml_detailTextColor];
-                }
-                else {
-                    if (self.smokingHabits) {
-                        NSInteger quantity = [self.smokingHabits[kHabitsQuantityKey] integerValue];
-                        NSInteger unit = [self.smokingHabits[kHabitsUnitKey] integerValue];
-                        NSInteger period = [self.smokingHabits[kHabitsPeriodKey] integerValue];
-                        
-                        // Set values from preferences to the picker view.
-                        [self.smokingHabitsPickerView selectRow:(quantity - 1)
-                                                    inComponent:0
-                                                       animated:NO];
-                        [self.smokingHabitsPickerView selectRow:unit
-                                                    inComponent:1
-                                                       animated:NO];
-                        [self.smokingHabitsPickerView selectRow:period
-                                                    inComponent:2
-                                                       animated:NO];
-                    }
-                    
-                    [self insertRowsAtIndexPaths:@[smokingHabitsIndexPath]
-                                withRowAnimation:UITableViewRowAnimationTop];
-
-                    self.smokingHabitsLabel.textColor = [UIColor sml_highlightColor];
-                    
-                    if ([self isRowVisible:lastCigaretteIndexPath]) {
-                        [self deleteRowsAtIndexPaths:@[lastCigaretteIndexPath]
-                                    withRowAnimation:UITableViewRowAnimationTop];
-                    }
-                }
-            }
-            break;
-            
         case 2:
             if (row == 0) {
                 [self.packetSizeTextField becomeFirstResponder];
@@ -327,102 +278,6 @@
 
     [tableView deselectRowAtIndexPath:indexPath
 							 animated:YES];
-}
-
-#pragma mark - Picker view data source
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 3;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    NSInteger rows;
-    
-    switch (component) {
-        case 0:
-            rows = 99;
-            break;
-            
-        case 1:
-        case 2:
-            rows = 2;
-            break;
-            
-        default:
-            rows = 0;
-            break;
-    }
-    
-    return rows;
-}
-
-#pragma mark - Picker view delegate
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
-    CGFloat width = 0.0;
-    CGFloat viewWidth = CGRectGetWidth(self.view.frame);
-    
-    switch (component) {
-        case 0:
-            width = viewWidth / 6;
-            break;
-            
-        case 1:
-            width = viewWidth / 2; // 3/6
-            break;
-            
-        case 2:
-            width = viewWidth / 3; // 2/6
-            break;
-    }
-    
-    return width;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    // TODO: add comments to localized strings.
-    NSString *title = nil;
-    
-    switch (component) {
-        case 0:
-            title = [NSString stringWithFormat:@"%ld", row + 1];
-            break;
-            
-        case 1:
-            if (row == 0) {
-                title = [NSLocalizedString(@"Cigarette(s)", nil) lowercaseString];
-            }
-            else {
-                title = [NSLocalizedString(@"Packet(s)", nil) lowercaseString];
-            }
-            break;
-            
-        case 2:
-            if (row == 0) {
-                title = [NSLocalizedString(@"Day", nil) lowercaseString];
-            }
-            else {
-                title = [NSLocalizedString(@"Week", nil) lowercaseString];
-            }
-            break;
-    }
-    
-    return title;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    NSDictionary *habits = @{
-                             kHabitsQuantityKey: @([self.smokingHabitsPickerView selectedRowInComponent:0] + 1),
-                             kHabitsUnitKey: @([self.smokingHabitsPickerView selectedRowInComponent:1]),
-                             kHabitsPeriodKey: @([self.smokingHabitsPickerView selectedRowInComponent:2])
-                             };
-    
-    self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:habits];
 }
 
 #pragma mark - Text field delegate
