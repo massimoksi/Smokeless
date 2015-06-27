@@ -25,12 +25,13 @@
 @property (nonatomic, copy) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
+
+@property (nonatomic) CGFloat oldSavings;
+@property (nonatomic) CGFloat actSavings;
 //
 //@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 //
 //@property (nonatomic) BOOL shakeEnabled;
-@property (nonatomic) CGFloat totalSavings;
-@property (nonatomic) NSUInteger totalPackets;
 
 @end
 
@@ -50,6 +51,9 @@
     self.price = [userDefaults floatForKey:kPacketPriceKey];
     self.size = [userDefaults integerForKey:kPacketSizeKey];
 
+    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
+    self.actSavings = [self totalSavings];
+    
     self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
     
 //    // Create the tinkle player.
@@ -65,7 +69,7 @@
 {
     [super viewDidAppear:animated];
 
-    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:kLastSavingsKey]) {
+    if (self.actSavings > self.oldSavings) {
         [UIView animateKeyframesWithDuration:0.5
                                        delay:0.0
                                      options:0
@@ -89,7 +93,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[NSUserDefaults standardUserDefaults] setFloat:self.totalSavings
+    [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
                                              forKey:kLastSavingsKey];
 }
 
@@ -121,52 +125,39 @@
 
 #pragma mark - Private methods
 
-- (NSInteger)nonSmokingDays
-{
-    NSInteger nonSmokingDays = 0;
-    
-    if (self.lastCigaretteDate) {
-        // create gregorian calendar
-        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        
-        nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                               fromDate:self.lastCigaretteDate
-                                                 toDate:[NSDate date]
-                                                options:0] day];
-    }
-    
-    return nonSmokingDays;
-}
-
-- (NSUInteger)totalPackets
-{
-    NSUInteger totalPackets = 0;
-    
-    if (self.habits && self.lastCigaretteDate) {
-        NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
-        NSInteger unit = [self.habits[kHabitsUnitKey] integerValue];
-        NSInteger period = [self.habits[kHabitsPeriodKey] integerValue];
-        
-        // Calculate constants.
-        NSInteger kUnit = (unit == 0) ? 1 : self.size;
-        NSInteger kPeriod = (period == 0) ? 1 : 7;
-        
-        // Calculate the number of cigarettes/day.
-        CGFloat cigarettesPerDay = quantity * kUnit / kPeriod;
-        
-        // Calculate the number of saved cigarettes.
-        CGFloat totalCigarettes = [self nonSmokingDays] * cigarettesPerDay;
-        
-        // Calculate the number of saved packets.
-        totalPackets = totalCigarettes / self.size + 1;
-    }
-    
-    return totalPackets;
-}
-
 - (CGFloat)totalSavings
 {
-    return [self totalPackets] * self.price;
+    CGFloat savings = 0.0;
+    
+    if (self.lastCigaretteDate) {
+        // Calculate non smoking days.
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSInteger nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                         fromDate:self.lastCigaretteDate
+                                                           toDate:[NSDate date]
+                                                          options:0] day];
+        
+        if (self.habits) {
+            NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
+            NSInteger unit = ([self.habits[kHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
+            NSInteger period = ([self.habits[kHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
+            
+            // Calculate the number of cigarettes/day.
+            CGFloat cigarettesPerDay = quantity * unit / period;
+            
+            // Calculate the number of saved cigarettes.
+            // TODO: make it integer.
+            CGFloat totalCigarettes = nonSmokingDays * cigarettesPerDay;
+            
+            // Calculate the number of saved packets.
+            NSInteger totalPackets = totalCigarettes / self.size + 1;   // +1 beacuse in the moment you quit smoking you save the first packet.
+            
+            // Calculate the total savings.
+            savings = totalPackets * self.price;
+        }
+    }
+    
+    return savings;
 }
 
 //#pragma mark - Accelerometer delegate
