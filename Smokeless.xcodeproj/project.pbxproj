@@ -20,6 +20,7 @@
 		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
 		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
+		566732121B3CB29F002A1060 /* HabitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566732111B3CB29F002A1060 /* HabitsTableViewController.swift */; };
 		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
 		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
 		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
@@ -51,6 +52,7 @@
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		566732111B3CB29F002A1060 /* HabitsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsTableViewController.swift; sourceTree = "<group>"; };
 		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				567F8B051A90009F00F57F45 /* HealthTableViewController.m */,
 				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
+				566732111B3CB29F002A1060 /* HabitsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
 				567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
+				566732121B3CB29F002A1060 /* HabitsTableViewController.swift in Sources */,
 				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
 				5667320E1B359964002A1060 /* ProgressView.swift in Sources */,
 				56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */,

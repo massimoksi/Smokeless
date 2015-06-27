@@ -37,10 +37,10 @@
 {
 	[super viewWillAppear:animated];
 
-    [self updateSettings];
-    
     [self deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1
                                                       inSection:0]]];
+    
+    [self updateSettings];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -146,6 +146,8 @@
 
 - (NSString *)formattedStringFromSmokingHabits:(NSDictionary *)smokingHabits
 {
+    NSString *formattedString = @" ";
+    
     if (smokingHabits) {
         NSInteger quantity = [smokingHabits[kHabitsQuantityKey] integerValue];
         NSInteger unit = [smokingHabits[kHabitsUnitKey] integerValue];
@@ -176,11 +178,10 @@
                 break;
         }
         
-        return [unitFormat stringByAppendingString:periodString];
+        formattedString = [unitFormat stringByAppendingString:periodString];
     }
-    else {
-        return @"";
-    }
+
+    return formattedString;
 }
 
 - (void)resetSettings
@@ -259,6 +260,9 @@
             break;
         }
 
+        case 1:
+            break;
+            
         case 2:
             if (row == 0) {
                 [self.packetSizeTextField becomeFirstResponder];
