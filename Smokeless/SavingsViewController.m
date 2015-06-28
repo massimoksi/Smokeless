@@ -95,6 +95,7 @@
                                                                 }];
                               }
                               completion:^(BOOL finished){
+                                  // Add motion effects on piggy box.
                                   if (finished) {
                                       const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
 
