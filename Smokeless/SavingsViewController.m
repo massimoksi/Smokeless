@@ -74,7 +74,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
     [self.view layoutIfNeeded];
     CGFloat spacing = [self spacingForSaving:self.actSavings];
     [UIView animateKeyframesWithDuration:1.0
@@ -84,17 +84,37 @@
                                   [UIView addKeyframeWithRelativeStartTime:0.0
                                                           relativeDuration:0.5
                                                                 animations:^{
-                                                                    self.piggyBoxConstraint.constant =  spacing * 0.9;
+                                                                    self.piggyBoxConstraint.constant = spacing * 0.9;
                                                                     [self.view layoutIfNeeded];
                                                                 }];
                                   [UIView addKeyframeWithRelativeStartTime:0.5
                                                           relativeDuration:0.5
                                                                 animations:^{
-                                                                    self.piggyBoxConstraint.constant =  spacing;
+                                                                    self.piggyBoxConstraint.constant = spacing;
                                                                     [self.view layoutIfNeeded];
                                                                 }];
                               }
-                              completion:nil];
+                              completion:^(BOOL finished){
+                                  if (finished) {
+                                      const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
+
+                                      UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                                                           type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+                                      tiltX.minimumRelativeValue = @(-kMotionEffectValue);
+                                      tiltX.maximumRelativeValue = @(kMotionEffectValue);
+                                      
+                                      UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                                                           type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+                                      tiltY.minimumRelativeValue = @(-kMotionEffectValue);
+                                      tiltY.maximumRelativeValue = @(kMotionEffectValue);
+                                      
+                                      
+                                      UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
+                                      effectGroup.motionEffects = @[tiltX, tiltY];
+                                      
+                                      [self.piggyBox addMotionEffect:effectGroup];
+                                  }
+                              }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -152,7 +172,6 @@
             CGFloat cigarettesPerDay = quantity * unit / period;
             
             // Calculate the number of saved cigarettes.
-            // TODO: make it integer.
             CGFloat totalCigarettes = nonSmokingDays * cigarettesPerDay;
             
             // Calculate the number of saved packets.
@@ -175,6 +194,7 @@
     const CGFloat kSpacingLimitMin = 8.0;
     const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.4);
     
+    // TODO: create unit testing.
     CGFloat spacing = kSpacingLimitMin;
     if (self.price) {
         NSInteger packets = saving / self.price + 0.5;
