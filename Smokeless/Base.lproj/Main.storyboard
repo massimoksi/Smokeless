@@ -4,7 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Savings-->
@@ -19,11 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAD-be-u9Z">
-                                <rect key="frame" x="0.0" y="93" width="600" height="614"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zos-YT-ftv">
+                                <rect key="frame" x="0.0" y="66" width="600" height="668"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Bt-fZ3">
+                                        <rect key="frame" x="8" y="0.0" width="584" height="584"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="glP-Bt-fZ3" secondAttribute="height" multiplier="1:1" id="ruH-k6-iWx"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
-                                        <rect key="frame" x="20" y="517" width="560" height="77"/>
+                                        <rect key="frame" x="8" y="596" width="584" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact">
@@ -33,32 +42,24 @@
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="92"/>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Bt-fZ3">
-                                        <rect key="frame" x="60" y="20" width="480" height="480"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="glP-Bt-fZ3" secondAttribute="height" multiplier="1:1" id="n3f-j2-0dc"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="glP-Bt-fZ3" secondAttribute="centerX" id="AXn-tT-YR0"/>
-                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="MAD-be-u9Z" secondAttribute="leading" constant="20" id="Jov-9V-8mg"/>
-                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="top" secondItem="MAD-be-u9Z" secondAttribute="top" constant="20" id="l6o-xo-1Qp"/>
-                                    <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" constant="20" id="ps1-sb-Yaw"/>
-                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="width" secondItem="MAD-be-u9Z" secondAttribute="width" multiplier="0.8" id="s5B-aD-all"/>
-                                    <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="20" id="vBG-a6-qU3"/>
-                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="glP-Bt-fZ3" secondAttribute="bottom" constant="17" id="zhI-1v-CN8"/>
+                                    <constraint firstAttribute="height" secondItem="Zos-YT-ftv" secondAttribute="width" multiplier="1:1" constant="68" id="4uT-3e-OOq"/>
+                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="9Gg-aB-D7a"/>
+                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="glP-Bt-fZ3" secondAttribute="bottom" constant="12" id="Dtu-2e-Wq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" id="YAc-bC-AKE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="8" id="bdt-ty-Qjh"/>
+                                    <constraint firstAttribute="trailing" secondItem="glP-Bt-fZ3" secondAttribute="trailing" constant="8" id="bk9-4J-HhX"/>
+                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="gxi-TK-tND"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MAD-be-u9Z" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" id="TcS-xp-drv"/>
-                            <constraint firstAttribute="width" secondItem="MAD-be-u9Z" secondAttribute="width" id="UrO-Ct-hua"/>
-                            <constraint firstAttribute="centerY" secondItem="MAD-be-u9Z" secondAttribute="centerY" id="Val-Fi-wSD"/>
-                            <constraint firstAttribute="trailing" secondItem="MAD-be-u9Z" secondAttribute="trailing" id="ucR-Jd-yAf"/>
+                            <constraint firstItem="Zos-YT-ftv" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" id="1jg-8F-JxL"/>
+                            <constraint firstAttribute="centerY" secondItem="Zos-YT-ftv" secondAttribute="centerY" id="2ag-5c-Ifg"/>
+                            <constraint firstAttribute="trailing" secondItem="Zos-YT-ftv" secondAttribute="trailing" id="Wqh-eu-e8t"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="SavingsNormal" id="rUc-TT-oaP">
@@ -487,8 +488,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UKU-cA-Ooe" id="hzc-41-OxF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-zR-VH5">
-                                                    <rect key="frame" x="491" y="5" width="94" height="29"/>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="DhN-zR-VH5">
+                                                    <rect key="frame" x="491" y="6" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="quantityChanged:" destination="hhk-Z1-Mbd" eventType="valueChanged" id="YPF-QK-WBr"/>
                                                     </connections>
