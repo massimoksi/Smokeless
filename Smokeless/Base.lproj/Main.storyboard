@@ -45,13 +45,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="2wu-k9-5OO"/>
                                     <constraint firstAttribute="height" secondItem="Zos-YT-ftv" secondAttribute="width" multiplier="1:1" constant="68" id="4uT-3e-OOq"/>
                                     <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="9Gg-aB-D7a"/>
                                     <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="glP-Bt-fZ3" secondAttribute="bottom" constant="12" id="Dtu-2e-Wq6"/>
+                                    <constraint firstAttribute="centerX" secondItem="glP-Bt-fZ3" secondAttribute="centerX" id="T8A-9b-je3"/>
                                     <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" id="YAc-bC-AKE"/>
                                     <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="8" id="bdt-ty-Qjh"/>
-                                    <constraint firstAttribute="trailing" secondItem="glP-Bt-fZ3" secondAttribute="trailing" constant="8" id="bk9-4J-HhX"/>
-                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="gxi-TK-tND"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -71,6 +71,7 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="piggyBox" destination="glP-Bt-fZ3" id="YWh-9s-Ouu"/>
+                        <outlet property="piggyBoxConstraint" destination="2wu-k9-5OO" id="9cr-KK-TnW"/>
                         <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="TZx-JA-Amm"/>
                     </connections>
                 </viewController>

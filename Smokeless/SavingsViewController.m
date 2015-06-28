@@ -19,10 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
+
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
 @property (nonatomic, strong) NSDate *lastCigaretteDate;
-@property (nonatomic, copy) NSDictionary *habits;
+@property (nonatomic, strong) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
 
@@ -45,16 +47,20 @@
 //    // Become first responder: it's necessary to react to shake gestures.
 //    [self becomeFirstResponder];
 
+    // Read settings from user defaults.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
     self.habits = [userDefaults dictionaryForKey:kHabitsKey];
     self.price = [userDefaults floatForKey:kPacketPriceKey];
     self.size = [userDefaults integerForKey:kPacketSizeKey];
-
     self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
+
+    // Calculate savings.
     self.actSavings = [self totalSavings];
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
     
-    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
+    // Set initial piggy box size.
+    self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
     
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {
@@ -69,26 +75,26 @@
 {
     [super viewDidAppear:animated];
 
-    if (self.actSavings > self.oldSavings) {
-        [UIView animateKeyframesWithDuration:0.5
-                                       delay:0.0
-                                     options:0
-                                  animations:^{
-                                      [UIView addKeyframeWithRelativeStartTime:0.0
-                                                              relativeDuration:0.5
-                                                                    animations:^{
-                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:YES];
-                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.1, 1.1);
-                                                                    }];
-                                      [UIView addKeyframeWithRelativeStartTime:0.5
-                                                              relativeDuration:0.5
-                                                                    animations:^{
-                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:NO];
-                                                                    }];
-                                  }
-                                  completion:nil];
-    }
+    [self.view layoutIfNeeded];
+    CGFloat spacing = [self spacingForSaving:self.actSavings];
+    [UIView animateKeyframesWithDuration:1.0
+                                   delay:0.0
+                                 options:0
+                              animations:^{
+                                  [UIView addKeyframeWithRelativeStartTime:0.0
+                                                          relativeDuration:0.5
+                                                                animations:^{
+                                                                    self.piggyBoxConstraint.constant =  spacing * 0.9;
+                                                                    [self.view layoutIfNeeded];
+                                                                }];
+                                  [UIView addKeyframeWithRelativeStartTime:0.5
+                                                          relativeDuration:0.5
+                                                                animations:^{
+                                                                    self.piggyBoxConstraint.constant =  spacing;
+                                                                    [self.view layoutIfNeeded];
+                                                                }];
+                              }
+                              completion:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -151,6 +157,10 @@
             
             // Calculate the number of saved packets.
             NSInteger totalPackets = totalCigarettes / self.size + 1;   // +1 beacuse in the moment you quit smoking you save the first packet.
+
+#if DEBUG
+            NSLog(@"Savings - Total packets: %ld.", (long)totalPackets);
+#endif
             
             // Calculate the total savings.
             savings = totalPackets * self.price;
@@ -158,6 +168,33 @@
     }
     
     return savings;
+}
+
+- (CGFloat)spacingForSaving:(CGFloat)saving
+{
+    const CGFloat kSpacingLimitMin = 8.0;
+    const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.4);
+    
+    CGFloat spacing = kSpacingLimitMin;
+    if (self.price) {
+        NSInteger packets = saving / self.price + 0.5;
+        
+        if (packets < 10) {
+            spacing = kSpacingLimitMax;
+        }
+        else if (packets >= 200) {
+            spacing = kSpacingLimitMin;
+        }
+        else {
+            spacing = round(kSpacingLimitMax - ((packets - 10) * (kSpacingLimitMax - kSpacingLimitMin) / 190));
+        }
+    }
+    
+#if DEBUG
+    NSLog(@"Savings - Calculated spacing: %.1f (savings: %.2f).", spacing, saving);
+#endif
+    
+    return spacing;
 }
 
 //#pragma mark - Accelerometer delegate
