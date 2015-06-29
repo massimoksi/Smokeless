@@ -59,7 +59,7 @@
 
     // Calculate savings.
     self.actSavings = [self totalSavings];
-    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
     
     // Set initial piggy box size.
     self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
@@ -97,10 +97,22 @@
                                                                         [self.view layoutIfNeeded];
                                                                     }];
                                   }
-                                  completion:nil];
+                                  completion:^(BOOL finished){
+                                      if (finished) {
+                                          // Animate label updating.
+                                          CATransition *animation = [CATransition animation];
+                                          animation.duration = 1.0;
+                                          animation.type = kCATransitionFade;
+                                          animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                                          [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+                                          
+                                          self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+                                      }
+                                  }];
     }
     else {
         self.piggyBoxConstraint.constant = spacing;
+        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
     }
 
     // Add motion effects on piggy box.
