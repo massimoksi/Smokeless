@@ -75,9 +75,9 @@
 {
     [super viewDidAppear:animated];
     
+    CGFloat spacing = [self spacingForSaving:self.actSavings];
     if (self.actSavings > self.oldSavings) {
         [self.view layoutIfNeeded];
-        CGFloat spacing = [self spacingForSaving:self.actSavings];
         [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:0
@@ -95,29 +95,27 @@
                                                                         [self.view layoutIfNeeded];
                                                                     }];
                                   }
-                                  completion:^(BOOL finished){
-                                      // Add motion effects on piggy box.
-                                      if (finished) {
-                                          const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
-                                          
-                                          UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
-                                                                                                                               type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-                                          tiltX.minimumRelativeValue = @(-kMotionEffectValue);
-                                          tiltX.maximumRelativeValue = @(kMotionEffectValue);
-                                          
-                                          UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
-                                                                                                                               type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-                                          tiltY.minimumRelativeValue = @(-kMotionEffectValue);
-                                          tiltY.maximumRelativeValue = @(kMotionEffectValue);
-                                          
-                                          
-                                          UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
-                                          effectGroup.motionEffects = @[tiltX, tiltY];
-                                          
-                                          [self.piggyBox addMotionEffect:effectGroup];
-                                      }
-                                  }];
+                                  completion:nil];
     }
+    else {
+        self.piggyBoxConstraint.constant = spacing;
+    }
+
+    // Add motion effects on piggy box.
+    const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
+    UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    tiltX.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltX.maximumRelativeValue = @(kMotionEffectValue);
+    UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    tiltY.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltY.maximumRelativeValue = @(kMotionEffectValue);
+    
+    UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
+    effectGroup.motionEffects = @[tiltX, tiltY];
+    
+    [self.piggyBox addMotionEffect:effectGroup];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
