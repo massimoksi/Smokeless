@@ -349,8 +349,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K67-eB-NnE" id="EKL-fE-FfR">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake piggy bank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q9-3e-ZTf">
-                                                    <rect key="frame" x="15" y="12" width="131" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play sounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Q9-3e-ZTf">
+                                                    <rect key="frame" x="15" y="12" width="89" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="lId-PI-nGw"/>
                                                     </constraints>
@@ -361,9 +361,6 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-N4-FjV">
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <connections>
-                                                        <action selector="shakeEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="yMB-Y0-HYl"/>
-                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -469,6 +466,7 @@
                         <outlet property="packetSizeTextField" destination="cqs-hV-Hwt" id="qnf-2D-HMK"/>
                         <outlet property="shakeSwitch" destination="TSw-N4-FjV" id="OSS-fy-yXF"/>
                         <outlet property="smokingHabitsLabel" destination="S66-Zo-NlU" id="elm-F5-9za"/>
+                        <outlet property="soundsSwitch" destination="TSw-N4-FjV" id="Smo-jI-edp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiV-UC-m4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
