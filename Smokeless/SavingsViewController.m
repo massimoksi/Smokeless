@@ -19,18 +19,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
+
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
 @property (nonatomic, strong) NSDate *lastCigaretteDate;
-@property (nonatomic, copy) NSDictionary *habits;
+@property (nonatomic, strong) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
+
+@property (nonatomic) CGFloat oldSavings;
+@property (nonatomic) CGFloat actSavings;
 //
 //@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
 //
 //@property (nonatomic) BOOL shakeEnabled;
-@property (nonatomic) CGFloat totalSavings;
-@property (nonatomic) NSUInteger totalPackets;
 
 @end
 
@@ -44,13 +47,20 @@
 //    // Become first responder: it's necessary to react to shake gestures.
 //    [self becomeFirstResponder];
 
+    // Read settings from user defaults.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
     self.habits = [userDefaults dictionaryForKey:kHabitsKey];
     self.price = [userDefaults floatForKey:kPacketPriceKey];
     self.size = [userDefaults integerForKey:kPacketSizeKey];
+    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
 
-    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.totalSavings)];
+    // Calculate savings.
+    self.actSavings = [self totalSavings];
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+    
+    // Set initial piggy box size.
+    self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
     
 //    // Create the tinkle player.
 //    if (!self.tinklePlayer) {
@@ -64,32 +74,53 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
-    if (self.totalSavings > [[NSUserDefaults standardUserDefaults] floatForKey:kLastSavingsKey]) {
-        [UIView animateKeyframesWithDuration:0.5
+    
+    CGFloat spacing = [self spacingForSaving:self.actSavings];
+    if (self.actSavings > self.oldSavings) {
+        [self.view layoutIfNeeded];
+        [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
                                      options:0
                                   animations:^{
                                       [UIView addKeyframeWithRelativeStartTime:0.0
                                                               relativeDuration:0.5
                                                                     animations:^{
-                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:YES];
-                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.1, 1.1);
+                                                                        self.piggyBoxConstraint.constant = spacing * 0.9;
+                                                                        [self.view layoutIfNeeded];
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.5
                                                               relativeDuration:0.5
                                                                     animations:^{
-                                                                        self.piggyBox.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                                                                        [self.piggyBox setTranslatesAutoresizingMaskIntoConstraints:NO];
+                                                                        self.piggyBoxConstraint.constant = spacing;
+                                                                        [self.view layoutIfNeeded];
                                                                     }];
                                   }
                                   completion:nil];
     }
+    else {
+        self.piggyBoxConstraint.constant = spacing;
+    }
+
+    // Add motion effects on piggy box.
+    const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
+    UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    tiltX.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltX.maximumRelativeValue = @(kMotionEffectValue);
+    UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    tiltY.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltY.maximumRelativeValue = @(kMotionEffectValue);
+    
+    UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
+    effectGroup.motionEffects = @[tiltX, tiltY];
+    
+    [self.piggyBox addMotionEffect:effectGroup];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[NSUserDefaults standardUserDefaults] setFloat:self.totalSavings
+    [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
                                              forKey:kLastSavingsKey];
 }
 
@@ -121,52 +152,70 @@
 
 #pragma mark - Private methods
 
-- (NSInteger)nonSmokingDays
-{
-    NSInteger nonSmokingDays = 0;
-    
-    if (self.lastCigaretteDate) {
-        // create gregorian calendar
-        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        
-        nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                               fromDate:self.lastCigaretteDate
-                                                 toDate:[NSDate date]
-                                                options:0] day];
-    }
-    
-    return nonSmokingDays;
-}
-
-- (NSUInteger)totalPackets
-{
-    NSUInteger totalPackets = 0;
-    
-    if (self.habits && self.lastCigaretteDate) {
-        NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
-        NSInteger unit = [self.habits[kHabitsUnitKey] integerValue];
-        NSInteger period = [self.habits[kHabitsPeriodKey] integerValue];
-        
-        // Calculate constants.
-        NSInteger kUnit = (unit == 0) ? 1 : self.size;
-        NSInteger kPeriod = (period == 0) ? 1 : 7;
-        
-        // Calculate the number of cigarettes/day.
-        CGFloat cigarettesPerDay = quantity * kUnit / kPeriod;
-        
-        // Calculate the number of saved cigarettes.
-        CGFloat totalCigarettes = [self nonSmokingDays] * cigarettesPerDay;
-        
-        // Calculate the number of saved packets.
-        totalPackets = totalCigarettes / self.size + 1;
-    }
-    
-    return totalPackets;
-}
-
 - (CGFloat)totalSavings
 {
-    return [self totalPackets] * self.price;
+    CGFloat savings = 0.0;
+    
+    if (self.lastCigaretteDate) {
+        // Calculate non smoking days.
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSInteger nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                         fromDate:self.lastCigaretteDate
+                                                           toDate:[NSDate date]
+                                                          options:0] day];
+        
+        if (self.habits) {
+            NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
+            NSInteger unit = ([self.habits[kHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
+            NSInteger period = ([self.habits[kHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
+            
+            // Calculate the number of cigarettes/day.
+            CGFloat cigarettesPerDay = quantity * unit / period;
+            
+            // Calculate the number of saved cigarettes.
+            CGFloat totalCigarettes = nonSmokingDays * cigarettesPerDay;
+            
+            // Calculate the number of saved packets.
+            NSInteger totalPackets = totalCigarettes / self.size + 1;   // +1 beacuse in the moment you quit smoking you save the first packet.
+
+#if DEBUG
+            NSLog(@"Savings - Total packets: %ld.", (long)totalPackets);
+#endif
+            
+            // Calculate the total savings.
+            savings = totalPackets * self.price;
+        }
+    }
+    
+    return savings;
+}
+
+- (CGFloat)spacingForSaving:(CGFloat)saving
+{
+    const CGFloat kSpacingLimitMin = 8.0;
+    const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.3);
+    
+    // TODO: create unit testing.
+    CGFloat spacing = kSpacingLimitMin;
+    if (self.price) {
+        NSInteger packets = saving / self.price + 0.5;
+        
+        if (packets < 10) {
+            spacing = kSpacingLimitMax;
+        }
+        else if (packets >= 200) {
+            spacing = kSpacingLimitMin;
+        }
+        else {
+            spacing = round(kSpacingLimitMax - ((packets - 10) * (kSpacingLimitMax - kSpacingLimitMin) / 190));
+        }
+    }
+    
+#if DEBUG
+    NSLog(@"Savings - Calculated spacing: %.1f (savings: %.2f).", spacing, saving);
+#endif
+    
+    return spacing;
 }
 
 //#pragma mark - Accelerometer delegate

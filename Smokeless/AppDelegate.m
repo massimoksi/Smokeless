@@ -73,7 +73,7 @@
 - (void)importUserSettings
 {
 #if DEBUG
-    NSLog(@"Preferences: Start importing old preferences.");
+    NSLog(@"Preferences - Start importing old preferences.");
 #endif
     
     NSString *oldPrefsFilePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/prefs.plist"];
@@ -97,7 +97,7 @@
                        forKey:kNotificationsEnabledKey];
         
 #if DEBUG
-        NSLog(@"Preferences: Imported %@.", [userDefaults dictionaryRepresentation]);
+        NSLog(@"Preferences - Imported %@.", [userDefaults dictionaryRepresentation]);
 #endif
         
         // Delete preferences file.
@@ -108,7 +108,7 @@
                            forKey:kUserSettingsImportedKey];
 
 #if DEBUG
-            NSLog(@"Preferences: Deleted old preferences.");
+            NSLog(@"Preferences - Deleted old preferences.");
 #endif
         }
     }
@@ -117,7 +117,7 @@
                        forKey:kUserSettingsImportedKey];
         
 #if DEBUG
-        NSLog(@"Preferences: No old preferences found.");
+        NSLog(@"Preferences - No old preferences found.");
 #endif
     }
 }
@@ -125,7 +125,7 @@
 - (void)updateLastCigaretteDate
 {
 #ifdef DEBUG
-    NSLog(@"Preferences: Start updating last cigarette date.");
+    NSLog(@"Preferences - Start updating last cigarette date.");
 #endif
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
@@ -139,7 +139,7 @@
     [lastCigaretteComponents setHour:4];
     
 #ifdef DEBUG
-    NSLog(@"Preferences: Last cigarette date %@.", [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
+    NSLog(@"Preferences - Last cigarette date %@.", [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
 #endif
     
     [userDefaults setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
