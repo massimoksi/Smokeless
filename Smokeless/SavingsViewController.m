@@ -10,6 +10,8 @@
 
 #import "Constants.h"
 
+#import "JAMSVGImageView.h"
+
 
 //#define ACCELERATION_THRESHOLD  2.0
 
@@ -17,7 +19,7 @@
 @interface SavingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *piggyBox;
+@property (weak, nonatomic) IBOutlet JAMSVGImageView *piggyBox;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
 

@@ -21,13 +21,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zos-YT-ftv">
                                 <rect key="frame" x="0.0" y="66" width="600" height="668"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PiggyBox" translatesAutoresizingMaskIntoConstraints="NO" id="glP-Bt-fZ3">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-dp-JcZ" customClass="JAMSVGImageView">
                                         <rect key="frame" x="8" y="0.0" width="584" height="584"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="glP-Bt-fZ3" secondAttribute="height" multiplier="1:1" id="ruH-k6-iWx"/>
+                                            <constraint firstAttribute="width" secondItem="9yx-dp-JcZ" secondAttribute="height" multiplier="1:1" id="q46-L2-c76"/>
                                         </constraints>
-                                    </imageView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox_outline"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
                                         <rect key="frame" x="8" y="596" width="584" height="72"/>
                                         <constraints>
@@ -45,12 +48,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="glP-Bt-fZ3" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="2wu-k9-5OO"/>
                                     <constraint firstAttribute="height" secondItem="Zos-YT-ftv" secondAttribute="width" multiplier="1:1" constant="68" id="4uT-3e-OOq"/>
                                     <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="9Gg-aB-D7a"/>
-                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="glP-Bt-fZ3" secondAttribute="bottom" constant="12" id="Dtu-2e-Wq6"/>
-                                    <constraint firstAttribute="centerX" secondItem="glP-Bt-fZ3" secondAttribute="centerX" id="T8A-9b-je3"/>
+                                    <constraint firstAttribute="centerX" secondItem="9yx-dp-JcZ" secondAttribute="centerX" id="CqQ-Yb-vnz"/>
+                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="9yx-dp-JcZ" secondAttribute="bottom" constant="12" id="QBm-LZ-Wvs"/>
                                     <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" id="YAc-bC-AKE"/>
+                                    <constraint firstItem="9yx-dp-JcZ" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="b0g-gD-dx6"/>
                                     <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="8" id="bdt-ty-Qjh"/>
                                 </constraints>
                             </view>
@@ -70,8 +73,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
-                        <outlet property="piggyBox" destination="glP-Bt-fZ3" id="YWh-9s-Ouu"/>
-                        <outlet property="piggyBoxConstraint" destination="2wu-k9-5OO" id="9cr-KK-TnW"/>
+                        <outlet property="piggyBox" destination="9yx-dp-JcZ" id="aT3-6z-bcK"/>
+                        <outlet property="piggyBoxConstraint" destination="b0g-gD-dx6" id="mjc-UE-nXk"/>
                         <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="TZx-JA-Amm"/>
                     </connections>
                 </viewController>
@@ -82,7 +85,7 @@
         <!--Health-->
         <scene sceneID="AeY-ON-FdX">
             <objects>
-                <navigationController storyboardIdentifier="HealthNVC" id="9fp-ln-zkG" sceneMemberID="viewController">
+                <navigationController id="9fp-ln-zkG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Health" image="HealthNormal" id="xLT-Tq-0FI">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="HealthActive"/>
@@ -600,7 +603,7 @@
         <!--Settings-->
         <scene sceneID="dP0-PG-rE5">
             <objects>
-                <navigationController storyboardIdentifier="SettingsNC" id="xsn-ra-zwB" sceneMemberID="viewController">
+                <navigationController id="xsn-ra-zwB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="SettingsNormal" id="rVX-EU-YdY">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SettingsActive"/>
@@ -713,7 +716,6 @@
         <image name="CalendarNormal" width="24" height="24"/>
         <image name="HealthActive" width="24" height="24"/>
         <image name="HealthNormal" width="24" height="24"/>
-        <image name="PiggyBox" width="736" height="736"/>
         <image name="SavingsActive" width="24" height="24"/>
         <image name="SavingsNormal" width="24" height="24"/>
         <image name="SettingsActive" width="24" height="24"/>
