@@ -78,19 +78,21 @@
                                        afterDelay:0.1];
         }
         
+        NSTimeInterval animationDuration = [self animationDurationForSaving:self.actSavings - self.oldSavings];
+        
         [self.view layoutIfNeeded];
-        [UIView animateKeyframesWithDuration:1.0
+        [UIView animateKeyframesWithDuration:animationDuration
                                        delay:0.0
                                      options:0
                                   animations:^{
                                       [UIView addKeyframeWithRelativeStartTime:0.0
-                                                              relativeDuration:0.5
+                                                              relativeDuration:animationDuration / 2
                                                                     animations:^{
                                                                         self.piggyBoxConstraint.constant = spacing - 6.0;
                                                                         [self.view layoutIfNeeded];
                                                                     }];
-                                      [UIView addKeyframeWithRelativeStartTime:0.5
-                                                              relativeDuration:0.5
+                                      [UIView addKeyframeWithRelativeStartTime:animationDuration / 2
+                                                              relativeDuration:animationDuration / 2
                                                                     animations:^{
                                                                         self.piggyBoxConstraint.constant = spacing;
                                                                         [self.view layoutIfNeeded];
@@ -104,7 +106,7 @@
                                           
                                           // Animate label updating.
                                           CATransition *animation = [CATransition animation];
-                                          animation.duration = 0.5;
+                                          animation.duration = 1.0;
                                           animation.type = kCATransitionFade;
                                           animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                                           [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
@@ -222,7 +224,6 @@
     const CGFloat kSpacingLimitMin = 8.0;
     const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.3);
     
-    // TODO: create unit testing.
     CGFloat spacing = kSpacingLimitMin;
     if (self.price) {
         NSInteger packets = saving / self.price + 0.5;
@@ -243,6 +244,30 @@
 #endif
     
     return spacing;
+}
+
+- (NSTimeInterval)animationDurationForSaving:(CGFloat)saving
+{
+    NSTimeInterval duration = 1.0;
+
+    if (self.price) {
+        NSInteger packets = saving / self.price + 0.5;
+
+        if (packets < 5) {
+            duration = 1.0;
+        }
+        else if ((packets >= 5) && (packets < 10)) {
+            duration = 2.0;
+        }
+        else if ((packets >= 10) && (packets < 20)) {
+            duration = 3.0;
+        }
+        else {
+            duration = 4.0;
+        }
+    }
+    
+    return duration;
 }
 
 //#pragma mark - Accelerometer delegate
