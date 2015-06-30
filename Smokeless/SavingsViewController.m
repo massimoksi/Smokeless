@@ -73,7 +73,9 @@
     CGFloat spacing = [self spacingForSaving:self.actSavings];
     if (self.actSavings > self.oldSavings) {
         if (self.soundsEnabled) {
-            [self.coinsDropPlayer play];
+            [self.coinsDropPlayer performSelector:@selector(play)
+                                       withObject:nil
+                                       afterDelay:0.1];
         }
         
         [self.view layoutIfNeeded];
@@ -102,7 +104,7 @@
                                           
                                           // Animate label updating.
                                           CATransition *animation = [CATransition animation];
-                                          animation.duration = 1.0;
+                                          animation.duration = 0.5;
                                           animation.type = kCATransitionFade;
                                           animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                                           [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
