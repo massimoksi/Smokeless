@@ -13,9 +13,6 @@
 #import "JAMSVGImageView.h"
 
 
-//#define ACCELERATION_THRESHOLD  2.0
-
-
 @interface SavingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
@@ -24,18 +21,16 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
 
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
+@property (nonatomic, readonly) AVAudioPlayer *coinsDropPlayer;
 
 @property (nonatomic, strong) NSDate *lastCigaretteDate;
 @property (nonatomic, strong) NSDictionary *habits;
 @property (nonatomic) CGFloat price;
 @property (nonatomic) NSInteger size;
+@property (nonatomic) BOOL soundsEnabled;
 
 @property (nonatomic) CGFloat oldSavings;
 @property (nonatomic) CGFloat actSavings;
-//
-//@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
-//
-//@property (nonatomic) BOOL shakeEnabled;
 
 @end
 
@@ -55,6 +50,7 @@
     self.habits = [userDefaults dictionaryForKey:kHabitsKey];
     self.price = [userDefaults floatForKey:kPacketPriceKey];
     self.size = [userDefaults integerForKey:kPacketSizeKey];
+    self.soundsEnabled = [userDefaults boolForKey:kPlaySoundsKey];
     self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
 
     // Calculate savings.
@@ -62,15 +58,12 @@
     self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
     
     // Set initial piggy box size.
+    // TODO: set actSavings if there's no need to animate.
     self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
     
-//    // Create the tinkle player.
-//    if (!self.tinklePlayer) {
-//        NSError *error;
-//        self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
-//                                                                                                                                ofType:@"m4a"]]
-//                                                                    error:&error];
-//    }
+    if (self.soundsEnabled && (self.actSavings > self.oldSavings)) {
+        [self.coinsDropPlayer prepareToPlay];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -79,6 +72,10 @@
     
     CGFloat spacing = [self spacingForSaving:self.actSavings];
     if (self.actSavings > self.oldSavings) {
+        if (self.soundsEnabled) {
+            [self.coinsDropPlayer play];
+        }
+        
         [self.view layoutIfNeeded];
         [UIView animateKeyframesWithDuration:1.0
                                        delay:0.0
@@ -99,6 +96,10 @@
                                   }
                                   completion:^(BOOL finished){
                                       if (finished) {
+                                          if (self.soundsEnabled) {
+                                              [self.coinsDropPlayer stop];
+                                          }
+                                          
                                           // Animate label updating.
                                           CATransition *animation = [CATransition animation];
                                           animation.duration = 1.0;
@@ -162,6 +163,21 @@
     _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
     
     return _currencyFormatter;
+}
+
+- (AVAudioPlayer *)coinsDropPlayer
+{
+    static AVAudioPlayer *_coinsDropPlayer = nil;
+    if (_coinsDropPlayer) {
+        return _coinsDropPlayer;
+    }
+    
+    _coinsDropPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"CoinsDrop"
+                                                                                                                           ofType:@"wav"]]
+                                                              error:NULL];
+    _coinsDropPlayer.numberOfLoops = -1;
+    
+    return _coinsDropPlayer;
 }
 
 #pragma mark - Private methods
