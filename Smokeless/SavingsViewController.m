@@ -148,11 +148,6 @@
 
 #pragma mark - Accessors
 
-//- (BOOL)canBecomeFirstResponder
-//{
-//    return YES;
-//}
-
 - (NSNumberFormatter *)currencyFormatter
 {
     static NSNumberFormatter *_currencyFormatter = nil;
@@ -175,7 +170,7 @@
     }
     
     _coinsDropPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"CoinsDrop"
-                                                                                                                           ofType:@"wav"]]
+                                                                                                                           ofType:@"aifc"]]
                                                               error:NULL];
     _coinsDropPlayer.numberOfLoops = -1;
     
