@@ -84,7 +84,7 @@
                                       [UIView addKeyframeWithRelativeStartTime:0.0
                                                               relativeDuration:0.5
                                                                     animations:^{
-                                                                        self.piggyBoxConstraint.constant = spacing * 0.9;
+                                                                        self.piggyBoxConstraint.constant = spacing - 6.0;
                                                                         [self.view layoutIfNeeded];
                                                                     }];
                                       [UIView addKeyframeWithRelativeStartTime:0.5
