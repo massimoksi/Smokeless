@@ -361,6 +361,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-N4-FjV">
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="soundsEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="iDM-8N-M3X"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -464,7 +467,6 @@
                         <outlet property="notificationsSwitch" destination="oGS-uR-Keg" id="o1e-g2-yfQ"/>
                         <outlet property="packetPriceTextField" destination="geG-Ow-OUL" id="Ts4-pD-nhw"/>
                         <outlet property="packetSizeTextField" destination="cqs-hV-Hwt" id="qnf-2D-HMK"/>
-                        <outlet property="shakeSwitch" destination="TSw-N4-FjV" id="OSS-fy-yXF"/>
                         <outlet property="smokingHabitsLabel" destination="S66-Zo-NlU" id="elm-F5-9za"/>
                         <outlet property="soundsSwitch" destination="TSw-N4-FjV" id="Smo-jI-edp"/>
                     </connections>

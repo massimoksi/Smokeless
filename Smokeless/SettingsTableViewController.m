@@ -108,7 +108,7 @@
     }
 }
 
-- (IBAction)shakeEnabled:(UISwitch *)sender
+- (IBAction)soundsEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
                                             forKey:kPlaySoundsKey];
