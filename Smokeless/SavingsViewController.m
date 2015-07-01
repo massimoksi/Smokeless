@@ -33,6 +33,8 @@
 @property (nonatomic) CGFloat oldSavings;
 @property (nonatomic) CGFloat actSavings;
 
+@property (nonatomic, strong) UIMotionEffectGroup *effectGroup;
+
 @end
 
 
@@ -133,10 +135,10 @@
     tiltY.minimumRelativeValue = @(-kMotionEffectValue);
     tiltY.maximumRelativeValue = @(kMotionEffectValue);
     
-    UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
-    effectGroup.motionEffects = @[tiltX, tiltY];
+    self.effectGroup = [[UIMotionEffectGroup alloc] init];
+    self.effectGroup.motionEffects = @[tiltX, tiltY];
     
-    [self.piggyBox addMotionEffect:effectGroup];
+    [self.piggyBox addMotionEffect:self.effectGroup];
     
     // Become first responder: it's necessary to react to shake gestures.
     [self becomeFirstResponder];
@@ -155,6 +157,8 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
+    self.effectGroup = nil;
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -213,21 +217,35 @@
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if ((motion == UIEventSubtypeMotionShake) && (self.actSavings > 0.0) && self.soundsEnabled) {
-        [self.coinsTinklePlayer playAtTime:0];
+        // Remove parallax motion effects.
+        [self.piggyBox removeMotionEffect:self.effectGroup];
+        
+        // Start playing tinkle sound.
+        [self.coinsTinklePlayer play];
     }
 }
 
 - (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake) {
+        // Stop tinkle sound.
         [self.coinsTinklePlayer stop];
+        self.coinsTinklePlayer.currentTime = 0.0;
+        
+        // Add parallax motion effects.
+        [self.piggyBox addMotionEffect:self.effectGroup];
     }
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake) {
+        // Stop tinkle sound.
         [self.coinsTinklePlayer stop];
+        self.coinsTinklePlayer.currentTime = 0.0;
+
+        // Add parallax motion effects.
+        [self.piggyBox addMotionEffect:self.effectGroup];
     }
 }
 
@@ -321,18 +339,5 @@
     
     return duration;
 }
-
-//#pragma mark - Accelerometer delegate
-//
-//- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
-//{
-//    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
-//        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
-//            if (self.tinklePlayer.playing == NO) {
-//                [self.tinklePlayer play];
-//            }
-//        }
-//    }
-//}
 
 @end
