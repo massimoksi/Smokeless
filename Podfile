@@ -1,4 +1,10 @@
-platform :ios
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
 
-dependency 'MBProgressHUD'
-dependency 'Appirater'
+target 'Smokeless' do
+
+  pod 'ABStaticTableViewController'
+  pod 'TTTLocalizedPluralString'
+  
+end
+

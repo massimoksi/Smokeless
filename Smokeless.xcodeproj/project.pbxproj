@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E158AD9B011C48984961B57 /* libPods-Smokeless.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */; };
+		56187BF41B2DB7E90098E41D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56187BF31B2DB7E90098E41D /* LaunchScreen.xib */; };
+		56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56187BF71B2F8C4A0098E41D /* BackgroundView.swift */; };
+		5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5619B4111A6C6D81005C12CF /* Images.xcassets */; };
+		562536D21B41DF9600E321A5 /* JAMStyledBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536C11B41DF9600E321A5 /* JAMStyledBezierPath.m */; };
+		562536D31B41DF9600E321A5 /* JAMStyledBezierPathFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536C31B41DF9600E321A5 /* JAMStyledBezierPathFactory.m */; };
+		562536D41B41DF9600E321A5 /* JAMSVGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536C51B41DF9600E321A5 /* JAMSVGButton.m */; };
+		562536D51B41DF9600E321A5 /* JAMSVGGradientParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536C71B41DF9600E321A5 /* JAMSVGGradientParts.m */; };
+		562536D61B41DF9600E321A5 /* JAMSVGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536C91B41DF9600E321A5 /* JAMSVGImage.m */; };
+		562536D71B41DF9600E321A5 /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536CB1B41DF9600E321A5 /* JAMSVGImageView.m */; };
+		562536D81B41DF9600E321A5 /* JAMSVGParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536CD1B41DF9600E321A5 /* JAMSVGParser.m */; };
+		562536D91B41DF9600E321A5 /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536CF1B41DF9600E321A5 /* JAMSVGUtilities.m */; };
+		562536DA1B41DF9600E321A5 /* UIImage+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 562536D11B41DF9600E321A5 /* UIImage+SVG.m */; };
+		562536DD1B41DFFE00E321A5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 562536DC1B41DFFE00E321A5 /* libz.dylib */; };
+		562536E01B41E3BB00E321A5 /* PiggyBox_outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = 562536DF1B41E3BB00E321A5 /* PiggyBox_outline.svg */; };
+		56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A511390E8160087E5C4 /* CFNetwork.framework */; };
+		56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56565A531390E8240087E5C4 /* SystemConfiguration.framework */; };
+		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
+		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
+		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
+		566732121B3CB29F002A1060 /* HabitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566732111B3CB29F002A1060 /* HabitsTableViewController.swift */; };
+		566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B373515BBFE1F0026821C /* CalendarViewController.m */; };
+		566B377015BBFE1F0026821C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B374015BBFE1F0026821C /* main.m */; };
+		566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375415BBFE1F0026821C /* SavingsViewController.m */; };
+		566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375815BBFE1F0026821C /* SettingsTableViewController.m */; };
+		566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566B375F15BBFE1F0026821C /* AppDelegate.m */; };
+		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
+		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
+		567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B0A1A900B4F00F57F45 /* Achievement.swift */; };
+		5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5683F272132ED18100C733AC /* AVFoundation.framework */; };
+		56A637961A6DC960001DC3A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A637951A6DC960001DC3A6 /* Constants.m */; };
+		56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4E6DB130F295300BA743C /* QuartzCore.framework */; };
+		56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F52C5A15185FAC007D838C /* Twitter.framework */; };
+		56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C01B434C20004E4816 /* CoinsDrop.aifc */; };
+		56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C41B43520B004E4816 /* Tinkle.m4a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		56187BF31B2DB7E90098E41D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		56187BF71B2F8C4A0098E41D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		562536C01B41DF9600E321A5 /* JAMStyledBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMStyledBezierPath.h; path = Libraries/JAMSVGImage/JAMStyledBezierPath.h; sourceTree = "<group>"; };
+		562536C11B41DF9600E321A5 /* JAMStyledBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMStyledBezierPath.m; path = Libraries/JAMSVGImage/JAMStyledBezierPath.m; sourceTree = "<group>"; };
+		562536C21B41DF9600E321A5 /* JAMStyledBezierPathFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMStyledBezierPathFactory.h; path = Libraries/JAMSVGImage/JAMStyledBezierPathFactory.h; sourceTree = "<group>"; };
+		562536C31B41DF9600E321A5 /* JAMStyledBezierPathFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMStyledBezierPathFactory.m; path = Libraries/JAMSVGImage/JAMStyledBezierPathFactory.m; sourceTree = "<group>"; };
+		562536C41B41DF9600E321A5 /* JAMSVGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGButton.h; path = Libraries/JAMSVGImage/JAMSVGButton.h; sourceTree = "<group>"; };
+		562536C51B41DF9600E321A5 /* JAMSVGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGButton.m; path = Libraries/JAMSVGImage/JAMSVGButton.m; sourceTree = "<group>"; };
+		562536C61B41DF9600E321A5 /* JAMSVGGradientParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGGradientParts.h; path = Libraries/JAMSVGImage/JAMSVGGradientParts.h; sourceTree = "<group>"; };
+		562536C71B41DF9600E321A5 /* JAMSVGGradientParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGGradientParts.m; path = Libraries/JAMSVGImage/JAMSVGGradientParts.m; sourceTree = "<group>"; };
+		562536C81B41DF9600E321A5 /* JAMSVGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGImage.h; path = Libraries/JAMSVGImage/JAMSVGImage.h; sourceTree = "<group>"; };
+		562536C91B41DF9600E321A5 /* JAMSVGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGImage.m; path = Libraries/JAMSVGImage/JAMSVGImage.m; sourceTree = "<group>"; };
+		562536CA1B41DF9600E321A5 /* JAMSVGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGImageView.h; path = Libraries/JAMSVGImage/JAMSVGImageView.h; sourceTree = "<group>"; };
+		562536CB1B41DF9600E321A5 /* JAMSVGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGImageView.m; path = Libraries/JAMSVGImage/JAMSVGImageView.m; sourceTree = "<group>"; };
+		562536CC1B41DF9600E321A5 /* JAMSVGParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGParser.h; path = Libraries/JAMSVGImage/JAMSVGParser.h; sourceTree = "<group>"; };
+		562536CD1B41DF9600E321A5 /* JAMSVGParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGParser.m; path = Libraries/JAMSVGImage/JAMSVGParser.m; sourceTree = "<group>"; };
+		562536CE1B41DF9600E321A5 /* JAMSVGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAMSVGUtilities.h; path = Libraries/JAMSVGImage/JAMSVGUtilities.h; sourceTree = "<group>"; };
+		562536CF1B41DF9600E321A5 /* JAMSVGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAMSVGUtilities.m; path = Libraries/JAMSVGImage/JAMSVGUtilities.m; sourceTree = "<group>"; };
+		562536D01B41DF9600E321A5 /* UIImage+SVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+SVG.h"; path = "Libraries/JAMSVGImage/UIImage+SVG.h"; sourceTree = "<group>"; };
+		562536D11B41DF9600E321A5 /* UIImage+SVG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SVG.m"; path = "Libraries/JAMSVGImage/UIImage+SVG.m"; sourceTree = "<group>"; };
+		562536DC1B41DFFE00E321A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		562536DF1B41E3BB00E321A5 /* PiggyBox_outline.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PiggyBox_outline.svg; path = Resources/PiggyBox_outline.svg; sourceTree = "<group>"; };
+		56565A511390E8160087E5C4 /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		56565A531390E8240087E5C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		566732111B3CB29F002A1060 /* HabitsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsTableViewController.swift; sourceTree = "<group>"; };
+		566B373415BBFE1F0026821C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		566B373515BBFE1F0026821C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		566B374015BBFE1F0026821C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		566B375315BBFE1F0026821C /* SavingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavingsViewController.h; sourceTree = "<group>"; };
+		566B375415BBFE1F0026821C /* SavingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavingsViewController.m; sourceTree = "<group>"; };
+		566B375715BBFE1F0026821C /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		566B375815BBFE1F0026821C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
+		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
+		567F8B051A90009F00F57F45 /* HealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewController.m; sourceTree = "<group>"; };
+		567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smokeless-Bridging-Header.h"; sourceTree = "<group>"; };
+		567F8B081A90033300F57F45 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		567F8B0A1A900B4F00F57F45 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		5683F272132ED18100C733AC /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		56A637941A6DC960001DC3A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		56A637951A6DC960001DC3A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		56E4E6DB130F295300BA743C /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56F52C5A15185FAC007D838C /* Twitter.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		56F974C01B434C20004E4816 /* CoinsDrop.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoinsDrop.aifc; path = Resources/CoinsDrop.aifc; sourceTree = "<group>"; };
+		56F974C41B43520B004E4816 /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tinkle.m4a; path = Resources/Tinkle.m4a; sourceTree = "<group>"; };
+		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562536DD1B41DFFE00E321A5 /* libz.dylib in Frameworks */,
+				56F52C5B15185FAD007D838C /* Twitter.framework in Frameworks */,
+				56565A541390E8240087E5C4 /* SystemConfiguration.framework in Frameworks */,
+				56565A521390E8160087E5C4 /* CFNetwork.framework in Frameworks */,
+				5683F273132ED18100C733AC /* AVFoundation.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				560DCAB012EBB7DB0023BD7F /* MessageUI.framework in Frameworks */,
+				56E4E6DC130F295300BA743C /* QuartzCore.framework in Frameworks */,
+				0E158AD9B011C48984961B57 /* libPods-Smokeless.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Smokeless.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2418B0EE3D8AE91A94820917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */,
+				2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				566B372815BBFE1E0026821C /* Smokeless */,
+				562536BD1B41DDCF00E321A5 /* Libraries */,
+				562536DE1B41E37B00E321A5 /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				2418B0EE3D8AE91A94820917 /* Pods */,
+			);
+			name = Smokeless;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				562536DC1B41DFFE00E321A5 /* libz.dylib */,
+				56565A531390E8240087E5C4 /* SystemConfiguration.framework */,
+				56565A511390E8160087E5C4 /* CFNetwork.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				56E4E6DB130F295300BA743C /* QuartzCore.framework */,
+				560DCAAF12EBB7DB0023BD7F /* MessageUI.framework */,
+				5683F272132ED18100C733AC /* AVFoundation.framework */,
+				56F52C5A15185FAC007D838C /* Twitter.framework */,
+				C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		562536BD1B41DDCF00E321A5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				562536DB1B41DFAF00E321A5 /* JAMSVGImage */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		562536DB1B41DFAF00E321A5 /* JAMSVGImage */ = {
+			isa = PBXGroup;
+			children = (
+				562536C01B41DF9600E321A5 /* JAMStyledBezierPath.h */,
+				562536C11B41DF9600E321A5 /* JAMStyledBezierPath.m */,
+				562536C21B41DF9600E321A5 /* JAMStyledBezierPathFactory.h */,
+				562536C31B41DF9600E321A5 /* JAMStyledBezierPathFactory.m */,
+				562536C41B41DF9600E321A5 /* JAMSVGButton.h */,
+				562536C51B41DF9600E321A5 /* JAMSVGButton.m */,
+				562536C61B41DF9600E321A5 /* JAMSVGGradientParts.h */,
+				562536C71B41DF9600E321A5 /* JAMSVGGradientParts.m */,
+				562536C81B41DF9600E321A5 /* JAMSVGImage.h */,
+				562536C91B41DF9600E321A5 /* JAMSVGImage.m */,
+				562536CA1B41DF9600E321A5 /* JAMSVGImageView.h */,
+				562536CB1B41DF9600E321A5 /* JAMSVGImageView.m */,
+				562536CC1B41DF9600E321A5 /* JAMSVGParser.h */,
+				562536CD1B41DF9600E321A5 /* JAMSVGParser.m */,
+				562536CE1B41DF9600E321A5 /* JAMSVGUtilities.h */,
+				562536CF1B41DF9600E321A5 /* JAMSVGUtilities.m */,
+				562536D01B41DF9600E321A5 /* UIImage+SVG.h */,
+				562536D11B41DF9600E321A5 /* UIImage+SVG.m */,
+			);
+			name = JAMSVGImage;
+			sourceTree = "<group>";
+		};
+		562536DE1B41E37B00E321A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56F974C41B43520B004E4816 /* Tinkle.m4a */,
+				56F974C01B434C20004E4816 /* CoinsDrop.aifc */,
+				562536DF1B41E3BB00E321A5 /* PiggyBox_outline.svg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		566B372815BBFE1E0026821C /* Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				5619B4111A6C6D81005C12CF /* Images.xcassets */,
+				56187BF31B2DB7E90098E41D /* LaunchScreen.xib */,
+				5667320A1B358DA9002A1060 /* Main.storyboard */,
+				56A637941A6DC960001DC3A6 /* Constants.h */,
+				56A637951A6DC960001DC3A6 /* Constants.m */,
+				566B375E15BBFE1F0026821C /* AppDelegate.h */,
+				566B375F15BBFE1F0026821C /* AppDelegate.m */,
+				566B378415BC00050026821C /* Models */,
+				566B378515BC00130026821C /* Views */,
+				566B378215BBFFAD0026821C /* Controllers */,
+				566B378115BBFE670026821C /* Supporting Files */,
+			);
+			path = Smokeless;
+			sourceTree = "<group>";
+		};
+		566B378115BBFE670026821C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				566B374015BBFE1F0026821C /* main.m */,
+				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
+				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
+				566732071B358D3F002A1060 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		566B378215BBFFAD0026821C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				566B373415BBFE1F0026821C /* CalendarViewController.h */,
+				566B373515BBFE1F0026821C /* CalendarViewController.m */,
+				566B375315BBFE1F0026821C /* SavingsViewController.h */,
+				566B375415BBFE1F0026821C /* SavingsViewController.m */,
+				567F8B041A90009F00F57F45 /* HealthTableViewController.h */,
+				567F8B051A90009F00F57F45 /* HealthTableViewController.m */,
+				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
+				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
+				566732111B3CB29F002A1060 /* HabitsTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		566B378415BC00050026821C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				567F8B0A1A900B4F00F57F45 /* Achievement.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		566B378515BC00130026821C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				567F8B081A90033300F57F45 /* AchievementCell.swift */,
+				5667320D1B359964002A1060 /* ProgressView.swift */,
+				56187BF71B2F8C4A0098E41D /* BackgroundView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Smokeless */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Smokeless" */;
+			buildPhases = (
+				68C90D29ABC0A14B35319868 /* Check Pods Manifest.lock */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				14A13CF7728DF755FF9DE16A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Smokeless;
+			productName = Smokeless;
+			productReference = 1D6058910D05DD3D006BFB54 /* Smokeless.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Massimo Peri";
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = PZ7QB7SQMF;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Base,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Smokeless */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Smokeless */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566732051B358D3F002A1060 /* Localizable.strings in Resources */,
+				56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */,
+				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
+				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
+				56187BF41B2DB7E90098E41D /* LaunchScreen.xib in Resources */,
+				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
+				562536E01B41E3BB00E321A5 /* PiggyBox_outline.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14A13CF7728DF755FF9DE16A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C90D29ABC0A14B35319868 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562536D51B41DF9600E321A5 /* JAMSVGGradientParts.m in Sources */,
+				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
+				566B376A15BBFE1F0026821C /* CalendarViewController.m in Sources */,
+				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
+				562536D91B41DF9600E321A5 /* JAMSVGUtilities.m in Sources */,
+				562536D71B41DF9600E321A5 /* JAMSVGImageView.m in Sources */,
+				566B377015BBFE1F0026821C /* main.m in Sources */,
+				562536D21B41DF9600E321A5 /* JAMStyledBezierPath.m in Sources */,
+				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
+				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
+				567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */,
+				562536D61B41DF9600E321A5 /* JAMSVGImage.m in Sources */,
+				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
+				566732121B3CB29F002A1060 /* HabitsTableViewController.swift in Sources */,
+				562536D31B41DF9600E321A5 /* JAMStyledBezierPathFactory.m in Sources */,
+				562536DA1B41DF9600E321A5 /* UIImage+SVG.m in Sources */,
+				566B377E15BBFE1F0026821C /* AppDelegate.m in Sources */,
+				5667320E1B359964002A1060 /* ProgressView.swift in Sources */,
+				562536D41B41DF9600E321A5 /* JAMSVGButton.m in Sources */,
+				562536D81B41DF9600E321A5 /* JAMSVGParser.m in Sources */,
+				56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		566732071B358D3F002A1060 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5667320C1B358E30002A1060 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5667320A1B358DA9002A1060 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5667320B1B358DB9002A1060 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_debug;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = Smokeless;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = NO;
+				SUFFIX_BUNDLE_ID = .debug;
+				SUFFIX_BUNDLE_NAME = " α";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMPRESS_PNG_FILES = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Smokeless;
+				SKIP_INSTALL = NO;
+				SUFFIX_BUNDLE_ID = "";
+				SUFFIX_BUNDLE_NAME = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = "";
+				DEFINES_MODULE = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = "";
+				DEFINES_MODULE = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Smokeless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

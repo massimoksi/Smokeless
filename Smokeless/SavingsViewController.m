@@ -8,51 +8,157 @@
 
 #import "SavingsViewController.h"
 
-#import "PreferencesManager.h"
+#import "Constants.h"
 
-#import "DisplayView.h"
-
-
-#define ACCELERATION_THRESHOLD  2.0
+#import "JAMSVGImageView.h"
 
 
 @interface SavingsViewController ()
 
-@property (nonatomic, strong) UIImageView *savingsView;
-@property (nonatomic, strong) DisplayView *displayView;
-@property (nonatomic, strong) UIImageView *noteView;
+@property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
+@property (weak, nonatomic) IBOutlet JAMSVGImageView *piggyBox;
 
-@property (nonatomic, strong) AVAudioPlayer *tinklePlayer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
 
-@property (nonatomic, assign) BOOL shakeEnabled;
-@property (nonatomic, assign) CGFloat totalSavings;
-@property (nonatomic, assign) NSUInteger totalPackets;
+@property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
+@property (nonatomic, readonly) AVAudioPlayer *coinsDropPlayer;
+@property (nonatomic, readonly) AVAudioPlayer *coinsTinklePlayer;
+
+@property (nonatomic, strong) NSDate *lastCigaretteDate;
+@property (nonatomic, strong) NSDictionary *habits;
+@property (nonatomic) CGFloat price;
+@property (nonatomic) NSInteger size;
+@property (nonatomic) BOOL soundsEnabled;
+
+@property (nonatomic) CGFloat oldSavings;
+@property (nonatomic) CGFloat actSavings;
+
+@property (nonatomic, strong) UIMotionEffectGroup *effectGroup;
 
 @end
 
 
 @implementation SavingsViewController
 
-- (void)loadView
+- (void)viewWillAppear:(BOOL)animated
 {
-    // Create the view.
-	self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BackgroundPattern"]];	
+    [super viewWillAppear:animated];
+    
+    // Read settings from user defaults.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+    self.habits = [userDefaults dictionaryForKey:kHabitsKey];
+    self.price = [userDefaults floatForKey:kPacketPriceKey];
+    self.size = [userDefaults integerForKey:kPacketSizeKey];
+    self.soundsEnabled = [userDefaults boolForKey:kPlaySoundsKey];
+    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
 
-	// Create the savings view and center it inside the superview.
-	self.savingsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Savings"]];
-    self.savingsView.center = CGPointMake(self.view.center.x,
-                                          self.view.center.y - self.tabBarController.tabBar.frame.size.height);
-	[self.view addSubview:self.savingsView];
-	
-    // Create the display view.
-    self.displayView = [[DisplayView alloc] initWithOrigin:CGPointMake(68.0,
-                                                                       self.savingsView.center.y + 113.0)];
-    [self.view addSubview:self.displayView];
-	
-    // Setup the accelerometer.
-    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
-    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:0.1];
+    // Calculate savings.
+    self.actSavings = [self totalSavings];
+    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
+    
+    // Set initial piggy box size.
+    // TODO: set actSavings if there's no need to animate.
+    self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
+    
+    if (self.soundsEnabled) {
+        if (self.actSavings > self.oldSavings) {
+            [self.coinsDropPlayer prepareToPlay];
+        }
+        
+        [self.coinsTinklePlayer prepareToPlay];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    CGFloat spacing = [self spacingForSaving:self.actSavings];
+    if (self.actSavings > self.oldSavings) {
+        if (self.soundsEnabled) {
+            [self.coinsDropPlayer performSelector:@selector(play)
+                                       withObject:nil
+                                       afterDelay:0.1];
+        }
+        
+        NSTimeInterval animationDuration = [self animationDurationForSaving:self.actSavings - self.oldSavings];
+        
+        [self.view layoutIfNeeded];
+        [UIView animateKeyframesWithDuration:animationDuration
+                                       delay:0.0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0.0
+                                                              relativeDuration:animationDuration / 2
+                                                                    animations:^{
+                                                                        self.piggyBoxConstraint.constant = spacing - 6.0;
+                                                                        [self.view layoutIfNeeded];
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:animationDuration / 2
+                                                              relativeDuration:animationDuration / 2
+                                                                    animations:^{
+                                                                        self.piggyBoxConstraint.constant = spacing;
+                                                                        [self.view layoutIfNeeded];
+                                                                    }];
+                                  }
+                                  completion:^(BOOL finished){
+                                      if (finished) {
+                                          if (self.soundsEnabled) {
+                                              [self.coinsDropPlayer stop];
+                                          }
+                                          
+                                          // Animate label updating.
+                                          CATransition *animation = [CATransition animation];
+                                          animation.duration = 1.0;
+                                          animation.type = kCATransitionFade;
+                                          animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                                          [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+                                          
+                                          self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+                                      }
+                                  }];
+    }
+    else {
+        self.piggyBoxConstraint.constant = spacing;
+        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+    }
+
+    // Add motion effects on piggy box.
+    const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
+    UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    tiltX.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltX.maximumRelativeValue = @(kMotionEffectValue);
+    UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    tiltY.minimumRelativeValue = @(-kMotionEffectValue);
+    tiltY.maximumRelativeValue = @(kMotionEffectValue);
+    
+    self.effectGroup = [[UIMotionEffectGroup alloc] init];
+    self.effectGroup.motionEffects = @[tiltX, tiltY];
+    
+    [self.piggyBox addMotionEffect:self.effectGroup];
+    
+    // Become first responder: it's necessary to react to shake gestures.
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
+                                             forKey:kLastSavingsKey];
+    
+    [self resignFirstResponder];
+    
+    [super viewWillDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+    self.effectGroup = nil;
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -60,93 +166,178 @@
     return YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark - Accessors
+
+- (NSNumberFormatter *)currencyFormatter
 {
-    // Become first responder: it's necessary to react to shake gestures.
-    [self becomeFirstResponder];
-
-    PreferencesManager *prefsManager = [PreferencesManager sharedManager];
-    
-    // Set properties.
-    self.shakeEnabled = [(prefsManager.prefs)[SHAKE_ENABLED_KEY] boolValue];
-    self.totalSavings = [prefsManager totalSavings];
-    self.totalPackets = [prefsManager totalPackets];
-    
-    // Create the number formatter.
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setLocale:[NSLocale currentLocale]];
-    
-    // Set unit.
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    self.displayView.moneyUnit.text = [formatter currencySymbol];
-
-    // Set formatter for the amount label
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMinimumFractionDigits:2];
-    [formatter setMaximumFractionDigits:2];
-    
-    // Retrieve preferences.
-	NSDictionary *habits = (prefsManager.prefs)[HABITS_KEY];
-	NSNumber *price	= (prefsManager.prefs)[PACKET_PRICE_KEY];
-	NSNumber *size = (prefsManager.prefs)[PACKET_SIZE_KEY];
-
-    // Set display labels.
-	if (habits && price && size) {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:@(self.totalSavings)];
-        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"%d", self.totalPackets];
-        
-        // Remove the note view if present.
-        if (self.noteView != nil) {
-            [self.noteView removeFromSuperview];
-            self.noteView = nil;
-        }
-	}
-    else {
-        self.displayView.moneyLabel.text = [formatter stringFromNumber:@0.0f];
-        self.displayView.packetsLabel.text = [NSString stringWithFormat:@"0"];
-        
-        // Create the note view.
-        if (self.noteView == nil) {
-            self.noteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Note"]];
-            CGRect frame = self.noteView.frame;
-            frame.origin.x = self.view.frame.size.width - self.noteView.frame.size.width - 5.0f;
-            frame.origin.y = self.view.frame.size.height - self.noteView.frame.size.height - 5.0f;
-            self.noteView.frame = frame;
-            [self.view addSubview:self.noteView];
-        }
-
+    static NSNumberFormatter *_currencyFormatter = nil;
+    if (_currencyFormatter) {
+        return _currencyFormatter;
     }
-    [self.displayView setState:DisplayStateMoney
-                 withAnimation:NO];
     
-    // Create the tinkle player.
-    if (!self.tinklePlayer) {
-        self.tinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
-                                                                                                                                ofType:@"m4a"]]
-                                                                    error:NULL];
+    _currencyFormatter = [[NSNumberFormatter alloc] init];
+    _currencyFormatter.locale = [NSLocale currentLocale];
+    _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    
+    return _currencyFormatter;
+}
+
+- (AVAudioPlayer *)coinsDropPlayer
+{
+    static AVAudioPlayer *_coinsDropPlayer = nil;
+    if (_coinsDropPlayer) {
+        return _coinsDropPlayer;
+    }
+    
+    _coinsDropPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"CoinsDrop"
+                                                                                                                           ofType:@"aifc"]]
+                                                              error:NULL];
+    _coinsDropPlayer.numberOfLoops = -1;
+    
+    return _coinsDropPlayer;
+}
+
+- (AVAudioPlayer *)coinsTinklePlayer
+{
+    static AVAudioPlayer *_coinsTinklePlayer = nil;
+    if (_coinsTinklePlayer) {
+        return _coinsTinklePlayer;
+    }
+    
+    _coinsTinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
+                                                                                                                             ofType:@"m4a"]]
+                                                                error:NULL];
+    _coinsTinklePlayer.numberOfLoops = -1;
+    
+    return _coinsTinklePlayer;
+}
+
+#pragma mark - Motion events
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if ((motion == UIEventSubtypeMotionShake) && (self.actSavings > 0.0) && self.soundsEnabled) {
+        // Remove parallax motion effects.
+        [self.piggyBox removeMotionEffect:self.effectGroup];
+        
+        // Start playing tinkle sound.
+        [self.coinsTinklePlayer play];
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    [super didReceiveMemoryWarning];
-	
-    self.savingsView = nil;
-    self.displayView = nil;
-    self.noteView = nil;
+    if (motion == UIEventSubtypeMotionShake) {
+        // Stop tinkle sound.
+        [self.coinsTinklePlayer stop];
+        self.coinsTinklePlayer.currentTime = 0.0;
+        
+        // Add parallax motion effects.
+        [self.piggyBox addMotionEffect:self.effectGroup];
+    }
 }
 
-#pragma - Accelerometer delegate
-
-- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    if ((self.shakeEnabled == YES) && (self.totalSavings > 0.0)) {
-        if ((acceleration.x * acceleration.x) + (acceleration.y * acceleration.y) + (acceleration.z * acceleration.z) > ACCELERATION_THRESHOLD * ACCELERATION_THRESHOLD) {
-            if (self.tinklePlayer.playing == NO) {
-                [self.tinklePlayer play];
-            }
+    if (motion == UIEventSubtypeMotionShake) {
+        // Stop tinkle sound.
+        [self.coinsTinklePlayer stop];
+        self.coinsTinklePlayer.currentTime = 0.0;
+
+        // Add parallax motion effects.
+        [self.piggyBox addMotionEffect:self.effectGroup];
+    }
+}
+
+#pragma mark - Private methods
+
+- (CGFloat)totalSavings
+{
+    CGFloat savings = 0.0;
+    
+    if (self.lastCigaretteDate) {
+        // Calculate non smoking days.
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSInteger nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                         fromDate:self.lastCigaretteDate
+                                                           toDate:[NSDate date]
+                                                          options:0] day];
+        
+        if (self.habits) {
+            NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
+            NSInteger unit = ([self.habits[kHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
+            NSInteger period = ([self.habits[kHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
+            
+            // Calculate the number of cigarettes/day.
+            CGFloat cigarettesPerDay = quantity * unit / period;
+            
+            // Calculate the number of saved cigarettes.
+            CGFloat totalCigarettes = nonSmokingDays * cigarettesPerDay;
+            
+            // Calculate the number of saved packets.
+            NSInteger totalPackets = totalCigarettes / self.size + 1;   // +1 beacuse in the moment you quit smoking you save the first packet.
+
+#if DEBUG
+            NSLog(@"Savings - Total packets: %ld.", (long)totalPackets);
+#endif
+            
+            // Calculate the total savings.
+            savings = totalPackets * self.price;
         }
     }
+    
+    return savings;
+}
+
+- (CGFloat)spacingForSaving:(CGFloat)saving
+{
+    const CGFloat kSpacingLimitMin = 8.0;
+    const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.3);
+    
+    CGFloat spacing = kSpacingLimitMin;
+    if (self.price) {
+        NSInteger packets = saving / self.price + 0.5;
+        
+        if (packets < 10) {
+            spacing = kSpacingLimitMax;
+        }
+        else if (packets >= 200) {
+            spacing = kSpacingLimitMin;
+        }
+        else {
+            spacing = round(kSpacingLimitMax - ((packets - 10) * (kSpacingLimitMax - kSpacingLimitMin) / 190));
+        }
+    }
+    
+#if DEBUG
+    NSLog(@"Savings - Calculated spacing: %.1f (savings: %.2f).", spacing, saving);
+#endif
+    
+    return spacing;
+}
+
+- (NSTimeInterval)animationDurationForSaving:(CGFloat)saving
+{
+    NSTimeInterval duration = 1.0;
+
+    if (self.price) {
+        NSInteger packets = saving / self.price + 0.5;
+
+        if (packets < 5) {
+            duration = 1.0;
+        }
+        else if ((packets >= 5) && (packets < 10)) {
+            duration = 2.0;
+        }
+        else if ((packets >= 10) && (packets < 20)) {
+            duration = 3.0;
+        }
+        else {
+            duration = 4.0;
+        }
+    }
+    
+    return duration;
 }
 
 @end
