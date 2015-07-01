@@ -22,6 +22,7 @@
 
 @property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 @property (nonatomic, readonly) AVAudioPlayer *coinsDropPlayer;
+@property (nonatomic, readonly) AVAudioPlayer *coinsTinklePlayer;
 
 @property (nonatomic, strong) NSDate *lastCigaretteDate;
 @property (nonatomic, strong) NSDictionary *habits;
@@ -41,9 +42,6 @@
 {
     [super viewWillAppear:animated];
     
-//    // Become first responder: it's necessary to react to shake gestures.
-//    [self becomeFirstResponder];
-
     // Read settings from user defaults.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
@@ -61,8 +59,12 @@
     // TODO: set actSavings if there's no need to animate.
     self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
     
-    if (self.soundsEnabled && (self.actSavings > self.oldSavings)) {
-        [self.coinsDropPlayer prepareToPlay];
+    if (self.soundsEnabled) {
+        if (self.actSavings > self.oldSavings) {
+            [self.coinsDropPlayer prepareToPlay];
+        }
+        
+        [self.coinsTinklePlayer prepareToPlay];
     }
 }
 
@@ -135,17 +137,29 @@
     effectGroup.motionEffects = @[tiltX, tiltY];
     
     [self.piggyBox addMotionEffect:effectGroup];
+    
+    // Become first responder: it's necessary to react to shake gestures.
+    [self becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
                                              forKey:kLastSavingsKey];
+    
+    [self resignFirstResponder];
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 #pragma mark - Accessors
@@ -177,6 +191,44 @@
     _coinsDropPlayer.numberOfLoops = -1;
     
     return _coinsDropPlayer;
+}
+
+- (AVAudioPlayer *)coinsTinklePlayer
+{
+    static AVAudioPlayer *_coinsTinklePlayer = nil;
+    if (_coinsTinklePlayer) {
+        return _coinsTinklePlayer;
+    }
+    
+    _coinsTinklePlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Tinkle"
+                                                                                                                             ofType:@"m4a"]]
+                                                                error:NULL];
+    _coinsTinklePlayer.numberOfLoops = -1;
+    
+    return _coinsTinklePlayer;
+}
+
+#pragma mark - Motion events
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if ((motion == UIEventSubtypeMotionShake) && (self.actSavings > 0.0) && self.soundsEnabled) {
+        [self.coinsTinklePlayer playAtTime:0];
+    }
+}
+
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake) {
+        [self.coinsTinklePlayer stop];
+    }
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake) {
+        [self.coinsTinklePlayer stop];
+    }
 }
 
 #pragma mark - Private methods
