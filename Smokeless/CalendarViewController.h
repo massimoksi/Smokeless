@@ -6,7 +6,7 @@
 //  Copyright 2010 Massimo Peri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 @interface CalendarViewController : UIViewController

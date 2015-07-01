@@ -6,10 +6,9 @@
 //  Copyright 2010 Massimo Peri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
+@import UIKit;
 
 
-@interface SavingsViewController : UIViewController <UIAccelerometerDelegate>
+@interface SavingsViewController : UIViewController
 
 @end

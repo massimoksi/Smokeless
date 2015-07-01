@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Massimo Peri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 extern NSString * const kLastCigaretteKey;
