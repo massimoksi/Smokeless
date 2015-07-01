@@ -1,0 +1,3 @@
+[submodule "Libraries/JAMSVGImage"]
+	path = Libraries/JAMSVGImage
+	url = https://github.com/jmenter/JAMSVGImage.git
