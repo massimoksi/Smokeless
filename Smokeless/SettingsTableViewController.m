@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *smokingHabitsLabel;
 @property (weak, nonatomic) IBOutlet UITextField *packetSizeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *packetPriceTextField;
-@property (weak, nonatomic) IBOutlet UISwitch *shakeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *soundsSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *notificationsSwitch;
 
 @end
@@ -108,10 +108,10 @@
     }
 }
 
-- (IBAction)shakeEnabled:(UISwitch *)sender
+- (IBAction)soundsEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:kShakeEnabledKey];
+                                            forKey:kPlaySoundsKey];
 }
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
@@ -140,7 +140,7 @@
     CGFloat price = [userDefaults floatForKey:kPacketPriceKey];
     self.packetPriceTextField.text = (price != 0.0) ? [self.currencyFormatter stringFromNumber:@(price)] : @"";
     
-    self.shakeSwitch.on = [userDefaults boolForKey:kShakeEnabledKey];
+    self.soundsSwitch.on = [userDefaults boolForKey:kPlaySoundsKey];
     self.notificationsSwitch.on = [userDefaults boolForKey:kNotificationsEnabledKey];
 }
 
@@ -198,7 +198,7 @@
                                                             [userDefaults removeObjectForKey:kHabitsKey];
                                                             [userDefaults removeObjectForKey:kPacketSizeKey];
                                                             [userDefaults removeObjectForKey:kPacketPriceKey];
-                                                            [userDefaults removeObjectForKey:kShakeEnabledKey];
+                                                            [userDefaults removeObjectForKey:kPlaySoundsKey];
                                                             [userDefaults removeObjectForKey:kNotificationsEnabledKey];
                                                             [userDefaults removeObjectForKey:kLastSavingsKey];
                                                             

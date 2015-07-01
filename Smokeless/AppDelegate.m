@@ -92,7 +92,7 @@
         [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
                         forKey:kPacketPriceKey];
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
-                       forKey:kShakeEnabledKey];
+                       forKey:kPlaySoundsKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
                        forKey:kNotificationsEnabledKey];
         
