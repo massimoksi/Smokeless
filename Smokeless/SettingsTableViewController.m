@@ -18,7 +18,7 @@
 @property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 
-@property (copy, nonatomic) NSDictionary *smokingHabits;
+@property (strong, nonatomic) NSDictionary *smokingHabits;
 
 @property (weak, nonatomic) IBOutlet UILabel *lastCigaretteDateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *lastCigaretteDatePicker;
