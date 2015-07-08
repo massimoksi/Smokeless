@@ -37,6 +37,7 @@
 		56F974E31B448F87004E4816 /* JAMSVGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F974D71B448F87004E4816 /* JAMSVGButton.m */; };
 		56F974E41B448F87004E4816 /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F974D91B448F87004E4816 /* JAMSVGImageView.m */; };
 		56F974E51B448F87004E4816 /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F974DC1B448F87004E4816 /* JAMSVGUtilities.m */; };
+		56F974E71B4AC5DF004E4816 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		56F974D91B448F87004E4816 /* JAMSVGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGImageView.m; sourceTree = "<group>"; };
 		56F974DB1B448F87004E4816 /* JAMSVGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAMSVGUtilities.h; sourceTree = "<group>"; };
 		56F974DC1B448F87004E4816 /* JAMSVGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGUtilities.m; sourceTree = "<group>"; };
+		56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
 		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				567F8B0A1A900B4F00F57F45 /* Achievement.swift */,
+				56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				56F974E41B448F87004E4816 /* JAMSVGImageView.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
 				566B377915BBFE1F0026821C /* SavingsViewController.m in Sources */,
+				56F974E71B4AC5DF004E4816 /* AchievementsManager.swift in Sources */,
 				567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
 				56F974E11B448F87004E4816 /* JAMSVGImage.m in Sources */,
