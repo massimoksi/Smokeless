@@ -39,7 +39,17 @@ class ProgressView: UIView {
         }
     }
 
-    @IBInspectable var completedColor: UIColor?
+    @IBInspectable var completedColor: UIColor? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+
+    @IBInspectable var checkmarkColor: UIColor? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override func drawRect(rect: CGRect) {
         let w = CGRectGetWidth(frame)
@@ -57,41 +67,47 @@ class ProgressView: UIView {
             else {
                 drawingRect = CGRectMake(0.0, 0.0, w, h)
             }
-            
+
             // --- PaintCode
-            var oval1Path = UIBezierPath()
-            oval1Path.moveToPoint(CGPointMake(drawingRect.minX + 12, drawingRect.minY + 24))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 24, drawingRect.minY + 12), controlPoint1: CGPointMake(drawingRect.minX + 18.63, drawingRect.minY + 24), controlPoint2: CGPointMake(drawingRect.minX + 24, drawingRect.minY + 18.63))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 12, drawingRect.minY), controlPoint1: CGPointMake(drawingRect.minX + 24, drawingRect.minY + 5.37), controlPoint2: CGPointMake(drawingRect.minX + 18.63, drawingRect.minY))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX, drawingRect.minY + 12), controlPoint1: CGPointMake(drawingRect.minX + 5.37, drawingRect.minY), controlPoint2: CGPointMake(drawingRect.minX, drawingRect.minY + 5.37))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 12, drawingRect.minY + 24), controlPoint1: CGPointMake(drawingRect.minX, drawingRect.minY + 18.63), controlPoint2: CGPointMake(drawingRect.minX + 5.37, drawingRect.minY + 24))
-            oval1Path.closePath()
-            oval1Path.moveToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.05))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 18.27, drawingRect.minY + 4.42))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 17.73, drawingRect.minY + 4.42), controlPoint1: CGPointMake(drawingRect.minX + 18.12, drawingRect.minY + 4.28), controlPoint2: CGPointMake(drawingRect.minX + 17.88, drawingRect.minY + 4.28))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 8.62, drawingRect.minY + 13.53))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 6.27, drawingRect.minY + 11.17))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 5.73, drawingRect.minY + 11.17), controlPoint1: CGPointMake(drawingRect.minX + 6.12, drawingRect.minY + 11.03), controlPoint2: CGPointMake(drawingRect.minX + 5.88, drawingRect.minY + 11.03))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 3.11, drawingRect.minY + 13.8))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 3.11, drawingRect.minY + 14.33), controlPoint1: CGPointMake(drawingRect.minX + 2.96, drawingRect.minY + 13.94), controlPoint2: CGPointMake(drawingRect.minX + 2.96, drawingRect.minY + 14.18))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 8.36, drawingRect.minY + 19.58))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 8.62, drawingRect.minY + 19.69), controlPoint1: CGPointMake(drawingRect.minX + 8.43, drawingRect.minY + 19.65), controlPoint2: CGPointMake(drawingRect.minX + 8.53, drawingRect.minY + 19.69))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 8.89, drawingRect.minY + 19.58), controlPoint1: CGPointMake(drawingRect.minX + 8.72, drawingRect.minY + 19.69), controlPoint2: CGPointMake(drawingRect.minX + 8.82, drawingRect.minY + 19.65))
-            oval1Path.addLineToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.58))
-            oval1Path.addCurveToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.05), controlPoint1: CGPointMake(drawingRect.minX + 21.04, drawingRect.minY + 7.43), controlPoint2: CGPointMake(drawingRect.minX + 21.04, drawingRect.minY + 7.19))
-            oval1Path.closePath()
-            oval1Path.miterLimit = 4;
-            
-            oval1Path.usesEvenOddFillRule = true;
-            
-            if let color = completedColor {
-                color.setFill()
+            //// Path Drawing
+            var pathPath = UIBezierPath(ovalInRect: CGRectMake(drawingRect.minX, drawingRect.minY, 24, 24))
+
+            if let completedColor_ = completedColor {
+                completedColor_.setFill()
             }
             else {
                 tintColor.setFill()
             }
+            pathPath.fill()
             
-            oval1Path.fill()
+            
+            //// Checkmark Drawing
+            var checkmarkPath = UIBezierPath()
+            checkmarkPath.moveToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.05))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 18.27, drawingRect.minY + 4.42))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 17.73, drawingRect.minY + 4.42), controlPoint1: CGPointMake(drawingRect.minX + 18.12, drawingRect.minY + 4.28), controlPoint2: CGPointMake(drawingRect.minX + 17.88, drawingRect.minY + 4.28))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 8.62, drawingRect.minY + 13.53))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 6.27, drawingRect.minY + 11.17))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 5.73, drawingRect.minY + 11.17), controlPoint1: CGPointMake(drawingRect.minX + 6.12, drawingRect.minY + 11.03), controlPoint2: CGPointMake(drawingRect.minX + 5.88, drawingRect.minY + 11.03))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 3.11, drawingRect.minY + 13.8))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 3.11, drawingRect.minY + 14.33), controlPoint1: CGPointMake(drawingRect.minX + 2.96, drawingRect.minY + 13.94), controlPoint2: CGPointMake(drawingRect.minX + 2.96, drawingRect.minY + 14.18))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 8.36, drawingRect.minY + 19.58))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 8.62, drawingRect.minY + 19.69), controlPoint1: CGPointMake(drawingRect.minX + 8.43, drawingRect.minY + 19.65), controlPoint2: CGPointMake(drawingRect.minX + 8.53, drawingRect.minY + 19.69))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 8.89, drawingRect.minY + 19.58), controlPoint1: CGPointMake(drawingRect.minX + 8.72, drawingRect.minY + 19.69), controlPoint2: CGPointMake(drawingRect.minX + 8.82, drawingRect.minY + 19.65))
+            checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.58))
+            checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.05), controlPoint1: CGPointMake(drawingRect.minX + 21.04, drawingRect.minY + 7.43), controlPoint2: CGPointMake(drawingRect.minX + 21.04, drawingRect.minY + 7.19))
+            checkmarkPath.closePath()
+            checkmarkPath.miterLimit = 4
+            
+            checkmarkPath.usesEvenOddFillRule = true
+            
+            if let checkmarkColor_ = checkmarkColor {
+                checkmarkColor_.setFill()
+            }
+            else {
+                UIColor.whiteColor().setFill()
+            }
+            checkmarkPath.fill()
             // ---
         }
         else {
