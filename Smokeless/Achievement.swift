@@ -26,6 +26,10 @@ import Foundation
     
     var state = State.Pending
     
+    var isCompleted: Bool {
+        return (state == .Completed)
+    }
+    
     func completionDateFromDate(date: NSDate) -> NSDate? {
         let dateComps = NSDateComponents()
         dateComps.year = years

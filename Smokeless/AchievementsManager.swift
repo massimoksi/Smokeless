@@ -75,6 +75,7 @@ import Foundation
         achievements = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13, step14]
     }
     
+    // TODO: update to date.
     func update() {
         let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as! NSDate?
         

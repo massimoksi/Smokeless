@@ -95,7 +95,28 @@
     CGFloat percentage = [achievement completionPercentageFromDate:lastCigaretteDate];
     cell.completionProgressView.value = percentage;
     
+    if (achievement.isCompleted) {
+        cell.backgroundColor = [UIColor sml_backgroundCompletedColor];
+    }
+    else {
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset.
+    cell.separatorInset = UIEdgeInsetsZero;
+
+    // Prevent the cell from inheriting the table view's margin settings.
+    cell.preservesSuperviewLayoutMargins = NO;
+
+    // Explictly set your cell's layout margins.
+    cell.layoutMargins = UIEdgeInsetsZero;
 }
 
 @end
