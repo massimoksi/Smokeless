@@ -24,9 +24,26 @@
     self.tableView.estimatedRowHeight = 64.0;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[AchievementsManager sharedManager] update];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:[[AchievementsManager sharedManager] nextAchievementIndex]
+                                                     inSection:0];
+    [self.tableView scrollToRowAtIndexPath:nextIndexPath
+                          atScrollPosition:UITableViewRowAnimationTop
+                                  animated:YES];
+}
+
 #pragma mark - Private methods
 
-// TODO: move into Achievement class.
 - (NSString *)timeIntervalForAchievement:(Achievement *)achievement
 {
     if (achievement.years) {

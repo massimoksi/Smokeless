@@ -75,4 +75,42 @@ import Foundation
         achievements = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13, step14]
     }
     
+    func update() {
+        let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as! NSDate?
+        
+        var nextFound = false
+        
+        for achievement in achievements {
+            let percentage = achievement.completionPercentageFromDate(lastCigaretteDate)
+            if (percentage == 1.0) {
+                achievement.state = .Completed
+            }
+            else {
+                if (!nextFound) {
+                    achievement.state = .Next
+                    
+                    nextFound = true
+                }
+                else {
+                    achievement.state = .Pending
+                }
+            }
+        }
+    }
+
+    func nextAchievementIndex() -> Int {
+        var index = 0
+        
+        for achievement in achievements {
+            if (achievement.state == .Next) {
+                break
+            }
+            else {
+                index++
+            }
+        }
+        
+        return index
+    }
+    
 }

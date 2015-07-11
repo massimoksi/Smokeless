@@ -45,14 +45,14 @@ import Foundation
     func completionPercentageFromDate(date: NSDate?) -> Double {
         var percentage: Double = 0.0
         
-        if let date_ = date {
-            let completionDate = completionDateFromDate(date_)
+        if (date != nil) {
+            let completionDate = completionDateFromDate(date!)
             if let completionDate_ = completionDate {
                 let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
                 
                 if let gregorianCalendar_ = gregorianCalendar {
-                    let totalDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date_, toDate: completionDate_, options: NSCalendarOptions(0)).day
-                    let elapsedDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date_, toDate: NSDate(), options: NSCalendarOptions(0)).day
+                    let totalDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date!, toDate: completionDate_, options: NSCalendarOptions(0)).day
+                    let elapsedDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date!, toDate: NSDate(), options: NSCalendarOptions(0)).day
                     
                     if (elapsedDays >= totalDays) {
                         percentage = 1.0
