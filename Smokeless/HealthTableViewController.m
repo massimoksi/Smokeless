@@ -26,6 +26,7 @@
 
 #pragma mark - Private methods
 
+// TODO: move into Achievement class.
 - (NSString *)timeIntervalForAchievement:(Achievement *)achievement
 {
     if (achievement.years) {
@@ -51,37 +52,6 @@
     }
 }
 
-- (CGFloat)completionPercentageForAchievement:(Achievement *)achievement
-{
-    CGFloat percentage = 0.0;
-    
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
-    
-    if (lastCigaretteDate) {
-        NSDate *completionDate = [achievement completionDateFromDate:lastCigaretteDate];
-    
-        NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
-    
-        NSInteger totalDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                                    fromDate:lastCigaretteDate
-                                                      toDate:completionDate
-                                                     options:0] day];
-        NSInteger elapsedDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                                      fromDate:lastCigaretteDate
-                                                        toDate:[NSDate date]
-                                                       options:0] day];
-    
-        if (elapsedDays >= totalDays) {
-            percentage = 1.0;
-        }
-        else {
-            percentage = (CGFloat)elapsedDays / (CGFloat)totalDays;
-        }
-    }
-    
-    return percentage;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -103,7 +73,9 @@
     cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"After %@", nil), [self timeIntervalForAchievement:achievement]] ;
     cell.subtitleLabel.text = achievement.text;
 
-    CGFloat percentage = [self completionPercentageForAchievement:achievement];
+    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
+
+    CGFloat percentage = [achievement completionPercentageFromDate:lastCigaretteDate];
     cell.completionProgressView.value = percentage;
     
     return cell;
