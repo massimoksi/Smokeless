@@ -42,6 +42,10 @@
                        forKey:kHasUpdatedLastCigaretteDateKey];
     }
 	
+    // Ask permission for local notifications.
+    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
+                                                                                    categories:nil]];
+    
     return YES;
 }
 

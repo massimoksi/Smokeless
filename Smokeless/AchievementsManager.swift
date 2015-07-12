@@ -114,4 +114,26 @@ import Foundation
         return index
     }
     
+    // MARK: - Local notifications
+    
+    func registerNotificationsForDate(date: NSDate?) {
+        if (date != nil) {
+            update()
+            
+            for achievement in achievements {
+                if (!achievement.isCompleted) {
+                    let notification = UILocalNotification()
+                    notification.fireDate = achievement.completionDateFromDate(date!)
+                    notification.alertBody = achievement.text
+                    
+                    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                }
+            }
+            
+#if DEBUG
+            println("AchievementsManager - Registered notification: \(UIApplication.sharedApplication().scheduledLocalNotifications)")
+#endif
+        }
+    }
+    
 }

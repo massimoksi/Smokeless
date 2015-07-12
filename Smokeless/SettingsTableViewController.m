@@ -11,6 +11,7 @@
 #import "TTTLocalizedPluralString.h"
 
 #import "Constants.h"
+#import "Smokeless-Swift.h"
 
 
 @interface SettingsTableViewController () <UITextFieldDelegate>
@@ -95,6 +96,13 @@
 
 - (IBAction)lastCigaretteDateChanged:(UIDatePicker *)sender
 {
+    // Update scheduled local notifications.
+    if ([[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        [[AchievementsManager sharedManager] registerNotificationsForDate:sender.date];
+    }
+    
     self.lastCigaretteDateLabel.text = [self.dateFormatter stringFromDate:sender.date];
 }
 
@@ -116,6 +124,14 @@
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
 {
+    // Schedule/unschedule local notifications.
+    if (sender.on) {
+        [[AchievementsManager sharedManager] registerNotificationsForDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]];
+    }
+    else {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+    
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
                                             forKey:kNotificationsEnabledKey];
 }
