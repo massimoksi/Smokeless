@@ -35,6 +35,13 @@
     // Ask permission for local notifications.
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
                                                                                     categories:nil]];
+
+    // Open health tab when app is launched with local notification.
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notification) {
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        tabBarController.selectedIndex = 2;
+    }
     
     return YES;
 }
@@ -60,6 +67,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    tabBarController.selectedIndex = 2;
 }
 
 #pragma mark - Private methods
