@@ -65,4 +65,12 @@ NSString * const kLastSavingsKey                 = @"LastSavings";
                            alpha:1.0];
 }
 
++ (UIColor *)sml_backgroundCompletedColor
+{
+    return [UIColor colorWithRed:247.0/255.0
+                           green:247.0/255.0
+                            blue:247.0/255.0
+                           alpha:1.0];
+}
+
 @end
