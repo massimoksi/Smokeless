@@ -19,7 +19,6 @@ extern NSString * const kPacketPriceKey;
 extern NSString * const kPlaySoundsKey;
 extern NSString * const kNotificationsEnabledKey;
 extern NSString * const kUserSettingsImportedKey;
-extern NSString * const kHasUpdatedLastCigaretteDateKey;
 extern NSString * const kLastSavingsKey;
 
 

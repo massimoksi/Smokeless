@@ -31,17 +31,7 @@
     if (![userDefaults objectForKey:kLastCigaretteKey]) {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
-    
-    // Set a default hour (4:00AM) for last cigarette date.
-    // On former versions, last cigarette hour depended on the time it was set.
-    // Check at first run and fix an already existing cigarette date.
-    if (![userDefaults boolForKey:kHasUpdatedLastCigaretteDateKey] && [userDefaults objectForKey:kLastCigaretteKey]) {
-        [self updateLastCigaretteDate];
-        
-        [userDefaults setBool:YES
-                       forKey:kHasUpdatedLastCigaretteDateKey];
-    }
-	
+    	
     // Ask permission for local notifications.
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
                                                                                     categories:nil]];
@@ -124,30 +114,6 @@
         NSLog(@"Preferences - No old preferences found.");
 #endif
     }
-}
-
-- (void)updateLastCigaretteDate
-{
-#ifdef DEBUG
-    NSLog(@"Preferences - Start updating last cigarette date.");
-#endif
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
-    // Get the saved date.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-    
-    // Set the hour for the date at 4:00AM.
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents *lastCigaretteComponents = [gregorianCalendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour)
-                                                                     fromDate:lastCigaretteDate];
-    [lastCigaretteComponents setHour:4];
-    
-#ifdef DEBUG
-    NSLog(@"Preferences - Last cigarette date %@.", [gregorianCalendar dateFromComponents:lastCigaretteComponents]);
-#endif
-    
-    [userDefaults setObject:[gregorianCalendar dateFromComponents:lastCigaretteComponents]
-                     forKey:kLastCigaretteKey];
 }
 
 @end
