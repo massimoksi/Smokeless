@@ -70,11 +70,5 @@ import Foundation
         
         return percentage
     }
-
-#if DEBUG
-    func fireDateFromDate(date: NSDate, offset: Int) -> NSDate {
-        return date.dateByAddingTimeInterval(NSTimeInterval(60 * (offset + 1)))
-    }
-#endif    
     
 }

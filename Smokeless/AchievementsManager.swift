@@ -120,20 +120,35 @@ import Foundation
             for achievement in achievements {
                 if (!achievement.isCompleted) {
                     let notification = UILocalNotification()
-#if DEBUG
-                    notification.fireDate = achievement.fireDateFromDate(NSDate(), offset: UIApplication.sharedApplication().scheduledLocalNotifications.count)
-#else
                     notification.fireDate = achievement.completionDateFromDate(date!)
-#endif
                     notification.alertBody = achievement.text
                     
                     UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                    
+                    // Register yearly notitifications.
+                    registerYearlyNotificationForDate(date!)
                 }
             }
             
 #if DEBUG
             println("AchievementsManager - Registered notification: \(UIApplication.sharedApplication().scheduledLocalNotifications)")
 #endif
+        }
+    }
+    
+    func registerYearlyNotificationForDate(date: NSDate) {
+        let notification = UILocalNotification()
+        
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        if let calendar = gregorianCalendar {
+            let components = NSDateComponents()
+            components.year = 1
+            
+            notification.fireDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+            notification.repeatInterval = NSCalendarUnit.CalendarUnitYear
+            notification.alertBody = NSLocalizedString("Congratulations: you've not been smoking for one more year!", comment: "Yealy notification body.")
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }
     }
     
