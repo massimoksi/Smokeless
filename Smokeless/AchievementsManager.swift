@@ -75,14 +75,11 @@ import Foundation
         achievements = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13, step14]
     }
     
-    // TODO: update to date.
-    func update() {
-        let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as! NSDate?
-        
+    func updateForDate(date: NSDate?) {
         var nextFound = false
         
         for achievement in achievements {
-            let percentage = achievement.completionPercentageFromDate(lastCigaretteDate)
+            let percentage = achievement.completionPercentageFromDate(date)
             if (percentage == 1.0) {
                 achievement.state = .Completed
             }
@@ -118,7 +115,7 @@ import Foundation
     
     func registerNotificationsForDate(date: NSDate?) {
         if (date != nil) {
-            update()
+            updateForDate(date)
             
             for achievement in achievements {
                 if (!achievement.isCompleted) {
