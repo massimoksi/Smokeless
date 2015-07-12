@@ -120,7 +120,11 @@ import Foundation
             for achievement in achievements {
                 if (!achievement.isCompleted) {
                     let notification = UILocalNotification()
+#if DEBUG
+                    notification.fireDate = achievement.fireDateFromDate(NSDate(), offset: UIApplication.sharedApplication().scheduledLocalNotifications.count)
+#else
                     notification.fireDate = achievement.completionDateFromDate(date!)
+#endif
                     notification.alertBody = achievement.text
                     
                     UIApplication.sharedApplication().scheduleLocalNotification(notification)
