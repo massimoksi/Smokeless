@@ -91,6 +91,8 @@
 		56F974DB1B448F87004E4816 /* JAMSVGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAMSVGUtilities.h; sourceTree = "<group>"; };
 		56F974DC1B448F87004E4816 /* JAMSVGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGUtilities.m; sourceTree = "<group>"; };
 		56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		56F974E81B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		56F974E91B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -332,6 +334,7 @@
 				French,
 				German,
 				Base,
+				it,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Smokeless */;
 			projectDirPath = "";
@@ -429,6 +432,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5667320C1B358E30002A1060 /* Base */,
+				56F974E91B52A529004E4816 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -437,6 +441,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5667320B1B358DB9002A1060 /* Base */,
+				56F974E81B52A529004E4816 /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
