@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E158AD9B011C48984961B57 /* libPods-Smokeless.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */; };
-		56187BF41B2DB7E90098E41D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56187BF31B2DB7E90098E41D /* LaunchScreen.xib */; };
 		56187BF81B2F8C4A0098E41D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56187BF71B2F8C4A0098E41D /* BackgroundView.swift */; };
 		5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5619B4111A6C6D81005C12CF /* Images.xcassets */; };
 		562536DD1B41DFFE00E321A5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 562536DC1B41DFFE00E321A5 /* libz.dylib */; };
@@ -38,13 +37,13 @@
 		56F974E41B448F87004E4816 /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F974D91B448F87004E4816 /* JAMSVGImageView.m */; };
 		56F974E51B448F87004E4816 /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F974DC1B448F87004E4816 /* JAMSVGUtilities.m */; };
 		56F974E71B4AC5DF004E4816 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */; };
+		56F974EB1B52A97D004E4816 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F974EA1B52A97D004E4816 /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05B651C38F250CDD8E8505B9 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2234951D9758BAA816B3D082 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
-		56187BF31B2DB7E90098E41D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		56187BF71B2F8C4A0098E41D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		562536DC1B41DFFE00E321A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -93,6 +92,7 @@
 		56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
 		56F974E81B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		56F974E91B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		56F974EA1B52A97D004E4816 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5619B4111A6C6D81005C12CF /* Images.xcassets */,
-				56187BF31B2DB7E90098E41D /* LaunchScreen.xib */,
+				56F974EA1B52A97D004E4816 /* Launch.storyboard */,
 				5667320A1B358DA9002A1060 /* Main.storyboard */,
 				56A637941A6DC960001DC3A6 /* Constants.h */,
 				56A637951A6DC960001DC3A6 /* Constants.m */,
@@ -351,10 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				566732051B358D3F002A1060 /* Localizable.strings in Resources */,
+				56F974EB1B52A97D004E4816 /* Launch.storyboard in Resources */,
 				56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */,
 				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
-				56187BF41B2DB7E90098E41D /* LaunchScreen.xib in Resources */,
 				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
 				562536E01B41E3BB00E321A5 /* PiggyBox_outline.svg in Resources */,
 			);
