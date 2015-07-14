@@ -36,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
+    [super viewWillAppear:animated];
 
     [self deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1
                                                       inSection:0]]];
@@ -64,7 +64,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-	[super didReceiveMemoryWarning];
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Accessors
@@ -96,13 +96,6 @@
 
 - (IBAction)lastCigaretteDateChanged:(UIDatePicker *)sender
 {
-    // Update scheduled local notifications.
-    if ([[UIApplication sharedApplication] scheduledLocalNotifications]) {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        
-        [[AchievementsManager sharedManager] registerNotificationsForDate:sender.date];
-    }
-    
     self.lastCigaretteDateLabel.text = [self.dateFormatter stringFromDate:sender.date];
 }
 
@@ -124,16 +117,42 @@
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
 {
+    BOOL enabled = sender.on;
+
+    [[NSUserDefaults standardUserDefaults] setBool:enabled
+                                            forKey:kNotificationsEnabledKey];
+
     // Schedule/unschedule local notifications.
-    if (sender.on) {
+    if (enabled) {
         [[AchievementsManager sharedManager] registerNotificationsForDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]];
+
+        // Check if notifications are enabled by user settings, if not alert user.
+        if (([[UIApplication sharedApplication] currentUserNotificationSettings].types & UIUserNotificationTypeAlert) == 0) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", @"Disabled notifications alert: title.")
+                                                                                     message:NSLocalizedString(@"NOTIFICATIONS_ALERT_MESSAGE", @"Disabled notifications alert: message.")
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Open Settings", @"Disabled notifications alert: button.")
+                                                                     style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction *action){
+                                                                        // Open Settings.
+                                                                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                                                   }];
+            [alertController addAction:settingsAction];
+
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:nil];
+            [alertController addAction:cancelAction];
+
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+        }
     }
     else {
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
-    
-    [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:kNotificationsEnabledKey];
 }
 
 #pragma mark - Private methods
@@ -203,10 +222,10 @@
 - (void)resetSettings
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                             message:NSLocalizedString(@"Do you really want to delete all your settings?", nil)
+                                                                             message:NSLocalizedString(@"Do you really want to delete all your settings?", @"Reset alert: message.")
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", nil)
+
+    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", @"Reset alert: button.")
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
                                                             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -217,17 +236,23 @@
                                                             [userDefaults removeObjectForKey:kPlaySoundsKey];
                                                             [userDefaults removeObjectForKey:kNotificationsEnabledKey];
                                                             [userDefaults removeObjectForKey:kLastSavingsKey];
-                                                            
+
                                                             [self updateSettings];
+
+                                                            // Cancel scheduled local notifications.
+                                                            UIApplication *application = [UIApplication sharedApplication];
+                                                            if ([application scheduledLocalNotifications]) {
+                                                                [application cancelAllLocalNotifications];
+                                                            }
                                                         }];
-    
+
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
 
     [alertController addAction:resetAction];
     [alertController addAction:cancelAction];
-    
+
     [self presentViewController:alertController
                        animated:YES
                      completion:nil];
@@ -245,17 +270,28 @@
         {
             NSIndexPath *lastCigaretteIndexPath = [NSIndexPath indexPathForItem:1
                                                                       inSection:0];
-            
+
             if (row == 0) {
                 if ([self isRowVisible:lastCigaretteIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
 
                     [[NSUserDefaults standardUserDefaults] setObject:actualDate
                                                               forKey:kLastCigaretteKey];
-                    
+
+                    // Cancel scheduled local notifications.
+                    UIApplication *application = [UIApplication sharedApplication];
+                    if ([application scheduledLocalNotifications]) {
+                        [application cancelAllLocalNotifications];
+                    }
+
+                    // Register local notifications for the new date if they are enabled.
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNotificationsEnabledKey]) {
+                        [[AchievementsManager sharedManager] registerNotificationsForDate:actualDate];
+                    }
+
                     [self deleteRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
-                    
+
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
                 }
                 else {
@@ -266,7 +302,7 @@
                     else {
                         self.lastCigaretteDatePicker.date = [NSDate date];
                     }
-                    
+
                     [self insertRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
 
@@ -278,7 +314,7 @@
 
         case 1:
             break;
-            
+
         case 2:
             if (row == 0) {
                 [self.packetSizeTextField becomeFirstResponder];
@@ -287,17 +323,17 @@
                 [self.packetPriceTextField becomeFirstResponder];
             }
             break;
-            
+
         case 4:
             [self resetSettings];
             break;
-            
+
         default:
             break;
     }
 
     [tableView deselectRowAtIndexPath:indexPath
-							 animated:YES];
+                             animated:YES];
 }
 
 #pragma mark - Text field delegate
