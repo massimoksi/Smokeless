@@ -8,11 +8,14 @@
 
 #import "SavingsViewController.h"
 
-#import "Constants.h"
+@import AVFoundation.AVAudioPlayer;
 
+#import "Constants.h"
 #import "JAMSVGImageView.h"
 
-@import AVFoundation.AVAudioPlayer;
+
+// Uncomment to debug animations.
+//#define DEBUG_ANIMATION
 
 
 @interface SavingsViewController ()
@@ -53,15 +56,24 @@
     self.price = [userDefaults floatForKey:kPacketPriceKey];
     self.size = [userDefaults integerForKey:kPacketSizeKey];
     self.soundsEnabled = [userDefaults boolForKey:kPlaySoundsKey];
-    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
 
-    // Calculate savings.
+#ifdef DEBUG_ANIMATION
+    self.oldSavings = 50.0;
+    self.actSavings = 200.0;
+#else
+    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
     self.actSavings = [self totalSavings];
-    self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
-    
-    // Set initial piggy box size.
-    // TODO: set actSavings if there's no need to animate.
-    self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
+#endif
+
+    // Initialize user interface.
+    if (self.actSavings > self.oldSavings) {
+        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
+        self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
+    }
+    else {
+        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+        self.piggyBoxConstraint.constant = [self spacingForSaving:self.actSavings];
+    }
     
     if (self.soundsEnabled) {
         if (self.actSavings > self.oldSavings) {
@@ -142,17 +154,19 @@
     
     [self.piggyBox addMotionEffect:self.effectGroup];
     
-    // Become first responder: it's necessary to react to shake gestures.
+    // Become first responder to react to shake gestures.
     [self becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+#ifndef DEBUG_ANIMATION
     [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
                                              forKey:kLastSavingsKey];
-    
+#endif
+
     [self resignFirstResponder];
-    
+
     [super viewWillDisappear:animated];
 }
 
