@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  Smokeless
+
+  Created by Massimo Peri on 20/06/15.
+  Copyright (c) 2015 Massimo Peri. All rights reserved.
+*/
+
+
+"%d year (plural rule: one)" = "%d anno";
+"%d year (plural rule: other)" = "%d anni";
+
+"%d month (plural rule: one)" = "%d mese";
+"%d month (plural rule: other)" = "%d mesi";
+
+"%d week (plural rule: one)" = "%d settimana";
+"%d week (plural rule: other)" = "%d settimane";
+
+"%d day (plural rule: one)" = "%d giorno";
+"%d day (plural rule: other)" = "%d giorni";
+
+"%d hour (plural rule: one)" = "%d ora";
+"%d hour (plural rule: other)" = "%d ore";
+
+"%d minute (plural rule: one)" = "%d minuto";
+"%d minute (plural rule: other)" = "%d minuti";
+
+"%d cigarette (plural rule: one)" = "%d sigaretta";
+"%d cigarette (plural rule: other)" = "%d sigarette";
+
+"%d packet (plural rule: one)" = "%d pacchetto";
+"%d packet (plural rule: other)" = "%d pacchetti";
+
+// Achievements
+"ACHIEVEMENT_01_DESCRIPTION" = "La pressione sanguigna e la frequenza cardiaca sono ritornati ad un livello normale.";
+"ACHIEVEMENT_02_DESCRIPTION" = "I livelli di monossido di carbonio nel sangue sono scesi, i livelli di ossigeno sono tornati alla normalità mentre la nicotina è diminuita fino a oltre il 93%.";
+"ACHIEVEMENT_03_DESCRIPTION" = "Il livello di monossido di carbonio è tornato alla normalità.";
+"ACHIEVEMENT_04_DESCRIPTION" = "Il corpo si è liberato di tutta la nicotina. Il senso del gusto e dell'olfatto sono ritornati ad un livello normale.";
+"ACHIEVEMENT_05_DESCRIPTION" = "I bronchi si rilassano e il corpo incomincia ad acquistare energia.";
+"ACHIEVEMENT_06_DESCRIPTION" = "La circolazione migliora e continua a migliorare per le prossime 10 settimane.";
+"ACHIEVEMENT_07_DESCRIPTION" = "Le ciglia delle vie respiratorie si sono ricostruite, il muco è rimosso dai bronchi. Sono calati del 33% il rischio d’infezioni respiratorie e di ictus.";
+"ACHIEVEMENT_08_DESCRIPTION" = "La tosse cronica è diminuita.";
+"ACHIEVEMENT_09_DESCRIPTION" = "Tosse, affanno e problemi respiratori diminuiscono e la capacità polmonare aumenta del 10%.";
+"ACHIEVEMENT_10_DESCRIPTION" = "Il rischio di avere un infarto si è dimezzato.";
+"ACHIEVEMENT_11_DESCRIPTION" = "Il rischio di avere un ictus è tornato pari a quello di un non fumatore.";
+"ACHIEVEMENT_12_DESCRIPTION" = "Il rischio di cancro ai polmoni è tornato pari a quello di un non fumatore.";
+"ACHIEVEMENT_13_DESCRIPTION" = "Il rischio di avere un infarto è tornato pari a quello di un non fumatore.";
+"ACHIEVEMENT_14_DESCRIPTION" = "Il rischio di cancro al pancreas è tornato pari a quello di un non fumatore.";

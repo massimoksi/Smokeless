@@ -19,7 +19,6 @@ NSString * const kPacketPriceKey                 = @"PacketPrice";
 NSString * const kPlaySoundsKey                  = @"PlaySounds";
 NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
 NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
-NSString * const kHasUpdatedLastCigaretteDateKey = @"HasUpdatedLastCigaretteDate";
 NSString * const kLastSavingsKey                 = @"LastSavings";
 
 
@@ -62,6 +61,14 @@ NSString * const kLastSavingsKey                 = @"LastSavings";
     return [UIColor colorWithRed:122.0/255.0
                            green:122.0/255.0
                             blue:127.0/255.0
+                           alpha:1.0];
+}
+
++ (UIColor *)sml_backgroundCompletedColor
+{
+    return [UIColor colorWithRed:247.0/255.0
+                           green:247.0/255.0
+                            blue:247.0/255.0
                            alpha:1.0];
 }
 

@@ -30,3 +30,25 @@
 
 "%d packet (plural rule: one)" = "%d packet";
 "%d packet (plural rule: other)" = "%d packets";
+
+// Achievements
+"ACHIEVEMENT_01_DESCRIPTION" = "Pressure and heart rate will return to a normal level.";
+"ACHIEVEMENT_02_DESCRIPTION" = "Oxygen in your blood will return to a normal level while the nicotine will decrease up to over 93%.";
+"ACHIEVEMENT_03_DESCRIPTION" = "The level of carbon monoxide in your blood will return to a normal level.";
+"ACHIEVEMENT_04_DESCRIPTION" = "All nicotine will have left your body. Your sense of taste and smell will return to a normal level.";
+"ACHIEVEMENT_05_DESCRIPTION" = "Your bronchial tubes will relax, and your over-all energy will rise.";
+"ACHIEVEMENT_06_DESCRIPTION" = "Your circulation will increase, and it will continue improving for the next 10 weeks.";
+"ACHIEVEMENT_07_DESCRIPTION" = "The cilia of the respiratory tract will reconstructed. Your risk of respiratory infections and stroke will decrease by 33%.";
+"ACHIEVEMENT_08_DESCRIPTION" = "Chronic cough will decrease.";
+"ACHIEVEMENT_09_DESCRIPTION" = "Coughs, wheezing and breathing problems will dissipate as your lung capacity improves by 10%.";
+"ACHIEVEMENT_10_DESCRIPTION" = "Your risk of having a heart attack will have now dropped by half.";
+"ACHIEVEMENT_11_DESCRIPTION" = "Your risk of having a stroke returns to that of a non-smoker.";
+"ACHIEVEMENT_12_DESCRIPTION" = "Your risk of lung cancer will have returned to that of a non-smoker.";
+"ACHIEVEMENT_13_DESCRIPTION" = "Your risk of heart attack will have returned to that of a non-smoker.";
+"ACHIEVEMENT_14_DESCRIPTION" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
+
+/* Disabled notifications alert: title. */
+"NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";
+
+/* Disabled notifications alert: message. */
+"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless uses local notifications to keep you updated about health progress.\n\n1. Open Settings\n2. Tap Smokeless\n3. Tap Notifications\n4. Set Allow Notifications to ON";

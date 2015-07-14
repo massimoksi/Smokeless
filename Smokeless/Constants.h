@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Massimo Peri. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 extern NSString * const kLastCigaretteKey;
@@ -19,7 +19,6 @@ extern NSString * const kPacketPriceKey;
 extern NSString * const kPlaySoundsKey;
 extern NSString * const kNotificationsEnabledKey;
 extern NSString * const kUserSettingsImportedKey;
-extern NSString * const kHasUpdatedLastCigaretteDateKey;
 extern NSString * const kLastSavingsKey;
 
 
@@ -30,5 +29,6 @@ extern NSString * const kLastSavingsKey;
 + (UIColor *)sml_highlightColor;
 + (UIColor *)sml_completedColor;
 + (UIColor *)sml_detailTextColor;
++ (UIColor *)sml_backgroundCompletedColor;
 
 @end
