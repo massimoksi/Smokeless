@@ -75,14 +75,11 @@ import Foundation
         achievements = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13, step14]
     }
     
-    // TODO: update to date.
-    func update() {
-        let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as! NSDate?
-        
+    func updateForDate(date: NSDate?) {
         var nextFound = false
         
         for achievement in achievements {
-            let percentage = achievement.completionPercentageFromDate(lastCigaretteDate)
+            let percentage = achievement.completionPercentageFromDate(date)
             if (percentage == 1.0) {
                 achievement.state = .Completed
             }
@@ -112,6 +109,47 @@ import Foundation
         }
         
         return index
+    }
+    
+    // MARK: - Local notifications
+    
+    func registerNotificationsForDate(date: NSDate?) {
+        if (date != nil) {
+            updateForDate(date)
+            
+            for achievement in achievements {
+                if (!achievement.isCompleted) {
+                    let notification = UILocalNotification()
+                    notification.fireDate = achievement.completionDateFromDate(date!)
+                    notification.alertBody = achievement.text
+                    
+                    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                    
+                    // Register yearly notitifications.
+                    registerYearlyNotificationForDate(date!)
+                }
+            }
+            
+#if DEBUG
+            println("AchievementsManager - Registered notification: \(UIApplication.sharedApplication().scheduledLocalNotifications)")
+#endif
+        }
+    }
+    
+    func registerYearlyNotificationForDate(date: NSDate) {
+        let notification = UILocalNotification()
+        
+        let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        if let calendar = gregorianCalendar {
+            let components = NSDateComponents()
+            components.year = 1
+            
+            notification.fireDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
+            notification.repeatInterval = NSCalendarUnit.CalendarUnitYear
+            notification.alertBody = NSLocalizedString("Congratulations: you've not been smoking for one more year!", comment: "Yealy notification body.")
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        }
     }
     
 }

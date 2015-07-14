@@ -22,7 +22,7 @@ import Foundation
     var hours: Int = 0
     var minutes: Int = 0
 
-    var text: String = ""
+    var text: String?
     
     var state = State.Pending
     
@@ -70,5 +70,5 @@ import Foundation
         
         return percentage
     }
-
+    
 }

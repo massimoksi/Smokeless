@@ -28,7 +28,7 @@
 {
     [super viewWillAppear:animated];
     
-    [[AchievementsManager sharedManager] update];
+    [[AchievementsManager sharedManager] updateForDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]];
 }
 
 - (void)viewDidAppear:(BOOL)animated

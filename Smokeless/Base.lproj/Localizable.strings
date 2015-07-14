@@ -46,3 +46,9 @@
 "ACHIEVEMENT_12_DESCRIPTION" = "Your risk of lung cancer will have returned to that of a non-smoker.";
 "ACHIEVEMENT_13_DESCRIPTION" = "Your risk of heart attack will have returned to that of a non-smoker.";
 "ACHIEVEMENT_14_DESCRIPTION" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
+
+/* Disabled notifications alert: title. */
+"NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";
+
+/* Disabled notifications alert: message. */
+"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless uses local notifications to keep you updated about health progress.\n\n1. Open Settings\n2. Tap Smokeless\n3. Tap Notifications\n4. Set Allow Notifications to ON";

@@ -19,7 +19,6 @@ NSString * const kPacketPriceKey                 = @"PacketPrice";
 NSString * const kPlaySoundsKey                  = @"PlaySounds";
 NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
 NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
-NSString * const kHasUpdatedLastCigaretteDateKey = @"HasUpdatedLastCigaretteDate";
 NSString * const kLastSavingsKey                 = @"LastSavings";
 
 
