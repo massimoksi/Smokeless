@@ -1,1230 +1,564 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>047299BB5CCFD115136CB652</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>04AAE9DC0569D396B3180115</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString</string>
-			<key>target</key>
-			<string>14682D4F139DE71653B4A9DB</string>
-			<key>targetProxy</key>
-			<string>D9165A4CA483B420D3D817DB</string>
-		</dict>
-		<key>05AEF1158CE82AA7D2878510</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>14BB76E1279541BC3100D27E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0A1435CD477BABCF9B156430</key>
-		<dict>
-			<key>fileRef</key>
-			<string>427BF3B6528E74A7599823D2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>14682D4F139DE71653B4A9DB</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>2AEAEE174B77B219E4143179</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7E6A800BFFE33DFBA1CE5CF2</string>
-				<string>21660F5C7A76BDA95C168417</string>
-				<string>F16D9DAE8D519C8A23696AB5</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString</string>
-			<key>productName</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString</string>
-			<key>productReference</key>
-			<string>698524745D196449C9B7A118</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>14BB76E1279541BC3100D27E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCBE7A2B9BD4638F1EAEC96D</string>
-				<string>2A4A3038CFFC41D579E4309C</string>
-				<string>8179C12FC192992A978F8C99</string>
-				<string>9FFB7A765CE93CA91A16E708</string>
-				<string>6EC7DF0D71233F82B66766ED</string>
-				<string>E84EA56F062253900B066D14</string>
-				<string>047299BB5CCFD115136CB652</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-Smokeless</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-Smokeless</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>15B5F20BA51D61A218D4DCFD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Smokeless-ABStaticTableViewController-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>20954723023CB53A6C98C3E3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E9697147BB2528445BC91C13</string>
-				<string>7449AB71D697D8F4AEFBA422</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>21660F5C7A76BDA95C168417</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F803FFB56C25B6AB9546A0DE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2502459D6835FA462F0D3D97</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>047299BB5CCFD115136CB652</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>267FD3D8BA6531A3D18F52E1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BD4FA1583303C43242FC4EC4</string>
-				<string>DFF25A54210C64CD40C39903</string>
-				<string>83ADF1823E43E3079F20C84B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ABStaticTableViewController</string>
-			<key>path</key>
-			<string>ABStaticTableViewController</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2A4A3038CFFC41D579E4309C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-Smokeless-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2AEAEE174B77B219E4143179</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>94AB39D6F56BF3C2488E203E</string>
-				<string>2E8839374DABA849D1A393C4</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2E8839374DABA849D1A393C4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>97A903AE31BD4784343B9C7A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3082A0B1CBDCA31F8B1F465E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C87E1EFFD3A820B532505979</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>365F032832BE650BEFDA6BEA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>765A456A6ABB1FCE77D99D8E</string>
-				<string>70A5E559B2F67C66CC563477</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A82315CA62B36C8D920BF23</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8179C12FC192992A978F8C99</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4125C083D7924A895F8182F1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless-ABStaticTableViewController.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>427BF3B6528E74A7599823D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>45D7F7E435C3CDF6521655D0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>4E4B4EA1A1816AAF5245B986</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>365F032832BE650BEFDA6BEA</string>
-			<key>buildPhases</key>
-			<array>
-				<string>20954723023CB53A6C98C3E3</string>
-				<string>5631D00F4E4F06997C33F7F7</string>
-				<string>A803EBA7BE406A28CB559B6A</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Smokeless-ABStaticTableViewController</string>
-			<key>productName</key>
-			<string>Pods-Smokeless-ABStaticTableViewController</string>
-			<key>productReference</key>
-			<string>A2127CA1B8CD139940274049</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>5631D00F4E4F06997C33F7F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3082A0B1CBDCA31F8B1F465E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>56713609A8C1A913A4D8B9EC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AAABE697B2B47E2A89CCD28B</string>
-				<string>8A74D1276729DE17617FA555</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5B38BF57E7C0FA058460B734</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E84EA56F062253900B066D14</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>698524745D196449C9B7A118</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-Smokeless-TTTLocalizedPluralString.a</string>
-			<key>path</key>
-			<string>libPods-Smokeless-TTTLocalizedPluralString.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6D0D40FE1FE06E21E12A9C08</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>9E207AC7114A2F0DCA216A84</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>4E4B4EA1A1816AAF5245B986</string>
-			<key>remoteInfo</key>
-			<string>Pods-Smokeless-ABStaticTableViewController</string>
-		</dict>
-		<key>6DBC40F6DFFC47E8042CF734</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>45D7F7E435C3CDF6521655D0</string>
-				<string>FD07536BCE5A576891C7F93D</string>
-				<string>A341F59A0E57D689406C7514</string>
-				<string>CD1A5C4BA19F1D940304B0FF</string>
-				<string>05AEF1158CE82AA7D2878510</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6EC7DF0D71233F82B66766ED</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-Smokeless-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>707078A7B9BB5AEDDA4C6D7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>Pods-Smokeless-ABStaticTableViewController</string>
-			<key>target</key>
-			<string>4E4B4EA1A1816AAF5245B986</string>
-			<key>targetProxy</key>
-			<string>6D0D40FE1FE06E21E12A9C08</string>
-		</dict>
-		<key>70A5E559B2F67C66CC563477</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>97819220556743FEDFB17B68</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>726A9C33EED2F19EC5483339</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTTLocalizedPluralString.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7449AB71D697D8F4AEFBA422</key>
-		<dict>
-			<key>fileRef</key>
-			<string>15B5F20BA51D61A218D4DCFD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>765A456A6ABB1FCE77D99D8E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>97819220556743FEDFB17B68</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>7B2BEED30C6817BE8D5E2905</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E73400753E75D79BDFF927DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7E6A800BFFE33DFBA1CE5CF2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0A1435CD477BABCF9B156430</string>
-				<string>FD3C0E852AD332ABDA4BCD91</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7EF69196A3BABD17A5EC6553</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C87E1EFFD3A820B532505979</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8179C12FC192992A978F8C99</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-Smokeless-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>83ADF1823E43E3079F20C84B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4125C083D7924A895F8182F1</string>
-				<string>97819220556743FEDFB17B68</string>
-				<string>15B5F20BA51D61A218D4DCFD</string>
-				<string>AD90363C1628CFE630505AD4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-Smokeless-ABStaticTableViewController</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8A74D1276729DE17617FA555</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8D1688E2225AC2DAA4AF980A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>726A9C33EED2F19EC5483339</string>
-				<string>E81B30F6FB5E8A65D82DF70A</string>
-				<string>8DABE8DC5DE2097672B76732</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>TTTLocalizedPluralString</string>
-			<key>path</key>
-			<string>TTTLocalizedPluralString</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8D574598A21CEAC7A5B70192</key>
-		<dict>
-			<key>fileRef</key>
-			<string>726A9C33EED2F19EC5483339</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8DABE8DC5DE2097672B76732</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D4E049AA8F19FC226531F9CD</string>
-				<string>97A903AE31BD4784343B9C7A</string>
-				<string>427BF3B6528E74A7599823D2</string>
-				<string>ACB5B507C33C87C7316F0F7D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/Pods-Smokeless-TTTLocalizedPluralString</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94AB39D6F56BF3C2488E203E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>97A903AE31BD4784343B9C7A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>95DB3813A9304BF968627E0C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-Smokeless.a</string>
-			<key>path</key>
-			<string>libPods-Smokeless.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>97819220556743FEDFB17B68</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless-ABStaticTableViewController-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>97A903AE31BD4784343B9C7A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9E207AC7114A2F0DCA216A84</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>56713609A8C1A913A4D8B9EC</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>6DBC40F6DFFC47E8042CF734</string>
-			<key>productRefGroup</key>
-			<string>CD1A5C4BA19F1D940304B0FF</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>E2F222239859E2A6B32FD6F7</string>
-				<string>4E4B4EA1A1816AAF5245B986</string>
-				<string>14682D4F139DE71653B4A9DB</string>
-			</array>
-		</dict>
-		<key>9FFB7A765CE93CA91A16E708</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Smokeless-environment.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A2127CA1B8CD139940274049</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-Smokeless-ABStaticTableViewController.a</string>
-			<key>path</key>
-			<string>libPods-Smokeless-ABStaticTableViewController.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A2D0F17BF4A8CA42B7B63A1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BD4FA1583303C43242FC4EC4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A341F59A0E57D689406C7514</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>267FD3D8BA6531A3D18F52E1</string>
-				<string>8D1688E2225AC2DAA4AF980A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A803EBA7BE406A28CB559B6A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A2D0F17BF4A8CA42B7B63A1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AAABE697B2B47E2A89CCD28B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>ACB5B507C33C87C7316F0F7D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AD90363C1628CFE630505AD4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-Smokeless-ABStaticTableViewController-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B45B4280D83EF07D5CECD3C0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5B38BF57E7C0FA058460B734</string>
-				<string>2502459D6835FA462F0D3D97</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>BD4FA1583303C43242FC4EC4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ABStaticTableViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C87E1EFFD3A820B532505979</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>CD1A5C4BA19F1D940304B0FF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95DB3813A9304BF968627E0C</string>
-				<string>A2127CA1B8CD139940274049</string>
-				<string>698524745D196449C9B7A118</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D4E049AA8F19FC226531F9CD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D9165A4CA483B420D3D817DB</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>9E207AC7114A2F0DCA216A84</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>14682D4F139DE71653B4A9DB</string>
-			<key>remoteInfo</key>
-			<string>Pods-Smokeless-TTTLocalizedPluralString</string>
-		</dict>
-		<key>DCBE7A2B9BD4638F1EAEC96D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-Smokeless-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DFF25A54210C64CD40C39903</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ABStaticTableViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E2F222239859E2A6B32FD6F7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B45B4280D83EF07D5CECD3C0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F3FB5801B8F057CDB8EC869E</string>
-				<string>7B2BEED30C6817BE8D5E2905</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>707078A7B9BB5AEDDA4C6D7C</string>
-				<string>04AAE9DC0569D396B3180115</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-Smokeless</string>
-			<key>productName</key>
-			<string>Pods-Smokeless</string>
-			<key>productReference</key>
-			<string>95DB3813A9304BF968627E0C</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>E73400753E75D79BDFF927DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C87E1EFFD3A820B532505979</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E81B30F6FB5E8A65D82DF70A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTTLocalizedPluralString.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E84EA56F062253900B066D14</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-Smokeless.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E9697147BB2528445BC91C13</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DFF25A54210C64CD40C39903</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F16D9DAE8D519C8A23696AB5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8D574598A21CEAC7A5B70192</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F3FB5801B8F057CDB8EC869E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A82315CA62B36C8D920BF23</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F803FFB56C25B6AB9546A0DE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C87E1EFFD3A820B532505979</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FD07536BCE5A576891C7F93D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7EF69196A3BABD17A5EC6553</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FD3C0E852AD332ABDA4BCD91</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E81B30F6FB5E8A65D82DF70A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc</string>
-			</dict>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>9E207AC7114A2F0DCA216A84</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21B526D73EFAAC120F4B930B /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */; };
+		2A1A31BDEAB7492AEB41F4C5 /* Pods-Smokeless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */; };
+		650810B2A480B26F0021BAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
+		89AA989C2D436E6E579362D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
+		9A34894384F6D247F59CDEC7 /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */; };
+		AA0D039F9955996BD3F5E256 /* TTTLocalizedPluralString.m in Sources */ = {isa = PBXBuildFile; fileRef = 05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B909425DFE7B10DAF0FF04CB /* ABStaticTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */; };
+		C70582AB96F831E922C27BA8 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */; };
+		F0959764FF9D56C5CEC33C9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
+		FCF0BF68FE6FCF7932ED4DC4 /* TTTLocalizedPluralString.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4534B6CCB4261DFA4F5ABF99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A750B063D8F1D463EB1BD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C23ACA083BB8AD3E0839C4B6;
+			remoteInfo = "Pods-Smokeless-ABStaticTableViewController";
+		};
+		4D032D01459992161B2F0840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A750B063D8F1D463EB1BD03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D1CF9ADA5D35241F82DA5C;
+			remoteInfo = "Pods-Smokeless-TTTLocalizedPluralString";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TTTLocalizedPluralString.m; sourceTree = "<group>"; };
+		0D52262417915AE01E14F257 /* Pods-Smokeless-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smokeless-acknowledgements.plist"; sourceTree = "<group>"; };
+		165DD80143AE737FCAE43831 /* Pods-Smokeless-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smokeless-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-TTTLocalizedPluralString-dummy.m"; sourceTree = "<group>"; };
+		2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig"; sourceTree = "<group>"; };
+		3D0762D182C624464A691B64 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3D2C074467F6D221F7A8B041 /* Pods-Smokeless-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smokeless-resources.sh"; sourceTree = "<group>"; };
+		5225160FEB4ED32CDA75E405 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString.xcconfig"; sourceTree = "<group>"; };
+		61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-ABStaticTableViewController-dummy.m"; sourceTree = "<group>"; };
+		6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
+		7CBF835F6F952A4283D68F6E /* Pods-Smokeless-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-environment.h"; sourceTree = "<group>"; };
+		88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A68ACCF828FECFDA028034C /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-TTTLocalizedPluralString-prefix.pch"; sourceTree = "<group>"; };
+		91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
+		A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
+		A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TTTLocalizedPluralString.h; sourceTree = "<group>"; };
+		B0408FBD7159DA2EC7D76BC2 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-ABStaticTableViewController-prefix.pch"; sourceTree = "<group>"; };
+		C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-dummy.m"; sourceTree = "<group>"; };
+		C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController-Private.xcconfig"; sourceTree = "<group>"; };
+		CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
+		D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D0DE322C2DBE785366005143 /* Pods-Smokeless-ABStaticTableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController.xcconfig"; sourceTree = "<group>"; };
+		DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-TTTLocalizedPluralString.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-ABStaticTableViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0940F366DE70C272EE3CFD37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0959764FF9D56C5CEC33C9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9084346AD87EF109B158374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AA989C2D436E6E579362D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0F9B41D1F1AD0B9C783ED4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				650810B2A480B26F0021BAA4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04412AFC9EA96F68620DF259 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDE36ED3CA43A46072CC849F /* ABStaticTableViewController */,
+				5D1912E78D76DF8BE87A996E /* TTTLocalizedPluralString */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3E7E4121BEA6593D58D57812 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0DE322C2DBE785366005143 /* Pods-Smokeless-ABStaticTableViewController.xcconfig */,
+				C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */,
+				61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */,
+				B0408FBD7159DA2EC7D76BC2 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Smokeless-ABStaticTableViewController";
+			sourceTree = "<group>";
+		};
+		5D1912E78D76DF8BE87A996E /* TTTLocalizedPluralString */ = {
+			isa = PBXGroup;
+			children = (
+				A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */,
+				05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */,
+				CA9A60C7BF747A27A77FA539 /* Support Files */,
+			);
+			path = TTTLocalizedPluralString;
+			sourceTree = "<group>";
+		};
+		60A0605FCD745292994A40E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C61BE5034EBB4E11DBDCD4C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955D4ED2874774F9EB884E6D = {
+			isa = PBXGroup;
+			children = (
+				3D0762D182C624464A691B64 /* Podfile */,
+				60A0605FCD745292994A40E0 /* Frameworks */,
+				04412AFC9EA96F68620DF259 /* Pods */,
+				974BCE1DFC006389FB98C738 /* Products */,
+				9F1C9D1B7235764FCC19E40A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		974BCE1DFC006389FB98C738 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */,
+				FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */,
+				DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F1C9D1B7235764FCC19E40A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5010AADADABB7A545B7DDE1 /* Pods-Smokeless */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C5010AADADABB7A545B7DDE1 /* Pods-Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				165DD80143AE737FCAE43831 /* Pods-Smokeless-acknowledgements.markdown */,
+				0D52262417915AE01E14F257 /* Pods-Smokeless-acknowledgements.plist */,
+				C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */,
+				7CBF835F6F952A4283D68F6E /* Pods-Smokeless-environment.h */,
+				3D2C074467F6D221F7A8B041 /* Pods-Smokeless-resources.sh */,
+				CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */,
+				A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */,
+			);
+			name = "Pods-Smokeless";
+			path = "Target Support Files/Pods-Smokeless";
+			sourceTree = "<group>";
+		};
+		C61BE5034EBB4E11DBDCD4C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CA9A60C7BF747A27A77FA539 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5225160FEB4ED32CDA75E405 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */,
+				2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */,
+				1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */,
+				8A68ACCF828FECFDA028034C /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Smokeless-TTTLocalizedPluralString";
+			sourceTree = "<group>";
+		};
+		CDE36ED3CA43A46072CC849F /* ABStaticTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */,
+				91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */,
+				3E7E4121BEA6593D58D57812 /* Support Files */,
+			);
+			path = ABStaticTableViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6FF3DE71EB1E9719F2CD0EAA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B909425DFE7B10DAF0FF04CB /* ABStaticTableViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9F552439BE4F29C882F6DEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCF0BF68FE6FCF7932ED4DC4 /* TTTLocalizedPluralString.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6A2E65661A4AE66299D4B659 /* Pods-Smokeless */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C255E33497C4FE31A392E8DF /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */;
+			buildPhases = (
+				735BE0A6D7EF32AEF9474C64 /* Sources */,
+				0940F366DE70C272EE3CFD37 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				679070CE08BC0B20F2444CD0 /* PBXTargetDependency */,
+				84E44B7F0A163C661AEA73DA /* PBXTargetDependency */,
+			);
+			name = "Pods-Smokeless";
+			productName = "Pods-Smokeless";
+			productReference = 88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10E684D5C6878FAA1F3F6A4E /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */;
+			buildPhases = (
+				C3ACC94FEC35866FD4F7D666 /* Sources */,
+				D0F9B41D1F1AD0B9C783ED4D /* Frameworks */,
+				B9F552439BE4F29C882F6DEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Smokeless-TTTLocalizedPluralString";
+			productName = "Pods-Smokeless-TTTLocalizedPluralString";
+			productReference = DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9C7C403E4094187ACE09627 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */;
+			buildPhases = (
+				A116E40071010CAFCA73ACB4 /* Sources */,
+				B9084346AD87EF109B158374 /* Frameworks */,
+				6FF3DE71EB1E9719F2CD0EAA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Smokeless-ABStaticTableViewController";
+			productName = "Pods-Smokeless-ABStaticTableViewController";
+			productReference = FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6A750B063D8F1D463EB1BD03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 64ABDA4152C97C5C7ACEEED2 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 955D4ED2874774F9EB884E6D;
+			productRefGroup = 974BCE1DFC006389FB98C738 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A2E65661A4AE66299D4B659 /* Pods-Smokeless */,
+				C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */,
+				A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		735BE0A6D7EF32AEF9474C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1A31BDEAB7492AEB41F4C5 /* Pods-Smokeless-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A116E40071010CAFCA73ACB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A34894384F6D247F59CDEC7 /* ABStaticTableViewController.m in Sources */,
+				C70582AB96F831E922C27BA8 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3ACC94FEC35866FD4F7D666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21B526D73EFAAC120F4B930B /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */,
+				AA0D039F9955996BD3F5E256 /* TTTLocalizedPluralString.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		679070CE08BC0B20F2444CD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Smokeless-ABStaticTableViewController";
+			target = C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */;
+			targetProxy = 4534B6CCB4261DFA4F5ABF99 /* PBXContainerItemProxy */;
+		};
+		84E44B7F0A163C661AEA73DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Smokeless-TTTLocalizedPluralString";
+			target = A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */;
+			targetProxy = 4D032D01459992161B2F0840 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		059A486AFB0E74FF21F5EC64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06B044BB76353255E0A8A5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6EED54A9D273EF0A5D89A630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		70C9F39D6575A19AC520BDA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8DA9F5A9CB4C1E0F58D0F0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A4B6AA93C2CCE84AC9F17BFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B682202CCF718860D55605AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C37A4FACA682AE81AD92E634 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10E684D5C6878FAA1F3F6A4E /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DA9F5A9CB4C1E0F58D0F0A3 /* Debug */,
+				C37A4FACA682AE81AD92E634 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64ABDA4152C97C5C7ACEEED2 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70C9F39D6575A19AC520BDA0 /* Debug */,
+				059A486AFB0E74FF21F5EC64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C255E33497C4FE31A392E8DF /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B682202CCF718860D55605AE /* Debug */,
+				06B044BB76353255E0A8A5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9C7C403E4094187ACE09627 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EED54A9D273EF0A5D89A630 /* Debug */,
+				A4B6AA93C2CCE84AC9F17BFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6A750B063D8F1D463EB1BD03 /* Project object */;
+}
