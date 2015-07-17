@@ -21,6 +21,7 @@
 		564395011B59A91D003D071C /* JAMSVGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 564394F51B59A91D003D071C /* JAMSVGButton.m */; };
 		564395021B59A91D003D071C /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564394F71B59A91D003D071C /* JAMSVGImageView.m */; };
 		564395031B59A91D003D071C /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 564394FA1B59A91D003D071C /* JAMSVGUtilities.m */; };
+		564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 564395081B59AFCF003D071C /* Localizable.stringsdict */; };
 		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
 		5667320E1B359964002A1060 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667320D1B359964002A1060 /* ProgressView.swift */; };
@@ -66,6 +67,7 @@
 		564394F71B59A91D003D071C /* JAMSVGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGImageView.m; sourceTree = "<group>"; };
 		564394F91B59A91D003D071C /* JAMSVGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAMSVGUtilities.h; sourceTree = "<group>"; };
 		564394FA1B59A91D003D071C /* JAMSVGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGUtilities.m; sourceTree = "<group>"; };
+		564395071B59AFCF003D071C /* Base */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
 				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 				566732071B358D3F002A1060 /* Localizable.strings */,
+				564395081B59AFCF003D071C /* Localizable.stringsdict */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */,
 				5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */,
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
+				564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */,
 				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
 				562536E01B41E3BB00E321A5 /* PiggyBox_outline.svg in Resources */,
 			);
@@ -428,6 +432,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		564395081B59AFCF003D071C /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				564395071B59AFCF003D071C /* Base */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		566732071B358D3F002A1060 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

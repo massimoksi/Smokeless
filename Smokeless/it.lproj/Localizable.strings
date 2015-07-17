@@ -7,30 +7,6 @@
 */
 
 
-"%d year (plural rule: one)" = "%d anno";
-"%d year (plural rule: other)" = "%d anni";
-
-"%d month (plural rule: one)" = "%d mese";
-"%d month (plural rule: other)" = "%d mesi";
-
-"%d week (plural rule: one)" = "%d settimana";
-"%d week (plural rule: other)" = "%d settimane";
-
-"%d day (plural rule: one)" = "%d giorno";
-"%d day (plural rule: other)" = "%d giorni";
-
-"%d hour (plural rule: one)" = "%d ora";
-"%d hour (plural rule: other)" = "%d ore";
-
-"%d minute (plural rule: one)" = "%d minuto";
-"%d minute (plural rule: other)" = "%d minuti";
-
-"%d cigarette (plural rule: one)" = "%d sigaretta";
-"%d cigarette (plural rule: other)" = "%d sigarette";
-
-"%d packet (plural rule: one)" = "%d pacchetto";
-"%d packet (plural rule: other)" = "%d pacchetti";
-
 // Achievements
 "ACHIEVEMENT_01_DESCRIPTION" = "La pressione sanguigna e la frequenza cardiaca sono ritornati ad un livello normale.";
 "ACHIEVEMENT_02_DESCRIPTION" = "I livelli di monossido di carbonio nel sangue sono scesi, i livelli di ossigeno sono tornati alla normalità mentre la nicotina è diminuita fino a oltre il 93%.";
