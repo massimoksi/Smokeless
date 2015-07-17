@@ -14,8 +14,10 @@
 #import "JAMSVGImageView.h"
 
 
+#if DEBUG
 // Uncomment to debug animations.
 //#define DEBUG_ANIMATION
+#endif
 
 
 @interface SavingsViewController ()
