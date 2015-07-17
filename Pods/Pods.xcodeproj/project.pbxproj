@@ -7,250 +7,232 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21B526D73EFAAC120F4B930B /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */; };
-		2A1A31BDEAB7492AEB41F4C5 /* Pods-Smokeless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */; };
-		650810B2A480B26F0021BAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
-		89AA989C2D436E6E579362D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
-		9A34894384F6D247F59CDEC7 /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */; };
-		AA0D039F9955996BD3F5E256 /* TTTLocalizedPluralString.m in Sources */ = {isa = PBXBuildFile; fileRef = 05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B909425DFE7B10DAF0FF04CB /* ABStaticTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */; };
-		C70582AB96F831E922C27BA8 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */; };
-		F0959764FF9D56C5CEC33C9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */; };
-		FCF0BF68FE6FCF7932ED4DC4 /* TTTLocalizedPluralString.h in Headers */ = {isa = PBXBuildFile; fileRef = A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */; };
+		04BB75CDF06923B7DAAABC32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603261DE96EA5624A39A562 /* Foundation.framework */; };
+		16D64C0BAD15314B916F910B /* Pods-Smokeless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A0E51B0B078C973244E5B6 /* Pods-Smokeless-dummy.m */; };
+		208DA548FD061865E357DE37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603261DE96EA5624A39A562 /* Foundation.framework */; };
+		4DE4D73FCED09D3279BF0CCE /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C80CE244EB0BE00611C91F47 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */; };
+		815B2BEAE6C8C4E91C942E01 /* ABStaticTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA9B961FC5618C5ECEE113B /* ABStaticTableViewController.h */; };
+		824A0B959D69C0A14B0E1D01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603261DE96EA5624A39A562 /* Foundation.framework */; };
+		AFADE9E00C7C8C0A02D0AD25 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B24003A889A7CCD873999369 /* Pods-Smokeless-ABStaticTableViewController-dummy.m */; };
+		B1454BAD103C111DC05F9DBE /* TTTLocalizedPluralString.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DAA168E9063859B4A59AF74 /* TTTLocalizedPluralString.h */; };
+		B48F06C7320766F63DEF6033 /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ED39F4F82EA2C456CD796D /* ABStaticTableViewController.m */; };
+		E6E87034CF2258444E552EC7 /* TTTLocalizedPluralString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4CACCE202742E6EA857D52 /* TTTLocalizedPluralString.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4534B6CCB4261DFA4F5ABF99 /* PBXContainerItemProxy */ = {
+		6E8304C1928233687ABE3327 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6A750B063D8F1D463EB1BD03 /* Project object */;
+			containerPortal = C65B22241D2D642804C86CA9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C23ACA083BB8AD3E0839C4B6;
+			remoteGlobalIDString = E8DA3959050B74C189DFA589;
 			remoteInfo = "Pods-Smokeless-ABStaticTableViewController";
 		};
-		4D032D01459992161B2F0840 /* PBXContainerItemProxy */ = {
+		7F39260F30E9A085D1F79779 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6A750B063D8F1D463EB1BD03 /* Project object */;
+			containerPortal = C65B22241D2D642804C86CA9 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1D1CF9ADA5D35241F82DA5C;
+			remoteGlobalIDString = 5A18C62FB28F0ED378198304;
 			remoteInfo = "Pods-Smokeless-TTTLocalizedPluralString";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TTTLocalizedPluralString.m; sourceTree = "<group>"; };
-		0D52262417915AE01E14F257 /* Pods-Smokeless-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smokeless-acknowledgements.plist"; sourceTree = "<group>"; };
-		165DD80143AE737FCAE43831 /* Pods-Smokeless-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smokeless-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-TTTLocalizedPluralString-dummy.m"; sourceTree = "<group>"; };
-		2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig"; sourceTree = "<group>"; };
-		3D0762D182C624464A691B64 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		3D2C074467F6D221F7A8B041 /* Pods-Smokeless-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smokeless-resources.sh"; sourceTree = "<group>"; };
-		5225160FEB4ED32CDA75E405 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString.xcconfig"; sourceTree = "<group>"; };
-		61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-ABStaticTableViewController-dummy.m"; sourceTree = "<group>"; };
-		6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
-		7CBF835F6F952A4283D68F6E /* Pods-Smokeless-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-environment.h"; sourceTree = "<group>"; };
-		88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A68ACCF828FECFDA028034C /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-TTTLocalizedPluralString-prefix.pch"; sourceTree = "<group>"; };
-		91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
-		A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
-		A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TTTLocalizedPluralString.h; sourceTree = "<group>"; };
-		B0408FBD7159DA2EC7D76BC2 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-ABStaticTableViewController-prefix.pch"; sourceTree = "<group>"; };
-		C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-dummy.m"; sourceTree = "<group>"; };
-		C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController-Private.xcconfig"; sourceTree = "<group>"; };
-		CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
-		D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D0DE322C2DBE785366005143 /* Pods-Smokeless-ABStaticTableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController.xcconfig"; sourceTree = "<group>"; };
-		DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-TTTLocalizedPluralString.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-ABStaticTableViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E6677591AFC75B7F5134539 /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-TTTLocalizedPluralString-prefix.pch"; sourceTree = "<group>"; };
+		2335CB6458C7F09483AE7DBA /* Pods-Smokeless-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smokeless-acknowledgements.markdown"; sourceTree = "<group>"; };
+		29E09254DFAD7CB10BFE138B /* Pods-Smokeless-ABStaticTableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController.xcconfig"; sourceTree = "<group>"; };
+		2B4573274F0691FB06F79B44 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-ABStaticTableViewController-prefix.pch"; sourceTree = "<group>"; };
+		2C826E40A58AD006A6D22DF9 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48BEB6C620D736A842097CAB /* Pods-Smokeless-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smokeless-acknowledgements.plist"; sourceTree = "<group>"; };
+		4BE6F40205BD4834E7EE7454 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4DAA168E9063859B4A59AF74 /* TTTLocalizedPluralString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TTTLocalizedPluralString.h; sourceTree = "<group>"; };
+		5603261DE96EA5624A39A562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5A2BC7FC81633D995619DB4E /* libPods-Smokeless-TTTLocalizedPluralString.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-TTTLocalizedPluralString.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CCC397B859E8BEB47987FED /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
+		6CA9B961FC5618C5ECEE113B /* ABStaticTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
+		6E4CACCE202742E6EA857D52 /* TTTLocalizedPluralString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TTTLocalizedPluralString.m; sourceTree = "<group>"; };
+		7D99C62699B5DEB44015A096 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString.xcconfig"; sourceTree = "<group>"; };
+		8951C8168B31AB1C402D703C /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
+		8FAA8AEECEC806888B4DD0C8 /* Pods-Smokeless-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Smokeless-environment.h"; sourceTree = "<group>"; };
+		94A0E51B0B078C973244E5B6 /* Pods-Smokeless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-dummy.m"; sourceTree = "<group>"; };
+		97E76757A0499BB6D0D6502F /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-ABStaticTableViewController-Private.xcconfig"; sourceTree = "<group>"; };
+		B10985A88DE8498DC3864641 /* Pods-Smokeless-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smokeless-resources.sh"; sourceTree = "<group>"; };
+		B24003A889A7CCD873999369 /* Pods-Smokeless-ABStaticTableViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-ABStaticTableViewController-dummy.m"; sourceTree = "<group>"; };
+		B348318B75DC82E0E801D5E6 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig"; sourceTree = "<group>"; };
+		C6ED39F4F82EA2C456CD796D /* ABStaticTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
+		C80CE244EB0BE00611C91F47 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-TTTLocalizedPluralString-dummy.m"; sourceTree = "<group>"; };
+		FFA007B30C40E8F2ABFF3360 /* libPods-Smokeless-ABStaticTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless-ABStaticTableViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0940F366DE70C272EE3CFD37 /* Frameworks */ = {
+		0ED9F3850A2C2949C7BFD436 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0959764FF9D56C5CEC33C9F /* Foundation.framework in Frameworks */,
+				208DA548FD061865E357DE37 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9084346AD87EF109B158374 /* Frameworks */ = {
+		8F5884541AA74B681AB9AFB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AA989C2D436E6E579362D7 /* Foundation.framework in Frameworks */,
+				04BB75CDF06923B7DAAABC32 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0F9B41D1F1AD0B9C783ED4D /* Frameworks */ = {
+		A557554420F3C4072B5D2F2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650810B2A480B26F0021BAA4 /* Foundation.framework in Frameworks */,
+				824A0B959D69C0A14B0E1D01 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04412AFC9EA96F68620DF259 /* Pods */ = {
+		0A39546FA5DA4B7CAB69087F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDE36ED3CA43A46072CC849F /* ABStaticTableViewController */,
-				5D1912E78D76DF8BE87A996E /* TTTLocalizedPluralString */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3E7E4121BEA6593D58D57812 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0DE322C2DBE785366005143 /* Pods-Smokeless-ABStaticTableViewController.xcconfig */,
-				C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */,
-				61853399FC8EE726EA8F1DAE /* Pods-Smokeless-ABStaticTableViewController-dummy.m */,
-				B0408FBD7159DA2EC7D76BC2 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */,
+				29E09254DFAD7CB10BFE138B /* Pods-Smokeless-ABStaticTableViewController.xcconfig */,
+				97E76757A0499BB6D0D6502F /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */,
+				B24003A889A7CCD873999369 /* Pods-Smokeless-ABStaticTableViewController-dummy.m */,
+				2B4573274F0691FB06F79B44 /* Pods-Smokeless-ABStaticTableViewController-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Smokeless-ABStaticTableViewController";
 			sourceTree = "<group>";
 		};
-		5D1912E78D76DF8BE87A996E /* TTTLocalizedPluralString */ = {
+		97160791C1F64E8658EF56EE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A8D61F37540496960A824819 /* TTTLocalizedPluralString.h */,
-				05007DFDE70A340C9CC66364 /* TTTLocalizedPluralString.m */,
-				CA9A60C7BF747A27A77FA539 /* Support Files */,
-			);
-			path = TTTLocalizedPluralString;
-			sourceTree = "<group>";
-		};
-		60A0605FCD745292994A40E0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C61BE5034EBB4E11DBDCD4C1 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		955D4ED2874774F9EB884E6D = {
-			isa = PBXGroup;
-			children = (
-				3D0762D182C624464A691B64 /* Podfile */,
-				60A0605FCD745292994A40E0 /* Frameworks */,
-				04412AFC9EA96F68620DF259 /* Pods */,
-				974BCE1DFC006389FB98C738 /* Products */,
-				9F1C9D1B7235764FCC19E40A /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		974BCE1DFC006389FB98C738 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */,
-				FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */,
-				DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9F1C9D1B7235764FCC19E40A /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C5010AADADABB7A545B7DDE1 /* Pods-Smokeless */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		C5010AADADABB7A545B7DDE1 /* Pods-Smokeless */ = {
-			isa = PBXGroup;
-			children = (
-				165DD80143AE737FCAE43831 /* Pods-Smokeless-acknowledgements.markdown */,
-				0D52262417915AE01E14F257 /* Pods-Smokeless-acknowledgements.plist */,
-				C30B5C0087C9AA3E19136F4A /* Pods-Smokeless-dummy.m */,
-				7CBF835F6F952A4283D68F6E /* Pods-Smokeless-environment.h */,
-				3D2C074467F6D221F7A8B041 /* Pods-Smokeless-resources.sh */,
-				CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */,
-				A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */,
-			);
-			name = "Pods-Smokeless";
-			path = "Target Support Files/Pods-Smokeless";
-			sourceTree = "<group>";
-		};
-		C61BE5034EBB4E11DBDCD4C1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D00D623CB1EF6D0BB51B78C9 /* Foundation.framework */,
+				5603261DE96EA5624A39A562 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CA9A60C7BF747A27A77FA539 /* Support Files */ = {
+		9A1F841B0A4E7D75BFFBDF9D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5225160FEB4ED32CDA75E405 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */,
-				2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */,
-				1F71B8251309BE0A5C20C056 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */,
-				8A68ACCF828FECFDA028034C /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */,
+				C955999FF10E35D80266F354 /* Pods-Smokeless */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A225CE6ADE1C2861B32F5166 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C826E40A58AD006A6D22DF9 /* libPods-Smokeless.a */,
+				FFA007B30C40E8F2ABFF3360 /* libPods-Smokeless-ABStaticTableViewController.a */,
+				5A2BC7FC81633D995619DB4E /* libPods-Smokeless-TTTLocalizedPluralString.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B11739FB85B79A5EEC1D6C7F = {
+			isa = PBXGroup;
+			children = (
+				4BE6F40205BD4834E7EE7454 /* Podfile */,
+				E084C78EFC64F2F2F30E6F4D /* Frameworks */,
+				BA709E87DCA845B5730F7ADF /* Pods */,
+				A225CE6ADE1C2861B32F5166 /* Products */,
+				9A1F841B0A4E7D75BFFBDF9D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B37225EFCED6DDEA9ECE401E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D99C62699B5DEB44015A096 /* Pods-Smokeless-TTTLocalizedPluralString.xcconfig */,
+				B348318B75DC82E0E801D5E6 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */,
+				C80CE244EB0BE00611C91F47 /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m */,
+				1E6677591AFC75B7F5134539 /* Pods-Smokeless-TTTLocalizedPluralString-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Smokeless-TTTLocalizedPluralString";
 			sourceTree = "<group>";
 		};
-		CDE36ED3CA43A46072CC849F /* ABStaticTableViewController */ = {
+		BA709E87DCA845B5730F7ADF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6A1CD903EDA4F4D167CEBAA0 /* ABStaticTableViewController.h */,
-				91497C1D0BF5ED97EF2120EC /* ABStaticTableViewController.m */,
-				3E7E4121BEA6593D58D57812 /* Support Files */,
+				DB05AB5770106DBFEE977A96 /* ABStaticTableViewController */,
+				D76A6C72E49CE8F9DCB80E4F /* TTTLocalizedPluralString */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C955999FF10E35D80266F354 /* Pods-Smokeless */ = {
+			isa = PBXGroup;
+			children = (
+				2335CB6458C7F09483AE7DBA /* Pods-Smokeless-acknowledgements.markdown */,
+				48BEB6C620D736A842097CAB /* Pods-Smokeless-acknowledgements.plist */,
+				94A0E51B0B078C973244E5B6 /* Pods-Smokeless-dummy.m */,
+				8FAA8AEECEC806888B4DD0C8 /* Pods-Smokeless-environment.h */,
+				B10985A88DE8498DC3864641 /* Pods-Smokeless-resources.sh */,
+				5CCC397B859E8BEB47987FED /* Pods-Smokeless.debug.xcconfig */,
+				8951C8168B31AB1C402D703C /* Pods-Smokeless.release.xcconfig */,
+			);
+			name = "Pods-Smokeless";
+			path = "Target Support Files/Pods-Smokeless";
+			sourceTree = "<group>";
+		};
+		D76A6C72E49CE8F9DCB80E4F /* TTTLocalizedPluralString */ = {
+			isa = PBXGroup;
+			children = (
+				4DAA168E9063859B4A59AF74 /* TTTLocalizedPluralString.h */,
+				6E4CACCE202742E6EA857D52 /* TTTLocalizedPluralString.m */,
+				B37225EFCED6DDEA9ECE401E /* Support Files */,
+			);
+			path = TTTLocalizedPluralString;
+			sourceTree = "<group>";
+		};
+		DB05AB5770106DBFEE977A96 /* ABStaticTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6CA9B961FC5618C5ECEE113B /* ABStaticTableViewController.h */,
+				C6ED39F4F82EA2C456CD796D /* ABStaticTableViewController.m */,
+				0A39546FA5DA4B7CAB69087F /* Support Files */,
 			);
 			path = ABStaticTableViewController;
+			sourceTree = "<group>";
+		};
+		E084C78EFC64F2F2F30E6F4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97160791C1F64E8658EF56EE /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6FF3DE71EB1E9719F2CD0EAA /* Headers */ = {
+		3974FDC570096D458F58E2C7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B909425DFE7B10DAF0FF04CB /* ABStaticTableViewController.h in Headers */,
+				B1454BAD103C111DC05F9DBE /* TTTLocalizedPluralString.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9F552439BE4F29C882F6DEA /* Headers */ = {
+		82B822D1E1D0369ED8FFB586 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF0BF68FE6FCF7932ED4DC4 /* TTTLocalizedPluralString.h in Headers */,
+				815B2BEAE6C8C4E91C942E01 /* ABStaticTableViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6A2E65661A4AE66299D4B659 /* Pods-Smokeless */ = {
+		5A18C62FB28F0ED378198304 /* Pods-Smokeless-TTTLocalizedPluralString */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C255E33497C4FE31A392E8DF /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */;
+			buildConfigurationList = 06483D0591E8669D7DEAFE66 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */;
 			buildPhases = (
-				735BE0A6D7EF32AEF9474C64 /* Sources */,
-				0940F366DE70C272EE3CFD37 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				679070CE08BC0B20F2444CD0 /* PBXTargetDependency */,
-				84E44B7F0A163C661AEA73DA /* PBXTargetDependency */,
-			);
-			name = "Pods-Smokeless";
-			productName = "Pods-Smokeless";
-			productReference = 88D40B6FDD95966CCF2CC369 /* libPods-Smokeless.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 10E684D5C6878FAA1F3F6A4E /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */;
-			buildPhases = (
-				C3ACC94FEC35866FD4F7D666 /* Sources */,
-				D0F9B41D1F1AD0B9C783ED4D /* Frameworks */,
-				B9F552439BE4F29C882F6DEA /* Headers */,
+				F40CB4BC0F54314760D43178 /* Sources */,
+				A557554420F3C4072B5D2F2F /* Frameworks */,
+				3974FDC570096D458F58E2C7 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -258,16 +240,34 @@
 			);
 			name = "Pods-Smokeless-TTTLocalizedPluralString";
 			productName = "Pods-Smokeless-TTTLocalizedPluralString";
-			productReference = DB56F4ED43FBA7A0718AB26F /* libPods-Smokeless-TTTLocalizedPluralString.a */;
+			productReference = 5A2BC7FC81633D995619DB4E /* libPods-Smokeless-TTTLocalizedPluralString.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */ = {
+		A0A47EBE04875520974DA14F /* Pods-Smokeless */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9C7C403E4094187ACE09627 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */;
+			buildConfigurationList = 9E2E4117648E30061FF202C2 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */;
 			buildPhases = (
-				A116E40071010CAFCA73ACB4 /* Sources */,
-				B9084346AD87EF109B158374 /* Frameworks */,
-				6FF3DE71EB1E9719F2CD0EAA /* Headers */,
+				4F30039B25FDFC422FEC8081 /* Sources */,
+				8F5884541AA74B681AB9AFB7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F3C48F5EA2192FD506EB851 /* PBXTargetDependency */,
+				69EAF162484ADC4A28031857 /* PBXTargetDependency */,
+			);
+			name = "Pods-Smokeless";
+			productName = "Pods-Smokeless";
+			productReference = 2C826E40A58AD006A6D22DF9 /* libPods-Smokeless.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E8DA3959050B74C189DFA589 /* Pods-Smokeless-ABStaticTableViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FD95A1F3419D8C0531C5EA6 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */;
+			buildPhases = (
+				82124C48C107872D79CDBEC7 /* Sources */,
+				0ED9F3850A2C2949C7BFD436 /* Frameworks */,
+				82B822D1E1D0369ED8FFB586 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -275,148 +275,82 @@
 			);
 			name = "Pods-Smokeless-ABStaticTableViewController";
 			productName = "Pods-Smokeless-ABStaticTableViewController";
-			productReference = FC58D9577D85404891A6E6BA /* libPods-Smokeless-ABStaticTableViewController.a */;
+			productReference = FFA007B30C40E8F2ABFF3360 /* libPods-Smokeless-ABStaticTableViewController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6A750B063D8F1D463EB1BD03 /* Project object */ = {
+		C65B22241D2D642804C86CA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 64ABDA4152C97C5C7ACEEED2 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 18AA3E234A778EDA84C4B017 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 955D4ED2874774F9EB884E6D;
-			productRefGroup = 974BCE1DFC006389FB98C738 /* Products */;
+			mainGroup = B11739FB85B79A5EEC1D6C7F;
+			productRefGroup = A225CE6ADE1C2861B32F5166 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6A2E65661A4AE66299D4B659 /* Pods-Smokeless */,
-				C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */,
-				A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */,
+				A0A47EBE04875520974DA14F /* Pods-Smokeless */,
+				E8DA3959050B74C189DFA589 /* Pods-Smokeless-ABStaticTableViewController */,
+				5A18C62FB28F0ED378198304 /* Pods-Smokeless-TTTLocalizedPluralString */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		735BE0A6D7EF32AEF9474C64 /* Sources */ = {
+		4F30039B25FDFC422FEC8081 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1A31BDEAB7492AEB41F4C5 /* Pods-Smokeless-dummy.m in Sources */,
+				16D64C0BAD15314B916F910B /* Pods-Smokeless-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A116E40071010CAFCA73ACB4 /* Sources */ = {
+		82124C48C107872D79CDBEC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A34894384F6D247F59CDEC7 /* ABStaticTableViewController.m in Sources */,
-				C70582AB96F831E922C27BA8 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */,
+				B48F06C7320766F63DEF6033 /* ABStaticTableViewController.m in Sources */,
+				AFADE9E00C7C8C0A02D0AD25 /* Pods-Smokeless-ABStaticTableViewController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3ACC94FEC35866FD4F7D666 /* Sources */ = {
+		F40CB4BC0F54314760D43178 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B526D73EFAAC120F4B930B /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */,
-				AA0D039F9955996BD3F5E256 /* TTTLocalizedPluralString.m in Sources */,
+				4DE4D73FCED09D3279BF0CCE /* Pods-Smokeless-TTTLocalizedPluralString-dummy.m in Sources */,
+				E6E87034CF2258444E552EC7 /* TTTLocalizedPluralString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		679070CE08BC0B20F2444CD0 /* PBXTargetDependency */ = {
+		3F3C48F5EA2192FD506EB851 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Smokeless-ABStaticTableViewController";
-			target = C23ACA083BB8AD3E0839C4B6 /* Pods-Smokeless-ABStaticTableViewController */;
-			targetProxy = 4534B6CCB4261DFA4F5ABF99 /* PBXContainerItemProxy */;
+			target = E8DA3959050B74C189DFA589 /* Pods-Smokeless-ABStaticTableViewController */;
+			targetProxy = 6E8304C1928233687ABE3327 /* PBXContainerItemProxy */;
 		};
-		84E44B7F0A163C661AEA73DA /* PBXTargetDependency */ = {
+		69EAF162484ADC4A28031857 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Smokeless-TTTLocalizedPluralString";
-			target = A1D1CF9ADA5D35241F82DA5C /* Pods-Smokeless-TTTLocalizedPluralString */;
-			targetProxy = 4D032D01459992161B2F0840 /* PBXContainerItemProxy */;
+			target = 5A18C62FB28F0ED378198304 /* Pods-Smokeless-TTTLocalizedPluralString */;
+			targetProxy = 7F39260F30E9A085D1F79779 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		059A486AFB0E74FF21F5EC64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		06B044BB76353255E0A8A5A9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A48931FE20EF991FEDEC8F15 /* Pods-Smokeless.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6EED54A9D273EF0A5D89A630 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		70C9F39D6575A19AC520BDA0 /* Debug */ = {
+		12FEC250C23BEB655DD97C57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -455,9 +389,9 @@
 			};
 			name = Debug;
 		};
-		8DA9F5A9CB4C1E0F58D0F0A3 /* Debug */ = {
+		327E27CEADF9FF51DF0F82D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
+			baseConfigurationReference = B348318B75DC82E0E801D5E6 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch";
@@ -471,12 +405,62 @@
 			};
 			name = Debug;
 		};
-		A4B6AA93C2CCE84AC9F17BFB /* Release */ = {
+		55BBDA75124F1128C5565018 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C66A09EE403D9185503DD3E7 /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		766BB506FADAA43DB660AD68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8951C8168B31AB1C402D703C /* Pods-Smokeless.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7CA53D725F7B8E895CB84733 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B348318B75DC82E0E801D5E6 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -487,9 +471,25 @@
 			};
 			name = Release;
 		};
-		B682202CCF718860D55605AE /* Debug */ = {
+		7F1E04B967EDB15D668B5B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF3FFB2A07F3CCDBE81DB177 /* Pods-Smokeless.debug.xcconfig */;
+			baseConfigurationReference = 97E76757A0499BB6D0D6502F /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A183F482EFA70E6BDABDCF9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CCC397B859E8BEB47987FED /* Pods-Smokeless.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -503,12 +503,12 @@
 			};
 			name = Debug;
 		};
-		C37A4FACA682AE81AD92E634 /* Release */ = {
+		A5744A68CC28CB4B99574985 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FD195C48ECF6FA7F74C5AF2 /* Pods-Smokeless-TTTLocalizedPluralString-Private.xcconfig */;
+			baseConfigurationReference = 97E76757A0499BB6D0D6502F /* Pods-Smokeless-ABStaticTableViewController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-TTTLocalizedPluralString/Pods-Smokeless-TTTLocalizedPluralString-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Smokeless-ABStaticTableViewController/Pods-Smokeless-ABStaticTableViewController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -522,43 +522,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		10E684D5C6878FAA1F3F6A4E /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */ = {
+		06483D0591E8669D7DEAFE66 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-TTTLocalizedPluralString" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DA9F5A9CB4C1E0F58D0F0A3 /* Debug */,
-				C37A4FACA682AE81AD92E634 /* Release */,
+				327E27CEADF9FF51DF0F82D9 /* Debug */,
+				7CA53D725F7B8E895CB84733 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64ABDA4152C97C5C7ACEEED2 /* Build configuration list for PBXProject "Pods" */ = {
+		18AA3E234A778EDA84C4B017 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70C9F39D6575A19AC520BDA0 /* Debug */,
-				059A486AFB0E74FF21F5EC64 /* Release */,
+				12FEC250C23BEB655DD97C57 /* Debug */,
+				55BBDA75124F1128C5565018 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C255E33497C4FE31A392E8DF /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */ = {
+		1FD95A1F3419D8C0531C5EA6 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B682202CCF718860D55605AE /* Debug */,
-				06B044BB76353255E0A8A5A9 /* Release */,
+				7F1E04B967EDB15D668B5B72 /* Debug */,
+				A5744A68CC28CB4B99574985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9C7C403E4094187ACE09627 /* Build configuration list for PBXNativeTarget "Pods-Smokeless-ABStaticTableViewController" */ = {
+		9E2E4117648E30061FF202C2 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6EED54A9D273EF0A5D89A630 /* Debug */,
-				A4B6AA93C2CCE84AC9F17BFB /* Release */,
+				A183F482EFA70E6BDABDCF9D /* Debug */,
+				766BB506FADAA43DB660AD68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6A750B063D8F1D463EB1BD03 /* Project object */;
+	rootObject = C65B22241D2D642804C86CA9 /* Project object */;
 }
