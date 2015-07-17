@@ -7,30 +7,6 @@
 */
 
 
-"%d year (plural rule: one)" = "%d year";
-"%d year (plural rule: other)" = "%d years";
-
-"%d month (plural rule: one)" = "%d month";
-"%d month (plural rule: other)" = "%d months";
-
-"%d week (plural rule: one)" = "%d week";
-"%d week (plural rule: other)" = "%d weeks";
-
-"%d day (plural rule: one)" = "%d day";
-"%d day (plural rule: other)" = "%d days";
-
-"%d hour (plural rule: one)" = "%d hour";
-"%d hour (plural rule: other)" = "%d hours";
-
-"%d minute (plural rule: one)" = "%d minute";
-"%d minute (plural rule: other)" = "%d minutes";
-
-"%d cigarette (plural rule: one)" = "%d cigarette";
-"%d cigarette (plural rule: other)" = "%d cigarettes";
-
-"%d packet (plural rule: one)" = "%d packet";
-"%d packet (plural rule: other)" = "%d packets";
-
 // Achievements
 "ACHIEVEMENT_01_DESCRIPTION" = "Pressure and heart rate will return to a normal level.";
 "ACHIEVEMENT_02_DESCRIPTION" = "Oxygen in your blood will return to a normal level while the nicotine will decrease up to over 93%.";
