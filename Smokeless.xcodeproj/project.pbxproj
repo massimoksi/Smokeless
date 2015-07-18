@@ -258,6 +258,7 @@
 		566B378215BBFFAD0026821C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				564518461B5A88CB001BF1EA /* CalendarViewController.swift */,
 				566B375315BBFE1F0026821C /* SavingsViewController.h */,
 				566B375415BBFE1F0026821C /* SavingsViewController.m */,
 				567F8B041A90009F00F57F45 /* HealthTableViewController.h */,
@@ -265,7 +266,6 @@
 				566B375715BBFE1F0026821C /* SettingsTableViewController.h */,
 				566B375815BBFE1F0026821C /* SettingsTableViewController.m */,
 				566732111B3CB29F002A1060 /* HabitsTableViewController.swift */,
-				564518461B5A88CB001BF1EA /* CalendarViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
