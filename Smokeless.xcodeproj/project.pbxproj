@@ -34,6 +34,7 @@
 		567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B051A90009F00F57F45 /* HealthTableViewController.m */; };
 		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
 		567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B0A1A900B4F00F57F45 /* Achievement.swift */; };
+		56914B311B66C41D00857328 /* RadialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56914B301B66C41D00857328 /* RadialBarView.swift */; };
 		56A637961A6DC960001DC3A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A637951A6DC960001DC3A6 /* Constants.m */; };
 		56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C01B434C20004E4816 /* CoinsDrop.aifc */; };
 		56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C41B43520B004E4816 /* Tinkle.m4a */; };
@@ -86,6 +87,7 @@
 		567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smokeless-Bridging-Header.h"; sourceTree = "<group>"; };
 		567F8B081A90033300F57F45 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		567F8B0A1A900B4F00F57F45 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		56914B301B66C41D00857328 /* RadialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialBarView.swift; sourceTree = "<group>"; };
 		56A637941A6DC960001DC3A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		56A637951A6DC960001DC3A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56F974C01B434C20004E4816 /* CoinsDrop.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoinsDrop.aifc; path = Resources/CoinsDrop.aifc; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 		56F974E81B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		56F974E91B52A529004E4816 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56F974EA1B52A97D004E4816 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				562536DC1B41DFFE00E321A5 /* libz.dylib */,
-				C959BD3C845FA7C6378AEA26 /* libPods-Smokeless.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,6 +285,7 @@
 				567F8B081A90033300F57F45 /* AchievementCell.swift */,
 				5667320D1B359964002A1060 /* ProgressView.swift */,
 				56187BF71B2F8C4A0098E41D /* BackgroundView.swift */,
+				56914B301B66C41D00857328 /* RadialBarView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -378,6 +379,7 @@
 				56F974E71B4AC5DF004E4816 /* AchievementsManager.swift in Sources */,
 				567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */,
 				564394FE1B59A91D003D071C /* JAMSVGParser.m in Sources */,
+				56914B311B66C41D00857328 /* RadialBarView.swift in Sources */,
 				566B377B15BBFE1F0026821C /* SettingsTableViewController.m in Sources */,
 				564394FB1B59A91D003D071C /* JAMStyledBezierPath.m in Sources */,
 				566732121B3CB29F002A1060 /* HabitsTableViewController.swift in Sources */,
