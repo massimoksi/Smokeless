@@ -11,9 +11,11 @@ import UIKit
 
 class CalendarViewController: UIViewController {
 
-    @IBOutlet weak var yearDateLabel: UILabel!
-    @IBOutlet weak var monthDateLabel: UILabel!
-    @IBOutlet weak var dayDateLabel: UILabel!
+//    @IBOutlet weak var yearDateLabel: UILabel!
+//    @IBOutlet weak var monthDateLabel: UILabel!
+//    @IBOutlet weak var dayDateLabel: UILabel!
+    
+    @IBOutlet weak var yearsRadialBar: RadialBarView!
     
     @IBOutlet weak var yearQuantityLabel: UILabel!
     @IBOutlet weak var monthQuantityLabel: UILabel!
@@ -25,6 +27,14 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var weekUnitLabel: UILabel!
     @IBOutlet weak var dayUnitLabel: UILabel!
     
+    private var monthFormatter: NSDateFormatter {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "MMMM"
+        
+        return dateFormatter
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +44,9 @@ class CalendarViewController: UIViewController {
                 let unitFlags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitWeekOfMonth | .CalendarUnitDay
                 
                 let dateComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate)
-                
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.locale = NSLocale.currentLocale()
-                dateFormatter.dateFormat = "MMMM"
-                
-                yearDateLabel.text = String(dateComponents.year)
-                monthDateLabel.text = dateFormatter.stringFromDate(lastCigaretteDate)
-                dayDateLabel.text = String(dateComponents.day)
+//                yearDateLabel.text = String(dateComponents.year)
+//                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
+//                dayDateLabel.text = String(dateComponents.day)
                 
                 let intervalComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate, toDate: NSDate(), options: NSCalendarOptions(0))
                 
@@ -49,6 +54,8 @@ class CalendarViewController: UIViewController {
                 let months = intervalComponents.month
                 let weeks = intervalComponents.weekOfMonth
                 let days = intervalComponents.day
+                
+                yearsRadialBar.value = years
                 
                 yearQuantityLabel.text = String(years)
                 monthQuantityLabel.text = String(months)
@@ -67,16 +74,5 @@ class CalendarViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

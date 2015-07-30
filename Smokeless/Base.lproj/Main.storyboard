@@ -720,9 +720,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -770,6 +767,7 @@
                         <outlet property="weekUnitLabel" destination="GKX-ub-ugq" id="DDY-1R-G3J"/>
                         <outlet property="yearQuantityLabel" destination="ygV-6Z-rUs" id="5QC-hK-7Qx"/>
                         <outlet property="yearUnitLabel" destination="Ldp-fD-UOC" id="ei2-m7-R8E"/>
+                        <outlet property="yearsRadialBar" destination="kky-wy-10W" id="yc1-BY-iIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-gq-CIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
