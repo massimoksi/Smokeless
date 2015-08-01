@@ -69,6 +69,12 @@ class RadialBarView: UIView {
     }
 
     @IBInspectable var barWidth: CGFloat = 10.0 {
+        willSet(newBarWidth) {
+            if (newBarWidth < 1.0) {
+                barWidth = 1.0
+            }
+        }
+
         didSet {
             setNeedsDisplay()
         }
