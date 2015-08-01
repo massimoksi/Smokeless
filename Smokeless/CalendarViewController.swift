@@ -15,7 +15,10 @@ class CalendarViewController: UIViewController {
 //    @IBOutlet weak var monthDateLabel: UILabel!
 //    @IBOutlet weak var dayDateLabel: UILabel!
     
-    @IBOutlet weak var yearsRadialBar: RadialBarView!
+    @IBOutlet weak var yearRadialBar: RadialBarView!
+    @IBOutlet weak var monthRadialBar: RadialBarView!
+    @IBOutlet weak var weekRadialBar: RadialBarView!
+    @IBOutlet weak var dayRadialBar: RadialBarView!
     
     @IBOutlet weak var yearQuantityLabel: UILabel!
     @IBOutlet weak var monthQuantityLabel: UILabel!
@@ -55,17 +58,20 @@ class CalendarViewController: UIViewController {
                 let weeks = intervalComponents.weekOfMonth
                 let days = intervalComponents.day
                 
-                yearsRadialBar.value = years
+                yearRadialBar.value = UInt(years)
+                monthRadialBar.value = UInt(months)
+                weekRadialBar.value = UInt(weeks)
+                dayRadialBar.value = UInt(days)
                 
-                yearQuantityLabel.text = String(years)
-                monthQuantityLabel.text = String(months)
-                weekQuantityLabel.text = String(weeks)
-                dayQuantityLabel.text = String(days)
-                
-                yearUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d year(s) (unit)", comment: ""), years) as String
-                monthUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d month(s) (unit)", comment: ""), months) as String
-                weekUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d week(s) (unit)", comment: ""), weeks) as String
-                dayUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d day(s) (unit)", comment: ""), days) as String
+//                yearQuantityLabel.text = String(years)
+//                monthQuantityLabel.text = String(months)
+//                weekQuantityLabel.text = String(weeks)
+//                dayQuantityLabel.text = String(days)
+//                
+//                yearUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d year(s) (unit)", comment: ""), years) as String
+//                monthUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d month(s) (unit)", comment: ""), months) as String
+//                weekUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d week(s) (unit)", comment: ""), weeks) as String
+//                dayUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d day(s) (unit)", comment: ""), days) as String
             }
         }
     }

@@ -69,12 +69,6 @@ class RadialBarView: UIView {
     }
 
     @IBInspectable var barWidth: CGFloat = 10.0 {
-        willSet(newBarWidth) {
-            if (newBarWidth < 1.0) {
-                barWidth = 1.0
-            }
-        }
-
         didSet {
             setNeedsDisplay()
         }
@@ -177,6 +171,8 @@ class RadialBarView: UIView {
         else {
             CGContextSetFillColorWithColor(context, tintColor.CGColor)
         }
+
+        // TODO: fill bar with gradient.
         
         // Draw path.
         CGContextAddArc(context, centerCapBgn.x, centerCapBgn.y, radiusCap, CGFloat(M_PI_2), -CGFloat(M_PI_2), 0)
@@ -184,6 +180,20 @@ class RadialBarView: UIView {
         CGContextAddArc(context, centerCapEnd.x, centerCapEnd.y, radiusCap, endAngle, endAngle + CGFloat(M_PI), 0)
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusInt, endAngle, startAngle, 1)
         CGContextFillPath(context)
+        
+//         ---------------------------
+//         Drop shadow
+//         ---------------------------
+//        
+//        CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+//        CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
+//        CGContextSetLineCap(context, kCGLineCapSquare)
+//        CGContextSetLineWidth(context, 1.0)
+//
+//        CGContextAddArc(context, centerCapEnd.x, centerCapEnd.y, radiusCap, endAngle, endAngle + CGFloat(M_PI), 0)
+//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusExt, endAngle, 0.05 * fullAngle, 0)
+//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusInt, 0.05 * fullAngle, endAngle, 1)
+//        CGContextStrokePath(context)
     }
 
     // MARK: - Private methods

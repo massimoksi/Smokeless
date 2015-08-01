@@ -631,11 +631,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0ga-2k-Xqd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sSc-Ir-kwC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKX-ub-ugq">
-                                <rect key="frame" x="16" y="522" width="278" height="21"/>
+                                <rect key="frame" x="16" y="822" width="278" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Txd-Yy-1zB"/>
                                 </constraints>
@@ -644,7 +644,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjm-jr-tyy">
-                                <rect key="frame" x="306" y="522" width="278" height="21"/>
+                                <rect key="frame" x="306" y="822" width="278" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="pPq-rZ-xvR"/>
                                 </constraints>
@@ -653,7 +653,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-hV-rZy">
-                                <rect key="frame" x="16" y="466" width="278" height="48"/>
+                                <rect key="frame" x="16" y="766" width="278" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="OlS-hB-P3g"/>
                                 </constraints>
@@ -662,7 +662,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42a-3B-tbz">
-                                <rect key="frame" x="306" y="466" width="278" height="48"/>
+                                <rect key="frame" x="306" y="766" width="278" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="1ci-cj-cDy"/>
                                 </constraints>
@@ -671,7 +671,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="years" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldp-fD-UOC">
-                                <rect key="frame" x="16" y="437" width="278" height="21"/>
+                                <rect key="frame" x="16" y="737" width="278" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fnd-2b-ERd"/>
                                 </constraints>
@@ -680,7 +680,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="months" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXS-pa-E4V">
-                                <rect key="frame" x="306" y="437" width="278" height="21"/>
+                                <rect key="frame" x="306" y="737" width="278" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Dcx-GN-qmK"/>
                                 </constraints>
@@ -689,7 +689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-6Z-rUs">
-                                <rect key="frame" x="16" y="381" width="278" height="48"/>
+                                <rect key="frame" x="16" y="681" width="278" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="npx-1I-Rth"/>
                                 </constraints>
@@ -698,7 +698,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HO9-MU-sCm">
-                                <rect key="frame" x="306" y="381" width="278" height="48"/>
+                                <rect key="frame" x="306" y="681" width="278" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="EgL-Ed-Dpg"/>
                                 </constraints>
@@ -707,11 +707,70 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kky-wy-10W" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
-                                <rect key="frame" x="150" y="28" width="300" height="300"/>
+                                <rect key="frame" x="8" y="28" width="584" height="584"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f99-hQ-PP7" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="18" width="548" height="548"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrQ-ge-uie" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="18" width="512" height="512"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-9f-S3S" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                                        <rect key="frame" x="18" y="18" width="476" height="476"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="height" multiplier="1:1" id="ryJ-ar-Dk5"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="centerY" secondItem="qnz-9f-S3S" secondAttribute="centerY" id="K6x-79-SsE"/>
+                                                    <constraint firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="height" multiplier="1:1" id="RdY-x5-FDe"/>
+                                                    <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="width" constant="36" id="V7M-vY-toF"/>
+                                                    <constraint firstAttribute="centerX" secondItem="qnz-9f-S3S" secondAttribute="centerX" id="VBy-0k-iBL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="NrQ-ge-uie" secondAttribute="centerX" id="Gz8-0I-8w7"/>
+                                            <constraint firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="width" constant="36" id="Zf6-QX-Vrw"/>
+                                            <constraint firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="height" multiplier="1:1" id="bc6-tJ-KKF"/>
+                                            <constraint firstAttribute="centerY" secondItem="NrQ-ge-uie" secondAttribute="centerY" id="klN-xq-8xU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="YBq-2y-1pp"/>
-                                    <constraint firstAttribute="width" constant="300" id="afe-NT-m14"/>
+                                    <constraint firstAttribute="centerY" secondItem="f99-hQ-PP7" secondAttribute="centerY" id="Isw-q7-zWK"/>
+                                    <constraint firstAttribute="centerX" secondItem="f99-hQ-PP7" secondAttribute="centerX" id="Qjz-Rh-vt2"/>
+                                    <constraint firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="width" constant="36" id="VgO-UR-sdp"/>
+                                    <constraint firstAttribute="width" secondItem="kky-wy-10W" secondAttribute="height" multiplier="1:1" id="vj4-0a-oM3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
@@ -737,6 +796,7 @@
                             <constraint firstItem="gXS-pa-E4V" firstAttribute="leading" secondItem="Ldp-fD-UOC" secondAttribute="trailing" constant="12" id="EOt-bf-sfj"/>
                             <constraint firstItem="GKX-ub-ugq" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leadingMargin" id="IvU-aC-XAs"/>
                             <constraint firstItem="0ga-2k-Xqd" firstAttribute="top" secondItem="GKX-ub-ugq" secondAttribute="bottom" constant="8" id="Pv6-Fb-9JE"/>
+                            <constraint firstAttribute="trailing" secondItem="kky-wy-10W" secondAttribute="trailing" constant="8" id="RWk-og-84t"/>
                             <constraint firstItem="gXS-pa-E4V" firstAttribute="top" secondItem="HO9-MU-sCm" secondAttribute="bottom" constant="8" id="RZI-W5-IJI"/>
                             <constraint firstItem="ygV-6Z-rUs" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leadingMargin" id="Sld-Ck-0tW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="42a-3B-tbz" secondAttribute="trailing" id="Yfz-Xu-cvo"/>
@@ -744,13 +804,13 @@
                             <constraint firstItem="kky-wy-10W" firstAttribute="top" secondItem="oUJ-y6-HTJ" secondAttribute="bottom" constant="8" id="cV4-S8-GQR"/>
                             <constraint firstItem="42a-3B-tbz" firstAttribute="width" secondItem="2cj-hV-rZy" secondAttribute="width" id="ewr-YO-jaI"/>
                             <constraint firstItem="Ldp-fD-UOC" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leadingMargin" id="gFw-GN-BZe"/>
-                            <constraint firstAttribute="centerX" secondItem="kky-wy-10W" secondAttribute="centerX" id="i84-ZH-gzB"/>
                             <constraint firstItem="0ga-2k-Xqd" firstAttribute="top" secondItem="Jjm-jr-tyy" secondAttribute="bottom" constant="8" id="rEg-tF-SEG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HO9-MU-sCm" secondAttribute="trailing" id="rm1-7W-ZjZ"/>
                             <constraint firstItem="Ldp-fD-UOC" firstAttribute="width" secondItem="gXS-pa-E4V" secondAttribute="width" id="sHG-1M-Ktc"/>
                             <constraint firstItem="Jjm-jr-tyy" firstAttribute="width" secondItem="GKX-ub-ugq" secondAttribute="width" id="tgF-6t-6LZ"/>
                             <constraint firstItem="HO9-MU-sCm" firstAttribute="width" secondItem="ygV-6Z-rUs" secondAttribute="width" id="xiV-Af-2Lf"/>
                             <constraint firstItem="42a-3B-tbz" firstAttribute="leading" secondItem="2cj-hV-rZy" secondAttribute="trailing" constant="12" id="zG6-s6-bNt"/>
+                            <constraint firstItem="kky-wy-10W" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leading" constant="8" id="zQa-hi-FHa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="CalendarNormal" id="vMT-ga-n65">
@@ -758,16 +818,21 @@
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="CalendarActive"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="900"/>
                     <connections>
                         <outlet property="dayQuantityLabel" destination="42a-3B-tbz" id="bcX-AP-Ung"/>
+                        <outlet property="dayRadialBar" destination="qnz-9f-S3S" id="g4g-wq-EWL"/>
                         <outlet property="dayUnitLabel" destination="Jjm-jr-tyy" id="Qwi-fC-K6I"/>
                         <outlet property="monthQuantityLabel" destination="HO9-MU-sCm" id="Kqe-vy-jVN"/>
+                        <outlet property="monthRadialBar" destination="f99-hQ-PP7" id="1jg-cz-QI1"/>
                         <outlet property="monthUnitLabel" destination="gXS-pa-E4V" id="Ug7-QP-XYM"/>
                         <outlet property="weekQuantityLabel" destination="2cj-hV-rZy" id="ydI-Nw-sT0"/>
+                        <outlet property="weekRadialBar" destination="NrQ-ge-uie" id="Qj4-dT-Mts"/>
                         <outlet property="weekUnitLabel" destination="GKX-ub-ugq" id="DDY-1R-G3J"/>
                         <outlet property="yearQuantityLabel" destination="ygV-6Z-rUs" id="5QC-hK-7Qx"/>
+                        <outlet property="yearRadialBar" destination="kky-wy-10W" id="zeg-dU-XJz"/>
                         <outlet property="yearUnitLabel" destination="Ldp-fD-UOC" id="ei2-m7-R8E"/>
-                        <outlet property="yearsRadialBar" destination="kky-wy-10W" id="yc1-BY-iIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-gq-CIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
