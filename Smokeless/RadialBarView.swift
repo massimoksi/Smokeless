@@ -13,46 +13,83 @@ import UIKit
 class RadialBarView: UIView {
 
     private class RadialBarLayer: CALayer {
-        // TODO: implement.
+        @NSManaged var progress: CGFloat
+
+        required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
+        
+        override init!() {
+            super.init()
+        }
+        
+        override init!(layer: AnyObject!) {
+            super.init(layer: layer)
+        }
+        
+        override class func needsDisplayForKey(key: String!) -> Bool {
+            // A change in the custom "progress" property should automatically trigger a redraw of the layer.
+            if (key == "progress") {
+                return true
+            }
+
+            return super.needsDisplayForKey(key)
+        }
+
+        override func actionForKey(event: String!) -> CAAction! {
+            if (event == "progress") {
+                let anim = CABasicAnimation(keyPath: event)
+                anim.fromValue = presentationLayer().valueForKey(event)
+                anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                anim.duration = CFTimeInterval(1.0)
+
+                return anim
+            }
+
+            return super.actionForKey(event)
+        }
     }
-    
-    // TODO: validate value.
-    @IBInspectable var value: Int = 0 {
+
+    // MARK: -
+
+    @IBInspectable var value: UInt = 0 {
         didSet {
+            radialBarLayer.progress = progress()
+
             setNeedsDisplay()
         }
     }
-    
-    @IBInspectable var minValue: Int = 0 {
+
+    @IBInspectable var maxValue: UInt = 10 {
         didSet {
+            radialBarLayer.progress = progress()
+
             setNeedsDisplay()
         }
     }
-    
-    @IBInspectable var maxValue: Int = 10 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    
+
     @IBInspectable var barWidth: CGFloat = 10.0 {
         didSet {
             setNeedsDisplay()
         }
     }
-    
+
     @IBInspectable var barBackgroundColor: UIColor? {
         didSet {
             setNeedsDisplay()
         }
     }
-    
+
     @IBInspectable var barColor: UIColor? {
         didSet {
             setNeedsDisplay()
         }
     }
-    
+
+    private var radialBarLayer: RadialBarLayer {
+        return layer as! RadialBarLayer
+    }
+
     override class func layerClass() -> AnyClass {
         return RadialBarLayer.self
     }
@@ -76,26 +113,27 @@ class RadialBarView: UIView {
         // By implementing an empty -drawRect: method, we allow UIKit to continue to implement this logic,
         // while doing our real drawing work inside of -drawLayer:inContext:.
     }
-    
+
     // MARK: - Layer delegate
-    
+
     override func drawLayer(layer: CALayer!, inContext context: CGContext!) {
-        let percentage = CGFloat(minValue) + CGFloat(value) / CGFloat(maxValue - minValue);
+        let layer = layer as! RadialBarLayer
+        let progress = layer.progress
         
         // Calculate drawing angles.
         let fullAngle = CGFloat(2 * M_PI)
         let startAngle = -0.25 * fullAngle
-        let endAngle = CGFloat(percentage) * fullAngle + startAngle
+        let endAngle = progress * fullAngle + startAngle
         
         // Calculate drawing references.
         let drawingRect = squaredRect()
         let centerPoint = CGPoint(x: drawingRect.midX, y: drawingRect.midY)
         let radius = (drawingRect.width - barWidth) / 2
-
+        
         // ---------------------------
         // Background bar
         // ---------------------------
-
+        
         // Set stroke color.
         if let barBackgroundColor = barBackgroundColor {
             CGContextSetStrokeColorWithColor(context, barBackgroundColor.CGColor)
@@ -113,7 +151,7 @@ class RadialBarView: UIView {
         // ---------------------------
         // Foreground bar
         // ---------------------------
-
+        
         // Calculate radii.
         let radiusExt = drawingRect.width / 2
         let radiusInt = radiusExt - barWidth
@@ -122,10 +160,10 @@ class RadialBarView: UIView {
         // Calculate centers.
         let centerCapBgn = CGPoint(x: drawingRect.midX, y: barWidth / 2)
         let centerCapEnd = CGPoint(x: centerPoint.x + radius * cos(endAngle), y: centerPoint.y + radius * sin(endAngle))
-
+        
         // TODO: fill bar with gradient.
         // TODO: add shadow to the end cap.
-
+        
         // Set fill color.
         if let barColor = barColor {
             CGContextSetFillColorWithColor(context, barColor.CGColor)
@@ -134,21 +172,23 @@ class RadialBarView: UIView {
             CGContextSetFillColorWithColor(context, tintColor.CGColor)
         }
         
-        // Draw path,
+        // Draw path.
         CGContextAddArc(context, centerCapBgn.x, centerCapBgn.y, radiusCap, CGFloat(M_PI_2), -CGFloat(M_PI_2), 0)
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusExt, startAngle, endAngle, 0)
         CGContextAddArc(context, centerCapEnd.x, centerCapEnd.y, radiusCap, endAngle, endAngle + CGFloat(M_PI), 0)
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusInt, endAngle, startAngle, 1)
         CGContextFillPath(context)
     }
-    
-    // MARK: - Private methods
-    
-    private func customInit() {
-        let radialBarLayer = layer
 
+    // MARK: - Private methods
+
+    private func customInit() {
         // By setting opaque to false it defines our backing store to include an alpha channel.
-        radialBarLayer.opaque = false
+        layer.opaque = false
+    }
+
+    private func progress() -> CGFloat {
+        return CGFloat(value) / CGFloat(maxValue)
     }
 
     private func squaredRect() -> CGRect {
@@ -162,5 +202,5 @@ class RadialBarView: UIView {
             return CGRect(x: 0.0, y: (h - w) / 2, width: w, height: w)
         }
     }
-    
+
 }
