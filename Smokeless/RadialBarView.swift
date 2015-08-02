@@ -120,6 +120,12 @@ class RadialBarView: UIView {
         customInit()
     }
 
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        layer.opaque = false
+    }
+    
     override func drawRect(rect: CGRect) {
         // http://stackoverflow.com/questions/1208265/calayer-delegate-method-drawlayer-not-getting-called
         // UIView uses the existence of -drawRect: to determine if it should allow its CALayer to be invalidated,
