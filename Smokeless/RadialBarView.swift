@@ -52,17 +52,31 @@ class RadialBarView: UIView {
 
     // MARK: -
 
-    @IBInspectable var value: UInt = 0 {
+    @IBInspectable var value: Int = 0 {
         didSet {
-            radialBarLayer.progress = progress()
+            if let radialBarLayer = layer as? RadialBarLayer {
+                radialBarLayer.progress = progress()
+            }
 
             setNeedsDisplay()
         }
     }
 
-    @IBInspectable var maxValue: UInt = 10 {
+    @IBInspectable var minValue: Int = 0 {
         didSet {
-            radialBarLayer.progress = progress()
+            if let radialBarLayer = layer as? RadialBarLayer {
+                radialBarLayer.progress = progress()
+            }
+            
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var maxValue: Int = 10 {
+        didSet {
+            if let radialBarLayer = layer as? RadialBarLayer {
+                radialBarLayer.progress = progress()
+            }
 
             setNeedsDisplay()
         }
@@ -86,9 +100,9 @@ class RadialBarView: UIView {
         }
     }
 
-    private var radialBarLayer: RadialBarLayer {
-        return layer as! RadialBarLayer
-    }
+//    private var radialBarLayer: RadialBarLayer {
+//        return layer as! RadialBarLayer
+//    }
 
     override class func layerClass() -> AnyClass {
         return RadialBarLayer.self
@@ -117,8 +131,10 @@ class RadialBarView: UIView {
     // MARK: - Layer delegate
 
     override func drawLayer(layer: CALayer!, inContext context: CGContext!) {
-        let layer = layer as! RadialBarLayer
-        let progress = layer.progress
+        var progress: CGFloat = 0.0
+        if let layer = layer as? RadialBarLayer {
+            progress = layer.progress
+        }
         
         // Calculate drawing angles.
         let fullAngle = CGFloat(2 * M_PI)
@@ -160,10 +176,7 @@ class RadialBarView: UIView {
         // Calculate centers.
         let centerCapBgn = CGPoint(x: drawingRect.midX, y: barWidth / 2)
         let centerCapEnd = CGPoint(x: centerPoint.x + radius * cos(endAngle), y: centerPoint.y + radius * sin(endAngle))
-        
-        // TODO: fill bar with gradient.
-        // TODO: add shadow to the end cap.
-        
+
         // Set fill color.
         if let barColor = barColor {
             CGContextSetFillColorWithColor(context, barColor.CGColor)
@@ -180,20 +193,6 @@ class RadialBarView: UIView {
         CGContextAddArc(context, centerCapEnd.x, centerCapEnd.y, radiusCap, endAngle, endAngle + CGFloat(M_PI), 0)
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusInt, endAngle, startAngle, 1)
         CGContextFillPath(context)
-        
-//         ---------------------------
-//         Drop shadow
-//         ---------------------------
-//        
-//        CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
-//        CGContextSetStrokeColorWithColor(context, UIColor.blackColor().CGColor)
-//        CGContextSetLineCap(context, kCGLineCapSquare)
-//        CGContextSetLineWidth(context, 1.0)
-//
-//        CGContextAddArc(context, centerCapEnd.x, centerCapEnd.y, radiusCap, endAngle, endAngle + CGFloat(M_PI), 0)
-//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusExt, endAngle, 0.05 * fullAngle, 0)
-//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusInt, 0.05 * fullAngle, endAngle, 1)
-//        CGContextStrokePath(context)
     }
 
     // MARK: - Private methods
@@ -204,7 +203,7 @@ class RadialBarView: UIView {
     }
 
     private func progress() -> CGFloat {
-        return CGFloat(value) / CGFloat(maxValue)
+        return CGFloat(minValue) + CGFloat(value) / CGFloat(maxValue - minValue)
     }
 
     private func squaredRect() -> CGRect {
