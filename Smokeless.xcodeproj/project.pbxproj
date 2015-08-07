@@ -282,10 +282,10 @@
 		566B378515BC00130026821C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56914B301B66C41D00857328 /* RadialBarView.swift */,
 				567F8B081A90033300F57F45 /* AchievementCell.swift */,
 				5667320D1B359964002A1060 /* ProgressView.swift */,
 				56187BF71B2F8C4A0098E41D /* BackgroundView.swift */,
-				56914B301B66C41D00857328 /* RadialBarView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
