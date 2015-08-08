@@ -30,13 +30,13 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var weekUnitLabel: UILabel!
     @IBOutlet weak var dayUnitLabel: UILabel!
     
-    private var monthFormatter: NSDateFormatter {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "MMMM"
-        
-        return dateFormatter
-    }
+//    private var monthFormatter: NSDateFormatter {
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.locale = NSLocale.currentLocale()
+//        dateFormatter.dateFormat = "MMMM"
+//        
+//        return dateFormatter
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +58,10 @@ class CalendarViewController: UIViewController {
                 let weeks = intervalComponents.weekOfMonth
                 let days = intervalComponents.day
                 
-                yearRadialBar.value = UInt(years)
-                monthRadialBar.value = UInt(months)
-                weekRadialBar.value = UInt(weeks)
-                dayRadialBar.value = UInt(days)
+                yearRadialBar.value = years
+                monthRadialBar.value = months
+                weekRadialBar.value = weeks
+                dayRadialBar.value = days
                 
 //                yearQuantityLabel.text = String(years)
 //                monthQuantityLabel.text = String(months)

@@ -100,10 +100,6 @@ class RadialBarView: UIView {
         }
     }
 
-//    private var radialBarLayer: RadialBarLayer {
-//        return layer as! RadialBarLayer
-//    }
-
     override class func layerClass() -> AnyClass {
         return RadialBarLayer.self
     }
