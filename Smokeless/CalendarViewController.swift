@@ -42,14 +42,20 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as! NSDate? {
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Do any additional setup after loading the view.
+        if let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as? NSDate {
             if let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
                 let unitFlags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitWeekOfMonth | .CalendarUnitDay
                 
                 let dateComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate)
-//                yearDateLabel.text = String(dateComponents.year)
-//                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
-//                dayDateLabel.text = String(dateComponents.day)
+                //                yearDateLabel.text = String(dateComponents.year)
+                //                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
+                //                dayDateLabel.text = String(dateComponents.day)
                 
                 let intervalComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate, toDate: NSDate(), options: NSCalendarOptions(0))
                 
@@ -63,15 +69,15 @@ class CalendarViewController: UIViewController {
                 weekRadialBar.value = weeks
                 dayRadialBar.value = days
                 
-//                yearQuantityLabel.text = String(years)
-//                monthQuantityLabel.text = String(months)
-//                weekQuantityLabel.text = String(weeks)
-//                dayQuantityLabel.text = String(days)
-//                
-//                yearUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d year(s) (unit)", comment: ""), years) as String
-//                monthUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d month(s) (unit)", comment: ""), months) as String
-//                weekUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d week(s) (unit)", comment: ""), weeks) as String
-//                dayUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d day(s) (unit)", comment: ""), days) as String
+                yearQuantityLabel.text = String(years)
+                monthQuantityLabel.text = String(months)
+                weekQuantityLabel.text = String(weeks)
+                dayQuantityLabel.text = String(days)
+                
+                yearUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d year(s) (unit)", comment: ""), years) as String
+                monthUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d month(s) (unit)", comment: ""), months) as String
+                weekUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d week(s) (unit)", comment: ""), weeks) as String
+                dayUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d day(s) (unit)", comment: ""), days) as String
             }
         }
     }
