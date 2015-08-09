@@ -644,8 +644,86 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kky-wy-10W" userLabel="Year Radial Bar VIew" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
                                 <rect key="frame" x="8" y="86" width="584" height="584"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f99-hQ-PP7" userLabel="Month Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="18" width="548" height="548"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrQ-ge-uie" userLabel="Week Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="18" width="512" height="512"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-9f-S3S" userLabel="Day Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
+                                                        <rect key="frame" x="18" y="18" width="476" height="476"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="height" multiplier="1:1" id="ryJ-ar-Dk5"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                <integer key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
+                                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="centerX" secondItem="qnz-9f-S3S" secondAttribute="centerX" id="8JI-VM-K4E"/>
+                                                    <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="width" constant="36" id="JXa-Dr-wO8"/>
+                                                    <constraint firstAttribute="centerY" secondItem="qnz-9f-S3S" secondAttribute="centerY" id="R8u-Mp-do7"/>
+                                                    <constraint firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="height" multiplier="1:1" id="RdY-x5-FDe"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" red="0.0" green="0.38370672750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
+                                                        <color key="value" red="0.0" green="0.38370672750000001" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="NrQ-ge-uie" secondAttribute="centerY" id="L3d-Rm-Hgf"/>
+                                            <constraint firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="height" multiplier="1:1" id="bc6-tJ-KKF"/>
+                                            <constraint firstAttribute="centerX" secondItem="NrQ-ge-uie" secondAttribute="centerX" id="qm2-6S-IK5"/>
+                                            <constraint firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="width" constant="36" id="qrr-T3-ULG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
+                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="width" constant="36" id="FzV-OH-GIK"/>
+                                    <constraint firstAttribute="centerX" secondItem="f99-hQ-PP7" secondAttribute="centerX" id="O2E-PO-wEg"/>
+                                    <constraint firstAttribute="centerY" secondItem="f99-hQ-PP7" secondAttribute="centerY" id="Zlc-pd-RUA"/>
                                     <constraint firstAttribute="width" secondItem="kky-wy-10W" secondAttribute="height" multiplier="1:1" id="vj4-0a-oM3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -660,69 +738,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
                                         <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f99-hQ-PP7" userLabel="Month Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
-                                <rect key="frame" x="26" y="104" width="548" height="548"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="height" multiplier="1:1" id="bc6-tJ-KKF"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                        <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                        <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrQ-ge-uie" userLabel="Week Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
-                                <rect key="frame" x="44" y="122" width="512" height="512"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="height" multiplier="1:1" id="RdY-x5-FDe"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                        <color key="value" red="0.0" green="0.38370672750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                        <color key="value" red="0.0" green="0.38370672750000001" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-9f-S3S" userLabel="Day Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
-                                <rect key="frame" x="62" y="140" width="476" height="476"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="height" multiplier="1:1" id="ryJ-ar-Dk5"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                        <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                        <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -860,14 +875,10 @@
                         <constraints>
                             <constraint firstItem="jCU-7o-yZW" firstAttribute="centerX" secondItem="8Xz-4j-RKH" secondAttribute="centerX" id="05w-g7-iIs"/>
                             <constraint firstItem="0ga-2k-Xqd" firstAttribute="top" secondItem="jCU-7o-yZW" secondAttribute="bottom" id="2Cd-kZ-qU8"/>
-                            <constraint firstItem="f99-hQ-PP7" firstAttribute="centerX" secondItem="kky-wy-10W" secondAttribute="centerX" id="3L7-S7-ywf"/>
                             <constraint firstAttribute="centerX" secondItem="8Xz-4j-RKH" secondAttribute="centerX" id="3oO-ON-A66"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="height" secondItem="zP8-7X-RLF" secondAttribute="height" id="4XX-Xz-nyQ"/>
-                            <constraint firstItem="qnz-9f-S3S" firstAttribute="centerX" secondItem="NrQ-ge-uie" secondAttribute="centerX" id="59i-SY-ETL"/>
-                            <constraint firstItem="f99-hQ-PP7" firstAttribute="centerX" secondItem="NrQ-ge-uie" secondAttribute="centerX" id="5e3-sr-6jO"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="centerY" secondItem="bq1-23-eQv" secondAttribute="centerY" id="7ST-FY-ucv"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="width" secondItem="WLh-nS-RLD" secondAttribute="width" id="7WL-Cj-4fz"/>
-                            <constraint firstItem="f99-hQ-PP7" firstAttribute="width" secondItem="NrQ-ge-uie" secondAttribute="width" constant="36" id="9Hy-3J-h1i"/>
                             <constraint firstItem="Dvs-YT-z5X" firstAttribute="height" secondItem="bq1-23-eQv" secondAttribute="height" id="Cm3-FO-xFK"/>
                             <constraint firstItem="kij-2o-LDG" firstAttribute="leading" secondItem="Jwe-6k-emE" secondAttribute="trailing" constant="4" id="HeN-1Q-dmX"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="top" secondItem="WLh-nS-RLD" secondAttribute="top" id="Hgs-1L-HH8"/>
@@ -879,7 +890,6 @@
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="height" secondItem="kij-2o-LDG" secondAttribute="height" id="SAt-72-aoj"/>
                             <constraint firstItem="WLh-nS-RLD" firstAttribute="leading" secondItem="zP8-7X-RLF" secondAttribute="trailing" constant="4" id="Und-En-pek"/>
                             <constraint firstItem="kky-wy-10W" firstAttribute="top" relation="lessThanOrEqual" secondItem="8Xz-4j-RKH" secondAttribute="bottom" constant="4" id="WY4-8K-md9"/>
-                            <constraint firstItem="kky-wy-10W" firstAttribute="width" secondItem="f99-hQ-PP7" secondAttribute="width" constant="36" id="dgp-7p-9Ls"/>
                             <constraint firstItem="jCU-7o-yZW" firstAttribute="top" relation="lessThanOrEqual" secondItem="Jwe-6k-emE" secondAttribute="bottom" constant="4" id="dyV-FS-RIo"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="height" secondItem="WLh-nS-RLD" secondAttribute="height" id="evt-K3-Mob"/>
                             <constraint firstItem="kky-wy-10W" firstAttribute="top" secondItem="8Xz-4j-RKH" secondAttribute="bottom" constant="4" id="gKh-c4-jFE"/>
@@ -890,16 +900,12 @@
                             <constraint firstAttribute="trailing" secondItem="Dvs-YT-z5X" secondAttribute="trailing" id="lgs-CH-8nl"/>
                             <constraint firstItem="bq1-23-eQv" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leading" id="nA8-p0-hOd"/>
                             <constraint firstItem="jCU-7o-yZW" firstAttribute="height" secondItem="8Xz-4j-RKH" secondAttribute="height" id="oJ5-aU-ZEi"/>
-                            <constraint firstItem="NrQ-ge-uie" firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="width" constant="36" id="oUa-WE-k82"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="width" secondItem="zP8-7X-RLF" secondAttribute="width" id="p70-ii-pj1"/>
                             <constraint firstItem="Jwe-6k-emE" firstAttribute="top" secondItem="zP8-7X-RLF" secondAttribute="top" id="pnw-RL-vay"/>
-                            <constraint firstItem="f99-hQ-PP7" firstAttribute="centerY" secondItem="kky-wy-10W" secondAttribute="centerY" id="v4J-a5-r6c"/>
                             <constraint firstItem="8Xz-4j-RKH" firstAttribute="top" secondItem="sSc-Ir-kwC" secondAttribute="topMargin" id="wnt-Fp-DWj"/>
-                            <constraint firstItem="f99-hQ-PP7" firstAttribute="centerY" secondItem="NrQ-ge-uie" secondAttribute="centerY" id="y7D-jP-N4d"/>
                             <constraint firstItem="Dvs-YT-z5X" firstAttribute="width" secondItem="bq1-23-eQv" secondAttribute="width" id="z8p-Rg-Vz8"/>
                             <constraint firstItem="kky-wy-10W" firstAttribute="leading" secondItem="sSc-Ir-kwC" secondAttribute="leading" constant="8" id="zQa-hi-FHa"/>
                             <constraint firstItem="zP8-7X-RLF" firstAttribute="leading" secondItem="kij-2o-LDG" secondAttribute="trailing" constant="4" id="zqc-Wc-1LR"/>
-                            <constraint firstItem="qnz-9f-S3S" firstAttribute="centerY" secondItem="NrQ-ge-uie" secondAttribute="centerY" id="zrC-6X-8g0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="CalendarNormal" id="vMT-ga-n65">
