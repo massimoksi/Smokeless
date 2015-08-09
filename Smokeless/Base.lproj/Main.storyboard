@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oIs-hk-hi4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -653,8 +654,22 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-9f-S3S" userLabel="Day Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
                                                         <rect key="frame" x="18" y="18" width="476" height="476"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-hW-waL">
+                                                                <rect key="frame" x="130" y="242" width="216" height="216"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="xzX-hW-waL" secondAttribute="height" multiplier="1:1" id="f4d-Nz-iWR"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="xzX-hW-waL" firstAttribute="top" secondItem="qnz-9f-S3S" secondAttribute="centerY" constant="4" id="9pT-uS-sOQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xzX-hW-waL" secondAttribute="bottom" constant="18" id="YzR-az-Lww"/>
+                                                            <constraint firstAttribute="centerX" secondItem="xzX-hW-waL" secondAttribute="centerX" id="jhP-C8-INB"/>
                                                             <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="height" multiplier="1:1" id="ryJ-ar-Dk5"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
