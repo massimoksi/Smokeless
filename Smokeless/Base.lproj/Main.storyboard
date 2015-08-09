@@ -665,10 +665,10 @@
                                                                 <integer key="value" value="7"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -711,10 +711,10 @@
                                                 <integer key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="barColor">
-                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                                <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -794,7 +794,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="uPF-jw-9iC" firstAttribute="leading" secondItem="kij-2o-LDG" secondAttribute="leading" constant="8" id="6pC-sd-VHr"/>
                                     <constraint firstAttribute="trailing" secondItem="BXM-gy-Ie6" secondAttribute="trailing" constant="8" id="EIf-u0-pHl"/>
@@ -850,7 +850,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2gz-XV-vwm" secondAttribute="bottom" constant="4" id="FEf-te-Q8x"/>
                                     <constraint firstAttribute="trailing" secondItem="zW0-1t-sVY" secondAttribute="trailing" constant="8" id="Gzm-dU-pOG"/>
