@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		560340411B77FF2800B6B651 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = it; path = it.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		56187BF71B2F8C4A0098E41D /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		562536DC1B41DFFE00E321A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -402,6 +403,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				564395071B59AFCF003D071C /* Base */,
+				560340411B77FF2800B6B651 /* it */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
