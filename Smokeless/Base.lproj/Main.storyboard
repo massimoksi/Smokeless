@@ -655,22 +655,46 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnz-9f-S3S" userLabel="Day Radial Bar View" customClass="RadialBarView" customModule="Smokeless" customModuleProvider="target">
                                                         <rect key="frame" x="18" y="18" width="476" height="476"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-hW-waL">
-                                                                <rect key="frame" x="130" y="242" width="216" height="216"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z58-3F-kdP">
+                                                                <rect key="frame" x="178" y="167" width="120" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="32" id="VK0-TS-lly"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="gPc-LY-uZb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-6p-Yyt">
+                                                                <rect key="frame" x="158" y="201" width="160" height="36"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="36" id="bWh-S6-lAb"/>
+                                                                    <constraint firstAttribute="width" constant="160" id="e2B-X2-0ei"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-hW-waL">
+                                                                <rect key="frame" x="198" y="239" width="80" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="xzX-hW-waL" secondAttribute="height" multiplier="1:1" id="f4d-Nz-iWR"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="zqx-dN-gBG"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="72"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="xzX-hW-waL" firstAttribute="top" secondItem="qnz-9f-S3S" secondAttribute="centerY" constant="4" id="9pT-uS-sOQ"/>
-                                                            <constraint firstAttribute="bottom" secondItem="xzX-hW-waL" secondAttribute="bottom" constant="18" id="YzR-az-Lww"/>
+                                                            <constraint firstAttribute="centerY" secondItem="z58-3F-kdP" secondAttribute="bottom" constant="39" id="3Vd-Sm-AHF"/>
+                                                            <constraint firstItem="xzX-hW-waL" firstAttribute="top" secondItem="qnz-9f-S3S" secondAttribute="centerY" constant="1" id="9pT-uS-sOQ"/>
+                                                            <constraint firstAttribute="centerX" secondItem="ELb-6p-Yyt" secondAttribute="centerX" id="Rza-Jf-5FE"/>
+                                                            <constraint firstAttribute="centerX" secondItem="z58-3F-kdP" secondAttribute="centerX" id="XGx-OS-6sk"/>
                                                             <constraint firstAttribute="centerX" secondItem="xzX-hW-waL" secondAttribute="centerX" id="jhP-C8-INB"/>
                                                             <constraint firstAttribute="width" secondItem="qnz-9f-S3S" secondAttribute="height" multiplier="1:1" id="ryJ-ar-Dk5"/>
+                                                            <constraint firstAttribute="centerY" secondItem="ELb-6p-Yyt" secondAttribute="bottom" constant="1" id="v1J-FS-BPy"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
@@ -931,15 +955,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="900"/>
                     <connections>
+                        <outlet property="dayDateLabel" destination="xzX-hW-waL" id="YXr-nC-FI6"/>
                         <outlet property="dayQuantityLabel" destination="zW0-1t-sVY" id="pPy-5X-gSg"/>
                         <outlet property="dayRadialBar" destination="qnz-9f-S3S" id="g4g-wq-EWL"/>
                         <outlet property="dayUnitLabel" destination="2gz-XV-vwm" id="hrz-nG-8sY"/>
+                        <outlet property="monthDateLabel" destination="ELb-6p-Yyt" id="H4u-BO-kt8"/>
                         <outlet property="monthQuantityLabel" destination="uPF-jw-9iC" id="GgZ-rl-Kd9"/>
                         <outlet property="monthRadialBar" destination="f99-hQ-PP7" id="1jg-cz-QI1"/>
                         <outlet property="monthUnitLabel" destination="BXM-gy-Ie6" id="fzj-Mz-bGz"/>
                         <outlet property="weekQuantityLabel" destination="se3-Ag-iUo" id="E8f-2k-bi9"/>
                         <outlet property="weekRadialBar" destination="NrQ-ge-uie" id="Qj4-dT-Mts"/>
                         <outlet property="weekUnitLabel" destination="2Y2-VG-5qA" id="A8c-EK-aU4"/>
+                        <outlet property="yearDateLabel" destination="z58-3F-kdP" id="pfs-2q-000"/>
                         <outlet property="yearQuantityLabel" destination="B6O-89-7Dr" id="VQ6-Xs-Z3n"/>
                         <outlet property="yearRadialBar" destination="kky-wy-10W" id="zeg-dU-XJz"/>
                         <outlet property="yearUnitLabel" destination="wcP-r6-UBr" id="3iV-2Y-aaP"/>

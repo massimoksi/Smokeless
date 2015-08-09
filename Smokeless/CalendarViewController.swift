@@ -11,9 +11,9 @@ import UIKit
 
 class CalendarViewController: UIViewController {
 
-//    @IBOutlet weak var yearDateLabel: UILabel!
-//    @IBOutlet weak var monthDateLabel: UILabel!
-//    @IBOutlet weak var dayDateLabel: UILabel!
+    @IBOutlet weak var yearDateLabel: UILabel!
+    @IBOutlet weak var monthDateLabel: UILabel!
+    @IBOutlet weak var dayDateLabel: UILabel!
     
     @IBOutlet weak var yearRadialBar: RadialBarView!
     @IBOutlet weak var monthRadialBar: RadialBarView!
@@ -30,13 +30,13 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var weekUnitLabel: UILabel!
     @IBOutlet weak var dayUnitLabel: UILabel!
     
-//    private var monthFormatter: NSDateFormatter {
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.locale = NSLocale.currentLocale()
-//        dateFormatter.dateFormat = "MMMM"
-//        
-//        return dateFormatter
-//    }
+    private lazy var monthFormatter: NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "MMMM"
+        
+        return dateFormatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +53,9 @@ class CalendarViewController: UIViewController {
                 let unitFlags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitWeekOfMonth | .CalendarUnitDay
                 
                 let dateComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate)
-                //                yearDateLabel.text = String(dateComponents.year)
-                //                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
-                //                dayDateLabel.text = String(dateComponents.day)
+                yearDateLabel.text = String(dateComponents.year)
+                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
+                dayDateLabel.text = String(dateComponents.day)
                 
                 let intervalComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate, toDate: NSDate(), options: NSCalendarOptions(0))
                 
