@@ -19,52 +19,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zos-YT-ftv">
-                                <rect key="frame" x="0.0" y="66" width="600" height="668"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-dp-JcZ" customClass="JAMSVGImageView">
-                                        <rect key="frame" x="8" y="0.0" width="584" height="584"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="9yx-dp-JcZ" secondAttribute="height" multiplier="1:1" id="q46-L2-c76"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox_outline"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
-                                        <rect key="frame" x="8" y="596" width="584" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="64"/>
-                                        </variation>
-                                        <variation key="widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="92"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4J-Tj-Xfc" userLabel="VSpacer_1">
+                                <rect key="frame" x="280" y="20" width="40" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" secondItem="Zos-YT-ftv" secondAttribute="width" multiplier="1:1" constant="68" id="4uT-3e-OOq"/>
-                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="9Gg-aB-D7a"/>
-                                    <constraint firstAttribute="centerX" secondItem="9yx-dp-JcZ" secondAttribute="centerX" id="CqQ-Yb-vnz"/>
-                                    <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="9yx-dp-JcZ" secondAttribute="bottom" constant="12" id="QBm-LZ-Wvs"/>
-                                    <constraint firstAttribute="bottom" secondItem="XDd-8e-C9Q" secondAttribute="bottom" id="YAc-bC-AKE"/>
-                                    <constraint firstItem="9yx-dp-JcZ" firstAttribute="leading" secondItem="Zos-YT-ftv" secondAttribute="leading" constant="8" id="b0g-gD-dx6"/>
-                                    <constraint firstAttribute="trailing" secondItem="XDd-8e-C9Q" secondAttribute="trailing" constant="8" id="bdt-ty-Qjh"/>
+                                    <constraint firstAttribute="width" constant="40" id="mFu-mb-Acu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="oJ6-zx-mMU"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-dp-JcZ" customClass="JAMSVGImageView">
+                                <rect key="frame" x="16" y="58" width="568" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9yx-dp-JcZ" secondAttribute="height" multiplier="1:1" id="q46-L2-c76"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox_outline"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
+                                <rect key="frame" x="16" y="642" width="568" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="vCn-B9-d5c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rky-JA-cxQ" userLabel="VSpacer_2">
+                                <rect key="frame" x="280" y="718" width="40" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Zos-YT-ftv" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" id="1jg-8F-JxL"/>
-                            <constraint firstAttribute="centerY" secondItem="Zos-YT-ftv" secondAttribute="centerY" id="2ag-5c-Ifg"/>
-                            <constraint firstAttribute="trailing" secondItem="Zos-YT-ftv" secondAttribute="trailing" id="Wqh-eu-e8t"/>
+                            <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="width" secondItem="rky-JA-cxQ" secondAttribute="width" id="01s-qh-1vt"/>
+                            <constraint firstItem="rky-JA-cxQ" firstAttribute="top" secondItem="XDd-8e-C9Q" secondAttribute="bottom" constant="4" id="9xL-RP-hkK"/>
+                            <constraint firstAttribute="centerX" secondItem="Z4J-Tj-Xfc" secondAttribute="centerX" id="Log-s2-bNp"/>
+                            <constraint firstItem="9yx-dp-JcZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="Z4J-Tj-Xfc" secondAttribute="bottom" constant="4" id="M7k-74-Rn4"/>
+                            <constraint firstItem="dtm-0L-NM0" firstAttribute="top" secondItem="rky-JA-cxQ" secondAttribute="bottom" id="Qek-ud-oXx"/>
+                            <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leadingMargin" id="Ygw-nb-Rpe"/>
+                            <constraint firstItem="9yx-dp-JcZ" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leadingMargin" id="YvQ-Fz-Iyw"/>
+                            <constraint firstItem="rky-JA-cxQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="XDd-8e-C9Q" secondAttribute="bottom" constant="4" id="av9-To-IAq"/>
+                            <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="top" secondItem="EXx-5S-rQL" secondAttribute="bottom" id="cLt-Bv-ARQ"/>
+                            <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="9yx-dp-JcZ" secondAttribute="bottom" constant="16" id="emA-Em-eJY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XDd-8e-C9Q" secondAttribute="trailing" id="fxh-pe-9pG"/>
+                            <constraint firstItem="9yx-dp-JcZ" firstAttribute="top" secondItem="Z4J-Tj-Xfc" secondAttribute="bottom" constant="4" id="iCN-7I-j93"/>
+                            <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="centerX" secondItem="rky-JA-cxQ" secondAttribute="centerX" id="jyL-kk-dnP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9yx-dp-JcZ" secondAttribute="trailing" id="r82-vd-cwF"/>
+                            <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="height" secondItem="rky-JA-cxQ" secondAttribute="height" id="ulK-g9-J2j"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="SavingsNormal" id="rUc-TT-oaP">
@@ -76,7 +80,6 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="piggyBox" destination="9yx-dp-JcZ" id="aT3-6z-bcK"/>
-                        <outlet property="piggyBoxConstraint" destination="b0g-gD-dx6" id="mjc-UE-nXk"/>
                         <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="TZx-JA-Amm"/>
                     </connections>
                 </viewController>
