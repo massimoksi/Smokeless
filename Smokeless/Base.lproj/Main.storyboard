@@ -59,6 +59,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Zos-YT-ftv" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leading" id="1jg-8F-JxL"/>
