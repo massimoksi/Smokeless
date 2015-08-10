@@ -11,7 +11,6 @@
 #import "Constants.h"
 
 #import "Smokeless-Swift.h"
-#import "TTTLocalizedPluralString.h"
 
 
 @implementation HealthTableViewController
@@ -47,22 +46,22 @@
 - (NSString *)timeIntervalForAchievement:(Achievement *)achievement
 {
     if (achievement.years) {
-        return TTTLocalizedPluralString(achievement.years, @"year", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d year(s)", nil), achievement.years];
     }
     else if (achievement.months) {
-        return TTTLocalizedPluralString(achievement.months, @"month", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d month(s)", nil), achievement.months];
     }
     else if (achievement.weeks) {
-        return TTTLocalizedPluralString(achievement.weeks, @"week", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d week(s)", nil), achievement.weeks];
     }
     else if (achievement.days) {
-        return TTTLocalizedPluralString(achievement.days, @"day", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d day(s)", nil), achievement.days];
     }
     else if (achievement.hours) {
-        return TTTLocalizedPluralString(achievement.hours, @"hour", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d hour(s)", nil), achievement.hours];
     }
     else if (achievement.minutes) {
-        return TTTLocalizedPluralString(achievement.minutes, @"minute", nil);
+        return [NSString localizedStringWithFormat:NSLocalizedString(@"%d minute(s)", nil), achievement.minutes];
     }
     else {
         return nil;

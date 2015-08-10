@@ -8,8 +8,6 @@
 
 #import "SettingsTableViewController.h"
 
-#import "TTTLocalizedPluralString.h"
-
 #import "Constants.h"
 #import "Smokeless-Swift.h"
 
@@ -192,12 +190,12 @@
         switch (unit) {
             default:
             case 0:
-                unitFormat = TTTLocalizedPluralString(quantity, @"cigarette", nil);
+                unitFormat = [NSString localizedStringWithFormat:NSLocalizedString(@"%d cigarette(s)", nil), quantity];
                 break;
                 
 
             case 1:
-                unitFormat = TTTLocalizedPluralString(quantity, @"packet", nil);
+                unitFormat = [NSString localizedStringWithFormat:NSLocalizedString(@"%d packet(s)", nil), quantity];
                 break;
         }
 

@@ -24,11 +24,10 @@ extern NSString * const kLastSavingsKey;
 
 @interface UIColor (Smokeless)
 
-+ (UIColor *)sml_backgroundDarkColor;
-+ (UIColor *)sml_backgroundLightColor;
 + (UIColor *)sml_highlightColor;
-+ (UIColor *)sml_completedColor;
 + (UIColor *)sml_detailTextColor;
++ (UIColor *)sml_completedColor;
++ (UIColor *)sml_cancelColor;
 + (UIColor *)sml_backgroundCompletedColor;
 
 @end
