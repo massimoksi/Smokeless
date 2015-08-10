@@ -12,6 +12,7 @@
 
 #import "Constants.h"
 #import "JAMSVGImageView.h"
+#import "MCNumberLabel.h"
 
 
 #if DEBUG
@@ -22,7 +23,7 @@
 
 @interface SavingsViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *savedMoneyLabel;
+@property (weak, nonatomic) IBOutlet MCNumberLabel *savedMoneyLabel;
 @property (weak, nonatomic) IBOutlet JAMSVGImageView *piggyBox;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
@@ -46,6 +47,14 @@
 
 
 @implementation SavingsViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.savedMoneyLabel.formatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    self.savedMoneyLabel.formatter.locale = [NSLocale currentLocale];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
