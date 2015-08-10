@@ -67,21 +67,6 @@ class CalendarViewController: UIViewController {
                 months = intervalComponents.month
                 weeks = intervalComponents.weekOfMonth
                 days = intervalComponents.day
-                
-                yearRadialBar.value = years
-                monthRadialBar.value = months
-                weekRadialBar.value = weeks
-                dayRadialBar.value = days
-                
-                yearQuantityLabel.text = String(years)
-                monthQuantityLabel.text = String(months)
-                weekQuantityLabel.text = String(weeks)
-                dayQuantityLabel.text = String(days)
-                
-                yearUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d year(s) (unit)", comment: ""), years) as String
-                monthUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d month(s) (unit)", comment: ""), months) as String
-                weekUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d week(s) (unit)", comment: ""), weeks) as String
-                dayUnitLabel.text = NSString.localizedStringWithFormat(NSLocalizedString("%d day(s) (unit)", comment: ""), days) as String
             }
         }
         
