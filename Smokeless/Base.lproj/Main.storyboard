@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" secondItem="9yx-dp-JcZ" secondAttribute="height" multiplier="1:1" id="q46-L2-c76"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox_outline"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
