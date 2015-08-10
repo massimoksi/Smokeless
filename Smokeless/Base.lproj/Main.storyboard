@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="EXx-5S-rQL"/>
                         <viewControllerLayoutGuide type="bottom" id="dtm-0L-NM0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="88B-Q3-9br" customClass="BackgroundView" customModule="Smokeless" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="88B-Q3-9br">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

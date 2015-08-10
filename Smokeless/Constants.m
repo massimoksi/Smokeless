@@ -29,27 +29,19 @@ NSString * const kLastSavingsKey                 = @"LastSavings";
 
 @implementation UIColor (Smokeless)
 
-+ (UIColor *)sml_backgroundDarkColor
-{
-    return [UIColor colorWithRed:136.0/255.0
-                           green:201.0/255.0
-                            blue:234.0/255.0
-                           alpha:1.0];
-}
-
-+ (UIColor *)sml_backgroundLightColor
-{
-    return [UIColor colorWithRed:243.0/255.0
-                           green:246.0/255.0
-                            blue:247.0/255.0
-                           alpha:1.0];
-}
-
 + (UIColor *)sml_highlightColor
 {
-    return [UIColor colorWithRed:129.0/255.0
-                           green:186.0/255.0
+    return [UIColor colorWithRed:29.0/255.0
+                           green:195.0/255.0
                             blue:255.0/255.0
+                           alpha:1.0];
+}
+
++ (UIColor *)sml_detailTextColor
+{
+    return [UIColor colorWithRed:122.0/255.0
+                           green:122.0/255.0
+                            blue:127.0/255.0
                            alpha:1.0];
 }
 
@@ -61,11 +53,11 @@ NSString * const kLastSavingsKey                 = @"LastSavings";
                            alpha:1.0];
 }
 
-+ (UIColor *)sml_detailTextColor
++ (UIColor *)sml_cancelColor
 {
-    return [UIColor colorWithRed:122.0/255.0
-                           green:122.0/255.0
-                            blue:127.0/255.0
+    return [UIColor colorWithRed:255.0/255.0
+                           green:0.0/255.0
+                            blue:0.0/255.0
                            alpha:1.0];
 }
 
