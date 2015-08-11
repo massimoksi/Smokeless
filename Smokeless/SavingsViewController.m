@@ -17,7 +17,7 @@
 
 #if DEBUG
 // Uncomment to debug animations.
-//#define DEBUG_ANIMATION
+#define DEBUG_ANIMATION
 #endif
 
 
@@ -26,9 +26,6 @@
 @property (weak, nonatomic) IBOutlet MCNumberLabel *savedMoneyLabel;
 @property (weak, nonatomic) IBOutlet JAMSVGImageView *piggyBox;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *piggyBoxConstraint;
-
-@property (nonatomic, readonly) NSNumberFormatter *currencyFormatter;
 @property (nonatomic, readonly) AVAudioPlayer *coinsDropPlayer;
 @property (nonatomic, readonly) AVAudioPlayer *coinsTinklePlayer;
 
@@ -78,12 +75,10 @@
 
     // Initialize user interface.
     if (self.actSavings > self.oldSavings) {
-        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.oldSavings)];
-        self.piggyBoxConstraint.constant = [self spacingForSaving:self.oldSavings];
+        self.savedMoneyLabel.value = @(self.oldSavings);
     }
     else {
-        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
-        self.piggyBoxConstraint.constant = [self spacingForSaving:self.actSavings];
+        self.savedMoneyLabel.value = @(self.actSavings);
     }
     
     if (self.soundsEnabled) {
@@ -99,7 +94,6 @@
 {
     [super viewDidAppear:animated];
     
-    CGFloat spacing = [self spacingForSaving:self.actSavings];
     if (self.actSavings > self.oldSavings) {
         if (self.soundsEnabled) {
             [self.coinsDropPlayer performSelector:@selector(play)
@@ -108,62 +102,72 @@
         }
         
         NSTimeInterval animationDuration = [self animationDurationForSaving:self.actSavings - self.oldSavings];
-        
-        [self.view layoutIfNeeded];
-        [UIView animateKeyframesWithDuration:animationDuration
-                                       delay:0.0
-                                     options:0
-                                  animations:^{
-                                      [UIView addKeyframeWithRelativeStartTime:0.0
-                                                              relativeDuration:animationDuration / 2
-                                                                    animations:^{
-                                                                        self.piggyBoxConstraint.constant = spacing - 6.0;
-                                                                        [self.view layoutIfNeeded];
-                                                                    }];
-                                      [UIView addKeyframeWithRelativeStartTime:animationDuration / 2
-                                                              relativeDuration:animationDuration / 2
-                                                                    animations:^{
-                                                                        self.piggyBoxConstraint.constant = spacing;
-                                                                        [self.view layoutIfNeeded];
-                                                                    }];
-                                  }
-                                  completion:^(BOOL finished){
-                                      if (finished) {
-                                          if (self.soundsEnabled) {
-                                              [self.coinsDropPlayer stop];
-                                          }
-                                          
-                                          // Animate label updating.
-                                          CATransition *animation = [CATransition animation];
-                                          animation.duration = 1.0;
-                                          animation.type = kCATransitionFade;
-                                          animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-                                          [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
-                                          
-                                          self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
-                                      }
-                                  }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.savedMoneyLabel setValue:@(self.actSavings)
+                                  duration:animationDuration
+                                completion:^(BOOL finished){
+                                    if (finished) {
+                                        if (self.soundsEnabled) {
+                                            [self.coinsDropPlayer stop];
+                                        }
+                                    }
+                                }];
+        });
+//        [self.view layoutIfNeeded];
+//        [UIView animateKeyframesWithDuration:animationDuration
+//                                       delay:0.0
+//                                     options:0
+//                                  animations:^{
+//                                      [UIView addKeyframeWithRelativeStartTime:0.0
+//                                                              relativeDuration:animationDuration / 2
+//                                                                    animations:^{
+//                                                                        self.piggyBoxConstraint.constant = spacing - 6.0;
+//                                                                        [self.view layoutIfNeeded];
+//                                                                    }];
+//                                      [UIView addKeyframeWithRelativeStartTime:animationDuration / 2
+//                                                              relativeDuration:animationDuration / 2
+//                                                                    animations:^{
+//                                                                        self.piggyBoxConstraint.constant = spacing;
+//                                                                        [self.view layoutIfNeeded];
+//                                                                    }];
+//                                  }
+//                                  completion:^(BOOL finished){
+//                                      if (finished) {
+//                                          if (self.soundsEnabled) {
+//                                              [self.coinsDropPlayer stop];
+//                                          }
+//
+//                                          // Animate label updating.
+//                                          CATransition *animation = [CATransition animation];
+//                                          animation.duration = 1.0;
+//                                          animation.type = kCATransitionFade;
+//                                          animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//                                          [self.savedMoneyLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+//                                          
+//                                          self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+//                                      }
+//                                  }];
     }
-    else {
-        self.piggyBoxConstraint.constant = spacing;
-        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
-    }
-
-    // Add motion effects on piggy box.
-    const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
-    UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
-                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-    tiltX.minimumRelativeValue = @(-kMotionEffectValue);
-    tiltX.maximumRelativeValue = @(kMotionEffectValue);
-    UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
-                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-    tiltY.minimumRelativeValue = @(-kMotionEffectValue);
-    tiltY.maximumRelativeValue = @(kMotionEffectValue);
-    
-    self.effectGroup = [[UIMotionEffectGroup alloc] init];
-    self.effectGroup.motionEffects = @[tiltX, tiltY];
-    
-    [self.piggyBox addMotionEffect:self.effectGroup];
+//    else {
+//        self.piggyBoxConstraint.constant = spacing;
+//        self.savedMoneyLabel.text = [self.currencyFormatter stringFromNumber:@(self.actSavings)];
+//    }
+//
+//    // Add motion effects on piggy box.
+//    const NSInteger kMotionEffectValue = MIN((NSInteger)(spacing + 0.5), 20);
+//    UIInterpolatingMotionEffect *tiltX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+//                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+//    tiltX.minimumRelativeValue = @(-kMotionEffectValue);
+//    tiltX.maximumRelativeValue = @(kMotionEffectValue);
+//    UIInterpolatingMotionEffect *tiltY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+//                                                                                         type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+//    tiltY.minimumRelativeValue = @(-kMotionEffectValue);
+//    tiltY.maximumRelativeValue = @(kMotionEffectValue);
+//    
+//    self.effectGroup = [[UIMotionEffectGroup alloc] init];
+//    self.effectGroup.motionEffects = @[tiltX, tiltY];
+//    
+//    [self.piggyBox addMotionEffect:self.effectGroup];
     
     // Become first responder to react to shake gestures.
     [self becomeFirstResponder];
@@ -314,33 +318,6 @@
     }
     
     return savings;
-}
-
-- (CGFloat)spacingForSaving:(CGFloat)saving
-{
-    const CGFloat kSpacingLimitMin = 8.0;
-    const CGFloat kSpacingLimitMax = round(CGRectGetWidth(self.view.bounds) * 0.3);
-    
-    CGFloat spacing = kSpacingLimitMin;
-    if (self.price) {
-        NSInteger packets = saving / self.price + 0.5;
-        
-        if (packets < 10) {
-            spacing = kSpacingLimitMax;
-        }
-        else if (packets >= 200) {
-            spacing = kSpacingLimitMin;
-        }
-        else {
-            spacing = round(kSpacingLimitMax - ((packets - 10) * (kSpacingLimitMax - kSpacingLimitMin) / 190));
-        }
-    }
-    
-#if DEBUG
-    NSLog(@"Savings - Calculated spacing: %.1f (savings: %.2f).", spacing, saving);
-#endif
-    
-    return spacing;
 }
 
 - (NSTimeInterval)animationDurationForSaving:(CGFloat)saving

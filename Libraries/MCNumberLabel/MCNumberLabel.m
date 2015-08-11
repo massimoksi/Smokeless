@@ -51,6 +51,10 @@
     CGFloat progress = ([self.displayLink timestamp] - self.startTime)/self.duration;
     if (progress >= 1) {
         [self setValue:self.endNumber];
+        
+        if (self.completionHandler) {
+            self.completionHandler(YES);
+        }
     }
     else {
         NSNumber *value = @(progress * [self.endNumber doubleValue] + (1-progress) * [self.startNumber doubleValue]);
@@ -88,6 +92,22 @@
     else {
         [self setValue:value];
     }
+}
+
+- (void)setValue:(NSNumber *)value animated:(BOOL)animated completion:(void (^)(BOOL finished))completion
+{
+    self.completionHandler = completion;
+    
+    [self setValue:value
+          animated:animated];
+}
+
+- (void)setValue:(NSNumber *)value duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion
+{
+    self.completionHandler = completion;
+    
+    [self setValue:value
+          duration:duration];
 }
 
 @end
