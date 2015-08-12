@@ -8,7 +8,7 @@
 
 #import "SavingsViewController.h"
 
-@import AVFoundation.AVAudioPlayer;
+@import AVFoundation;
 
 #import "Constants.h"
 #import "JAMSVGImageView.h"
