@@ -37,7 +37,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q" customClass="MCNumberLabel">
                                 <rect key="frame" x="16" y="642" width="568" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
@@ -80,7 +80,7 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="piggyBox" destination="9yx-dp-JcZ" id="aT3-6z-bcK"/>
-                        <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="TZx-JA-Amm"/>
+                        <outlet property="savedMoneyLabel" destination="XDd-8e-C9Q" id="XGt-6o-bpn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw5-eu-XCR" userLabel="First Responder" sceneMemberID="firstResponder"/>

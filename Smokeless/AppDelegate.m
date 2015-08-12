@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+@import AVFoundation;
+
 #import "Constants.h"
 
 
@@ -20,6 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // http://stackoverflow.com/questions/1672602/iphone-avaudioplayer-stopping-background-music
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient
+                                           error:nil];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     // Check if user settings have already been imported.
