@@ -44,6 +44,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="vCn-B9-d5c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rky-JA-cxQ" userLabel="VSpacer_2">
@@ -51,7 +52,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.23529411850000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="width" secondItem="rky-JA-cxQ" secondAttribute="width" id="01s-qh-1vt"/>
