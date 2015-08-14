@@ -98,9 +98,13 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3nl-4X-t25">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3nl-4X-t25">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.23529411850000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="OXU-Qi-v2Q" kind="relationship" relationship="rootViewController" id="eMM-Nd-A80"/>
@@ -115,7 +119,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HealthTVC" id="OXU-Qi-v2Q" customClass="HealthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9GG-Gm-VmG">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -188,7 +192,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTVC" id="1tn-kS-Ugy" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="SER-LO-RrM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -366,7 +370,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSw-N4-FjV">
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
-                                                    <color key="onTintColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="onTintColor" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="soundsEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="iDM-8N-M3X"/>
                                                     </connections>
@@ -397,7 +401,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-uR-Keg">
                                                     <rect key="frame" x="536" y="6" width="51" height="31"/>
-                                                    <color key="onTintColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="onTintColor" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="notificationsEnabled:" destination="1tn-kS-Ugy" eventType="valueChanged" id="42V-B1-MPN"/>
                                                     </connections>
@@ -486,7 +490,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="HabitsTVC" title="Habits" id="hhk-Z1-Mbd" customClass="HabitsTableViewController" customModule="Smokeless" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ykr-ox-ZqR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.50588235290000005" green="0.72941176470000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -621,10 +625,14 @@
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SettingsActive"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dQH-2Q-P0K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dQH-2Q-P0K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.23529411850000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="1tn-kS-Ugy" kind="relationship" relationship="rootViewController" id="9M6-Ef-pUM"/>
