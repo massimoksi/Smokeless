@@ -673,7 +673,7 @@
                                                                     <constraint firstAttribute="width" constant="120" id="gPc-LY-uZb"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELb-6p-Yyt">
@@ -683,7 +683,7 @@
                                                                     <constraint firstAttribute="width" constant="160" id="e2B-X2-0ei"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-hW-waL">
@@ -693,7 +693,7 @@
                                                                     <constraint firstAttribute="width" constant="80" id="zqx-dN-gBG"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="72"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -718,7 +718,7 @@
                                                                 <color key="value" red="0.59488848009999995" green="0.81257825709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                                                <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.25718709826469421" green="0.31177276372909546" blue="0.34063500165939331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
@@ -741,7 +741,7 @@
                                                         <color key="value" red="0.0" green="0.38370672750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                                        <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.25718709826469421" green="0.31177276372909546" blue="0.34063500165939331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -764,7 +764,7 @@
                                                 <color key="value" red="0.1129924579" green="0.76494862330000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                                <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.25718709826469421" green="0.31177276372909546" blue="0.34063500165939331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -787,7 +787,7 @@
                                         <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
-                                        <color key="value" red="0.1647058874" green="0.30980393290000002" blue="0.74901962280000001" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.25718709826469421" green="0.31177276372909546" blue="0.34063500165939331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -921,7 +921,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.23529411850000001" blue="0.25098040700000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="jCU-7o-yZW" firstAttribute="centerX" secondItem="8Xz-4j-RKH" secondAttribute="centerX" id="05w-g7-iIs"/>
                             <constraint firstItem="0ga-2k-Xqd" firstAttribute="top" secondItem="jCU-7o-yZW" secondAttribute="bottom" id="2Cd-kZ-qU8"/>
