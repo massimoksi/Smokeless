@@ -94,8 +94,7 @@ class CalendarViewController: UIViewController {
         super.viewDidAppear(animated)
 
         if (years != 0 || months != 0 || weeks != 0 || days != 0) {
-            let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
-            dispatch_after(delay, dispatch_get_main_queue()) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
                 self.yearRadialBar.value = self.years
                 self.monthRadialBar.value = self.months
                 self.weekRadialBar.value = self.weeks
