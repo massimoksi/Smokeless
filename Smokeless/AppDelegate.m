@@ -81,6 +81,16 @@
     tabBarController.selectedIndex = 2;
 }
 
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
 #pragma mark - Private methods
 
 - (void)importUserSettings
