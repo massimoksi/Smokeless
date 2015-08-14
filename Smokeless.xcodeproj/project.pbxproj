@@ -461,8 +461,7 @@
 				PRODUCT_NAME = Smokeless;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
-				SUFFIX_BUNDLE_ID = .debug;
-				SUFFIX_BUNDLE_NAME = " α";
+				SUFFIX_BUNDLE_ID = "-debug";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,7 +485,6 @@
 				PRODUCT_NAME = Smokeless;
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "";
-				SUFFIX_BUNDLE_NAME = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
