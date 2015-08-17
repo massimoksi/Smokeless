@@ -5,5 +5,6 @@ target 'Smokeless' do
 
 pod 'TAOverlay'
 pod 'ABStaticTableViewController'
+pod 'JAMSVGImage'
 
 end

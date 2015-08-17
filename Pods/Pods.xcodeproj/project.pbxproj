@@ -7,76 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069E889011E89BA30D412E0CCE5A3510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
+		06CE9F8B3774CD34EA7B87862EC92F1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
+		0DC840C947538D02D648F8D96D3C252E /* JAMSVGGradientParts.h in Headers */ = {isa = PBXBuildFile; fileRef = 619DC4E13AF7A2F317F50D50DD13C9E1 /* JAMSVGGradientParts.h */; };
+		1155728896E5C63D480C4A2DA91AF0C8 /* JAMSVGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFF56745A4664FD6B95086BB4820956 /* JAMSVGImage.m */; };
+		117293D50007AA7CD0815565744A1E16 /* JAMSVGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE3F79DDA998EF734E7AD4C8171631C /* JAMSVGButton.m */; };
 		18B097F0A01D6C3217803F4D25BEA8D7 /* TAOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */; };
+		1C04BB941E5C82EF85C273D3C97261C7 /* JAMSVGUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 62183CCA9424484280648052CC8CEF49 /* JAMSVGUtilities.h */; };
+		23CE33266CFB4965A5B5A441CC4283EC /* JAMSVGImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B477062F6ABA8B873814E00302FC21A /* JAMSVGImage.h */; };
 		2D2802644E975E0F4464808FE37C4076 /* TAOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */; };
-		39EC41D6509ECB9DD89AF0A388F5BAF4 /* Pods-Smokeless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FF16916D37D18B71D26BBD3B243D8F /* Pods-Smokeless-dummy.m */; };
-		3CAF455153DF7CD4C02DC46721E51F7B /* ABStaticTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 55C0166F32EF82E744D98D4943EBA7CA /* ABStaticTableViewController.h */; };
+		32CD81C18836CF2DB02D7742B7ED5F9C /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0783FA5DF2F3BEB3A0A7A20416C442 /* JAMSVGImageView.m */; };
+		3AE50CCFD96370FCF4C24A0D72A9E0E4 /* ABStaticTableViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB633850E547AA1F78205BDFD55D2349 /* ABStaticTableViewController-dummy.m */; };
+		494F853C29F960DF87329769CA1AA4E2 /* JAMSVGButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1250A7C7A9EE3AD4FBDCBBE1D6F9EC04 /* JAMSVGButton.h */; };
+		4AADABB7D62AB901BAA577C3C1E38DEB /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F6C19CE2E51C4CF11E9B72FD1B9FC1 /* ABStaticTableViewController.m */; };
+		4F2A8F8F13FFC46AEA46C54429B2A440 /* JAMSVGParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F6AE2705A3A68EA26645098EF98CEB07 /* JAMSVGParser.h */; };
+		690B9F50D5FC4FAC413858A3C6649C2C /* JAMStyledBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA4FBF409C04FD6C11C18BB7AB11D2 /* JAMStyledBezierPath.m */; };
 		6B48B22BAAFA2E8C6846E7F5A4033CFA /* TAOverlay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */; };
+		6C2FC927374D7044AE82310E78091BD2 /* UIImage+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0AF968570A8543AD0771871164FFE /* UIImage+SVG.m */; };
 		77A4AD5F4ED686492ADAFF84A866892C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		9D12C72CE162EE3FFB4A22C5A958ACB6 /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2A00373A9EACE9D59781C2861C230 /* ABStaticTableViewController.m */; };
-		E72756627B934870CD0FA0303FD1B65A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
-		F106A137A97AB679A8449B40810F21A6 /* ABStaticTableViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC83E1C6071C0114F189615F225B857 /* ABStaticTableViewController-dummy.m */; };
-		FF83B54972DA6360DC3AE6BF2B9CD137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
+		7AF1244B36B0933FFE2E9D24765A47AE /* ABStaticTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3060AA213FFB3CD52E999C995FE35B /* ABStaticTableViewController.h */; };
+		7DF9C5F1EC3D96562F641FCD611A7D2F /* Pods-Smokeless-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB140EBEF780144EF7FD4F750C279E72 /* Pods-Smokeless-dummy.m */; };
+		8D8833D68C79F92BE2091CBA184A8259 /* JAMSVGImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7208348709D4629326647E2FA2AAC78 /* JAMSVGImageView.h */; };
+		92A428EFDB8B3C65D812DAC883A46612 /* JAMStyledBezierPath.h in Headers */ = {isa = PBXBuildFile; fileRef = CEF43F93FC94564E0B262A5F7188A890 /* JAMStyledBezierPath.h */; };
+		970B1D68ED466004353BD85047F04598 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7798C917156996E3253B11D5BEF71947 /* Foundation.framework */; };
+		996B3847F2129090FCA547520FCECB27 /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3ADE75B58F5D340746082306AF855 /* JAMSVGUtilities.m */; };
+		A80E62F4850291AB2DF2E3EEBD526A7B /* JAMSVGParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EA8FE8BF6422752CF56B300FCCD42 /* JAMSVGParser.m */; };
+		A8C6DFB8233EDC724B62E0C5E5FD4659 /* JAMStyledBezierPathFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C7306D83CD99ECC9DB7E255B38AA565 /* JAMStyledBezierPathFactory.h */; };
+		CEF4443C10A483AA74CE5CE645DEF70D /* JAMSVGGradientParts.m in Sources */ = {isa = PBXBuildFile; fileRef = A965A10C9A458944FD96821153EE2E81 /* JAMSVGGradientParts.m */; };
+		E9E8F554066EA1D86F59883658C99821 /* JAMSVGImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3ECB001AE37598688902E09A7C22ED /* JAMSVGImage-dummy.m */; };
+		F086468DBCA6B32890139161A5B3EF66 /* JAMStyledBezierPathFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5581088F14171E5ED7F6B6161F835D /* JAMStyledBezierPathFactory.m */; };
+		F874D27C026EC541DDFE6559FE357BA5 /* UIImage+SVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 214C19B602CAC8558263F0156AC43634 /* UIImage+SVG.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E83B8FAC502F17AFB478D8529DE641A4 /* PBXContainerItemProxy */ = {
+		0E9ED90BBD162516162DFD829770254A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A09D71590F75F8C487B068C636F9CB0F;
+			remoteInfo = JAMSVGImage;
+		};
+		7B4BCA4D1C8849AB1A6272225732F07C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1512126BD78F6B7D346D1E0DAEECB9DC;
 			remoteInfo = TAOverlay;
 		};
-		F0AD80D335F02B07D061A541BAA9373B /* PBXContainerItemProxy */ = {
+		F8CE79BE1634A30464696E88D858D194 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 82DA2DABFF62E554CA3BC34772F30B67;
+			remoteGlobalIDString = E2288E59063791659DBDAFEDFD33FB7E;
 			remoteInfo = ABStaticTableViewController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01C5B5E42EF5DDBBC1144BF4CEAEF8D5 /* libJAMSVGImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJAMSVGImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TAOverlay.m; path = TAOverlay/TAOverlay.m; sourceTree = "<group>"; };
-		105D7D9F1E82D4D0D1FF4D183AF35071 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
-		1BF2A00373A9EACE9D59781C2861C230 /* ABStaticTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
+		1250A7C7A9EE3AD4FBDCBBE1D6F9EC04 /* JAMSVGButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGButton.h; path = "Classes/JAMSVGImage/UI and View/JAMSVGButton.h"; sourceTree = "<group>"; };
+		214C19B602CAC8558263F0156AC43634 /* UIImage+SVG.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+SVG.h"; path = "Classes/JAMSVGImage/SVG Image/UIImage+SVG.h"; sourceTree = "<group>"; };
+		21926F26D3D6FF98F2DEFBE740FC6B8B /* TAOverlay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TAOverlay-prefix.pch"; sourceTree = "<group>"; };
 		22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TAOverlay.h; path = TAOverlay/TAOverlay.h; sourceTree = "<group>"; };
+		2946B5CEA6A59BFAC47EA27A8070804D /* ABStaticTableViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ABStaticTableViewController-Private.xcconfig"; sourceTree = "<group>"; };
+		2B477062F6ABA8B873814E00302FC21A /* JAMSVGImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGImage.h; path = "Classes/JAMSVGImage/SVG Image/JAMSVGImage.h"; sourceTree = "<group>"; };
+		30F6C19CE2E51C4CF11E9B72FD1B9FC1 /* ABStaticTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
+		3C7306D83CD99ECC9DB7E255B38AA565 /* JAMStyledBezierPathFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMStyledBezierPathFactory.h; path = "Classes/JAMSVGImage/Path and Parser/JAMStyledBezierPathFactory.h"; sourceTree = "<group>"; };
+		3DE3ADE75B58F5D340746082306AF855 /* JAMSVGUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGUtilities.m; path = Classes/JAMSVGImage/Utilities/JAMSVGUtilities.m; sourceTree = "<group>"; };
+		3ED2471911CCE6013323632B8F9DA0E7 /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
 		494ADF351246ADC4E2C248C2A3D87B55 /* TAOverlay-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TAOverlay-Private.xcconfig"; sourceTree = "<group>"; };
-		4A3E5BF215892CD911419A2D7427E62A /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C0166F32EF82E744D98D4943EBA7CA /* ABStaticTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
-		57FF16916D37D18B71D26BBD3B243D8F /* Pods-Smokeless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-dummy.m"; sourceTree = "<group>"; };
-		58C1A7B92AEC668E5404D8855817972A /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
-		675BA822F293C0698A7FAB4FAAAB2E68 /* ABStaticTableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABStaticTableViewController.xcconfig; sourceTree = "<group>"; };
-		73980B0164B471667CC146C618D19F1A /* TAOverlay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TAOverlay.xcconfig; sourceTree = "<group>"; };
+		4AF0AF968570A8543AD0771871164FFE /* UIImage+SVG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+SVG.m"; path = "Classes/JAMSVGImage/SVG Image/UIImage+SVG.m"; sourceTree = "<group>"; };
+		4B0CCF2ABDFC25E8E29406377DFAF85D /* ABStaticTableViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABStaticTableViewController-prefix.pch"; sourceTree = "<group>"; };
+		517227517285BFF2E0E93C2835F895D8 /* JAMSVGImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JAMSVGImage.xcconfig; sourceTree = "<group>"; };
+		5446AE07F99A2712C4B656954E7A2D7B /* JAMSVGImage-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JAMSVGImage-Private.xcconfig"; sourceTree = "<group>"; };
+		5DE3F79DDA998EF734E7AD4C8171631C /* JAMSVGButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGButton.m; path = "Classes/JAMSVGImage/UI and View/JAMSVGButton.m"; sourceTree = "<group>"; };
+		619DC4E13AF7A2F317F50D50DD13C9E1 /* JAMSVGGradientParts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGGradientParts.h; path = "Classes/JAMSVGImage/Path and Parser/JAMSVGGradientParts.h"; sourceTree = "<group>"; };
+		62183CCA9424484280648052CC8CEF49 /* JAMSVGUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGUtilities.h; path = Classes/JAMSVGImage/Utilities/JAMSVGUtilities.h; sourceTree = "<group>"; };
 		7798C917156996E3253B11D5BEF71947 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A5EA8FE8BF6422752CF56B300FCCD42 /* JAMSVGParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGParser.m; path = "Classes/JAMSVGImage/Path and Parser/JAMSVGParser.m"; sourceTree = "<group>"; };
 		7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTAOverlay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TAOverlay-dummy.m"; sourceTree = "<group>"; };
-		8A139E62CB878EE1735F9AEC799A1F7E /* libABStaticTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libABStaticTableViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB32BB12016131B2B9F405DC763FF2FA /* ABStaticTableViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABStaticTableViewController-prefix.pch"; sourceTree = "<group>"; };
+		86801A3FC37040AE358DF33FC68396DA /* JAMSVGImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JAMSVGImage-prefix.pch"; sourceTree = "<group>"; };
+		8928FE4D7FEA0CF1BED7E0EFA3DCD761 /* TAOverlay.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TAOverlay.bundle; path = TAOverlay/TAOverlay.bundle; sourceTree = "<group>"; };
+		89AA4FBF409C04FD6C11C18BB7AB11D2 /* JAMStyledBezierPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMStyledBezierPath.m; path = "Classes/JAMSVGImage/Path and Parser/JAMStyledBezierPath.m"; sourceTree = "<group>"; };
+		94630ACF7D3D43997DC88B75AEDA7523 /* ABStaticTableViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABStaticTableViewController.xcconfig; sourceTree = "<group>"; };
+		9C5581088F14171E5ED7F6B6161F835D /* JAMStyledBezierPathFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMStyledBezierPathFactory.m; path = "Classes/JAMSVGImage/Path and Parser/JAMStyledBezierPathFactory.m"; sourceTree = "<group>"; };
+		A3C05DDA62030FE7AAA7C5375C839FE8 /* libABStaticTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libABStaticTableViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A965A10C9A458944FD96821153EE2E81 /* JAMSVGGradientParts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGGradientParts.m; path = "Classes/JAMSVGImage/Path and Parser/JAMSVGGradientParts.m"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BFC83E1C6071C0114F189615F225B857 /* ABStaticTableViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABStaticTableViewController-dummy.m"; sourceTree = "<group>"; };
+		BB140EBEF780144EF7FD4F750C279E72 /* Pods-Smokeless-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Smokeless-dummy.m"; sourceTree = "<group>"; };
+		BB633850E547AA1F78205BDFD55D2349 /* ABStaticTableViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABStaticTableViewController-dummy.m"; sourceTree = "<group>"; };
+		BF0783FA5DF2F3BEB3A0A7A20416C442 /* JAMSVGImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGImageView.m; path = "Classes/JAMSVGImage/UI and View/JAMSVGImageView.m"; sourceTree = "<group>"; };
 		C0920586972AFA380D9589D3E79440E1 /* Pods-Smokeless-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Smokeless-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CB92C99A4EAEBEA8C4ADF5B2E558AD24 /* Pods-Smokeless-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Smokeless-acknowledgements.plist"; sourceTree = "<group>"; };
+		CD3D64BC87022AF2F30A29EFB4254ED6 /* libPods-Smokeless.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Smokeless.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF43F93FC94564E0B262A5F7188A890 /* JAMStyledBezierPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMStyledBezierPath.h; path = "Classes/JAMSVGImage/Path and Parser/JAMStyledBezierPath.h"; sourceTree = "<group>"; };
 		D7D89B1F073CCD0FF186C827EF57D1F1 /* Pods-Smokeless-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Smokeless-resources.sh"; sourceTree = "<group>"; };
-		E24D36C1D06D12D1C506B9D790583B52 /* TAOverlay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TAOverlay-prefix.pch"; sourceTree = "<group>"; };
-		EB129022E739AD28F7BF4FFD2726F2D1 /* ABStaticTableViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ABStaticTableViewController-Private.xcconfig"; sourceTree = "<group>"; };
-		F3786EE2048AADC9174468DB897EEC78 /* TAOverlay.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TAOverlay.bundle; path = TAOverlay/TAOverlay.bundle; sourceTree = "<group>"; };
+		D9D4A2C484D57AC8F03528F14CF495B1 /* Pods-Smokeless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Smokeless.debug.xcconfig"; sourceTree = "<group>"; };
+		DAFCBE2BAA3C525213FD41F50F03E114 /* TAOverlay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TAOverlay.xcconfig; sourceTree = "<group>"; };
+		DB3ECB001AE37598688902E09A7C22ED /* JAMSVGImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JAMSVGImage-dummy.m"; sourceTree = "<group>"; };
+		DE3060AA213FFB3CD52E999C995FE35B /* ABStaticTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
+		E7208348709D4629326647E2FA2AAC78 /* JAMSVGImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGImageView.h; path = "Classes/JAMSVGImage/UI and View/JAMSVGImageView.h"; sourceTree = "<group>"; };
+		EAFF56745A4664FD6B95086BB4820956 /* JAMSVGImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JAMSVGImage.m; path = "Classes/JAMSVGImage/SVG Image/JAMSVGImage.m"; sourceTree = "<group>"; };
+		F6AE2705A3A68EA26645098EF98CEB07 /* JAMSVGParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JAMSVGParser.h; path = "Classes/JAMSVGImage/Path and Parser/JAMSVGParser.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		27FB478AD66AB8E4F224CE7F730F6A93 /* Frameworks */ = {
+		8266080EA228A6D9B078DA4A67BF33F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72756627B934870CD0FA0303FD1B65A /* Foundation.framework in Frameworks */,
+				970B1D68ED466004353BD85047F04598 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E6D897CA730B62F6BC8AA4426668AA4 /* Frameworks */ = {
+		98020535E86D067ADD3FF41565386E81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF83B54972DA6360DC3AE6BF2B9CD137 /* Foundation.framework in Frameworks */,
+				069E889011E89BA30D412E0CCE5A3510 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B48D1D80F114F46E80F0A11A100119DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06CE9F8B3774CD34EA7B87862EC92F1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +157,25 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		53BFEB56C50AAF4CFD46CCF36A621B34 /* TAOverlay */ = {
+		497291F17CCC8248A9CF272F56F62531 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAFCBE2BAA3C525213FD41F50F03E114 /* TAOverlay.xcconfig */,
+				494ADF351246ADC4E2C248C2A3D87B55 /* TAOverlay-Private.xcconfig */,
+				860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */,
+				21926F26D3D6FF98F2DEFBE740FC6B8B /* TAOverlay-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TAOverlay";
+			sourceTree = "<group>";
+		};
+		4CC79734F4DE22EEAEED9BEADC22846C /* TAOverlay */ = {
 			isa = PBXGroup;
 			children = (
 				22076EB5908907E337026DFC77E4DB7C /* TAOverlay.h */,
 				025E41A8F7F527EC5A4E1E97C6182EEB /* TAOverlay.m */,
-				7FE8A17EB45A0706D774461D754ED61C /* Resources */,
-				619DEA2C52BDCFCBBBDB71462C5A2429 /* Support Files */,
+				C1565D67BC91572469689B428F24B8A9 /* Resources */,
+				497291F17CCC8248A9CF272F56F62531 /* Support Files */,
 			);
 			path = TAOverlay;
 			sourceTree = "<group>";
@@ -123,44 +193,39 @@
 			children = (
 				C0920586972AFA380D9589D3E79440E1 /* Pods-Smokeless-acknowledgements.markdown */,
 				CB92C99A4EAEBEA8C4ADF5B2E558AD24 /* Pods-Smokeless-acknowledgements.plist */,
-				57FF16916D37D18B71D26BBD3B243D8F /* Pods-Smokeless-dummy.m */,
+				BB140EBEF780144EF7FD4F750C279E72 /* Pods-Smokeless-dummy.m */,
 				D7D89B1F073CCD0FF186C827EF57D1F1 /* Pods-Smokeless-resources.sh */,
-				58C1A7B92AEC668E5404D8855817972A /* Pods-Smokeless.debug.xcconfig */,
-				105D7D9F1E82D4D0D1FF4D183AF35071 /* Pods-Smokeless.release.xcconfig */,
+				D9D4A2C484D57AC8F03528F14CF495B1 /* Pods-Smokeless.debug.xcconfig */,
+				3ED2471911CCE6013323632B8F9DA0E7 /* Pods-Smokeless.release.xcconfig */,
 			);
 			name = "Pods-Smokeless";
 			path = "Target Support Files/Pods-Smokeless";
 			sourceTree = "<group>";
 		};
-		619DEA2C52BDCFCBBBDB71462C5A2429 /* Support Files */ = {
+		62C533591F1D7DD4C31AE99854B5A44D /* JAMSVGImage */ = {
 			isa = PBXGroup;
 			children = (
-				73980B0164B471667CC146C618D19F1A /* TAOverlay.xcconfig */,
-				494ADF351246ADC4E2C248C2A3D87B55 /* TAOverlay-Private.xcconfig */,
-				860556C6A6F9E0C2588541B6F6DF90F0 /* TAOverlay-dummy.m */,
-				E24D36C1D06D12D1C506B9D790583B52 /* TAOverlay-prefix.pch */,
+				1250A7C7A9EE3AD4FBDCBBE1D6F9EC04 /* JAMSVGButton.h */,
+				5DE3F79DDA998EF734E7AD4C8171631C /* JAMSVGButton.m */,
+				619DC4E13AF7A2F317F50D50DD13C9E1 /* JAMSVGGradientParts.h */,
+				A965A10C9A458944FD96821153EE2E81 /* JAMSVGGradientParts.m */,
+				2B477062F6ABA8B873814E00302FC21A /* JAMSVGImage.h */,
+				EAFF56745A4664FD6B95086BB4820956 /* JAMSVGImage.m */,
+				E7208348709D4629326647E2FA2AAC78 /* JAMSVGImageView.h */,
+				BF0783FA5DF2F3BEB3A0A7A20416C442 /* JAMSVGImageView.m */,
+				F6AE2705A3A68EA26645098EF98CEB07 /* JAMSVGParser.h */,
+				7A5EA8FE8BF6422752CF56B300FCCD42 /* JAMSVGParser.m */,
+				62183CCA9424484280648052CC8CEF49 /* JAMSVGUtilities.h */,
+				3DE3ADE75B58F5D340746082306AF855 /* JAMSVGUtilities.m */,
+				CEF43F93FC94564E0B262A5F7188A890 /* JAMStyledBezierPath.h */,
+				89AA4FBF409C04FD6C11C18BB7AB11D2 /* JAMStyledBezierPath.m */,
+				3C7306D83CD99ECC9DB7E255B38AA565 /* JAMStyledBezierPathFactory.h */,
+				9C5581088F14171E5ED7F6B6161F835D /* JAMStyledBezierPathFactory.m */,
+				214C19B602CAC8558263F0156AC43634 /* UIImage+SVG.h */,
+				4AF0AF968570A8543AD0771871164FFE /* UIImage+SVG.m */,
+				F86CDBD6ABF330F2192FD3A2465C8350 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/TAOverlay";
-			sourceTree = "<group>";
-		};
-		72F4426A365B95C5571A4668EBCA6989 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7D6FEBC4204705C2829B716C7E1FC5B7 /* ABStaticTableViewController */,
-				53BFEB56C50AAF4CFD46CCF36A621B34 /* TAOverlay */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7D6FEBC4204705C2829B716C7E1FC5B7 /* ABStaticTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				55C0166F32EF82E744D98D4943EBA7CA /* ABStaticTableViewController.h */,
-				1BF2A00373A9EACE9D59781C2861C230 /* ABStaticTableViewController.m */,
-				A414707E137832B3505BA8D155DEA425 /* Support Files */,
-			);
-			path = ABStaticTableViewController;
+			path = JAMSVGImage;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -168,30 +233,20 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				72F4426A365B95C5571A4668EBCA6989 /* Pods */,
+				821E519E98AA19098625A125F0AD5909 /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				46C34222F80559D802AA08065EAA7F6E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7FE8A17EB45A0706D774461D754ED61C /* Resources */ = {
+		821E519E98AA19098625A125F0AD5909 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F3786EE2048AADC9174468DB897EEC78 /* TAOverlay.bundle */,
+				C65096CA04524F229B618FB87B84669F /* ABStaticTableViewController */,
+				62C533591F1D7DD4C31AE99854B5A44D /* JAMSVGImage */,
+				4CC79734F4DE22EEAEED9BEADC22846C /* TAOverlay */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A414707E137832B3505BA8D155DEA425 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				675BA822F293C0698A7FAB4FAAAB2E68 /* ABStaticTableViewController.xcconfig */,
-				EB129022E739AD28F7BF4FFD2726F2D1 /* ABStaticTableViewController-Private.xcconfig */,
-				BFC83E1C6071C0114F189615F225B857 /* ABStaticTableViewController-dummy.m */,
-				AB32BB12016131B2B9F405DC763FF2FA /* ABStaticTableViewController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ABStaticTableViewController";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -202,19 +257,86 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C1565D67BC91572469689B428F24B8A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8928FE4D7FEA0CF1BED7E0EFA3DCD761 /* TAOverlay.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C65096CA04524F229B618FB87B84669F /* ABStaticTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE3060AA213FFB3CD52E999C995FE35B /* ABStaticTableViewController.h */,
+				30F6C19CE2E51C4CF11E9B72FD1B9FC1 /* ABStaticTableViewController.m */,
+				CC17FFA3CC165523C8C4BD0E4ADC434D /* Support Files */,
+			);
+			path = ABStaticTableViewController;
+			sourceTree = "<group>";
+		};
+		CC17FFA3CC165523C8C4BD0E4ADC434D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94630ACF7D3D43997DC88B75AEDA7523 /* ABStaticTableViewController.xcconfig */,
+				2946B5CEA6A59BFAC47EA27A8070804D /* ABStaticTableViewController-Private.xcconfig */,
+				BB633850E547AA1F78205BDFD55D2349 /* ABStaticTableViewController-dummy.m */,
+				4B0CCF2ABDFC25E8E29406377DFAF85D /* ABStaticTableViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ABStaticTableViewController";
+			sourceTree = "<group>";
+		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A139E62CB878EE1735F9AEC799A1F7E /* libABStaticTableViewController.a */,
-				4A3E5BF215892CD911419A2D7427E62A /* libPods-Smokeless.a */,
+				A3C05DDA62030FE7AAA7C5375C839FE8 /* libABStaticTableViewController.a */,
+				01C5B5E42EF5DDBBC1144BF4CEAEF8D5 /* libJAMSVGImage.a */,
+				CD3D64BC87022AF2F30A29EFB4254ED6 /* libPods-Smokeless.a */,
 				7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F86CDBD6ABF330F2192FD3A2465C8350 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				517227517285BFF2E0E93C2835F895D8 /* JAMSVGImage.xcconfig */,
+				5446AE07F99A2712C4B656954E7A2D7B /* JAMSVGImage-Private.xcconfig */,
+				DB3ECB001AE37598688902E09A7C22ED /* JAMSVGImage-dummy.m */,
+				86801A3FC37040AE358DF33FC68396DA /* JAMSVGImage-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JAMSVGImage";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		094C86B574D540667F7E4D28DFA7E5FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AF1244B36B0933FFE2E9D24765A47AE /* ABStaticTableViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F8D35A1BA8D8F433E53AA565F154171 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				494F853C29F960DF87329769CA1AA4E2 /* JAMSVGButton.h in Headers */,
+				0DC840C947538D02D648F8D96D3C252E /* JAMSVGGradientParts.h in Headers */,
+				23CE33266CFB4965A5B5A441CC4283EC /* JAMSVGImage.h in Headers */,
+				8D8833D68C79F92BE2091CBA184A8259 /* JAMSVGImageView.h in Headers */,
+				4F2A8F8F13FFC46AEA46C54429B2A440 /* JAMSVGParser.h in Headers */,
+				1C04BB941E5C82EF85C273D3C97261C7 /* JAMSVGUtilities.h in Headers */,
+				92A428EFDB8B3C65D812DAC883A46612 /* JAMStyledBezierPath.h in Headers */,
+				A8C6DFB8233EDC724B62E0C5E5FD4659 /* JAMStyledBezierPathFactory.h in Headers */,
+				F874D27C026EC541DDFE6559FE357BA5 /* UIImage+SVG.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7403DA54286F2689EE24D50824197D7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,35 +345,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3CF81FD10EDD054A2524C68C77E9EEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3CAF455153DF7CD4C02DC46721E51F7B /* ABStaticTableViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		14559038EC47CBE23450E24E484979B5 /* Pods-Smokeless */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D5B394058ADE8B6DBE1A63D785D0592 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */;
-			buildPhases = (
-				76E16E95A5C3F641FF2743425AC59767 /* Sources */,
-				9E6D897CA730B62F6BC8AA4426668AA4 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				605EBB461765EEFF83A32BCFE9F21C26 /* PBXTargetDependency */,
-				CB718022E29771FF0FEB2A3C1F356F49 /* PBXTargetDependency */,
-			);
-			name = "Pods-Smokeless";
-			productName = "Pods-Smokeless";
-			productReference = 4A3E5BF215892CD911419A2D7427E62A /* libPods-Smokeless.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E47E6284E9D431778AFD42858CDB9F4 /* Build configuration list for PBXNativeTarget "TAOverlay" */;
@@ -269,13 +365,30 @@
 			productReference = 7A904B5323F1BC687117494E36123197 /* libTAOverlay.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		82DA2DABFF62E554CA3BC34772F30B67 /* ABStaticTableViewController */ = {
+		A09D71590F75F8C487B068C636F9CB0F /* JAMSVGImage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14383DD4233B0522A2E1BCA6BFDB41F3 /* Build configuration list for PBXNativeTarget "ABStaticTableViewController" */;
+			buildConfigurationList = 80529EDE1B1AA18454D910117891F961 /* Build configuration list for PBXNativeTarget "JAMSVGImage" */;
 			buildPhases = (
-				A7453356DD1EB3CD94DC54394112AEB9 /* Sources */,
-				27FB478AD66AB8E4F224CE7F730F6A93 /* Frameworks */,
-				F3CF81FD10EDD054A2524C68C77E9EEC /* Headers */,
+				C31D1D0460BB4B85BB710DC0D8718126 /* Sources */,
+				98020535E86D067ADD3FF41565386E81 /* Frameworks */,
+				4F8D35A1BA8D8F433E53AA565F154171 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JAMSVGImage;
+			productName = JAMSVGImage;
+			productReference = 01C5B5E42EF5DDBBC1144BF4CEAEF8D5 /* libJAMSVGImage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E2288E59063791659DBDAFEDFD33FB7E /* ABStaticTableViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90FDE2E07E9DB68225CDD9A3CDEC383C /* Build configuration list for PBXNativeTarget "ABStaticTableViewController" */;
+			buildPhases = (
+				30E7359715E278C0474D5EA5431901CB /* Sources */,
+				B48D1D80F114F46E80F0A11A100119DE /* Frameworks */,
+				094C86B574D540667F7E4D28DFA7E5FA /* Headers */,
 			);
 			buildRules = (
 			);
@@ -283,7 +396,26 @@
 			);
 			name = ABStaticTableViewController;
 			productName = ABStaticTableViewController;
-			productReference = 8A139E62CB878EE1735F9AEC799A1F7E /* libABStaticTableViewController.a */;
+			productReference = A3C05DDA62030FE7AAA7C5375C839FE8 /* libABStaticTableViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F61282B6BDE8408EC0A8D9C839AA3819 /* Pods-Smokeless */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12EDFFE99D341902D348C693E081F089 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */;
+			buildPhases = (
+				EE760EFFF3A334AEDACC25D02F6160E1 /* Sources */,
+				8266080EA228A6D9B078DA4A67BF33F5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4327654AD7B32E0BDABBA696A49CD3A2 /* PBXTargetDependency */,
+				9D1EF84338AF0DF8D0CBF94C3B70BCEC /* PBXTargetDependency */,
+				4B1943386A246D96E46FD82CDB210983 /* PBXTargetDependency */,
+			);
+			name = "Pods-Smokeless";
+			productName = "Pods-Smokeless";
+			productReference = CD3D64BC87022AF2F30A29EFB4254ED6 /* libPods-Smokeless.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -307,28 +439,38 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82DA2DABFF62E554CA3BC34772F30B67 /* ABStaticTableViewController */,
-				14559038EC47CBE23450E24E484979B5 /* Pods-Smokeless */,
+				E2288E59063791659DBDAFEDFD33FB7E /* ABStaticTableViewController */,
+				A09D71590F75F8C487B068C636F9CB0F /* JAMSVGImage */,
+				F61282B6BDE8408EC0A8D9C839AA3819 /* Pods-Smokeless */,
 				1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		76E16E95A5C3F641FF2743425AC59767 /* Sources */ = {
+		30E7359715E278C0474D5EA5431901CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39EC41D6509ECB9DD89AF0A388F5BAF4 /* Pods-Smokeless-dummy.m in Sources */,
+				3AE50CCFD96370FCF4C24A0D72A9E0E4 /* ABStaticTableViewController-dummy.m in Sources */,
+				4AADABB7D62AB901BAA577C3C1E38DEB /* ABStaticTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7453356DD1EB3CD94DC54394112AEB9 /* Sources */ = {
+		C31D1D0460BB4B85BB710DC0D8718126 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F106A137A97AB679A8449B40810F21A6 /* ABStaticTableViewController-dummy.m in Sources */,
-				9D12C72CE162EE3FFB4A22C5A958ACB6 /* ABStaticTableViewController.m in Sources */,
+				117293D50007AA7CD0815565744A1E16 /* JAMSVGButton.m in Sources */,
+				CEF4443C10A483AA74CE5CE645DEF70D /* JAMSVGGradientParts.m in Sources */,
+				E9E8F554066EA1D86F59883658C99821 /* JAMSVGImage-dummy.m in Sources */,
+				1155728896E5C63D480C4A2DA91AF0C8 /* JAMSVGImage.m in Sources */,
+				32CD81C18836CF2DB02D7742B7ED5F9C /* JAMSVGImageView.m in Sources */,
+				A80E62F4850291AB2DF2E3EEBD526A7B /* JAMSVGParser.m in Sources */,
+				996B3847F2129090FCA547520FCECB27 /* JAMSVGUtilities.m in Sources */,
+				690B9F50D5FC4FAC413858A3C6649C2C /* JAMStyledBezierPath.m in Sources */,
+				F086468DBCA6B32890139161A5B3EF66 /* JAMStyledBezierPathFactory.m in Sources */,
+				6C2FC927374D7044AE82310E78091BD2 /* UIImage+SVG.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,59 +483,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE760EFFF3A334AEDACC25D02F6160E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF9C5F1EC3D96562F641FCD611A7D2F /* Pods-Smokeless-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		605EBB461765EEFF83A32BCFE9F21C26 /* PBXTargetDependency */ = {
+		4327654AD7B32E0BDABBA696A49CD3A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ABStaticTableViewController;
-			target = 82DA2DABFF62E554CA3BC34772F30B67 /* ABStaticTableViewController */;
-			targetProxy = F0AD80D335F02B07D061A541BAA9373B /* PBXContainerItemProxy */;
+			target = E2288E59063791659DBDAFEDFD33FB7E /* ABStaticTableViewController */;
+			targetProxy = F8CE79BE1634A30464696E88D858D194 /* PBXContainerItemProxy */;
 		};
-		CB718022E29771FF0FEB2A3C1F356F49 /* PBXTargetDependency */ = {
+		4B1943386A246D96E46FD82CDB210983 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TAOverlay;
 			target = 1512126BD78F6B7D346D1E0DAEECB9DC /* TAOverlay */;
-			targetProxy = E83B8FAC502F17AFB478D8529DE641A4 /* PBXContainerItemProxy */;
+			targetProxy = 7B4BCA4D1C8849AB1A6272225732F07C /* PBXContainerItemProxy */;
+		};
+		9D1EF84338AF0DF8D0CBF94C3B70BCEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JAMSVGImage;
+			target = A09D71590F75F8C487B068C636F9CB0F /* JAMSVGImage */;
+			targetProxy = 0E9ED90BBD162516162DFD829770254A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0CF6B3A1872A4CAB9DCEE9BE5C1591A3 /* Debug */ = {
+		4D2986D7385667C79420070DD6DBE60F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58C1A7B92AEC668E5404D8855817972A /* Pods-Smokeless.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		40EA224AF22DCFA442E3DB8E40BD61E5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB129022E739AD28F7BF4FFD2726F2D1 /* ABStaticTableViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ABStaticTableViewController/ABStaticTableViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6EABE3C9D921E009A42C39FF30DACD46 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 105D7D9F1E82D4D0D1FF4D183AF35071 /* Pods-Smokeless.release.xcconfig */;
+			baseConfigurationReference = 3ED2471911CCE6013323632B8F9DA0E7 /* Pods-Smokeless.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -406,6 +530,38 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		7000DE04D2DE1E8B824F64E578F44EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2946B5CEA6A59BFAC47EA27A8070804D /* ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ABStaticTableViewController/ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		99F29089590E70DBB7046B603A46A070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9D4A2C484D57AC8F03528F14CF495B1 /* Pods-Smokeless.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -446,21 +602,21 @@
 			};
 			name = Debug;
 		};
-		DB7862CEE1B430806CCE4EFF2291DF6E /* Release */ = {
+		AAD275B2C127943C27A54E3FA2FD0137 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB129022E739AD28F7BF4FFD2726F2D1 /* ABStaticTableViewController-Private.xcconfig */;
+			baseConfigurationReference = 5446AE07F99A2712C4B656954E7A2D7B /* JAMSVGImage-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ABStaticTableViewController/ABStaticTableViewController-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/JAMSVGImage/JAMSVGImage-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		E339B06B684C53B6621599F70B67A3E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -477,6 +633,38 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		E691F4C29874E3F937488C720094B7CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2946B5CEA6A59BFAC47EA27A8070804D /* ABStaticTableViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ABStaticTableViewController/ABStaticTableViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC9AC700B36EB84D993480F5C695F16E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5446AE07F99A2712C4B656954E7A2D7B /* JAMSVGImage-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JAMSVGImage/JAMSVGImage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		EF7829548BC2C1DEE118E243176396AD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -531,11 +719,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14383DD4233B0522A2E1BCA6BFDB41F3 /* Build configuration list for PBXNativeTarget "ABStaticTableViewController" */ = {
+		12EDFFE99D341902D348C693E081F089 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40EA224AF22DCFA442E3DB8E40BD61E5 /* Debug */,
-				DB7862CEE1B430806CCE4EFF2291DF6E /* Release */,
+				99F29089590E70DBB7046B603A46A070 /* Debug */,
+				4D2986D7385667C79420070DD6DBE60F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -558,11 +746,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D5B394058ADE8B6DBE1A63D785D0592 /* Build configuration list for PBXNativeTarget "Pods-Smokeless" */ = {
+		80529EDE1B1AA18454D910117891F961 /* Build configuration list for PBXNativeTarget "JAMSVGImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0CF6B3A1872A4CAB9DCEE9BE5C1591A3 /* Debug */,
-				6EABE3C9D921E009A42C39FF30DACD46 /* Release */,
+				AAD275B2C127943C27A54E3FA2FD0137 /* Debug */,
+				EC9AC700B36EB84D993480F5C695F16E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90FDE2E07E9DB68225CDD9A3CDEC383C /* Build configuration list for PBXNativeTarget "ABStaticTableViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E691F4C29874E3F937488C720094B7CF /* Debug */,
+				7000DE04D2DE1E8B824F64E578F44EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
