@@ -21,6 +21,8 @@ extern NSString * const kNotificationsEnabledKey;
 extern NSString * const kUserSettingsImportedKey;
 extern NSString * const kLastSavingsKey;
 
+extern NSString * const kAppStoreURL;
+
 
 @interface UIColor (Smokeless)
 

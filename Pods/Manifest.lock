@@ -1,0 +1,16 @@
+PODS:
+  - ABStaticTableViewController (1.1.0)
+  - JAMSVGImage (1.6.0)
+  - TAOverlay (2.0.1)
+
+DEPENDENCIES:
+  - ABStaticTableViewController
+  - JAMSVGImage
+  - TAOverlay
+
+SPEC CHECKSUMS:
+  ABStaticTableViewController: ef94678753f8873d364ca6cc74ea0237b41fb848
+  JAMSVGImage: 4828b40411c5b45221e59c590e6e031934d28202
+  TAOverlay: 940e37fdb45fbc9acfc73bf1089668367e3b1be6
+
+COCOAPODS: 0.38.2
