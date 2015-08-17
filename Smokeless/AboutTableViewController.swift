@@ -13,8 +13,14 @@ import MessageUI
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
+    @IBOutlet weak var versionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let versionString = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! String
+        let buildString = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
+        versionLabel.text = NSLocalizedString("Version ", comment: "Software version.") + versionString + " (" + buildString + ")"
     }
 
     override func didReceiveMemoryWarning() {
