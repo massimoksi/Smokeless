@@ -4,5 +4,6 @@
 target 'Smokeless' do
 
 pod 'TAOverlay'
+pod 'ABStaticTableViewController'
 
 end

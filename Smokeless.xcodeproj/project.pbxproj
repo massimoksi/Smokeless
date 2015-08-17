@@ -22,7 +22,6 @@
 		564395021B59A91D003D071C /* JAMSVGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 564394F71B59A91D003D071C /* JAMSVGImageView.m */; };
 		564395031B59A91D003D071C /* JAMSVGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 564394FA1B59A91D003D071C /* JAMSVGUtilities.m */; };
 		564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 564395081B59AFCF003D071C /* Localizable.stringsdict */; };
-		564395111B5A84B5003D071C /* ABStaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564395101B5A84B5003D071C /* ABStaticTableViewController.m */; };
 		564518471B5A88CB001BF1EA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564518461B5A88CB001BF1EA /* CalendarViewController.swift */; };
 		566732051B358D3F002A1060 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566732071B358D3F002A1060 /* Localizable.strings */; };
 		566732081B358DA9002A1060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667320A1B358DA9002A1060 /* Main.storyboard */; };
@@ -73,8 +72,6 @@
 		564394F91B59A91D003D071C /* JAMSVGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAMSVGUtilities.h; sourceTree = "<group>"; };
 		564394FA1B59A91D003D071C /* JAMSVGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAMSVGUtilities.m; sourceTree = "<group>"; };
 		564395071B59AFCF003D071C /* Base */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
-		5643950F1B5A84B5003D071C /* ABStaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABStaticTableViewController.h; sourceTree = "<group>"; };
-		564395101B5A84B5003D071C /* ABStaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABStaticTableViewController.m; sourceTree = "<group>"; };
 		564518461B5A88CB001BF1EA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -161,7 +158,6 @@
 		562536BD1B41DDCF00E321A5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5643950E1B5A84B5003D071C /* ABStaticTableViewController */,
 				564394E41B59A91D003D071C /* JAMSVGImage */,
 				560340461B79501C00B6B651 /* MCNumberLabel */,
 			);
@@ -234,16 +230,6 @@
 				564394FA1B59A91D003D071C /* JAMSVGUtilities.m */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		5643950E1B5A84B5003D071C /* ABStaticTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5643950F1B5A84B5003D071C /* ABStaticTableViewController.h */,
-				564395101B5A84B5003D071C /* ABStaticTableViewController.m */,
-			);
-			name = ABStaticTableViewController;
-			path = Libraries/ABStaticTableViewController;
 			sourceTree = "<group>";
 		};
 		566B372815BBFE1E0026821C /* Smokeless */ = {
@@ -456,7 +442,6 @@
 				564394FC1B59A91D003D071C /* JAMStyledBezierPathFactory.m in Sources */,
 				564395001B59A91D003D071C /* UIImage+SVG.m in Sources */,
 				564395021B59A91D003D071C /* JAMSVGImageView.m in Sources */,
-				564395111B5A84B5003D071C /* ABStaticTableViewController.m in Sources */,
 				564394FF1B59A91D003D071C /* JAMSVGImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
