@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		560340431B794E0D00B6B651 /* PiggyBox.svg in Resources */ = {isa = PBXBuildFile; fileRef = 560340421B794E0D00B6B651 /* PiggyBox.svg */; };
-		560340491B79503400B6B651 /* MCNumberLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 560340481B79503400B6B651 /* MCNumberLabel.m */; };
 		5603408D1B81B73F00B6B651 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603408B1B7F79E800B6B651 /* AboutTableViewController.swift */; };
 		5619B4121A6C6D81005C12CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5619B4111A6C6D81005C12CF /* Images.xcassets */; };
 		564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 564395081B59AFCF003D071C /* Localizable.stringsdict */; };
@@ -38,8 +37,6 @@
 		5556DF683983AC8D3481456A /* Pods-Smokeless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smokeless.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smokeless/Pods-Smokeless.release.xcconfig"; sourceTree = "<group>"; };
 		560340411B77FF2800B6B651 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = it; path = it.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		560340421B794E0D00B6B651 /* PiggyBox.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PiggyBox.svg; path = Resources/PiggyBox.svg; sourceTree = "<group>"; };
-		560340471B79503400B6B651 /* MCNumberLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCNumberLabel.h; path = Libraries/MCNumberLabel/MCNumberLabel.h; sourceTree = "<group>"; };
-		560340481B79503400B6B651 /* MCNumberLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCNumberLabel.m; path = Libraries/MCNumberLabel/MCNumberLabel.m; sourceTree = "<group>"; };
 		5603408B1B7F79E800B6B651 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		562536DC1B41DFFE00E321A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -99,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				566B372815BBFE1E0026821C /* Smokeless */,
-				562536BD1B41DDCF00E321A5 /* Libraries */,
 				562536DE1B41E37B00E321A5 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -115,23 +111,6 @@
 				F2B920C243D92AF00DB7366C /* libPods-Smokeless.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		560340461B79501C00B6B651 /* MCNumberLabel */ = {
-			isa = PBXGroup;
-			children = (
-				560340471B79503400B6B651 /* MCNumberLabel.h */,
-				560340481B79503400B6B651 /* MCNumberLabel.m */,
-			);
-			name = MCNumberLabel;
-			sourceTree = "<group>";
-		};
-		562536BD1B41DDCF00E321A5 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				560340461B79501C00B6B651 /* MCNumberLabel */,
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 		562536DE1B41E37B00E321A5 /* Resources */ = {
@@ -333,7 +312,6 @@
 			files = (
 				564518471B5A88CB001BF1EA /* CalendarViewController.swift in Sources */,
 				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
-				560340491B79503400B6B651 /* MCNumberLabel.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
