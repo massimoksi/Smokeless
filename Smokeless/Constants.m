@@ -9,8 +9,6 @@
 #import "Constants.h"
 
 
-#pragma mark - User defaults keys
-
 NSString * const kLastCigaretteKey               = @"LastCigarette";
 NSString * const kHabitsKey                      = @"Habits";
 NSString * const kHabitsQuantityKey              = @"HabitsQuantity";
@@ -22,6 +20,8 @@ NSString * const kPlaySoundsKey                  = @"PlaySounds";
 NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
 NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
 NSString * const kLastSavingsKey                 = @"LastSavings";
+
+NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id/438027793";
 
 
 #pragma mark - Custom colors
