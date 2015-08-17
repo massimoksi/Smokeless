@@ -21,7 +21,7 @@ NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
 NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
 NSString * const kLastSavingsKey                 = @"LastSavings";
 
-NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id/438027793";
+NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id438027793";
 
 
 #pragma mark - Custom colors

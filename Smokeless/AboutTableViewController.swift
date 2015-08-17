@@ -13,15 +13,10 @@ import MessageUI
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
-    let appStoreURL = "itms-apps://itunes.apple.com/app/id"
-    let appStoreID = "438027793"
-    
-    var twitterAccessGranted = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +38,8 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
+        var followError = false
+        
         accountStore.requestAccessToAccountsWithType(accountType, options: nil) {
             granted, error in
             
@@ -60,16 +57,34 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                     request.account = account
                     request.performRequestWithHandler() {
                         responseData, urlResponse, error in
-
-                        // TODO: implement.
+                        
+                        if (error != nil) {
+                            followError = true
+                        }
+                        else {
+                            followError = false
+                        }
                     }
                 }
+                else {
+                    followError = true
+                }
             }
+            else {
+                followError = true
+            }
+        }
+        
+        if (followError) {
+            TAOverlay.showOverlayWithLabel(nil, options: .AutoHide | .OverlayTypeError | .OverlaySizeRoundedRect)
+        }
+        else {
+            TAOverlay.showOverlayWithLabel(nil, options: .AutoHide | .OverlayTypeSuccess | .OverlaySizeRoundedRect)
         }
     }
     
     func rateApp() {
-        UIApplication.sharedApplication().openURL(NSURL(string: appStoreURL + appStoreID)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: kAppStoreURL)!)
     }
     
     // MARK: - Table view delegate
