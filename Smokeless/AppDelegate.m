@@ -22,31 +22,73 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // http://stackoverflow.com/questions/1672602/iphone-avaudioplayer-stopping-background-music
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient
-                                           error:nil];
+    UIViewController *launchViewController = [[UIStoryboard storyboardWithName:@"Launch"
+                                                                        bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchVC"];
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.window.rootViewController = launchViewController;
+    [self.window makeKeyAndVisible];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
+
     // Check if user settings have already been imported.
     if (![userDefaults boolForKey:kUserSettingsImportedKey]) {
         [self importUserSettings];
     }
-    
-    // Cancel old registered local notifications if last cigarette date has been deleted.
-    if (![userDefaults objectForKey:kLastCigaretteKey]) {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    }
-    	
+
+    // Don't stop background music when playing sounds.
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient
+                                           error:nil];
+
     // Ask permission for local notifications.
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
                                                                                     categories:nil]];
-
-    // Open health tab when app is launched with local notification.
-    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (notification) {
-        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-        tabBarController.selectedIndex = 2;
+    
+    // Get basic user settings from system defaults.
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+    NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
+    NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
+    CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+    
+    // Load tab bar controller from main storyboard.
+    UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
+                                                                      bundle:nil] instantiateViewControllerWithIdentifier:@"MainTBC"];
+    
+    // If basic settings are not set, present an alert view to ask the user to jump to the settings tab.
+    if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", @"Initialize settings alert: title.")
+                                                                                 message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", @"Initialize settings alert: message.")
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", @"Initialize settings alert: action button.")
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action){
+                                                                   // Jump to the settings tab.
+                                                                   tabBarController.selectedIndex = 3;
+                                                                   self.window.rootViewController = tabBarController;
+                                                               }];
+        [alertController addAction:settingsAction];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", @"Initialize settings alert: cancel button.")
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action){
+                                                                 self.window.rootViewController = tabBarController;
+                                                             }];
+        [alertController addAction:cancelAction];
+        
+        [self.window.rootViewController presentViewController:alertController
+                                                     animated:YES
+                                                   completion:nil];
+    }
+    else {
+        // Open health tab when app is launched with local notification.
+        UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+        if (notification) {
+            // Jump to the health tab.
+            tabBarController.selectedIndex = 2;
+        }
+        
+        self.window.rootViewController = tabBarController;
     }
     
     return YES;

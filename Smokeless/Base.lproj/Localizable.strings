@@ -23,6 +23,18 @@
 "ACHIEVEMENT_13_DESCRIPTION" = "Your risk of heart attack will have returned to that of a non-smoker.";
 "ACHIEVEMENT_14_DESCRIPTION" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
 
+/* Initialize settings alert: title. */
+"INIT_SETTINGS_ALERT_TITLE" = "Welcome to Smokeless";
+
+/* Initialize settings alert: message. */
+"INIT_SETTINGS_ALERT_MESSAGE" = "Please, take some time to configure Smokeless before you can start to monitor your savings and health improvements.";
+
+/* Initialize settings alert: action button. */
+"INIT_SETTINGS_ALERT_ACTION_BUTTON" = "Configure";
+
+/* Initialize settings alert: cancel button. */
+"INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
+
 /* Disabled notifications alert: title. */
 "NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";
 
