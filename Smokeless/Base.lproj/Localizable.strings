@@ -24,7 +24,7 @@
 "ACHIEVEMENT_14_MESSAGE" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
 
 /* Initialize settings alert: title. */
-"INIT_SETTINGS_ALERT_TITLE" = "Welcome to Smokeless";
+"INIT_SETTINGS_ALERT_TITLE" = "Configure Smokeless";
 
 /* Initialize settings alert: message. */
 "INIT_SETTINGS_ALERT_MESSAGE" = "Please, take some time to configure Smokeless before you can start to monitor your savings and health improvements.";
@@ -34,6 +34,12 @@
 
 /* Initialize settings alert: cancel button. */
 "INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
+
+/* Missing settings alert: title. */
+"MISSING_SETTINGS_ALERT_TITLE" = "Smokeless is not configured";
+
+/* Missing settings alert: message. */
+"MISSING_SETTINGS_ALERT_MESSAGE" = "Smokeless configurations is not completed.\nPlease complete the configuration to start using Smokeless.";
 
 /* Disabled notifications alert: title. */
 "NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";

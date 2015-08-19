@@ -53,6 +53,7 @@
     // Load tab bar controller from main storyboard.
     UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
                                                                       bundle:nil] instantiateViewControllerWithIdentifier:@"MainTBC"];
+    tabBarController.delegate = self;
     
     // If basic settings are not set, present an alert view to ask the user to jump to the settings tab.
     if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
@@ -60,14 +61,14 @@
                                                                                  message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", @"Initialize settings alert: message.")
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", @"Initialize settings alert: action button.")
-                                                                 style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction *action){
-                                                                   // Jump to the settings tab.
-                                                                   tabBarController.selectedIndex = 3;
-                                                                   self.window.rootViewController = tabBarController;
-                                                               }];
-        [alertController addAction:settingsAction];
+        UIAlertAction *configureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", @"Initialize settings alert: action button.")
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction *action){
+                                                                    // Jump to the settings tab.
+                                                                    tabBarController.selectedIndex = 3;
+                                                                    self.window.rootViewController = tabBarController;
+                                                                }];
+        [alertController addAction:configureAction];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", @"Initialize settings alert: cancel button.")
                                                                style:UIAlertActionStyleCancel
@@ -185,6 +186,39 @@
         NSLog(@"Preferences - No old preferences found.");
 #endif
     }
+}
+
+#pragma mark - Tab bar controller delegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    if (tabBarController.selectedIndex == 3) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+        // Get basic user settings from system defaults.
+        NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+        NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
+        NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
+        CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+        
+        // If basic settings are not set, present an alert view to inform the user that some settings are missing.
+        if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", @"Missing settings alert: title.")
+                                                                                     message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", @"Missing settings alert: message.")
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                                     style:UIAlertActionStyleDefault
+                                                                   handler:nil];
+            [alertController addAction:settingsAction];
+            
+            [self.window.rootViewController presentViewController:alertController
+                                                         animated:YES
+                                                       completion:nil];
+        }
+    }
+
+    return YES;
 }
 
 @end
