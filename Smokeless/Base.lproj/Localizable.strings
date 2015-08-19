@@ -36,10 +36,10 @@
 "INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
 
 /* Missing settings alert: title. */
-"MISSING_SETTINGS_ALERT_TITLE" = "Smokeless is not configured";
+"MISSING_SETTINGS_ALERT_TITLE" = "Smokeless configurations is not completed";
 
 /* Missing settings alert: message. */
-"MISSING_SETTINGS_ALERT_MESSAGE" = "Smokeless configurations is not completed.\nPlease complete the configuration to start using Smokeless.";
+"MISSING_SETTINGS_ALERT_MESSAGE" = "Please complete the configuration to start using Smokeless.";
 
 /* Disabled notifications alert: title. */
 "NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";
