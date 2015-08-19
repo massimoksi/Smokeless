@@ -18,59 +18,59 @@ import Foundation
     private init() {
         let step1 = Achievement()
         step1.minutes = 20
-        step1.text = NSLocalizedString("ACHIEVEMENT_01_DESCRIPTION", comment: "")
+        step1.text = NSLocalizedString("ACHIEVEMENT_01_MESSAGE", comment: "")
         
         let step2 = Achievement()
         step2.hours = 8
-        step2.text = NSLocalizedString("ACHIEVEMENT_02_DESCRIPTION", comment: "")
+        step2.text = NSLocalizedString("ACHIEVEMENT_02_MESSAGE", comment: "")
 
         let step3 = Achievement()
         step3.days = 1
-        step3.text = NSLocalizedString("ACHIEVEMENT_03_DESCRIPTION", comment: "")
+        step3.text = NSLocalizedString("ACHIEVEMENT_03_MESSAGE", comment: "")
 
         let step4 = Achievement()
         step4.days = 2
-        step4.text = NSLocalizedString("ACHIEVEMENT_04_DESCRIPTION", comment: "")
+        step4.text = NSLocalizedString("ACHIEVEMENT_04_MESSAGE", comment: "")
 
         let step5 = Achievement()
         step5.days = 3
-        step5.text = NSLocalizedString("ACHIEVEMENT_05_DESCRIPTION", comment: "")
+        step5.text = NSLocalizedString("ACHIEVEMENT_05_MESSAGE", comment: "")
 
         let step6 = Achievement()
         step6.weeks = 2
-        step6.text = NSLocalizedString("ACHIEVEMENT_06_DESCRIPTION", comment: "")
+        step6.text = NSLocalizedString("ACHIEVEMENT_06_MESSAGE", comment: "")
 
         let step7 = Achievement()
         step7.months = 1
-        step7.text = NSLocalizedString("ACHIEVEMENT_07_DESCRIPTION", comment: "")
+        step7.text = NSLocalizedString("ACHIEVEMENT_07_MESSAGE", comment: "")
 
         let step8 = Achievement()
         step8.months = 3
-        step8.text = NSLocalizedString("ACHIEVEMENT_08_DESCRIPTION", comment: "")
+        step8.text = NSLocalizedString("ACHIEVEMENT_08_MESSAGE", comment: "")
 
         let step9 = Achievement()
         step9.months = 9
-        step9.text = NSLocalizedString("ACHIEVEMENT_09_DESCRIPTION", comment: "")
+        step9.text = NSLocalizedString("ACHIEVEMENT_09_MESSAGE", comment: "")
 
         let step10 = Achievement()
         step10.years = 1
-        step10.text = NSLocalizedString("ACHIEVEMENT_10_DESCRIPTION", comment: "")
+        step10.text = NSLocalizedString("ACHIEVEMENT_10_MESSAGE", comment: "")
 
         let step11 = Achievement()
         step11.years = 5
-        step11.text = NSLocalizedString("ACHIEVEMENT_11_DESCRIPTION", comment: "")
+        step11.text = NSLocalizedString("ACHIEVEMENT_11_MESSAGE", comment: "")
 
         let step12 = Achievement()
         step12.years = 10
-        step12.text = NSLocalizedString("ACHIEVEMENT_12_DESCRIPTION", comment: "")
+        step12.text = NSLocalizedString("ACHIEVEMENT_12_MESSAGE", comment: "")
 
         let step13 = Achievement()
         step13.years = 15
-        step13.text = NSLocalizedString("ACHIEVEMENT_13_DESCRIPTION", comment: "")
+        step13.text = NSLocalizedString("ACHIEVEMENT_13_MESSAGE", comment: "")
         
         let step14 = Achievement()
         step14.years = 20
-        step14.text = NSLocalizedString("ACHIEVEMENT_14_DESCRIPTION", comment: "")
+        step14.text = NSLocalizedString("ACHIEVEMENT_14_MESSAGE", comment: "")
         
         achievements = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13, step14]
     }
