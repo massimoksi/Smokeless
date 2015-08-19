@@ -24,13 +24,57 @@
 		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
 		567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B0A1A900B4F00F57F45 /* Achievement.swift */; };
 		56914B311B66C41D00857328 /* RadialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56914B301B66C41D00857328 /* RadialBarView.swift */; };
-		56A637961A6DC960001DC3A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A637951A6DC960001DC3A6 /* Constants.m */; };
+		56F1577A1B8530FC0007E588 /* SmokelessKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157791B8530FC0007E588 /* SmokelessKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56F157801B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
+		56F157891B8530FC0007E588 /* SmokelessKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F157881B8530FC0007E588 /* SmokelessKitTests.m */; };
+		56F1578C1B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
+		56F1578D1B8530FC0007E588 /* SmokelessKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56F157971B8533B30007E588 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157951B8533B30007E588 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56F157981B8533B30007E588 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F157961B8533B30007E588 /* Constants.m */; };
 		56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C01B434C20004E4816 /* CoinsDrop.aifc */; };
 		56F974C51B43520B004E4816 /* Tinkle.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 56F974C41B43520B004E4816 /* Tinkle.m4a */; };
 		56F974E71B4AC5DF004E4816 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */; };
 		56F974EB1B52A97D004E4816 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F974EA1B52A97D004E4816 /* Launch.storyboard */; };
 		EF9D98F6AD30032165279C19 /* libPods-Smokeless.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B920C243D92AF00DB7366C /* libPods-Smokeless.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56F157811B8530FC0007E588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56F157741B8530FC0007E588;
+			remoteInfo = SmokelessKit;
+		};
+		56F157831B8530FC0007E588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
+			remoteInfo = Smokeless;
+		};
+		56F1578A1B8530FC0007E588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56F157741B8530FC0007E588;
+			remoteInfo = SmokelessKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		56F157931B8530FC0007E588 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				56F1578D1B8530FC0007E588 /* SmokelessKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* Smokeless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smokeless.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +83,6 @@
 		560340421B794E0D00B6B651 /* PiggyBox.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PiggyBox.svg; path = Resources/PiggyBox.svg; sourceTree = "<group>"; };
 		5603408B1B7F79E800B6B651 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		562536DC1B41DFFE00E321A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		564395071B59AFCF003D071C /* Base */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		564518461B5A88CB001BF1EA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +103,14 @@
 		567F8B081A90033300F57F45 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		567F8B0A1A900B4F00F57F45 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		56914B301B66C41D00857328 /* RadialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialBarView.swift; sourceTree = "<group>"; };
-		56A637941A6DC960001DC3A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		56A637951A6DC960001DC3A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		56F157751B8530FC0007E588 /* SmokelessKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmokelessKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F157781B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F157791B8530FC0007E588 /* SmokelessKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmokelessKit.h; sourceTree = "<group>"; };
+		56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmokelessKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F157871B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F157881B8530FC0007E588 /* SmokelessKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmokelessKitTests.m; sourceTree = "<group>"; };
+		56F157951B8533B30007E588 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		56F157961B8533B30007E588 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56F974C01B434C20004E4816 /* CoinsDrop.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoinsDrop.aifc; path = Resources/CoinsDrop.aifc; sourceTree = "<group>"; };
 		56F974C41B43520B004E4816 /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tinkle.m4a; path = Resources/Tinkle.m4a; sourceTree = "<group>"; };
 		56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
@@ -77,7 +126,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F1578C1B8530FC0007E588 /* SmokelessKit.framework in Frameworks */,
 				EF9D98F6AD30032165279C19 /* libPods-Smokeless.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F157711B8530FC0007E588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F1577C1B8530FC0007E588 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F157801B8530FC0007E588 /* SmokelessKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* Smokeless.app */,
+				56F157751B8530FC0007E588 /* SmokelessKit.framework */,
+				56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +164,8 @@
 			children = (
 				566B372815BBFE1E0026821C /* Smokeless */,
 				562536DE1B41E37B00E321A5 /* Resources */,
+				56F157761B8530FC0007E588 /* SmokelessKit */,
+				56F157851B8530FC0007E588 /* SmokelessKitTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				8581A22302CE25DF8F224CC4 /* Pods */,
@@ -107,7 +176,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				562536DC1B41DFFE00E321A5 /* libz.dylib */,
 				F2B920C243D92AF00DB7366C /* libPods-Smokeless.a */,
 			);
 			name = Frameworks;
@@ -129,8 +197,6 @@
 				5619B4111A6C6D81005C12CF /* Images.xcassets */,
 				56F974EA1B52A97D004E4816 /* Launch.storyboard */,
 				5667320A1B358DA9002A1060 /* Main.storyboard */,
-				56A637941A6DC960001DC3A6 /* Constants.h */,
-				56A637951A6DC960001DC3A6 /* Constants.m */,
 				566B375E15BBFE1F0026821C /* AppDelegate.h */,
 				566B375F15BBFE1F0026821C /* AppDelegate.m */,
 				566B378415BC00050026821C /* Models */,
@@ -188,6 +254,42 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		56F157761B8530FC0007E588 /* SmokelessKit */ = {
+			isa = PBXGroup;
+			children = (
+				56F157791B8530FC0007E588 /* SmokelessKit.h */,
+				56F157951B8533B30007E588 /* Constants.h */,
+				56F157961B8533B30007E588 /* Constants.m */,
+				56F157771B8530FC0007E588 /* Supporting Files */,
+			);
+			path = SmokelessKit;
+			sourceTree = "<group>";
+		};
+		56F157771B8530FC0007E588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56F157781B8530FC0007E588 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56F157851B8530FC0007E588 /* SmokelessKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				56F157881B8530FC0007E588 /* SmokelessKitTests.m */,
+				56F157861B8530FC0007E588 /* Supporting Files */,
+			);
+			path = SmokelessKitTests;
+			sourceTree = "<group>";
+		};
+		56F157861B8530FC0007E588 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56F157871B8530FC0007E588 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8581A22302CE25DF8F224CC4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +301,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		56F157721B8530FC0007E588 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F157971B8533B30007E588 /* Constants.h in Headers */,
+				56F1577A1B8530FC0007E588 /* SmokelessKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1D6058900D05DD3D006BFB54 /* Smokeless */ = {
 			isa = PBXNativeTarget;
@@ -209,15 +323,54 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				63771279F0C0450909382DC4 /* Copy Pods Resources */,
+				56F157931B8530FC0007E588 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				56F1578B1B8530FC0007E588 /* PBXTargetDependency */,
 			);
 			name = Smokeless;
 			productName = Smokeless;
 			productReference = 1D6058910D05DD3D006BFB54 /* Smokeless.app */;
 			productType = "com.apple.product-type.application";
+		};
+		56F157741B8530FC0007E588 /* SmokelessKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F157921B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKit" */;
+			buildPhases = (
+				56F157701B8530FC0007E588 /* Sources */,
+				56F157711B8530FC0007E588 /* Frameworks */,
+				56F157721B8530FC0007E588 /* Headers */,
+				56F157731B8530FC0007E588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmokelessKit;
+			productName = SmokelessKit;
+			productReference = 56F157751B8530FC0007E588 /* SmokelessKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		56F1577E1B8530FC0007E588 /* SmokelessKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F157941B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKitTests" */;
+			buildPhases = (
+				56F1577B1B8530FC0007E588 /* Sources */,
+				56F1577C1B8530FC0007E588 /* Frameworks */,
+				56F1577D1B8530FC0007E588 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56F157821B8530FC0007E588 /* PBXTargetDependency */,
+				56F157841B8530FC0007E588 /* PBXTargetDependency */,
+			);
+			name = SmokelessKitTests;
+			productName = SmokelessKitTests;
+			productReference = 56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -230,6 +383,14 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = PZ7QB7SQMF;
+					};
+					56F157741B8530FC0007E588 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = PZ7QB7SQMF;
+					};
+					56F1577E1B8530FC0007E588 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
 			};
@@ -250,6 +411,8 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Smokeless */,
+				56F157741B8530FC0007E588 /* SmokelessKit */,
+				56F1577E1B8530FC0007E588 /* SmokelessKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,6 +430,20 @@
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
 				564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */,
 				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F157731B8530FC0007E588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F1577D1B8530FC0007E588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				564518471B5A88CB001BF1EA /* CalendarViewController.swift in Sources */,
-				56A637961A6DC960001DC3A6 /* Constants.m in Sources */,
 				567F8B061A90009F00F57F45 /* HealthTableViewController.m in Sources */,
 				566B377015BBFE1F0026821C /* main.m in Sources */,
 				567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */,
@@ -327,7 +503,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56F157701B8530FC0007E588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F157981B8533B30007E588 /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F1577B1B8530FC0007E588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F157891B8530FC0007E588 /* SmokelessKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56F157821B8530FC0007E588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56F157741B8530FC0007E588 /* SmokelessKit */;
+			targetProxy = 56F157811B8530FC0007E588 /* PBXContainerItemProxy */;
+		};
+		56F157841B8530FC0007E588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* Smokeless */;
+			targetProxy = 56F157831B8530FC0007E588 /* PBXContainerItemProxy */;
+		};
+		56F1578B1B8530FC0007E588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56F157741B8530FC0007E588 /* SmokelessKit */;
+			targetProxy = 56F1578A1B8530FC0007E588 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		564395081B59AFCF003D071C /* Localizable.stringsdict */ = {
@@ -414,6 +624,194 @@
 			};
 			name = Release;
 		};
+		56F1578E1B8530FC0007E588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56F1578F1B8530FC0007E588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56F157901B8530FC0007E588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smokeless.app/Smokeless";
+			};
+			name = Debug;
+		};
+		56F157911B8530FC0007E588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smokeless.app/Smokeless";
+			};
+			name = Release;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +865,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		56F157921B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F1578E1B8530FC0007E588 /* Debug */,
+				56F1578F1B8530FC0007E588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		56F157941B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F157901B8530FC0007E588 /* Debug */,
+				56F157911B8530FC0007E588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Smokeless" */ = {
 			isa = XCConfigurationList;

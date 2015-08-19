@@ -10,6 +10,7 @@ import UIKit
 import Accounts
 import Social
 import MessageUI
+import SmokelessKit
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 

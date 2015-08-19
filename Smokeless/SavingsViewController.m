@@ -9,8 +9,8 @@
 #import "SavingsViewController.h"
 
 @import AVFoundation;
+@import SmokelessKit;
 
-#import "Constants.h"
 #import "JAMSVGImageView.h"
 #import "MCNumberLabel.h"
 

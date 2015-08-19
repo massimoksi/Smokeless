@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 
 @import AVFoundation;
-
-#import "Constants.h"
+@import SmokelessKit;
 
 
 @interface AppDelegate ()

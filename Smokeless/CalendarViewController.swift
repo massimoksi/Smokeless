@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SmokelessKit
 
 class CalendarViewController: UIViewController {
 

@@ -8,7 +8,7 @@
 
 #import "HealthTableViewController.h"
 
-#import "Constants.h"
+@import SmokelessKit;
 
 #import "Smokeless-Swift.h"
 

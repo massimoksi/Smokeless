@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SmokelessKit
 
 
 class HabitsTableViewController: UITableViewController {
