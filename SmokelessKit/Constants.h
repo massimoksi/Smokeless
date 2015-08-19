@@ -16,10 +16,11 @@ extern NSString * const kHabitsUnitKey;
 extern NSString * const kHabitsPeriodKey;
 extern NSString * const kPacketSizeKey;
 extern NSString * const kPacketPriceKey;
+
 extern NSString * const kPlaySoundsKey;
 extern NSString * const kNotificationsEnabledKey;
-extern NSString * const kUserSettingsImportedKey;
 extern NSString * const kLastSavingsKey;
+extern NSString * const SLKSoftwareVersionKey;
 
 extern NSString * const kAppStoreURL;
 

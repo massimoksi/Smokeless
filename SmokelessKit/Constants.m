@@ -16,10 +16,11 @@ NSString * const kHabitsUnitKey                  = @"HabitsUnit";
 NSString * const kHabitsPeriodKey                = @"HabitsPeriod";
 NSString * const kPacketSizeKey                  = @"PacketSize";
 NSString * const kPacketPriceKey                 = @"PacketPrice";
+
 NSString * const kPlaySoundsKey                  = @"PlaySounds";
 NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
-NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
 NSString * const kLastSavingsKey                 = @"LastSavings";
+NSString * const SLKSoftwareVersionKey           = @"SLKSoftwareVersion";
 
 NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id438027793";
 

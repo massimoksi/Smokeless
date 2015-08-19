@@ -30,8 +30,12 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
+    // Get software version.
+    NSString *actSoftwareVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *oldSoftwareVersion = [userDefaults stringForKey:SLKSoftwareVersionKey];
+
     // Check if user settings have already been imported.
-    if (![userDefaults boolForKey:kUserSettingsImportedKey]) {
+    if (!oldSoftwareVersion) {
         [self importUserSettings];
     }
 
@@ -169,8 +173,6 @@
         NSError *error;
         if ([[NSFileManager defaultManager] removeItemAtPath:oldPrefsFilePath
                                                        error:&error]) {
-            [userDefaults setBool:YES
-                           forKey:kUserSettingsImportedKey];
 
 #if DEBUG
             NSLog(@"Preferences - Deleted old preferences.");
@@ -178,9 +180,6 @@
         }
     }
     else {
-        [userDefaults setBool:YES
-                       forKey:kUserSettingsImportedKey];
-        
 #if DEBUG
         NSLog(@"Preferences - No old preferences found.");
 #endif
