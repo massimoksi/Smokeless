@@ -9,7 +9,7 @@
 @import UIKit;
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 

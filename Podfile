@@ -6,5 +6,6 @@ target 'Smokeless' do
 pod 'TAOverlay'
 pod 'ABStaticTableViewController'
 pod 'JAMSVGImage'
+pod 'MCNumberLabel', :path => '../Libraries/MCNumberLabel'
 
 end
