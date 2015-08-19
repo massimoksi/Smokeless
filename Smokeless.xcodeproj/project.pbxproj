@@ -96,7 +96,6 @@
 		566B375815BBFE1F0026821C /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		566B375E15BBFE1F0026821C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566B375F15BBFE1F0026821C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		566B378715BC00BB0026821C /* Smokeless-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Smokeless-Info.plist"; sourceTree = "<group>"; };
 		567F8B041A90009F00F57F45 /* HealthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTableViewController.h; sourceTree = "<group>"; };
 		567F8B051A90009F00F57F45 /* HealthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTableViewController.m; sourceTree = "<group>"; };
 		567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smokeless-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		56F157881B8530FC0007E588 /* SmokelessKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmokelessKitTests.m; sourceTree = "<group>"; };
 		56F157951B8533B30007E588 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		56F157961B8533B30007E588 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		56F157991B8536A00007E588 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56F974C01B434C20004E4816 /* CoinsDrop.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoinsDrop.aifc; path = Resources/CoinsDrop.aifc; sourceTree = "<group>"; };
 		56F974C41B43520B004E4816 /* Tinkle.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tinkle.m4a; path = Resources/Tinkle.m4a; sourceTree = "<group>"; };
 		56F974E61B4AC5DF004E4816 /* AchievementsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
@@ -210,8 +210,8 @@
 		566B378115BBFE670026821C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56F157991B8536A00007E588 /* Info.plist */,
 				566B374015BBFE1F0026821C /* main.m */,
-				566B378715BC00BB0026821C /* Smokeless-Info.plist */,
 				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 				566732071B358D3F002A1060 /* Localizable.strings */,
 				564395081B59AFCF003D071C /* Localizable.stringsdict */,
@@ -585,7 +585,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_THUMB_SUPPORT = NO;
-				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
+				INFOPLIST_FILE = Smokeless/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
@@ -612,7 +612,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				GCC_THUMB_SUPPORT = NO;
-				INFOPLIST_FILE = "Smokeless/Smokeless-Info.plist";
+				INFOPLIST_FILE = Smokeless/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Smokeless;
