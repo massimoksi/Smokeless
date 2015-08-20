@@ -9,20 +9,22 @@
 @import UIKit;
 
 
-extern NSString * const kLastCigaretteKey;
-extern NSString * const kHabitsKey;
-extern NSString * const kHabitsQuantityKey;
-extern NSString * const kHabitsUnitKey;
-extern NSString * const kHabitsPeriodKey;
-extern NSString * const kPacketSizeKey;
-extern NSString * const kPacketPriceKey;
+extern NSString * const SLKAppGroupID;
 
-extern NSString * const kPlaySoundsKey;
-extern NSString * const kNotificationsEnabledKey;
-extern NSString * const kLastSavingsKey;
+extern NSString * const SLKLastCigaretteKey;
+extern NSString * const SLKHabitsKey;
+extern NSString * const SLKHabitsQuantityKey;
+extern NSString * const SLKHabitsUnitKey;
+extern NSString * const SLKHabitsPeriodKey;
+extern NSString * const SLKPacketSizeKey;
+extern NSString * const SLKPacketPriceKey;
+
+extern NSString * const SLKPlaySoundsKey;
+extern NSString * const SLKNotificationsEnabledKey;
+extern NSString * const SLKLastSavingsKey;
 extern NSString * const SLKSoftwareVersionKey;
 
-extern NSString * const kAppStoreURL;
+extern NSString * const SLKAppStoreURL;
 
 
 @interface UIColor (Smokeless)

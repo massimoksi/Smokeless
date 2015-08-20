@@ -48,10 +48,10 @@
                                                                                     categories:nil]];
     
     // Get basic user settings from system defaults.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-    NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
-    NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
-    CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+    NSDate *lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
+    NSDictionary *smokingHabits = [userDefaults dictionaryForKey:SLKHabitsKey];
+    NSInteger packetSize = [userDefaults integerForKey:SLKPacketSizeKey];
+    CGFloat packetPrice = [userDefaults floatForKey:SLKPacketPriceKey];
     
     // Load tab bar controller from main storyboard.
     UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
@@ -100,7 +100,7 @@
             UIAlertAction *rateAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_ACTION_BUTTON", nil)
                                                                  style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction *action){
-                                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppStoreURL]];
+                                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SLKAppStoreURL]];
                                                                }];
             [alertController addAction:rateAction];
 
@@ -186,17 +186,17 @@
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
         [userDefaults setObject:oldPrefs[@"LastCigarette"]
-                         forKey:kLastCigaretteKey];
+                         forKey:SLKLastCigaretteKey];
         [userDefaults setObject:oldPrefs[@"Habits"]
-                         forKey:kHabitsKey];
+                         forKey:SLKHabitsKey];
         [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
-                          forKey:kPacketSizeKey];
+                          forKey:SLKPacketSizeKey];
         [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
-                        forKey:kPacketPriceKey];
+                        forKey:SLKPacketPriceKey];
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
-                       forKey:kPlaySoundsKey];
+                       forKey:SLKPlaySoundsKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
-                       forKey:kNotificationsEnabledKey];
+                       forKey:SLKNotificationsEnabledKey];
         
 #if DEBUG
         NSLog(@"Preferences - Imported %@.", [userDefaults dictionaryRepresentation]);
@@ -227,10 +227,10 @@
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
         // Get basic user settings from system defaults.
-        NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-        NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
-        NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
-        CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+        NSDate *lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
+        NSDictionary *smokingHabits = [userDefaults dictionaryForKey:SLKHabitsKey];
+        NSInteger packetSize = [userDefaults integerForKey:SLKPacketSizeKey];
+        CGFloat packetPrice = [userDefaults floatForKey:SLKPacketPriceKey];
         
         // If basic settings are not set, present an alert view to inform the user that some settings are missing.
         if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {

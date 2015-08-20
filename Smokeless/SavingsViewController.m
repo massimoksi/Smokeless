@@ -72,17 +72,17 @@
     
     // Read settings from user defaults.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-    self.habits = [userDefaults dictionaryForKey:kHabitsKey];
-    self.price = [userDefaults floatForKey:kPacketPriceKey];
-    self.size = [userDefaults integerForKey:kPacketSizeKey];
-    self.soundsEnabled = [userDefaults boolForKey:kPlaySoundsKey];
+    self.lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
+    self.habits = [userDefaults dictionaryForKey:SLKHabitsKey];
+    self.price = [userDefaults floatForKey:SLKPacketPriceKey];
+    self.size = [userDefaults integerForKey:SLKPacketSizeKey];
+    self.soundsEnabled = [userDefaults boolForKey:SLKPlaySoundsKey];
 
 #ifdef DEBUG_ANIMATION
     self.oldSavings = 50.0;
     self.actSavings = 200.0;
 #else
-    self.oldSavings = [userDefaults floatForKey:kLastSavingsKey];
+    self.oldSavings = [userDefaults floatForKey:SLKLastSavingsKey];
     self.actSavings = [self totalSavings];
 #endif
 
@@ -138,7 +138,7 @@
 {
 #ifndef DEBUG_ANIMATION
     [[NSUserDefaults standardUserDefaults] setFloat:self.actSavings
-                                             forKey:kLastSavingsKey];
+                                             forKey:SLKLastSavingsKey];
 #endif
 
     [self resignFirstResponder];
@@ -231,9 +231,9 @@
                                                           options:0] day];
         
         if (self.habits) {
-            NSInteger quantity = [self.habits[kHabitsQuantityKey] integerValue];
-            NSInteger unit = ([self.habits[kHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
-            NSInteger period = ([self.habits[kHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
+            NSInteger quantity = [self.habits[SLKHabitsQuantityKey] integerValue];
+            NSInteger unit = ([self.habits[SLKHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
+            NSInteger period = ([self.habits[SLKHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
             
             // Calculate the number of cigarettes/day.
             CGFloat cigarettesPerDay = quantity * unit / period;

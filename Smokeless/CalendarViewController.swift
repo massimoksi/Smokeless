@@ -52,7 +52,7 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as? NSDate {
+        if let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(SLKLastCigaretteKey) as? NSDate {
             yearDateLabel.hidden = false
             monthDateLabel.hidden = false
             dayDateLabel.hidden = false

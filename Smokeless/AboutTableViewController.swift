@@ -91,7 +91,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     }
     
     func rateApp() {
-        UIApplication.sharedApplication().openURL(NSURL(string: kAppStoreURL)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: SLKAppStoreURL)!)
     }
     
     // MARK: - Table view delegate

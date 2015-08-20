@@ -8,21 +8,26 @@
 
 #import "Constants.h"
 
+#if DEBUG
+NSString * const SLKAppGroupID                  = @"group.com.gmail.massimoperi.Smokeless-debug";
+#else
+NSString * const SLKAppGroupID                  = @"group.com.gmail.massimoperi.Smokeless";
+#endif
 
-NSString * const kLastCigaretteKey               = @"LastCigarette";
-NSString * const kHabitsKey                      = @"Habits";
-NSString * const kHabitsQuantityKey              = @"HabitsQuantity";
-NSString * const kHabitsUnitKey                  = @"HabitsUnit";
-NSString * const kHabitsPeriodKey                = @"HabitsPeriod";
-NSString * const kPacketSizeKey                  = @"PacketSize";
-NSString * const kPacketPriceKey                 = @"PacketPrice";
+NSString * const SLKLastCigaretteKey            = @"SLKLastCigarette";
+NSString * const SLKHabitsKey                   = @"SLKHabits";
+NSString * const SLKHabitsQuantityKey           = @"SLKHabitsQuantity";
+NSString * const SLKHabitsUnitKey               = @"SLKHabitsUnit";
+NSString * const SLKHabitsPeriodKey             = @"SLKHabitsPeriod";
+NSString * const SLKPacketSizeKey               = @"SLKPacketSize";
+NSString * const SLKPacketPriceKey              = @"SLKPacketPrice";
 
-NSString * const kPlaySoundsKey                  = @"PlaySounds";
-NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
-NSString * const kLastSavingsKey                 = @"LastSavings";
-NSString * const SLKSoftwareVersionKey           = @"SLKSoftwareVersion";
+NSString * const SLKPlaySoundsKey               = @"SLKPlaySounds";
+NSString * const SLKNotificationsEnabledKey     = @"SLKNotificationsEnabled";
+NSString * const SLKLastSavingsKey              = @"SLKLastSavings";
+NSString * const SLKSoftwareVersionKey          = @"SLKSoftwareVersion";
 
-NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id438027793";
+NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com/app/id438027793";
 
 
 #pragma mark - Custom colors
