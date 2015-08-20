@@ -127,11 +127,11 @@
 
         // Check if notifications are enabled by user settings, if not alert user.
         if (([[UIApplication sharedApplication] currentUserNotificationSettings].types & UIUserNotificationTypeAlert) == 0) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", @"Disabled notifications alert: title.")
-                                                                                     message:NSLocalizedString(@"NOTIFICATIONS_ALERT_MESSAGE", @"Disabled notifications alert: message.")
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"NOTIFICATIONS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
 
-            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Open Settings", @"Disabled notifications alert: button.")
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_ACTION_BUTTON", nil)
                                                                      style:UIAlertActionStyleDefault
                                                                    handler:^(UIAlertAction *action){
                                                                         // Open Settings.

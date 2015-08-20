@@ -60,11 +60,11 @@
     
     // If basic settings are not set, present an alert view to ask the user to jump to the settings tab.
     if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", @"Initialize settings alert: title.")
-                                                                                 message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", @"Initialize settings alert: message.")
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", nil)
+                                                                                 message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", nil)
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *configureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", @"Initialize settings alert: action button.")
+        UIAlertAction *configureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", nil)
                                                                   style:UIAlertActionStyleDefault
                                                                 handler:^(UIAlertAction *action){
                                                                     // Jump to the settings tab.
@@ -73,7 +73,7 @@
                                                                 }];
         [alertController addAction:configureAction];
         
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", @"Initialize settings alert: cancel button.")
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", nil)
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction *action){
                                                                  self.window.rootViewController = tabBarController;
@@ -234,8 +234,8 @@
         
         // If basic settings are not set, present an alert view to inform the user that some settings are missing.
         if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", @"Missing settings alert: title.")
-                                                                                     message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", @"Missing settings alert: message.")
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
 
             UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
