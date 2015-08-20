@@ -7,7 +7,7 @@
 */
 
 
-// Achievements
+// Achievements.
 "ACHIEVEMENT_01_MESSAGE" = "Pressure and heart rate will return to a normal level.";
 "ACHIEVEMENT_02_MESSAGE" = "Oxygen in your blood will return to a normal level while the nicotine will decrease up to over 93%.";
 "ACHIEVEMENT_03_MESSAGE" = "The level of carbon monoxide in your blood will return to a normal level.";
@@ -22,6 +22,12 @@
 "ACHIEVEMENT_12_MESSAGE" = "Your risk of lung cancer will have returned to that of a non-smoker.";
 "ACHIEVEMENT_13_MESSAGE" = "Your risk of heart attack will have returned to that of a non-smoker.";
 "ACHIEVEMENT_14_MESSAGE" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
+
+// What's new alert view.
+"WHATS_NEW_ALERT_TITLE" = "What's New in Smokeless 2.0.0?";
+"WHATS_NEW_ALERT_MESSAGE" = "● Universal app.\n● Completely redisegned for iOS 8+.\n● Today extension.\n● Bugfixes and improvements.";
+"WHATS_NEW_ALERT_ACTION_BUTTON" = "Rate ♥︎";
+"WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continue";
 
 /* Initialize settings alert: title. */
 "INIT_SETTINGS_ALERT_TITLE" = "Configure Smokeless";

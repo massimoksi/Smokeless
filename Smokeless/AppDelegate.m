@@ -83,9 +83,42 @@
         [self.window.rootViewController presentViewController:alertController
                                                      animated:YES
                                                    completion:nil];
+        
+        // Save actual software version in user defaults.
+        // If the app is starting without user settings, it's probably a newly installed app,
+        // threfore there's no need to display the "What's New" alert view
+        [userDefaults setObject:actSoftwareVersion
+                         forKey:SLKSoftwareVersionKey];
     }
     else {
-        // Open health tab when app is launched with local notification.
+        // Show "What's New" alert view if running a newer version.
+        if (![actSoftwareVersion isEqualToString:oldSoftwareVersion]) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"WHATS_NEW_ALERT_MESSAGE", nil)
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *rateAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_ACTION_BUTTON", nil)
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action){
+                                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppStoreURL]];
+                                                               }];
+            [alertController addAction:rateAction];
+
+            UIAlertAction *continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_CANCEL_BUTTON", nil)
+                                                                     style:UIAlertActionStyleCancel
+                                                                   handler:nil];
+            [alertController addAction:continueAction];
+            
+            [self.window.rootViewController presentViewController:alertController
+                                                         animated:YES
+                                                       completion:^{
+                                                           // Save actual software version in user defaults.
+                                                           [userDefaults setObject:actSoftwareVersion
+                                                                            forKey:SLKSoftwareVersionKey];
+                                                       }];
+        }
+        
+        // Open health tab when app is launched from a local notification.
         UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
         if (notification) {
             // Jump to the health tab.
