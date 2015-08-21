@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 
 @import AVFoundation;
-
-#import "Constants.h"
+@import SmokelessKit;
 
 
 @interface AppDelegate ()
@@ -31,8 +30,12 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
+    // Get software version.
+    NSString *actSoftwareVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *oldSoftwareVersion = [userDefaults stringForKey:SLKSoftwareVersionKey];
+
     // Check if user settings have already been imported.
-    if (![userDefaults boolForKey:kUserSettingsImportedKey]) {
+    if (!oldSoftwareVersion) {
         [self importUserSettings];
     }
 
@@ -45,10 +48,10 @@
                                                                                     categories:nil]];
     
     // Get basic user settings from system defaults.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-    NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
-    NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
-    CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
+    NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
+    NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
+    CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
     
     // Load tab bar controller from main storyboard.
     UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
@@ -57,11 +60,11 @@
     
     // If basic settings are not set, present an alert view to ask the user to jump to the settings tab.
     if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", @"Initialize settings alert: title.")
-                                                                                 message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", @"Initialize settings alert: message.")
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", nil)
+                                                                                 message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", nil)
                                                                           preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *configureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", @"Initialize settings alert: action button.")
+        UIAlertAction *configureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_ACTION_BUTTON", nil)
                                                                   style:UIAlertActionStyleDefault
                                                                 handler:^(UIAlertAction *action){
                                                                     // Jump to the settings tab.
@@ -70,7 +73,7 @@
                                                                 }];
         [alertController addAction:configureAction];
         
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", @"Initialize settings alert: cancel button.")
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_CANCEL_BUTTON", nil)
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction *action){
                                                                  self.window.rootViewController = tabBarController;
@@ -80,9 +83,42 @@
         [self.window.rootViewController presentViewController:alertController
                                                      animated:YES
                                                    completion:nil];
+        
+        // Save actual software version in user defaults.
+        // If the app is starting without user settings, it's probably a newly installed app,
+        // threfore there's no need to display the "What's New" alert view
+        [userDefaults setObject:actSoftwareVersion
+                         forKey:SLKSoftwareVersionKey];
     }
     else {
-        // Open health tab when app is launched with local notification.
+        // Show "What's New" alert view if running a newer version.
+        if (![actSoftwareVersion isEqualToString:oldSoftwareVersion]) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"WHATS_NEW_ALERT_MESSAGE", nil)
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *rateAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_ACTION_BUTTON", nil)
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action){
+                                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:SLKAppStoreURL]];
+                                                               }];
+            [alertController addAction:rateAction];
+
+            UIAlertAction *continueAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"WHATS_NEW_ALERT_CANCEL_BUTTON", nil)
+                                                                     style:UIAlertActionStyleCancel
+                                                                   handler:nil];
+            [alertController addAction:continueAction];
+            
+            [self.window.rootViewController presentViewController:alertController
+                                                         animated:YES
+                                                       completion:^{
+                                                           // Save actual software version in user defaults.
+                                                           [userDefaults setObject:actSoftwareVersion
+                                                                            forKey:SLKSoftwareVersionKey];
+                                                       }];
+        }
+        
+        // Open health tab when app is launched from a local notification.
         UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
         if (notification) {
             // Jump to the health tab.
@@ -149,18 +185,15 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:oldPrefsFilePath]) {
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
-        [userDefaults setObject:oldPrefs[@"LastCigarette"]
-                         forKey:kLastCigaretteKey];
-        [userDefaults setObject:oldPrefs[@"Habits"]
-                         forKey:kHabitsKey];
-        [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
-                          forKey:kPacketSizeKey];
-        [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
-                        forKey:kPacketPriceKey];
+        [SmokelessManager sharedManager].lastCigaretteDate = oldPrefs[@"LastCigarette"];
+        [SmokelessManager sharedManager].smokingHabits = oldPrefs[@"Habits"];
+        [SmokelessManager sharedManager].packetSize = [oldPrefs[@"PacketSize"] integerValue];
+        [SmokelessManager sharedManager].packetPrice = [oldPrefs[@"PacketPrice"] doubleValue];
+        
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
-                       forKey:kPlaySoundsKey];
+                       forKey:SLKPlaySoundsKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
-                       forKey:kNotificationsEnabledKey];
+                       forKey:SLKNotificationsEnabledKey];
         
 #if DEBUG
         NSLog(@"Preferences - Imported %@.", [userDefaults dictionaryRepresentation]);
@@ -170,8 +203,6 @@
         NSError *error;
         if ([[NSFileManager defaultManager] removeItemAtPath:oldPrefsFilePath
                                                        error:&error]) {
-            [userDefaults setBool:YES
-                           forKey:kUserSettingsImportedKey];
 
 #if DEBUG
             NSLog(@"Preferences - Deleted old preferences.");
@@ -179,9 +210,6 @@
         }
     }
     else {
-        [userDefaults setBool:YES
-                       forKey:kUserSettingsImportedKey];
-        
 #if DEBUG
         NSLog(@"Preferences - No old preferences found.");
 #endif
@@ -193,18 +221,16 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (tabBarController.selectedIndex == 3) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
         // Get basic user settings from system defaults.
-        NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
-        NSDictionary *smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
-        NSInteger packetSize = [userDefaults integerForKey:kPacketSizeKey];
-        CGFloat packetPrice = [userDefaults floatForKey:kPacketPriceKey];
+        NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
+        NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
+        NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
+        CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
         
         // If basic settings are not set, present an alert view to inform the user that some settings are missing.
         if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", @"Missing settings alert: title.")
-                                                                                     message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", @"Missing settings alert: message.")
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
 
             UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)

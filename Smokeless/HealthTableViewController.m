@@ -8,7 +8,7 @@
 
 #import "HealthTableViewController.h"
 
-#import "Constants.h"
+@import SmokelessKit;
 
 #import "Smokeless-Swift.h"
 
@@ -27,7 +27,7 @@
 {
     [super viewWillAppear:animated];
     
-    [[AchievementsManager sharedManager] updateForDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]];
+    [[AchievementsManager sharedManager] updateForDate:[[SmokelessManager sharedManager] lastCigaretteDate]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -37,7 +37,7 @@
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:[[AchievementsManager sharedManager] nextAchievementIndex]
                                                      inSection:0];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView scrollToRowAtIndexPath:nextIndexPath
                               atScrollPosition:UITableViewRowAnimationTop
                                       animated:YES];
@@ -92,7 +92,7 @@
     cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"After %@", nil), [self timeIntervalForAchievement:achievement]] ;
     cell.subtitleLabel.text = achievement.text;
 
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
 
     CGFloat percentage = [achievement completionPercentageFromDate:lastCigaretteDate];
     cell.completionProgressView.value = percentage;

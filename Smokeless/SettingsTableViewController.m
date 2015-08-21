@@ -8,7 +8,8 @@
 
 #import "SettingsTableViewController.h"
 
-#import "Constants.h"
+@import SmokelessKit;
+
 #import "Smokeless-Swift.h"
 
 
@@ -110,7 +111,7 @@
 - (IBAction)soundsEnabled:(UISwitch *)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:sender.on
-                                            forKey:kPlaySoundsKey];
+                                            forKey:SLKPlaySoundsKey];
 }
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
@@ -118,19 +119,19 @@
     BOOL enabled = sender.on;
 
     [[NSUserDefaults standardUserDefaults] setBool:enabled
-                                            forKey:kNotificationsEnabledKey];
+                                            forKey:SLKNotificationsEnabledKey];
 
     // Schedule/unschedule local notifications.
     if (enabled) {
-        [[AchievementsManager sharedManager] registerNotificationsForDate:[[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey]];
+        [[AchievementsManager sharedManager] registerNotificationsForDate:[SmokelessManager sharedManager].lastCigaretteDate];
 
         // Check if notifications are enabled by user settings, if not alert user.
         if (([[UIApplication sharedApplication] currentUserNotificationSettings].types & UIUserNotificationTypeAlert) == 0) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", @"Disabled notifications alert: title.")
-                                                                                     message:NSLocalizedString(@"NOTIFICATIONS_ALERT_MESSAGE", @"Disabled notifications alert: message.")
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", nil)
+                                                                                     message:NSLocalizedString(@"NOTIFICATIONS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
 
-            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Open Settings", @"Disabled notifications alert: button.")
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_ACTION_BUTTON", nil)
                                                                      style:UIAlertActionStyleDefault
                                                                    handler:^(UIAlertAction *action){
                                                                         // Open Settings.
@@ -159,22 +160,22 @@
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:kLastCigaretteKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
     self.lastCigaretteDateLabel.text = (lastCigaretteDate) ? [self.dateFormatter stringFromDate:lastCigaretteDate] : @"";
 
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
-    self.smokingHabits = [userDefaults dictionaryForKey:kHabitsKey];
+    self.smokingHabits = [SmokelessManager sharedManager].smokingHabits;
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
     
-    NSInteger size = [userDefaults integerForKey:kPacketSizeKey];
+    NSInteger size = [SmokelessManager sharedManager].packetSize;
     self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
     
-    CGFloat price = [userDefaults floatForKey:kPacketPriceKey];
+    CGFloat price = [SmokelessManager sharedManager].packetPrice;
     self.packetPriceTextField.text = (price != 0.0) ? [self.currencyFormatter stringFromNumber:@(price)] : @"";
     
-    self.soundsSwitch.on = [userDefaults boolForKey:kPlaySoundsKey];
-    self.notificationsSwitch.on = [userDefaults boolForKey:kNotificationsEnabledKey];
+    self.soundsSwitch.on = [userDefaults boolForKey:SLKPlaySoundsKey];
+    self.notificationsSwitch.on = [userDefaults boolForKey:SLKNotificationsEnabledKey];
 }
 
 - (NSString *)formattedStringFromSmokingHabits:(NSDictionary *)smokingHabits
@@ -182,9 +183,9 @@
     NSString *formattedString = @" ";
     
     if (smokingHabits) {
-        NSInteger quantity = [smokingHabits[kHabitsQuantityKey] integerValue];
-        NSInteger unit = [smokingHabits[kHabitsUnitKey] integerValue];
-        NSInteger period = [smokingHabits[kHabitsPeriodKey] integerValue];
+        NSInteger quantity = [smokingHabits[SLKHabitsQuantityKey] integerValue];
+        NSInteger unit = [smokingHabits[SLKHabitsUnitKey] integerValue];
+        NSInteger period = [smokingHabits[SLKHabitsPeriodKey] integerValue];
         
         NSString *unitFormat;
         switch (unit) {
@@ -226,14 +227,15 @@
     UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", @"Reset alert: button.")
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
+                                                            [SmokelessManager sharedManager].lastCigaretteDate = nil;
+                                                            [SmokelessManager sharedManager].smokingHabits = nil;
+                                                            [SmokelessManager sharedManager].packetSize = 0;
+                                                            [SmokelessManager sharedManager].packetPrice = 0.0;
+
                                                             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                                                            [userDefaults removeObjectForKey:kLastCigaretteKey];
-                                                            [userDefaults removeObjectForKey:kHabitsKey];
-                                                            [userDefaults removeObjectForKey:kPacketSizeKey];
-                                                            [userDefaults removeObjectForKey:kPacketPriceKey];
-                                                            [userDefaults removeObjectForKey:kPlaySoundsKey];
-                                                            [userDefaults removeObjectForKey:kNotificationsEnabledKey];
-                                                            [userDefaults removeObjectForKey:kLastSavingsKey];
+                                                            [userDefaults removeObjectForKey:SLKPlaySoundsKey];
+                                                            [userDefaults removeObjectForKey:SLKNotificationsEnabledKey];
+                                                            [userDefaults removeObjectForKey:SLKLastSavingsKey];
 
                                                             [self updateSettings];
 
@@ -273,8 +275,7 @@
                 if ([self isRowVisible:lastCigaretteIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
 
-                    [[NSUserDefaults standardUserDefaults] setObject:actualDate
-                                                              forKey:kLastCigaretteKey];
+                    [SmokelessManager sharedManager].lastCigaretteDate = actualDate;
 
                     // Cancel scheduled local notifications.
                     UIApplication *application = [UIApplication sharedApplication];
@@ -283,7 +284,7 @@
                     }
 
                     // Register local notifications for the new date if they are enabled.
-                    if ([[NSUserDefaults standardUserDefaults] boolForKey:kNotificationsEnabledKey]) {
+                    if ([[NSUserDefaults standardUserDefaults] boolForKey:SLKNotificationsEnabledKey]) {
                         [[AchievementsManager sharedManager] registerNotificationsForDate:actualDate];
                     }
 
@@ -293,7 +294,7 @@
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
                 }
                 else {
-                    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:kLastCigaretteKey];
+                    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
                     if (lastCigaretteDate) {
                         self.lastCigaretteDatePicker.date = lastCigaretteDate;
                     }
@@ -357,15 +358,13 @@
 {
     self.navigationItem.rightBarButtonItem = nil;
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (textField == self.packetSizeTextField) {
         NSInteger size = [textField.text integerValue];
         if (size != 0) {
-            [userDefaults setInteger:size
-                              forKey:kPacketSizeKey];
+            [SmokelessManager sharedManager].packetSize = size;
         }
         else {
-            [userDefaults removeObjectForKey:kPacketSizeKey];
+            [SmokelessManager sharedManager].packetSize = 0;
             
             self.packetSizeTextField.text = @"";
         }
@@ -373,13 +372,12 @@
     else if (textField == self.packetPriceTextField) {
         CGFloat price = [textField.text floatValue];
         if (price != 0.0) {
-            [userDefaults setFloat:price
-                            forKey:kPacketPriceKey];
+            [SmokelessManager sharedManager].packetPrice = price;
             
             textField.text = [self.currencyFormatter stringFromNumber:@(price)];
         }
         else {
-            [userDefaults removeObjectForKey:kPacketPriceKey];
+            [SmokelessManager sharedManager].packetPrice = 0.0;
             
             self.packetPriceTextField.text = @"";
         }

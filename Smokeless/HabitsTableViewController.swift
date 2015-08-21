@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SmokelessKit
 
 
 class HabitsTableViewController: UITableViewController {
@@ -61,10 +62,10 @@ class HabitsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let habits = NSUserDefaults.standardUserDefaults().dictionaryForKey(kHabitsKey) {
-            quantity = habits[kHabitsQuantityKey] as! Int
-            unit = habits[kHabitsUnitKey] as! Int
-            period = habits[kHabitsPeriodKey] as! Int
+        if let habits = SmokelessManager.sharedManager().smokingHabits {
+            quantity = habits[SLKHabitsQuantityKey] as! Int
+            unit = habits[SLKHabitsUnitKey] as! Int
+            period = habits[SLKHabitsPeriodKey] as! Int
         }
         
         quantityStepper.value = Double(quantity)
@@ -76,12 +77,12 @@ class HabitsTableViewController: UITableViewController {
         // Save new settings to user defaults.
         if ((quantity != 0) && (unit != -1) && (period != -1)) {
             let habits = [
-                kHabitsQuantityKey: quantity,
-                kHabitsUnitKey: unit,
-                kHabitsPeriodKey: period
+                SLKHabitsQuantityKey: quantity,
+                SLKHabitsUnitKey: unit,
+                SLKHabitsPeriodKey: period
             ]
         
-            NSUserDefaults.standardUserDefaults().setObject(habits, forKey: kHabitsKey)
+            SmokelessManager.sharedManager().smokingHabits = habits
         }
     }
     

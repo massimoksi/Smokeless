@@ -9,19 +9,16 @@
 #import "Constants.h"
 
 
-NSString * const kLastCigaretteKey               = @"LastCigarette";
-NSString * const kHabitsKey                      = @"Habits";
-NSString * const kHabitsQuantityKey              = @"HabitsQuantity";
-NSString * const kHabitsUnitKey                  = @"HabitsUnit";
-NSString * const kHabitsPeriodKey                = @"HabitsPeriod";
-NSString * const kPacketSizeKey                  = @"PacketSize";
-NSString * const kPacketPriceKey                 = @"PacketPrice";
-NSString * const kPlaySoundsKey                  = @"PlaySounds";
-NSString * const kNotificationsEnabledKey        = @"NotificationsEnabled";
-NSString * const kUserSettingsImportedKey        = @"UserSettingsImported";
-NSString * const kLastSavingsKey                 = @"LastSavings";
+NSString * const SLKHabitsQuantityKey           = @"SLKHabitsQuantity";
+NSString * const SLKHabitsUnitKey               = @"SLKHabitsUnit";
+NSString * const SLKHabitsPeriodKey             = @"SLKHabitsPeriod";
 
-NSString * const kAppStoreURL                    = @"itms-apps://itunes.apple.com/app/id438027793";
+NSString * const SLKPlaySoundsKey               = @"SLKPlaySounds";
+NSString * const SLKNotificationsEnabledKey     = @"SLKNotificationsEnabled";
+NSString * const SLKLastSavingsKey              = @"SLKLastSavings";
+NSString * const SLKSoftwareVersionKey          = @"SLKSoftwareVersion";
+
+NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com/app/id438027793";
 
 
 #pragma mark - Custom colors
