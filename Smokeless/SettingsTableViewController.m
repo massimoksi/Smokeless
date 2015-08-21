@@ -227,12 +227,12 @@
     UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", @"Reset alert: button.")
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
-                                                            // TODO: remove user defaults instead of setting them to 0.
-                                                            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                                                             [SmokelessManager sharedManager].lastCigaretteDate = nil;
                                                             [SmokelessManager sharedManager].smokingHabits = nil;
                                                             [SmokelessManager sharedManager].packetSize = 0;
                                                             [SmokelessManager sharedManager].packetPrice = 0.0;
+
+                                                            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                                                             [userDefaults removeObjectForKey:SLKPlaySoundsKey];
                                                             [userDefaults removeObjectForKey:SLKNotificationsEnabledKey];
                                                             [userDefaults removeObjectForKey:SLKLastSavingsKey];
@@ -364,7 +364,6 @@
             [SmokelessManager sharedManager].packetSize = size;
         }
         else {
-            // TODO: [userDefaults removeObjectForKey:SLKPacketSizeKey];
             [SmokelessManager sharedManager].packetSize = 0;
             
             self.packetSizeTextField.text = @"";
@@ -378,7 +377,6 @@
             textField.text = [self.currencyFormatter stringFromNumber:@(price)];
         }
         else {
-            // TODO: [userDefaults removeObjectForKey:SLKPacketPriceKey];
             [SmokelessManager sharedManager].packetPrice = 0.0;
             
             self.packetPriceTextField.text = @"";

@@ -85,8 +85,13 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     if (![lastCigaretteDate isEqualToDate:_lastCigaretteDate]) {
         _lastCigaretteDate = lastCigaretteDate;
 
-        [self.userSettings setObject:_lastCigaretteDate
-                              forKey:SLKLastCigaretteKey];
+        if (_lastCigaretteDate) {
+            [self.userSettings setObject:_lastCigaretteDate
+                                  forKey:SLKLastCigaretteKey];
+        }
+        else {
+            [self.userSettings removeObjectForKey:SLKLastCigaretteKey];
+        }
     }
 }
 
@@ -100,8 +105,13 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     if (![smokingHabits isEqualToDictionary:_smokingHabits]) {
         _smokingHabits = smokingHabits;
         
-        [self.userSettings setObject:_smokingHabits
-                              forKey:SLKHabitsKey];
+        if (_smokingHabits) {
+            [self.userSettings setObject:_smokingHabits
+                                  forKey:SLKHabitsKey];
+        }
+        else {
+            [self.userSettings removeObjectForKey:SLKHabitsKey];
+        }
     }
 }
 
@@ -115,8 +125,13 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     if (packetSize != _packetSize) {
         _packetSize = packetSize;
 
-        [self.userSettings setInteger:_packetSize
-                               forKey:SLKPacketSizeKey];
+        if (packetSize > 0) {
+            [self.userSettings setInteger:_packetSize
+                                   forKey:SLKPacketSizeKey];
+        }
+        else {
+            [self.userSettings removeObjectForKey:SLKPacketSizeKey];
+        }
     }
 }
 
@@ -130,8 +145,13 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     if (packetPrice != _packetPrice) {
         _packetPrice = packetPrice;
         
-        [self.userSettings setDouble:_packetPrice
-                              forKey:SLKPacketPriceKey];
+        if (_packetPrice >= 0.0) {
+            [self.userSettings setDouble:_packetPrice
+                                  forKey:SLKPacketPriceKey];
+        }
+        else {
+            [self.userSettings removeObjectForKey:SLKPacketPriceKey];
+        }
     }
 }
 
