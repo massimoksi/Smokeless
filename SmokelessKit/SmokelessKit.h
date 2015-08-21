@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "Constants.h"
+#import "SmokelessManager.h"
 
 //! Project version number for SmokelessKit.
 FOUNDATION_EXPORT double SmokelessKitVersionNumber;

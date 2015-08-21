@@ -72,10 +72,10 @@
     
     // Read settings from user defaults.
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
-    self.habits = [userDefaults dictionaryForKey:SLKHabitsKey];
-    self.price = [userDefaults floatForKey:SLKPacketPriceKey];
-    self.size = [userDefaults integerForKey:SLKPacketSizeKey];
+    self.lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
+    self.habits = [SmokelessManager sharedManager].smokingHabits;
+    self.size = [SmokelessManager sharedManager].packetSize;
+    self.price = [SmokelessManager sharedManager].packetPrice;
     self.soundsEnabled = [userDefaults boolForKey:SLKPlaySoundsKey];
 
 #ifdef DEBUG_ANIMATION

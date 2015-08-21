@@ -123,7 +123,7 @@
 
     // Schedule/unschedule local notifications.
     if (enabled) {
-        [[AchievementsManager sharedManager] registerNotificationsForDate:[[NSUserDefaults standardUserDefaults] objectForKey:SLKLastCigaretteKey]];
+        [[AchievementsManager sharedManager] registerNotificationsForDate:[SmokelessManager sharedManager].lastCigaretteDate];
 
         // Check if notifications are enabled by user settings, if not alert user.
         if (([[UIApplication sharedApplication] currentUserNotificationSettings].types & UIUserNotificationTypeAlert) == 0) {
@@ -160,18 +160,18 @@
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
     self.lastCigaretteDateLabel.text = (lastCigaretteDate) ? [self.dateFormatter stringFromDate:lastCigaretteDate] : @"";
 
     self.lastCigaretteDatePicker.maximumDate = [NSDate date];
     
-    self.smokingHabits = [userDefaults dictionaryForKey:SLKHabitsKey];
+    self.smokingHabits = [SmokelessManager sharedManager].smokingHabits;
     self.smokingHabitsLabel.text = [self formattedStringFromSmokingHabits:self.smokingHabits];
     
-    NSInteger size = [userDefaults integerForKey:SLKPacketSizeKey];
+    NSInteger size = [SmokelessManager sharedManager].packetSize;
     self.packetSizeTextField.text = (size != 0) ? [NSString stringWithFormat:@"%zd", size] : @"";
     
-    CGFloat price = [userDefaults floatForKey:SLKPacketPriceKey];
+    CGFloat price = [SmokelessManager sharedManager].packetPrice;
     self.packetPriceTextField.text = (price != 0.0) ? [self.currencyFormatter stringFromNumber:@(price)] : @"";
     
     self.soundsSwitch.on = [userDefaults boolForKey:SLKPlaySoundsKey];
@@ -227,11 +227,12 @@
     UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", @"Reset alert: button.")
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
+                                                            // TODO: remove user defaults instead of setting them to 0.
                                                             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                                                            [userDefaults removeObjectForKey:SLKLastCigaretteKey];
-                                                            [userDefaults removeObjectForKey:SLKHabitsKey];
-                                                            [userDefaults removeObjectForKey:SLKPacketSizeKey];
-                                                            [userDefaults removeObjectForKey:SLKPacketPriceKey];
+                                                            [SmokelessManager sharedManager].lastCigaretteDate = nil;
+                                                            [SmokelessManager sharedManager].smokingHabits = nil;
+                                                            [SmokelessManager sharedManager].packetSize = 0;
+                                                            [SmokelessManager sharedManager].packetPrice = 0.0;
                                                             [userDefaults removeObjectForKey:SLKPlaySoundsKey];
                                                             [userDefaults removeObjectForKey:SLKNotificationsEnabledKey];
                                                             [userDefaults removeObjectForKey:SLKLastSavingsKey];
@@ -274,8 +275,7 @@
                 if ([self isRowVisible:lastCigaretteIndexPath]) {
                     NSDate *actualDate = self.lastCigaretteDatePicker.date;
 
-                    [[NSUserDefaults standardUserDefaults] setObject:actualDate
-                                                              forKey:SLKLastCigaretteKey];
+                    [SmokelessManager sharedManager].lastCigaretteDate = actualDate;
 
                     // Cancel scheduled local notifications.
                     UIApplication *application = [UIApplication sharedApplication];
@@ -294,7 +294,7 @@
                     self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
                 }
                 else {
-                    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:SLKLastCigaretteKey];
+                    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
                     if (lastCigaretteDate) {
                         self.lastCigaretteDatePicker.date = lastCigaretteDate;
                     }
@@ -358,15 +358,14 @@
 {
     self.navigationItem.rightBarButtonItem = nil;
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (textField == self.packetSizeTextField) {
         NSInteger size = [textField.text integerValue];
         if (size != 0) {
-            [userDefaults setInteger:size
-                              forKey:SLKPacketSizeKey];
+            [SmokelessManager sharedManager].packetSize = size;
         }
         else {
-            [userDefaults removeObjectForKey:SLKPacketSizeKey];
+            // TODO: [userDefaults removeObjectForKey:SLKPacketSizeKey];
+            [SmokelessManager sharedManager].packetSize = 0;
             
             self.packetSizeTextField.text = @"";
         }
@@ -374,13 +373,13 @@
     else if (textField == self.packetPriceTextField) {
         CGFloat price = [textField.text floatValue];
         if (price != 0.0) {
-            [userDefaults setFloat:price
-                            forKey:SLKPacketPriceKey];
+            [SmokelessManager sharedManager].packetPrice = price;
             
             textField.text = [self.currencyFormatter stringFromNumber:@(price)];
         }
         else {
-            [userDefaults removeObjectForKey:SLKPacketPriceKey];
+            // TODO: [userDefaults removeObjectForKey:SLKPacketPriceKey];
+            [SmokelessManager sharedManager].packetPrice = 0.0;
             
             self.packetPriceTextField.text = @"";
         }

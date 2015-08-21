@@ -27,7 +27,7 @@
 {
     [super viewWillAppear:animated];
     
-    [[AchievementsManager sharedManager] updateForDate:[[NSUserDefaults standardUserDefaults] objectForKey:SLKLastCigaretteKey]];
+    [[AchievementsManager sharedManager] updateForDate:[[SmokelessManager sharedManager] lastCigaretteDate]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,7 +92,7 @@
     cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"After %@", nil), [self timeIntervalForAchievement:achievement]] ;
     cell.subtitleLabel.text = achievement.text;
 
-    NSDate *lastCigaretteDate = [[NSUserDefaults standardUserDefaults] objectForKey:SLKLastCigaretteKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
 
     CGFloat percentage = [achievement completionPercentageFromDate:lastCigaretteDate];
     cell.completionProgressView.value = percentage;

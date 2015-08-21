@@ -62,7 +62,7 @@ class HabitsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let habits = NSUserDefaults.standardUserDefaults().dictionaryForKey(SLKHabitsKey) {
+        if let habits = SmokelessManager.sharedManager().smokingHabits {
             quantity = habits[SLKHabitsQuantityKey] as! Int
             unit = habits[SLKHabitsUnitKey] as! Int
             period = habits[SLKHabitsPeriodKey] as! Int
@@ -82,7 +82,7 @@ class HabitsTableViewController: UITableViewController {
                 SLKHabitsPeriodKey: period
             ]
         
-            NSUserDefaults.standardUserDefaults().setObject(habits, forKey: SLKHabitsKey)
+            SmokelessManager.sharedManager().smokingHabits = habits
         }
     }
     

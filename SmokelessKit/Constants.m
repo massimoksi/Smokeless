@@ -8,19 +8,10 @@
 
 #import "Constants.h"
 
-#if DEBUG
-NSString * const SLKAppGroupID                  = @"group.com.gmail.massimoperi.Smokeless-debug";
-#else
-NSString * const SLKAppGroupID                  = @"group.com.gmail.massimoperi.Smokeless";
-#endif
 
-NSString * const SLKLastCigaretteKey            = @"SLKLastCigarette";
-NSString * const SLKHabitsKey                   = @"SLKHabits";
 NSString * const SLKHabitsQuantityKey           = @"SLKHabitsQuantity";
 NSString * const SLKHabitsUnitKey               = @"SLKHabitsUnit";
 NSString * const SLKHabitsPeriodKey             = @"SLKHabitsPeriod";
-NSString * const SLKPacketSizeKey               = @"SLKPacketSize";
-NSString * const SLKPacketPriceKey              = @"SLKPacketPrice";
 
 NSString * const SLKPlaySoundsKey               = @"SLKPlaySounds";
 NSString * const SLKNotificationsEnabledKey     = @"SLKNotificationsEnabled";

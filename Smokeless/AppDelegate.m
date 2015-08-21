@@ -48,10 +48,10 @@
                                                                                     categories:nil]];
     
     // Get basic user settings from system defaults.
-    NSDate *lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
-    NSDictionary *smokingHabits = [userDefaults dictionaryForKey:SLKHabitsKey];
-    NSInteger packetSize = [userDefaults integerForKey:SLKPacketSizeKey];
-    CGFloat packetPrice = [userDefaults floatForKey:SLKPacketPriceKey];
+    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
+    NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
+    NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
+    CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
     
     // Load tab bar controller from main storyboard.
     UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
@@ -185,14 +185,11 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:oldPrefsFilePath]) {
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
-        [userDefaults setObject:oldPrefs[@"LastCigarette"]
-                         forKey:SLKLastCigaretteKey];
-        [userDefaults setObject:oldPrefs[@"Habits"]
-                         forKey:SLKHabitsKey];
-        [userDefaults setInteger:[oldPrefs[@"PacketSize"] integerValue]
-                          forKey:SLKPacketSizeKey];
-        [userDefaults setFloat:[oldPrefs[@"PacketPrice"] floatValue]
-                        forKey:SLKPacketPriceKey];
+        [SmokelessManager sharedManager].lastCigaretteDate = oldPrefs[@"LastCigarette"];
+        [SmokelessManager sharedManager].smokingHabits = oldPrefs[@"Habits"];
+        [SmokelessManager sharedManager].packetSize = [oldPrefs[@"PacketSize"] integerValue];
+        [SmokelessManager sharedManager].packetPrice = [oldPrefs[@"PacketPrice"] doubleValue];
+        
         [userDefaults setBool:oldPrefs[@"ShakeEnabled"]
                        forKey:SLKPlaySoundsKey];
         [userDefaults setBool:oldPrefs[@"NotificationsEnabled"]
@@ -224,13 +221,11 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (tabBarController.selectedIndex == 3) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
         // Get basic user settings from system defaults.
-        NSDate *lastCigaretteDate = [userDefaults objectForKey:SLKLastCigaretteKey];
-        NSDictionary *smokingHabits = [userDefaults dictionaryForKey:SLKHabitsKey];
-        NSInteger packetSize = [userDefaults integerForKey:SLKPacketSizeKey];
-        CGFloat packetPrice = [userDefaults floatForKey:SLKPacketPriceKey];
+        NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
+        NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
+        NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
+        CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
         
         // If basic settings are not set, present an alert view to inform the user that some settings are missing.
         if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
