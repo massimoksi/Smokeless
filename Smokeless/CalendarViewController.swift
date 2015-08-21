@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SmokelessKit
 
 class CalendarViewController: UIViewController {
 
@@ -52,7 +52,7 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let lastCigaretteDate = NSUserDefaults.standardUserDefaults().objectForKey(kLastCigaretteKey) as? NSDate {
+        if let lastCigaretteDate = SmokelessManager.sharedManager().lastCigaretteDate {
             yearDateLabel.hidden = false
             monthDateLabel.hidden = false
             dayDateLabel.hidden = false

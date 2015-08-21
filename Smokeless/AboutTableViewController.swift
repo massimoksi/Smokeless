@@ -10,6 +10,7 @@ import UIKit
 import Accounts
 import Social
 import MessageUI
+import SmokelessKit
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
@@ -90,7 +91,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     }
     
     func rateApp() {
-        UIApplication.sharedApplication().openURL(NSURL(string: kAppStoreURL)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: SLKAppStoreURL)!)
     }
     
     // MARK: - Table view delegate
