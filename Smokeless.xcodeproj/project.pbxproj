@@ -28,6 +28,7 @@
 		56DAD9D21B87D6F500C2937C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DAD9D11B87D6F500C2937C /* TodayViewController.swift */; };
 		56DAD9D41B87D6F500C2937C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */; };
 		56DAD9D71B87D6F500C2937C /* SmokelessToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		56DAD9DC1B87D80C00C2937C /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
 		56F1577A1B8530FC0007E588 /* SmokelessKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157791B8530FC0007E588 /* SmokelessKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56F157801B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
 		56F157891B8530FC0007E588 /* SmokelessKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F157881B8530FC0007E588 /* SmokelessKitTests.m */; };
@@ -166,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DAD9DC1B87D80C00C2937C /* SmokelessKit.framework in Frameworks */,
 				56DAD9CD1B87D6F500C2937C /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,13 +770,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = SmokelessToday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUFFIX_BUNDLE_ID = "-debug";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -807,12 +810,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = SmokelessToday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUFFIX_BUNDLE_ID = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -820,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -872,6 +877,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
