@@ -58,17 +58,7 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     return self;
 }
 
-#pragma mark - Accessors
-
-- (NSUserDefaults *)userSettings
-{
-    static NSUserDefaults *_userSettings = nil;
-    if (!_userSettings) {
-        _userSettings = [[NSUserDefaults alloc] initWithSuiteName:SLKAppGroupID];
-    }
-    
-    return _userSettings;
-}
+#pragma mark - Properties
 
 @synthesize lastCigaretteDate = _lastCigaretteDate;
 @synthesize smokingHabits = _smokingHabits;
@@ -84,7 +74,7 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
 {
     if (![lastCigaretteDate isEqualToDate:_lastCigaretteDate]) {
         _lastCigaretteDate = lastCigaretteDate;
-
+        
         if (_lastCigaretteDate) {
             [self.userSettings setObject:_lastCigaretteDate
                                   forKey:SLKLastCigaretteKey];
@@ -124,7 +114,7 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
 {
     if (packetSize != _packetSize) {
         _packetSize = packetSize;
-
+        
         if (packetSize > 0) {
             [self.userSettings setInteger:_packetSize
                                    forKey:SLKPacketSizeKey];
@@ -152,6 +142,28 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
         else {
             [self.userSettings removeObjectForKey:SLKPacketPriceKey];
         }
+    }
+}
+
+#pragma mark - Accessors
+
+- (NSUserDefaults *)userSettings
+{
+    static NSUserDefaults *_userSettings = nil;
+    if (!_userSettings) {
+        _userSettings = [[NSUserDefaults alloc] initWithSuiteName:SLKAppGroupID];
+    }
+    
+    return _userSettings;
+}
+
+- (BOOL)isConfigured
+{
+    if (_lastCigaretteDate && _smokingHabits && (_packetSize > 0) && (_packetPrice > 0.0)) {
+        return YES;
+    }
+    else {
+        return NO;
     }
 }
 

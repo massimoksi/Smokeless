@@ -47,19 +47,13 @@
     [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
                                                                                     categories:nil]];
     
-    // Get basic user settings from system defaults.
-    NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
-    NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
-    NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
-    CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
-    
     // Load tab bar controller from main storyboard.
     UITabBarController *tabBarController = [[UIStoryboard storyboardWithName:@"Main"
                                                                       bundle:nil] instantiateViewControllerWithIdentifier:@"MainTBC"];
     tabBarController.delegate = self;
     
     // If basic settings are not set, present an alert view to ask the user to jump to the settings tab.
-    if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
+    if (![SmokelessManager sharedManager].isConfigured) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"INIT_SETTINGS_ALERT_TITLE", nil)
                                                                                  message:NSLocalizedString(@"INIT_SETTINGS_ALERT_MESSAGE", nil)
                                                                           preferredStyle:UIAlertControllerStyleAlert];
@@ -221,14 +215,8 @@
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
     if (tabBarController.selectedIndex == 3) {
-        // Get basic user settings from system defaults.
-        NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
-        NSDictionary *smokingHabits = [SmokelessManager sharedManager].smokingHabits;
-        NSInteger packetSize = [SmokelessManager sharedManager].packetSize;
-        CGFloat packetPrice = [SmokelessManager sharedManager].packetPrice;
-        
         // If basic settings are not set, present an alert view to inform the user that some settings are missing.
-        if (!lastCigaretteDate || !smokingHabits || (packetSize <= 0) || (packetPrice <= 0.0)) {
+        if (![SmokelessManager sharedManager].isConfigured) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"MISSING_SETTINGS_ALERT_TITLE", nil)
                                                                                      message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];

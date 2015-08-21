@@ -18,4 +18,6 @@
 @property (nonatomic) NSInteger packetSize;
 @property (nonatomic) double packetPrice;
 
+@property (nonatomic, readonly) BOOL isConfigured;
+
 @end
