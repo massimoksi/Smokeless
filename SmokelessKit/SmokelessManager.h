@@ -20,4 +20,12 @@
 
 @property (nonatomic, readonly) BOOL isConfigured;
 
+- (NSDateComponents *)lastCigaretteDateComponents;
+
+- (NSDateComponents *)nonSmokingInterval;
+- (NSString *)formattedNonSmokingInterval;
+
+- (double)totalSavings;
+- (NSString *)formattedTotalSavings;
+
 @end

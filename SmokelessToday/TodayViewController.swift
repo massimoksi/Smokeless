@@ -12,15 +12,23 @@ import SmokelessKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
+    @IBOutlet weak var lastCigaretteLabel: UILabel!
+    @IBOutlet weak var savingsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        
+        lastCigaretteLabel.text = SmokelessManager.sharedManager().formattedNonSmokingInterval()
+        savingsLabel.text = SmokelessManager.sharedManager().formattedTotalSavings()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Widget providing
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         // Perform any setup necessary in order to update the view.
@@ -30,6 +38,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
 
         completionHandler(NCUpdateResult.NewData)
+    }
+    
+    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsets(
+            top: defaultMarginInsets.top,
+            left: defaultMarginInsets.left - 30.0,
+            bottom: defaultMarginInsets.bottom,
+            right: defaultMarginInsets.right
+        )
     }
     
 }

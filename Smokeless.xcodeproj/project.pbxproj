@@ -29,6 +29,9 @@
 		56DAD9D41B87D6F500C2937C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */; };
 		56DAD9D71B87D6F500C2937C /* SmokelessToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		56DAD9DC1B87D80C00C2937C /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
+		56DAD9DE1B87E21900C2937C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9DD1B87E21900C2937C /* Images.xcassets */; };
+		56DAD9E11B884C2800C2937C /* SmokelessToday-debug.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */; };
+		56DAD9E41B884D1800C2937C /* Smokeless-debug.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */; };
 		56F1577A1B8530FC0007E588 /* SmokelessKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157791B8530FC0007E588 /* SmokelessKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56F1578C1B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
 		56F1578D1B8530FC0007E588 /* SmokelessKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,11 +119,14 @@
 		56DAD9D01B87D6F500C2937C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56DAD9D11B87D6F500C2937C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		56DAD9DD1B87E21900C2937C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56DAD9DF1B87EFF700C2937C /* SmokelessToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmokelessToday.entitlements; sourceTree = "<group>"; };
+		56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SmokelessToday-debug.entitlements"; sourceTree = "<group>"; };
+		56DAD9E21B884CCE00C2937C /* Smokeless.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Smokeless.entitlements; sourceTree = "<group>"; };
+		56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Smokeless-debug.entitlements"; sourceTree = "<group>"; };
 		56F157751B8530FC0007E588 /* SmokelessKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmokelessKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F157781B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56F157791B8530FC0007E588 /* SmokelessKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmokelessKit.h; sourceTree = "<group>"; };
-		56F157871B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56F157881B8530FC0007E588 /* SmokelessKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmokelessKitTests.m; sourceTree = "<group>"; };
 		56F157951B8533B30007E588 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		56F157961B8533B30007E588 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56F157991B8536A00007E588 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,7 +187,6 @@
 				566B372815BBFE1E0026821C /* Smokeless */,
 				562536DE1B41E37B00E321A5 /* Resources */,
 				56F157761B8530FC0007E588 /* SmokelessKit */,
-				56F157851B8530FC0007E588 /* SmokelessKitTests */,
 				56DAD9CE1B87D6F500C2937C /* SmokelessToday */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -231,6 +236,8 @@
 				566B374015BBFE1F0026821C /* main.m */,
 				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 				56F157991B8536A00007E588 /* Info.plist */,
+				56DAD9E21B884CCE00C2937C /* Smokeless.entitlements */,
+				56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */,
 				566732071B358D3F002A1060 /* Localizable.strings */,
 				564395081B59AFCF003D071C /* Localizable.stringsdict */,
 			);
@@ -275,6 +282,7 @@
 		56DAD9CE1B87D6F500C2937C /* SmokelessToday */ = {
 			isa = PBXGroup;
 			children = (
+				56DAD9DD1B87E21900C2937C /* Images.xcassets */,
 				56DAD9D11B87D6F500C2937C /* TodayViewController.swift */,
 				56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */,
 				56DAD9CF1B87D6F500C2937C /* Supporting Files */,
@@ -286,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				56DAD9D01B87D6F500C2937C /* Info.plist */,
+				56DAD9DF1B87EFF700C2937C /* SmokelessToday.entitlements */,
+				56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,23 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				56F157781B8530FC0007E588 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		56F157851B8530FC0007E588 /* SmokelessKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				56F157881B8530FC0007E588 /* SmokelessKitTests.m */,
-				56F157861B8530FC0007E588 /* Supporting Files */,
-			);
-			path = SmokelessKitTests;
-			sourceTree = "<group>";
-		};
-		56F157861B8530FC0007E588 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				56F157871B8530FC0007E588 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -422,10 +415,20 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = PZ7QB7SQMF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					56DAD9CA1B87D6F500C2937C = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = PZ7QB7SQMF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					56F157741B8530FC0007E588 = {
 						CreatedOnToolsVersion = 6.4;
@@ -469,6 +472,7 @@
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
 				564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */,
 				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
+				56DAD9E41B884D1800C2937C /* Smokeless-debug.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +481,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56DAD9D41B87D6F500C2937C /* MainInterface.storyboard in Resources */,
+				56DAD9E11B884C2800C2937C /* SmokelessToday-debug.entitlements in Resources */,
+				56DAD9DE1B87E21900C2937C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +619,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "Smokeless/Smokeless-debug.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
@@ -627,6 +635,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_NAME = Smokeless;
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "-debug";
@@ -643,6 +652,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Smokeless/Smokeless.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -652,6 +664,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Smokeless;
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
@@ -677,6 +690,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "SmokelessToday/SmokelessToday-debug.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -699,6 +715,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SUFFIX_BUNDLE_ID = "-debug";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -723,6 +740,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = SmokelessToday/SmokelessToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -739,6 +759,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SUFFIX_BUNDLE_ID = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

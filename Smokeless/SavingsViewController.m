@@ -83,7 +83,7 @@
     self.actSavings = 200.0;
 #else
     self.oldSavings = [userDefaults floatForKey:SLKLastSavingsKey];
-    self.actSavings = [self totalSavings];
+    self.actSavings = [[SmokelessManager sharedManager] totalSavings];
 #endif
 
     // Initialize user interface.
@@ -217,45 +217,6 @@
 }
 
 #pragma mark - Private methods
-
-- (CGFloat)totalSavings
-{
-    CGFloat savings = 0.0;
-    
-    if (self.lastCigaretteDate) {
-        // Calculate non smoking days.
-        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSInteger nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
-                                                         fromDate:self.lastCigaretteDate
-                                                           toDate:[NSDate date]
-                                                          options:0] day];
-        
-        if (self.habits) {
-            NSInteger quantity = [self.habits[SLKHabitsQuantityKey] integerValue];
-            NSInteger unit = ([self.habits[SLKHabitsUnitKey] integerValue] == 0) ? 1 : self.size;
-            NSInteger period = ([self.habits[SLKHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
-            
-            // Calculate the number of cigarettes/day.
-            CGFloat cigarettesPerDay = quantity * unit / period;
-            
-            // Calculate the number of saved cigarettes.
-            CGFloat totalCigarettes = nonSmokingDays * cigarettesPerDay;
-            
-            // Calculate the number of saved packets.
-            // +1 beacuse in the moment you quit smoking you save the first packet.
-            NSInteger totalPackets = totalCigarettes / self.size + 1;
-
-#if DEBUG
-            NSLog(@"Savings - Total packets: %ld.", (long)totalPackets);
-#endif
-            
-            // Calculate the total savings.
-            savings = totalPackets * self.price;
-        }
-    }
-    
-    return savings;
-}
 
 - (NSTimeInterval)animationDurationForSaving:(CGFloat)saving
 {

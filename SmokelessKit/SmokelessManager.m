@@ -8,6 +8,8 @@
 
 #import "SmokelessManager.h"
 
+#import "Constants.h"
+
 
 #if DEBUG
 static NSString * const SLKAppGroupID           = @"group.com.gmail.massimoperi.Smokeless-debug";
@@ -145,7 +147,7 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     }
 }
 
-#pragma mark - Accessors
+#pragma mark -
 
 - (NSUserDefaults *)userSettings
 {
@@ -165,6 +167,99 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
     else {
         return NO;
     }
+}
+
+- (NSDateComponentsFormatter *)componentsFormatter
+{
+    NSDateComponentsFormatter *_componentsFormatter = nil;
+    if (!_componentsFormatter) {
+        _componentsFormatter = [[NSDateComponentsFormatter alloc] init];
+        _componentsFormatter.unitsStyle = NSDateComponentsFormatterUnitsStyleFull;
+    }
+    
+    return _componentsFormatter;
+}
+
+- (NSNumberFormatter *)currencyFormatter
+{
+    NSNumberFormatter *_currencyFormatter = nil;
+    if (!_currencyFormatter) {
+        _currencyFormatter = [[NSNumberFormatter alloc] init];
+        _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    }
+    
+    return _currencyFormatter;
+}
+
+#pragma mark - Public methods
+
+- (NSDateComponents *)lastCigaretteDateComponents
+{
+    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay;
+    
+    return [gregorianCalendar components:unitFlags
+                                fromDate:self.lastCigaretteDate];
+}
+
+- (NSDateComponents *)nonSmokingInterval
+{
+    NSCalendar *gregorianCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekOfMonth | NSCalendarUnitDay;
+    
+    return [gregorianCalendar components:unitFlags
+                                fromDate:self.lastCigaretteDate
+                                  toDate:[NSDate date]
+                                 options:0];
+}
+
+- (NSString *)formattedNonSmokingInterval
+{
+    return [[self componentsFormatter] stringFromDateComponents:[self nonSmokingInterval]];
+}
+
+- (double)totalSavings
+{
+    double savings = 0.0;
+    
+    if (self.lastCigaretteDate) {
+        // Calculate non smoking days.
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSInteger nonSmokingDays = [[gregorianCalendar components:NSCalendarUnitDay
+                                                         fromDate:self.lastCigaretteDate
+                                                           toDate:[NSDate date]
+                                                          options:0] day];
+        
+        if (self.smokingHabits) {
+            NSInteger quantity = [self.smokingHabits[SLKHabitsQuantityKey] integerValue];
+            NSInteger unit = ([self.smokingHabits[SLKHabitsUnitKey] integerValue] == 0) ? 1 : self.packetSize;
+            NSInteger period = ([self.smokingHabits[SLKHabitsPeriodKey] integerValue] == 0) ? 1 : 7;
+            
+            // Calculate the number of cigarettes/day.
+            double cigarettesPerDay = quantity * unit / period;
+            
+            // Calculate the number of saved cigarettes.
+            double totalCigarettes = nonSmokingDays * cigarettesPerDay;
+            
+            // Calculate the number of saved packets.
+            // +1 beacuse in the moment you quit smoking you save the first packet.
+            NSInteger totalPackets = totalCigarettes / self.packetSize + 1;
+            
+#if DEBUG
+            NSLog(@"Savings - Total packets: %ld.", (long)totalPackets);
+#endif
+            
+            // Calculate the total savings.
+            savings = totalPackets * self.packetPrice;
+        }
+    }
+    
+    return savings;
+}
+
+- (NSString *)formattedTotalSavings
+{
+    return [[self currencyFormatter] stringFromNumber:@([self totalSavings])];
 }
 
 @end
