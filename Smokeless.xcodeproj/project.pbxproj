@@ -283,8 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				56DAD9DD1B87E21900C2937C /* Images.xcassets */,
-				56DAD9D11B87D6F500C2937C /* TodayViewController.swift */,
 				56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */,
+				56DAD9D11B87D6F500C2937C /* TodayViewController.swift */,
 				56DAD9CF1B87D6F500C2937C /* Supporting Files */,
 			);
 			path = SmokelessToday;
