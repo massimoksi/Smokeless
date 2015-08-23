@@ -187,8 +187,6 @@ class RadialBarView: UIView {
             CGContextSetFillColorWithColor(context, tintColor.CGColor)
         }
 
-        // TODO: fill bar with gradient.
-        
         // Draw path.
         CGContextAddArc(context, centerCapBgn.x, centerCapBgn.y, radiusCap, CGFloat(M_PI_2), -CGFloat(M_PI_2), 0)
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radiusExt, startAngle, endAngle, 0)
