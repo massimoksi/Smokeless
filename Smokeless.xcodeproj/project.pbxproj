@@ -617,6 +617,7 @@
 			baseConfigurationReference = D5AF340CA5376AEE2D53BD56 /* Pods-Smokeless.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
+				BUNDLE_DISPLAY_NAME = "Smokeless α";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "Smokeless/Smokeless-debug.entitlements";
@@ -650,6 +651,7 @@
 			baseConfigurationReference = 5556DF683983AC8D3481456A /* Pods-Smokeless.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
+				BUNDLE_DISPLAY_NAME = Smokeless;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Smokeless/Smokeless.entitlements;
@@ -677,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = "Smokeless α";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -727,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_DISPLAY_NAME = Smokeless;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
