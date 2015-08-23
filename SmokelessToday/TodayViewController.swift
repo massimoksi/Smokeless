@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         updateWidget()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,7 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return UIEdgeInsets(
             top: defaultMarginInsets.top,
             left: defaultMarginInsets.left - 30.0,
-            bottom: 10.0,//defaultMarginInsets.bottom,
+            bottom: 10.0,
             right: defaultMarginInsets.right
         )
     }

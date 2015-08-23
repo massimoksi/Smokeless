@@ -220,7 +220,12 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
 
 - (NSString *)formattedNonSmokingInterval
 {
-    return [[self componentsFormatter] stringFromDateComponents:[self nonSmokingInterval]];
+    if (self.lastCigaretteDate) {
+        return [[self componentsFormatter] stringFromDateComponents:[self nonSmokingInterval]];
+    }
+    else {
+        return @"---";
+    }
 }
 
 - (double)totalSavings

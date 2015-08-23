@@ -928,6 +928,7 @@
 				56DAD9D91B87D6F500C2937C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F157921B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKit" */ = {
 			isa = XCConfigurationList;
