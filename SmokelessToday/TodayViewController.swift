@@ -54,7 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return UIEdgeInsets(
             top: defaultMarginInsets.top,
             left: defaultMarginInsets.left - 30.0,
-            bottom: defaultMarginInsets.bottom,
+            bottom: 10.0,//defaultMarginInsets.bottom,
             right: defaultMarginInsets.right
         )
     }
