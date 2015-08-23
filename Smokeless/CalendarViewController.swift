@@ -72,6 +72,11 @@ class CalendarViewController: UIViewController {
             yearDateLabel.hidden = true
             monthDateLabel.hidden = true
             dayDateLabel.hidden = true
+            
+            years = 0
+            months = 0
+            weeks = 0
+            days = 0
         }
         
         yearQuantityLabel.text = String(years)
@@ -95,6 +100,12 @@ class CalendarViewController: UIViewController {
                 self.weekRadialBar.value = self.weeks
                 self.dayRadialBar.value = self.days
             }
+        }
+        else {
+            self.yearRadialBar.value = self.years
+            self.monthRadialBar.value = self.months
+            self.weekRadialBar.value = self.weeks
+            self.dayRadialBar.value = self.days
         }
     }
 
