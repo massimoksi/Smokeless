@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4J-Tj-Xfc" userLabel="VSpacer_1">
-                                <rect key="frame" x="280" y="20" width="40" height="34"/>
+                                <rect key="frame" x="280" y="20" width="40" height="68"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="mFu-mb-Acu"/>
@@ -28,17 +28,33 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-dp-JcZ" customClass="JAMSVGImageView">
-                                <rect key="frame" x="16" y="58" width="568" height="568"/>
+                                <rect key="frame" x="16" y="92" width="500" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="iZO-Fe-BZE"/>
                                     <constraint firstAttribute="width" secondItem="9yx-dp-JcZ" secondAttribute="height" multiplier="1:1" id="q46-L2-c76"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="svgName" value="PiggyBox"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iZO-Fe-BZE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="iZO-Fe-BZE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="iZO-Fe-BZE"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q" customClass="MCNumberLabel">
-                                <rect key="frame" x="16" y="642" width="568" height="72"/>
+                                <rect key="frame" x="16" y="608" width="568" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="vCn-B9-d5c"/>
@@ -48,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rky-JA-cxQ" userLabel="VSpacer_2">
-                                <rect key="frame" x="280" y="718" width="40" height="33"/>
+                                <rect key="frame" x="280" y="684" width="40" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -62,6 +78,7 @@
                             <constraint firstItem="dtm-0L-NM0" firstAttribute="top" secondItem="rky-JA-cxQ" secondAttribute="bottom" id="Qek-ud-oXx"/>
                             <constraint firstItem="XDd-8e-C9Q" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leadingMargin" id="Ygw-nb-Rpe"/>
                             <constraint firstItem="9yx-dp-JcZ" firstAttribute="leading" secondItem="88B-Q3-9br" secondAttribute="leadingMargin" id="YvQ-Fz-Iyw"/>
+                            <constraint firstAttribute="centerX" secondItem="9yx-dp-JcZ" secondAttribute="centerX" id="aTb-RY-gOf"/>
                             <constraint firstItem="rky-JA-cxQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="XDd-8e-C9Q" secondAttribute="bottom" constant="4" id="av9-To-IAq"/>
                             <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="top" secondItem="EXx-5S-rQL" secondAttribute="bottom" id="cLt-Bv-ARQ"/>
                             <constraint firstItem="XDd-8e-C9Q" firstAttribute="top" secondItem="9yx-dp-JcZ" secondAttribute="bottom" constant="16" id="emA-Em-eJY"/>
@@ -71,12 +88,32 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9yx-dp-JcZ" secondAttribute="trailing" id="r82-vd-cwF"/>
                             <constraint firstItem="Z4J-Tj-Xfc" firstAttribute="height" secondItem="rky-JA-cxQ" secondAttribute="height" id="ulK-g9-J2j"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aTb-RY-gOf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="YvQ-Fz-Iyw"/>
+                                <exclude reference="aTb-RY-gOf"/>
+                                <include reference="r82-vd-cwF"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="YvQ-Fz-Iyw"/>
+                                <include reference="aTb-RY-gOf"/>
+                                <exclude reference="r82-vd-cwF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Savings" image="SavingsNormal" id="rUc-TT-oaP">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SavingsActive"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
