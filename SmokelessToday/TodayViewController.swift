@@ -14,18 +14,28 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var lastCigaretteLabel: UILabel!
     @IBOutlet weak var savingsLabel: UILabel!
+
+    var lastCigaretteDate: NSDate?
+    var totalSavings: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+
+        lastCigaretteDate = SmokelessManager.sharedManager().lastCigaretteDate
+        totalSavings = SmokelessManager.sharedManager().totalSavings()
         
-        lastCigaretteLabel.text = SmokelessManager.sharedManager().formattedNonSmokingInterval()
-        savingsLabel.text = SmokelessManager.sharedManager().formattedTotalSavings()
+        updateWidget()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let url = NSURL(scheme: "smokeless", host: nil, path: "/")
+        extensionContext?.openURL(url!, completionHandler: nil)
     }
     
     // MARK: - Widget providing
@@ -33,10 +43,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         // Perform any setup necessary in order to update the view.
 
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
+        SmokelessManager.sharedManager().update()
+        
+        updateWidget()
+        
         completionHandler(NCUpdateResult.NewData)
     }
     
@@ -47,6 +57,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             bottom: defaultMarginInsets.bottom,
             right: defaultMarginInsets.right
         )
+    }
+    
+    // MARK: - Privare methods
+    
+    private func updateWidget() {
+        lastCigaretteLabel.text = SmokelessManager.sharedManager().formattedNonSmokingInterval()
+        savingsLabel.text = SmokelessManager.sharedManager().formattedTotalSavings()
     }
     
 }

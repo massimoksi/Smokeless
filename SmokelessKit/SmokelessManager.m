@@ -51,10 +51,7 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
 {
     self = [super init];
     if (self) {
-        _lastCigaretteDate = [self.userSettings objectForKey:SLKLastCigaretteKey];
-        _smokingHabits = [self.userSettings dictionaryForKey:SLKHabitsKey];
-        _packetSize = [self.userSettings integerForKey:SLKPacketSizeKey];
-        _packetPrice = [self.userSettings doubleForKey:SLKPacketPriceKey];
+        [self update];
     }
     
     return self;
@@ -192,6 +189,14 @@ static NSString * const SLKPacketPriceKey       = @"SLKPacketPrice";
 }
 
 #pragma mark - Public methods
+
+- (void)update
+{
+    _lastCigaretteDate = [self.userSettings objectForKey:SLKLastCigaretteKey];
+    _smokingHabits = [self.userSettings dictionaryForKey:SLKHabitsKey];
+    _packetSize = [self.userSettings integerForKey:SLKPacketSizeKey];
+    _packetPrice = [self.userSettings doubleForKey:SLKPacketPriceKey];
+}
 
 - (NSDateComponents *)lastCigaretteDateComponents
 {

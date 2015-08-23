@@ -20,6 +20,8 @@
 
 @property (nonatomic, readonly) BOOL isConfigured;
 
+- (void)update;
+
 - (NSDateComponents *)lastCigaretteDateComponents;
 
 - (NSDateComponents *)nonSmokingInterval;
