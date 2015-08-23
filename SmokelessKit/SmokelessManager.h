@@ -18,4 +18,16 @@
 @property (nonatomic) NSInteger packetSize;
 @property (nonatomic) double packetPrice;
 
+@property (nonatomic, readonly) BOOL isConfigured;
+
+- (void)update;
+
+- (NSDateComponents *)lastCigaretteDateComponents;
+
+- (NSDateComponents *)nonSmokingInterval;
+- (NSString *)formattedNonSmokingInterval;
+
+- (double)totalSavings;
+- (NSString *)formattedTotalSavings;
+
 @end

@@ -24,9 +24,9 @@ NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com
 #pragma mark - Custom colors
 
 
-@implementation UIColor (Smokeless)
+@implementation UIColor (SmokelessKit)
 
-+ (UIColor *)sml_highlightColor
++ (UIColor *)slk_highlightColor
 {
     return [UIColor colorWithRed:29.0/255.0
                            green:195.0/255.0
@@ -34,7 +34,7 @@ NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com
                            alpha:1.0];
 }
 
-+ (UIColor *)sml_detailTextColor
++ (UIColor *)slk_detailTextColor
 {
     return [UIColor colorWithRed:122.0/255.0
                            green:122.0/255.0
@@ -42,7 +42,7 @@ NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com
                            alpha:1.0];
 }
 
-+ (UIColor *)sml_completedColor
++ (UIColor *)slk_completedColor
 {
     return [UIColor colorWithRed:126.0/255.0
                            green:211.0/255.0
@@ -50,7 +50,7 @@ NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com
                            alpha:1.0];
 }
 
-+ (UIColor *)sml_cancelColor
++ (UIColor *)slk_cancelColor
 {
     return [UIColor colorWithRed:255.0/255.0
                            green:0.0/255.0
@@ -58,7 +58,7 @@ NSString * const SLKAppStoreURL                 = @"itms-apps://itunes.apple.com
                            alpha:1.0];
 }
 
-+ (UIColor *)sml_backgroundCompletedColor
++ (UIColor *)slk_backgroundCompletedColor
 {
     return [UIColor colorWithRed:247.0/255.0
                            green:247.0/255.0

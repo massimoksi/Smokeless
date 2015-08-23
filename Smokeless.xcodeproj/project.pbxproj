@@ -24,9 +24,15 @@
 		567F8B091A90033300F57F45 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B081A90033300F57F45 /* AchievementCell.swift */; };
 		567F8B0B1A900B4F00F57F45 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567F8B0A1A900B4F00F57F45 /* Achievement.swift */; };
 		56914B311B66C41D00857328 /* RadialBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56914B301B66C41D00857328 /* RadialBarView.swift */; };
+		56DAD9CD1B87D6F500C2937C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DAD9CC1B87D6F500C2937C /* NotificationCenter.framework */; };
+		56DAD9D21B87D6F500C2937C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DAD9D11B87D6F500C2937C /* TodayViewController.swift */; };
+		56DAD9D41B87D6F500C2937C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */; };
+		56DAD9D71B87D6F500C2937C /* SmokelessToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		56DAD9DC1B87D80C00C2937C /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
+		56DAD9DE1B87E21900C2937C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9DD1B87E21900C2937C /* Images.xcassets */; };
+		56DAD9E11B884C2800C2937C /* SmokelessToday-debug.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */; };
+		56DAD9E41B884D1800C2937C /* Smokeless-debug.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */; };
 		56F1577A1B8530FC0007E588 /* SmokelessKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157791B8530FC0007E588 /* SmokelessKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56F157801B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
-		56F157891B8530FC0007E588 /* SmokelessKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F157881B8530FC0007E588 /* SmokelessKitTests.m */; };
 		56F1578C1B8530FC0007E588 /* SmokelessKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; };
 		56F1578D1B8530FC0007E588 /* SmokelessKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56F157751B8530FC0007E588 /* SmokelessKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		56F157971B8533B30007E588 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F157951B8533B30007E588 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,19 +47,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		56F157811B8530FC0007E588 /* PBXContainerItemProxy */ = {
+		56DAD9D51B87D6F500C2937C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 56F157741B8530FC0007E588;
-			remoteInfo = SmokelessKit;
-		};
-		56F157831B8530FC0007E588 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
-			remoteInfo = Smokeless;
+			remoteGlobalIDString = 56DAD9CA1B87D6F500C2937C;
+			remoteInfo = SmokelessToday;
 		};
 		56F1578A1B8530FC0007E588 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		56DAD9DB1B87D6F500C2937C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				56DAD9D71B87D6F500C2937C /* SmokelessToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F157931B8530FC0007E588 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,12 +114,19 @@
 		567F8B081A90033300F57F45 /* AchievementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
 		567F8B0A1A900B4F00F57F45 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		56914B301B66C41D00857328 /* RadialBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialBarView.swift; sourceTree = "<group>"; };
+		56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmokelessToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DAD9CC1B87D6F500C2937C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		56DAD9D01B87D6F500C2937C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DAD9D11B87D6F500C2937C /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		56DAD9DD1B87E21900C2937C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56DAD9DF1B87EFF700C2937C /* SmokelessToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SmokelessToday.entitlements; sourceTree = "<group>"; };
+		56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SmokelessToday-debug.entitlements"; sourceTree = "<group>"; };
+		56DAD9E21B884CCE00C2937C /* Smokeless.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Smokeless.entitlements; sourceTree = "<group>"; };
+		56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Smokeless-debug.entitlements"; sourceTree = "<group>"; };
 		56F157751B8530FC0007E588 /* SmokelessKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmokelessKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F157781B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56F157791B8530FC0007E588 /* SmokelessKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmokelessKit.h; sourceTree = "<group>"; };
-		56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmokelessKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56F157871B8530FC0007E588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56F157881B8530FC0007E588 /* SmokelessKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmokelessKitTests.m; sourceTree = "<group>"; };
 		56F157951B8533B30007E588 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		56F157961B8533B30007E588 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		56F157991B8536A00007E588 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,18 +152,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56DAD9C81B87D6F500C2937C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DAD9DC1B87D80C00C2937C /* SmokelessKit.framework in Frameworks */,
+				56DAD9CD1B87D6F500C2937C /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F157711B8530FC0007E588 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56F1577C1B8530FC0007E588 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56F157801B8530FC0007E588 /* SmokelessKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +176,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* Smokeless.app */,
 				56F157751B8530FC0007E588 /* SmokelessKit.framework */,
-				56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */,
+				56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,7 +187,7 @@
 				566B372815BBFE1E0026821C /* Smokeless */,
 				562536DE1B41E37B00E321A5 /* Resources */,
 				56F157761B8530FC0007E588 /* SmokelessKit */,
-				56F157851B8530FC0007E588 /* SmokelessKitTests */,
+				56DAD9CE1B87D6F500C2937C /* SmokelessToday */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				8581A22302CE25DF8F224CC4 /* Pods */,
@@ -181,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				F2B920C243D92AF00DB7366C /* libPods-Smokeless.a */,
+				56DAD9CC1B87D6F500C2937C /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,6 +236,8 @@
 				566B374015BBFE1F0026821C /* main.m */,
 				567F8B071A90033300F57F45 /* Smokeless-Bridging-Header.h */,
 				56F157991B8536A00007E588 /* Info.plist */,
+				56DAD9E21B884CCE00C2937C /* Smokeless.entitlements */,
+				56DAD9E31B884D1800C2937C /* Smokeless-debug.entitlements */,
 				566732071B358D3F002A1060 /* Localizable.strings */,
 				564395081B59AFCF003D071C /* Localizable.stringsdict */,
 			);
@@ -258,6 +279,27 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		56DAD9CE1B87D6F500C2937C /* SmokelessToday */ = {
+			isa = PBXGroup;
+			children = (
+				56DAD9DD1B87E21900C2937C /* Images.xcassets */,
+				56DAD9D31B87D6F500C2937C /* MainInterface.storyboard */,
+				56DAD9D11B87D6F500C2937C /* TodayViewController.swift */,
+				56DAD9CF1B87D6F500C2937C /* Supporting Files */,
+			);
+			path = SmokelessToday;
+			sourceTree = "<group>";
+		};
+		56DAD9CF1B87D6F500C2937C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56DAD9D01B87D6F500C2937C /* Info.plist */,
+				56DAD9DF1B87EFF700C2937C /* SmokelessToday.entitlements */,
+				56DAD9E01B884C2800C2937C /* SmokelessToday-debug.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		56F157761B8530FC0007E588 /* SmokelessKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,23 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				56F157781B8530FC0007E588 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		56F157851B8530FC0007E588 /* SmokelessKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				56F157881B8530FC0007E588 /* SmokelessKitTests.m */,
-				56F157861B8530FC0007E588 /* Supporting Files */,
-			);
-			path = SmokelessKitTests;
-			sourceTree = "<group>";
-		};
-		56F157861B8530FC0007E588 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				56F157871B8530FC0007E588 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -331,16 +356,35 @@
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				63771279F0C0450909382DC4 /* Copy Pods Resources */,
 				56F157931B8530FC0007E588 /* Embed Frameworks */,
+				56DAD9DB1B87D6F500C2937C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				56F1578B1B8530FC0007E588 /* PBXTargetDependency */,
+				56DAD9D61B87D6F500C2937C /* PBXTargetDependency */,
 			);
 			name = Smokeless;
 			productName = Smokeless;
 			productReference = 1D6058910D05DD3D006BFB54 /* Smokeless.app */;
 			productType = "com.apple.product-type.application";
+		};
+		56DAD9CA1B87D6F500C2937C /* SmokelessToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56DAD9DA1B87D6F500C2937C /* Build configuration list for PBXNativeTarget "SmokelessToday" */;
+			buildPhases = (
+				56DAD9C71B87D6F500C2937C /* Sources */,
+				56DAD9C81B87D6F500C2937C /* Frameworks */,
+				56DAD9C91B87D6F500C2937C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmokelessToday;
+			productName = SmokelessToday;
+			productReference = 56DAD9CB1B87D6F500C2937C /* SmokelessToday.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		56F157741B8530FC0007E588 /* SmokelessKit */ = {
 			isa = PBXNativeTarget;
@@ -360,25 +404,6 @@
 			productReference = 56F157751B8530FC0007E588 /* SmokelessKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		56F1577E1B8530FC0007E588 /* SmokelessKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 56F157941B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKitTests" */;
-			buildPhases = (
-				56F1577B1B8530FC0007E588 /* Sources */,
-				56F1577C1B8530FC0007E588 /* Frameworks */,
-				56F1577D1B8530FC0007E588 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				56F157821B8530FC0007E588 /* PBXTargetDependency */,
-				56F157841B8530FC0007E588 /* PBXTargetDependency */,
-			);
-			name = SmokelessKitTests;
-			productName = SmokelessKitTests;
-			productReference = 56F1577F1B8530FC0007E588 /* SmokelessKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -390,14 +415,24 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = PZ7QB7SQMF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					56DAD9CA1B87D6F500C2937C = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = PZ7QB7SQMF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					56F157741B8530FC0007E588 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = PZ7QB7SQMF;
-					};
-					56F1577E1B8530FC0007E588 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
 			};
@@ -419,7 +454,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Smokeless */,
 				56F157741B8530FC0007E588 /* SmokelessKit */,
-				56F1577E1B8530FC0007E588 /* SmokelessKitTests */,
+				56DAD9CA1B87D6F500C2937C /* SmokelessToday */,
 			);
 		};
 /* End PBXProject section */
@@ -437,17 +472,21 @@
 				566732081B358DA9002A1060 /* Main.storyboard in Resources */,
 				564395061B59AFCF003D071C /* Localizable.stringsdict in Resources */,
 				56F974C11B434C20004E4816 /* CoinsDrop.aifc in Resources */,
+				56DAD9E41B884D1800C2937C /* Smokeless-debug.entitlements in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56DAD9C91B87D6F500C2937C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DAD9D41B87D6F500C2937C /* MainInterface.storyboard in Resources */,
+				56DAD9E11B884C2800C2937C /* SmokelessToday-debug.entitlements in Resources */,
+				56DAD9DE1B87E21900C2937C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		56F157731B8530FC0007E588 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		56F1577D1B8530FC0007E588 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -510,6 +549,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56DAD9C71B87D6F500C2937C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DAD9D21B87D6F500C2937C /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56F157701B8530FC0007E588 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,26 +566,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56F1577B1B8530FC0007E588 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				56F157891B8530FC0007E588 /* SmokelessKitTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		56F157821B8530FC0007E588 /* PBXTargetDependency */ = {
+		56DAD9D61B87D6F500C2937C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 56F157741B8530FC0007E588 /* SmokelessKit */;
-			targetProxy = 56F157811B8530FC0007E588 /* PBXContainerItemProxy */;
-		};
-		56F157841B8530FC0007E588 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1D6058900D05DD3D006BFB54 /* Smokeless */;
-			targetProxy = 56F157831B8530FC0007E588 /* PBXContainerItemProxy */;
+			target = 56DAD9CA1B87D6F500C2937C /* SmokelessToday */;
+			targetProxy = 56DAD9D51B87D6F500C2937C /* PBXContainerItemProxy */;
 		};
 		56F1578B1B8530FC0007E588 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -585,6 +619,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "Smokeless/Smokeless-debug.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
@@ -599,6 +635,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_NAME = Smokeless;
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "-debug";
@@ -615,6 +652,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Smokeless/Smokeless.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -624,6 +664,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Smokeless;
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SUFFIX_BUNDLE_ID = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Smokeless/Smokeless-Bridging-Header.h";
@@ -632,10 +673,104 @@
 			};
 			name = Release;
 		};
+		56DAD9D81B87D6F500C2937C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "SmokelessToday/SmokelessToday-debug.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SUFFIX_BUNDLE_ID = "-debug";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56DAD9D91B87D6F500C2937C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = SmokelessToday/SmokelessToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SmokelessToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SUFFIX_BUNDLE_ID = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		56F1578E1B8530FC0007E588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -688,6 +823,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -728,95 +864,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		56F157901B8530FC0007E588 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = SmokelessKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smokeless.app/Smokeless";
-			};
-			name = Debug;
-		};
-		56F157911B8530FC0007E588 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = SmokelessKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smokeless.app/Smokeless";
 			};
 			name = Release;
 		};
@@ -874,20 +921,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		56DAD9DA1B87D6F500C2937C /* Build configuration list for PBXNativeTarget "SmokelessToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56DAD9D81B87D6F500C2937C /* Debug */,
+				56DAD9D91B87D6F500C2937C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		56F157921B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56F1578E1B8530FC0007E588 /* Debug */,
 				56F1578F1B8530FC0007E588 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		56F157941B8530FC0007E588 /* Build configuration list for PBXNativeTarget "SmokelessKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				56F157901B8530FC0007E588 /* Debug */,
-				56F157911B8530FC0007E588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
