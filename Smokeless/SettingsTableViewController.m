@@ -74,7 +74,9 @@
     if (!_dateFormatter) {
         _dateFormatter = [[NSDateFormatter alloc] init];
         _dateFormatter.dateStyle = NSDateIntervalFormatterLongStyle;
-        _dateFormatter.locale = [NSLocale currentLocale];
+        
+        NSString *localization = [NSBundle mainBundle].preferredLocalizations.firstObject;
+        _dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:localization];
     }
     
     return _dateFormatter;

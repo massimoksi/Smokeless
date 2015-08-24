@@ -48,7 +48,6 @@
     [super viewDidLoad];
     
     self.savedMoneyLabel.formatter.numberStyle = NSNumberFormatterCurrencyStyle;
-    self.savedMoneyLabel.formatter.locale = [NSLocale currentLocale];
     
     // Add motion effects on piggy box.
     const NSInteger kMotionEffectValue = 12;
