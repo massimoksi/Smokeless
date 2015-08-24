@@ -7,7 +7,33 @@
 */
 
 
-// Achievements
+// --------------------------------------------------------------------------
+// AppDelegate
+
+// Initialize settings alert view.
+"INIT_SETTINGS_ALERT_TITLE" = "Configura Smokeless";
+"INIT_SETTINGS_ALERT_MESSAGE" = "Per favore, prenditi qualche istante per configurare Smokeless per poter iniziare a monitorare i tuoiri risparmi e i tuoi progressi di salute.";
+"INIT_SETTINGS_ALERT_ACTION_BUTTON" = "Configura";
+"INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Non ora";
+
+// "What's New" alert view.
+"WHATS_NEW_ALERT_TITLE" = "Novità in Smokeless 2.0.0?";
+"WHATS_NEW_ALERT_MESSAGE" = "● Completamente riprogettato per iOS 8+.\n● L'app ora è Universal per funzionare su iPad.\n● Estensione per il centro notifiche.\n● Correzione di bug e miglioramenti.";
+"WHATS_NEW_ALERT_ACTION_BUTTON" = "Valuta ♥︎";
+"WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continua";
+
+// Missing settings alert view.
+"MISSING_SETTINGS_ALERT_TITLE" = "La configurazione di Smokeless non è completa";
+"MISSING_SETTINGS_ALERT_MESSAGE" = "Per favore, completa la configurazione per iniziare ad usare Smokeless.";
+
+// --------------------------------------------------------------------------
+// HealthTableViewController
+
+"After %@" = "Dopo %@";
+
+// --------------------------------------------------------------------------
+// AchievementsManager
+
 "ACHIEVEMENT_01_MESSAGE" = "La pressione sanguigna e la frequenza cardiaca sono ritornati ad un livello normale.";
 "ACHIEVEMENT_02_MESSAGE" = "I livelli di monossido di carbonio nel sangue sono scesi, i livelli di ossigeno sono tornati alla normalità mentre la nicotina è diminuita fino a oltre il 93%.";
 "ACHIEVEMENT_03_MESSAGE" = "Il livello di monossido di carbonio è tornato alla normalità.";
@@ -22,3 +48,30 @@
 "ACHIEVEMENT_12_MESSAGE" = "Il rischio di cancro ai polmoni è tornato pari a quello di un non fumatore.";
 "ACHIEVEMENT_13_MESSAGE" = "Il rischio di avere un infarto è tornato pari a quello di un non fumatore.";
 "ACHIEVEMENT_14_MESSAGE" = "Il rischio di cancro al pancreas è tornato pari a quello di un non fumatore.";
+"ACHIEVEMENT_YEARLY_TITLE" = "Congratulazioni";
+"ACHIEVEMENT_YEARLY_MESSAGE" = "Un altro anno senza fumare!";
+
+// --------------------------------------------------------------------------
+// SettingsTableViewController
+
+"SETTINGS_HABITS_PERIOD_DAY" = " al giorno";
+"SETTINGS_HABITS_PERIOD_WEEK" = " alla settimana";
+
+"RESET_SETTINGS_ALERT_MESSAGE" = "Vuoi sul serio eliminare tutte le tue impostazioni?";
+"RESET_SETTINGS_ACTION_BUTTON" = "Elimina";
+
+// Disabled notifications alert view.
+"NOTIFICATIONS_ALERT_TITLE" = "Permetti a Smokeless di inviare notifiche";
+"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless usa le notifiche locali per tenerti aggiornato sui tuoi progressi di salute.\n\n1. Apri Impostazioni\n2. Tocca Smokeless\n3. Tocca Notifiche\n4. Attica Consenti notifiche";
+"NOTIFICATIONS_ALERT_ACTION_BUTTON" = "Apri Impostazioni";
+
+// --------------------------------------------------------------------------
+// AboutTableViewController
+
+"ABOUT_SOFTWARE_VERSION" = "Versione ";
+
+// --------------------------------------------------------------------------
+// Common
+
+"COMMON_OK" = "Ok";
+"COMMON_CANCEL" = "Annulla";
