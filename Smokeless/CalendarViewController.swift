@@ -57,26 +57,26 @@ class CalendarViewController: UIViewController {
             monthDateLabel.hidden = false
             dayDateLabel.hidden = false
             
-            if let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) {
-                let unitFlags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitWeekOfMonth | .CalendarUnitDay
-                
-                let dateComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate)
-                yearDateLabel.text = String(dateComponents.year)
-                monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
-                dayDateLabel.text = String(dateComponents.day)
-                
-                let intervalComponents = gregorianCalendar.components(unitFlags, fromDate: lastCigaretteDate, toDate: NSDate(), options: NSCalendarOptions(0))
-                
-                years = intervalComponents.year
-                months = intervalComponents.month
-                weeks = intervalComponents.weekOfMonth
-                days = intervalComponents.day
-            }
+            let dateComponents = SmokelessManager.sharedManager().lastCigaretteDateComponents()
+            yearDateLabel.text = String(dateComponents.year)
+            monthDateLabel.text = monthFormatter.stringFromDate(lastCigaretteDate).capitalizedString
+            dayDateLabel.text = String(dateComponents.day)
+            
+            let nonSmokingInterval = SmokelessManager.sharedManager().nonSmokingInterval()
+            years = nonSmokingInterval.year
+            months = nonSmokingInterval.month
+            weeks = nonSmokingInterval.weekOfMonth
+            days = nonSmokingInterval.day
         }
         else {
             yearDateLabel.hidden = true
             monthDateLabel.hidden = true
             dayDateLabel.hidden = true
+            
+            years = 0
+            months = 0
+            weeks = 0
+            days = 0
         }
         
         yearQuantityLabel.text = String(years)
@@ -100,6 +100,12 @@ class CalendarViewController: UIViewController {
                 self.weekRadialBar.value = self.weeks
                 self.dayRadialBar.value = self.days
             }
+        }
+        else {
+            self.yearRadialBar.value = self.years
+            self.monthRadialBar.value = self.months
+            self.weekRadialBar.value = self.weeks
+            self.dayRadialBar.value = self.days
         }
     }
 

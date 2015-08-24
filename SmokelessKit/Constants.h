@@ -21,13 +21,12 @@ extern NSString * const SLKSoftwareVersionKey;
 extern NSString * const SLKAppStoreURL;
 
 
-@interface UIColor (Smokeless)
+@interface UIColor (SmokelessKit)
 
-// TODO: rename into slk_...
-+ (UIColor *)sml_highlightColor;
-+ (UIColor *)sml_detailTextColor;
-+ (UIColor *)sml_completedColor;
-+ (UIColor *)sml_cancelColor;
-+ (UIColor *)sml_backgroundCompletedColor;
++ (UIColor *)slk_highlightColor;
++ (UIColor *)slk_detailTextColor;
++ (UIColor *)slk_completedColor;
++ (UIColor *)slk_cancelColor;
++ (UIColor *)slk_backgroundCompletedColor;
 
 @end

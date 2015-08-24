@@ -98,7 +98,7 @@
     cell.completionProgressView.value = percentage;
     
     if (achievement.isCompleted) {
-        cell.backgroundColor = [UIColor sml_backgroundCompletedColor];
+        cell.backgroundColor = [UIColor slk_backgroundCompletedColor];
     }
     else {
         cell.backgroundColor = [UIColor clearColor];

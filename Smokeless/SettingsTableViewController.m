@@ -291,7 +291,7 @@
                     [self deleteRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
 
-                    self.lastCigaretteDateLabel.textColor = [UIColor sml_detailTextColor];
+                    self.lastCigaretteDateLabel.textColor = [UIColor slk_detailTextColor];
                 }
                 else {
                     NSDate *lastCigaretteDate = [SmokelessManager sharedManager].lastCigaretteDate;
@@ -305,7 +305,7 @@
                     [self insertRowsAtIndexPaths:@[lastCigaretteIndexPath]
                                 withRowAnimation:UITableViewRowAnimationTop];
 
-                    self.lastCigaretteDateLabel.textColor = [UIColor sml_highlightColor];
+                    self.lastCigaretteDateLabel.textColor = [UIColor slk_highlightColor];
                 }
             }
             break;
