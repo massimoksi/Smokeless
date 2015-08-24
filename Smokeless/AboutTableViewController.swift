@@ -21,7 +21,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         
         let versionString = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as! String
         let buildString = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
-        versionLabel.text = NSLocalizedString("Version ", comment: "Software version.") + versionString + " (" + buildString + ")"
+        versionLabel.text = NSLocalizedString("ABOUT_SOFTWARE_VERSION", comment: "") + versionString + " (" + buildString + ")"
     }
 
     override func didReceiveMemoryWarning() {

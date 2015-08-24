@@ -9,13 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Support for iOS 8+.
 - Support for iPhone 6/6+.
-- Support for iPad in portrait mode.
-- Support for iPad in landscape mode.
+- Support for iPad (all orientations).
 - Today extension.
+- Yearly local notifications.
+- What's New alert view.
 
 ### Changed
 - Completely redesigned from gound up as a Universal app for iOS 8+.
 - E-mail support address.
+- Settings moved to user defaults.
 
 ### Deprecated
 - Support for versions of iOS prior to iOS 8.

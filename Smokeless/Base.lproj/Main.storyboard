@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4J-Tj-Xfc" userLabel="VSpacer_1">
-                                <rect key="frame" x="280" y="20" width="40" height="68"/>
+                                <rect key="frame" x="280" y="20" width="40" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="mFu-mb-Acu"/>
@@ -28,7 +28,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yx-dp-JcZ" customClass="JAMSVGImageView">
-                                <rect key="frame" x="16" y="92" width="500" height="500"/>
+                                <rect key="frame" x="16" y="58" width="568" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="iZO-Fe-BZE"/>
@@ -54,7 +54,7 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-8e-C9Q" customClass="MCNumberLabel">
-                                <rect key="frame" x="16" y="608" width="568" height="72"/>
+                                <rect key="frame" x="16" y="642" width="568" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="EqG-hJ-v37"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="vCn-B9-d5c"/>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rky-JA-cxQ" userLabel="VSpacer_2">
-                                <rect key="frame" x="280" y="684" width="40" height="67"/>
+                                <rect key="frame" x="280" y="718" width="40" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>

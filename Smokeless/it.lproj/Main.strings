@@ -1,108 +1,150 @@
 
+/* Class = "UILabel"; text = "Massimo Peri"; ObjectID = "1Ka-6C-GFD"; */
+"1Ka-6C-GFD.text" = "Massimo Peri";
+
+/* Class = "UILabel"; text = "weeks"; ObjectID = "2Y2-VG-5qA"; */
+"2Y2-VG-5qA.text" = "weeks";
+
+/* Class = "UILabel"; text = "days"; ObjectID = "2gz-XV-vwm"; */
+"2gz-XV-vwm.text" = "days";
+
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "5bW-hK-SAa"; */
 "5bW-hK-SAa.text" = "Subtitle";
 
 /* Class = "UILabel"; text = "Play sounds"; ObjectID = "7Q9-3e-ZTf"; */
-"7Q9-3e-ZTf.text" = "Play sounds";
+"7Q9-3e-ZTf.text" = "Attiva i suoni";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "7qZ-Fh-evw"; */
 "7qZ-Fh-evw.text" = "Title";
 
 /* Class = "UITableViewSection"; headerTitle = "Quantity"; ObjectID = "AwW-6S-wHw"; */
-"AwW-6S-wHw.headerTitle" = "Quantity";
+"AwW-6S-wHw.headerTitle" = "Quantità";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "Bly-Xf-YgR"; */
-"Bly-Xf-YgR.text" = "Label";
+/* Class = "UILabel"; text = "2"; ObjectID = "B6O-89-7Dr"; */
+"B6O-89-7Dr.text" = "2";
+
+/* Class = "UILabel"; text = "months"; ObjectID = "BXM-gy-Ie6"; */
+"BXM-gy-Ie6.text" = "months";
 
 /* Class = "UILabel"; text = "Habits"; ObjectID = "DFY-aS-v2V"; */
-"DFY-aS-v2V.text" = "Habits";
+"DFY-aS-v2V.text" = "Abitudini";
 
 /* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "DfL-Kz-sEo"; */
-"DfL-Kz-sEo.headerTitle" = "General";
+"DfL-Kz-sEo.headerTitle" = "Generale";
+
+/* Class = "UILabel"; text = "August"; ObjectID = "ELb-6p-Yyt"; */
+"ELb-6p-Yyt.text" = "August";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "F5z-Qn-3kG"; */
-"F5z-Qn-3kG.title" = "Settings";
+"F5z-Qn-3kG.title" = "Impostazioni";
 
 /* Class = "UITableViewSection"; headerTitle = "Unit"; ObjectID = "GnW-Ct-gwv"; */
-"GnW-Ct-gwv.headerTitle" = "Unit";
+"GnW-Ct-gwv.headerTitle" = "Unità";
 
 /* Class = "UILabel"; text = "Last cigarette"; ObjectID = "GoS-Af-0Pt"; */
-"GoS-Af-0Pt.text" = "Last cigarette";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "KBT-IC-hPf"; */
-"KBT-IC-hPf.text" = "Label";
+"GoS-Af-0Pt.text" = "Ultima sigaretta";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "Kh1-cm-Bty"; */
-"Kh1-cm-Bty.text" = "About";
+"Kh1-cm-Bty.text" = "Informazioni";
 
 /* Class = "UILabel"; text = "Packets"; ObjectID = "LRe-vf-Mcg"; */
-"LRe-vf-Mcg.text" = "Packets";
+"LRe-vf-Mcg.text" = "Pacchetti";
+
+/* Class = "UILabel"; text = "Smokeless"; ObjectID = "Mdu-cI-3y1"; */
+"Mdu-cI-3y1.text" = "Smokeless";
+
+/* Class = "UILabel"; text = "Designed and developed by"; ObjectID = "Mn4-dS-pBc"; */
+"Mn4-dS-pBc.text" = "Progetto e sviluppo";
 
 /* Class = "UILabel"; text = "Day"; ObjectID = "Njb-Hg-iF3"; */
-"Njb-Hg-iF3.text" = "Day";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "OC2-xh-9Rc"; */
-"OC2-xh-9Rc.text" = "Label";
+"Njb-Hg-iF3.text" = "Giorno";
 
 /* Class = "UILabel"; text = "Price"; ObjectID = "OeV-0a-ozr"; */
-"OeV-0a-ozr.text" = "Price";
+"OeV-0a-ozr.text" = "Prezzo";
 
 /* Class = "UILabel"; text = "Detail"; ObjectID = "S66-Zo-NlU"; */
 "S66-Zo-NlU.text" = "Detail";
 
 /* Class = "UITableViewSection"; headerTitle = "Period"; ObjectID = "SQS-kc-8zw"; */
-"SQS-kc-8zw.headerTitle" = "Period";
+"SQS-kc-8zw.headerTitle" = "Periodo";
 
 /* Class = "UINavigationItem"; title = "Habits"; ObjectID = "THO-g3-Vnq"; */
-"THO-g3-Vnq.title" = "Habits";
+"THO-g3-Vnq.title" = "Abitudini";
+
+/* Class = "UILabel"; text = "Follow me on Twitter"; ObjectID = "Tun-6S-0XY"; */
+"Tun-6S-0XY.text" = "Seguimi su Twitter";
 
 /* Class = "UITableViewSection"; headerTitle = "Packet"; ObjectID = "WSQ-sv-6gW"; */
-"WSQ-sv-6gW.headerTitle" = "Packet";
+"WSQ-sv-6gW.headerTitle" = "Pacchetto";
 
 /* Class = "UILabel"; text = "50,00 €"; ObjectID = "XDd-8e-C9Q"; */
 "XDd-8e-C9Q.text" = "50,00 €";
 
 /* Class = "UINavigationItem"; title = "Health"; ObjectID = "YSx-63-Wxh"; */
-"YSx-63-Wxh.title" = "Health";
+"YSx-63-Wxh.title" = "Salute";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "bK7-jj-Vfi"; */
 "bK7-jj-Vfi.text" = "0";
 
 /* Class = "UILabel"; text = "Reset settings"; ObjectID = "e3H-Pi-rJ3"; */
-"e3H-Pi-rJ3.text" = "Reset settings";
+"e3H-Pi-rJ3.text" = "Elimina le impostazioni";
 
 /* Class = "UILabel"; text = "Notifications"; ObjectID = "h5a-us-Xob"; */
-"h5a-us-Xob.text" = "Notifications";
+"h5a-us-Xob.text" = "Abilita le notifiche";
 
 /* Class = "UITableViewController"; title = "Habits"; ObjectID = "hhk-Z1-Mbd"; */
-"hhk-Z1-Mbd.title" = "Habits";
+"hhk-Z1-Mbd.title" = "Abitudini";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "iOG-ut-Bc4"; */
-"iOG-ut-Bc4.text" = "Label";
+/* Class = "UILabel"; text = "Contact by e-mail"; ObjectID = "i7s-lq-zdP"; */
+"i7s-lq-zdP.text" = "Contattami via e-mail";
+
+/* Class = "UILabel"; text = "Rate Smokeless"; ObjectID = "j23-Mx-s4U"; */
+"j23-Mx-s4U.text" = "Valuta Smokeless";
 
 /* Class = "UILabel"; text = "Week"; ObjectID = "lW7-rv-Itp"; */
-"lW7-rv-Itp.text" = "Week";
+"lW7-rv-Itp.text" = "Settimana";
+
+/* Class = "UITableViewController"; title = "About"; ObjectID = "mRh-r7-bkl"; */
+"mRh-r7-bkl.title" = "Informazioni";
 
 /* Class = "UITabBarItem"; title = "Savings"; ObjectID = "rUc-TT-oaP"; */
-"rUc-TT-oaP.title" = "Savings";
+"rUc-TT-oaP.title" = "Risparmi";
 
 /* Class = "UITabBarItem"; title = "Settings"; ObjectID = "rVX-EU-YdY"; */
-"rVX-EU-YdY.title" = "Settings";
+"rVX-EU-YdY.title" = "Impostazioni";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "sCS-fn-hWz"; */
-"sCS-fn-hWz.text" = "Label";
+/* Class = "UILabel"; text = "3"; ObjectID = "se3-Ag-iUo"; */
+"se3-Ag-iUo.text" = "3";
 
 /* Class = "UILabel"; text = "Cigarettes"; ObjectID = "tMG-sf-joW"; */
-"tMG-sf-joW.text" = "Cigarettes";
+"tMG-sf-joW.text" = "Sigarette";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "uPF-jw-9iC"; */
+"uPF-jw-9iC.text" = "10";
 
 /* Class = "UILabel"; text = "Detail"; ObjectID = "ulA-TR-PEN"; */
 "ulA-TR-PEN.text" = "Detail";
 
 /* Class = "UITabBarItem"; title = "Calendar"; ObjectID = "vMT-ga-n65"; */
-"vMT-ga-n65.title" = "Calendar";
+"vMT-ga-n65.title" = "Calendario";
+
+/* Class = "UILabel"; text = "Version X.X.X (YY)"; ObjectID = "vnF-y4-lQ9"; */
+"vnF-y4-lQ9.text" = "Version X.X.X (YY)";
+
+/* Class = "UILabel"; text = "years"; ObjectID = "wcP-r6-UBr"; */
+"wcP-r6-UBr.text" = "years";
 
 /* Class = "UITabBarItem"; title = "Health"; ObjectID = "xLT-Tq-0FI"; */
-"xLT-Tq-0FI.title" = "Health";
+"xLT-Tq-0FI.title" = "Salute";
+
+/* Class = "UILabel"; text = "19"; ObjectID = "xzX-hW-waL"; */
+"xzX-hW-waL.text" = "19";
+
+/* Class = "UILabel"; text = "2014"; ObjectID = "z58-3F-kdP"; */
+"z58-3F-kdP.text" = "2014";
 
 /* Class = "UILabel"; text = "Size"; ObjectID = "zAo-bE-K84"; */
-"zAo-bE-K84.text" = "Size";
+"zAo-bE-K84.text" = "Sigarette";
+
+/* Class = "UILabel"; text = "6"; ObjectID = "zW0-1t-sVY"; */
+"zW0-1t-sVY.text" = "6";
