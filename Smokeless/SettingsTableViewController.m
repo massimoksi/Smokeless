@@ -139,7 +139,7 @@
                                                                    }];
             [alertController addAction:settingsAction];
 
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"COMMON_CANCEL", nil)
                                                                    style:UIAlertActionStyleCancel
                                                                  handler:nil];
             [alertController addAction:cancelAction];
@@ -204,11 +204,11 @@
         switch (period) {
             default:
             case 0:
-                periodString = NSLocalizedString(@" a day", nil);
+                periodString = NSLocalizedString(@"SETTINGS_HABITS_PERIOD_DAY", nil);
                 break;
 
             case 1:
-                periodString = NSLocalizedString(@" a week", nil);
+                periodString = NSLocalizedString(@"SETTINGS_HABITS_PERIOD_WEEK", nil);
                 break;
         }
         
@@ -221,10 +221,10 @@
 - (void)resetSettings
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                             message:NSLocalizedString(@"Do you really want to delete all your settings?", @"Reset alert: message.")
+                                                                             message:NSLocalizedString(@"RESET_SETTINGS_ALERT_MESSAGE", nil)
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
 
-    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Delete", @"Reset alert: button.")
+    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"RESET_SETTINGS_ACTION_BUTTON", nil)
                                                           style:UIAlertActionStyleDestructive
                                                         handler:^(UIAlertAction *action){
                                                             [SmokelessManager sharedManager].lastCigaretteDate = nil;
@@ -246,7 +246,7 @@
                                                             }
                                                         }];
 
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"COMMON_CANCEL", nil)
                                                            style:UIAlertActionStyleCancel
                                                          handler:nil];
 

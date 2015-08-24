@@ -226,7 +226,7 @@
                                                                                      message:NSLocalizedString(@"MISSING_SETTINGS_ALERT_MESSAGE", nil)
                                                                               preferredStyle:UIAlertControllerStyleAlert];
 
-            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+            UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"COMMON_OK", nil)
                                                                      style:UIAlertActionStyleDefault
                                                                    handler:nil];
             [alertController addAction:settingsAction];

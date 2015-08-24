@@ -146,7 +146,8 @@ import Foundation
             
             notification.fireDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
             notification.repeatInterval = NSCalendarUnit.CalendarUnitYear
-            notification.alertBody = NSLocalizedString("Congratulations: you've not been smoking for one more year!", comment: "Yealy notification body.")
+            notification.alertTitle = NSLocalizedString("ACHIEVEMENT_YEARLY_TITLE", comment: "")
+            notification.alertBody = NSLocalizedString("ACHIEVEMENT_YEARLY_MESSAGE", comment: "")
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }

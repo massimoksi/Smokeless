@@ -7,7 +7,33 @@
 */
 
 
-// Achievements.
+// --------------------------------------------------------------------------
+// AppDelegate
+
+// Initialize settings alert view.
+"INIT_SETTINGS_ALERT_TITLE" = "Configure Smokeless";
+"INIT_SETTINGS_ALERT_MESSAGE" = "Please, take some time to configure Smokeless before you can start to monitor your savings and health improvements.";
+"INIT_SETTINGS_ALERT_ACTION_BUTTON" = "Configure";
+"INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
+
+// "What's New" alert view.
+"WHATS_NEW_ALERT_TITLE" = "What's New in Smokeless 2.0.0?";
+"WHATS_NEW_ALERT_MESSAGE" = "● Completely redisegned for iOS 8+.\n● Universal app.\n● Today extension.\n● Bug fixes and improvements.";
+"WHATS_NEW_ALERT_ACTION_BUTTON" = "Rate ♥︎";
+"WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continue";
+
+// Missing settings alert view.
+"MISSING_SETTINGS_ALERT_TITLE" = "Smokeless configurations is not completed";
+"MISSING_SETTINGS_ALERT_MESSAGE" = "Please complete the configuration to start using Smokeless.";
+
+// --------------------------------------------------------------------------
+// HealthTableViewController
+
+"After %@" = "After %@";
+
+// --------------------------------------------------------------------------
+// AchievementsManager
+
 "ACHIEVEMENT_01_MESSAGE" = "Pressure and heart rate will return to a normal level.";
 "ACHIEVEMENT_02_MESSAGE" = "Oxygen in your blood will return to a normal level while the nicotine will decrease up to over 93%.";
 "ACHIEVEMENT_03_MESSAGE" = "The level of carbon monoxide in your blood will return to a normal level.";
@@ -22,24 +48,30 @@
 "ACHIEVEMENT_12_MESSAGE" = "Your risk of lung cancer will have returned to that of a non-smoker.";
 "ACHIEVEMENT_13_MESSAGE" = "Your risk of heart attack will have returned to that of a non-smoker.";
 "ACHIEVEMENT_14_MESSAGE" = "Your risk of pancreatic cancer will have returned to that of a non-smoker.";
+"ACHIEVEMENT_YEARLY_TITLE" = "Congratulations";
+"ACHIEVEMENT_YEARLY_MESSAGE" = "One more year without smoking!";
 
-// "What's New" alert view.
-"WHATS_NEW_ALERT_TITLE" = "What's New in Smokeless 2.0.0?";
-"WHATS_NEW_ALERT_MESSAGE" = "● Universal app.\n● Completely redisegned for iOS 8+.\n● Today extension.\n● Bugfixes and improvements.";
-"WHATS_NEW_ALERT_ACTION_BUTTON" = "Rate ♥︎";
-"WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continue";
+// --------------------------------------------------------------------------
+// SettingsTableViewController
 
-// Initialize settings alert view.
-"INIT_SETTINGS_ALERT_TITLE" = "Configure Smokeless";
-"INIT_SETTINGS_ALERT_MESSAGE" = "Please, take some time to configure Smokeless before you can start to monitor your savings and health improvements.";
-"INIT_SETTINGS_ALERT_ACTION_BUTTON" = "Configure";
-"INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
+"SETTINGS_HABITS_PERIOD_DAY" = " a day";
+"SETTINGS_HABITS_PERIOD_WEEK" = " a week";
 
-// Missing settings alert view.
-"MISSING_SETTINGS_ALERT_TITLE" = "Smokeless configurations is not completed";
-"MISSING_SETTINGS_ALERT_MESSAGE" = "Please complete the configuration to start using Smokeless.";
+"RESET_SETTINGS_ALERT_MESSAGE" = "Do you really want to delete all your settings?";
+"RESET_SETTINGS_ACTION_BUTTON" = "Delete";
 
 // Disabled notifications alert view.
 "NOTIFICATIONS_ALERT_TITLE" = "Allow Smokeless to send notifications";
 "NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless uses local notifications to keep you updated about health progress.\n\n1. Open Settings\n2. Tap Smokeless\n3. Tap Notifications\n4. Set Allow Notifications to ON";
 "NOTIFICATIONS_ALERT_ACTION_BUTTON" = "Open Settings";
+
+// --------------------------------------------------------------------------
+// AboutTableViewController
+
+"ABOUT_SOFTWARE_VERSION" = "Version ";
+
+// --------------------------------------------------------------------------
+// Common
+
+"COMMON_OK" = "Ok";
+"COMMON_CANCEL" = "Cancel";
