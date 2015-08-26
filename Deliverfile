@@ -1,3 +1,5 @@
+default_language "en-US"
+
 app_identifier "com.gmail.massimoperi.Smokeless"
 apple_id "438027793"
 email "massimoperi@gmail.com"
@@ -5,24 +7,24 @@ email "massimoperi@gmail.com"
 version "2.0.0" # The version of your app - remove this if you provide an ipa file
 
 title(
-  "en-US" => "Smokeless - quit smoking"
+  "en-US" => "Smokeless - quit smoking",
   "it-IT" => "Smokeless - smetti di fumare"
 )
 
-app_icon "./iTunesArtwork.jpg"
+app_icon "./Store/iTunesArtwork.jpg"
 
 description(
-  "en-US" => File.read("./Store/Metadata/en-US/Description.txt")
+  "en-US" => File.read("./Store/Metadata/en-US/Description.txt"),
   "it-IT" => File.read("./Store/Metadata/it-IT/Description.txt")
 )
 
 changelog(
-  "en-US" => File.read("./Store/Metadata/en-US/Changelog.txt")
+  "en-US" => File.read("./Store/Metadata/en-US/Changelog.txt"),
   "it-IT" => File.read("./Store/Metadata/it-IT/Changelog.txt")
 )
 
 keywords(
-  "en-US" => ["quit", "smoking", "smoke", "cigarette", "cigarettes", "health", "stop", "savings"]
+  "en-US" => ["quit", "smoking", "smoke", "cigarette", "cigarettes", "health", "stop", "savings"],
   "it-IT" => ["smettere", "fumare", "fumo", "sigaretta", "sigarette", "salute", "risparmi"]
 )
 
