@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file inspired by 
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.0.0 (WIP)
+## 2.0.0 (2015-08-26)
 
 ### Added
 - Support for iOS 8+.
