@@ -28,7 +28,7 @@ DerivedData
 # Misc
 #
 #Resources/
-Store/
+#Store/
 .DS_Store
 Smokeless.xcworkspace/
 Smokeless.playground/

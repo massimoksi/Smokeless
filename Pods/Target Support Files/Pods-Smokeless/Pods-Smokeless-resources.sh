@@ -60,6 +60,9 @@ install_resource()
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "TAOverlay/TAOverlay/TAOverlay.bundle"
 fi
+if [[ "$CONFIGURATION" == "Demo" ]]; then
+  install_resource "TAOverlay/TAOverlay/TAOverlay.bundle"
+fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "TAOverlay/TAOverlay/TAOverlay.bundle"
 fi

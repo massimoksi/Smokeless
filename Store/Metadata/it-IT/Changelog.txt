@@ -1,0 +1,4 @@
+- Completamente riprogettato per iOS 8+.
+- Aggiunto il supporto per iPhone 6/6+.
+- Aggiunto il supporto per iPad in tutti gli orientamenti.
+- Aggiunta un'estensione per il centro notifiche.
