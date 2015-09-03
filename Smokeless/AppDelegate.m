@@ -185,7 +185,14 @@
         NSDictionary *oldPrefs = [NSDictionary dictionaryWithContentsOfFile:oldPrefsFilePath];
         
         [SmokelessManager sharedManager].lastCigaretteDate = oldPrefs[@"LastCigarette"];
-        [SmokelessManager sharedManager].smokingHabits = oldPrefs[@"Habits"];
+        
+        NSDictionary *oldHabits = oldPrefs[@"Habits"];
+        [SmokelessManager sharedManager].smokingHabits = @{
+            SLKHabitsQuantityKey: oldHabits[@"HabitsQuantity"],
+            SLKHabitsUnitKey: oldHabits[@"HabitsUnit"],
+            SLKHabitsPeriodKey: oldHabits[@"HabitsPeriod"]
+        };
+        
         [SmokelessManager sharedManager].packetSize = [oldPrefs[@"PacketSize"] integerValue];
         [SmokelessManager sharedManager].packetPrice = [oldPrefs[@"PacketPrice"] doubleValue];
         
