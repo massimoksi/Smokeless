@@ -63,9 +63,17 @@ class HabitsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         if let habits = SmokelessManager.sharedManager().smokingHabits {
-            quantity = habits[SLKHabitsQuantityKey] as! Int
-            unit = habits[SLKHabitsUnitKey] as! Int
-            period = habits[SLKHabitsPeriodKey] as! Int
+            if let prefQuantity = habits[SLKHabitsQuantityKey] as? Int {
+                quantity = prefQuantity
+            }
+            
+            if let prefUnit = habits[SLKHabitsUnitKey] as? Int {
+                unit = prefUnit
+            }
+
+            if let prefPeriod = habits[SLKHabitsPeriodKey] as? Int {
+                period = prefPeriod
+            }
         }
         
         quantityStepper.value = Double(quantity)
