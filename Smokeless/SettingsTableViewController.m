@@ -345,7 +345,12 @@
         NSNumber *price = [self.currencyFormatter numberFromString:textField.text];
         
         if (price) {
-            textField.text = [NSString stringWithFormat:@"%@", price];
+            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            numberFormatter.minimumFractionDigits = 2;
+            numberFormatter.maximumFractionDigits = 2;
+            
+            textField.text = [numberFormatter stringFromNumber:price];
         }
     }
     
@@ -372,7 +377,14 @@
         }
     }
     else if (textField == self.packetPriceTextField) {
-        CGFloat price = [textField.text floatValue];
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        numberFormatter.minimumFractionDigits = 2;
+        numberFormatter.maximumFractionDigits = 2;
+        
+        NSNumber *num = [numberFormatter numberFromString:textField.text];
+
+        CGFloat price = [num floatValue];
         if (price != 0.0) {
             [SmokelessManager sharedManager].packetPrice = price;
             
