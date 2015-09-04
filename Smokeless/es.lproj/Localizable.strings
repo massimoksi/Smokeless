@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  Smokeless
+
+  Created by Massimo Peri on 20/06/15.
+  Copyright (c) 2015 Massimo Peri. All rights reserved.
+*/
+
+
+// --------------------------------------------------------------------------
+// AppDelegate
+
+// Initialize settings alert view.
+"INIT_SETTINGS_ALERT_TITLE" = "Configure Smokeless";
+"INIT_SETTINGS_ALERT_MESSAGE" = "Por favor tome un momento para configurar Smokeless para iniciar el seguimiento de su progreso tuoiri ahorro y salud.";
+"INIT_SETTINGS_ALERT_ACTION_BUTTON" = "Configure";
+"INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "No ahora";
+
+// "What's New" alert view.
+"WHATS_NEW_ALERT_TITLE" = "¿Que hay de nuevo en Smokeless 2.0.1?";
+"WHATS_NEW_ALERT_MESSAGE" = "● Corrección de errores y mejoras.";
+"WHATS_NEW_ALERT_ACTION_BUTTON" = "Valuta ♥︎";
+"WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continúa";
+
+// Missing settings alert view.
+"MISSING_SETTINGS_ALERT_TITLE" = "La configuración de Smokeless no es completa";
+"MISSING_SETTINGS_ALERT_MESSAGE" = "Por favor completar la configuración para empezar a utilizar Smokeless.";
+
+// --------------------------------------------------------------------------
+// HealthTableViewController
+
+"After %@" = "Después %@";
+
+// --------------------------------------------------------------------------
+// AchievementsManager
+
+"ACHIEVEMENT_01_MESSAGE" = "La presión arterial y la frecuencia cardíaca han regresado a un nivel normal.";
+"ACHIEVEMENT_02_MESSAGE" = "Los niveles de monóxido de carbono en el golpe de sangre, los niveles de oxígeno han vuelto a la normalidad, mientras que la nicotina disminuye hasta más del 93%.";
+"ACHIEVEMENT_03_MESSAGE" = "El nivel de monóxido de carbono es volver a la normalidad.";
+"ACHIEVEMENT_04_MESSAGE" = "Toda la nicotina habrá dejado su cuerpo. El sentido del gusto y el olfato han vuelto a un nivel normal.";
+"ACHIEVEMENT_05_MESSAGE" = "Los bronquios se relajarán y el cuerpo empezará a adquirir energía.";
+"ACHIEVEMENT_06_MESSAGE" = "La circulación mejora y sigue mejorando en las 10 semanas siguientes.";
+"ACHIEVEMENT_07_MESSAGE" = "Los cilios de las vías respiratorias se han reconstruido, el moco se elimina de los bronquios. Cayeron en un 33% el riesgo de infecciones respiratorias y los accidentes cerebrovasculares.";
+"ACHIEVEMENT_08_MESSAGE" = "La tos crónica se reduce.";
+"ACHIEVEMENT_09_MESSAGE" = "Tos, jadeo y problemas respiratorios disminuyen y la capacidad pulmonar aumenta del 10%.";
+"ACHIEVEMENT_10_MESSAGE" = "El riesgo de tener un infarto se ha demediado.";
+"ACHIEVEMENT_11_MESSAGE" = "El riesgo de tener un ictus se ha vuelto igual a aquel de un no fumador.";
+"ACHIEVEMENT_12_MESSAGE" = "El riesgo de cáncer a los pulmones se ha vuelto igual a aquel de un no fumador.";
+"ACHIEVEMENT_13_MESSAGE" = "El riesgo de tener un infarto se ha vuelto igual a aquel de un no fumador.";
+"ACHIEVEMENT_14_MESSAGE" = "El riesgo de cáncer de páncreas ha vuelto igual a la de un no fumador.";
+"ACHIEVEMENT_YEARLY_TITLE" = "¡Felicitaciones!";
+"ACHIEVEMENT_YEARLY_MESSAGE" = "¡Otro año sin fumar!";
+
+// --------------------------------------------------------------------------
+// SettingsTableViewController
+
+"SETTINGS_HABITS_PERIOD_DAY" = " cada día";
+"SETTINGS_HABITS_PERIOD_WEEK" = " cada semana";
+
+"RESET_SETTINGS_ALERT_MESSAGE" = "¿Quieres eliminar todos los ajustes?";
+"RESET_SETTINGS_ACTION_BUTTON" = "Eliminar";
+
+// Disabled notifications alert view.
+"NOTIFICATIONS_ALERT_TITLE" = "Permitir Smokeless enviar notificaciones";
+"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless utiliza notificaciones locales para mantenerte informado sobre su progreso en la salud.\n\n1. Abra Ajustes\n2. Toca Smokeless\n3. Toca Notificaciones\n4. Permitir notificaciones activas";
+"NOTIFICATIONS_ALERT_ACTION_BUTTON" = "Abra Ajustes";
+
+// --------------------------------------------------------------------------
+// AboutTableViewController
+
+"ABOUT_SOFTWARE_VERSION" = "Versión ";
+
+// --------------------------------------------------------------------------
+// Common
+
+"COMMON_OK" = "OK";
+"COMMON_CANCEL" = "Cancelar";
