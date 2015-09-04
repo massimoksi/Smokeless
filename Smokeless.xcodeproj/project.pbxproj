@@ -98,6 +98,9 @@
 		5619B4111A6C6D81005C12CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		564395071B59AFCF003D071C /* Base */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		564518461B5A88CB001BF1EA /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		566691F81B9A35EB008DD296 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		566691F91B9A35EB008DD296 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		566691FA1B9A35EB008DD296 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		5667320B1B358DB9002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5667320C1B358E30002A1060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5667320D1B359964002A1060 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -447,6 +450,7 @@
 				German,
 				Base,
 				it,
+				es,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Smokeless */;
 			projectDirPath = "";
@@ -587,6 +591,7 @@
 			children = (
 				564395071B59AFCF003D071C /* Base */,
 				560340411B77FF2800B6B651 /* it */,
+				566691F91B9A35EB008DD296 /* es */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 			children = (
 				5667320C1B358E30002A1060 /* Base */,
 				56F974E91B52A529004E4816 /* it */,
+				566691F81B9A35EB008DD296 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 			children = (
 				5667320B1B358DB9002A1060 /* Base */,
 				56016CA71B8BCB0900EC568C /* it */,
+				566691FA1B9A35EB008DD296 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

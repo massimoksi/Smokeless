@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>%d packet(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d paquetes</string>
+                <key>one</key>
+                <string>%d paquete</string>
+                <key>other</key>
+                <string>%d paquetes</string>
+            </dict>
+        </dict>
+        <key>%d cigarette(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d cigarrillos</string>
+                <key>one</key>
+                <string>%d cigarrillo</string>
+                <key>other</key>
+                <string>%d cigarrillos</string>
+            </dict>
+        </dict>
+        <key>%d minute(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d minutos</string>
+                <key>one</key>
+                <string>%d minuto</string>
+                <key>other</key>
+                <string>%d minutos</string>
+            </dict>
+        </dict>
+        <key>%d hour(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d horas</string>
+                <key>one</key>
+                <string>%d hora</string>
+                <key>other</key>
+                <string>%d horas</string>
+            </dict>
+        </dict>
+        <key>%d day(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d días</string>
+                <key>one</key>
+                <string>%d día</string>
+                <key>other</key>
+                <string>%d días</string>
+            </dict>
+        </dict>
+        <key>%d week(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d semanas</string>
+                <key>one</key>
+                <string>%d semana</string>
+                <key>other</key>
+                <string>%d semanas</string>
+            </dict>
+        </dict>
+        <key>%d month(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d meses</string>
+                <key>one</key>
+                <string>%d mes</string>
+                <key>other</key>
+                <string>%d meses</string>
+            </dict>
+        </dict>
+        <key>%d year(s)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>%d años</string>
+                <key>one</key>
+                <string>%d año</string>
+                <key>other</key>
+                <string>%d años</string>
+            </dict>
+        </dict>
+        <key>%d year(s) (unit)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>años</string>
+                <key>one</key>
+                <string>año</string>
+                <key>other</key>
+                <string>años</string>
+            </dict>
+        </dict>
+        <key>%d month(s) (unit)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>meses</string>
+                <key>one</key>
+                <string>mes</string>
+                <key>other</key>
+                <string>meses</string>
+            </dict>
+        </dict>
+        <key>%d week(s) (unit)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>semanas</string>
+                <key>one</key>
+                <string>semana</string>
+                <key>other</key>
+                <string>semanas</string>
+            </dict>
+        </dict>
+        <key>%d day(s) (unit)</key>
+        <dict>
+            <key>NSStringLocalizedFormatKey</key>
+            <string>%#@variable_0@</string>
+            <key>variable_0</key>
+            <dict>
+                <key>NSStringFormatSpecTypeKey</key>
+                <string>NSStringPluralRuleType</string>
+                <key>NSStringFormatValueTypeKey</key>
+                <string>d</string>
+                <key>zero</key>
+                <string>días</string>
+                <key>one</key>
+                <string>día</string>
+                <key>other</key>
+                <string>días</string>
+            </dict>
+        </dict>
+    </dict>
+</plist>
