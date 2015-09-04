@@ -62,7 +62,7 @@
 
 // Disabled notifications alert view.
 "NOTIFICATIONS_ALERT_TITLE" = "Permetti a Smokeless di inviare notifiche";
-"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless usa le notifiche locali per tenerti aggiornato sui tuoi progressi di salute.\n\n1. Apri Impostazioni\n2. Tocca Smokeless\n3. Tocca Notifiche\n4. Attica Consenti notifiche";
+"NOTIFICATIONS_ALERT_MESSAGE" = "Smokeless usa le notifiche locali per tenerti aggiornato sui tuoi progressi di salute.\n\n1. Apri Impostazioni\n2. Tocca Smokeless\n3. Tocca Notifiche\n4. Attiva Consenti notifiche";
 "NOTIFICATIONS_ALERT_ACTION_BUTTON" = "Apri Impostazioni";
 
 // --------------------------------------------------------------------------
