@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file inspired by 
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.1 (2015-09-04)
+
+### Added
+- Spanish localization.
+
+### Fixed
+- Bug when adding decimal digits in packet price.
+- Bug when importing smoking habits from old preferences.
+- Bug when loading habits view.
+
 ## 2.0.0 (2015-08-26)
 
 ### Added
@@ -44,7 +54,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.2 (2011-10-07)
 
 ### Fixed
-- Fixed bugs related to local notifications.
+- Bugs related to local notifications.
 
 ## 1.0.1 (2011-06-27)
 

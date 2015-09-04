@@ -1,4 +1,2 @@
-- Completely redesigned for iOS 8+.
-- Added support for iPhone 6/6+.
-- Added support for iPad in all orientations.
-- Added a Today extension in the notification center.
+- Bugfixes and improvements.
+- Spanish localization.
