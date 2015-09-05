@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file inspired by 
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.0.1 (2015-09-04)
+## 2.0.1 (2015-09-05)
 
 ### Added
 - Spanish localization.
