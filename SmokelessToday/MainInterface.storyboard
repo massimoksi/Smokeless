@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -18,29 +17,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="48" y="8" width="252" height="24"/>
+                                <rect key="frame" x="28" y="8" width="276" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="0ci-zc-Jcd">
-                                <rect key="frame" x="20" y="8" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="8" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="P72-7P-9ag"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Savings" translatesAutoresizingMaskIntoConstraints="NO" id="6sN-cu-z7n">
-                                <rect key="frame" x="20" y="40" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="40" width="24" height="24"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-af-5WW">
-                                <rect key="frame" x="48" y="40" width="252" height="24"/>
+                                <rect key="frame" x="28" y="40" width="276" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="4" id="2GD-fz-uZq"/>
+                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="16" id="2GD-fz-uZq"/>
                             <constraint firstItem="0ci-zc-Jcd" firstAttribute="leading" secondItem="6sN-cu-z7n" secondAttribute="leading" id="DXR-G8-XPx"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="oZO-af-5WW" secondAttribute="leading" id="V4k-kV-noE"/>
                             <constraint firstItem="oZO-af-5WW" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" id="a3j-40-FEy"/>
@@ -51,7 +50,7 @@
                             <constraint firstItem="oZO-af-5WW" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" symbolic="YES" id="kjY-Lt-KSq"/>
                             <constraint firstItem="6sN-cu-z7n" firstAttribute="top" secondItem="0ci-zc-Jcd" secondAttribute="bottom" constant="8" symbolic="YES" id="odY-hK-RdR"/>
                             <constraint firstItem="6sN-cu-z7n" firstAttribute="top" secondItem="oZO-af-5WW" secondAttribute="top" id="qXU-Qw-Iml"/>
-                            <constraint firstItem="0ci-zc-Jcd" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="4" id="wiT-ef-bdb"/>
+                            <constraint firstItem="0ci-zc-Jcd" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="wiT-ef-bdb"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
