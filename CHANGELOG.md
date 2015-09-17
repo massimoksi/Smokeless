@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file inspired by 
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## 2.0.2 (2015-09-18)
+
+### Changed
+- Built against iOS 9.
+- Improved layout of the Today widget.
+- Get rid of local notifications if no support is granted to notifications in Settings.
+
+
 ## 2.0.1 (2015-09-05)
 
 ### Added
@@ -13,6 +22,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Bug when adding decimal digits in packet price.
 - Bug when importing smoking habits from old preferences.
 - Bug when loading habits view.
+
 
 ## 2.0.0 (2015-08-26)
 
@@ -34,12 +44,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Spanish localization.
 - German localization.
 
+
 ## 1.2.0 (2012-10-26)
 
 ### Added
 - Support for iOS 6.
 - Support for iPhone 5.
 - Share on Twitter, Facebook, e-mail and SMS.
+
 
 ## 1.1.0 (2012-05-15)
 
@@ -51,10 +63,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Improved user interface.
 
+
 ## 1.0.2 (2011-10-07)
 
 ### Fixed
 - Bugs related to local notifications.
+
 
 ## 1.0.1 (2011-06-27)
 
@@ -63,6 +77,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Improved shake gesture detection.
+
 
 ## 1.0.0 (2011-05-20)
 
