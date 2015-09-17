@@ -70,7 +70,7 @@ class ProgressView: UIView {
 
             // --- PaintCode
             //// Path Drawing
-            var pathPath = UIBezierPath(ovalInRect: CGRectMake(drawingRect.minX, drawingRect.minY, 24, 24))
+            let pathPath = UIBezierPath(ovalInRect: CGRectMake(drawingRect.minX, drawingRect.minY, 24, 24))
 
             if let completedColor_ = completedColor {
                 completedColor_.setFill()
@@ -82,7 +82,7 @@ class ProgressView: UIView {
             
             
             //// Checkmark Drawing
-            var checkmarkPath = UIBezierPath()
+            let checkmarkPath = UIBezierPath()
             checkmarkPath.moveToPoint(CGPointMake(drawingRect.minX + 20.89, drawingRect.minY + 7.05))
             checkmarkPath.addLineToPoint(CGPointMake(drawingRect.minX + 18.27, drawingRect.minY + 4.42))
             checkmarkPath.addCurveToPoint(CGPointMake(drawingRect.minX + 17.73, drawingRect.minY + 4.42), controlPoint1: CGPointMake(drawingRect.minX + 18.12, drawingRect.minY + 4.28), controlPoint2: CGPointMake(drawingRect.minX + 17.88, drawingRect.minY + 4.28))
@@ -154,7 +154,7 @@ class ProgressView: UIView {
             
             CGContextAddLines(context, points, 3)
             CGContextAddArc(context, center.x, center.y, radius, CGFloat(-M_PI_2), angle, 0)
-            CGContextDrawPath(context, kCGPathEOFill)
+            CGContextDrawPath(context, CGPathDrawingMode.EOFill)
         }
     }
 

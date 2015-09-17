@@ -15,19 +15,19 @@ class RadialBarView: UIView {
     private class RadialBarLayer: CALayer {
         @NSManaged var progress: CGFloat
 
-        required init(coder aDecoder: NSCoder) {
+        required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
         }
         
-        override init!() {
+        override init() {
             super.init()
         }
         
-        override init!(layer: AnyObject!) {
+        override init(layer: AnyObject) {
             super.init(layer: layer)
         }
         
-        override class func needsDisplayForKey(key: String!) -> Bool {
+        override class func needsDisplayForKey(key: String) -> Bool {
             // A change in the custom "progress" property should automatically trigger a redraw of the layer.
             if (key == "progress") {
                 return true
@@ -36,10 +36,10 @@ class RadialBarView: UIView {
             return super.needsDisplayForKey(key)
         }
 
-        override func actionForKey(event: String!) -> CAAction! {
+        override func actionForKey(event: String) -> CAAction? {
             if (event == "progress") {
                 let anim = CABasicAnimation(keyPath: event)
-                anim.fromValue = presentationLayer().valueForKey(event)
+                anim.fromValue = presentationLayer()!.valueForKey(event)
                 anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
                 anim.duration = CFTimeInterval(1.0)
 
@@ -110,7 +110,7 @@ class RadialBarView: UIView {
         customInit()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         customInit()
@@ -132,7 +132,7 @@ class RadialBarView: UIView {
 
     // MARK: - Layer delegate
 
-    override func drawLayer(layer: CALayer!, inContext context: CGContext!) {
+    override func drawLayer(layer: CALayer, inContext context: CGContext) {
         var progress: CGFloat = 0.0
         if let layer = layer as? RadialBarLayer {
             progress = layer.progress
@@ -163,7 +163,7 @@ class RadialBarView: UIView {
         // Stroke path.
         CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, startAngle, fullAngle, 0)
         CGContextSetLineWidth(context, barWidth)
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextStrokePath(context)
         
         // ---------------------------

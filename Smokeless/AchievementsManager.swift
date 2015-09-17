@@ -9,13 +9,13 @@
 import Foundation
 
 
-@objc class AchievementsManager {
+class AchievementsManager: NSObject {
    
     static let sharedManager = AchievementsManager()
     
     var achievements: [Achievement]
     
-    private init() {
+    private override init() {
         let step1 = Achievement()
         step1.minutes = 20
         step1.text = NSLocalizedString("ACHIEVEMENT_01_MESSAGE", comment: "")
@@ -131,7 +131,7 @@ import Foundation
             }
             
 #if DEBUG
-            println("AchievementsManager - Registered notification: \(UIApplication.sharedApplication().scheduledLocalNotifications)")
+            print("AchievementsManager - Registered notification: \(UIApplication.sharedApplication().scheduledLocalNotifications)")
 #endif
         }
     }
@@ -144,9 +144,13 @@ import Foundation
             let components = NSDateComponents()
             components.year = 1
             
-            notification.fireDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(0))
-            notification.repeatInterval = NSCalendarUnit.CalendarUnitYear
-            notification.alertTitle = NSLocalizedString("ACHIEVEMENT_YEARLY_TITLE", comment: "")
+            notification.fireDate = calendar.dateByAddingComponents(components, toDate: date, options: NSCalendarOptions(rawValue: 0))
+            notification.repeatInterval = NSCalendarUnit.Year
+            if #available(iOS 8.2, *) {
+                notification.alertTitle = NSLocalizedString("ACHIEVEMENT_YEARLY_TITLE", comment: "")
+            } else {
+                // Fallback on earlier versions
+            }
             notification.alertBody = NSLocalizedString("ACHIEVEMENT_YEARLY_MESSAGE", comment: "")
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)

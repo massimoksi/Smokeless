@@ -83,10 +83,10 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         }
         
         if (followError) {
-            TAOverlay.showOverlayWithLabel(nil, options: .AutoHide | .OverlayTypeError | .OverlaySizeRoundedRect)
+            TAOverlay.showOverlayWithLabel(nil, options: [.AutoHide, .OverlayTypeError, .OverlaySizeRoundedRect])
         }
         else {
-            TAOverlay.showOverlayWithLabel(nil, options: .AutoHide | .OverlayTypeSuccess | .OverlaySizeRoundedRect)
+            TAOverlay.showOverlayWithLabel(nil, options: [.AutoHide, .OverlayTypeSuccess, .OverlaySizeRoundedRect])
         }
     }
     
@@ -97,7 +97,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let section = indexPath.section
         let row = indexPath.row
         
         if (row == 0) {
@@ -115,7 +114,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     
     // MARK: - Mail compose view controller delegate
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
