@@ -5,12 +5,15 @@ All notable changes to this project will be documented in this file inspired by 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## 2.0.2 (2015-09-18)
+## 2.0.2 (2015-09-19)
 
 ### Changed
 - Built against iOS 9.
 - Improved layout of the Today widget.
 - Get rid of local notifications if no support is granted to notifications in Settings.
+
+### Fixed
+- Reload health table view before view appears.
 
 
 ## 2.0.1 (2015-09-05)
