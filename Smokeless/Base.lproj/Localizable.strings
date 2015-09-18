@@ -17,8 +17,8 @@
 "INIT_SETTINGS_ALERT_CANCEL_BUTTON" = "Not now";
 
 // "What's New" alert view.
-"WHATS_NEW_ALERT_TITLE" = "What's New in Smokeless 2.0.1?";
-"WHATS_NEW_ALERT_MESSAGE" = "● Bug fixes and improvements.";
+"WHATS_NEW_ALERT_TITLE" = "What's New in Smokeless 2.0.2?";
+"WHATS_NEW_ALERT_MESSAGE" = "● Updated to support iOS 9. ● Updated the Today widget. ● Bug fixes and improvements.";
 "WHATS_NEW_ALERT_ACTION_BUTTON" = "Rate ♥︎";
 "WHATS_NEW_ALERT_CANCEL_BUTTON" = "Continue";
 

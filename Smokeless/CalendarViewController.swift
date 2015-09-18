@@ -37,7 +37,7 @@ class CalendarViewController: UIViewController {
     
     private lazy var monthFormatter: NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
-        let localization: String = NSBundle.mainBundle().preferredLocalizations.first as! String
+        let localization: String = NSBundle.mainBundle().preferredLocalizations.first as String!
         dateFormatter.locale = NSLocale(localeIdentifier: localization)
         dateFormatter.dateFormat = "MMMM"
         

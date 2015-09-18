@@ -28,6 +28,7 @@
     [super viewWillAppear:animated];
     
     [[AchievementsManager sharedManager] updateForDate:[[SmokelessManager sharedManager] lastCigaretteDate]];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated

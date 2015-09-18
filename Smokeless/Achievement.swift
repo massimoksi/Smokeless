@@ -9,7 +9,7 @@
 import Foundation
 
 
-@objc class Achievement {
+class Achievement: NSObject {
 
     enum State {
         case Pending, Next, Completed
@@ -41,7 +41,7 @@ import Foundation
         
         let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         
-        let completionDate = gregorianCalendar?.dateByAddingComponents(dateComps, toDate: date, options: NSCalendarOptions(0))
+        let completionDate = gregorianCalendar?.dateByAddingComponents(dateComps, toDate: date, options: NSCalendarOptions(rawValue: 0))
         
         return completionDate
     }
@@ -55,8 +55,8 @@ import Foundation
                 let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
                 
                 if let gregorianCalendar_ = gregorianCalendar {
-                    let totalDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date!, toDate: completionDate_, options: NSCalendarOptions(0)).day
-                    let elapsedDays = gregorianCalendar_.components(NSCalendarUnit.CalendarUnitDay, fromDate: date!, toDate: NSDate(), options: NSCalendarOptions(0)).day
+                    let totalDays = gregorianCalendar_.components(NSCalendarUnit.Day, fromDate: date!, toDate: completionDate_, options: NSCalendarOptions(rawValue: 0)).day
+                    let elapsedDays = gregorianCalendar_.components(NSCalendarUnit.Day, fromDate: date!, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0)).day
                     
                     if (elapsedDays >= totalDays) {
                         percentage = 1.0

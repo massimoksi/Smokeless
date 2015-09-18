@@ -118,15 +118,13 @@
 
 - (IBAction)notificationsEnabled:(UISwitch *)sender
 {
-    BOOL enabled = sender.on;
+    BOOL enabled = sender.isOn;
 
     [[NSUserDefaults standardUserDefaults] setBool:enabled
                                             forKey:SLKNotificationsEnabledKey];
 
     // Schedule/unschedule local notifications.
     if (enabled) {
-        [[AchievementsManager sharedManager] registerNotificationsForDate:[SmokelessManager sharedManager].lastCigaretteDate];
-
         // Check if notifications are enabled by user settings, if not alert user.
         if (([[UIApplication sharedApplication] currentUserNotificationSettings].types & UIUserNotificationTypeAlert) == 0) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_TITLE", nil)
@@ -136,6 +134,9 @@
             UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"NOTIFICATIONS_ALERT_ACTION_BUTTON", nil)
                                                                      style:UIAlertActionStyleDefault
                                                                    handler:^(UIAlertAction *action){
+                                                                       // Register local notifications.
+                                                                       [[AchievementsManager sharedManager] registerNotificationsForDate:[SmokelessManager sharedManager].lastCigaretteDate];
+                                                                       
                                                                         // Open Settings.
                                                                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
                                                                    }];
@@ -143,7 +144,12 @@
 
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"COMMON_CANCEL", nil)
                                                                    style:UIAlertActionStyleCancel
-                                                                 handler:nil];
+                                                                 handler:^(UIAlertAction *action){
+                                                                     self.notificationsSwitch.on = NO;
+                                                                     
+                                                                     [[NSUserDefaults standardUserDefaults] setBool:NO
+                                                                                                             forKey:SLKNotificationsEnabledKey];
+                                                                 }];
             [alertController addAction:cancelAction];
 
             [self presentViewController:alertController

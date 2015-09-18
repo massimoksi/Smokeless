@@ -1,2 +1,4 @@
+- Aggiunto il supporto per iOS 9.
+- Migliorato il supporto per iPad su iOS 9.
+- Ridisegnato il widget per il Centro Notifiche.
 - Correzione di bug e miglioramenti.
-- Localizzazione in spagnolo.

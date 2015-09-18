@@ -1,2 +1,4 @@
-- Bugfixes and improvements.
-- Spanish localization.
+- Added support for iOS 9.
+- Added support for slide over and split view on iPad.
+- Redesigned Today widget.
+- Bug fixes and improvements.
