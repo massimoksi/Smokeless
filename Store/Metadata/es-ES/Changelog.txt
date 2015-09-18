@@ -1,2 +1,3 @@
+- Añadido soporte para iOS 9.
+- Rediseñado el widget para el Centro de Notificaciones.
 - Corrección de errores y mejoras.
-- Traducción española
